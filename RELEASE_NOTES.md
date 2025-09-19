@@ -1,5 +1,62 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.7](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.7)
+
+September 19, 2025
+
+### Renamings
+
+- `api.HTMLElement.innerText.enforces_trusted_types` to `api.HTMLScriptElement.innerText.enforces_trusted_types` ([#27874](https://github.com/mdn/browser-compat-data/pull/27874))
+- `api.Node.textContent.enforces_trusted_types` to `api.HTMLScriptElement.textContent.enforces_trusted_types` ([#27874](https://github.com/mdn/browser-compat-data/pull/27874))
+
+### Removals
+
+- `api.SpeechRecognitionEvent.emma` ([#27901](https://github.com/mdn/browser-compat-data/pull/27901))
+- `api.SpeechRecognitionEvent.interpretation` ([#27901](https://github.com/mdn/browser-compat-data/pull/27901))
+
+### Additions
+
+- `api.HTMLScriptElement.innerText` ([#27874](https://github.com/mdn/browser-compat-data/pull/27874))
+- `api.HTMLScriptElement.textContent` ([#27874](https://github.com/mdn/browser-compat-data/pull/27874))
+- `api.ServiceWorkerContainer.register.enforces_trusted_types` ([#27836](https://github.com/mdn/browser-compat-data/pull/27836))
+- `api.SpeechRecognition.phrases` ([#27901](https://github.com/mdn/browser-compat-data/pull/27901))
+- `api.SpeechRecognition.start.audioTrack` ([#27901](https://github.com/mdn/browser-compat-data/pull/27901))
+- `api.SpeechRecognitionPhrase` ([#27901](https://github.com/mdn/browser-compat-data/pull/27901))
+- `api.SpeechRecognitionPhrase.boost` ([#27901](https://github.com/mdn/browser-compat-data/pull/27901))
+- `api.SpeechRecognitionPhrase.phrase` ([#27901](https://github.com/mdn/browser-compat-data/pull/27901))
+- `api.SpeechRecognitionPhrase.SpeechRecognitionPhrase` ([#27901](https://github.com/mdn/browser-compat-data/pull/27901))
+- `api.SVGAnimatedString.baseVal.enforces_trusted_types` ([#27836](https://github.com/mdn/browser-compat-data/pull/27836))
+- `api.WorkerGlobalScope.importScripts.enforces_trusted_types` ([#27836](https://github.com/mdn/browser-compat-data/pull/27836))
+- `browsers.firefox_android.releases.146` ([#27906](https://github.com/mdn/browser-compat-data/pull/27906))
+- `browsers.firefox.releases.146` ([#27906](https://github.com/mdn/browser-compat-data/pull/27906))
+- `css.properties.caret-shape` ([#27846](https://github.com/mdn/browser-compat-data/pull/27846))
+- `css.properties.caret-shape.auto` ([#27846](https://github.com/mdn/browser-compat-data/pull/27846))
+- `css.properties.caret-shape.bar` ([#27846](https://github.com/mdn/browser-compat-data/pull/27846))
+- `css.properties.caret-shape.block` ([#27846](https://github.com/mdn/browser-compat-data/pull/27846))
+- `css.properties.caret-shape.underscore` ([#27846](https://github.com/mdn/browser-compat-data/pull/27846))
+- `css.properties.corner-shape.bevel` ([#27911](https://github.com/mdn/browser-compat-data/pull/27911))
+- `css.properties.corner-shape.notch` ([#27911](https://github.com/mdn/browser-compat-data/pull/27911))
+- `css.properties.corner-shape.round` ([#27911](https://github.com/mdn/browser-compat-data/pull/27911))
+- `css.properties.corner-shape.scoop` ([#27911](https://github.com/mdn/browser-compat-data/pull/27911))
+- `css.properties.corner-shape.square` ([#27911](https://github.com/mdn/browser-compat-data/pull/27911))
+- `css.properties.corner-shape.squircle` ([#27911](https://github.com/mdn/browser-compat-data/pull/27911))
+- `css.properties.transition-behavior.transitionable_content-visibility` ([#27922](https://github.com/mdn/browser-compat-data/pull/27922))
+- `css.properties.transition-behavior.transitionable_display` ([#27922](https://github.com/mdn/browser-compat-data/pull/27922))
+- `http.headers.Permissions-Policy.aria-notify` ([#27936](https://github.com/mdn/browser-compat-data/pull/27936))
+- `http.headers.Permissions-Policy.on-device-speech-recognition` ([#27901](https://github.com/mdn/browser-compat-data/pull/27901))
+- `webdriver.bidi.emulation.setLocaleOverride.cross_origin_iframes` ([#27776](https://github.com/mdn/browser-compat-data/pull/27776))
+- `webdriver.bidi.emulation.setLocaleOverride.updates_existing_sandboxes` ([#27776](https://github.com/mdn/browser-compat-data/pull/27776))
+- `webdriver.bidi.network.addDataCollector.dataTypes_parameter.response` ([#27776](https://github.com/mdn/browser-compat-data/pull/27776))
+- `webdriver.bidi.network.disownData.dataType_parameter.response` ([#27776](https://github.com/mdn/browser-compat-data/pull/27776))
+- `webdriver.bidi.network.getData.dataType_parameter.response` ([#27776](https://github.com/mdn/browser-compat-data/pull/27776))
+
+### Statistics
+
+- 7 contributors have changed 37 files with 1,716 additions and 387 deletions in 28 commits ([`v7.1.6...v7.1.7`](https://github.com/mdn/browser-compat-data/compare/v7.1.6...v7.1.7))
+- 17,855 total features
+- 1,197 total contributors
+- 5,413 total stargazers
+
 ## [v7.1.6](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.6)
 
 September 16, 2025
