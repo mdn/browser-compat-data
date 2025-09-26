@@ -1,5 +1,26 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.8](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.8)
+
+September 26, 2025
+
+### Additions
+
+- `browsers.safari_ios.releases.26.1` ([#27974](https://github.com/mdn/browser-compat-data/pull/27974))
+- `browsers.safari.releases.26.1` ([#27974](https://github.com/mdn/browser-compat-data/pull/27974))
+- `browsers.webview_ios.releases.26.1` ([#27974](https://github.com/mdn/browser-compat-data/pull/27974))
+- `css.properties.position-area.span-left` ([#27999](https://github.com/mdn/browser-compat-data/pull/27999))
+- `css.properties.position-area.span-right` ([#27999](https://github.com/mdn/browser-compat-data/pull/27999))
+- `webextensions.api.cookies.Cookie.expirationDate` ([#27833](https://github.com/mdn/browser-compat-data/pull/27833))
+- `webextensions.api.cookies.set.expirationDate` ([#27833](https://github.com/mdn/browser-compat-data/pull/27833))
+
+### Statistics
+
+- 7 contributors have changed 44 files with 474 additions and 232 deletions in 26 commits ([`v7.1.7...v7.1.8`](https://github.com/mdn/browser-compat-data/compare/v7.1.7...v7.1.8))
+- 17,859 total features
+- 1,197 total contributors
+- 5,425 total stargazers
+
 ## [v7.1.7](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.7)
 
 September 19, 2025
