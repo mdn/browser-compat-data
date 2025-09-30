@@ -1,5 +1,53 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.9](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.9)
+
+September 30, 2025
+
+### Removals
+
+- `api.Element.scrollIntoView.options_container_parameter` ([#28022](https://github.com/mdn/browser-compat-data/pull/28022))
+
+### Additions
+
+- `api.Element.scrollIntoView.options_parameter.block_option` ([#28022](https://github.com/mdn/browser-compat-data/pull/28022))
+- `api.Element.scrollIntoView.options_parameter.container_option` ([#28022](https://github.com/mdn/browser-compat-data/pull/28022))
+- `api.Element.scrollIntoView.options_parameter.inline_option` ([#28022](https://github.com/mdn/browser-compat-data/pull/28022))
+- `api.HTMLCanvasElement.getContext.2d_context.options_colorType_parameter` ([#28026](https://github.com/mdn/browser-compat-data/pull/28026))
+- `browsers.bun.releases.1.2.23` ([#28047](https://github.com/mdn/browser-compat-data/pull/28047))
+- `browsers.chrome_android.releases.144` ([#28047](https://github.com/mdn/browser-compat-data/pull/28047))
+- `browsers.chrome.releases.144` ([#28047](https://github.com/mdn/browser-compat-data/pull/28047))
+- `browsers.deno.releases.2.4.0` ([#27984](https://github.com/mdn/browser-compat-data/pull/27984))
+- `browsers.deno.releases.2.5.0` ([#27984](https://github.com/mdn/browser-compat-data/pull/27984))
+- `browsers.webview_android.releases.144` ([#28047](https://github.com/mdn/browser-compat-data/pull/28047))
+- `css.properties.container-type.weak_containment` ([#28030](https://github.com/mdn/browser-compat-data/pull/28030))
+- `webextensions.api.sidePanel` ([#27905](https://github.com/mdn/browser-compat-data/pull/27905))
+- `webextensions.api.sidePanel.getLayout` ([#27905](https://github.com/mdn/browser-compat-data/pull/27905))
+- `webextensions.api.sidePanel.getOptions` ([#27905](https://github.com/mdn/browser-compat-data/pull/27905))
+- `webextensions.api.sidePanel.getPanelBehavior` ([#27905](https://github.com/mdn/browser-compat-data/pull/27905))
+- `webextensions.api.sidePanel.GetPanelOptions` ([#27905](https://github.com/mdn/browser-compat-data/pull/27905))
+- `webextensions.api.sidePanel.onOpened` ([#27905](https://github.com/mdn/browser-compat-data/pull/27905))
+- `webextensions.api.sidePanel.open` ([#27905](https://github.com/mdn/browser-compat-data/pull/27905))
+- `webextensions.api.sidePanel.OpenOptions` ([#27905](https://github.com/mdn/browser-compat-data/pull/27905))
+- `webextensions.api.sidePanel.PanelBehavior` ([#27905](https://github.com/mdn/browser-compat-data/pull/27905))
+- `webextensions.api.sidePanel.PanelLayout` ([#27905](https://github.com/mdn/browser-compat-data/pull/27905))
+- `webextensions.api.sidePanel.PanelOpenedInfo` ([#27905](https://github.com/mdn/browser-compat-data/pull/27905))
+- `webextensions.api.sidePanel.PanelOptions` ([#27905](https://github.com/mdn/browser-compat-data/pull/27905))
+- `webextensions.api.sidePanel.setOptions` ([#27905](https://github.com/mdn/browser-compat-data/pull/27905))
+- `webextensions.api.sidePanel.setPanelBehavior` ([#27905](https://github.com/mdn/browser-compat-data/pull/27905))
+- `webextensions.api.sidePanel.Side` ([#27905](https://github.com/mdn/browser-compat-data/pull/27905))
+- `webextensions.api.sidePanel.SidePanel` ([#27905](https://github.com/mdn/browser-compat-data/pull/27905))
+- `webextensions.manifest.permissions.sidePanel` ([#27905](https://github.com/mdn/browser-compat-data/pull/27905))
+- `webextensions.manifest.side_panel` ([#27905](https://github.com/mdn/browser-compat-data/pull/27905))
+- `webextensions.manifest.side_panel.default_path` ([#27905](https://github.com/mdn/browser-compat-data/pull/27905))
+
+### Statistics
+
+- 10 contributors have changed 39 files with 927 additions and 318 deletions in 25 commits ([`v7.1.8...v7.1.9`](https://github.com/mdn/browser-compat-data/compare/v7.1.8...v7.1.9))
+- 17,882 total features
+- 1,199 total contributors
+- 5,432 total stargazers
+
 ## [v7.1.8](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.8)
 
 September 26, 2025
