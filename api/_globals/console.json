@@ -1392,9 +1392,18 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "version_added": "39"
-            },
+            "firefox": [
+              {
+                "version_added": "98",
+                "impl_url": "https://bugzil.la/1387528",
+                "partial_implementation": true,
+                "notes": "Even though `console.timeStamp` is defined, it is not used in performance profile. See [bug 1387528](https://bugzil.la/1387528)."
+              },
+              {
+                "version_added": "39",
+                "version_removed": "97"
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "11"
