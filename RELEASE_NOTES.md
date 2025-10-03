@@ -1,5 +1,65 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.10](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.10)
+
+October 3, 2025
+
+### Additions
+
+- `api.CSSStyleRule.style.returns_CSSStyleProperties` ([#27975](https://github.com/mdn/browser-compat-data/pull/27975))
+- `api.Document.activeViewTransition` ([#28073](https://github.com/mdn/browser-compat-data/pull/28073))
+- `api.HTMLElement.style.returns_CSSStyleProperties` ([#27975](https://github.com/mdn/browser-compat-data/pull/27975))
+- `api.MathMLElement.style.returns_CSSStyleProperties` ([#27975](https://github.com/mdn/browser-compat-data/pull/27975))
+- `api.NavigationPrecommitController` ([#28073](https://github.com/mdn/browser-compat-data/pull/28073))
+- `api.NavigationPrecommitController.redirect` ([#28073](https://github.com/mdn/browser-compat-data/pull/28073))
+- `api.NavigationTransition.committed` ([#28073](https://github.com/mdn/browser-compat-data/pull/28073))
+- `api.SVGElement.style.returns_CSSStyleProperties` ([#27975](https://github.com/mdn/browser-compat-data/pull/27975))
+- `api.Window.getComputedStyle.returns_CSSStyleProperties` ([#27975](https://github.com/mdn/browser-compat-data/pull/27975))
+- `browsers.edge.releases.144` ([#28086](https://github.com/mdn/browser-compat-data/pull/28086))
+- `css.properties.interest-delay` ([#28073](https://github.com/mdn/browser-compat-data/pull/28073))
+- `css.properties.interest-delay-end` ([#28073](https://github.com/mdn/browser-compat-data/pull/28073))
+- `css.properties.interest-delay-end.normal` ([#28073](https://github.com/mdn/browser-compat-data/pull/28073))
+- `css.properties.interest-delay-start` ([#28073](https://github.com/mdn/browser-compat-data/pull/28073))
+- `css.properties.interest-delay-start.normal` ([#28073](https://github.com/mdn/browser-compat-data/pull/28073))
+- `css.properties.interest-delay.normal` ([#28073](https://github.com/mdn/browser-compat-data/pull/28073))
+- `css.selectors.interest-source` ([#28073](https://github.com/mdn/browser-compat-data/pull/28073))
+- `css.selectors.interest-target` ([#28073](https://github.com/mdn/browser-compat-data/pull/28073))
+- `css.selectors.target-after` ([#28073](https://github.com/mdn/browser-compat-data/pull/28073))
+- `css.selectors.target-before` ([#28073](https://github.com/mdn/browser-compat-data/pull/28073))
+- `css.types.mod.mixed_type_parameters` ([#28027](https://github.com/mdn/browser-compat-data/pull/28027))
+- `css.types.rem.mixed_type_parameters` ([#28027](https://github.com/mdn/browser-compat-data/pull/28027))
+- `css.types.round.mixed_type_parameters` ([#28027](https://github.com/mdn/browser-compat-data/pull/28027))
+- `html.elements.iframe.cross-origin-top-navigation-by-user-activation` ([#27960](https://github.com/mdn/browser-compat-data/pull/27960))
+- `webassembly.api.JSTag_static` ([#28042](https://github.com/mdn/browser-compat-data/pull/28042))
+- `webdriver.bidi.bluetooth` ([#27986](https://github.com/mdn/browser-compat-data/pull/27986))
+- `webdriver.bidi.bluetooth.disableSimulation` ([#27986](https://github.com/mdn/browser-compat-data/pull/27986))
+- `webdriver.bidi.bluetooth.handleRequestDevicePrompt` ([#27986](https://github.com/mdn/browser-compat-data/pull/27986))
+- `webdriver.bidi.bluetooth.simulateAdapter` ([#27986](https://github.com/mdn/browser-compat-data/pull/27986))
+- `webdriver.bidi.bluetooth.simulateAdvertisement` ([#27986](https://github.com/mdn/browser-compat-data/pull/27986))
+- `webdriver.bidi.bluetooth.simulateCharacteristic` ([#27986](https://github.com/mdn/browser-compat-data/pull/27986))
+- `webdriver.bidi.bluetooth.simulateCharacteristicResponse` ([#27986](https://github.com/mdn/browser-compat-data/pull/27986))
+- `webdriver.bidi.bluetooth.simulateDescriptor` ([#27986](https://github.com/mdn/browser-compat-data/pull/27986))
+- `webdriver.bidi.bluetooth.simulateDescriptorResponse` ([#27986](https://github.com/mdn/browser-compat-data/pull/27986))
+- `webdriver.bidi.bluetooth.simulateGattConnectionResponse` ([#27986](https://github.com/mdn/browser-compat-data/pull/27986))
+- `webdriver.bidi.bluetooth.simulateGattDisconnection` ([#27986](https://github.com/mdn/browser-compat-data/pull/27986))
+- `webdriver.bidi.bluetooth.simulatePreconnectedPeripheral` ([#27986](https://github.com/mdn/browser-compat-data/pull/27986))
+- `webdriver.bidi.bluetooth.simulateService` ([#27986](https://github.com/mdn/browser-compat-data/pull/27986))
+- `webdriver.bidi.browser.setDownloadBehavior` ([#27986](https://github.com/mdn/browser-compat-data/pull/27986))
+- `webdriver.bidi.browser.setDownloadBehavior.downloadBehavior_parameter` ([#27986](https://github.com/mdn/browser-compat-data/pull/27986))
+- `webdriver.bidi.browser.setDownloadBehavior.userContexts_parameter` ([#27986](https://github.com/mdn/browser-compat-data/pull/27986))
+- `webdriver.bidi.emulation.setLocaleOverride.locale_parameter.sets_navigator_language` ([#27986](https://github.com/mdn/browser-compat-data/pull/27986))
+- `webdriver.bidi.emulation.setUserAgentOverride` ([#27986](https://github.com/mdn/browser-compat-data/pull/27986))
+- `webdriver.bidi.emulation.setUserAgentOverride.contexts_parameter` ([#27986](https://github.com/mdn/browser-compat-data/pull/27986))
+- `webdriver.bidi.emulation.setUserAgentOverride.userAgent_parameter` ([#27986](https://github.com/mdn/browser-compat-data/pull/27986))
+- `webdriver.bidi.emulation.setUserAgentOverride.userContexts_parameter` ([#27986](https://github.com/mdn/browser-compat-data/pull/27986))
+
+### Statistics
+
+- 8 contributors have changed 48 files with 1,642 additions and 110 deletions in 24 commits ([`v7.1.9...v7.1.10`](https://github.com/mdn/browser-compat-data/compare/v7.1.9...v7.1.10))
+- 17,927 total features
+- 1,199 total contributors
+- 5,436 total stargazers
+
 ## [v7.1.9](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.9)
 
 September 30, 2025
