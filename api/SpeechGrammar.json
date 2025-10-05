@@ -3,6 +3,7 @@
     "SpeechGrammar": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechGrammar",
+        "spec_url": "https://webaudio.github.io/web-speech-api/#speechreco-speechgrammar",
         "tags": [
           "web-features:speech-recognition-grammar"
         ],
@@ -13,17 +14,29 @@
           },
           "chrome_android": "mirror",
           "edge": "mirror",
-          "firefox": {
-            "version_added": "44",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "media.webspeech.recognition.enable",
-                "value_to_set": "true"
-              }
-            ],
-            "notes": "Note that currently only the speech synthesis part is available in Firefox Desktop - the speech recognition part will be available soon, once the required internal permissions are sorted out."
-          },
+          "firefox": [
+            {
+              "version_added": "142",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "media.webspeech.recognition.enable",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            {
+              "prefix": "webkit",
+              "version_added": "142",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "media.webspeech.recognition.enable",
+                  "value_to_set": "true"
+                }
+              ]
+            }
+          ],
           "firefox_android": "mirror",
           "oculus": "mirror",
           "opera": "mirror",
@@ -40,7 +53,7 @@
         },
         "status": {
           "experimental": false,
-          "standard_track": false,
+          "standard_track": true,
           "deprecated": true
         }
       },
@@ -55,17 +68,29 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "44",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ],
-              "notes": "Note that currently only the speech synthesis part is available in Firefox Desktop - the speech recognition part will be available soon, once the required internal permissions are sorted out."
-            },
+            "firefox": [
+              {
+                "version_added": "142",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.webspeech.recognition.enable",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "142",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.webspeech.recognition.enable",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
@@ -90,6 +115,7 @@
       "src": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechGrammar/src",
+          "spec_url": "https://webaudio.github.io/web-speech-api/#dom-speechgrammar-src",
           "tags": [
             "web-features:speech-recognition-grammar"
           ],
@@ -100,15 +126,14 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "44",
+              "version_added": "142",
               "flags": [
                 {
                   "type": "preference",
                   "name": "media.webspeech.recognition.enable",
                   "value_to_set": "true"
                 }
-              ],
-              "notes": "Note that currently only the speech synthesis part is available in Firefox Desktop - the speech recognition part will be available soon, once the required internal permissions are sorted out."
+              ]
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -126,7 +151,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": true
           }
         }
@@ -134,6 +159,7 @@
       "weight": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechGrammar/weight",
+          "spec_url": "https://webaudio.github.io/web-speech-api/#dom-speechgrammar-weight",
           "tags": [
             "web-features:speech-recognition-grammar"
           ],
@@ -144,15 +170,14 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "44",
+              "version_added": "142",
               "flags": [
                 {
                   "type": "preference",
                   "name": "media.webspeech.recognition.enable",
                   "value_to_set": "true"
                 }
-              ],
-              "notes": "Note that currently only the speech synthesis part is available in Firefox Desktop - the speech recognition part will be available soon, once the required internal permissions are sorted out."
+              ]
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -170,7 +195,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": true
           }
         }

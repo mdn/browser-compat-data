@@ -198,7 +198,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "2"
+              "version_added": "2",
+              "version_removed": "144"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -1932,12 +1933,13 @@
       "ariaNotify": {
         "__compat": {
           "description": "`ariaNotify() method`",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaNotify",
           "support": {
             "chrome": {
               "version_added": "141",
               "partial_implementation": true,
               "notes": [
-                "Fully supported on Windows only.",
+                "Fully supported on Windows and Linux, no support on ChromeOS.",
                 "Method exposed on macOS, but notifications are not reliably spoken."
               ]
             },
@@ -3090,7 +3092,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "2"
+              "version_added": "2",
+              "version_removed": "144"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -5726,7 +5729,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "preview"
+                "version_added": "26"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -5734,7 +5737,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": false,
               "deprecated": false
             }
@@ -6117,7 +6120,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "preview"
+                "version_added": "26"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -6125,7 +6128,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": false,
               "deprecated": false
             }
@@ -7188,7 +7191,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "144"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -7203,7 +7206,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -7410,7 +7413,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "preview"
+                "version_added": "26"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -7418,7 +7421,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": false,
               "deprecated": false
             }
@@ -9402,59 +9405,21 @@
             "deprecated": false
           }
         },
-        "options_container_parameter": {
-          "__compat": {
-            "description": "`options.container` parameter",
-            "tags": [
-              "web-features:scroll-into-view"
-            ],
-            "support": {
-              "chrome": {
-                "version_added": "140"
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": "mirror",
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror",
-              "webview_ios": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
         "options_parameter": {
           "__compat": {
             "description": "`options` parameter",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-element-scrollintoview",
             "tags": [
               "web-features:scroll-into-view"
             ],
             "support": {
               "chrome": {
-                "version_added": "61",
-                "notes": "The `block` and `inline` options support the values `start`, `center`, `end`, `nearest`."
+                "version_added": "61"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "36",
-                "notes": [
-                  "No support for `inline` option.",
-                  "Before Firefox 58, `nearest` and `center` values for the `block` option was unsupported. See [bug 1389274](https://bugzil.la/1389274)."
-                ]
+                "version_added": "36"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -9472,6 +9437,120 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "block_option": {
+            "__compat": {
+              "description": "`block` option",
+              "spec_url": "https://drafts.csswg.org/cssom-view/#dom-scrollintoviewoptions-block",
+              "tags": [
+                "web-features:scroll-into-view"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "61"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": [
+                  {
+                    "version_added": "58"
+                  },
+                  {
+                    "version_added": "36",
+                    "version_removed": "58",
+                    "impl_url": "https://bugzil.la/1389274",
+                    "partial_implementation": true,
+                    "notes": "Only values `\"top\"` and `\"bottom\"`, not `\"nearest\"` and `\"center\"`."
+                  }
+                ],
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "container_option": {
+            "__compat": {
+              "description": "`container` option",
+              "spec_url": "https://drafts.csswg.org/cssom-view/#dom-scrollintoviewoptions-container",
+              "tags": [
+                "web-features:scroll-into-view"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "140"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "inline_option": {
+            "__compat": {
+              "description": "`inline` option",
+              "spec_url": "https://drafts.csswg.org/cssom-view/#dom-scrollintoviewoptions-inline",
+              "tags": [
+                "web-features:scroll-into-view"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "61"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "58"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "14"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
             }
           }
         }
