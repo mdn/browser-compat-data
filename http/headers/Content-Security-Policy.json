@@ -860,8 +860,14 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1508286"
+                "version_added": "135",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.security.trusted_types.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -996,7 +1002,6 @@
           "inline-speculation-rules": {
             "__compat": {
               "description": "`inline-speculation-rules` source expression",
-              "spec_url": "https://wicg.github.io/nav-speculation/speculation-rules.html#content-security-policy",
               "tags": [
                 "web-features:speculation-rules"
               ],
@@ -1329,8 +1334,14 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1508286"
+                "version_added": "138",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.security.trusted_types.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
