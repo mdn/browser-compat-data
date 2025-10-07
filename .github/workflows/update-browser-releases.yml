@@ -27,9 +27,7 @@ jobs:
           node-version-file: ".nvmrc"
           package-manager-cache: false
 
-      - run: npm install -D typescript
-
-      - run: npm install -D tsx
+      - run: npm ci
 
       - name: Run update-browser-releases script
         id: update
