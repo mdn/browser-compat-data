@@ -1,5 +1,34 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.11](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.11)
+
+October 7, 2025
+
+### Additions
+
+- `api.IDBIndex.getAll.object_parameter` ([#28097](https://github.com/mdn/browser-compat-data/pull/28097))
+- `api.IDBIndex.getAll.object_parameter.direction` ([#28097](https://github.com/mdn/browser-compat-data/pull/28097))
+- `api.IDBIndex.getAllKeys.object_parameter` ([#28097](https://github.com/mdn/browser-compat-data/pull/28097))
+- `api.IDBIndex.getAllKeys.object_parameter.direction` ([#28097](https://github.com/mdn/browser-compat-data/pull/28097))
+- `api.IDBObjectStore.getAll.object_parameter` ([#28097](https://github.com/mdn/browser-compat-data/pull/28097))
+- `api.IDBObjectStore.getAll.object_parameter.direction` ([#28097](https://github.com/mdn/browser-compat-data/pull/28097))
+- `api.IDBObjectStore.getAllKeys.object_parameter` ([#28097](https://github.com/mdn/browser-compat-data/pull/28097))
+- `api.IDBObjectStore.getAllKeys.object_parameter.direction` ([#28097](https://github.com/mdn/browser-compat-data/pull/28097))
+- `api.PushEvent.notification` ([#28000](https://github.com/mdn/browser-compat-data/pull/28000))
+- `api.Window.pushManager` ([#28000](https://github.com/mdn/browser-compat-data/pull/28000))
+- `browsers.samsunginternet_android.releases.29.0` ([#28120](https://github.com/mdn/browser-compat-data/pull/28120))
+- `css.properties.dynamic-range-limit.dynamic-range-limit-mix_values` ([#27983](https://github.com/mdn/browser-compat-data/pull/27983))
+- `css.types.calc.typed_division_produces_unitless_number` ([#28006](https://github.com/mdn/browser-compat-data/pull/28006))
+- `css.types.dynamic-range-limit-mix` ([#27983](https://github.com/mdn/browser-compat-data/pull/27983))
+- `css.types.sign.typed_division_produces_unitless_number` ([#28006](https://github.com/mdn/browser-compat-data/pull/28006))
+
+### Statistics
+
+- 11 contributors have changed 22 files with 783 additions and 186 deletions in 22 commits ([`v7.1.10...v7.1.11`](https://github.com/mdn/browser-compat-data/compare/v7.1.10...v7.1.11))
+- 17,941 total features
+- 1,199 total contributors
+- 5,436 total stargazers
+
 ## [v7.1.10](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.10)
 
 October 3, 2025
