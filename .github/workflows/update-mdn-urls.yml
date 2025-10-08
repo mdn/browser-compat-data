@@ -21,7 +21,8 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.GH_TOKEN }}
-          persist-credentials: false
+          # Need credentials to push changes.
+          persist-credentials: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v5
