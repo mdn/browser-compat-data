@@ -29,8 +29,8 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
-          persist-credentials: false
           token: ${{ secrets.GH_TOKEN }}
+          persist-credentials: false
 
       - name: Setup Node
         uses: actions/setup-node@v5
