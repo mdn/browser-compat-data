@@ -469,14 +469,47 @@
               "web-features:screen-capture"
             ],
             "support": {
-              "chrome": {
-                "version_added": "141",
-                "notes": "Default value = `system`"
-              },
+              "chrome": [
+                {
+                  "version_added": "143",
+                  "partial_implementation": true,
+                  "notes": [
+                    "Default value = `exclude`",
+                    "`window` value not supported"
+                  ]
+                },
+                {
+                  "version_added": "141",
+                  "version_removed": "143",
+                  "partial_implementation": true,
+                  "notes": [
+                    "Default value = `system`",
+                    "`window` value not supported"
+                  ]
+                }
+              ],
               "chrome_android": {
                 "version_added": false
               },
-              "edge": "mirror",
+              "edge": [
+                {
+                  "version_added": "143",
+                  "partial_implementation": true,
+                  "notes": [
+                    "Default value = `system`",
+                    "`window` value not supported"
+                  ]
+                },
+                {
+                  "version_added": "141",
+                  "version_removed": "143",
+                  "partial_implementation": true,
+                  "notes": [
+                    "Default value = `exclude`",
+                    "`window` value not supported"
+                  ]
+                }
+              ],
               "firefox": {
                 "version_added": false
               },
