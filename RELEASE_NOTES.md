@@ -1,5 +1,32 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.12](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.12)
+
+October 10, 2025
+
+### Additions
+
+- `api.MLContext.createTensor` ([#28133](https://github.com/mdn/browser-compat-data/pull/28133))
+- `api.MLContext.destroy` ([#28133](https://github.com/mdn/browser-compat-data/pull/28133))
+- `api.MLContext.readTensor` ([#28133](https://github.com/mdn/browser-compat-data/pull/28133))
+- `api.MLContext.writeTensor` ([#28133](https://github.com/mdn/browser-compat-data/pull/28133))
+- `api.MLGraph.destroy` ([#28133](https://github.com/mdn/browser-compat-data/pull/28133))
+- `api.MLGraphBuilder.isInfinite` ([#28133](https://github.com/mdn/browser-compat-data/pull/28133))
+- `api.MLGraphBuilder.isNaN` ([#28133](https://github.com/mdn/browser-compat-data/pull/28133))
+- `api.MLGraphBuilder.reverse` ([#28133](https://github.com/mdn/browser-compat-data/pull/28133))
+- `api.MLGraphBuilder.roundEven` ([#28133](https://github.com/mdn/browser-compat-data/pull/28133))
+- `api.MLTensor` ([#28133](https://github.com/mdn/browser-compat-data/pull/28133))
+- `api.MLTensor.destroy` ([#28133](https://github.com/mdn/browser-compat-data/pull/28133))
+- `api.URL.pathname.encodes_trailing_space_in_opaque_path` ([#28028](https://github.com/mdn/browser-compat-data/pull/28028))
+- `browsers.opera_android.releases.92` ([#28132](https://github.com/mdn/browser-compat-data/pull/28132))
+
+### Statistics
+
+- 6 contributors have changed 24 files with 2,308 additions and 3,185 deletions in 15 commits ([`v7.1.11...v7.1.12`](https://github.com/mdn/browser-compat-data/compare/v7.1.11...v7.1.12))
+- 17,953 total features
+- 1,199 total contributors
+- 5,444 total stargazers
+
 ## [v7.1.11](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.11)
 
 October 7, 2025
