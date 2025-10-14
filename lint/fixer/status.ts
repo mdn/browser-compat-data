@@ -21,8 +21,18 @@ export const fixStatusValue = (value: Identifier): Identifier => {
       compat.status.standard_track = true;
     }
 
-    if (!checkExperimental(compat)) {
+    const experimentalCheck = checkExperimental(compat);
+    if (
+      !experimentalCheck.valid &&
+      experimentalCheck.reason === 'multi-engine'
+    ) {
       compat.status.experimental = false;
+    }
+    if (
+      !experimentalCheck.valid &&
+      experimentalCheck.reason === 'single-engine-recent'
+    ) {
+      compat.status.experimental = true;
     }
 
     if (compat.status.deprecated) {
