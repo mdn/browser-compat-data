@@ -3,7 +3,7 @@
 
 import chalk from 'chalk-template';
 
-import { Linter, Logger, LinterData } from '../utils.js';
+import { Linter, Logger, LinterData, ENGINES } from '../utils.js';
 import {
   BrowserName,
   CompatStatement,
@@ -151,7 +151,7 @@ export const checkExperimental = (
     }
 
     let engineCount = 0;
-    for (const engine of ['Blink', 'Gecko', 'WebKit']) {
+    for (const engine of ENGINES) {
       if (engineSupport.has(engine)) {
         engineCount++;
       }
@@ -195,7 +195,7 @@ export const checkExperimental = (
 
     // Count engines among the major three
     let engineCount = 0;
-    for (const engine of ['Blink', 'Gecko', 'WebKit']) {
+    for (const engine of ENGINES) {
       if (engineSupport.has(engine)) {
         engineCount++;
       }
@@ -208,9 +208,7 @@ export const checkExperimental = (
 
     // If single engine, check if it's been stable for 2+ years
     if (engineCount === 1) {
-      const engine = Array.from(engineSupport).find((e) =>
-        ['Blink', 'Gecko', 'WebKit'].includes(e),
-      );
+      const engine = Array.from(engineSupport).find((e) => ENGINES.includes(e));
 
       if (engine) {
         const earliestDate = getEarliestReleaseDate(data, engine);

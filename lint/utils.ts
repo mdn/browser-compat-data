@@ -12,6 +12,8 @@ export interface LintOptions {
   only?: string[];
 }
 
+export const ENGINES = ['Blink', 'Gecko', 'WebKit'];
+
 const INVISIBLES_MAP: Readonly<Record<string, string>> = Object.freeze(
   Object.assign(Object.create(null), {
     '\0': '\\0', // ␀ (0x00)
