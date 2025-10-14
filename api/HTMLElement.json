@@ -694,10 +694,11 @@
               "flags": [
                 {
                   "type": "preference",
-                  "name": "dom.element.invokers.enabled",
+                  "name": "dom.element.commandfor.enabled",
                   "value_to_set": "true"
                 }
-              ]
+              ],
+              "impl_url": "https://bugzil.la/1983523"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -1754,50 +1755,6 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "enforces_trusted_types": {
-          "__compat": {
-            "description": "Requires `TrustedScript` instance in `HTMLScriptElement` when trusted types are enforced.",
-            "spec_url": "https://w3c.github.io/trusted-types/dist/spec/#dom-htmlscriptelement-innertext",
-            "tags": [
-              "web-features:trusted-types"
-            ],
-            "support": {
-              "chrome": {
-                "version_added": "83"
-              },
-              "chrome_android": "mirror",
-              "edge": {
-                "version_added": false
-              },
-              "firefox": {
-                "version_added": "135",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.trusted_types.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              "firefox_android": "mirror",
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": "26"
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror",
-              "webview_ios": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
         }
       },
       "inputMode": {
@@ -2420,25 +2377,45 @@
               "web-features:popover"
             ],
             "support": {
-              "chrome": {
-                "version_added": "133",
-                "partial_implementation": true,
-                "notes": "When using this option, the focus order doesn't change, so the popover does not become the next focus element. See [bug 383343310](https://crbug.com/383343310)."
-              },
+              "chrome": [
+                {
+                  "version_added": "137"
+                },
+                {
+                  "version_added": "133",
+                  "version_removed": "137",
+                  "partial_implementation": true,
+                  "notes": "When using this option, the focus order doesn't change, so the popover does not become the next focus element. See [bug 383343310](https://crbug.com/383343310)."
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "141"
-              },
+              "firefox": [
+                {
+                  "version_added": "144"
+                },
+                {
+                  "version_added": "141",
+                  "version_removed": "144",
+                  "partial_implementation": true,
+                  "notes": "When using this option, the focus order doesn't change, so the popover does not become the next focus element. See [bug 1984004](https://bugzil.la/1984004)."
+                }
+              ],
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
-              "safari": {
-                "version_added": "preview",
-                "partial_implementation": true,
-                "notes": "When using this option, the focus order doesn't change, so the popover does not become the next focus element. See [bug 286575](https://webkit.org/b/286575)."
-              },
+              "safari": [
+                {
+                  "version_added": "26"
+                },
+                {
+                  "version_added": "18.4",
+                  "version_removed": "26",
+                  "partial_implementation": true,
+                  "notes": "When using this option, the focus order doesn't change, so the popover does not become the next focus element. See [bug 286575](https://webkit.org/b/286575)."
+                }
+              ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror",
@@ -2576,6 +2553,38 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "returns_CSSStyleProperties": {
+          "__compat": {
+            "description": "Returns `CSSStyleProperties` (not `CSSStyleDeclaration`)",
+            "spec_url": "https://drafts.csswg.org/cssom/#dom-elementcssinlinestyle-style",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "145"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
@@ -2937,25 +2946,45 @@
               "web-features:popover"
             ],
             "support": {
-              "chrome": {
-                "version_added": "133",
-                "partial_implementation": true,
-                "notes": "When using this option, the focus order doesn't change, so the popover does not become the next focus element. See [bug 383343310](https://crbug.com/383343310)."
-              },
+              "chrome": [
+                {
+                  "version_added": "137"
+                },
+                {
+                  "version_added": "133",
+                  "version_removed": "137",
+                  "partial_implementation": true,
+                  "notes": "When using this option, the focus order doesn't change, so the popover does not become the next focus element. See [bug 383343310](https://crbug.com/383343310)."
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "141"
-              },
+              "firefox": [
+                {
+                  "version_added": "144"
+                },
+                {
+                  "version_added": "141",
+                  "version_removed": "144",
+                  "partial_implementation": true,
+                  "notes": "When using this option, the focus order doesn't change, so the popover does not become the next focus element. See [bug 1984004](https://bugzil.la/1984004)."
+                }
+              ],
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
-              "safari": {
-                "version_added": "preview",
-                "partial_implementation": true,
-                "notes": "When using this option, the focus order doesn't change, so the popover does not become the next focus element. See [bug 286575](https://webkit.org/b/286575)."
-              },
+              "safari": [
+                {
+                  "version_added": "26"
+                },
+                {
+                  "version_added": "18.4",
+                  "version_removed": "26",
+                  "partial_implementation": true,
+                  "notes": "When using this option, the focus order doesn't change, so the popover does not become the next focus element. See [bug 286575](https://webkit.org/b/286575)."
+                }
+              ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror",
@@ -2981,14 +3010,15 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "141"
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/1838746"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "26"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",

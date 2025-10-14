@@ -66,6 +66,10 @@ const argv = yargs(process.argv.slice(2))
     type: 'boolean',
     group: 'Device selection:',
   })
+  .option('debug', {
+    describe: 'Enable debug mode',
+    type: 'boolean',
+  })
   .help()
   .parse();
 
@@ -92,6 +96,7 @@ const updateAllDevices =
   argv['alldevices'] || !(argv['mobile'] || argv['desktop']);
 const updateMobile = argv['mobile'] || updateAllDevices;
 const updateDesktop = argv['desktop'] || updateAllDevices;
+const debug = argv['debug'] ?? false;
 
 const options = {
   chrome_desktop: {
@@ -151,7 +156,7 @@ const options = {
     edgeupdatesURL:
       'https://edgeupdates.microsoft.com/api/products?view=enterprise',
     releaseScheduleURL:
-      'https://raw.githubusercontent.com/MicrosoftDocs/Edge-Enterprise/public/edgeenterprise/microsoft-edge-release-schedule.md',
+      'https://learn.microsoft.com/en-us/deployedge/microsoft-edge-release-schedule',
   },
   firefox_desktop: {
     browserName: 'Firefox for Desktop',
@@ -231,6 +236,13 @@ const options = {
     bcdBrowserName: 'bun',
   } as const,
 };
+
+if (!debug) {
+  /** No-op. */
+  console.debug = () => {
+    /* No-op. */
+  };
+}
 
 const results = await Promise.all([
   ...(updateChrome

@@ -22,11 +22,13 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.GH_TOKEN }}
+          persist-credentials: false
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version-file: ".nvmrc"
+          package-manager-cache: false
 
       - name: "Setup git"
         run: |
