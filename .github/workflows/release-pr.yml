@@ -30,6 +30,8 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
           token: ${{ secrets.GH_TOKEN }}
+          # Need credentials to push the `release` branch.
+          persist-credentials: true
 
       - name: Setup Node
         uses: actions/setup-node@v5

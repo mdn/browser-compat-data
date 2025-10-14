@@ -1,14 +1,14 @@
 {
   "api": {
-    "MLContext": {
+    "MLTensor": {
       "__compat": {
-        "spec_url": "https://www.w3.org/TR/webnn/#api-mlcontext",
+        "spec_url": "https://www.w3.org/TR/webnn/#api-mltensor",
         "tags": [
           "web-features:webnn"
         ],
         "support": {
           "chrome": {
-            "version_added": "112",
+            "version_added": "130",
             "flags": [
               {
                 "type": "preference",
@@ -43,9 +43,9 @@
           "deprecated": false
         }
       },
-      "createConstantTensor": {
+      "constant": {
         "__compat": {
-          "spec_url": "https://www.w3.org/TR/webnn/#api-mlcontext-createconstanttensor",
+          "spec_url": "https://www.w3.org/TR/webnn/#dom-mltensor-constant",
           "tags": [
             "web-features:webnn"
           ],
@@ -87,15 +87,15 @@
           }
         }
       },
-      "createTensor": {
+      "dataType": {
         "__compat": {
-          "spec_url": "https://www.w3.org/TR/webnn/#api-mlcontext-createtensor",
+          "spec_url": "https://www.w3.org/TR/webnn/#dom-mltensor-datatype",
           "tags": [
             "web-features:webnn"
           ],
           "support": {
             "chrome": {
-              "version_added": "139",
+              "version_added": "130",
               "flags": [
                 {
                   "type": "preference",
@@ -133,13 +133,13 @@
       },
       "destroy": {
         "__compat": {
-          "spec_url": "https://www.w3.org/TR/webnn/#api-mlcontext-destroy",
+          "spec_url": "https://www.w3.org/TR/webnn/#api-mltensor-destroy",
           "tags": [
             "web-features:webnn"
           ],
           "support": {
             "chrome": {
-              "version_added": "129",
+              "version_added": "130",
               "flags": [
                 {
                   "type": "preference",
@@ -175,15 +175,15 @@
           }
         }
       },
-      "dispatch": {
+      "readable": {
         "__compat": {
-          "spec_url": "https://www.w3.org/TR/webnn/#api-mlcontext-dispatch",
+          "spec_url": "https://www.w3.org/TR/webnn/#dom-mltensor-readable",
           "tags": [
             "web-features:webnn"
           ],
           "support": {
             "chrome": {
-              "version_added": "128",
+              "version_added": "132",
               "flags": [
                 {
                   "type": "preference",
@@ -219,15 +219,15 @@
           }
         }
       },
-      "lost": {
+      "shape": {
         "__compat": {
-          "spec_url": "https://www.w3.org/TR/webnn/#context-lost",
+          "spec_url": "https://www.w3.org/TR/webnn/#dom-mltensor-datatype",
           "tags": [
             "web-features:webnn"
           ],
           "support": {
             "chrome": {
-              "version_added": "128",
+              "version_added": "130",
               "flags": [
                 {
                   "type": "preference",
@@ -263,103 +263,15 @@
           }
         }
       },
-      "opSupportLimits": {
+      "writable": {
         "__compat": {
-          "spec_url": "https://www.w3.org/TR/webnn/#api-mlcontext-opsupportlimits",
+          "spec_url": "https://www.w3.org/TR/webnn/#dom-mltensor-writable",
           "tags": [
             "web-features:webnn"
           ],
           "support": {
             "chrome": {
-              "version_added": "128",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-machine-learning-neural-network",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "chrome_android": "mirror",
-            "deno": {
-              "version_added": false
-            },
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "readTensor": {
-        "__compat": {
-          "spec_url": "https://www.w3.org/TR/webnn/#api-mlcontext-readtensor",
-          "tags": [
-            "web-features:webnn"
-          ],
-          "support": {
-            "chrome": {
-              "version_added": "139",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-machine-learning-neural-network",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "chrome_android": "mirror",
-            "deno": {
-              "version_added": false
-            },
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "writeTensor": {
-        "__compat": {
-          "spec_url": "https://www.w3.org/TR/webnn/#api-mlcontext-writetensor",
-          "tags": [
-            "web-features:webnn"
-          ],
-          "support": {
-            "chrome": {
-              "version_added": "139",
+              "version_added": "132",
               "flags": [
                 {
                   "type": "preference",
