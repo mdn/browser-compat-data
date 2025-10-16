@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   manage-release-pr:
-    if: github.repository == 'mdn/browser-compat-data' && github.actor != 'dependabot[bot]' && !startsWith(github.event.head_commit.message, 'Release v')
+    if: github.repository == 'mdn/browser-compat-data' && github.secret_source == 'Actions' && !startsWith(github.event.head_commit.message, 'Release v')
     name: Manage release PR
     runs-on: ubuntu-latest
 
