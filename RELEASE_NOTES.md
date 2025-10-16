@@ -1,5 +1,57 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.13](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.13)
+
+October 14, 2025
+
+### Removals
+
+- `html.elements.audio.autoplay` ([#28169](https://github.com/mdn/browser-compat-data/pull/28169))
+- `webextensions.manifest.action.browser_style` ([#28169](https://github.com/mdn/browser-compat-data/pull/28169))
+
+### Additions
+
+- `api.MediaDevices.getSupportedConstraints.return_object_property_aspectRatio` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_autoGainControl` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_channelCount` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_deviceId` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_echoCancellation` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_facingMode` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_frameRate` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_groupId` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_height` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_latency` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_noiseSuppression` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_resizeMode` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_sampleRate` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_sampleSize` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_width` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getUserMedia.constraints_resizeMode_parameter` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MLContext.createConstantTensor` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `api.MLContext.lost` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `api.MLGraphBuilder.gelu` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `api.MLGraphBuilder.notEqual` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `api.MLOperand.dataType` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `api.MLOperand.shape` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `api.MLTensor.constant` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `api.MLTensor.dataType` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `api.MLTensor.readable` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `api.MLTensor.shape` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `api.MLTensor.writable` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `browsers.bun.releases.1.3.0` ([#28167](https://github.com/mdn/browser-compat-data/pull/28167))
+- `webdriver.bidi.emulation.setNetworkConditions` ([#28177](https://github.com/mdn/browser-compat-data/pull/28177))
+- `webdriver.bidi.emulation.setNetworkConditions.contexts_parameter` ([#28177](https://github.com/mdn/browser-compat-data/pull/28177))
+- `webdriver.bidi.emulation.setNetworkConditions.networkConditions_parameter` ([#28177](https://github.com/mdn/browser-compat-data/pull/28177))
+- `webdriver.bidi.emulation.setNetworkConditions.networkConditions_parameter.offline` ([#28177](https://github.com/mdn/browser-compat-data/pull/28177))
+- `webdriver.bidi.emulation.setNetworkConditions.userContexts_parameter` ([#28177](https://github.com/mdn/browser-compat-data/pull/28177))
+
+### Statistics
+
+- 7 contributors have changed 63 files with 1,797 additions and 569 deletions in 18 commits ([`v7.1.12...v7.1.13`](https://github.com/mdn/browser-compat-data/compare/v7.1.12...v7.1.13))
+- 17,983 total features
+- 1,200 total contributors
+- 5,445 total stargazers
+
 ## [v7.1.12](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.12)
 
 October 10, 2025
