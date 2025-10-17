@@ -16,7 +16,33 @@ const { browsers } = bcd;
 type Notes = string | [string, string, ...string[]] | null;
 
 /**
+ * Check if a note indicates OS-specific limitations.
+ * @param notes A single notes string from a support statement
+ * @returns True if the notes indicate OS-specific limitations
  */
+export const isOSLimitation = (notes: string): boolean => {
+  const words = notes
+    .split(/\s+/)
+    .map((word) => word.toLowerCase().replace(/[,.;:!?]$/g, '')); // Remove trailing punctuation
+
+  if (words.length === 0) {
+    return false;
+  }
+
+  const os = ['chromeos', 'linux', 'macos', 'windows'];
+  const expectedWords = ['supported', 'on', 'only', 'not', 'yet', 'and'];
+
+  let hasOSKeyword = false;
+  for (const word of words) {
+    if (os.includes(word)) {
+      hasOSKeyword = true;
+    } else if (!expectedWords.includes(word)) {
+      return false;
+    }
+  }
+
+  return hasOSKeyword;
+};
 
 const matchingSafariVersions = new Map([
   ['1', '1'],
@@ -215,6 +241,30 @@ export const bumpSupport = (
 
   const newData: SimpleSupportStatement = copyStatement(sourceData);
 
+  if (
+    browsers[sourceBrowser].type === 'desktop' &&
+    browsers[destination].type === 'mobile' &&
+    sourceData.partial_implementation
+  ) {
+    const notes = Array.isArray(sourceData.notes)
+      ? sourceData.notes
+      : sourceData.notes
+        ? [sourceData.notes]
+        : [];
+    const [firstNote, secondNote, ...otherNotes] = notes.filter(
+      (notes) => !isOSLimitation(notes),
+    );
+    if (!firstNote) {
+      // Ignore OS limitation.
+      delete newData.partial_implementation;
+      delete newData.notes;
+    } else if (!secondNote) {
+      newData.notes = firstNote;
+    } else {
+      newData.notes = [firstNote, secondNote, ...otherNotes];
+    }
+  }
+
   if (!browsers[destination].accepts_flags && newData.flags) {
     // Remove flag data if the target browser doesn't accept flags
     return { version_added: false };
@@ -254,7 +304,8 @@ export const bumpSupport = (
     return { version_added: false };
   }
 
-  if (sourceData.notes) {
+  // Only process notes if they weren't already removed (e.g., for OS-specific limitations)
+  if (sourceData.notes && newData.notes !== undefined) {
     const sourceBrowserName =
       sourceBrowser === 'chrome'
         ? '(Google )?Chrome'
