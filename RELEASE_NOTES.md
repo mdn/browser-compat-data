@@ -1,5 +1,31 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.14](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.14)
+
+October 17, 2025
+
+### Additions
+
+- `api.GPUDevice.createPipelineLayout.descriptor_bindGroupLayouts_parameter_accepts_null_values` ([#28209](https://github.com/mdn/browser-compat-data/pull/28209))
+- `api.GPUSupportedFeatures.feature_primitive-index` ([#28206](https://github.com/mdn/browser-compat-data/pull/28206))
+- `api.GPUSupportedFeatures.feature_texture-formats-tier1` ([#28207](https://github.com/mdn/browser-compat-data/pull/28207))
+- `api.GPUSupportedFeatures.feature_texture-formats-tier2` ([#28207](https://github.com/mdn/browser-compat-data/pull/28207))
+- `api.MediaDevices.getDisplayMedia.windowAudio_option` ([#28130](https://github.com/mdn/browser-compat-data/pull/28130))
+- `api.MediaStreamTrack.applyConstraints.echoCancellation_constraint.all` ([#28090](https://github.com/mdn/browser-compat-data/pull/28090))
+- `api.MediaStreamTrack.applyConstraints.echoCancellation_constraint.remote-only` ([#28090](https://github.com/mdn/browser-compat-data/pull/28090))
+- `api.MediaStreamTrack.applyConstraints.restrictOwnAudio_constraint` ([#28122](https://github.com/mdn/browser-compat-data/pull/28122))
+- `api.NavigateEvent.intercept.precommitHandler_option` ([#28173](https://github.com/mdn/browser-compat-data/pull/28173))
+- `browsers.firefox_android.releases.147` ([#28193](https://github.com/mdn/browser-compat-data/pull/28193))
+- `browsers.firefox.releases.147` ([#28193](https://github.com/mdn/browser-compat-data/pull/28193))
+- `webdriver.bidi.permission.setPermission.embeddedOrigin_parameter` ([#28194](https://github.com/mdn/browser-compat-data/pull/28194))
+
+### Statistics
+
+- 9 contributors have changed 81 files with 1,134 additions and 628 deletions in 28 commits ([`v7.1.13...v7.1.14`](https://github.com/mdn/browser-compat-data/compare/v7.1.13...v7.1.14))
+- 17,993 total features
+- 1,202 total contributors
+- 5,452 total stargazers
+
 ## [v7.1.13](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.13)
 
 October 14, 2025
