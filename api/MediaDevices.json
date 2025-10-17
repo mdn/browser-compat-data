@@ -469,47 +469,26 @@
               "web-features:screen-capture"
             ],
             "support": {
-              "chrome": [
-                {
-                  "version_added": "142",
-                  "partial_implementation": true,
-                  "notes": [
-                    "Default value = `exclude`",
-                    "`window` value not supported"
-                  ]
-                },
-                {
-                  "version_added": "141",
-                  "version_removed": "142",
-                  "partial_implementation": true,
-                  "notes": [
-                    "Default value = `system`",
-                    "`window` value not supported"
-                  ]
-                }
-              ],
+              "chrome": {
+                "version_added": "141",
+                "partial_implementation": true,
+                "notes": [
+                  "Defaults to `\"exclude\"`. Before Chrome 142 it defaulted to `\"system\"`.",
+                  "Only supports values `\"exclude\"` and `\"system\"`, not `\"window\"`."
+                ]
+              },
               "chrome_android": {
                 "version_added": false
               },
-              "edge": [
-                {
-                  "version_added": "143",
-                  "partial_implementation": true,
-                  "notes": [
-                    "Default value = `system`",
-                    "`window` value not supported"
-                  ]
-                },
-                {
-                  "version_added": "141",
-                  "version_removed": "143",
-                  "partial_implementation": true,
-                  "notes": [
-                    "Default value = `exclude`",
-                    "`window` value not supported"
-                  ]
-                }
-              ],
+              "edge": {
+                "version_added": "141",
+                "version_removed": "143",
+                "partial_implementation": true,
+                "notes": [
+                  "Defaults to `\"system\"`. Before Chrome 143 it defaulted to `\"exclude\"`.",
+                  "Only supports values `\"exclude\"` and `\"system\"`, not `\"window\"`."
+                ]
+              },
               "firefox": {
                 "version_added": false
               },
