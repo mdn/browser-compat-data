@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   manage-release-pr:
-    if: github.repository == 'mdn/browser-compat-data' && github.actor != 'dependabot[bot]' && !startsWith(github.event.head_commit.message, 'Release v')
+    if: github.repository == 'mdn/browser-compat-data' && github.secret_source == 'Actions' && !startsWith(github.event.head_commit.message, 'Release v')
     name: Manage release PR
     runs-on: ubuntu-latest
 
@@ -30,9 +30,11 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
           token: ${{ secrets.GH_TOKEN }}
+          # Need credentials to push the `release` branch.
+          persist-credentials: true
 
       - name: Setup Node
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version-file: ".nvmrc"
           package-manager-cache: false
