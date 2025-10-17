@@ -10,7 +10,8 @@
         "support": {
           "chrome": {
             "version_added": "113",
-            "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+            "partial_implementation": true,
+            "notes": "Supported on ChromeOS, macOS, and Windows only."
           },
           "chrome_android": {
             "version_added": "121"
@@ -34,7 +35,7 @@
           "firefox": {
             "version_added": "141",
             "partial_implementation": true,
-            "notes": "Currently supported on Windows only."
+            "notes": "Supported on Windows only, in all contexts except for service workers."
           },
           "firefox_android": {
             "version_added": false
@@ -64,7 +65,9 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "113"
+              "version_added": "113",
+              "partial_implementation": true,
+              "notes": "Supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
               "version_added": "121"
@@ -88,7 +91,7 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only."
+              "notes": "Supported on Windows only, in all contexts except for service workers."
             },
             "firefox_android": {
               "version_added": false
@@ -120,7 +123,9 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "113"
+              "version_added": "113",
+              "partial_implementation": true,
+              "notes": "Supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
               "version_added": "121"
@@ -160,7 +165,9 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "131"
+              "version_added": "131",
+              "partial_implementation": true,
+              "notes": "Supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": "mirror",
             "deno": {
@@ -189,6 +196,53 @@
           }
         }
       },
+      "feature_core-features-and-limits": {
+        "__compat": {
+          "description": "`core-features-and-limits` feature",
+          "spec_url": "https://gpuweb.github.io/gpuweb/#core-features-and-limits",
+          "tags": [
+            "web-features:webgpu"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "139",
+              "partial_implementation": true,
+              "notes": [
+                "Supported on ChromeOS, macOS, and Windows only.",
+                "Available on all adapters and enabled automatically on all devices even if not requested."
+              ]
+            },
+            "chrome_android": "mirror",
+            "deno": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "141",
+              "partial_implementation": true,
+              "notes": "Supported on Windows only, in all contexts except for service workers."
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "feature_depth-clip-control": {
         "__compat": {
           "description": "`depth-clip-control` feature",
@@ -198,7 +252,9 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "113"
+              "version_added": "113",
+              "partial_implementation": true,
+              "notes": "Supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
               "version_added": "121"
@@ -238,7 +294,9 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "113"
+              "version_added": "113",
+              "partial_implementation": true,
+              "notes": "Supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
               "version_added": "121"
@@ -278,7 +336,9 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "130"
+              "version_added": "130",
+              "partial_implementation": true,
+              "notes": "Supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": "mirror",
             "deno": {
@@ -316,7 +376,9 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "132"
+              "version_added": "132",
+              "partial_implementation": true,
+              "notes": "Supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": "mirror",
             "deno": {
@@ -354,7 +416,9 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "119"
+              "version_added": "119",
+              "partial_implementation": true,
+              "notes": "Supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
               "version_added": "121"
@@ -583,6 +647,48 @@
           }
         }
       },
+      "feature_texture-compression-astc-sliced-3d": {
+        "__compat": {
+          "description": "`texture-compression-astc-sliced-3d` feature",
+          "spec_url": "https://gpuweb.github.io/gpuweb/#texture-compression-astc-sliced-3d",
+          "tags": [
+            "web-features:webgpu"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "139"
+            },
+            "chrome_android": "mirror",
+            "deno": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "141",
+              "partial_implementation": true,
+              "notes": "Supported on Windows only, in all contexts except for service workers."
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "26"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "feature_texture-compression-bc": {
         "__compat": {
           "description": "`texture-compression-bc` feature",
@@ -618,6 +724,48 @@
           },
           "status": {
             "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "feature_texture-compression-bc-sliced-3d": {
+        "__compat": {
+          "description": "`texture-compression-bc-sliced-3d` feature",
+          "spec_url": "https://gpuweb.github.io/gpuweb/#texture-compression-bc-sliced-3d",
+          "tags": [
+            "web-features:webgpu"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "139"
+            },
+            "chrome_android": "mirror",
+            "deno": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "141",
+              "partial_implementation": true,
+              "notes": "Supported on Windows only, in all contexts except for service workers."
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "26"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -733,7 +881,7 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only."
+              "notes": "Supported on Windows only, in all contexts except for service workers."
             },
             "firefox_android": {
               "version_added": false
@@ -788,7 +936,7 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only."
+              "notes": "Supported on Windows only, in all contexts except for service workers."
             },
             "firefox_android": {
               "version_added": false
@@ -843,7 +991,7 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only."
+              "notes": "Supported on Windows only, in all contexts except for service workers."
             },
             "firefox_android": {
               "version_added": false
@@ -898,7 +1046,7 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only."
+              "notes": "Supported on Windows only, in all contexts except for service workers."
             },
             "firefox_android": {
               "version_added": false
@@ -953,7 +1101,7 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only."
+              "notes": "Supported on Windows only, in all contexts except for service workers."
             },
             "firefox_android": {
               "version_added": false
@@ -1009,7 +1157,7 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only."
+              "notes": "Supported on Windows only, in all contexts except for service workers."
             },
             "firefox_android": {
               "version_added": false

@@ -44,8 +44,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1971763"
+                "version_added": "143"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -60,7 +59,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -76,7 +75,9 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "143",
+                  "partial_implementation": true,
+                  "notes": "Only implementing \"blob\" as other types are not specified yet"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -91,7 +92,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -108,7 +109,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "143"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -123,7 +124,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -140,7 +141,71 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
+                  "version_added": "143"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
                   "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            },
+            "response": {
+              "__compat": {
+                "description": "`\"response\"`",
+                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-value-networkdatatype-response",
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "143"
+                  },
+                  "firefox_android": "mirror",
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
+                },
+                "status": {
+                  "experimental": true,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            }
+          },
+          "maxEncodedDataSize_parameter": {
+            "__compat": {
+              "description": "`maxEncodedDataSize` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-networkadddatacollectorparameters-maxencodeddatasize",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "143"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -172,7 +237,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "143"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -187,7 +252,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1463,8 +1528,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1971767"
+                "version_added": "143"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -1479,7 +1543,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -1495,7 +1559,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "143"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1510,7 +1574,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1527,7 +1591,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "143"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1542,9 +1606,41 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
+              }
+            },
+            "response": {
+              "__compat": {
+                "description": "`\"response\"`",
+                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-value-networkdatatype-response",
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "143"
+                  },
+                  "firefox_android": "mirror",
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
+                },
+                "status": {
+                  "experimental": true,
+                  "standard_track": true,
+                  "deprecated": false
+                }
               }
             }
           },
@@ -1559,7 +1655,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "143"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1574,7 +1670,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1950,8 +2046,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1971768"
+                "version_added": "143"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -1966,7 +2061,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -1982,7 +2077,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "143"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1997,7 +2092,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -2014,7 +2109,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "143"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -2029,9 +2124,41 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
+              }
+            },
+            "response": {
+              "__compat": {
+                "description": "`\"response\"`",
+                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-value-networkdatatype-response",
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "143"
+                  },
+                  "firefox_android": "mirror",
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
+                },
+                "status": {
+                  "experimental": true,
+                  "standard_track": true,
+                  "deprecated": false
+                }
               }
             }
           },
@@ -2046,7 +2173,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "143"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -2061,7 +2188,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -2078,7 +2205,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "143"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -2093,7 +2220,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -2352,8 +2479,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1971769"
+                "version_added": "143"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -2368,7 +2494,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -3159,6 +3285,131 @@
               "status": {
                 "experimental": false,
                 "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        },
+        "setExtraHeaders": {
+          "__compat": {
+            "description": "`network.setExtraHeaders` command",
+            "support": {
+              "chrome": {
+                "version_added": "141"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1979730"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": false,
+              "deprecated": false
+            }
+          },
+          "contexts_parameter": {
+            "__compat": {
+              "description": "`contexts` parameter",
+              "support": {
+                "chrome": {
+                  "version_added": "141"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": false,
+                "deprecated": false
+              }
+            }
+          },
+          "headers_parameter": {
+            "__compat": {
+              "description": "`headers` parameter",
+              "support": {
+                "chrome": {
+                  "version_added": "141"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": false,
+                "deprecated": false
+              }
+            }
+          },
+          "userContexts_parameter": {
+            "__compat": {
+              "description": "`userContexts` parameter",
+              "support": {
+                "chrome": {
+                  "version_added": "141"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": false,
                 "deprecated": false
               }
             }

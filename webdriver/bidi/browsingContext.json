@@ -364,11 +364,17 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "99",
-                "partial_implementation": true,
-                "notes": "Subscribing to this event does not emit events for all already open browsing contexts."
-              },
+              "firefox": [
+                {
+                  "version_added": "143"
+                },
+                {
+                  "version_added": "99",
+                  "version_removed": "143",
+                  "partial_implementation": true,
+                  "notes": "Before Firefox 143, subscribing to this event does not emit events for all already open browsing contexts."
+                }
+              ],
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
@@ -634,9 +640,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "121",
-                "partial_implementation": true,
-                "notes": "Firefox emits multiple events when removing a browsingContext with iframes. According to the spec only a single event should be emitted, containing the whole tree of removed contexts."
+                "version_added": "121"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -668,7 +672,9 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "121"
+                  "version_added": "121",
+                  "partial_implementation": true,
+                  "notes": "Firefox emits multiple events when removing a browsingContext with iframes. According to the spec only a single event should be emitted, containing the whole tree of removed contexts."
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1225,8 +1231,8 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1970292"
+                "version_added": "145",
+                "notes": "Not yet available on Android."
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -1241,7 +1247,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -1257,7 +1263,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "145"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1272,7 +1278,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1289,7 +1295,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "145"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1304,7 +1310,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1321,7 +1327,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "145"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1336,7 +1342,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1353,7 +1359,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "145"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1368,7 +1374,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1385,7 +1391,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "145"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1400,7 +1406,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1417,7 +1423,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "145"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1432,7 +1438,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1450,8 +1456,9 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1919018"
+                "version_added": "144",
+                "partial_implementation": true,
+                "notes": "Not yet available on Android."
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -1467,7 +1474,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -1483,7 +1490,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "144"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1498,7 +1505,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1515,7 +1522,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "144"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1530,7 +1537,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1547,7 +1554,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "144"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1562,7 +1569,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1579,7 +1586,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "144"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1594,7 +1601,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1611,7 +1618,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "144"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1626,7 +1633,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -3949,6 +3956,136 @@
                 "standard_track": true,
                 "deprecated": false
               }
+            },
+            "alert": {
+              "__compat": {
+                "description": "`\"alert\"`",
+                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-type-browsingcontextuserprompttype-alert",
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "119"
+                  },
+                  "firefox_android": "mirror",
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
+                },
+                "status": {
+                  "experimental": true,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "beforeunload": {
+              "__compat": {
+                "description": "`\"beforeunload\"`",
+                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-type-browsingcontextuserprompttype-beforeunload",
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "129",
+                    "partial_implementation": true,
+                    "notes": "Not yet available on Android."
+                  },
+                  "firefox_android": "mirror",
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
+                },
+                "status": {
+                  "experimental": true,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "confirm": {
+              "__compat": {
+                "description": "`\"confirm\"`",
+                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-type-browsingcontextuserprompttype-confirm",
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "119"
+                  },
+                  "firefox_android": "mirror",
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
+                },
+                "status": {
+                  "experimental": true,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "prompt": {
+              "__compat": {
+                "description": "`\"prompt\"`",
+                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-type-browsingcontextuserprompttype-prompt",
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "119"
+                  },
+                  "firefox_android": "mirror",
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
+                },
+                "status": {
+                  "experimental": true,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
             }
           },
           "userText_parameter": {
@@ -4173,6 +4310,136 @@
                 "experimental": false,
                 "standard_track": true,
                 "deprecated": false
+              }
+            },
+            "alert": {
+              "__compat": {
+                "description": "`\"alert\"`",
+                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-type-browsingcontextuserprompttype-alert",
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "118"
+                  },
+                  "firefox_android": "mirror",
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
+                },
+                "status": {
+                  "experimental": true,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "beforeunload": {
+              "__compat": {
+                "description": "`\"beforeunload\"`",
+                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-type-browsingcontextuserprompttype-beforeunload",
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "129",
+                    "partial_implementation": true,
+                    "notes": "Not yet available on Android."
+                  },
+                  "firefox_android": "mirror",
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
+                },
+                "status": {
+                  "experimental": true,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "confirm": {
+              "__compat": {
+                "description": "`\"confirm\"`",
+                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-type-browsingcontextuserprompttype-confirm",
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "118"
+                  },
+                  "firefox_android": "mirror",
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
+                },
+                "status": {
+                  "experimental": true,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "prompt": {
+              "__compat": {
+                "description": "`\"prompt\"`",
+                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-type-browsingcontextuserprompttype-prompt",
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "118"
+                  },
+                  "firefox_android": "mirror",
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
+                },
+                "status": {
+                  "experimental": true,
+                  "standard_track": true,
+                  "deprecated": false
+                }
               }
             }
           }

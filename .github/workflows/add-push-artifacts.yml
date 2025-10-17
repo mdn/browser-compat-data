@@ -11,13 +11,15 @@ jobs:
     name: Enumerate and diff features
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0 # get the full repository checkout, not just the inciting commit
-      - uses: actions/setup-node@v4
+          persist-credentials: false
+      - uses: actions/setup-node@v6
         with:
           node-version-file: ".nvmrc"
           cache: npm
+          package-manager-cache: true
       - run: npm ci
       - run: npx tsx ./scripts/enumerate-features.ts features.json
       - run: npx tsx ./scripts/diff-features.ts --no-github --format=json > features.diff.json

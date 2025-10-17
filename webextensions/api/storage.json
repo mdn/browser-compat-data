@@ -153,8 +153,9 @@
                 "firefox": {
                   "version_added": "78",
                   "notes": [
-                    "Supported by the `sync` and, from Firefox 131, `session` storage areas.",
-                    "Not implemented in `local`, see [bug 1385832](https://bugzil.la/1385832)"
+                    "Supported by the `sync` storage area from Firefox 78.",
+                    "Supported by the `session` storage area from Firefox 131.",
+                    "Supported by the `local` and `managed` storage areas from Firefox 144."
                   ]
                 },
                 "firefox_android": {
@@ -169,6 +170,26 @@
                 "safari_ios": {
                   "version_added": "15"
                 }
+              }
+            }
+          },
+          "getKeys": {
+            "__compat": {
+              "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/getKeys",
+              "support": {
+                "chrome": {
+                  "version_added": "130"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "143"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "18.4"
+                },
+                "safari_ios": "mirror"
               }
             }
           },
@@ -441,8 +462,7 @@
                   "version_added": "14"
                 },
                 "firefox": {
-                  "version_added": false,
-                  "impl_url": "https://bugzil.la/1385832"
+                  "version_added": "144"
                 },
                 "firefox_android": {
                   "version_added": false
@@ -454,6 +474,25 @@
                 "safari_ios": {
                   "version_added": "15"
                 }
+              }
+            }
+          },
+          "getKeys": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "130"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "143"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "18.4"
+                },
+                "safari_ios": "mirror"
               }
             }
           },
@@ -643,9 +682,34 @@
                 },
                 "edge": "mirror",
                 "firefox": {
+                  "version_added": "144"
+                },
+                "firefox_android": {
                   "version_added": false
                 },
-                "firefox_android": "mirror",
+                "opera": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "getKeys": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "130"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "143"
+                },
+                "firefox_android": {
+                  "version_added": false
+                },
                 "opera": {
                   "version_added": false
                 },
@@ -870,6 +934,25 @@
                 "opera": "mirror",
                 "safari": {
                   "version_added": "16.4"
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "getKeys": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "130"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "143"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "18.4"
                 },
                 "safari_ios": "mirror"
               }
@@ -1117,6 +1200,27 @@
                 "safari_ios": {
                   "version_added": "15"
                 }
+              }
+            }
+          },
+          "getKeys": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "130"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "143"
+                },
+                "firefox_android": "mirror",
+                "opera": {
+                  "version_added": false
+                },
+                "safari": {
+                  "version_added": "18.4"
+                },
+                "safari_ios": "mirror"
               }
             }
           },

@@ -10,7 +10,8 @@
         "support": {
           "chrome": {
             "version_added": "113",
-            "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+            "partial_implementation": true,
+            "notes": "Supported on ChromeOS, macOS, and Windows only."
           },
           "chrome_android": {
             "version_added": "121"
@@ -32,9 +33,9 @@
           ],
           "edge": "mirror",
           "firefox": {
-            "version_added": "preview",
+            "version_added": "141",
             "partial_implementation": true,
-            "notes": "Currently supported on Linux and Windows only."
+            "notes": "Supported on Windows only, in all contexts except for service workers."
           },
           "firefox_android": {
             "version_added": false
@@ -66,7 +67,8 @@
           "support": {
             "chrome": {
               "version_added": "113",
-              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              "partial_implementation": true,
+              "notes": "Supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
               "version_added": "121"
@@ -88,9 +90,9 @@
             ],
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview",
+              "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Linux and Windows only."
+              "notes": "Supported on Windows only, in all contexts except for service workers."
             },
             "firefox_android": {
               "version_added": false
@@ -123,16 +125,21 @@
           "support": {
             "chrome": {
               "version_added": "127",
-              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              "partial_implementation": true,
+              "notes": "Supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
               "version_added": "127"
             },
             "edge": "mirror",
             "firefox": {
+              "version_added": "141",
+              "partial_implementation": true,
+              "notes": "Supported on Windows only, in all contexts except for service workers."
+            },
+            "firefox_android": {
               "version_added": false
             },
-            "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -160,7 +167,9 @@
           "support": {
             "chrome": {
               "version_added": "113",
-              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              "version_removed": "140",
+              "partial_implementation": true,
+              "notes": "Supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
               "version_added": "121"
@@ -170,9 +179,9 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview",
+              "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Linux and Windows only."
+              "notes": "Supported on Windows only, in all contexts except for service workers."
             },
             "firefox_android": {
               "version_added": false
@@ -205,7 +214,8 @@
           "support": {
             "chrome": {
               "version_added": "113",
-              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              "partial_implementation": true,
+              "notes": "Supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
               "version_added": "121"
@@ -227,9 +237,9 @@
             ],
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview",
+              "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Linux and Windows only."
+              "notes": "Supported on Windows only, in all contexts except for service workers."
             },
             "firefox_android": {
               "version_added": false
@@ -280,9 +290,9 @@
             ],
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview",
+              "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Linux and Windows only."
+              "notes": "Supported on Windows only, in all contexts except for service workers."
             },
             "firefox_android": {
               "version_added": false
@@ -315,16 +325,32 @@
           "support": {
             "chrome": {
               "version_added": "113",
-              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              "partial_implementation": true,
+              "notes": "Supported on ChromeOS, macOS, and Windows only."
             },
             "chrome_android": {
               "version_added": "121"
             },
+            "deno": [
+              {
+                "version_added": "1.39",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-webgpu"
+                  }
+                ]
+              },
+              {
+                "version_added": "1.8",
+                "version_removed": "1.32"
+              }
+            ],
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview",
+              "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Linux and Windows only."
+              "notes": "Supported on Windows only, in all contexts except for service workers."
             },
             "firefox_android": {
               "version_added": false
@@ -354,7 +380,9 @@
             ],
             "support": {
               "chrome": {
-                "version_added": "116"
+                "version_added": "116",
+                "partial_implementation": true,
+                "notes": "Supported on ChromeOS, macOS, and Windows only."
               },
               "chrome_android": {
                 "version_added": "121"
@@ -406,7 +434,8 @@
             "support": {
               "chrome": {
                 "version_added": "133",
-                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+                "partial_implementation": true,
+                "notes": "Supported on ChromeOS, macOS, and Windows only."
               },
               "chrome_android": {
                 "version_added": "133"

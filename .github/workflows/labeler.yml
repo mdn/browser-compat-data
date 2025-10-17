@@ -11,13 +11,13 @@ jobs:
   label-py-path:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/labeler@v5
+      - uses: actions/labeler@v6
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           sync-labels: true
 
   label-by-size:
-    if: github.actor != 'dependabot[bot]' && !startsWith(github.event.pull_request.title, 'Release v')
+    if: github.secret_source == 'Actions' && !startsWith(github.event.pull_request.title, 'Release v')
     needs: label-py-path
     runs-on: ubuntu-latest
     steps:

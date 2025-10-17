@@ -292,14 +292,27 @@
       "private_network_access": {
         "__compat": {
           "description": "User permission in private network allows mixed content checks to be skipped.",
-          "spec_url": "https://wicg.github.io/private-network-access/#intro",
+          "spec_url": "https://wicg.github.io/local-network-access/#intro",
           "tags": [
             "web-features:private-network-access"
           ],
           "support": {
-            "chrome": {
-              "version_added": "124"
-            },
+            "chrome": [
+              {
+                "version_added": "138",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#local-network-access-check",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              {
+                "version_added": "124",
+                "version_removed": "138"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {

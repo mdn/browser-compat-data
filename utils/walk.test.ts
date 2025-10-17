@@ -29,7 +29,7 @@ describe('walk()', () => {
 
   it('should walk a single tree', () => {
     const results = Array.from(walk('api.Notification'));
-    assert.equal(results.length, 28);
+    assert.equal(results.length, 29);
     assert.equal(results[0].path, 'api.Notification');
     assert.equal(results[1].path, 'api.Notification.Notification');
   });
@@ -38,7 +38,7 @@ describe('walk()', () => {
     const results = Array.from(
       walk(['api.Notification', 'css.properties.color']),
     );
-    assert.equal(results.length, 29);
+    assert.equal(results.length, 30);
     assert.equal(results[0].path, 'api.Notification');
     assert.equal(results[results.length - 1].path, 'css.properties.color');
   });
