@@ -348,7 +348,10 @@
             "chrome": {
               "version_added": "113",
               "partial_implementation": true,
-              "notes": "Supported on ChromeOS, macOS, and Windows only."
+              "notes": [
+                "Supported on ChromeOS, macOS, and Windows only.",
+                "Before version 138, this method does not throw a `RangeError` exception when `mappedAtCreation` is true but `size` is not a multiple of 4; it generates a validation error instead."
+              ]
             },
             "chrome_android": {
               "version_added": "121"
