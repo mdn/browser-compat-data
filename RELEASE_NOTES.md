@@ -1,5 +1,28 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.15](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.15)
+
+October 22, 2025
+
+### Removals
+
+- `api.GPUDevice.createBindGroup.descriptor_entries_option_accepts_GPUTextureView_resource` ([#28212](https://github.com/mdn/browser-compat-data/pull/28212))
+
+### Additions
+
+- `api.GPUDevice.createBindGroup.descriptor_entries_resource_parameter_accepts_GPUBuffer` ([#28212](https://github.com/mdn/browser-compat-data/pull/28212))
+- `api.GPUDevice.createBindGroup.descriptor_entries_resource_parameter_accepts_GPUTextureView` ([#28212](https://github.com/mdn/browser-compat-data/pull/28212))
+- `webdriver.bidi.network.getData.cached_responses` ([#28257](https://github.com/mdn/browser-compat-data/pull/28257))
+- `webdriver.bidi.network.getData.data_url` ([#28257](https://github.com/mdn/browser-compat-data/pull/28257))
+- `webdriver.bidi.network.getData.dataType_parameter.request` ([#28257](https://github.com/mdn/browser-compat-data/pull/28257))
+
+### Statistics
+
+- 4 contributors have changed 12 files with 316 additions and 182 deletions in 14 commits ([`v7.1.14...v7.1.15`](https://github.com/mdn/browser-compat-data/compare/v7.1.14...v7.1.15))
+- 17,997 total features
+- 1,202 total contributors
+- 5,459 total stargazers
+
 ## [v7.1.14](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.14)
 
 October 17, 2025
