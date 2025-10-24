@@ -1,5 +1,39 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.16](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.16)
+
+October 24, 2025
+
+### Removals
+
+- `css.properties.position-area.span-x-self-end` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.span-x-self-start` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.span-y-self-end` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.span-y-self-start` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.x-self-end` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.x-self-start` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.y-self-end` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.y-self-start` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+
+### Additions
+
+- `browsers.bun.releases.1.3.1` ([#28268](https://github.com/mdn/browser-compat-data/pull/28268))
+- `css.properties.position-area.self-x-end` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.self-x-start` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.self-y-end` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.self-y-start` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.span-self-x-end` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.span-self-x-start` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.span-self-y-end` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.span-self-y-start` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+
+### Statistics
+
+- 7 contributors have changed 70 files with 553 additions and 992 deletions in 13 commits ([`v7.1.15...v7.1.16`](https://github.com/mdn/browser-compat-data/compare/v7.1.15...v7.1.16))
+- 17,997 total features
+- 1,202 total contributors
+- 5,463 total stargazers
+
 ## [v7.1.15](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.15)
 
 October 22, 2025
