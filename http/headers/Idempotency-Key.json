@@ -10,7 +10,15 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "145",
+              "version_added": "135",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "network.http.idempotencyKey.enabled",
+                  "value_to_set": "true"
+                }
+              ],
+              "impl_url": "https://bugzil.la/1830022",
               "notes": "Automatically adds a unique 64-bit key for POST and PATCH when needed, if not set in JavaScript."
             },
             "firefox_android": "mirror",
