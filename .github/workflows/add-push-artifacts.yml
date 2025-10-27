@@ -23,11 +23,11 @@ jobs:
       - run: npm ci
       - run: npx tsx ./scripts/enumerate-features.ts features.json
       - run: npx tsx ./scripts/diff-features.ts --no-github --format=json > features.diff.json
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: enumerate-features
           path: features.json
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: diff-features
           path: features.diff.json
