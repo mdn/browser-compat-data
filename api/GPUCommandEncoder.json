@@ -214,21 +214,20 @@
             "deprecated": false
           }
         },
-        "depthSlice_option": {
+        "accepts_GPUTexture_resources": {
           "__compat": {
-            "description": "color attachment `depthSlice` option",
-            "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gpurenderpasscolorattachment-depthslice",
+            "description": "Accepts `GPUTexture` resources instead of `GPUTextureView` (provided default view is desired).",
             "tags": [
               "web-features:webgpu"
             ],
             "support": {
               "chrome": {
-                "version_added": "125",
+                "version_added": "140",
                 "partial_implementation": true,
                 "notes": "Supported on ChromeOS, macOS, and Windows only."
               },
               "chrome_android": {
-                "version_added": "125"
+                "version_added": "140"
               },
               "deno": {
                 "version_added": false
@@ -256,20 +255,21 @@
             }
           }
         },
-        "accepts_GPUTexture_resources": {
+        "depthSlice_option": {
           "__compat": {
-            "description": "Accepts `GPUTexture` resources instead of `GPUTextureView` (provided default view is desired).",
+            "description": "color attachment `depthSlice` option",
+            "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gpurenderpasscolorattachment-depthslice",
             "tags": [
               "web-features:webgpu"
             ],
             "support": {
               "chrome": {
-                "version_added": "140",
+                "version_added": "125",
                 "partial_implementation": true,
                 "notes": "Supported on ChromeOS, macOS, and Windows only."
               },
               "chrome_android": {
-                "version_added": "140"
+                "version_added": "125"
               },
               "deno": {
                 "version_added": false

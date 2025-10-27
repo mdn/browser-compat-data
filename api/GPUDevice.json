@@ -155,20 +155,20 @@
             "deprecated": false
           }
         },
-        "descriptor_entries_resource_parameter_accepts_GPUTexture_resource": {
+        "descriptor_entries_resource_parameter_accepts_GPUBuffer": {
           "__compat": {
-            "description": "`descriptor.entries.resource` parameter accepts `GPUTexture` in place of `GPUTextureView` (provided default view is desired).",
+            "description": "`descriptor.entries.resource` parameter accepts `GPUBuffer` in place of `GPUBufferBinding`.",
             "tags": [
               "web-features:webgpu"
             ],
             "support": {
               "chrome": {
-                "version_added": "140",
+                "version_added": "138",
                 "partial_implementation": true,
                 "notes": "Supported on ChromeOS, macOS, and Windows only."
               },
               "chrome_android": {
-                "version_added": "140"
+                "version_added": "138"
               },
               "deno": {
                 "version_added": false
@@ -196,20 +196,20 @@
             }
           }
         },
-        "descriptor_entries_resource_parameter_accepts_GPUBuffer": {
+        "descriptor_entries_resource_parameter_accepts_GPUTexture_resource": {
           "__compat": {
-            "description": "`descriptor.entries.resource` parameter accepts `GPUBuffer` in place of `GPUBufferBinding`.",
+            "description": "`descriptor.entries.resource` parameter accepts `GPUTexture` in place of `GPUTextureView` (provided default view is desired).",
             "tags": [
               "web-features:webgpu"
             ],
             "support": {
               "chrome": {
-                "version_added": "138",
+                "version_added": "140",
                 "partial_implementation": true,
                 "notes": "Supported on ChromeOS, macOS, and Windows only."
               },
               "chrome_android": {
-                "version_added": "138"
+                "version_added": "140"
               },
               "deno": {
                 "version_added": false
