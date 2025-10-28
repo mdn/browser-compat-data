@@ -15,33 +15,37 @@ const { browsers } = bcd;
 
 type Notes = string | [string, string, ...string[]] | null;
 
+const OS_NOTES = [
+  'Available on macOS and Windows only.',
+  'Available only on macOS.',
+  'ChromeOS only',
+  'ChromeOS and Windows',
+  'Fully supported on Windows and Linux, no support on ChromeOS.',
+  'Linux support is not enabled by default.',
+  'Not supported on macOS.',
+  'Not supported on Windows.',
+  'Only on macOS and Windows.',
+  'Only on Windows.',
+  'Only supported on ChromeOS',
+  'Only supported on macOS.',
+  'Only supported on Windows.',
+  'Only works on macOS.',
+  'Supported on ChromeOS, macOS, and Windows only.',
+  'Supported on ChromeOS and macOS only.',
+  'Supported on macOS only.',
+  'Supported on macOS Catalina 10.15.1+, Windows, and ChromeOS. Not yet supported on Linux.',
+  'Supported on Windows only, in all contexts except for service workers.',
+  'Supported only on macOS 10.12 (Sierra) and later.',
+  'This cursor is only supported on macOS and Linux.',
+].map((s) => s.toLowerCase());
+
 /**
  * Check if a note indicates OS-specific limitations.
  * @param notes A single notes string from a support statement
  * @returns True if the notes indicate OS-specific limitations
  */
 export const isOSLimitation = (notes: string): boolean => {
-  const words = notes
-    .split(/\s+/)
-    .map((word) => word.toLowerCase().replace(/[,.;:!?]$/g, '')); // Remove trailing punctuation
-
-  if (words.length === 0) {
-    return false;
-  }
-
-  const os = ['chromeos', 'linux', 'macos', 'windows'];
-  const expectedWords = ['supported', 'on', 'only', 'not', 'yet', 'and'];
-
-  let hasOSKeyword = false;
-  for (const word of words) {
-    if (os.includes(word)) {
-      hasOSKeyword = true;
-    } else if (!expectedWords.includes(word)) {
-      return false;
-    }
-  }
-
-  return hasOSKeyword;
+  return OS_NOTES.includes(notes.toLowerCase());
 };
 
 const matchingSafariVersions = new Map([

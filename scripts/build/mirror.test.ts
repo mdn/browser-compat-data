@@ -16,13 +16,8 @@ describe('mirror', () => {
         isOSLimitation('Supported on ChromeOS, macOS, and Windows only.'),
         true,
       );
-      assert.equal(
-        isOSLimitation('Supported on Linux and Windows only.'),
-        true,
-      );
       assert.equal(isOSLimitation('Supported on macOS only.'), true);
       assert.equal(isOSLimitation('Not supported on Windows.'), true);
-      assert.equal(isOSLimitation('Not yet supported on macOS.'), true);
     });
 
     it('returns false for non-OS-limitation notes', () => {
