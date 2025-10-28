@@ -1,5 +1,132 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.16](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.16)
+
+October 24, 2025
+
+### Renamings
+
+- `css.properties.position-area.span-x-self-end` to `css.properties.position-area.span-self-x-end` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.span-x-self-start` to `css.properties.position-area.span-self-x-start` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.span-y-self-end` to `css.properties.position-area.span-self-y-end` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.span-y-self-start` to `css.properties.position-area.span-self-y-start` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.x-self-end` to `css.properties.position-area.self-x-end` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.x-self-start` to `css.properties.position-area.self-x-start` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.y-self-end` to `css.properties.position-area.self-y-end` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.y-self-start` to `css.properties.position-area.self-y-start` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+
+### Additions
+
+- `browsers.bun.releases.1.3.1` ([#28268](https://github.com/mdn/browser-compat-data/pull/28268))
+
+### Statistics
+
+- 7 contributors have changed 70 files with 553 additions and 992 deletions in 13 commits ([`v7.1.15...v7.1.16`](https://github.com/mdn/browser-compat-data/compare/v7.1.15...v7.1.16))
+- 17,997 total features
+- 1,202 total contributors
+- 5,463 total stargazers
+
+## [v7.1.15](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.15)
+
+October 22, 2025
+
+### Removals
+
+- `api.GPUDevice.createBindGroup.descriptor_entries_option_accepts_GPUTextureView_resource` ([#28212](https://github.com/mdn/browser-compat-data/pull/28212))
+
+### Additions
+
+- `api.GPUDevice.createBindGroup.descriptor_entries_resource_parameter_accepts_GPUBuffer` ([#28212](https://github.com/mdn/browser-compat-data/pull/28212))
+- `api.GPUDevice.createBindGroup.descriptor_entries_resource_parameter_accepts_GPUTextureView` ([#28212](https://github.com/mdn/browser-compat-data/pull/28212))
+- `webdriver.bidi.network.getData.cached_responses` ([#28257](https://github.com/mdn/browser-compat-data/pull/28257))
+- `webdriver.bidi.network.getData.data_url` ([#28257](https://github.com/mdn/browser-compat-data/pull/28257))
+- `webdriver.bidi.network.getData.dataType_parameter.request` ([#28257](https://github.com/mdn/browser-compat-data/pull/28257))
+
+### Statistics
+
+- 4 contributors have changed 12 files with 316 additions and 182 deletions in 14 commits ([`v7.1.14...v7.1.15`](https://github.com/mdn/browser-compat-data/compare/v7.1.14...v7.1.15))
+- 17,997 total features
+- 1,202 total contributors
+- 5,459 total stargazers
+
+## [v7.1.14](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.14)
+
+October 17, 2025
+
+### Additions
+
+- `api.GPUDevice.createPipelineLayout.descriptor_bindGroupLayouts_parameter_accepts_null_values` ([#28209](https://github.com/mdn/browser-compat-data/pull/28209))
+- `api.GPUSupportedFeatures.feature_primitive-index` ([#28206](https://github.com/mdn/browser-compat-data/pull/28206))
+- `api.GPUSupportedFeatures.feature_texture-formats-tier1` ([#28207](https://github.com/mdn/browser-compat-data/pull/28207))
+- `api.GPUSupportedFeatures.feature_texture-formats-tier2` ([#28207](https://github.com/mdn/browser-compat-data/pull/28207))
+- `api.MediaDevices.getDisplayMedia.windowAudio_option` ([#28130](https://github.com/mdn/browser-compat-data/pull/28130))
+- `api.MediaStreamTrack.applyConstraints.echoCancellation_constraint.all` ([#28090](https://github.com/mdn/browser-compat-data/pull/28090))
+- `api.MediaStreamTrack.applyConstraints.echoCancellation_constraint.remote-only` ([#28090](https://github.com/mdn/browser-compat-data/pull/28090))
+- `api.MediaStreamTrack.applyConstraints.restrictOwnAudio_constraint` ([#28122](https://github.com/mdn/browser-compat-data/pull/28122))
+- `api.NavigateEvent.intercept.precommitHandler_option` ([#28173](https://github.com/mdn/browser-compat-data/pull/28173))
+- `browsers.firefox_android.releases.147` ([#28193](https://github.com/mdn/browser-compat-data/pull/28193))
+- `browsers.firefox.releases.147` ([#28193](https://github.com/mdn/browser-compat-data/pull/28193))
+- `webdriver.bidi.permission.setPermission.embeddedOrigin_parameter` ([#28194](https://github.com/mdn/browser-compat-data/pull/28194))
+
+### Statistics
+
+- 9 contributors have changed 81 files with 1,134 additions and 628 deletions in 28 commits ([`v7.1.13...v7.1.14`](https://github.com/mdn/browser-compat-data/compare/v7.1.13...v7.1.14))
+- 17,993 total features
+- 1,202 total contributors
+- 5,452 total stargazers
+
+## [v7.1.13](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.13)
+
+October 14, 2025
+
+### Removals
+
+- `html.elements.audio.autoplay` ([#28169](https://github.com/mdn/browser-compat-data/pull/28169))
+- `webextensions.manifest.action.browser_style` ([#28169](https://github.com/mdn/browser-compat-data/pull/28169))
+
+### Additions
+
+- `api.MediaDevices.getSupportedConstraints.return_object_property_aspectRatio` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_autoGainControl` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_channelCount` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_deviceId` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_echoCancellation` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_facingMode` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_frameRate` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_groupId` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_height` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_latency` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_noiseSuppression` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_resizeMode` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_sampleRate` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_sampleSize` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getSupportedConstraints.return_object_property_width` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MediaDevices.getUserMedia.constraints_resizeMode_parameter` ([#27891](https://github.com/mdn/browser-compat-data/pull/27891))
+- `api.MLContext.createConstantTensor` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `api.MLContext.lost` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `api.MLGraphBuilder.gelu` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `api.MLGraphBuilder.notEqual` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `api.MLOperand.dataType` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `api.MLOperand.shape` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `api.MLTensor.constant` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `api.MLTensor.dataType` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `api.MLTensor.readable` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `api.MLTensor.shape` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `api.MLTensor.writable` ([#28157](https://github.com/mdn/browser-compat-data/pull/28157))
+- `browsers.bun.releases.1.3.0` ([#28167](https://github.com/mdn/browser-compat-data/pull/28167))
+- `webdriver.bidi.emulation.setNetworkConditions` ([#28177](https://github.com/mdn/browser-compat-data/pull/28177))
+- `webdriver.bidi.emulation.setNetworkConditions.contexts_parameter` ([#28177](https://github.com/mdn/browser-compat-data/pull/28177))
+- `webdriver.bidi.emulation.setNetworkConditions.networkConditions_parameter` ([#28177](https://github.com/mdn/browser-compat-data/pull/28177))
+- `webdriver.bidi.emulation.setNetworkConditions.networkConditions_parameter.offline` ([#28177](https://github.com/mdn/browser-compat-data/pull/28177))
+- `webdriver.bidi.emulation.setNetworkConditions.userContexts_parameter` ([#28177](https://github.com/mdn/browser-compat-data/pull/28177))
+
+### Statistics
+
+- 7 contributors have changed 63 files with 1,797 additions and 569 deletions in 18 commits ([`v7.1.12...v7.1.13`](https://github.com/mdn/browser-compat-data/compare/v7.1.12...v7.1.13))
+- 17,983 total features
+- 1,200 total contributors
+- 5,445 total stargazers
+
 ## [v7.1.12](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.12)
 
 October 10, 2025

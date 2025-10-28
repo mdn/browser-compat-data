@@ -2066,6 +2066,38 @@
               "deprecated": false
             }
           },
+          "cached_responses": {
+            "__compat": {
+              "description": "Supports retrieval of network data for cached responses (CSS or images) ",
+              "support": {
+                "chrome": {
+                  "version_added": "142"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/1992213"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": false,
+                "deprecated": false
+              }
+            }
+          },
           "collector_parameter": {
             "__compat": {
               "description": "`collector` parameter",
@@ -2094,6 +2126,37 @@
               "status": {
                 "experimental": false,
                 "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "data_url": {
+            "__compat": {
+              "description": "Supports retrieval of network data for `data:` URL locations",
+              "support": {
+                "chrome": {
+                  "version_added": "140"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "146"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": false,
                 "deprecated": false
               }
             }
@@ -2129,13 +2192,45 @@
                 "deprecated": false
               }
             },
+            "request": {
+              "__compat": {
+                "description": "`\"request\"`",
+                "support": {
+                  "chrome": {
+                    "version_added": "142"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false,
+                    "impl_url": "https://bugzil.la/1988955"
+                  },
+                  "firefox_android": "mirror",
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
+                },
+                "status": {
+                  "experimental": true,
+                  "standard_track": false,
+                  "deprecated": false
+                }
+              }
+            },
             "response": {
               "__compat": {
                 "description": "`\"response\"`",
                 "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-value-networkdatatype-response",
                 "support": {
                   "chrome": {
-                    "version_added": false
+                    "version_added": "140"
                   },
                   "chrome_android": "mirror",
                   "edge": "mirror",
@@ -2155,7 +2250,7 @@
                   "webview_ios": "mirror"
                 },
                 "status": {
-                  "experimental": true,
+                  "experimental": false,
                   "standard_track": true,
                   "deprecated": false
                 }
