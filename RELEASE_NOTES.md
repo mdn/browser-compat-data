@@ -1,5 +1,54 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.16](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.16)
+
+October 24, 2025
+
+### Renamings
+
+- `css.properties.position-area.span-x-self-end` to `css.properties.position-area.span-self-x-end` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.span-x-self-start` to `css.properties.position-area.span-self-x-start` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.span-y-self-end` to `css.properties.position-area.span-self-y-end` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.span-y-self-start` to `css.properties.position-area.span-self-y-start` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.x-self-end` to `css.properties.position-area.self-x-end` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.x-self-start` to `css.properties.position-area.self-x-start` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.y-self-end` to `css.properties.position-area.self-y-end` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.y-self-start` to `css.properties.position-area.self-y-start` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+
+### Additions
+
+- `browsers.bun.releases.1.3.1` ([#28268](https://github.com/mdn/browser-compat-data/pull/28268))
+
+### Statistics
+
+- 7 contributors have changed 70 files with 553 additions and 992 deletions in 13 commits ([`v7.1.15...v7.1.16`](https://github.com/mdn/browser-compat-data/compare/v7.1.15...v7.1.16))
+- 17,997 total features
+- 1,202 total contributors
+- 5,463 total stargazers
+
+## [v7.1.15](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.15)
+
+October 22, 2025
+
+### Removals
+
+- `api.GPUDevice.createBindGroup.descriptor_entries_option_accepts_GPUTextureView_resource` ([#28212](https://github.com/mdn/browser-compat-data/pull/28212))
+
+### Additions
+
+- `api.GPUDevice.createBindGroup.descriptor_entries_resource_parameter_accepts_GPUBuffer` ([#28212](https://github.com/mdn/browser-compat-data/pull/28212))
+- `api.GPUDevice.createBindGroup.descriptor_entries_resource_parameter_accepts_GPUTextureView` ([#28212](https://github.com/mdn/browser-compat-data/pull/28212))
+- `webdriver.bidi.network.getData.cached_responses` ([#28257](https://github.com/mdn/browser-compat-data/pull/28257))
+- `webdriver.bidi.network.getData.data_url` ([#28257](https://github.com/mdn/browser-compat-data/pull/28257))
+- `webdriver.bidi.network.getData.dataType_parameter.request` ([#28257](https://github.com/mdn/browser-compat-data/pull/28257))
+
+### Statistics
+
+- 4 contributors have changed 12 files with 316 additions and 182 deletions in 14 commits ([`v7.1.14...v7.1.15`](https://github.com/mdn/browser-compat-data/compare/v7.1.14...v7.1.15))
+- 17,997 total features
+- 1,202 total contributors
+- 5,459 total stargazers
+
 ## [v7.1.14](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.14)
 
 October 17, 2025
