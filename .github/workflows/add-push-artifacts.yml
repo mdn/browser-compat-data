@@ -11,11 +11,11 @@ jobs:
     name: Enumerate and diff features
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           fetch-depth: 0 # get the full repository checkout, not just the inciting commit
           persist-credentials: false
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
         with:
           node-version-file: ".nvmrc"
           cache: npm
@@ -23,11 +23,11 @@ jobs:
       - run: npm ci
       - run: npx tsx ./scripts/enumerate-features.ts features.json
       - run: npx tsx ./scripts/diff-features.ts --no-github --format=json > features.diff.json
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: enumerate-features
           path: features.json
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
         with:
           name: diff-features
           path: features.diff.json
