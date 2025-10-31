@@ -5,6 +5,7 @@ import fs from 'node:fs/promises';
 import { relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import betterAjvErrors from 'better-ajv-errors';
 import esMain from 'es-main';
 import stringify from 'fast-json-stable-stringify';
 import { compareVersions } from 'compare-versions';
@@ -13,6 +14,9 @@ import { marked } from 'marked';
 import { InternalSupportStatement } from '../../types/index.js';
 import { BrowserName, CompatData, VersionValue } from '../../types/types.js';
 import compileTS from '../generate-types.js';
+import compatDataSchema from '../../schemas/compat-data.schema.json' with { type: 'json' };
+import browserDataSchema from '../../schemas/browsers.schema.json' with { type: 'json' };
+import { createAjv } from '../lib/ajv.js';
 import { walk } from '../../utils/index.js';
 import { WalkOutput } from '../../utils/walk.js';
 import bcd from '../../index.js';
@@ -219,6 +223,35 @@ export const createDataBundle = async (): Promise<CompatData> => {
   };
 };
 
+/**
+ * Validates the given data against the schema.
+ * @param data - The data to validate.
+ */
+const validate = (data: CompatData) => {
+  const ajv = createAjv();
+
+  for (const [key, value] of Object.entries(data)) {
+    if (key === '__meta') {
+      // Not covered by the schema.
+      continue;
+    }
+
+    const schema = key === 'browsers' ? browserDataSchema : compatDataSchema;
+    const data = { [key]: value };
+    if (!ajv.validate(schema, data)) {
+      const errors = ajv.errors || [];
+      if (!errors.length) {
+        console.error(`${key} data failed validation with unknown errors!`);
+      }
+      // Output messages by one since better-ajv-errors wrongly joins messages
+      // (see https://github.com/atlassian/better-ajv-errors/pull/21)
+      errors.forEach((e) => {
+        console.error(betterAjvErrors(schema, data, [e], { indent: 2 }));
+      });
+    }
+  }
+};
+
 /* c8 ignore start */
 
 /**
@@ -227,6 +260,7 @@ export const createDataBundle = async (): Promise<CompatData> => {
 const writeData = async () => {
   const dest = new URL('data.json', targetdir);
   const data = await createDataBundle();
+  validate(data);
   await fs.writeFile(dest, stringify(data));
   logWrite(dest, 'data');
 };
