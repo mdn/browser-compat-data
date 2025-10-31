@@ -1,5 +1,124 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.17](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.17)
+
+October 28, 2025
+
+### Additions
+
+- `api.CompressionStream.CompressionStream.brotli` ([#28274](https://github.com/mdn/browser-compat-data/pull/28274))
+- `api.DecompressionStream.DecompressionStream.brotli` ([#28274](https://github.com/mdn/browser-compat-data/pull/28274))
+- `api.RTCEncodedAudioFrame.getMetadata.return_object_property_captureTime` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedAudioFrame.getMetadata.return_object_property_contributingSources` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedAudioFrame.getMetadata.return_object_property_mimeType` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedAudioFrame.getMetadata.return_object_property_payloadType` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedAudioFrame.getMetadata.return_object_property_receiveTime` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedAudioFrame.getMetadata.return_object_property_rtpTimestamp` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedAudioFrame.getMetadata.return_object_property_sequenceNumber` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedAudioFrame.getMetadata.return_object_property_synchronizationSource` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedAudioFrame.RTCEncodedAudioFrame.options_metadata_audioLevel_parameter` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedAudioFrame.RTCEncodedAudioFrame.options_metadata_captureTime_parameter` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedAudioFrame.RTCEncodedAudioFrame.options_metadata_contributingSources_parameter` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedAudioFrame.RTCEncodedAudioFrame.options_metadata_mimeType_parameter` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedAudioFrame.RTCEncodedAudioFrame.options_metadata_payloadType_parameter` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedAudioFrame.RTCEncodedAudioFrame.options_metadata_receiveTime_parameter` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedAudioFrame.RTCEncodedAudioFrame.options_metadata_rtpTimestamp_parameter` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedAudioFrame.RTCEncodedAudioFrame.options_metadata_sequenceNumber_parameter` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedAudioFrame.RTCEncodedAudioFrame.options_metadata_synchronizationSource_parameter` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.getMetadata.return_object_property_contributingSources` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.getMetadata.return_object_property_dependencies` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.getMetadata.return_object_property_frameId` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.getMetadata.return_object_property_height` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.getMetadata.return_object_property_mimeType` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.getMetadata.return_object_property_payloadType` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.getMetadata.return_object_property_receiveTime` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.getMetadata.return_object_property_rtpTimestamp` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.getMetadata.return_object_property_spatialIndex` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.getMetadata.return_object_property_synchronizationSource` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.getMetadata.return_object_property_temporalIndex` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.getMetadata.return_object_property_width` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.RTCEncodedVideoFrame.options_metadata_contributingSources_parameter` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.RTCEncodedVideoFrame.options_metadata_dependencies_parameter` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.RTCEncodedVideoFrame.options_metadata_frameId_parameter` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.RTCEncodedVideoFrame.options_metadata_height_parameter` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.RTCEncodedVideoFrame.options_metadata_mimeType_parameter` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.RTCEncodedVideoFrame.options_metadata_payloadType_parameter` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.RTCEncodedVideoFrame.options_metadata_receiveTime_parameter` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.RTCEncodedVideoFrame.options_metadata_rtpTimestamp_parameter` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.RTCEncodedVideoFrame.options_metadata_spatialIndex_parameter` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.RTCEncodedVideoFrame.options_metadata_synchronizationSource_parameter` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.RTCEncodedVideoFrame.options_metadata_temporalIndex_parameter` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `api.RTCEncodedVideoFrame.RTCEncodedVideoFrame.options_metadata_width_parameter` ([#28242](https://github.com/mdn/browser-compat-data/pull/28242))
+- `browsers.chrome_android.releases.145` ([#28303](https://github.com/mdn/browser-compat-data/pull/28303))
+- `browsers.chrome.releases.145` ([#28303](https://github.com/mdn/browser-compat-data/pull/28303))
+- `browsers.nodejs.releases.24.7.0` ([#28274](https://github.com/mdn/browser-compat-data/pull/28274))
+- `browsers.webview_android.releases.145` ([#28303](https://github.com/mdn/browser-compat-data/pull/28303))
+- `css.types.env.keyboard-inset-bottom` ([#28230](https://github.com/mdn/browser-compat-data/pull/28230))
+- `css.types.env.keyboard-inset-height` ([#28230](https://github.com/mdn/browser-compat-data/pull/28230))
+- `css.types.env.keyboard-inset-left` ([#28230](https://github.com/mdn/browser-compat-data/pull/28230))
+- `css.types.env.keyboard-inset-right` ([#28230](https://github.com/mdn/browser-compat-data/pull/28230))
+- `css.types.env.keyboard-inset-top` ([#28230](https://github.com/mdn/browser-compat-data/pull/28230))
+- `css.types.env.keyboard-inset-width` ([#28230](https://github.com/mdn/browser-compat-data/pull/28230))
+- `http.headers.Cross-Origin-Embedder-Policy.report-to_parameter` ([#28166](https://github.com/mdn/browser-compat-data/pull/28166))
+- `http.headers.Cross-Origin-Opener-Policy.report-to_parameter` ([#28166](https://github.com/mdn/browser-compat-data/pull/28166))
+- `http.headers.Idempotency-Key` ([#28219](https://github.com/mdn/browser-compat-data/pull/28219))
+
+### Statistics
+
+- 8 contributors have changed 51 files with 2,005 additions and 489 deletions in 17 commits ([`v7.1.16...v7.1.17`](https://github.com/mdn/browser-compat-data/compare/v7.1.16...v7.1.17))
+- 18,049 total features
+- 1,204 total contributors
+- 5,468 total stargazers
+
+## [v7.1.16](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.16)
+
+October 24, 2025
+
+### Renamings
+
+- `css.properties.position-area.span-x-self-end` to `css.properties.position-area.span-self-x-end` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.span-x-self-start` to `css.properties.position-area.span-self-x-start` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.span-y-self-end` to `css.properties.position-area.span-self-y-end` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.span-y-self-start` to `css.properties.position-area.span-self-y-start` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.x-self-end` to `css.properties.position-area.self-x-end` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.x-self-start` to `css.properties.position-area.self-x-start` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.y-self-end` to `css.properties.position-area.self-y-end` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+- `css.properties.position-area.y-self-start` to `css.properties.position-area.self-y-start` ([#28282](https://github.com/mdn/browser-compat-data/pull/28282))
+
+### Additions
+
+- `browsers.bun.releases.1.3.1` ([#28268](https://github.com/mdn/browser-compat-data/pull/28268))
+
+### Statistics
+
+- 7 contributors have changed 70 files with 553 additions and 992 deletions in 13 commits ([`v7.1.15...v7.1.16`](https://github.com/mdn/browser-compat-data/compare/v7.1.15...v7.1.16))
+- 17,997 total features
+- 1,202 total contributors
+- 5,463 total stargazers
+
+## [v7.1.15](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.15)
+
+October 22, 2025
+
+### Removals
+
+- `api.GPUDevice.createBindGroup.descriptor_entries_option_accepts_GPUTextureView_resource` ([#28212](https://github.com/mdn/browser-compat-data/pull/28212))
+
+### Additions
+
+- `api.GPUDevice.createBindGroup.descriptor_entries_resource_parameter_accepts_GPUBuffer` ([#28212](https://github.com/mdn/browser-compat-data/pull/28212))
+- `api.GPUDevice.createBindGroup.descriptor_entries_resource_parameter_accepts_GPUTextureView` ([#28212](https://github.com/mdn/browser-compat-data/pull/28212))
+- `webdriver.bidi.network.getData.cached_responses` ([#28257](https://github.com/mdn/browser-compat-data/pull/28257))
+- `webdriver.bidi.network.getData.data_url` ([#28257](https://github.com/mdn/browser-compat-data/pull/28257))
+- `webdriver.bidi.network.getData.dataType_parameter.request` ([#28257](https://github.com/mdn/browser-compat-data/pull/28257))
+
+### Statistics
+
+- 4 contributors have changed 12 files with 316 additions and 182 deletions in 14 commits ([`v7.1.14...v7.1.15`](https://github.com/mdn/browser-compat-data/compare/v7.1.14...v7.1.15))
+- 17,997 total features
+- 1,202 total contributors
+- 5,459 total stargazers
+
 ## [v7.1.14](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.14)
 
 October 17, 2025

@@ -1,35 +1,34 @@
 {
-  "css": {
-    "properties": {
-      "view-timeline-name": {
+  "http": {
+    "headers": {
+      "Idempotency-Key": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/view-timeline-name",
-          "spec_url": "https://drafts.csswg.org/scroll-animations/#view-timeline-name",
-          "tags": [
-            "web-features:scroll-driven-animations"
-          ],
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Idempotency-Key",
+          "spec_url": "https://datatracker.ietf.org/doc/html/draft-ietf-httpapi-idempotency-key-header/#name-the-idempotency-key-http-re",
           "support": {
             "chrome": {
-              "version_added": "115"
+              "version_added": false
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "111",
+              "version_added": "135",
               "flags": [
                 {
                   "type": "preference",
-                  "name": "layout.css.scroll-driven-animations.enabled",
+                  "name": "network.http.idempotencyKey.enabled",
                   "value_to_set": "true"
                 }
-              ]
+              ],
+              "impl_url": "https://bugzil.la/1830022",
+              "notes": "Automatically adds a unique 64-bit key for POST requests when needed, if not set in JavaScript."
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "26"
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -37,7 +36,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
