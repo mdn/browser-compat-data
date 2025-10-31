@@ -4,6 +4,10 @@
 
 October 31, 2025
 
+### Notable changes
+
+This release adds 371 features, most of which are CSS property values newly covered by the [MDN BCD Collector](https://github.com/openwebdocs/mdn-bcd-collector/).
+
 ### Removals
 
 - `html.elements.input.mozactionhint` ([#28309](https://github.com/mdn/browser-compat-data/pull/28309))
