@@ -1,5 +1,60 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.19](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.19)
+
+October 31, 2025
+
+### Additions
+
+- `webextensions.api.webNavigation.getAllFrames.documentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.getAllFrames.documentLifecycle` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.getAllFrames.frameType` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.getAllFrames.parentDocumentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.getFrame.documentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.getFrame.documentLifecycle` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.getFrame.frameType` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.getFrame.parentDocumentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onBeforeNavigate.documentLifecycle` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onBeforeNavigate.frameType` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onBeforeNavigate.parentDocumentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onCommitted.documentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onCommitted.documentLifecycle` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onCommitted.frameType` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onCommitted.parentDocumentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onCommitted.parentFrameId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onCompleted.documentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onCompleted.documentLifecycle` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onCompleted.frameType` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onCompleted.parentDocumentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onCompleted.parentFrameId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onDOMContentLoaded.documentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onDOMContentLoaded.documentLifecycle` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onDOMContentLoaded.frameType` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onDOMContentLoaded.parentDocumentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onDOMContentLoaded.parentFrameId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onErrorOccurred.documentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onErrorOccurred.documentLifecycle` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onErrorOccurred.frameType` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onErrorOccurred.parentDocumentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onErrorOccurred.parentFrameId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onHistoryStateUpdated.documentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onHistoryStateUpdated.documentLifecycle` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onHistoryStateUpdated.frameType` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onHistoryStateUpdated.parentDocumentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onHistoryStateUpdated.parentFrameId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onReferenceFragmentUpdated.documentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onReferenceFragmentUpdated.documentLifecycle` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onReferenceFragmentUpdated.frameType` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onReferenceFragmentUpdated.parentDocumentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onReferenceFragmentUpdated.parentFrameId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+
+### Statistics
+
+- 2 contributors have changed 1 file with 879 additions and 92 deletions in 1 commit ([`v7.1.18...v7.1.19`](https://github.com/mdn/browser-compat-data/compare/v7.1.18...v7.1.19))
+- 19,019 total features
+- 1,204 total contributors
+- 5,470 total stargazers
+
 ## [v7.1.18](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.18)
 
 October 31, 2025
