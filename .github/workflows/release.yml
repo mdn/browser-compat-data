@@ -15,6 +15,7 @@ env:
 
 permissions:
   contents: write
+  id-token: write # OIDC for npm Trusted Publishing
   issues: write
 
 jobs:
@@ -51,6 +52,9 @@ jobs:
           package-manager-cache: false
           registry-url: "https://registry.npmjs.org/"
 
+      # Ensure npm 11.5.1 or later for trusted publishing
+      - run: npm install -g npm@latest
+
       - run: npm ci
 
       - run: npm test
@@ -59,9 +63,7 @@ jobs:
 
       - run: npm run build
 
-      - run: npm publish build/ --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - run: npm publish build/ --access public --provenance
 
       - name: Add JSON as a release asset
         run: gh release upload ${GITHUB_REF#refs/*/} build/data.json

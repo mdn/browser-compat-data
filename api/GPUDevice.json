@@ -194,6 +194,47 @@
             }
           }
         },
+        "descriptor_entries_resource_parameter_accepts_GPUTexture_resource": {
+          "__compat": {
+            "description": "`descriptor.entries.resource` parameter accepts `GPUTexture` in place of `GPUTextureView` (provided default view is desired).",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "140",
+                "partial_implementation": true,
+                "notes": "Supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": {
+                "version_added": "140"
+              },
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "descriptor_entries_resource_parameter_accepts_GPUTextureView": {
           "__compat": {
             "description": "`descriptor.entries.resource` parameter accepts `GPUTextureView` (2D, single subresource) in place of `GPUExternalTexture`.",
