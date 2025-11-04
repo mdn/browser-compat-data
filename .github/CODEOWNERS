@@ -6,5 +6,18 @@
 # https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/about-code-owners
 
 /schemas/ @mdn/bcd-owners
-/.github/workflows/ @mdn/engineering
-/.github/CODEOWNERS @mdn/engineering
+
+/.github/ @mdn/engineering
+/.vscode/ @mdn/engineering
+/lint/    @mdn/engineering
+/scripts/ @mdn/engineering
+/types/   @mdn/engineering
+/utils/   @mdn/engineering
+/*        @mdn/engineering
+/package.json      @mdn/engineering @mdn-bot @mdn/bcd-releasers
+/package-lock.json @mdn/engineering @mdn-bot @mdn/bcd-releasers
+
+# Exclude some paths
+/.github/ISSUE_TEMPLATE/
+/.github/PULL_REQUESET_TEMPLATE.md
+/*.md
