@@ -74,7 +74,7 @@ When an identifier has a `__compat` block, it represents its basic support, indi
 
 To add a sub-feature, a new identifier is added below the main feature at the level of a `__compat` object (see the sub-features "start" and "end" above). The same could be done for sub-sub-features. There is no depth limit.
 
-See [Data guidelines](../docs/data-guidelines/index.md) for more information about feature naming conventions and other best practices.
+See [Data guidelines](../docs/data-guidelines/README.md) for more information about feature naming conventions and other best practices.
 
 ### The `__compat` object
 
@@ -195,6 +195,7 @@ The `__compat` object consists of the following:
 
 The currently accepted browser identifiers should be declared in alphabetical order:
 
+- `bun`, Bun JavaScript runtime built on WebKit
 - `chrome`, Google Chrome (on desktops)
 - `chrome_android`, Google Chrome (on Android)
 - `deno`, Deno JavaScript runtime built on Chrome's V8 JavaScript engine
@@ -460,7 +461,7 @@ Notes may be formatted in Markdown. Only links, bold, italics, codeblocks, and `
 
 #### `partial_implementation`
 
-A `boolean` value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, it is [required](../docs/data-guidelines/index.md#partial_implementation-requires-a-note) that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard).
+A `boolean` value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, it is [required](../docs/data-guidelines/README.md#partial_implementation-requires-a-note) that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard).
 
 ```json
 {

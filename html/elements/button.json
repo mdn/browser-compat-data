@@ -57,14 +57,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "preview",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.element.invokers.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "144"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -83,6 +76,41 @@
               "standard_track": true,
               "deprecated": false
             }
+          },
+          "request-close": {
+            "__compat": {
+              "description": "`request-close` value",
+              "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-button-command-request-close",
+              "tags": [
+                "web-features:invoker-commands"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "139"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "144"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "preview"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "commandfor": {
@@ -98,14 +126,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "preview",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.element.invokers.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "144"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -168,6 +189,7 @@
         },
         "form": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/form",
             "tags": [
               "web-features:button"
             ],
@@ -486,7 +508,8 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "preview",
+                  "impl_url": "https://bugzil.la/1838746"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",

@@ -4,7 +4,7 @@
       "details-content": {
         "__compat": {
           "description": "`::details-content`",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/::details-content",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/::details-content",
           "spec_url": "https://drafts.csswg.org/css-pseudo-4/#details-content-pseudo",
           "tags": [
             "web-features:details-content"
@@ -16,22 +16,15 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "138",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "layout.css.details-content.enabled",
-                  "value_to_set": "true"
-                }
-              ],
-              "impl_url": "https://bugzil.la/1901037"
+              "version_added": "143"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "18.4"
+              "version_added": "18.4",
+              "notes": "Does not support chaining pseudo-elements after `::details-content`. See [bug 283446](https://webkit.org/b/283446)."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

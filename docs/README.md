@@ -8,9 +8,10 @@ An alphabetical index of keywords linking to relevant sections in the docs.
 
 ---
 
+- **Behavioral subfeatures** - [Data guideline: Behavioral subfeatures](./data-guidelines/README.md#behavioral-subfeatures)
 - **Browser addition/removal** – [Data guidelines for browser data](./data-guidelines/browsers.md#addition-of-browsers)
 - **Browser data** – [Data guidelines for browser data](./data-guidelines/browsers.md)
-- **Browser versions** – [Matching web features to browser release version numbers](./matching-browser-releases/index.md#matching-web-features-to-browser-release-version-numbers)
+- **Browser versions** – [Matching web features to browser release version numbers](./matching-browser-releases/README.md#matching-web-features-to-browser-release-version-numbers)
 
 ---
 
@@ -22,8 +23,8 @@ An alphabetical index of keywords linking to relevant sections in the docs.
 
 ---
 
-- **Data guidelines** – [Overview of data guidelines](./data-guidelines/index.md)
-- **Deprecated** – [Data guidelines: Setting `deprecated`](./data-guidelines/index.md#setting-deprecated)
+- **Data guidelines** – [Overview of data guidelines](./data-guidelines/README.md)
+- **Deprecated** – [Data guidelines: Setting `deprecated`](./data-guidelines/README.md#setting-deprecated)
 - **Dictionaries** – [Data guidelines for API features: Dictionaries and enumerations (enums)](./data-guidelines/api.md#dictionaries-and-enumerations-enums)
 
 ---
@@ -31,7 +32,7 @@ An alphabetical index of keywords linking to relevant sections in the docs.
 - **Edge** – [Contributing: Helpful resources](./contributing.md#edge)
 - **Enumerations (enums)** – [Data guidelines for API features: Dictionaries and enumerations (enums)](./data-guidelines/api.md#dictionaries-and-enumerations-enums)
 - **Events (DOM)** – [Data guidelines for API features](./data-guidelines/api.md#dom-events-eventname_event)
-- **Experimental** – [Data guidelines: Setting `experimental`](./data-guidelines/index.md#setting-experimental)
+- **Experimental** – [Data guidelines: Setting `experimental`](./data-guidelines/README.md#setting-experimental)
 
 ---
 
@@ -46,8 +47,8 @@ An alphabetical index of keywords linking to relevant sections in the docs.
 
 - **Idle PRs** – [FAQ: If another PR is idle, may I take over it?](./faq.md#if-another-pr-is-idle-may-i-take-over-it)
 - **Installation** – [README: Installation and Import](../README.md#installation-and-import)
-- **Irrelevant features** – [Data guidelines: Removal of irrelevant features](./data-guidelines/index.md#removal-of-irrelevant-features)
-- **Irrelevant flags** –[Data guidelines: Removal of irrelevant flag data](./data-guidelines/index.md#removal-of-irrelevant-flag-data)
+- **Irrelevant features** – [Data guidelines: Removal of irrelevant features](./data-guidelines/README.md#removal-of-irrelevant-features)
+- **Irrelevant flags** –[Data guidelines: Removal of irrelevant flag data](./data-guidelines/README.md#removal-of-irrelevant-flag-data)
 - **Issue triage** – [Issue triage checklist](./issue-triage-checklist.md)
 
 ---
@@ -68,9 +69,12 @@ An alphabetical index of keywords linking to relevant sections in the docs.
 
 ---
 
-- **Partial implementation** – [Data guidelines: "partial_implementation" requires a note](./data-guidelines/index.md#partial_implementation-requires-a-note)
+- **Partial implementation**
+  - [Data guidelines: `"partial_implementation"` general usage guidelines](./data-guidelines/README.md#partial_implementation-general-usage-guidelines)
+  - [Data guidelines: "partial_implementation" requires a note](./data-guidelines/README.md#partial_implementation-requires-a-note)
+
 - **Permissions API** – [Data guidelines for API features](./data-guidelines/api.md#permissions-api-permissions-permissionname_permission)
-- **Preview support** – [Data guidelines: Choosing "preview" values](./data-guidelines/index.md#choosing-preview-values)
+- **Preview support** – [Data guidelines: Choosing "preview" values](./data-guidelines/README.md#choosing-preview-values)
 - **Promises** – [Data guidelines for API features](./data-guidelines/api.md#methods-returning-promises-returns_promise)
 - **Prototype chain** – [Data guidelines for API features](./data-guidelines/api.md#apis-moved-on-the-prototype-chain)
 - **Publishing** – [Publishing a new version of `@mdn/browser-compat-data`](./publishing.md)
@@ -82,9 +86,9 @@ An alphabetical index of keywords linking to relevant sections in the docs.
 - **Schema** – [The browser JSON schema](../schemas/browsers-schema.md) | [The compat data JSON schema](../schemas/compat-data-schema.md)
 - **Scope** – [README: What isn't tracked?](../README.md#what-isnt-tracked)
 - **Secure Context** – [Data guidelines for API features](./data-guidelines/api.md#secure-context-required-secure_context_required)
-- **Standard track** – [Data guidelines: Choosing status properties](./data-guidelines/index.md#choosing-status-properties)
+- **Standard track** – [Data guidelines: Choosing status properties](./data-guidelines/README.md#choosing-status-properties)
 - **Static API members** – [Data guidelines for API features](./data-guidelines/api.md#static-api-members)
-- **Status** – [Data guidelines: Choosing status properties](./data-guidelines/index.md#choosing-status-properties)
+- **Status** – [Data guidelines: Choosing status properties](./data-guidelines/README.md#choosing-status-properties)
 - **Stringifier (toString)** – [Data guidelines for API features](./data-guidelines/api.md#stringifier-attributes-tostring)
 
 ---

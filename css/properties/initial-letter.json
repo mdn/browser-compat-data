@@ -3,7 +3,7 @@
     "properties": {
       "initial-letter": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/initial-letter",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/initial-letter",
           "spec_url": "https://drafts.csswg.org/css-inline/#sizing-drop-initials",
           "tags": [
             "web-features:initial-letter"
@@ -27,7 +27,15 @@
               "version_added": "9",
               "notes": "See [bug 229090](https://webkit.org/b/229090) for the unprefixed property."
             },
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "prefix": "-webkit-",
+              "version_added": "9",
+              "partial_implementation": true,
+              "notes": [
+                "See [bug 229090](https://webkit.org/b/229090) for the unprefixed property.",
+                "Does not support decimal values. See [bug 296785](https://webkit.org/b/296785)."
+              ]
+            },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
             "webview_ios": "mirror"
