@@ -231,7 +231,7 @@
           "clip-path": {
             "__compat": {
               "description": "In `clip-path`",
-              "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/clip-path",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/clip-path",
               "spec_url": [
                 "https://drafts.fxtf.org/css-masking/#the-clip-path",
                 "https://drafts.csswg.org/css-shapes/#supported-basic-shapes"
@@ -324,7 +324,7 @@
           "offset-path": {
             "__compat": {
               "description": "In `offset-path`",
-              "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/offset-path",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/offset-path",
               "spec_url": "https://drafts.fxtf.org/motion/#offset-path-property",
               "tags": [
                 "web-features:path-shape"
@@ -360,7 +360,7 @@
           "shape-outside": {
             "__compat": {
               "description": "In `shape-outside`",
-              "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/shape-outside",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/shape-outside",
               "spec_url": "https://drafts.csswg.org/css-shapes/#shape-outside-property",
               "tags": [
                 "web-features:path-shape"
@@ -439,11 +439,17 @@
               "web-features:shapes"
             ],
             "support": {
-              "chrome": {
-                "version_added": "116",
-                "partial_implementation": true,
-                "notes": "Only supported on the `offset-path` property."
-              },
+              "chrome": [
+                {
+                  "version_added": "119"
+                },
+                {
+                  "version_added": "116",
+                  "version_removed": "119",
+                  "partial_implementation": true,
+                  "notes": "Only supported on the `offset-path` property."
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
@@ -525,11 +531,17 @@
               "web-features:shapes"
             ],
             "support": {
-              "chrome": {
-                "version_added": "116",
-                "partial_implementation": true,
-                "notes": "Only supported on the `offset-path` property."
-              },
+              "chrome": [
+                {
+                  "version_added": "119"
+                },
+                {
+                  "version_added": "116",
+                  "version_removed": "119",
+                  "partial_implementation": true,
+                  "notes": "Only supported on the `offset-path` property."
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {

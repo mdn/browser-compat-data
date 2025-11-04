@@ -12,6 +12,8 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: weekly
     labels:
       - "infra"
+    commit-message:
+      prefix: "ci(deps): "

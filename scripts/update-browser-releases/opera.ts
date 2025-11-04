@@ -8,7 +8,7 @@ import {
   gfmNoteblock,
   RSSItem,
   updateBrowserEntry,
-} from './utils';
+} from './utils.js';
 
 interface Release {
   version: string;

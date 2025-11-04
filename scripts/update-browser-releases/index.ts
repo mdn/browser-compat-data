@@ -2,6 +2,7 @@
  * See LICENSE file for more information. */
 import yargs from 'yargs';
 
+import { updateBunReleases } from './bun.js';
 import { updateChromiumReleases } from './chrome.js';
 import { updateEdgeReleases } from './edge.js';
 import { updateFirefoxReleases } from './firefox.js';
@@ -40,6 +41,11 @@ const argv = yargs(process.argv.slice(2))
     type: 'boolean',
     group: 'Engine selection:',
   })
+  .option('bun', {
+    describe: 'Update Bun',
+    type: 'boolean',
+    group: 'Engine selection:',
+  })
   .option('all', {
     describe: 'Update all browsers (default)',
     type: 'boolean',
@@ -60,6 +66,10 @@ const argv = yargs(process.argv.slice(2))
     type: 'boolean',
     group: 'Device selection:',
   })
+  .option('debug', {
+    describe: 'Enable debug mode',
+    type: 'boolean',
+  })
   .help()
   .parse();
 
@@ -72,7 +82,8 @@ const updateAllBrowsers =
     argv['firefox'] ||
     argv['edge'] ||
     argv['opera'] ||
-    argv['safari']
+    argv['safari'] ||
+    argv['bun']
   );
 const updateChrome = argv['chrome'] || updateAllBrowsers;
 const updateWebview = argv['webview'] || updateAllBrowsers;
@@ -80,10 +91,12 @@ const updateFirefox = argv['firefox'] || updateAllBrowsers;
 const updateEdge = argv['edge'] || updateAllBrowsers;
 const updateOpera = argv['opera'] || updateAllBrowsers;
 const updateSafari = argv['safari'] || updateAllBrowsers;
+const updateBun = argv['bun'] || updateAllBrowsers;
 const updateAllDevices =
   argv['alldevices'] || !(argv['mobile'] || argv['desktop']);
 const updateMobile = argv['mobile'] || updateAllDevices;
 const updateDesktop = argv['desktop'] || updateAllDevices;
+const debug = argv['debug'] ?? false;
 
 const options = {
   chrome_desktop: {
@@ -143,7 +156,7 @@ const options = {
     edgeupdatesURL:
       'https://edgeupdates.microsoft.com/api/products?view=enterprise',
     releaseScheduleURL:
-      'https://raw.githubusercontent.com/MicrosoftDocs/Edge-Enterprise/public/edgeenterprise/microsoft-edge-release-schedule.md',
+      'https://learn.microsoft.com/en-us/deployedge/microsoft-edge-release-schedule',
   },
   firefox_desktop: {
     browserName: 'Firefox for Desktop',
@@ -217,7 +230,19 @@ const options = {
       'https://developer.apple.com/tutorials/data/documentation/safari-release-notes.json',
     releaseNoteURLBase: 'https://developer.apple.com',
   },
+  bun: {
+    browserName: 'Bun',
+    bcdFile: './browsers/bun.json',
+    bcdBrowserName: 'bun',
+  } as const,
 };
+
+if (!debug) {
+  /** No-op. */
+  console.debug = () => {
+    /* No-op. */
+  };
+}
 
 const results = await Promise.all([
   ...(updateChrome
@@ -249,6 +274,7 @@ const results = await Promise.all([
         updateMobile && updateSafariReleases(options.webview_ios),
       ]
     : []),
+  updateBun && updateBunReleases(options.bun),
 ]);
 
 const result = results.filter(Boolean).join('\n\n');
