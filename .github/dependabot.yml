@@ -14,11 +14,21 @@ updates:
     directory: "/"
     schedule:
       interval: weekly
-    open-pull-requests-limit: 10
     ignore:
       - dependency-name: "@ddbeck/mdn-content-inventory"
       - dependency-name: "web-features"
       - dependency-name: "web-specs"
+    groups:
+      prod:
+        dependency-type: production
+        update-types:
+          - minor
+          - patch
+      dev:
+        dependency-type: development
+        update-types:
+          - minor
+          - patch
 
   - package-ecosystem: "github-actions"
     directory: "/"
