@@ -9,6 +9,9 @@ updates:
       - dependency-name: "@ddbeck/mdn-content-inventory"
       - dependency-name: web-features
       - dependency-name: web-specs
+    commit-message:
+      prefix: chore
+      include: scope
 
   - package-ecosystem: npm
     directory: /
@@ -29,10 +32,14 @@ updates:
         update-types:
           - minor
           - patch
+    commit-message:
+      prefix: chore
+      include: scope
 
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: weekly
     commit-message:
-      prefix: "ci(deps): "
+      prefix: ci
+      include: scope
