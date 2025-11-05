@@ -1,23 +1,23 @@
 version: 2
 updates:
   - package-ecosystem: npm
-    directory: "/"
+    directory: /
     schedule:
       interval: daily
       time: "11:00"
     allow:
       - dependency-name: "@ddbeck/mdn-content-inventory"
-      - dependency-name: "web-features"
-      - dependency-name: "web-specs"
+      - dependency-name: web-features
+      - dependency-name: web-specs
 
   - package-ecosystem: npm
-    directory: "/"
+    directory: /
     schedule:
       interval: weekly
     ignore:
       - dependency-name: "@ddbeck/mdn-content-inventory"
-      - dependency-name: "web-features"
-      - dependency-name: "web-specs"
+      - dependency-name: web-features
+      - dependency-name: web-specs
     groups:
       prod:
         dependency-type: production
@@ -30,8 +30,8 @@ updates:
           - minor
           - patch
 
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: github-actions
+    directory: /
     schedule:
       interval: weekly
     commit-message:
