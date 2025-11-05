@@ -5,7 +5,20 @@ updates:
     schedule:
       interval: daily
       time: "11:00"
+    allow:
+      - dependency-name: "@ddbeck/mdn-content-inventory"
+      - dependency-name: "web-features"
+      - dependency-name: "web-specs"
+
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
     open-pull-requests-limit: 10
+    ignore:
+      - dependency-name: "@ddbeck/mdn-content-inventory"
+      - dependency-name: "web-features"
+      - dependency-name: "web-specs"
 
   - package-ecosystem: "github-actions"
     directory: "/"
