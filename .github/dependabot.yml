@@ -1,19 +1,45 @@
 version: 2
 updates:
   - package-ecosystem: npm
-    directory: "/"
+    directory: /
     schedule:
       interval: daily
       time: "11:00"
-    open-pull-requests-limit: 10
-    labels:
-      - "infra"
-      - "dependencies"
-  - package-ecosystem: "github-actions"
-    directory: "/"
+    allow:
+      - dependency-name: "@ddbeck/mdn-content-inventory"
+      - dependency-name: web-features
+      - dependency-name: web-specs
+    commit-message:
+      prefix: chore
+      include: scope
+
+  - package-ecosystem: npm
+    directory: /
     schedule:
       interval: weekly
-    labels:
-      - "infra"
+    ignore:
+      - dependency-name: "@ddbeck/mdn-content-inventory"
+      - dependency-name: web-features
+      - dependency-name: web-specs
+    groups:
+      prod:
+        dependency-type: production
+        update-types:
+          - minor
+          - patch
+      dev:
+        dependency-type: development
+        update-types:
+          - minor
+          - patch
     commit-message:
-      prefix: "ci(deps): "
+      prefix: chore
+      include: scope
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: ci
+      include: scope
