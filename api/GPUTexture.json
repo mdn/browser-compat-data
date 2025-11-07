@@ -114,21 +114,21 @@
             "deprecated": false
           }
         },
-        "texture_rgb10a2uint": {
+        "option_swizzle": {
           "__compat": {
-            "description": "<code>rgb10a2uint</code> texture format",
-            "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gputextureformat-rgb10a2uint",
+            "description": "<code>swizzle</code> option",
+            "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gputextureviewdescriptor-swizzle",
             "tags": [
               "web-features:webgpu"
             ],
             "support": {
               "chrome": {
-                "version_added": "119",
+                "version_added": "143",
                 "partial_implementation": true,
                 "notes": "Supported on ChromeOS, macOS, and Windows only."
               },
               "chrome_android": {
-                "version_added": "121"
+                "version_added": "143"
               },
               "deno": {
                 "version_added": false
@@ -156,7 +156,7 @@
             }
           }
         },
-        "usage": {
+        "option_usage": {
           "__compat": {
             "description": "<code>usage</code> option",
             "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gputextureviewdescriptor-usage",
@@ -171,6 +171,48 @@
               },
               "chrome_android": {
                 "version_added": "132"
+              },
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "texture_rgb10a2uint": {
+          "__compat": {
+            "description": "<code>rgb10a2uint</code> texture format",
+            "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gputextureformat-rgb10a2uint",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "119",
+                "partial_implementation": true,
+                "notes": "Supported on ChromeOS, macOS, and Windows only."
+              },
+              "chrome_android": {
+                "version_added": "121"
               },
               "deno": {
                 "version_added": false
