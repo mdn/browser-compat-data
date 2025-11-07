@@ -372,39 +372,25 @@
             "deprecated": false
           }
         },
-        "duplicate_calls_reject": {
+        "handles_duplicate_calls": {
           "__compat": {
-            "description": "Duplicate calls reject as adapter is consumed.",
+            "description": "Rejects duplicate calls as adapter is consumed.",
             "tags": [
               "web-features:webgpu"
             ],
             "support": {
-              "chrome": [
-                {
-                  "version_added": "140",
-                  "partial_implementation": true,
-                  "notes": "Supported on ChromeOS, macOS, and Windows only."
-                },
-                {
-                  "version_added": "116",
-                  "version_removed": "140",
-                  "partial_implementation": true,
-                  "notes": [
-                    "Duplicate calls don't reject; instead, lost `GPUDevice`s are returned on duplicate calls.",
-                    "Supported on ChromeOS, macOS, and Windows only."
-                  ]
-                }
-              ],
-              "chrome_android": [
-                {
-                  "version_added": "140"
-                },
-                {
-                  "version_added": "121",
-                  "version_removed": "140",
-                  "notes": "Duplicate calls don't reject; instead, lost `GPUDevice`s are returned on duplicate calls."
-                }
-              ],
+              "chrome": {
+                "version_added": "116",
+                "partial_implementation": true,
+                "notes": [
+                  "Supported on ChromeOS, macOS, and Windows only.",
+                  "Before Chrome 140, lost `GPUDevice` is returned on duplicate calls."
+                ]
+              },
+              "chrome_android": {
+                "version_added": "121",
+                "notes": "Before Chrome Android 140, lost `GPUDevice` is returned on duplicate calls."
+              },
               "deno": [
                 {
                   "version_added": "1.39",
