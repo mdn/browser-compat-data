@@ -170,6 +170,7 @@ const main = async (
     const messagesByLevel: Record<LinterMessageLevel, LinterMessage[]> = {
       error: [],
       warning: [],
+      info: [],
     };
 
     for (const message of messages) {
@@ -200,7 +201,7 @@ const main = async (
 
     for (const message of messages) {
       console.error(
-        chalk`{${message.level === 'error' ? 'red' : 'yellow'}  ✖ ${
+        chalk`{${message.level === 'error' ? 'red' : message.level === 'warning' ? 'yellow' : 'blue'}  ✖ ${
           message.path
         } - ${message.level[0].toUpperCase() + message.level.substring(1)} → ${
           message.message
