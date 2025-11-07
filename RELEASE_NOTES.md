@@ -4,9 +4,12 @@
 
 November 7, 2025
 
+### Renamings
+
+- `api.GPUAdapter.requestDevice.lost_device_on_duplicate` to `api.GPUAdapter.requestDevice.handles_duplicate_calls` ([#28402](https://github.com/mdn/browser-compat-data/pull/28402))
+
 ### Removals
 
-- `api.GPUAdapter.requestDevice.lost_device_on_duplicate` ([#28402](https://github.com/mdn/browser-compat-data/pull/28402))
 - `css.types.attr.type-or-unit.frequency` ([#28408](https://github.com/mdn/browser-compat-data/pull/28408))
 - `css.types.attr.type-or-unit.url` ([#28408](https://github.com/mdn/browser-compat-data/pull/28408))
 
@@ -23,7 +26,6 @@ November 7, 2025
 - `api.Document.execCommand.insertHTML.enforces_trusted_types` ([#28350](https://github.com/mdn/browser-compat-data/pull/28350))
 - `api.Element.setAttribute.enforces_trusted_types` ([#28350](https://github.com/mdn/browser-compat-data/pull/28350))
 - `api.Element.setAttributeNS.enforces_trusted_types` ([#28350](https://github.com/mdn/browser-compat-data/pull/28350))
-- `api.GPUAdapter.requestDevice.handles_duplicate_calls` ([#28402](https://github.com/mdn/browser-compat-data/pull/28402))
 - `api.Performance.mark.markOptions_detail_devtools_parameter` ([#28270](https://github.com/mdn/browser-compat-data/pull/28270))
 - `api.Performance.measure.measureOptions_detail_devtools_parameter` ([#28270](https://github.com/mdn/browser-compat-data/pull/28270))
 - `api.SharedWorker.SharedWorker.enforces_trusted_types` ([#28350](https://github.com/mdn/browser-compat-data/pull/28350))
