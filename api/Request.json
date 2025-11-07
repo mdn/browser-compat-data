@@ -8,6 +8,9 @@
           "web-features:fetch"
         ],
         "support": {
+          "bun": {
+            "version_added": "1.0.0"
+          },
           "chrome": [
             {
               "version_added": "42"
@@ -59,6 +62,9 @@
             "web-features:fetch"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "40",
               "notes": "From Chrome 47, default values for the `init` argument's properties changed. `mode` defaults to `same-origin` (from `no-cors`). `credentials` defaults to `include` (from `same-origin`). `redirect` defaults to `follow` (from `manual`)."
@@ -345,6 +351,46 @@
             }
           }
         },
+        "init_privateToken_parameter": {
+          "__compat": {
+            "description": "`init.privateToken` parameter",
+            "spec_url": "https://wicg.github.io/trust-token-api/#dom-requestinit-privatetoken",
+            "support": {
+              "chrome": {
+                "version_added": "117"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "nodejs": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": false
+              },
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "init_referrer_parameter": {
           "__compat": {
             "description": "`init.referrer` parameter",
@@ -476,6 +522,9 @@
             "web-features:fetch"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "42"
             },
@@ -519,6 +568,9 @@
             "web-features:fetch"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "42"
             },
@@ -562,6 +614,9 @@
             "web-features:fetch-request-streams"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "105",
               "impl_url": "https://crbug.com/40505032"
@@ -605,6 +660,9 @@
             "web-features:fetch"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "42"
             },
@@ -648,6 +706,9 @@
             "web-features:fetch"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.1.9"
+            },
             "chrome": {
               "version_added": "132"
             },
@@ -695,6 +756,9 @@
             "web-features:fetch"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "64"
             },
@@ -779,6 +843,9 @@
             "web-features:fetch"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "40"
             },
@@ -822,6 +889,9 @@
             "web-features:fetch"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "40"
             },
@@ -911,6 +981,9 @@
             "web-features:fetch"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "65"
             },
@@ -948,9 +1021,8 @@
         "speculationrules": {
           "__compat": {
             "description": "`speculationrules` value",
-            "spec_url": "https://wicg.github.io/nav-speculation/speculation-rules.html#fetch",
             "tags": [
-              "web-features:fetch"
+              "web-features:speculation-rules"
             ],
             "support": {
               "chrome": {
@@ -989,6 +1061,7 @@
       },
       "duplex": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Request/duplex",
           "spec_url": "https://fetch.spec.whatwg.org/#dom-request-duplex",
           "tags": [
             "web-features:fetch"
@@ -1045,6 +1118,9 @@
             "web-features:fetch"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "60"
             },
@@ -1094,6 +1170,9 @@
             "web-features:fetch"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "40"
             },
@@ -1137,6 +1216,9 @@
             "web-features:fetch"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "46"
             },
@@ -1221,6 +1303,9 @@
             "web-features:fetch"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "42"
             },
@@ -1307,6 +1392,9 @@
             "web-features:fetch"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "40"
             },
@@ -1350,6 +1438,9 @@
             "web-features:fetch"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "40"
             },
@@ -1441,6 +1532,9 @@
             "web-features:fetch"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "46"
             },
@@ -1485,6 +1579,9 @@
             "web-features:fetch"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "40"
             },
@@ -1528,6 +1625,9 @@
             "web-features:fetch"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "52"
             },
@@ -1573,6 +1673,9 @@
             "web-features:abortable-fetch"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "66"
             },
@@ -1610,9 +1713,9 @@
       },
       "targetAddressSpace": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/private-network-access/#dom-request-targetaddressspace",
+          "spec_url": "https://wicg.github.io/local-network-access/#dom-request-targetaddressspace",
           "tags": [
-            "web-features:private-network-access"
+            "web-features:local-network-access"
           ],
           "support": {
             "chrome": [
@@ -1669,6 +1772,9 @@
             "web-features:fetch"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "42"
             },
@@ -1712,6 +1818,9 @@
             "web-features:fetch"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "40",
               "notes": "Fragment support added in Chrome 59."

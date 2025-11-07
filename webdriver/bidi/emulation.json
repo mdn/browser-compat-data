@@ -195,6 +195,7 @@
         "setLocaleOverride": {
           "__compat": {
             "description": "`emulation.setLocaleOverride` command",
+            "spec_url": "https://w3c.github.io/webdriver-bidi/#command-emulation-setLocaleOverride",
             "support": {
               "chrome": {
                 "version_added": "140"
@@ -203,8 +204,7 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": "142",
-                "partial_implementation": true,
-                "notes": "Both \"navigator.languages\" and the HTTP \"Accept-Language\" request header are not set yet."
+                "notes": "Before Firefox 144, the locale override was shared with all the other browsing contexts living in the same web content process."
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -220,13 +220,14 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": false,
+              "standard_track": true,
               "deprecated": false
             }
           },
           "contexts_parameter": {
             "__compat": {
               "description": "`contexts` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsetlocaleoverrideparameters-contexts",
               "support": {
                 "chrome": {
                   "version_added": "140"
@@ -250,6 +251,37 @@
               },
               "status": {
                 "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "cross_origin_iframes": {
+            "__compat": {
+              "description": "Applies override to newly created cross-origin iframes.",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "143"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
                 "standard_track": false,
                 "deprecated": false
               }
@@ -258,6 +290,7 @@
           "locale_parameter": {
             "__compat": {
               "description": "`locale` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsetlocaleoverrideparameters-locale",
               "support": {
                 "chrome": {
                   "version_added": "140"
@@ -281,6 +314,68 @@
               },
               "status": {
                 "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            },
+            "sets_navigator_language": {
+              "__compat": {
+                "description": "Sets the `navigator.language` and `navigator.languages` properties.",
+                "support": {
+                  "chrome": {
+                    "version_added": "142"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "146"
+                  },
+                  "firefox_android": "mirror",
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": false,
+                  "deprecated": false
+                }
+              }
+            }
+          },
+          "updates_existing_sandboxes": {
+            "__compat": {
+              "description": "Applies override to existing sandboxes.",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "144"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
                 "standard_track": false,
                 "deprecated": false
               }
@@ -289,6 +384,7 @@
           "userContexts_parameter": {
             "__compat": {
               "description": "`userContexts` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsetlocaleoverrideparameters-usercontexts",
               "support": {
                 "chrome": {
                   "version_added": "140"
@@ -312,7 +408,168 @@
               },
               "status": {
                 "experimental": false,
-                "standard_track": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        },
+        "setNetworkConditions": {
+          "__compat": {
+            "description": "`emulation.setNetworkConditions` command",
+            "spec_url": "https://w3c.github.io/webdriver-bidi/#command-emulation-setNetworkConditions",
+            "support": {
+              "chrome": {
+                "version_added": "143"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1993078"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "contexts_parameter": {
+            "__compat": {
+              "description": "`contexts` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsetnetworkconditionsparameters-contexts",
+              "support": {
+                "chrome": {
+                  "version_added": "143"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "networkConditions_parameter": {
+            "__compat": {
+              "description": "`networkConditions` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsetnetworkconditionsparameters-networkconditions",
+              "support": {
+                "chrome": {
+                  "version_added": "143"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            },
+            "offline": {
+              "__compat": {
+                "description": "`\"offline\"`",
+                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-value-emulationnetworkconditionsoffline-type-offline",
+                "support": {
+                  "chrome": {
+                    "version_added": "143"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
+                },
+                "status": {
+                  "experimental": true,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            }
+          },
+          "userContexts_parameter": {
+            "__compat": {
+              "description": "`userContexts` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsetnetworkconditionsparameters-usercontexts",
+              "support": {
+                "chrome": {
+                  "version_added": "143"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
                 "deprecated": false
               }
             }
@@ -329,8 +586,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1974165"
+                "version_added": "144"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -345,7 +601,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -587,8 +843,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1938046"
+                "version_added": "144"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -603,7 +858,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -619,7 +874,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "144"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -634,7 +889,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -651,7 +906,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "144"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -666,7 +921,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -683,7 +938,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "144"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -698,7 +953,135 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        },
+        "setUserAgentOverride": {
+          "__compat": {
+            "description": "`emulation.setUserAgentOverride` command",
+            "spec_url": "https://w3c.github.io/webdriver-bidi/#command-emulation-setUserAgentOverride",
+            "support": {
+              "chrome": {
+                "version_added": "142"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "145"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "contexts_parameter": {
+            "__compat": {
+              "description": "`contexts` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsetuseragentoverrideparameters-contexts",
+              "support": {
+                "chrome": {
+                  "version_added": "142"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "145"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "userAgent_parameter": {
+            "__compat": {
+              "description": "`userAgent` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsetuseragentoverrideparameters-useragent",
+              "support": {
+                "chrome": {
+                  "version_added": "142"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "145"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "userContexts_parameter": {
+            "__compat": {
+              "description": "`userContexts` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-emulationsetuseragentoverrideparameters-usercontexts",
+              "support": {
+                "chrome": {
+                  "version_added": "142"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "145"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }

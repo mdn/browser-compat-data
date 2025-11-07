@@ -993,7 +993,9 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": "mirror",
+                "webview_android": {
+                  "version_added": "136"
+                },
                 "webview_ios": "mirror"
               },
               "status": {
@@ -1516,7 +1518,9 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": "mirror",
+              "webview_android": {
+                "version_added": "136"
+              },
               "webview_ios": "mirror"
             },
             "status": {
@@ -1587,6 +1591,40 @@
             "status": {
               "experimental": true,
               "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "cross-origin-top-navigation-by-user-activation": {
+          "__compat": {
+            "description": "cross-origin top-navigation requires user-activation",
+            "support": {
+              "chrome": {
+                "version_added": "68",
+                "notes": "If a top-navigation is blocked, users are prompted for permission to redirect, and an error is reported in the developer console."
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "144",
+                "notes": "If a top-navigation is blocked, users are prompted for permission to redirect, and an error is reported in the developer console."
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "13",
+                "notes": "If a top-navigation is blocked, no redirect occurs, and an error is reported in the developer console."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
               "deprecated": false
             }
           }
@@ -1876,6 +1914,39 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "privateToken": {
+          "__compat": {
+            "spec_url": "https://wicg.github.io/trust-token-api/#iframe-private-token",
+            "support": {
+              "chrome": {
+                "version_added": "117"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": false
+              },
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }

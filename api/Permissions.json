@@ -327,43 +327,6 @@
           }
         }
       },
-      "permission_compute-pressure": {
-        "__compat": {
-          "description": "`compute-pressure` permission",
-          "spec_url": "https://w3c.github.io/compute-pressure/#policy-control",
-          "tags": [
-            "web-features:compute-pressure"
-          ],
-          "support": {
-            "chrome": {
-              "version_added": "125"
-            },
-            "chrome_android": {
-              "version_added": false
-            },
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "permission_geolocation": {
         "__compat": {
           "description": "`geolocation` permission",
@@ -726,7 +689,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "16.5"
+              "version_added": "17"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -757,15 +720,23 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "126"
-            },
+            "firefox": [
+              {
+                "version_added": "126"
+              },
+              {
+                "version_added": "122",
+                "version_removed": "126",
+                "partial_implementation": true,
+                "notes": "The value is recognized, but has no effect."
+              }
+            ],
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "16.4"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
