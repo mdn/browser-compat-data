@@ -52,7 +52,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run lint
+      - run: npm run lint -- --fail-on-warnings
 
   test:
     runs-on: ubuntu-latest
