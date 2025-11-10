@@ -6068,14 +6068,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "135",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.trusted_types.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "preview"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -6321,14 +6314,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "135",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.trusted_types.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "preview"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -7198,7 +7184,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/281223"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -7361,14 +7348,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "135",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.trusted_types.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "preview"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -9262,7 +9242,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false,
+              "version_added": "preview",
               "impl_url": "https://webkit.org/b/201556"
             },
             "safari_ios": "mirror",
@@ -10094,6 +10074,37 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "enforces_trusted_types": {
+          "__compat": {
+            "description": "Requires `value` parameter to be `TrustedHTML` instance (for `iframe.srcdoc`), or `TrustedScriptURL` (for HTML `script.src`, and SVG `script.href`) when trusted types are enforced",
+            "support": {
+              "chrome": {
+                "version_added": "83"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "preview"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "setAttributeNode": {
@@ -10228,6 +10239,37 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "enforces_trusted_types": {
+          "__compat": {
+            "description": "Requires `value` parameter to be `TrustedHTML`, `TrustedScript`, or `TrustedScriptURL` instance when trusted types enforced (matching attribute type)",
+            "support": {
+              "chrome": {
+                "version_added": "83"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "preview"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "setCapture": {
@@ -10283,14 +10325,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "138",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.security.sanitizer.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -10367,14 +10402,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "135",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.trusted_types.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "preview"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
