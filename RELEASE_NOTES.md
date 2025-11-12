@@ -1,5 +1,115 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.20](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.20)
+
+November 7, 2025
+
+### Renamings
+
+- `api.GPUAdapter.requestDevice.lost_device_on_duplicate` to `api.GPUAdapter.requestDevice.handles_duplicate_calls` ([#28402](https://github.com/mdn/browser-compat-data/pull/28402))
+
+### Removals
+
+- `css.types.attr.type-or-unit.frequency` ([#28408](https://github.com/mdn/browser-compat-data/pull/28408))
+- `css.types.attr.type-or-unit.url` ([#28408](https://github.com/mdn/browser-compat-data/pull/28408))
+
+### Additions
+
+- `api.console.timeStamp_static.color_parameter` ([#28270](https://github.com/mdn/browser-compat-data/pull/28270))
+- `api.console.timeStamp_static.data_parameter` ([#28270](https://github.com/mdn/browser-compat-data/pull/28270))
+- `api.console.timeStamp_static.end_parameter` ([#28270](https://github.com/mdn/browser-compat-data/pull/28270))
+- `api.console.timeStamp_static.label_parameter` ([#28270](https://github.com/mdn/browser-compat-data/pull/28270))
+- `api.console.timeStamp_static.start_parameter` ([#28270](https://github.com/mdn/browser-compat-data/pull/28270))
+- `api.console.timeStamp_static.trackGroup_parameter` ([#28270](https://github.com/mdn/browser-compat-data/pull/28270))
+- `api.console.timeStamp_static.trackName_parameter` ([#28270](https://github.com/mdn/browser-compat-data/pull/28270))
+- `api.Document.execCommand.insertHTML` ([#28350](https://github.com/mdn/browser-compat-data/pull/28350))
+- `api.Document.execCommand.insertHTML.enforces_trusted_types` ([#28350](https://github.com/mdn/browser-compat-data/pull/28350))
+- `api.Element.setAttribute.enforces_trusted_types` ([#28350](https://github.com/mdn/browser-compat-data/pull/28350))
+- `api.Element.setAttributeNS.enforces_trusted_types` ([#28350](https://github.com/mdn/browser-compat-data/pull/28350))
+- `api.Performance.mark.markOptions_detail_devtools_parameter` ([#28270](https://github.com/mdn/browser-compat-data/pull/28270))
+- `api.Performance.measure.measureOptions_detail_devtools_parameter` ([#28270](https://github.com/mdn/browser-compat-data/pull/28270))
+- `api.SharedWorker.SharedWorker.enforces_trusted_types` ([#28350](https://github.com/mdn/browser-compat-data/pull/28350))
+- `api.Worker.Worker.enforces_trusted_types` ([#28350](https://github.com/mdn/browser-compat-data/pull/28350))
+- `css.properties.justify-items.block_context` ([#28391](https://github.com/mdn/browser-compat-data/pull/28391))
+- `css.properties.justify-self.block_context` ([#28391](https://github.com/mdn/browser-compat-data/pull/28391))
+- `javascript.builtins.Function.Function.enforces_trusted_types` ([#28350](https://github.com/mdn/browser-compat-data/pull/28350))
+
+### Statistics
+
+- 9 contributors have changed 103 files with 981 additions and 332 deletions in 15 commits ([`v7.1.19...v7.1.20`](https://github.com/mdn/browser-compat-data/compare/v7.1.19...v7.1.20))
+- 19,045 total features
+- 1,205 total contributors
+- 5,474 total stargazers
+
+## [v7.1.19](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.19)
+
+November 5, 2025
+
+### Additions
+
+- `api.fetch.init_privateToken_parameter` ([#28333](https://github.com/mdn/browser-compat-data/pull/28333))
+- `api.Request.Request.init_privateToken_parameter` ([#28333](https://github.com/mdn/browser-compat-data/pull/28333))
+- `browsers.edge.releases.145` ([#28351](https://github.com/mdn/browser-compat-data/pull/28351))
+- `browsers.safari_ios.releases.26.2` ([#28378](https://github.com/mdn/browser-compat-data/pull/28378))
+- `browsers.safari.releases.26.2` ([#28378](https://github.com/mdn/browser-compat-data/pull/28378))
+- `browsers.webview_ios.releases.26.2` ([#28378](https://github.com/mdn/browser-compat-data/pull/28378))
+- `html.elements.iframe.privateToken` ([#28333](https://github.com/mdn/browser-compat-data/pull/28333))
+- `http.headers.Permissions-Policy.private-state-token-issuance` ([#28333](https://github.com/mdn/browser-compat-data/pull/28333))
+- `http.headers.Permissions-Policy.private-state-token-redemption` ([#28333](https://github.com/mdn/browser-compat-data/pull/28333))
+- `http.headers.Sec-Private-State-Token` ([#28333](https://github.com/mdn/browser-compat-data/pull/28333))
+- `http.headers.Sec-Private-State-Token-Crypto-Version` ([#28333](https://github.com/mdn/browser-compat-data/pull/28333))
+- `http.headers.Sec-Private-State-Token-Lifetime` ([#28333](https://github.com/mdn/browser-compat-data/pull/28333))
+- `http.headers.Sec-Redemption-Record` ([#28333](https://github.com/mdn/browser-compat-data/pull/28333))
+- `webextensions.api.webNavigation.getAllFrames.documentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.getAllFrames.documentLifecycle` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.getAllFrames.frameType` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.getAllFrames.parentDocumentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.getFrame.documentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.getFrame.documentLifecycle` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.getFrame.frameType` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.getFrame.parentDocumentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onBeforeNavigate.documentLifecycle` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onBeforeNavigate.frameType` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onBeforeNavigate.parentDocumentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onCommitted.documentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onCommitted.documentLifecycle` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onCommitted.frameType` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onCommitted.parentDocumentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onCommitted.parentFrameId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onCompleted.documentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onCompleted.documentLifecycle` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onCompleted.frameType` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onCompleted.parentDocumentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onCompleted.parentFrameId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onDOMContentLoaded.documentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onDOMContentLoaded.documentLifecycle` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onDOMContentLoaded.frameType` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onDOMContentLoaded.parentDocumentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onDOMContentLoaded.parentFrameId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onErrorOccurred.documentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onErrorOccurred.documentLifecycle` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onErrorOccurred.frameType` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onErrorOccurred.parentDocumentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onErrorOccurred.parentFrameId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onHistoryStateUpdated.documentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onHistoryStateUpdated.documentLifecycle` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onHistoryStateUpdated.frameType` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onHistoryStateUpdated.parentDocumentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onHistoryStateUpdated.parentFrameId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onReferenceFragmentUpdated.documentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onReferenceFragmentUpdated.documentLifecycle` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onReferenceFragmentUpdated.frameType` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onReferenceFragmentUpdated.parentDocumentId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.api.webNavigation.onReferenceFragmentUpdated.parentFrameId` ([#27012](https://github.com/mdn/browser-compat-data/pull/27012))
+- `webextensions.manifest.browser_specific_settings.gecko.data_collection_permissions` ([#28276](https://github.com/mdn/browser-compat-data/pull/28276))
+
+### Statistics
+
+- 8 contributors have changed 191 files with 1,661 additions and 489 deletions in 23 commits ([`v7.1.18...v7.1.19`](https://github.com/mdn/browser-compat-data/compare/v7.1.18...v7.1.19))
+- 19,029 total features
+- 1,205 total contributors
+- 5,472 total stargazers
+
 ## [v7.1.18](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.18)
 
 October 31, 2025
