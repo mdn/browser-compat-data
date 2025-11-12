@@ -536,12 +536,18 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": "53",
-                "notes": "Specifying `dataTypes.history` will also remove download history and service workers."
+                "notes": [
+                  "Specifying `dataTypes.history` also removes download history and service workers.",
+                  "Specifying `dataTypes.localStorage` also removes [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) from Firefox 146."
+                ]
               },
               "firefox_android": [
                 {
                   "version_added": "85",
-                  "notes": "Specifying `dataTypes.history` will also remove download history and service workers."
+                  "notes": [
+                    "Specifying `dataTypes.history` also removes download history and service workers.",
+                    "Specifying `dataTypes.localStorage` also removes [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) from Firefox 146."
+                  ]
                 },
                 {
                   "version_added": "57",
@@ -566,18 +572,15 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": "53",
-                "notes": "`removalOptions.since` is not supported."
+                "version_added": "53"
               },
               "firefox_android": [
                 {
-                  "version_added": "85",
-                  "notes": "`removalOptions.since` is not supported."
+                  "version_added": "85"
                 },
                 {
                   "version_added": "57",
-                  "version_removed": "79",
-                  "notes": "`removalOptions.since` is not supported."
+                  "version_removed": "79"
                 }
               ],
               "opera": "mirror",
@@ -585,6 +588,52 @@
                 "version_added": false
               },
               "safari_ios": "mirror"
+            }
+          },
+          "removalOptions": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "19"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "53"
+                },
+                "firefox_android": [
+                  {
+                    "version_added": "85"
+                  },
+                  {
+                    "version_added": "57",
+                    "version_removed": "79"
+                  }
+                ],
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            },
+            "since": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "19"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
             }
           }
         },
@@ -695,11 +744,11 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": "57",
-                "notes": "`removalOptions.since` is not supported."
+                "notes": "Also removes [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) from Firefox 146."
               },
               "firefox_android": {
                 "version_added": "85",
-                "notes": "`removalOptions.since` is not supported."
+                "notes": "Also removes [sessionStorage](https://developer.mozilla.org/docs/Web/API/Window/sessionStorage) from Firefox 146."
               },
               "opera": "mirror",
               "safari": {
@@ -712,7 +761,7 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": false
+                  "version_added": "19"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -741,6 +790,25 @@
                   "firefox_android": {
                     "version_added": "85"
                   },
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            },
+            "since": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "19"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
                   "opera": "mirror",
                   "safari": {
                     "version_added": false
