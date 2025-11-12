@@ -36,9 +36,9 @@ export const neverImplemented = (support: InternalSupportBlock): boolean => {
 };
 
 const errorTime = new Date(),
-  warningTime = new Date();
+  infoTime = new Date();
 errorTime.setFullYear(errorTime.getFullYear() - 2.5);
-warningTime.setFullYear(warningTime.getFullYear() - 2);
+infoTime.setFullYear(infoTime.getFullYear() - 2);
 
 /**
  * Check if a feature has been implemented at some point but removed now
@@ -85,15 +85,16 @@ export const implementedAndRemoved = (
 
       const releaseDate = new Date(releaseDateData);
       // Feature was recently supported, no need to show warning
-      if (warningTime < releaseDate) {
+      if (infoTime < releaseDate) {
         return false;
       }
       // Feature was supported sufficiently recently to not show an error
       if (errorTime < releaseDate) {
-        result = 'warning';
+        result = 'info';
       }
     }
   }
+
   return result;
 };
 
