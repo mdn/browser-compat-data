@@ -10,9 +10,13 @@ on:
 permissions:
   contents: read
 
+env:
+  FORCE_COLOR: 3
+
 jobs:
-  test:
+  format:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
@@ -26,6 +30,44 @@ jobs:
 
       - run: npm ci
 
-      - run: npm test
-        env:
-          FORCE_COLOR: 3
+      - run: npx eslint .
+
+      - run: npx prettier --check .
+
+      - run: npx tsc --noEmit
+
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
+        with:
+          node-version-file: ".nvmrc"
+          cache: npm
+          package-manager-cache: true
+
+      - run: npm ci
+
+      - run: npm run lint -- --fail-on-warnings
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
+        with:
+          node-version-file: ".nvmrc"
+          cache: npm
+          package-manager-cache: true
+
+      - run: npm ci
+
+      - run: npm run unittest
