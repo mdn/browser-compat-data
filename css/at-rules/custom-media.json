@@ -1,25 +1,34 @@
 {
-  "http": {
-    "headers": {
-      "Sec-Fetch-Storage-Access": {
+  "css": {
+    "at-rules": {
+      "custom-media": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Sec-Fetch-Storage-Access",
-          "spec_url": "https://privacycg.github.io/storage-access-headers/#sec-fetch-storage-access-header",
+          "description": "`@custom-media`",
+          "spec_url": "https://drafts.csswg.org/mediaqueries-5/#at-ruledef-custom-media",
           "support": {
             "chrome": {
-              "version_added": "133"
+              "version_added": false,
+              "impl_url": "https://crbug.com/40781325"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview"
+              "version_added": "146",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "layout.css.custom-media.enabled",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/233820"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
