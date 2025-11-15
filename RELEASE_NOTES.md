@@ -1,5 +1,21 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.22](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.22)
+
+November 13, 2025
+
+### Additions
+
+- `css.properties.justify-items.center` ([#28421](https://github.com/mdn/browser-compat-data/pull/28421))
+- `webdriver.bidi.emulation.setLocaleOverride.locale_parameter.sets_accept-language_header` ([#28442](https://github.com/mdn/browser-compat-data/pull/28442))
+
+### Statistics
+
+- 5 contributors have changed 17 files with 352 additions and 136 deletions in 7 commits ([`v7.1.21...v7.1.22`](https://github.com/mdn/browser-compat-data/compare/v7.1.21...v7.1.22))
+- 19,053 total features
+- 1,205 total contributors
+- 5,480 total stargazers
+
 ## [v7.1.21](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.21)
 
 November 12, 2025
