@@ -1,5 +1,28 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.21](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.21)
+
+November 12, 2025
+
+### Additions
+
+- `browsers.bun.releases.1.3.2` ([#28422](https://github.com/mdn/browser-compat-data/pull/28422))
+- `browsers.firefox_android.releases.148` ([#28433](https://github.com/mdn/browser-compat-data/pull/28433))
+- `browsers.firefox.releases.148` ([#28433](https://github.com/mdn/browser-compat-data/pull/28433))
+- `css.at-rules.custom-media` ([#28438](https://github.com/mdn/browser-compat-data/pull/28438))
+- `css.properties.text-decoration-inset` ([#28426](https://github.com/mdn/browser-compat-data/pull/28426))
+- `css.properties.text-decoration-inset.auto` ([#28426](https://github.com/mdn/browser-compat-data/pull/28426))
+- `webextensions.api.browsingData.removeCache.removalOptions` ([#28261](https://github.com/mdn/browser-compat-data/pull/28261))
+- `webextensions.api.browsingData.removeCache.removalOptions.since` ([#28261](https://github.com/mdn/browser-compat-data/pull/28261))
+- `webextensions.api.browsingData.removeLocalStorage.removalOptions.since` ([#28261](https://github.com/mdn/browser-compat-data/pull/28261))
+
+### Statistics
+
+- 7 contributors have changed 31 files with 526 additions and 252 deletions in 18 commits ([`v7.1.20...v7.1.21`](https://github.com/mdn/browser-compat-data/compare/v7.1.20...v7.1.21))
+- 19,051 total features
+- 1,205 total contributors
+- 5,479 total stargazers
+
 ## [v7.1.20](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.20)
 
 November 7, 2025

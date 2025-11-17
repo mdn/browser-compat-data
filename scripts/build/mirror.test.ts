@@ -7,9 +7,39 @@ import { BrowserName } from '../../types/types.js';
 import bcd from '../../index.js';
 import { InternalSupportBlock } from '../../types/index.js';
 
-import mirrorSupport from './mirror.js';
+import mirrorSupport, { isOSLimitation } from './mirror.js';
 
 describe('mirror', () => {
+  describe('isOSLimitation', () => {
+    it('returns true for OS limitation notes', () => {
+      assert.equal(
+        isOSLimitation('Supported on ChromeOS, macOS, and Windows only.'),
+        true,
+      );
+      assert.equal(isOSLimitation('Supported on macOS only.'), true);
+      assert.equal(isOSLimitation('Not supported on Windows.'), true);
+    });
+
+    it('returns false for non-OS-limitation notes', () => {
+      assert.equal(
+        isOSLimitation('This feature requires a flag to be enabled.'),
+        false,
+      );
+      assert.equal(
+        isOSLimitation('Before version 70, this method always returned true.'),
+        false,
+      );
+      assert.equal(
+        isOSLimitation('Firefox 73 added support for this thing.'),
+        false,
+      );
+    });
+
+    it('returns false for empty string', () => {
+      assert.equal(isOSLimitation(''), false);
+    });
+  });
+
   describe('default export', () => {
     describe('version numbers match expected values', () => {
       const mappings: {
@@ -187,6 +217,38 @@ describe('mirror', () => {
         assert.deepEqual(mirrored, {
           version_added: '52',
           notes: 'This feature is only supported in ChromeOS, macOS and Linux.',
+        });
+      });
+
+      it('OS-specific partial_implementation and notes are not mirrored', () => {
+        const support = {
+          chrome: {
+            version_added: '134',
+            partial_implementation: true,
+            notes: 'Supported on ChromeOS, macOS, and Windows only.',
+          },
+        };
+
+        const mirrored = mirrorSupport('chrome_android', support);
+        assert.deepEqual(mirrored, {
+          version_added: '134',
+        });
+      });
+
+      it('Non-OS-specific partial_implementation and notes are still mirrored', () => {
+        const support = {
+          chrome: {
+            version_added: '70',
+            partial_implementation: true,
+            notes: 'This feature is incomplete and may not work as expected.',
+          },
+        };
+
+        const mirrored = mirrorSupport('chrome_android', support);
+        assert.deepEqual(mirrored, {
+          version_added: '70',
+          partial_implementation: true,
+          notes: 'This feature is incomplete and may not work as expected.',
         });
       });
     });
