@@ -1,5 +1,31 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.23](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.23)
+
+November 18, 2025
+
+### Additions
+
+- `browsers.nodejs.releases.24.1.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.24.10.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.24.11.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.24.2.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.24.3.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.24.4.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.24.6.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.24.8.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.24.9.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.25.0.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.25.1.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.25.2.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+
+### Statistics
+
+- 3 contributors have changed 4 files with 117 additions and 7 deletions in 2 commits ([`v7.1.22...v7.1.23`](https://github.com/mdn/browser-compat-data/compare/v7.1.22...v7.1.23))
+- 19,054 total features
+- 1,206 total contributors
+- 5,487 total stargazers
+
 ## [v7.1.22](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.22)
 
 November 17, 2025
