@@ -1,8 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import fs from 'node:fs';
-
 import stringify from 'fast-json-stable-stringify';
 
 import { CompatData, BrowserName } from '../../types/types.js';
@@ -96,20 +94,18 @@ export const mirrorIfEquivalent = (bcd: CompatData): void => {
 /**
  * Update compat data to 'mirror' if the statement matches mirroring
  * @param filename The name of the file to fix
+ * @param actual The current content of the file
+ * @returns expected content of the file
  */
-const fixMirror = (filename: string): void => {
+const fixMirror = (filename: string, actual: string): string => {
   if (filename.includes('/browsers/')) {
-    return;
+    return actual;
   }
 
-  const actual = fs.readFileSync(filename, 'utf-8').trim();
   const bcd = JSON.parse(actual);
   mirrorIfEquivalent(bcd);
-  const expected = JSON.stringify(bcd, null, 2);
 
-  if (actual !== expected) {
-    fs.writeFileSync(filename, expected + '\n', 'utf-8');
-  }
+  return JSON.stringify(bcd, null, 2);
 };
 
 export default fixMirror;

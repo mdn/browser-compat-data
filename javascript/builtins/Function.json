@@ -10,6 +10,9 @@
             "web-features:functions"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "1"
             },
@@ -42,9 +45,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -63,6 +64,9 @@
               "web-features:functions"
             ],
             "support": {
+              "bun": {
+                "version_added": "1.0.0"
+              },
               "chrome": {
                 "version_added": "1"
               },
@@ -103,6 +107,38 @@
               "standard_track": true,
               "deprecated": false
             }
+          },
+          "enforces_trusted_types": {
+            "__compat": {
+              "description": "Requires arguments to be `TrustedScript` instance when trusted types are enforced",
+              "spec_url": "https://w3c.github.io/trusted-types/dist/spec/#dom-htmlscriptelement-innertext",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "preview"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "26"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "apply": {
@@ -114,6 +150,9 @@
               "web-features:functions"
             ],
             "support": {
+              "bun": {
+                "version_added": "1.0.0"
+              },
               "chrome": {
                 "version_added": "1"
               },
@@ -195,9 +234,7 @@
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": {
-                  "version_added": "≤37"
-                },
+                "webview_android": "mirror",
                 "webview_ios": "mirror"
               },
               "status": {
@@ -211,7 +248,13 @@
         "arguments": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Function/arguments",
+            "tags": [
+              "web-features:functions-caller-arguments"
+            ],
             "support": {
+              "bun": {
+                "version_added": "1.0.0"
+              },
               "chrome": {
                 "version_added": "1"
               },
@@ -263,6 +306,9 @@
               "web-features:functions"
             ],
             "support": {
+              "bun": {
+                "version_added": "1.0.0"
+              },
               "chrome": {
                 "version_added": "7"
               },
@@ -297,9 +343,7 @@
                 "version_added": "6"
               },
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "4"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -318,6 +362,9 @@
               "web-features:functions"
             ],
             "support": {
+              "bun": {
+                "version_added": "1.0.0"
+              },
               "chrome": {
                 "version_added": "1"
               },
@@ -364,7 +411,13 @@
         "caller": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Function/caller",
+            "tags": [
+              "web-features:functions-caller-arguments"
+            ],
             "support": {
+              "bun": {
+                "version_added": "1.0.0"
+              },
               "chrome": {
                 "version_added": "1"
               },
@@ -425,9 +478,6 @@
                 "version_added": "13"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -458,6 +508,9 @@
               "web-features:functions"
             ],
             "support": {
+              "bun": {
+                "version_added": "1.0.0"
+              },
               "chrome": {
                 "version_added": "1"
               },
@@ -521,9 +574,6 @@
                   "version_added": "37"
                 },
                 "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
                 "nodejs": {
                   "version_added": "4.0.0"
                 },
@@ -555,6 +605,9 @@
               "web-features:functions"
             ],
             "support": {
+              "bun": {
+                "version_added": "1.0.0"
+              },
               "chrome": {
                 "version_added": "15"
               },
@@ -569,9 +622,6 @@
                 "version_added": "1"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": "0.10.0"
               },
@@ -618,9 +668,6 @@
                   "version_added": "38"
                 },
                 "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
                 "nodejs": {
                   "version_added": "4.0.0"
                 },
@@ -672,9 +719,6 @@
                   "version_added": "53"
                 },
                 "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
                 "nodejs": {
                   "version_added": "6.5.0"
                 },
@@ -706,6 +750,9 @@
               "web-features:functions"
             ],
             "support": {
+              "bun": {
+                "version_added": "1.0.0"
+              },
               "chrome": {
                 "version_added": "1"
               },
@@ -767,9 +814,6 @@
                   "version_added": "54"
                 },
                 "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
                 "nodejs": {
                   "version_added": false
                 },
@@ -802,6 +846,9 @@
               "web-features:functions"
             ],
             "support": {
+              "bun": {
+                "version_added": "1.0.0"
+              },
               "chrome": {
                 "version_added": "50"
               },
@@ -816,9 +863,6 @@
                 "version_added": "50"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": "6.5.0"
               },

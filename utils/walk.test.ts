@@ -3,30 +3,17 @@
 
 import assert from 'node:assert/strict';
 
+import dataFolders from '../scripts/lib/data-folders.js';
 import bcd from '../index.js';
 
 import walk, { lowLevelWalk } from './walk.js';
 
 describe('lowLevelWalk()', () => {
   it('visits every top-level tree', () => {
-    const expectedPaths = [
-      'api',
-      'browsers',
-      'css',
-      'html',
-      'http',
-      'javascript',
-      'mathml',
-      'svg',
-      'webassembly',
-      'webdriver',
-      'webextensions',
-    ];
-
     const steps = Array.from(lowLevelWalk(undefined, undefined, 1));
     const paths = steps.map((step) => step.path);
-    assert.equal(steps.length, expectedPaths.length);
-    assert.deepEqual(paths, expectedPaths);
+    assert.equal(steps.length, dataFolders.length);
+    assert.deepEqual(paths, dataFolders);
   });
   it('visits every point in the tree', () => {
     const paths = Array.from(lowLevelWalk()).map((step) => step.path);
@@ -42,7 +29,7 @@ describe('walk()', () => {
 
   it('should walk a single tree', () => {
     const results = Array.from(walk('api.Notification'));
-    assert.equal(results.length, 28);
+    assert.equal(results.length, 29);
     assert.equal(results[0].path, 'api.Notification');
     assert.equal(results[1].path, 'api.Notification.Notification');
   });
@@ -51,9 +38,12 @@ describe('walk()', () => {
     const results = Array.from(
       walk(['api.Notification', 'css.properties.color']),
     );
-    assert.equal(results.length, 29);
+    assert.equal(results.length, 31);
     assert.equal(results[0].path, 'api.Notification');
-    assert.equal(results[results.length - 1].path, 'css.properties.color');
+    assert.equal(
+      results[results.length - 1].path,
+      'css.properties.color.transparent',
+    );
   });
 
   it('should yield every feature by default', () => {

@@ -8,6 +8,11 @@ Read how this project is [governed](./GOVERNANCE.md).
 
 Chat with us on Matrix at [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org)!
 
+Are you interested in contributing to this project? Check out the [Contributing to browser-compat-data](./docs/contributing.md) documentation.
+
+> [!TIP]
+> Looking for something? Consult the [alphabetical index](./docs/README.md) of the project documentation.
+
 ## Installation and Import
 
 ### NodeJS
@@ -91,7 +96,7 @@ const bcd = await fetch('https://unpkg.com/@mdn/browser-compat-data').then(
 
 You can obtain the raw compatibility data for `@mdn/browser-compat-data` using a CDN and loading the `data.json` file included in releases.
 
-```py
+```
 https://unpkg.com/@mdn/browser-compat-data/data.json
 ```
 
@@ -107,6 +112,10 @@ const support = bcd.css.properties.background.__compat;
 // You may use any syntax to obtain dictionary items
 const support = bcd['api']['Document']['body']['__compat'];
 ```
+
+### TypeScript Support
+
+BCD exports TypeScript type definitions. Type definitions are automatically generated from the [schema definitions](https://github.com/mdn/browser-compat-data/blob/main/schemas).
 
 ## Package contents
 
@@ -148,7 +157,6 @@ Data for [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) features, inc
 
 - `elements` - Elements
 - `global_attributes` - Global attributes
-- `manifest` - Web App manifest keys
 
 ### [`http`](http)
 
@@ -169,6 +177,10 @@ Data for JavaScript language features, including:
 - `operators` - Mathematical and logical operators
 - `statements` - Language statements and expressions
 
+### [`manifests`](./manifests)
+
+- `webapp` - Web App manifest keys
+
 ### [`mathml`](./mathml)
 
 Data for [MathML](https://developer.mozilla.org/en-US/docs/Web/MathML) features, including:
@@ -188,7 +200,10 @@ Data for [WebAssembly](https://developer.mozilla.org/docs/WebAssembly) features.
 
 ### [`webdriver`](./webdriver)
 
-Data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) features.
+Data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) features, including:
+
+- `bidi` - WebDriver BiDi protocol
+- `classic` - WebDriver Classic protocol
 
 ### [`webextensions`](./webextensions)
 
@@ -213,7 +228,7 @@ You should expect lower-level namespaces, feature data, and browser data to be a
 
 Now that you know what this project _is_, let's mention what this project _isn't_. This project is not:
 
-- An extensive description of every possible detail about a feature in a browser. We do not track UI changes, [irrelevant features](./docs/data-guidelines/index.md#removal-of-irrelevant-features) or [irrelevant flag data](./docs/data-guidelines/index.md#removal-of-irrelevant-flag-data).
+- An extensive description of every possible detail about a feature in a browser. We do not track UI changes, [irrelevant features](./docs/data-guidelines/README.md#removal-of-irrelevant-features) or [irrelevant flag data](./docs/data-guidelines/README.md#removal-of-irrelevant-flag-data).
 - A source for custom features added by web frameworks (e.g. React, Vue) or corporate runtimes (e.g. AWS Lambda, Azure Functions).
 - A documentation of screen reader compatibility; for screen reader compatibility, check out https://a11ysupport.io/ instead.
 - The location where Baseline data is hosted; while Baseline pulls from BCD, the Baseline data is managed by the W3C WebDX Community Group on their own [GitHub repo](https://github.com/web-platform-dx/web-features).
@@ -236,6 +251,7 @@ Here are some projects using the data, as an [npm module](https://www.npmjs.com/
 - [caniuse](https://caniuse.com/) - Website that shows browser support tables based on caniuse and BCD data.
 - [caniuse-lite](https://github.com/browserslist/caniuse-lite) - NPM package that republishes BCD data in the caniuse format.
 - [CanIUse Embed](https://caniuse.bitsofco.de/) - Service that allows embedding caniuse (including BCD data) into any website.
+- [CanIWebView](https://caniwebview.com/) - Website that shows support tables based on BCD data for WebViews and mobile browsers for comparison.
 - [css-declaration-sorter](https://www.npmjs.com/package/css-declaration-sorter) - NPM package that sorts CSS properties alphabetically.
 - [csstype](https://www.npmjs.com/package/csstype) - NPM package that publishes strict TypeScript/Flow types for CSS.
 - [Compat Report](https://addons.mozilla.org/en-US/firefox/addon/compat-report/) - Firefox Add-on that shows BCD data for the current site in the developer tools.

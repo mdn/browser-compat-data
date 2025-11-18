@@ -8,6 +8,9 @@
           "web-features:setinterval"
         ],
         "support": {
+          "bun": {
+            "version_added": "1.0.0"
+          },
           "chrome": {
             "version_added": "1"
           },
@@ -57,6 +60,9 @@
       "worker_support": {
         "__compat": {
           "description": "Available in workers",
+          "tags": [
+            "web-features:setinterval"
+          ],
           "support": {
             "chrome": {
               "version_added": "3"
@@ -102,9 +108,9 @@
           }
         }
       },
-      "code_param_accepts_trustedScript": {
+      "code_param_enforces_trusted_types": {
         "__compat": {
-          "description": "`code` parameter can be set with a `TrustedScript` instance",
+          "description": "`code` parameter requires `TrustedScript` instance when trusted types are enforced.",
           "spec_url": "https://w3c.github.io/trusted-types/dist/spec/#dom-xss-injection-sinks",
           "tags": [
             "web-features:trusted-types"
@@ -116,24 +122,14 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "135",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.security.trusted_types.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "26"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -183,9 +179,7 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": {
-              "version_added": "≤37"
-            },
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {

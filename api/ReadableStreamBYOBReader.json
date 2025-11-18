@@ -5,9 +5,12 @@
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader",
         "spec_url": "https://streams.spec.whatwg.org/#byob-reader-class",
         "tags": [
-          "web-features:streams"
+          "web-features:readable-byte-streams"
         ],
         "support": {
+          "bun": {
+            "version_added": "1.0.0"
+          },
           "chrome": {
             "version_added": "89"
           },
@@ -20,15 +23,13 @@
             "version_added": "102"
           },
           "firefox_android": "mirror",
-          "ie": {
-            "version_added": false
-          },
           "nodejs": [
             {
               "version_added": "18.0.0"
             },
             {
               "version_added": "16.5.0",
+              "version_removed": "18.0.0",
               "partial_implementation": true,
               "notes": "Available as a part of the `stream/web` module."
             }
@@ -56,7 +57,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/ReadableStreamBYOBReader",
           "spec_url": "https://streams.spec.whatwg.org/#ref-for-byob-reader-constructor①",
           "tags": [
-            "web-features:streams"
+            "web-features:readable-byte-streams"
           ],
           "support": {
             "chrome": {
@@ -71,9 +72,6 @@
               "version_added": "102"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "16.5.0"
             },
@@ -100,9 +98,12 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/cancel",
           "spec_url": "https://streams.spec.whatwg.org/#ref-for-generic-reader-cancel②",
           "tags": [
-            "web-features:streams"
+            "web-features:readable-byte-streams"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "89"
             },
@@ -115,9 +116,6 @@
               "version_added": "102"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "16.5.0"
             },
@@ -144,9 +142,12 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/closed",
           "spec_url": "https://streams.spec.whatwg.org/#ref-for-generic-reader-closed②",
           "tags": [
-            "web-features:streams"
+            "web-features:readable-byte-streams"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "89"
             },
@@ -159,9 +160,6 @@
               "version_added": "102"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "16.5.0"
             },
@@ -186,11 +184,14 @@
       "read": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/read",
-          "spec_url": "https://streams.spec.whatwg.org/#ref-for-byob-reader-read③",
+          "spec_url": "https://streams.spec.whatwg.org/#byob-reader-read",
           "tags": [
-            "web-features:streams"
+            "web-features:readable-byte-streams"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "89"
             },
@@ -203,9 +204,6 @@
               "version_added": "102"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "16.5.0"
             },
@@ -231,12 +229,11 @@
             "description": "`options.min` parameter",
             "spec_url": "https://streams.spec.whatwg.org/#dom-readablestreambyobreaderreadoptions-min",
             "tags": [
-              "web-features:streams"
+              "web-features:readable-byte-streams"
             ],
             "support": {
               "chrome": {
-                "version_added": false,
-                "impl_url": "https://crbug.com/40942083"
+                "version_added": "140"
               },
               "chrome_android": "mirror",
               "deno": {
@@ -247,9 +244,6 @@
                 "version_added": "134"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": [
                 {
                   "version_added": "21.7.0"
@@ -272,7 +266,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -284,9 +278,12 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReadableStreamBYOBReader/releaseLock",
           "spec_url": "https://streams.spec.whatwg.org/#ref-for-byob-reader-release-lock②",
           "tags": [
-            "web-features:streams"
+            "web-features:readable-byte-streams"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "89"
             },
@@ -299,9 +296,6 @@
               "version_added": "102"
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "nodejs": {
               "version_added": "16.5.0"
             },
@@ -326,7 +320,7 @@
           "__compat": {
             "description": "`releaseLock()` rejects pending read requests",
             "tags": [
-              "web-features:streams"
+              "web-features:readable-byte-streams"
             ],
             "support": {
               "chrome": {
@@ -342,9 +336,6 @@
                 "version_added": "102"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": "18.9.0"
               },

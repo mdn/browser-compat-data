@@ -12,19 +12,8 @@ import {
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
-// Once a category has been stripped of unsupported features, add it to this list
-const categoriesToCheck = [
-  'api',
-  // 'css',
-  'html',
-  'http',
-  'javascript',
-  'mathml',
-  'svg',
-  'webassembly',
-  'webdriver',
-  'webextensions',
-];
+// Once a category has been stripped of unsupported features, remove it from this list
+const ignoredCategories = ['css'];
 
 /**
  * Check if feature has never been implemented
@@ -47,9 +36,9 @@ export const neverImplemented = (support: InternalSupportBlock): boolean => {
 };
 
 const errorTime = new Date(),
-  warningTime = new Date();
+  infoTime = new Date();
 errorTime.setFullYear(errorTime.getFullYear() - 2.5);
-warningTime.setFullYear(warningTime.getFullYear() - 2);
+infoTime.setFullYear(infoTime.getFullYear() - 2);
 
 /**
  * Check if a feature has been implemented at some point but removed now
@@ -86,7 +75,8 @@ export const implementedAndRemoved = (
       }
 
       const releaseDateData =
-        browsers[browser].releases[d.version_removed].release_date;
+        browsers[browser].releases[d.version_removed.replace('≤', '')]
+          .release_date;
 
       // No browser release date
       if (!releaseDateData) {
@@ -95,15 +85,16 @@ export const implementedAndRemoved = (
 
       const releaseDate = new Date(releaseDateData);
       // Feature was recently supported, no need to show warning
-      if (warningTime < releaseDate) {
+      if (infoTime < releaseDate) {
         return false;
       }
       // Feature was supported sufficiently recently to not show an error
       if (errorTime < releaseDate) {
-        result = 'warning';
+        result = 'info';
       }
     }
   }
+
   return result;
 };
 
@@ -145,7 +136,7 @@ export default {
    * @param root.path.category The category the data belongs to
    */
   check: (logger: Logger, { data, path: { category } }: LinterData) => {
-    if (categoriesToCheck.includes(category)) {
+    if (!ignoredCategories.includes(category)) {
       processData(logger, data);
     }
   },

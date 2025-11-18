@@ -2,6 +2,7 @@
  * See LICENSE file for more information. */
 import yargs from 'yargs';
 
+import { updateBunReleases } from './bun.js';
 import { updateChromiumReleases } from './chrome.js';
 import { updateEdgeReleases } from './edge.js';
 import { updateFirefoxReleases } from './firefox.js';
@@ -40,6 +41,11 @@ const argv = yargs(process.argv.slice(2))
     type: 'boolean',
     group: 'Engine selection:',
   })
+  .option('bun', {
+    describe: 'Update Bun',
+    type: 'boolean',
+    group: 'Engine selection:',
+  })
   .option('all', {
     describe: 'Update all browsers (default)',
     type: 'boolean',
@@ -60,6 +66,10 @@ const argv = yargs(process.argv.slice(2))
     type: 'boolean',
     group: 'Device selection:',
   })
+  .option('debug', {
+    describe: 'Enable debug mode',
+    type: 'boolean',
+  })
   .help()
   .parse();
 
@@ -72,7 +82,8 @@ const updateAllBrowsers =
     argv['firefox'] ||
     argv['edge'] ||
     argv['opera'] ||
-    argv['safari']
+    argv['safari'] ||
+    argv['bun']
   );
 const updateChrome = argv['chrome'] || updateAllBrowsers;
 const updateWebview = argv['webview'] || updateAllBrowsers;
@@ -80,10 +91,12 @@ const updateFirefox = argv['firefox'] || updateAllBrowsers;
 const updateEdge = argv['edge'] || updateAllBrowsers;
 const updateOpera = argv['opera'] || updateAllBrowsers;
 const updateSafari = argv['safari'] || updateAllBrowsers;
+const updateBun = argv['bun'] || updateAllBrowsers;
 const updateAllDevices =
   argv['alldevices'] || !(argv['mobile'] || argv['desktop']);
 const updateMobile = argv['mobile'] || updateAllDevices;
 const updateDesktop = argv['desktop'] || updateAllDevices;
+const debug = argv['debug'] ?? false;
 
 const options = {
   chrome_desktop: {
@@ -143,7 +156,7 @@ const options = {
     edgeupdatesURL:
       'https://edgeupdates.microsoft.com/api/products?view=enterprise',
     releaseScheduleURL:
-      'https://raw.githubusercontent.com/MicrosoftDocs/Edge-Enterprise/public/edgeenterprise/microsoft-edge-release-schedule.md',
+      'https://learn.microsoft.com/en-us/deployedge/microsoft-edge-release-schedule',
   },
   firefox_desktop: {
     browserName: 'Firefox for Desktop',
@@ -178,7 +191,7 @@ const options = {
     skippedReleases: [],
     releaseFeedURL: 'https://blogs.opera.com/desktop/category/stable-2/feed/',
     titleVersionPattern: /^Opera (\d+)$/,
-    descriptionEngineVersionPattern: /Chromium (\d+)/,
+    descriptionEngineVersionPattern: /Chromium(?:\s[^.\d]+)?\s(\d+)(?=[.])/,
   },
   opera_android: {
     browserName: 'Opera for Android',
@@ -217,64 +230,54 @@ const options = {
       'https://developer.apple.com/tutorials/data/documentation/safari-release-notes.json',
     releaseNoteURLBase: 'https://developer.apple.com',
   },
+  bun: {
+    browserName: 'Bun',
+    bcdFile: './browsers/bun.json',
+    bcdBrowserName: 'bun',
+  } as const,
 };
 
-let result = '';
-
-if (updateChrome && updateDesktop) {
-  const add = await updateChromiumReleases(options.chrome_desktop);
-  result += (result && add ? '\n' : '') + add;
+if (!debug) {
+  /** No-op. */
+  console.debug = () => {
+    /* No-op. */
+  };
 }
 
-if (updateChrome && updateMobile) {
-  const add = await updateChromiumReleases(options.chrome_android);
-  result += (result && add ? '\n' : '') + add;
-}
+const results = await Promise.all([
+  ...(updateChrome
+    ? [
+        updateDesktop && updateChromiumReleases(options.chrome_desktop),
+        updateMobile && updateChromiumReleases(options.chrome_android),
+      ]
+    : []),
+  updateWebview &&
+    updateMobile &&
+    updateChromiumReleases(options.webview_android),
+  updateEdge && updateDesktop && updateEdgeReleases(options.edge_desktop),
+  ...(updateFirefox
+    ? [
+        updateDesktop && updateFirefoxReleases(options.firefox_desktop),
+        updateMobile && updateFirefoxReleases(options.firefox_android),
+      ]
+    : []),
+  ...(updateOpera
+    ? [
+        updateDesktop && updateOperaReleases(options.opera_desktop),
+        updateMobile && updateOperaReleases(options.opera_android),
+      ]
+    : []),
+  ...(updateSafari
+    ? [
+        updateDesktop && updateSafariReleases(options.safari_desktop),
+        updateMobile && updateSafariReleases(options.safari_ios),
+        updateMobile && updateSafariReleases(options.webview_ios),
+      ]
+    : []),
+  updateBun && updateBunReleases(options.bun),
+]);
 
-if (updateWebview && updateMobile) {
-  const add = await updateChromiumReleases(options.webview_android);
-  result += (result && add ? '\n' : '') + add;
-}
-
-if (updateEdge && updateDesktop) {
-  const add = await updateEdgeReleases(options.edge_desktop);
-  result += (result && add ? '\n' : '') + add;
-}
-
-if (updateFirefox && updateDesktop) {
-  const add = await updateFirefoxReleases(options.firefox_desktop);
-  result += (result && add ? '\n' : '') + add;
-}
-
-if (updateFirefox && updateMobile) {
-  const add = await updateFirefoxReleases(options.firefox_android);
-  result += (result && add ? '\n' : '') + add;
-}
-
-if (updateOpera && updateDesktop) {
-  const add = await updateOperaReleases(options.opera_desktop);
-  result += (result && add ? '\n' : '') + add;
-}
-
-if (updateOpera && updateMobile) {
-  const add = await updateOperaReleases(options.opera_android);
-  result += (result && add ? '\n' : '') + add;
-}
-
-if (updateSafari && updateDesktop) {
-  const add = await updateSafariReleases(options.safari_desktop);
-  result += (result && add ? '\n' : '') + add;
-}
-
-if (updateSafari && updateMobile) {
-  const add = await updateSafariReleases(options.safari_ios);
-  result += (result && add ? '\n' : '') + add;
-}
-
-if (updateSafari && updateMobile) {
-  const add = await updateSafariReleases(options.webview_ios);
-  result += (result && add ? '\n' : '') + add;
-}
+const result = results.filter(Boolean).join('\n\n');
 
 if (result) {
   console.log(result);

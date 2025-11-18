@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import child_process from 'node:child_process';
+import { spawn } from '../../utils/index.js';
 
 interface Fields {
   value: string;
@@ -16,9 +16,7 @@ interface Fields {
  * @returns The output from the `git merge-base` command
  */
 const getMergeBase = (x: string, y = 'HEAD'): string =>
-  child_process
-    .execSync(`git merge-base ${x} ${y}`, { encoding: 'utf-8' })
-    .trim();
+  spawn('git', ['merge-base', x, y]);
 
 /**
  * Parse fields from a git diff status output
@@ -37,13 +35,18 @@ const parseFields = (fields: string[]): Fields => ({
  * @param head The second git refs
  * @returns The diff statuses
  */
-const getGitDiffStatuses = (base: string, head: string): Fields[] =>
-  child_process
-    .execSync(`git diff --name-status ${base} ${head}`, { encoding: 'utf-8' })
-    .trim()
+const getGitDiffStatuses = (base: string, head: string): Fields[] => {
+  const stdout = spawn('git', ['diff', '--name-status', base, head]);
+
+  if (!stdout) {
+    return [];
+  }
+
+  return stdout
     .split('\n')
     .map((line) => line.split('\t'))
     .map(parseFields);
+};
 
 /**
  * Get file contents from a specific commit and file path
@@ -52,28 +55,20 @@ const getGitDiffStatuses = (base: string, head: string): Fields[] =>
  * @returns The file contents
  */
 const getFileContent = (commit: string, path: string): string =>
-  child_process
-    .execSync(`git show ${commit}:${path}`, {
-      encoding: 'utf-8',
-      stdio: 'pipe',
-    })
-    .trim();
+  spawn('git', ['show', `${commit}:${path}`]);
 
 /**
  * Get the current branch name
  * @returns The output from the `git rev-parse --abbrev-ref HEAD` command
  */
 const getBranchName = (): string =>
-  child_process
-    .execSync('git rev-parse --abbrev-ref HEAD', { encoding: 'utf-8' })
-    .trim();
+  spawn('git', ['rev-parse', '--abbrev-ref', 'HEAD']);
 
 /**
  * Get commit hash of HEAD
  * @returns The output from the `git rev-parse HEAD` command
  */
-const getHashOfHEAD = (): string =>
-  child_process.execSync('git rev-parse HEAD', { encoding: 'utf-8' }).trim();
+const getHashOfHEAD = (): string => spawn('git', ['rev-parse', 'HEAD']);
 
 export {
   getMergeBase,

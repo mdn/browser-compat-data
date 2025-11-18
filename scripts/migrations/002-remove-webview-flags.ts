@@ -9,6 +9,7 @@ import esMain from 'es-main';
 
 import { CompatStatement, SimpleSupportStatement } from '../../types/types.js';
 import { IS_WINDOWS } from '../../lint/utils.js';
+import { dataFoldersMinusBrowsers } from '../lib/data-folders.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -38,7 +39,11 @@ export const removeWebViewFlags = (
         } else if (result.length == 1) {
           value.support.webview_android = result[0];
         } else {
-          value.support.webview_android = result;
+          value.support.webview_android = result as [
+            SimpleSupportStatement,
+            SimpleSupportStatement,
+            ...SimpleSupportStatement[],
+          ];
         }
       } else if (value.support.webview_android.flags !== undefined) {
         value.support.webview_android = { version_added: false };
@@ -108,18 +113,6 @@ if (esMain(import.meta)) {
   if (process.argv[2]) {
     load(process.argv[2]);
   } else {
-    load(
-      'api',
-      'css',
-      'html',
-      'http',
-      'svg',
-      'javascript',
-      'mathml',
-      'test',
-      'webassembly',
-      'webdriver',
-      'webextensions',
-    );
+    load(...dataFoldersMinusBrowsers);
   }
 }

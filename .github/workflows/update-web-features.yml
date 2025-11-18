@@ -18,16 +18,17 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.GH_TOKEN }}
+          persist-credentials: false
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
         with:
           node-version-file: ".nvmrc"
-          cache: npm
+          package-manager-cache: false
 
       - name: "Setup git"
         run: |
@@ -35,16 +36,20 @@ jobs:
           git config user.name mdn-bot
 
       - name: Install
+        env:
+          # Temporary workaround to install lefthook hooks.
+          CI: ""
         run: npm ci
 
       - name: Update tags
+        id: update
         run: |
-          echo "RESULT<<EOF" >> $GITHUB_ENV
-          npm run tag-web-features .. >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          echo "RESULT<<EOF" >> "$GITHUB_OUTPUT"
+          npm run tag-web-features .. >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@dd2324fc52d5d43c699a5636bcf19fceaa70c284 # v7.0.7
+        uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7.0.8
         with:
           token: ${{ secrets.GH_TOKEN }} # need the rights to create and edit PRs
           commit-message: Update web-features tags
@@ -56,5 +61,5 @@ jobs:
           title: "Update web-features tags"
           body: |
             The output of the `tag-web-features` script is:
-            ${{ env.RESULT }}
+            ${{ steps.update.outputs.RESULT }}
           draft: false

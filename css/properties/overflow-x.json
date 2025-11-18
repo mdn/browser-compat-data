@@ -3,7 +3,7 @@
     "properties": {
       "overflow-x": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/overflow-x",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overflow-x",
           "spec_url": "https://drafts.csswg.org/css-overflow/#overflow-properties",
           "tags": [
             "web-features:overflow-shorthand"
@@ -100,7 +100,8 @@
                 },
                 {
                   "alternative_name": "overlay",
-                  "version_added": "≤13.1"
+                  "version_added": "6",
+                  "notes": "Before Safari 12.1, `overlay` only had an effect on legacy scrollbars on macOS. Since Safari 12.1, it is parsed as `auto`."
                 }
               ],
               "safari_ios": "mirror",
@@ -119,7 +120,7 @@
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-overflow/#valdef-overflow-auto",
             "tags": [
-              "web-features:overflow-shorthand"
+              "web-features:overflow-clip"
             ],
             "support": {
               "chrome": {
@@ -138,9 +139,6 @@
                 }
               ],
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",

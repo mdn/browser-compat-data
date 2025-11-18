@@ -5,6 +5,7 @@ import fs from 'node:fs/promises';
 import { relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import betterAjvErrors from 'better-ajv-errors';
 import esMain from 'es-main';
 import { compareVersions } from 'compare-versions';
 import { marked } from 'marked';
@@ -12,6 +13,9 @@ import { marked } from 'marked';
 import { InternalSupportStatement } from '../../types/index.js';
 import { BrowserName, CompatData, VersionValue } from '../../types/types.js';
 import compileTS from '../generate-types.js';
+import compatDataSchema from '../../schemas/compat-data.schema.json' with { type: 'json' };
+import browserDataSchema from '../../schemas/browsers.schema.json' with { type: 'json' };
+import { createAjv } from '../lib/ajv.js';
 import { walk } from '../../utils/index.js';
 import { WalkOutput } from '../../utils/walk.js';
 import bcd from '../../index.js';
@@ -172,6 +176,24 @@ export const transformMD = (feature: WalkOutput): void => {
 };
 
 /**
+ * Adds missing IE statements.
+ * @param {WalkOutput} feature The BCD to perform note conversion on
+ * @returns {void}
+ */
+const addIE = (feature: WalkOutput): void => {
+  if (
+    feature.path.startsWith('webextensions.') &&
+    !bcd.browsers.ie.accepts_webextensions
+  ) {
+    return;
+  }
+  const browsers = Object.keys(feature.compat.support);
+  if (browsers.includes('edge') && !browsers.includes('ie')) {
+    feature.compat.support['ie'] = { version_added: false };
+  }
+};
+
+/**
  * Applies transforms to the given data.
  * @param data - The data to apply transforms to.
  */
@@ -182,6 +204,7 @@ export const applyTransforms = (data): void => {
     applyMirroring(feature);
     addVersionLast(feature);
     transformMD(feature);
+    addIE(feature);
   }
 };
 
@@ -200,6 +223,35 @@ export const createDataBundle = async (): Promise<CompatData> => {
   };
 };
 
+/**
+ * Validates the given data against the schema.
+ * @param data - The data to validate.
+ */
+const validate = (data: CompatData) => {
+  const ajv = createAjv();
+
+  for (const [key, value] of Object.entries(data)) {
+    if (key === '__meta') {
+      // Not covered by the schema.
+      continue;
+    }
+
+    const schema = key === 'browsers' ? browserDataSchema : compatDataSchema;
+    const data = { [key]: value };
+    if (!ajv.validate(schema, data)) {
+      const errors = ajv.errors || [];
+      if (!errors.length) {
+        console.error(`${key} data failed validation with unknown errors!`);
+      }
+      // Output messages by one since better-ajv-errors wrongly joins messages
+      // (see https://github.com/atlassian/better-ajv-errors/pull/21)
+      errors.forEach((e) => {
+        console.error(betterAjvErrors(schema, data, [e], { indent: 2 }));
+      });
+    }
+  }
+};
+
 /* c8 ignore start */
 
 /**
@@ -208,6 +260,7 @@ export const createDataBundle = async (): Promise<CompatData> => {
 const writeData = async () => {
   const dest = new URL('data.json', targetdir);
   const data = await createDataBundle();
+  validate(data);
   await fs.writeFile(dest, stringifyAndOrderProperties(data, null));
   logWrite(dest, 'data');
 };
@@ -287,6 +340,10 @@ export const createManifest = (): any => {
       './forLegacyNode': {
         types: './import.d.mts',
         default: './legacynode.mjs',
+      },
+      './types': {
+        types: './types.d.ts',
+        default: './types.d.ts',
       },
     },
     types: 'require.d.ts',

@@ -18,6 +18,8 @@ Compatibility data is organized in top-level directories for each broad area cov
 
 - [javascript/](../javascript) contains data for [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) built-in Objects, statement, operators, and other ECMAScript language features.
 
+- [manifests/](../manifests) contains data for various manifests, such as the [Web Application Manifest](https://developer.mozilla.org/docs/Web/Progressive_web_apps/manifest).
+
 - [mathml/](../mathml) contains data for [MathML](https://developer.mozilla.org/docs/Web/MathML) elements, attributes, and global attributes.
 
 - [svg/](../svg) contains data for [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) elements, attributes, and global attributes.
@@ -72,7 +74,7 @@ When an identifier has a `__compat` block, it represents its basic support, indi
 
 To add a sub-feature, a new identifier is added below the main feature at the level of a `__compat` object (see the sub-features "start" and "end" above). The same could be done for sub-sub-features. There is no depth limit.
 
-See [Data guidelines](../docs/data-guidelines/index.md) for more information about feature naming conventions and other best practices.
+See [Data guidelines](../docs/data-guidelines/README.md) for more information about feature naming conventions and other best practices.
 
 ### The `__compat` object
 
@@ -100,7 +102,7 @@ Here is an example of a `__compat` statement, with all of the properties and the
               // Supported since Chrome 57 on
               "version_added": "57",
             },
-            "chrome_android": "mirror", // Mirrors from Chrome Desktop, so "57"
+            "chrome_android": "mirror", // Mirrors from the upstream browser -- in this case, it is Chrome Desktop, so the data becomes "57"
             "edge": {
               // Supported since Edge 12, with a note about a difference in behavior
               "version_added": "12",
@@ -112,8 +114,8 @@ Here is an example of a `__compat` statement, with all of the properties and the
               "version_removed": "80",
             },
             "firefox_android": {
-              // Supported in Firefox Android, we just don't know what version it was added in
-              "version_added": true,
+              // Support is known to be in at least Firefox Android 50, but it could have been added earlier
+              "version_added": "≤50",
             },
             "ie": {
               // Supported since IE 10, but has a caveat that impacts compatibility
@@ -126,10 +128,7 @@ Here is an example of a `__compat` statement, with all of the properties and the
               // Not supported at all in Opera
               "version_added": false,
             },
-            "opera_android": {
-              // We don't know if Opera Android supports this or not
-              "version_added": null,
-            },
+            "opera_android": "mirror",
             "safari": [
               // A support statement can be an array of multiple statements to better describe the compatibility story
               {
@@ -148,6 +147,7 @@ Here is an example of a `__compat` statement, with all of the properties and the
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
+            // If a browser is not defined, it means we don't have support information for that browser (or for web extensions, the browser has no support at all)
           },
           "status": {
             // Standards track, deprecation and experimental status
@@ -187,7 +187,6 @@ The `__compat` object consists of the following:
 
 - An optional `tags` property which is an array of strings allowing to assign tags to the feature.
   Each tag in the array must be namespaced. The currently allowed namespaces are:
-
   - `web-features`: A namespace to tag features belonging to a web platform feature group as defined by [web-platform-dx/web-features](https://github.com/web-platform-dx/web-features/blob/main/features/README.md).
 
   For more information, see the [tagging data guidelines](../docs/data-guidelines/tags.md).
@@ -196,6 +195,7 @@ The `__compat` object consists of the following:
 
 The currently accepted browser identifiers should be declared in alphabetical order:
 
+- `bun`, Bun JavaScript runtime built on WebKit
 - `chrome`, Google Chrome (on desktops)
 - `chrome_android`, Google Chrome (on Android)
 - `deno`, Deno JavaScript runtime built on Chrome's V8 JavaScript engine
@@ -295,14 +295,6 @@ This is the only mandatory property and it contains a string with the version nu
 }
 ```
 
-- Supported, but version unknown:
-
-```json
-{
-  "version_added": true
-}
-```
-
 - No support:
 
 ```json
@@ -311,24 +303,9 @@ This is the only mandatory property and it contains a string with the version nu
 }
 ```
 
-- Support unknown (default value, if browser omitted):
-
-```json
-{
-  "version_added": null
-}
-```
-
-Note: many data categories no longer allow for `version_added` to be set to `true` or `null`, as we are working to [improve the quality of the compatibility data](https://github.com/mdn/browser-compat-data/issues/3555).
-
 #### `version_removed`
 
 Contains a string with the version number the sub-feature was removed in. It may also be `true`, meaning that it is unknown in which version support was removed. If the feature has not been removed from the browser, this property is omitted, rather than being set to `false`.
-
-Default values:
-
-- If `version_added` is set to `true`, `false`, or a string, `version_removed` defaults to `false`.
-- If `version_added` is set to `null`, the default value of `version_removed` is also `null`.
 
 Examples:
 
@@ -340,17 +317,6 @@ Examples:
   "version_removed": "10"
 }
 ```
-
-- Removed in some version after 4:
-
-```json
-{
-  "version_added": "4",
-  "version_removed": true
-}
-```
-
-Note: many data categories no longer allow for `version_removed` to be set to `true`, as we are working to [improve the quality of the compatibility data](https://github.com/mdn/browser-compat-data/issues/3555).
 
 #### `version_last`
 
@@ -436,7 +402,7 @@ Example for one flag required:
 
 ```json
 {
-  "version_added": true,
+  "version_added": "40",
   "flags": [
     {
       "type": "preference",
@@ -451,7 +417,7 @@ Example for two flags required:
 
 ```json
 {
-  "version_added": true,
+  "version_added": "40",
   "flags": [
     {
       "type": "preference",
@@ -495,7 +461,7 @@ Notes may be formatted in Markdown. Only links, bold, italics, codeblocks, and `
 
 #### `partial_implementation`
 
-A `boolean` value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, it is [required](../docs/data-guidelines/index.md#partial_implementation-requires-a-note) that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard).
+A `boolean` value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, it is [required](../docs/data-guidelines/README.md#partial_implementation-requires-a-note) that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard).
 
 ```json
 {

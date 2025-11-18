@@ -18,23 +18,27 @@ jobs:
     env:
       RESULT: ""
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           fetch-depth: 0 # get the full repository checkout, not just the inciting commit
-      - uses: actions/setup-node@v4
+          persist-credentials: false
+
+      - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
         with:
           node-version-file: ".nvmrc"
-          cache: npm
-      - run: npm install -D typescript
-      - run: npm install -D tsx
+          package-manager-cache: false
+
+      - run: npm ci
+
       - name: Run update-browser-releases script
-        id: ubr
+        id: update
         run: |
-          echo "RESULT<<EOF" >> $GITHUB_ENV
-          npm run update-browser-releases -- --all >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          echo "RESULT<<EOF" >> "$GITHUB_OUTPUT"
+          npm run update-browser-releases -- --all >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@dd2324fc52d5d43c699a5636bcf19fceaa70c284 # v7.0.7
+        uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7.0.8
         with:
           token: ${{ secrets.GH_TOKEN }} # need the rights to create and edit PRs
           commit-message: Update browser releases
@@ -46,5 +50,5 @@ jobs:
           title: "Update browser releases"
           body: |
             The output of the `update-browser-releases` script is:
-            ${{ env.RESULT }}
+            ${{ steps.update.outputs.RESULT }}
           draft: false

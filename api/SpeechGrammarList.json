@@ -5,22 +5,44 @@
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechGrammarList",
         "spec_url": "https://webaudio.github.io/web-speech-api/#speechgrammarlist",
         "tags": [
-          "web-features:speech-recognition"
+          "web-features:speech-recognition-grammar"
         ],
         "support": {
-          "chrome": {
-            "prefix": "webkit",
-            "version_added": "33"
-          },
+          "chrome": [
+            {
+              "version_added": "139"
+            },
+            {
+              "prefix": "webkit",
+              "version_added": "33"
+            }
+          ],
           "chrome_android": "mirror",
           "edge": "mirror",
-          "firefox": {
-            "version_added": false
-          },
+          "firefox": [
+            {
+              "version_added": "142",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "media.webspeech.recognition.enable",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            {
+              "prefix": "webkit",
+              "version_added": "142",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "media.webspeech.recognition.enable",
+                  "value_to_set": "true"
+                }
+              ]
+            }
+          ],
           "firefox_android": "mirror",
-          "ie": {
-            "version_added": false
-          },
           "oculus": "mirror",
           "opera": {
             "version_added": false
@@ -37,9 +59,9 @@
           "webview_ios": "mirror"
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
-          "deprecated": false
+          "deprecated": true
         }
       },
       "SpeechGrammarList": {
@@ -48,22 +70,44 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechGrammarList/SpeechGrammarList",
           "spec_url": "https://webaudio.github.io/web-speech-api/#dom-speechgrammarlist-speechgrammarlist",
           "tags": [
-            "web-features:speech-recognition"
+            "web-features:speech-recognition-grammar"
           ],
           "support": {
-            "chrome": {
-              "prefix": "webkit",
-              "version_added": "33"
-            },
+            "chrome": [
+              {
+                "version_added": "139"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "33"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "142",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.webspeech.recognition.enable",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "142",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.webspeech.recognition.enable",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": {
               "version_added": false
@@ -80,9 +124,9 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -91,7 +135,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechGrammarList/addFromString",
           "spec_url": "https://webaudio.github.io/web-speech-api/#dom-speechgrammarlist-addfromstring",
           "tags": [
-            "web-features:speech-recognition"
+            "web-features:speech-recognition-grammar"
           ],
           "support": {
             "chrome": {
@@ -100,12 +144,16 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "142",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "media.webspeech.recognition.enable",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": {
               "version_added": false
@@ -122,9 +170,9 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -133,7 +181,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechGrammarList/addFromURI",
           "spec_url": "https://webaudio.github.io/web-speech-api/#dom-speechgrammarlist-addfromuri",
           "tags": [
-            "web-features:speech-recognition"
+            "web-features:speech-recognition-grammar"
           ],
           "support": {
             "chrome": {
@@ -142,12 +190,16 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "142",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "media.webspeech.recognition.enable",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": {
               "version_added": false
@@ -164,9 +216,9 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -175,7 +227,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechGrammarList/item",
           "spec_url": "https://webaudio.github.io/web-speech-api/#dom-speechgrammarlist-item",
           "tags": [
-            "web-features:speech-recognition"
+            "web-features:speech-recognition-grammar"
           ],
           "support": {
             "chrome": {
@@ -184,12 +236,16 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "142",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "media.webspeech.recognition.enable",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": {
               "version_added": false
@@ -206,9 +262,9 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -217,7 +273,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechGrammarList/length",
           "spec_url": "https://webaudio.github.io/web-speech-api/#dom-speechgrammarlist-length",
           "tags": [
-            "web-features:speech-recognition"
+            "web-features:speech-recognition-grammar"
           ],
           "support": {
             "chrome": {
@@ -226,12 +282,16 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "142",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "media.webspeech.recognition.enable",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": {
               "version_added": false
@@ -248,9 +308,9 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       }

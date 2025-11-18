@@ -1,9 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { exec, execSync } from 'node:child_process';
 import fs from 'node:fs';
-import { promisify } from 'node:util';
 import path from 'node:path';
 
 import esMain from 'es-main';
@@ -11,16 +9,7 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { temporaryDirectoryTask } from 'tempy';
 
-/**
- * Executes a command asynchronously.
- * @param command The command to execute asynchronously.
- * @returns The output of the command.
- */
-const execAsync = async (command: string): Promise<string> => {
-  const result = await promisify(exec)(command, { encoding: 'utf-8' });
-
-  return result.stdout.trim();
-};
+import { spawn, spawnAsync } from '../utils/index.js';
 
 /**
  * Compare two references and print diff as Markdown or JSON
@@ -124,19 +113,28 @@ const getEnumerationFromGithub = async (ref: string): Promise<string[]> => {
   const ENUMERATE_WORKFLOW_ARTIFACT = 'enumerate-features';
   const ENUMERATE_WORKFLOW_FILE = 'features.json';
 
-  const hash = await execAsync(`git rev-parse ${ref}`);
-  const workflowRun = await execAsync(
-    `gh api /repos/:owner/:repo/actions/workflows/${ENUMERATE_WORKFLOW}/runs\\?head_sha=${hash}\\&per_page=1 --jq '[.workflow_runs[] | select(.head_sha=="${hash}") | .id] | first'`,
-  );
+  const hash = await spawnAsync('git', ['rev-parse', ref]);
+  const workflowRun = await spawnAsync('gh', [
+    'api',
+    `/repos/:owner/:repo/actions/workflows/${ENUMERATE_WORKFLOW}/runs?head_sha=${hash}&per_page=1`,
+    '--jq',
+    `[.workflow_runs[] | select(.head_sha=="${hash}") | .id] | first`,
+  ]);
 
   if (!workflowRun) {
     throw Error('No workflow run found for commit.');
   }
 
   return await temporaryDirectoryTask(async (tempdir) => {
-    await execAsync(
-      `gh run download ${workflowRun} -n ${ENUMERATE_WORKFLOW_ARTIFACT} --dir ${tempdir}`,
-    );
+    await spawnAsync('gh', [
+      'run',
+      'download',
+      workflowRun,
+      '-n',
+      ENUMERATE_WORKFLOW_ARTIFACT,
+      '--dir',
+      tempdir,
+    ]);
     const file = path.join(tempdir, ENUMERATE_WORKFLOW_FILE);
 
     return JSON.parse(fs.readFileSync(file, { encoding: 'utf-8' }));
@@ -161,9 +159,7 @@ const enumerateFeatures = (ref = 'HEAD', quiet = false): string[] => {
   // However, if `ref` is already checked out, then `git worktree add` fails. As
   // long as you haven't checked out a detached HEAD for `ref`, then
   // `git worktree add` for the hash succeeds.
-  const hash = execSync(`git rev-parse --short ${ref}`, {
-    encoding: 'utf-8',
-  }).trim();
+  const hash = spawn('git', ['rev-parse', '--short', ref]);
 
   const worktree = `__enumerating__${hash}`;
 
@@ -172,19 +168,23 @@ const enumerateFeatures = (ref = 'HEAD', quiet = false): string[] => {
   }
 
   try {
-    execSync(`git worktree add ${worktree} ${hash}`);
+    spawn('git', ['worktree', 'add', worktree, hash]);
 
     try {
-      execSync('npm ci', { cwd: worktree });
+      spawn('npm', ['ci'], { cwd: worktree });
     } catch (e) {
       // If the clean install fails, proceed anyways
     }
 
-    execSync(`npx tsx ./scripts/enumerate-features.ts --data-from=${worktree}`);
+    spawn('npx', [
+      'tsx',
+      './scripts/enumerate-features.ts',
+      `--data-from=${worktree}`,
+    ]);
 
     return JSON.parse(fs.readFileSync('.features.json', { encoding: 'utf-8' }));
   } finally {
-    execSync(`git worktree remove ${worktree}`);
+    spawn('git', ['worktree', 'remove', worktree]);
   }
 };
 
