@@ -1,5 +1,23 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.22](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.22)
+
+November 17, 2025
+
+### Additions
+
+- `api.CSSCustomMediaRule` ([#28450](https://github.com/mdn/browser-compat-data/pull/28450))
+- `browsers.nodejs.releases.24.5.0` ([#28343](https://github.com/mdn/browser-compat-data/pull/28343))
+- `css.properties.justify-items.center` ([#28421](https://github.com/mdn/browser-compat-data/pull/28421))
+- `webdriver.bidi.emulation.setLocaleOverride.locale_parameter.sets_accept-language_header` ([#28442](https://github.com/mdn/browser-compat-data/pull/28442))
+
+### Statistics
+
+- 7 contributors have changed 26 files with 488 additions and 173 deletions in 18 commits ([`v7.1.21...v7.1.22`](https://github.com/mdn/browser-compat-data/compare/v7.1.21...v7.1.22))
+- 19,054 total features
+- 1,206 total contributors
+- 5,487 total stargazers
+
 ## [v7.1.21](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.21)
 
 November 12, 2025
