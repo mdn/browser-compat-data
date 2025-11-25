@@ -1,5 +1,45 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.23](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.23)
+
+November 25, 2025
+
+### Additions
+
+- `api.HTMLAnchorElement.interestForElement` ([#28469](https://github.com/mdn/browser-compat-data/pull/28469))
+- `api.HTMLAreaElement.interestForElement` ([#28469](https://github.com/mdn/browser-compat-data/pull/28469))
+- `api.HTMLButtonElement.interestForElement` ([#28469](https://github.com/mdn/browser-compat-data/pull/28469))
+- `api.HTMLElement.interest_event` ([#28469](https://github.com/mdn/browser-compat-data/pull/28469))
+- `api.HTMLElement.loseinterest_event` ([#28469](https://github.com/mdn/browser-compat-data/pull/28469))
+- `api.InterestEvent` ([#28469](https://github.com/mdn/browser-compat-data/pull/28469))
+- `api.InterestEvent.InterestEvent` ([#28469](https://github.com/mdn/browser-compat-data/pull/28469))
+- `api.InterestEvent.source` ([#28469](https://github.com/mdn/browser-compat-data/pull/28469))
+- `api.SVGAElement.interestForElement` ([#28469](https://github.com/mdn/browser-compat-data/pull/28469))
+- `browsers.bun.releases.1.3.3` ([#28514](https://github.com/mdn/browser-compat-data/pull/28514))
+- `browsers.nodejs.releases.24.1.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.24.10.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.24.11.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.24.2.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.24.3.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.24.4.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.24.6.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.24.8.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.24.9.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.25.0.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.25.1.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `browsers.nodejs.releases.25.2.0` ([#28441](https://github.com/mdn/browser-compat-data/pull/28441))
+- `html.elements.a.interestfor` ([#28469](https://github.com/mdn/browser-compat-data/pull/28469))
+- `html.elements.area.interestfor` ([#28469](https://github.com/mdn/browser-compat-data/pull/28469))
+- `html.elements.button.interestfor` ([#28469](https://github.com/mdn/browser-compat-data/pull/28469))
+- `svg.elements.a.interestfor` ([#28469](https://github.com/mdn/browser-compat-data/pull/28469))
+
+### Statistics
+
+- 12 contributors have changed 43 files with 691 additions and 372 deletions in 34 commits ([`v7.1.22...v7.1.23`](https://github.com/mdn/browser-compat-data/compare/v7.1.22...v7.1.23))
+- 19,067 total features
+- 1,210 total contributors
+- 5,494 total stargazers
+
 ## [v7.1.22](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.22)
 
 November 17, 2025
