@@ -1,5 +1,33 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.1.24](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.24)
+
+November 27, 2025
+
+### Removals
+
+- `api.GPUTexture.createView.texture_rgb10a2uint` ([#28525](https://github.com/mdn/browser-compat-data/pull/28525))
+- `api.GPUTexture.createView.usage` ([#28525](https://github.com/mdn/browser-compat-data/pull/28525))
+- `css.at-rules.container.style_queries_range_syntax` ([#28537](https://github.com/mdn/browser-compat-data/pull/28537))
+- `css.types.if.style_queries_range_syntax` ([#28537](https://github.com/mdn/browser-compat-data/pull/28537))
+
+### Additions
+
+- `api.GPUTexture.createView.descriptor_format_parameter_accepts_rgb10a2uint` ([#28525](https://github.com/mdn/browser-compat-data/pull/28525))
+- `api.GPUTexture.createView.descriptor_usage_parameter` ([#28525](https://github.com/mdn/browser-compat-data/pull/28525))
+- `css.at-rules.container.style_queries_for_custom_properties.range_syntax` ([#28537](https://github.com/mdn/browser-compat-data/pull/28537))
+- `css.at-rules.container.style_queries_range_syntax` ([#28510](https://github.com/mdn/browser-compat-data/pull/28510))
+- `css.types.if.style` ([#28537](https://github.com/mdn/browser-compat-data/pull/28537))
+- `css.types.if.style_queries_range_syntax` ([#28510](https://github.com/mdn/browser-compat-data/pull/28510))
+- `css.types.if.style.range_syntax` ([#28537](https://github.com/mdn/browser-compat-data/pull/28537))
+
+### Statistics
+
+- 4 contributors have changed 6 files with 171 additions and 33 deletions in 7 commits ([`v7.1.23...v7.1.24`](https://github.com/mdn/browser-compat-data/compare/v7.1.23...v7.1.24))
+- 19,070 total features
+- 1,210 total contributors
+- 5,495 total stargazers
+
 ## [v7.1.23](https://github.com/mdn/browser-compat-data/releases/tag/v7.1.23)
 
 November 25, 2025
