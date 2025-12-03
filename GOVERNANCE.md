@@ -64,15 +64,21 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 - Estelle Weyl (@estelle), Open Web Docs (Peer for CSS compat data)
 - Hamish Willee (@hamishwillee), Mozilla
 - Luca Casonato (@lucacasonato), Deno
+- Luca Greco (@rpl), Mozilla
 - Michael Smith (@sideshowbarker), W3C
-- Richard Bloor (@rebloor)
+- Rachel Andrew (@rachelandrew), Google
+- Richard Bloor (@rebloor), Mozilla
+- Rob Wu (@Rob--W), Mozilla
+- Simeon Vincent (@dotproto), Mozilla
+- Tomislav Jovanovic (@zombie), Mozilla
 - Will Bamberg (@wbamberg), Open Web Docs
+- William Durand (@willdurand), Mozilla
 
 A Peer who shows an above-average level of contribution to the project, particularly with respect to its strategic direction and long-term health, may be nominated to become an Owner, described below.
 
 ### Owners
 
-The `@mdn/browser-compat-data` project is jointly governed by the [Mozilla MDN staff team](https://wiki.mozilla.org/Engagement/MDN_Durable_Team#Team_Members), the [MDN Product Advisory Board Members](https://developer.mozilla.org/en-US/docs/MDN/MDN_Product_Advisory_Board/Members), and the [Owner group](#list-of-current-owners). They are collectively responsible for high-level guidance of the project.
+The `@mdn/browser-compat-data` project is jointly governed by the [Mozilla MDN staff team](https://developer.mozilla.org/en-US/about#our_team), the [MDN Product Advisory Board Members](https://developer.mozilla.org/en-US/docs/MDN/MDN_Product_Advisory_Board/Members), and the [Owner group](#list-of-current-owners). They are collectively responsible for high-level guidance of the project.
 
 The [Owner group](#list-of-current-owners) has final authority over this project including:
 
@@ -177,7 +183,6 @@ The `@mdn/browser-compat-data` project would like to thank the following former 
 - Joe Medley (@jpmedley) (Peer)
 - John Whitlock (@jwhitlock) (Technical design of the former compat data project)
 - Kadir Topal (@atopal) (BCD co-owner until September 2020)
-- Rachel Andrew (@rachelandrew) (Peer)
 - Ryan Johnson (@escattone) (Peer)
 
 ## Credits

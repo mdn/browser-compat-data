@@ -2,19 +2,9 @@
 
 This document describes frequently asked questions and their answers. If your question is not listed or you still need help, contact the MDN team on [chat.mozilla.org#mdn](https://chat.mozilla.org/#/room/#mdn:mozilla.org) or write to us on [Discourse](https://discourse.mozilla-community.org/c/mdn).
 
-## The tables on MDN haven't updated yet!
+## How often are the browser compatibility tables updated on MDN Web Docs?
 
-Once a pull request is merged to update BCD, it takes a week or two for a new version of the repository to be released, and then a few days for it to launch on MDN. The process is:
-
-1. A pull request is reviewed and merged to `main`.
-2. Project owners publish a new release of [`@mdn/browser-compat-data`](https://www.npmjs.com/package/@mdn/browser-compat-data).
-   See [Publishing a new version of `@mdn/browser-compat-data`](./publishing.md) for details.
-3. MDN staff merge a pull request that updates the BCD version in [Yari](https://github.com/mdn/yari), the MDN engine. This typically happens within a day of the release of the npm package.
-4. Tables are then generated on MDN Web Docs:
-
-   - Existing compatibility tables will automatically update.
-   - For new pages, or for pages without existing compatibility tables, you must add the `{{Compat}}` macro and the `browser-compat` front-matter key to the page.
-     For instructions, see [Inserting the data into MDN pages](https://developer.mozilla.org/en-US/docs/MDN/Structures/Compatibility_tables#inserting_the_data_into_mdn_pages).
+The tables get automatically updated after a BCD release, typically within 2 hours (incl. cache invalidation).
 
 ## I opened a PR but it hasn't been reviewed yet.
 

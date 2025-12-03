@@ -29,6 +29,7 @@ import {
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 const linters = new Linters(Object.values(linterModules));
+
 /**
  * Normalize and categorize file path
  * @param file The file path
@@ -110,9 +111,16 @@ const loadAndCheckFiles = async (...files: string[]): Promise<DataType> => {
 /**
  * Test for any errors in specified file(s) and/or folder(s), or all of BCD
  * @param files The file(s) and/or folder(s) to test. Leave undefined for everything.
+ * @param options Linting options
+ * @param options.failOnWarnings Treat warnings as errors (non-zero exit code)
  * @returns Whether there were any errors
  */
-const main = async (files = dataFolders) => {
+const main = async (
+  files = dataFolders,
+  options: { failOnWarnings?: boolean } = {},
+) => {
+  const { failOnWarnings = false } = options;
+
   let hasErrors = false;
 
   console.log(chalk`{cyan Loading and checking files...}`);
@@ -162,6 +170,7 @@ const main = async (files = dataFolders) => {
     const messagesByLevel: Record<LinterMessageLevel, LinterMessage[]> = {
       error: [],
       warning: [],
+      info: [],
     };
 
     for (const message of messages) {
@@ -169,6 +178,10 @@ const main = async (files = dataFolders) => {
     }
 
     if (messagesByLevel.error.length) {
+      hasErrors = true;
+    }
+
+    if (failOnWarnings && messagesByLevel.warning.length) {
       hasErrors = true;
     }
 
@@ -188,7 +201,7 @@ const main = async (files = dataFolders) => {
 
     for (const message of messages) {
       console.error(
-        chalk`{${message.level === 'error' ? 'red' : 'yellow'}  ✖ ${
+        chalk`{${message.level === 'error' ? 'red' : message.level === 'warning' ? 'yellow' : 'blue'}  ✖ ${
           message.path
         } - ${message.level[0].toUpperCase() + message.level.substring(1)} → ${
           message.message
@@ -247,17 +260,21 @@ const main = async (files = dataFolders) => {
 };
 
 if (esMain(import.meta)) {
-  const { argv } = yargs(hideBin(process.argv)).command(
-    '$0 [files..]',
-    false,
-    (yargs) =>
+  const { argv } = yargs(hideBin(process.argv))
+    .command('$0 [files..]', false, (yargs) =>
       yargs.positional('files...', {
         description: 'The files to lint (leave blank to test everything)',
         type: 'string',
       }),
-  );
+    )
+    .option('fail-on-warnings', {
+      type: 'boolean',
+      description: 'Treat warnings as errors (non-zero exit code)',
+      default: false,
+    });
 
-  process.exit((await main((argv as any).files)) ? 1 : 0);
+  const { files, failOnWarnings } = argv as any;
+  process.exit((await main(files, { failOnWarnings })) ? 1 : 0);
 }
 
 export default main;

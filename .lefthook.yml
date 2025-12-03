@@ -1,0 +1,53 @@
+# Lefthook config docs: https://lefthook.dev/configuration/
+
+pre-commit:
+  parallel: true
+  jobs:
+    - name: prettier
+      run: npx prettier --ignore-unknown --write --cache {staged_files}
+      stage_fixed: true
+
+    - name: eslint
+      glob: "*.{js,jsx,tsx}"
+      run: npx eslint --fix --cache {staged_files}
+      stage_fixed: true
+
+    - name: lint:fix
+      glob: "**/*.json"
+      exclude:
+        - .vscode/*.json
+        - browsers/*.json
+        - schemas/*.json
+      run: npm run lint:fix {staged_files}
+      stage_fixed: true
+
+pre-push:
+  piped: true
+  jobs:
+    - name: lint
+      group:
+        parallel: true
+        jobs:
+          - name: eslint
+            run: npx eslint --cache
+
+          - name: prettier
+            run: npx prettier --check .
+
+          - name: tsc
+            run: npx tsc --noEmit
+
+post-merge:
+  only:
+    - ref: main
+  piped: true
+  jobs:
+    - name: install
+      run: npm install --ignore-scripts
+
+    - name: gentypes
+      run: npm run gentypes
+
+output:
+  - summary
+  - failure

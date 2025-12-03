@@ -8,19 +8,41 @@
           "web-features:speech-recognition-grammar"
         ],
         "support": {
-          "chrome": {
-            "prefix": "webkit",
-            "version_added": "33"
-          },
+          "chrome": [
+            {
+              "version_added": "139"
+            },
+            {
+              "prefix": "webkit",
+              "version_added": "33"
+            }
+          ],
           "chrome_android": "mirror",
           "edge": "mirror",
-          "firefox": {
-            "version_added": false
-          },
+          "firefox": [
+            {
+              "version_added": "142",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "media.webspeech.recognition.enable",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            {
+              "prefix": "webkit",
+              "version_added": "142",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "media.webspeech.recognition.enable",
+                  "value_to_set": "true"
+                }
+              ]
+            }
+          ],
           "firefox_android": "mirror",
-          "ie": {
-            "version_added": false
-          },
           "oculus": "mirror",
           "opera": {
             "version_added": false
@@ -37,9 +59,9 @@
           "webview_ios": "mirror"
         },
         "status": {
-          "experimental": true,
+          "experimental": false,
           "standard_track": true,
-          "deprecated": false
+          "deprecated": true
         }
       },
       "SpeechGrammarList": {
@@ -51,19 +73,41 @@
             "web-features:speech-recognition-grammar"
           ],
           "support": {
-            "chrome": {
-              "prefix": "webkit",
-              "version_added": "33"
-            },
+            "chrome": [
+              {
+                "version_added": "139"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "33"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
+            "firefox": [
+              {
+                "version_added": "142",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.webspeech.recognition.enable",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "142",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.webspeech.recognition.enable",
+                    "value_to_set": "true"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": {
               "version_added": false
@@ -80,9 +124,9 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -100,12 +144,16 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "142",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "media.webspeech.recognition.enable",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": {
               "version_added": false
@@ -122,9 +170,9 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -142,12 +190,16 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "142",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "media.webspeech.recognition.enable",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": {
               "version_added": false
@@ -164,9 +216,9 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -184,12 +236,16 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "142",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "media.webspeech.recognition.enable",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": {
               "version_added": false
@@ -206,9 +262,9 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -226,12 +282,16 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "142",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "media.webspeech.recognition.enable",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "firefox_android": "mirror",
-            "ie": {
-              "version_added": false
-            },
             "oculus": "mirror",
             "opera": {
               "version_added": false
@@ -248,9 +308,9 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       }

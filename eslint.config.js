@@ -2,15 +2,14 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { fixupConfigRules, fixupPluginRules } from '@eslint/compat';
-import typescriptEslint from '@typescript-eslint/eslint-plugin';
 import _import from 'eslint-plugin-import';
 // import jsdoc from 'eslint-plugin-jsdoc';
 import preferArrowFunctions from 'eslint-plugin-prefer-arrow-functions';
 import unicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
-import tsParser from '@typescript-eslint/parser';
 import js from '@eslint/js';
 import { FlatCompat } from '@eslint/eslintrc';
+import ts from 'typescript-eslint';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -49,7 +48,7 @@ export default [
   ),
   {
     plugins: {
-      '@typescript-eslint': fixupPluginRules(typescriptEslint),
+      '@typescript-eslint': fixupPluginRules(ts.plugin),
       import: fixupPluginRules(_import),
       // jsdoc: fixupPluginRules(jsdoc), // Plugin already defined
       'prefer-arrow-functions': preferArrowFunctions,
@@ -64,7 +63,7 @@ export default [
         SharedArrayBuffer: 'readonly',
       },
 
-      parser: tsParser,
+      parser: ts.parser,
       ecmaVersion: 2020,
       sourceType: 'module',
     },

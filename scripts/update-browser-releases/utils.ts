@@ -4,6 +4,8 @@
 import chalk from 'chalk-template';
 import xml2js from 'xml2js';
 
+import { BrowserName, BrowserStatus, CompatData } from '../../types/types.js';
+
 const USER_AGENT =
   'MDN-Browser-Release-Update-Bot/1.0 (+https://developer.mozilla.org/)';
 
@@ -46,7 +48,7 @@ export const newBrowserEntry = (
   release['status'] = status;
   release['engine'] = engine;
   if (engineVersion) {
-    release['engine_version'] = engineVersion;
+    release['engine_version'] = engineVersion.toString();
   }
   return chalk`{yellow \n- New release detected for {bold ${browser}}: Version {bold ${version}} as a {bold ${status}} release.}`;
 };
@@ -88,7 +90,7 @@ export const updateBrowserEntry = (
 
   if (engineVersion && entry['engine_version'] != engineVersion) {
     result += chalk`{cyan \n- New engine version for {bold ${browser} ${version}}: {bold ${engineVersion}}, previously ${entry['engine_version']}.}`;
-    entry['engine_version'] = engineVersion;
+    entry['engine_version'] = engineVersion.toString();
   }
 
   return result;
@@ -137,6 +139,37 @@ export const createOrUpdateBrowserEntry = (
     releaseDate,
     releaseNotesURL,
     engineVersion,
+  );
+};
+
+/**
+ * Updates the status of a browser release.
+ * @param json json file to update
+ * @param browser the entry name where to add it in the bcd file
+ * @param version the version to add
+ * @param status the status
+ * @returns Text describing what has been updated
+ */
+export const setBrowserReleaseStatus = (
+  json: CompatData,
+  browser: BrowserName,
+  version: string,
+  status: BrowserStatus,
+): string => {
+  const release = json.browsers[browser].releases[version];
+
+  if (release.status === status) {
+    return '';
+  }
+
+  return updateBrowserEntry(
+    json,
+    browser,
+    version,
+    release.release_date,
+    status,
+    '',
+    '',
   );
 };
 
@@ -190,7 +223,10 @@ export const getRSSItems = async (url): Promise<RSSItem[]> => {
  * @param message the message of the noteblock.
  * @returns the message as a GFM noteblock.
  */
-export const gfmNoteblock = (type: 'NOTE' | 'WARN', message: string) =>
+export const gfmNoteblock = (
+  type: 'NOTE' | 'WARNING' | 'CAUTION',
+  message: string,
+) =>
   `> [!${type}]\n${message
     .split('\n')
     .map((line) => `> ${line}`)

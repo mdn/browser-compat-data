@@ -3,7 +3,12 @@
 
 import chalk from 'chalk-template';
 
-import { Linter, Logger, LinterData } from '../utils.js';
+import {
+  Linter,
+  Logger,
+  LinterData,
+  createStatementGroupKey,
+} from '../utils.js';
 import { BrowserName, SupportStatement } from '../../types/types.js';
 
 /**
@@ -31,11 +36,7 @@ const processData = (
       continue;
     }
 
-    const statementKey = d.prefix
-      ? `prefix: ${d.prefix}`
-      : d.alternative_name
-        ? `alt. name: ${d.alternative_name}`
-        : 'normal name';
+    const statementKey = createStatementGroupKey(d);
 
     if (statements.includes(statementKey)) {
       logger.error(

@@ -10,6 +10,9 @@
             "web-features:javascript"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "1"
             },
@@ -61,6 +64,9 @@
               "web-features:javascript"
             ],
             "support": {
+              "bun": {
+                "version_added": "1.0.0"
+              },
               "chrome": {
                 "version_added": "1"
               },
@@ -118,9 +124,6 @@
                   "version_added": "1"
                 },
                 "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
                 "nodejs": {
                   "version_added": false
                 },
@@ -158,9 +161,6 @@
                   "version_added": "1"
                 },
                 "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
                 "nodejs": {
                   "version_added": false
                 },
@@ -191,6 +191,9 @@
                 "web-features:error-cause"
               ],
               "support": {
+                "bun": {
+                  "version_added": "1.0.0"
+                },
                 "chrome": {
                   "version_added": "93"
                 },
@@ -203,9 +206,6 @@
                   "version_added": "91"
                 },
                 "firefox_android": "mirror",
-                "ie": {
-                  "version_added": false
-                },
                 "nodejs": {
                   "version_added": "16.9.0"
                 },
@@ -231,7 +231,11 @@
         "captureStackTrace": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/captureStackTrace",
+            "spec_url": "https://github.com/tc39/proposal-error-capturestacktrace?tab=readme-ov-file#errorcapturestacktrace-1",
             "support": {
+              "bun": {
+                "version_added": "1.0.0"
+              },
               "chrome": {
                 "version_added": "3"
               },
@@ -241,20 +245,9 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": "136",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "javascript.options.experimental.error_capture_stack_trace",
-                    "value_to_set": "true"
-                  }
-                ],
-                "impl_url": "https://bugzil.la/1886820"
+                "version_added": "138"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": "0.10.0"
               },
@@ -262,7 +255,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "17.3"
+                "version_added": "17.2"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -271,7 +264,7 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": false,
+              "standard_track": true,
               "deprecated": false
             }
           }
@@ -285,6 +278,9 @@
               "web-features:error-cause"
             ],
             "support": {
+              "bun": {
+                "version_added": "1.0.0"
+              },
               "chrome": {
                 "version_added": "93",
                 "notes": "Before version 125, default console logging for `Error` objects does not print the cause."
@@ -298,9 +294,6 @@
                 "version_added": "91"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": "16.9.0"
               },
@@ -339,9 +332,6 @@
                 "version_added": "1"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -379,9 +369,6 @@
                 "version_added": "1"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -406,28 +393,30 @@
         "isError": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/isError",
-            "spec_url": "https://tc39.es/proposal-is-error/#sec-error.iserror",
+            "spec_url": "https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-error.iserror",
             "tags": [
               "web-features:is-error"
             ],
             "support": {
+              "bun": {
+                "version_added": "1.1.39"
+              },
               "chrome": {
                 "version_added": "134"
               },
               "chrome_android": "mirror",
               "deno": {
-                "version_added": false
+                "version_added": "2.2"
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "138"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
-                "version_added": false
+                "version_added": "24.0.0",
+                "partial_implementation": true,
+                "notes": "Returns `false` for `DOMException` instances. See [issue 56497](https://github.com/nodejs/node/issues/56497)."
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -465,9 +454,6 @@
                 "version_added": "1"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -498,6 +484,9 @@
               "web-features:javascript"
             ],
             "support": {
+              "bun": {
+                "version_added": "1.0.0"
+              },
               "chrome": {
                 "version_added": "1"
               },
@@ -549,6 +538,9 @@
               "web-features:javascript"
             ],
             "support": {
+              "bun": {
+                "version_added": "1.0.0"
+              },
               "chrome": {
                 "version_added": "1"
               },
@@ -617,9 +609,6 @@
                 ]
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": false
               },
@@ -645,6 +634,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/stack",
             "support": {
+              "bun": {
+                "version_added": "1.0.0"
+              },
               "chrome": {
                 "version_added": "3"
               },
@@ -677,9 +669,7 @@
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": "≤37"
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -693,6 +683,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Error/stackTraceLimit",
             "support": {
+              "bun": {
+                "version_added": "1.0.0"
+              },
               "chrome": {
                 "version_added": "3"
               },
@@ -705,9 +698,6 @@
                 "version_added": false
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "nodejs": {
                 "version_added": "16.17.0"
               },
@@ -738,6 +728,9 @@
               "web-features:javascript"
             ],
             "support": {
+              "bun": {
+                "version_added": "1.0.0"
+              },
               "chrome": {
                 "version_added": "1"
               },

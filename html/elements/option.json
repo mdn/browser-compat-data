@@ -3,7 +3,7 @@
     "elements": {
       "option": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Element/option",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/option",
           "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#the-option-element",
           "tags": [
             "web-features:select"
@@ -42,7 +42,7 @@
         },
         "disabled": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Attributes/disabled",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/disabled",
             "spec_url": "https://html.spec.whatwg.org/multipage/form-elements.html#attr-option-disabled",
             "tags": [
               "web-features:select"
@@ -98,8 +98,8 @@
                 "version_added": "1",
                 "notes": [
                   "Before 77, Firefox didn't display the value of the `label` attribute as option text if element's content was empty. See [bug 40545](https://bugzil.la/40545).",
-                  "Historically, Firefox has allowed keyboard and mouse events to bubble up from the `&lt;option&gt;` element to the parent `&lt;select&gt;` element, although this behavior is inconsistent across many browsers. For better Web compatibility (and for technical reasons), they will not bubble up when Firefox is in multi-process mode and the `&lt;select&gt;` element is displayed as a drop-down list. The behavior is unchanged if the `&lt;select&gt;` is presented inline and it has either the `multiple` attribute defined or a `size` attribute set to more than `1`. Rather than watching `&lt;option&gt;` elements for events, you should watch for [change](https://developer.mozilla.org/docs/Web/Events/change) events on `&lt;select&gt;`. See [bug 1090602](https://bugzil.la/1090602) for details.",
-                  "When Mozilla introduced dedicated content threads to Firefox (through the Electrolysis, or e10s, project), support for styling `&lt;option&gt;` elements was removed temporarily. Starting in Firefox 54, you can apply foreground and background colors to `&lt;option&gt;` elements again, using the `color` and `background-color` CSS properties. See [bug 910022](https://bugzil.la/910022) for more information. Note that this is still disabled in Linux due to lack of contrast (see [bug 1338283](https://bugzil.la/1338283) for progress on this)."
+                  "Historically, Firefox has allowed keyboard and mouse events to bubble up from the `<option>` element to the parent `<select>` element, although this behavior is inconsistent across many browsers. For better Web compatibility (and for technical reasons), they will not bubble up when Firefox is in multi-process mode and the `<select>` element is displayed as a drop-down list. The behavior is unchanged if the `<select>` is presented inline and it has either the `multiple` attribute defined or a `size` attribute set to more than `1`. Rather than watching `<option>` elements for events, you should watch for [change](https://developer.mozilla.org/docs/Web/Events/change) events on `<select>`. See [bug 1090602](https://bugzil.la/1090602) for details.",
+                  "When Mozilla introduced dedicated content threads to Firefox (through the Electrolysis, or e10s, project), support for styling `<option>` elements was removed temporarily. Starting in Firefox 54, you can apply foreground and background colors to `<option>` elements again, using the `color` and `background-color` CSS properties. See [bug 910022](https://bugzil.la/910022) for more information. Note that this is still disabled in Linux due to lack of contrast (see [bug 1338283](https://bugzil.la/1338283) for progress on this)."
                 ]
               },
               "firefox_android": {

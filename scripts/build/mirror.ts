@@ -13,10 +13,40 @@ import { InternalSupportBlock } from '../../types/index.js';
 
 const { browsers } = bcd;
 
-type Notes = string | string[] | null;
+type Notes = string | [string, string, ...string[]] | null;
+
+const OS_NOTES = [
+  'Available on macOS and Windows only.',
+  'Available only on macOS.',
+  'ChromeOS only',
+  'ChromeOS and Windows',
+  'Fully supported on Windows and Linux, no support on ChromeOS.',
+  'Linux support is not enabled by default.',
+  'Not supported on macOS.',
+  'Not supported on Windows.',
+  'Only on macOS and Windows.',
+  'Only on Windows.',
+  'Only supported on ChromeOS',
+  'Only supported on macOS.',
+  'Only supported on Windows.',
+  'Only works on macOS.',
+  'Supported on ChromeOS, macOS, and Windows only.',
+  'Supported on ChromeOS and macOS only.',
+  'Supported on macOS only.',
+  'Supported on macOS Catalina 10.15.1+, Windows, and ChromeOS. Not yet supported on Linux.',
+  'Supported on Windows only, in all contexts except for service workers.',
+  'Supported only on macOS 10.12 (Sierra) and later.',
+  'This cursor is only supported on macOS and Linux.',
+].map((s) => s.toLowerCase());
 
 /**
+ * Check if a note indicates OS-specific limitations.
+ * @param notes A single notes string from a support statement
+ * @returns True if the notes indicate OS-specific limitations
  */
+export const isOSLimitation = (notes: string): boolean => {
+  return OS_NOTES.includes(notes.toLowerCase());
+};
 
 const matchingSafariVersions = new Map([
   ['1', '1'],
@@ -41,7 +71,8 @@ const matchingSafariVersions = new Map([
  * Convert a version number to the matching version of the target browser
  * @param targetBrowser The browser to mirror to
  * @param sourceVersion The version from the source browser
- * @returns The matching browser version
+ * @returns The matching browser version, or `false` if no match is found
+ * @throws An error when the downstream browser has no upstream
  */
 export const getMatchingBrowserVersion = (
   targetBrowser: BrowserName,
@@ -204,11 +235,39 @@ export const bumpSupport = (
         return newData[0];
 
       default:
-        return newData;
+        return newData as [
+          SimpleSupportStatement,
+          SimpleSupportStatement,
+          ...SimpleSupportStatement[],
+        ];
     }
   }
 
   const newData: SimpleSupportStatement = copyStatement(sourceData);
+
+  if (
+    browsers[sourceBrowser].type === 'desktop' &&
+    browsers[destination].type === 'mobile' &&
+    sourceData.partial_implementation
+  ) {
+    const notes = Array.isArray(sourceData.notes)
+      ? sourceData.notes
+      : sourceData.notes
+        ? [sourceData.notes]
+        : [];
+    const [firstNote, secondNote, ...otherNotes] = notes.filter(
+      (notes) => !isOSLimitation(notes),
+    );
+    if (!firstNote) {
+      // Ignore OS limitation.
+      delete newData.partial_implementation;
+      delete newData.notes;
+    } else if (!secondNote) {
+      newData.notes = firstNote;
+    } else {
+      newData.notes = [firstNote, secondNote, ...otherNotes];
+    }
+  }
 
   if (!browsers[destination].accepts_flags && newData.flags) {
     // Remove flag data if the target browser doesn't accept flags
@@ -231,10 +290,17 @@ export const bumpSupport = (
     sourceData.version_removed &&
     typeof sourceData.version_removed === 'string'
   ) {
-    newData.version_removed = getMatchingBrowserVersion(
+    const versionRemoved = getMatchingBrowserVersion(
       destination,
       sourceData.version_removed,
     );
+
+    if (typeof versionRemoved === 'string') {
+      newData.version_removed = versionRemoved;
+    } else {
+      // Ensure that version_removed is not present if it's not applicable, such as when the upstream browser removed the feature in a newer release than a matching downstream browser
+      delete newData.version_removed;
+    }
   }
 
   if (newData.version_added === newData.version_removed) {
@@ -242,7 +308,8 @@ export const bumpSupport = (
     return { version_added: false };
   }
 
-  if (sourceData.notes) {
+  // Only process notes if they weren't already removed (e.g., for OS-specific limitations)
+  if (sourceData.notes && newData.notes !== undefined) {
     const sourceBrowserName =
       sourceBrowser === 'chrome'
         ? '(Google )?Chrome'

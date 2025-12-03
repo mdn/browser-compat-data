@@ -39,7 +39,11 @@ export const removeWebViewFlags = (
         } else if (result.length == 1) {
           value.support.webview_android = result[0];
         } else {
-          value.support.webview_android = result;
+          value.support.webview_android = result as [
+            SimpleSupportStatement,
+            SimpleSupportStatement,
+            ...SimpleSupportStatement[],
+          ];
         }
       } else if (value.support.webview_android.flags !== undefined) {
         value.support.webview_android = { version_added: false };

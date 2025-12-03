@@ -6,7 +6,7 @@ import { platform } from 'node:os';
 import chalk from 'chalk-template';
 
 import { DataType } from '../types/index.js';
-import { BrowserName } from '../types/types.js';
+import { BrowserName, SimpleSupportStatement } from '../types/types.js';
 
 export interface LintOptions {
   only?: string[];
@@ -138,7 +138,7 @@ export interface Linter {
 
 export type LinterScope = 'file' | 'feature' | 'browser' | 'tree';
 
-export type LinterMessageLevel = 'error' | 'warning';
+export type LinterMessageLevel = 'error' | 'warning' | 'info';
 
 export interface LinterMessage {
   level: LinterMessageLevel;
@@ -181,7 +181,7 @@ export class Logger {
   }
 
   /**
-   * Throw an error
+   * Report an error
    * @param message Message string
    * @param options Additional options (ex. actual, expected)
    */
@@ -196,13 +196,28 @@ export class Logger {
   }
 
   /**
-   * Throw a warning
+   * Report a warning
    * @param message Message string
    * @param options Additional options (ex. actual, expected)
    */
   warning(message: string, options?: object): void {
     this.messages.push({
       level: 'warning',
+      title: this.title,
+      path: this.path,
+      message,
+      ...options,
+    });
+  }
+
+  /**
+   * Report an info
+   * @param message Message string
+   * @param options Additional options (ex. actual, expected)
+   */
+  info(message: string, options?: object): void {
+    this.messages.push({
+      level: 'info',
       title: this.title,
       path: this.path,
       message,
@@ -268,3 +283,31 @@ export class Linters {
     }
   }
 }
+
+/**
+ * Returns the key for the group that this statement belongs to.
+ * @param support The support statement.
+ * @returns The key of the support statement group.
+ */
+export const createStatementGroupKey = (
+  support: SimpleSupportStatement,
+): string => {
+  const parts: string[] = [];
+  if (support.prefix) {
+    parts.push(`prefix: ${support.prefix}`);
+  }
+
+  if (support.alternative_name) {
+    parts.push(`alt. name: ${support.alternative_name}`);
+  }
+
+  if (support.flags) {
+    parts.push(...support.flags.map((flag) => `${flag.type}: ${flag.name}`));
+  }
+
+  if (parts.length === 0) {
+    return 'normal name';
+  }
+
+  return parts.join(' / ');
+};

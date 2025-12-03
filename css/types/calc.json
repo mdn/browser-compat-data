@@ -4,7 +4,7 @@
       "calc": {
         "__compat": {
           "description": "`calc()`",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/calc",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Values/calc",
           "spec_url": "https://drafts.csswg.org/css-values/#calc-func",
           "tags": [
             "web-features:calc"
@@ -62,15 +62,7 @@
             ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": [
-              {
-                "version_added": "≤37"
-              },
-              {
-                "prefix": "-webkit-",
-                "version_added": "≤37"
-              }
-            ],
+            "webview_android": "mirror",
             "webview_ios": "mirror"
           },
           "status": {
@@ -95,9 +87,6 @@
                 "version_added": "128"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -177,9 +166,6 @@
                 "version_added": "48"
               },
               "firefox_android": "mirror",
-              "ie": {
-                "version_added": false
-              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -200,7 +186,7 @@
         },
         "number_values": {
           "__compat": {
-            "description": "`&lt;number&gt;` value support",
+            "description": "`<number>` value support",
             "tags": [
               "web-features:calc"
             ],
@@ -224,6 +210,39 @@
               "opera_android": "mirror",
               "safari": {
                 "version_added": "6"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "typed_division_produces_unitless_number": {
+          "__compat": {
+            "description": "Divisions between typed values produce unitless number (\"typed arithmetic\")",
+            "spec_url": "https://www.w3.org/TR/css-values-4/#calc-type-checking",
+            "support": {
+              "chrome": {
+                "version_added": "140"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1264520"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
