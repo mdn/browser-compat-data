@@ -8,8 +8,6 @@ December 5, 2025
 
 - `api.GPUTexture.createView.texture_rgb10a2uint` ([#28525](https://github.com/mdn/browser-compat-data/pull/28525))
 - `api.GPUTexture.createView.usage` ([#28525](https://github.com/mdn/browser-compat-data/pull/28525))
-- `css.at-rules.container.style_queries_range_syntax` ([#28537](https://github.com/mdn/browser-compat-data/pull/28537))
-- `css.types.if.style_queries_range_syntax` ([#28537](https://github.com/mdn/browser-compat-data/pull/28537))
 
 ### Additions
 
@@ -36,14 +34,12 @@ December 5, 2025
 - `browsers.opera_android.releases.93` ([#28531](https://github.com/mdn/browser-compat-data/pull/28531))
 - `browsers.webview_android.releases.146` ([#28531](https://github.com/mdn/browser-compat-data/pull/28531))
 - `css.at-rules.container.style_queries_for_custom_properties.range_syntax` ([#28537](https://github.com/mdn/browser-compat-data/pull/28537))
-- `css.at-rules.container.style_queries_range_syntax` ([#28510](https://github.com/mdn/browser-compat-data/pull/28510))
 - `css.properties.position-try-fallbacks.flip-x` ([#28574](https://github.com/mdn/browser-compat-data/pull/28574))
 - `css.properties.position-try-fallbacks.flip-y` ([#28574](https://github.com/mdn/browser-compat-data/pull/28574))
 - `css.properties.position-try.flip-x` ([#28574](https://github.com/mdn/browser-compat-data/pull/28574))
 - `css.properties.position-try.flip-y` ([#28574](https://github.com/mdn/browser-compat-data/pull/28574))
 - `css.selectors.search-text` ([#28578](https://github.com/mdn/browser-compat-data/pull/28578))
 - `css.types.if.style` ([#28537](https://github.com/mdn/browser-compat-data/pull/28537))
-- `css.types.if.style_queries_range_syntax` ([#28510](https://github.com/mdn/browser-compat-data/pull/28510))
 - `css.types.if.style.range_syntax` ([#28537](https://github.com/mdn/browser-compat-data/pull/28537))
 - `mathml.global_attributes.dir.rtl_operator_mirroring` ([#28561](https://github.com/mdn/browser-compat-data/pull/28561))
 - `webassembly.api.Memory.toFixedLengthBuffer` ([#28575](https://github.com/mdn/browser-compat-data/pull/28575))
