@@ -53,7 +53,6 @@ const specsExceptions = [
   'https://developers.google.com/speed/webp/docs/riff_container',
   'https://developers.google.com/speed/webp/docs/webp_lossless_bitstream_specification',
   'https://jpeg.org/jpeg/',
-  'https://wiki.mozilla.org/APNG_Specification',
   'https://www.adobe.com/devnet-apps/photoshop/fileformatashtml/',
   'https://www.iso.org/standard/89035.html',
   'https://www.rfc-editor.org/rfc/rfc7903',
