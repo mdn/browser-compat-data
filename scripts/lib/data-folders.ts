@@ -9,7 +9,7 @@ export const dataFoldersMinusBrowsers = [
   'javascript',
   'manifests',
   'mathml',
-  'media-types',
+  'mediatypes',
   'svg',
   'webassembly',
   'webdriver',

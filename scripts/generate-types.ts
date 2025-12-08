@@ -39,7 +39,7 @@ const compatDataTypes = {
     'Contains data for various manifests, such as the [Web Application Manifest](https://developer.mozilla.org/docs/Web/Progressive_web_apps/manifest).',
   mathml:
     'Contains data for [MathML](https://developer.mozilla.org/docs/Web/MathML) elements, attributes, and global attributes.',
-  'media-types':
+  mediatypes:
     'Contains data for [Media types](https://developer.mozilla.org/docs/Web/HTTP/Guides/MIME_types).',
   svg: 'Contains data for [SVG](https://developer.mozilla.org/docs/Web/SVG) elements, attributes, and global attributes.',
   webassembly:
