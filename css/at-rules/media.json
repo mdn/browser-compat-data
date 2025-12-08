@@ -527,11 +527,17 @@
                 "version_added": "47",
                 "notes": "Firefox 47 and later support `display-mode` values `fullscreen` and `browser`. Firefox 57 added support for `minimal-ui` and `standalone` values."
               },
-              "firefox_android": {
-                "version_added": "47",
-                "partial_implementation": true,
-                "notes": "Only supports the `browser` value, which always reports `true`."
-              },
+              "firefox_android": [
+                {
+                  "version_added": "116"
+                },
+                {
+                  "version_added": "47",
+                  "version_removed": "116",
+                  "partial_implementation": true,
+                  "notes": "Only supports the `browser` value, which always reports `true`."
+                }
+              ],
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",

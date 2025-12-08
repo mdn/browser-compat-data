@@ -47,6 +47,7 @@ const specsExceptions = [
   'https://github.com/WebAssembly/js-string-builtins/blob/main/proposals/js-string-builtins/Overview.md',
   'https://github.com/WebAssembly/function-references/blob/main/proposals/function-references/Overview.md',
   'https://github.com/WebAssembly/js-promise-integration',
+  'https://github.com/WebAssembly/branch-hinting/blob/main/proposals/branch-hinting/Overview.md',
 ];
 
 const allowedSpecURLs = [
