@@ -1095,7 +1095,7 @@
               {
                 "version_added": "1.17",
                 "partial_implementation": true,
-                "notes": "Not supported: ECDSA P-521, ECDH P-521."
+                "notes": "Not supported: ECDH P-521."
               },
               {
                 "version_added": "1.15",
@@ -1107,7 +1107,7 @@
                 "version_added": "1.14",
                 "version_removed": "1.15",
                 "partial_implementation": true,
-                "notes": "Not supported: ECDSA, ECDH, AES-CTR, AES-CBC, AES-GCM, AES-KW."
+                "notes": "Not supported: AES-CTR, AES-CBC, AES-GCM, AES-KW."
               }
             ],
             "edge": [
@@ -1156,6 +1156,170 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "ECDH": {
+          "__compat": {
+            "description": "`ECDH` algorithm",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey",
+            "spec_url": "https://w3c.github.io/webcrypto/#ecdh",
+            "support": {
+              "bun": {
+                "version_added": false
+              },
+              "chrome": {
+                "version_added": "37"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.18",
+                "partial_implementation": true,
+                "notes": "P-384 supported. Not supported: P-256, P-521."
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "34"
+              },
+              "firefox_android": "mirror",
+              "nodejs": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "7"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "compressed_elliptic_curve_points": {
+            "__compat": {
+              "description": "Key data can contain compressed elliptic curve points",
+              "spec_url": "https://w3c.github.io/webcrypto/#ecdsa-operations-import-key",
+              "support": {
+                "chrome": {
+                  "version_added": "≤80"
+                },
+                "chrome_android": "mirror",
+                "deno": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "146"
+                },
+                "firefox_android": "mirror",
+                "nodejs": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        },
+        "ECDSA": {
+          "__compat": {
+            "description": "`ECDSA` algorithm",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/importKey",
+            "spec_url": "https://w3c.github.io/webcrypto/#ecdsa",
+            "support": {
+              "bun": {
+                "version_added": false
+              },
+              "chrome": {
+                "version_added": "37"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.18",
+                "partial_implementation": true,
+                "notes": "P-384 supported. Not supported: P-256, P-521."
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "34"
+              },
+              "firefox_android": "mirror",
+              "nodejs": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "7"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "compressed_elliptic_curve_points": {
+            "__compat": {
+              "description": "Key data can contain compressed elliptic curve points",
+              "spec_url": "https://w3c.github.io/webcrypto/#ecdsa-operations-import-key",
+              "support": {
+                "chrome": {
+                  "version_added": "≤80"
+                },
+                "chrome_android": "mirror",
+                "deno": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "146"
+                },
+                "firefox_android": "mirror",
+                "nodejs": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "ed25519": {
