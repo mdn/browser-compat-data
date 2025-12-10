@@ -138,7 +138,7 @@ export interface Linter {
 
 export type LinterScope = 'file' | 'feature' | 'browser' | 'tree';
 
-export type LinterMessageLevel = 'error' | 'warning';
+export type LinterMessageLevel = 'error' | 'warning' | 'info';
 
 export interface LinterMessage {
   level: LinterMessageLevel;
@@ -181,7 +181,7 @@ export class Logger {
   }
 
   /**
-   * Throw an error
+   * Report an error
    * @param message Message string
    * @param options Additional options (ex. actual, expected)
    */
@@ -196,13 +196,28 @@ export class Logger {
   }
 
   /**
-   * Throw a warning
+   * Report a warning
    * @param message Message string
    * @param options Additional options (ex. actual, expected)
    */
   warning(message: string, options?: object): void {
     this.messages.push({
       level: 'warning',
+      title: this.title,
+      path: this.path,
+      message,
+      ...options,
+    });
+  }
+
+  /**
+   * Report an info
+   * @param message Message string
+   * @param options Additional options (ex. actual, expected)
+   */
+  info(message: string, options?: object): void {
+    this.messages.push({
+      level: 'info',
       title: this.title,
       path: this.path,
       message,

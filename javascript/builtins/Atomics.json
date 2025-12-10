@@ -662,26 +662,34 @@
               "bun": {
                 "version_added": "1.0.0"
               },
-              "chrome": {
-                "version_added": "87"
-              },
-              "chrome_android": {
-                "version_added": "89"
-              },
+              "chrome": [
+                {
+                  "version_added": "90"
+                },
+                {
+                  "version_added": "87",
+                  "version_removed": "90",
+                  "partial_implementation": true,
+                  "notes": "The `Atomics.waitAsync()` method never times out. See [bug 40742782](https://crbug.com/40742782)."
+                }
+              ],
+              "chrome_android": [
+                {
+                  "version_added": "90"
+                },
+                {
+                  "version_added": "89",
+                  "version_removed": "90",
+                  "partial_implementation": true,
+                  "notes": "The `Atomics.waitAsync()` method never times out. See [bug 40742782](https://crbug.com/40742782)."
+                }
+              ],
               "deno": {
                 "version_added": "1.4"
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": "140",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "javascript.options.atomics_wait_async",
-                    "value_to_set": "true"
-                  }
-                ],
-                "impl_url": "https://bugzil.la/1467846"
+                "version_added": "145"
               },
               "firefox_android": "mirror",
               "nodejs": {

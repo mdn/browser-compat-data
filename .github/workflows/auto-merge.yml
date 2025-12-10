@@ -5,9 +5,7 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read
-  pull-requests: write
+permissions: {} # No GITHUB_TOKEN permissions, as we use GH_TOKEN instead.
 
 jobs:
   auto-merge:
