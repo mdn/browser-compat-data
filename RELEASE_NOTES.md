@@ -2,11 +2,17 @@
 
 ## [v7.2.0](https://github.com/mdn/browser-compat-data/releases/tag/v7.2.0)
 
-December 9, 2025
+December 10, 2025
 
 ### Notable changes
 
-<!-- TODO: Fill me out with the appropriate information about breaking changes or new backwards-compatible additions! -->
+This release includes _one notable change_.
+
+#### 1. Add top-level `mediatypes` folder ([#27168](https://github.com/mdn/browser-compat-data/pull/27168))
+
+Previously, support data for media formats was not available.
+
+Now, a new top-level `mediatypes` folder has been created to host 11 image formats (`mediatypes.image.*`), and to support future data additions for other media types.
 
 ### Removals
 
