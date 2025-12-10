@@ -88,9 +88,16 @@
         "use_dynamic_url": {
           "__compat": {
             "support": {
-              "chrome": {
-                "version_added": "88"
-              },
+              "chrome": [
+                {
+                  "version_added": "130"
+                },
+                {
+                  "version_added": "88",
+                  "version_removed": "130",
+                  "notes": "Setting the property had no effect."
+                }
+              ],
               "edge": "mirror",
               "firefox": {
                 "version_added": false
