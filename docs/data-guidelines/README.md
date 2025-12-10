@@ -58,7 +58,7 @@ This guideline was adopted to protect the quality of stable data in the face of 
 
 ## `"partial_implementation"` general usage guidelines
 
-> ![NOTE]
+> [!NOTE]
 > This guideline was added in August 2025 and feedback is welcome.
 > If you have questions or concerns about how to apply it, [file an issue](https://github.com/mdn/browser-compat-data/issues/new/choose).
 
@@ -203,7 +203,7 @@ This guideline was proposed in [#15703](https://github.com/mdn/browser-compat-da
 
 ## Behavioral subfeatures
 
-> ![NOTE]
+> [!NOTE]
 > This guideline was added in August 2025 and feedback is welcome.
 > If you have questions or concerns about how to apply it, [file an issue](https://github.com/mdn/browser-compat-data/issues/new/choose).
 

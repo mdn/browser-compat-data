@@ -364,11 +364,17 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "99",
-                "partial_implementation": true,
-                "notes": "Subscribing to this event does not emit events for all already open browsing contexts."
-              },
+              "firefox": [
+                {
+                  "version_added": "143"
+                },
+                {
+                  "version_added": "99",
+                  "version_removed": "143",
+                  "partial_implementation": true,
+                  "notes": "Before Firefox 143, subscribing to this event does not emit events for all already open browsing contexts."
+                }
+              ],
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
@@ -1225,8 +1231,8 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1970292"
+                "version_added": "145",
+                "notes": "Not yet available on Android."
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -1241,7 +1247,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -1257,7 +1263,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "145"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1272,7 +1278,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1289,7 +1295,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "145"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1304,7 +1310,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1321,7 +1327,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "145"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1336,7 +1342,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1353,7 +1359,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "145"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1368,7 +1374,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1385,7 +1391,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "145"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1400,7 +1406,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1417,7 +1423,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "145"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1432,7 +1438,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -2408,7 +2414,7 @@
                 "firefox": {
                   "version_added": "123",
                   "partial_implementation": true,
-                  "notes": "Only supports `css` and `xpath` locators since Firefox 123, and `accessibility` locators since Firefox 127. Does not yet support `context` and `innerText` locators."
+                  "notes": "Supports locators `css` and `xpath` (since Firefox 123), `accessibility` (since Firefox 127), and `context` (since Firefox 146). Does not support locator `innerText`."
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
