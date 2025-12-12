@@ -1,5 +1,39 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.2.1](https://github.com/mdn/browser-compat-data/releases/tag/v7.2.1)
+
+December 12, 2025
+
+### Removals
+
+- `css.properties.position-try-fallbacks.span-x-self-end` ([#28652](https://github.com/mdn/browser-compat-data/pull/28652))
+- `css.properties.position-try-fallbacks.span-x-self-start` ([#28652](https://github.com/mdn/browser-compat-data/pull/28652))
+- `css.properties.position-try-fallbacks.span-y-self-end` ([#28652](https://github.com/mdn/browser-compat-data/pull/28652))
+- `css.properties.position-try-fallbacks.span-y-self-start` ([#28652](https://github.com/mdn/browser-compat-data/pull/28652))
+- `css.properties.position-try-fallbacks.x-self-end` ([#28652](https://github.com/mdn/browser-compat-data/pull/28652))
+- `css.properties.position-try-fallbacks.x-self-start` ([#28652](https://github.com/mdn/browser-compat-data/pull/28652))
+- `css.properties.position-try-fallbacks.y-self-end` ([#28652](https://github.com/mdn/browser-compat-data/pull/28652))
+- `css.properties.position-try-fallbacks.y-self-start` ([#28652](https://github.com/mdn/browser-compat-data/pull/28652))
+- `css.properties.position-try.span-x-self-end` ([#28652](https://github.com/mdn/browser-compat-data/pull/28652))
+- `css.properties.position-try.span-x-self-start` ([#28652](https://github.com/mdn/browser-compat-data/pull/28652))
+- `css.properties.position-try.span-y-self-end` ([#28652](https://github.com/mdn/browser-compat-data/pull/28652))
+- `css.properties.position-try.span-y-self-start` ([#28652](https://github.com/mdn/browser-compat-data/pull/28652))
+- `css.properties.position-try.x-self-end` ([#28652](https://github.com/mdn/browser-compat-data/pull/28652))
+- `css.properties.position-try.x-self-start` ([#28652](https://github.com/mdn/browser-compat-data/pull/28652))
+- `css.properties.position-try.y-self-end` ([#28652](https://github.com/mdn/browser-compat-data/pull/28652))
+- `css.properties.position-try.y-self-start` ([#28652](https://github.com/mdn/browser-compat-data/pull/28652))
+
+### Additions
+
+- `css.properties.position-anchor.none` ([#28648](https://github.com/mdn/browser-compat-data/pull/28648))
+
+### Statistics
+
+- 10 contributors have changed 103 files with 1,235 additions and 845 deletions in 17 commits ([`v7.2.0...v7.2.1`](https://github.com/mdn/browser-compat-data/compare/v7.2.0...v7.2.1))
+- 19,133 total features
+- 1,212 total contributors
+- 5,520 total stargazers
+
 ## [v7.2.0](https://github.com/mdn/browser-compat-data/releases/tag/v7.2.0)
 
 December 10, 2025
