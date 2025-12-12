@@ -5,6 +5,9 @@
     "target": "ES2022",
     "module": "NodeNext",
     "moduleResolution": "nodenext",
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": false,
     "esModuleInterop": true,
@@ -13,8 +16,16 @@
     "allowUnreachableCode": false,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "maxNodeModuleJsDepth": 0
   },
-  "exclude": ["build", "**/*.test.ts"],
+  "include": ["./**/*.js", "./**/*.ts", "./types/**/*.d.ts"],
+  "exclude": [
+    "build",
+    "node_modules",
+    "coverage",
+    "**/*.test.ts",
+    "**/*.test.js"
+  ],
   "typeRoots": ["./node_modules/@types", "./types"]
 }
