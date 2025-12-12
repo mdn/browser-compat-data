@@ -1,5 +1,27 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.2.2](https://github.com/mdn/browser-compat-data/releases/tag/v7.2.2)
+
+December 12, 2025
+
+### Additions
+
+- `http.headers.Accept-CH.Sec-CH-Device-Memory` ([#28636](https://github.com/mdn/browser-compat-data/pull/28636))
+- `http.headers.Accept-CH.Sec-CH-DPR` ([#28636](https://github.com/mdn/browser-compat-data/pull/28636))
+- `http.headers.Accept-CH.Sec-CH-Viewport-Height` ([#28636](https://github.com/mdn/browser-compat-data/pull/28636))
+- `http.headers.Accept-CH.Sec-CH-Viewport-Width` ([#28636](https://github.com/mdn/browser-compat-data/pull/28636))
+- `http.headers.Sec-CH-Device-Memory` ([#28636](https://github.com/mdn/browser-compat-data/pull/28636))
+- `http.headers.Sec-CH-DPR` ([#28636](https://github.com/mdn/browser-compat-data/pull/28636))
+- `http.headers.Sec-CH-Viewport-Height` ([#28636](https://github.com/mdn/browser-compat-data/pull/28636))
+- `http.headers.Sec-CH-Viewport-Width` ([#28636](https://github.com/mdn/browser-compat-data/pull/28636))
+
+### Statistics
+
+- 2 contributors have changed 6 files with 303 additions and 6 deletions in 1 commit ([`v7.2.1...v7.2.2`](https://github.com/mdn/browser-compat-data/compare/v7.2.1...v7.2.2))
+- 19,141 total features
+- 1,212 total contributors
+- 5,520 total stargazers
+
 ## [v7.2.1](https://github.com/mdn/browser-compat-data/releases/tag/v7.2.1)
 
 December 12, 2025
