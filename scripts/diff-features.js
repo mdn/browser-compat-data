@@ -160,19 +160,20 @@ const enumerateFeatures = (ref = 'HEAD', quiet = false) => {
     } catch (e) {
       // If the clean install fails, proceed anyways
     }
-    if (existsSync('./scripts/enumerate-features.js')) {
+    if (existsSync(`${worktree}/index.js`)) {
       spawn('node', [
         './scripts/enumerate-features.js',
         `--data-from=${worktree}`,
       ]);
-    } else if (existsSync('./scripts/enumerate-features.ts')) {
+    } else if (existsSync(`${worktree}/index.ts`)) {
       spawn('npx', [
+        '-y',
         'tsx',
-        './scripts/enumerate-features.ts',
+        `${worktree}/scripts/enumerate-features.ts`,
         `--data-from=${worktree}`,
       ]);
     } else {
-      throw Error('Could not find /scripts/enumerate-features.{js,ts}!');
+      throw Error('Could not find index.{js,ts}!');
     }
     return JSON.parse(fs.readFileSync('.features.json', { encoding: 'utf-8' }));
   } finally {
