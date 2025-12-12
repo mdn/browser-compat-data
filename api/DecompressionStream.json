@@ -114,7 +114,7 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "147"
               },
               "firefox_android": "mirror",
               "nodejs": [
@@ -294,7 +294,15 @@
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "138",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.compression_streams.zstd.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "impl_url": "https://bugzil.la/1947431"
               },
               "firefox_android": "mirror",
               "nodejs": {

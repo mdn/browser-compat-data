@@ -22,6 +22,8 @@ Compatibility data is organized in top-level directories for each broad area cov
 
 - [mathml/](../mathml) contains data for [MathML](https://developer.mozilla.org/docs/Web/MathML) elements, attributes, and global attributes.
 
+- [mediatypes/](../mediatypes) contains data for [Media types](https://developer.mozilla.org/docs/Web/HTTP/Guides/MIME_types).
+
 - [svg/](../svg) contains data for [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) elements, attributes, and global attributes.
 
 - [webdriver/](../webdriver) contains data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) commands.
