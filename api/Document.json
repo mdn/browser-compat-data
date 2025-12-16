@@ -7276,7 +7276,11 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "119"
+              "version_added": "119",
+              "notes": [
+                "From version 141 onwards, activating the `storage-access` permission via `requestStorageAccess()` results in third-party cookies being sent only with requests to the calling embed's exact origin.",
+                "Before version 141, `storage-access` activation resulted in third-party cookies being sent with requests to the calling embed's site."
+              ]
             },
             "chrome_android": {
               "version_added": "120"
@@ -7285,7 +7289,11 @@
               "version_added": "85"
             },
             "firefox": {
-              "version_added": "65"
+              "version_added": "65",
+              "notes": [
+                "From version 140 onwards, activating the `storage-access` permission via `requestStorageAccess()` results in third-party cookies being sent only with requests to the calling embed's exact origin.",
+                "Before version 140, `storage-access` activation resulted in third-party cookies being sent with requests to the caling embed's site."
+              ]
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -7293,7 +7301,10 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": "11.1",
-              "notes": "Client-side storage access granted per-page ([see explanation](https://developer.mozilla.org/docs/Web/API/Storage_Access_API#how_it_works))"
+              "notes": [
+                "Client-side storage access is granted per-page ([see explanation](https://developer.mozilla.org/docs/Web/API/Storage_Access_API#how_it_works)).",
+                "`storage-access` activation results in third-party cookies being sent with requests to the caling embed's site."
+              ]
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
