@@ -52,8 +52,8 @@
               "version_added": "127",
               "notes": [
                 "This method must be called within user gesture event handlers.",
-                "Web extensions require the `clipboardRead` permission in manifest to read data. With this permission, the extension does not require a user interaction and does not display a paste prompt.",
-                "A paste prompt is displayed when the clipboard is read. If the clipboard contains same-origin content, the prompt is suppressed."
+                "A paste prompt is displayed when the clipboard is read. If the clipboard contains same-origin content, the prompt is suppressed.",
+                "Web extensions with the `clipboardRead` permission in their manifest can read data without the paste prompt displaying. Prior to Firefoix 147, extensions without this oermission were unable to read clipboard data."
               ]
             },
             "firefox_android": "mirror",
@@ -129,8 +129,8 @@
               "version_added": "125",
               "notes": [
                 "This method must be called within user gesture event handlers.",
-                "Web extensions require the `clipboardRead` permission in manifest to read data. With this permission, the extension does not require a user interaction and does not display a paste prompt.",
-                "A paste prompt is displayed when the clipboard is read. If the clipboard contains same-origin content, the prompt is suppressed."
+                "A paste prompt is displayed when the clipboard is read. If the clipboard contains same-origin content, the prompt is suppressed.",
+                "Web extensions with the `clipboardRead` permission in their manifest can read data without the paste prompt displaying. Prior to Firefoix 147, extensions without this oermission were unable to read clipboard data."
               ]
             },
             "firefox_android": "mirror",
@@ -277,8 +277,7 @@
               "version_added": "127",
               "notes": [
                 "This method must be called within user gesture event handlers.",
-                "Web extensions require the `clipboardWrite` permission in manifest to read data. With this permission, the extension does not require a user interaction and does not display a paste prompt.",
-                "A paste prompt is displayed when the clipboard is read. If the clipboard contains same-origin content, the prompt is suppressed."
+                "Web extensions with the `clipboardWrite` permission in thier manifest can write data without a user interaction."
               ]
             },
             "firefox_android": "mirror",
@@ -321,8 +320,7 @@
               "version_added": "63",
               "notes": [
                 "This method must be called within user gesture event handlers.",
-                "Web extensions require the `clipboardRead` permission in manifest to read data. With this permission, the extension does not require a user interaction and does not display a paste prompt.",
-                "A paste prompt is displayed when the clipboard is read. If the clipboard contains same-origin content, the prompt is suppressed."
+                "Web extensions with the `clipboardWrite` permission in thier manifest can write data without a user interaction."
               ]
             },
             "firefox_android": "mirror",
