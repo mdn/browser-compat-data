@@ -718,7 +718,14 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "133"
+              "version_added": "133",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "Experimental web platform features",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -730,7 +737,20 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "26",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "referenceTarget",
+                  "value_to_set": "true"
+                },
+                {
+                  "type": "preference",
+                  "name": "referenceTarget support for aria-owns",
+                  "value_to_set": "true"
+                }
+              ]
+
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
