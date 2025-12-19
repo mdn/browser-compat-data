@@ -1,17 +1,21 @@
 {
   "http": {
     "headers": {
-      "Device-Memory": {
+      "Sec-CH-Viewport-Width": {
         "__compat": {
-          "description": "`Device-Memory` request header",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Device-Memory",
-          "tags": [
-            "web-features:device-memory"
-          ],
+          "description": "`Sec-CH-Viewport-Width` request header",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Sec-CH-Viewport-Width",
+          "spec_url": "https://wicg.github.io/responsive-image-client-hints/#sec-ch-viewport-width",
           "support": {
-            "chrome": {
-              "version_added": "61"
-            },
+            "chrome": [
+              {
+                "version_added": "97"
+              },
+              {
+                "alternative_name": "Viewport-Width",
+                "version_added": "46"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -30,9 +34,9 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       }
