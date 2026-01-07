@@ -65,6 +65,30 @@ describe('checkExperimental', () => {
 
     assert.equal(checkExperimental(data), false);
   });
+
+  it('should ignore non-relevant browsers when determining experimental status', () => {
+    const data: CompatStatement = {
+      status: {
+        experimental: true,
+        standard_track: true,
+        deprecated: false,
+      },
+      support: {
+        // Bun and Deno are not part of the Core browser set.
+        firefox: {
+          version_added: '1',
+        },
+        bun: {
+          version_added: '1.0',
+        },
+        deno: {
+          version_added: '1.0',
+        },
+      },
+    };
+
+    assert.equal(checkExperimental(data), true);
+  });
 });
 
 describe('checkStatus', () => {
