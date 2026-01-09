@@ -43,7 +43,7 @@ export default [
       'plugin:@typescript-eslint/stylistic',
       'plugin:import/recommended',
       'plugin:import/typescript',
-      'plugin:jsdoc/recommended-typescript',
+      'plugin:jsdoc/recommended-typescript-flavor',
     ),
   ),
   {
