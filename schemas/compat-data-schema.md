@@ -477,7 +477,7 @@ A `boolean` value indicating whether or not the implementation of the sub-featur
 
 The mandatory status property contains information about stability of the feature. It is an object named `status` and has three mandatory properties:
 
-- `experimental`: a `boolean` value.
+- `experimental` (DEPRECATED): a `boolean` value.
 
   **Warning**: The `experimental` property is deprecated. Prefer using more well-defined stability calculations, such as Baseline, instead.
 
