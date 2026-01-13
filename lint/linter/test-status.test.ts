@@ -32,11 +32,9 @@ describe('checkExperimental', () => {
       support: {
         firefox: {
           version_added: '1',
-          version_removed: null,
         },
         chrome: {
           version_added: 'preview',
-          version_removed: null,
         },
       },
     };
@@ -54,11 +52,9 @@ describe('checkExperimental', () => {
       support: {
         firefox: {
           version_added: '1',
-          version_removed: null,
         },
         chrome: {
           version_added: '1',
-          version_removed: null,
         },
       },
     };
@@ -113,7 +109,7 @@ describe('checkStatus', () => {
     const data: CompatStatement = {
       status: {
         experimental: false,
-        standard_track: true,
+        standard_track: false,
         deprecated: false,
       },
       support: {},
@@ -129,7 +125,7 @@ describe('checkStatus', () => {
     const data: CompatStatement = {
       status: {
         experimental: true,
-        standard_track: true,
+        standard_track: false,
         deprecated: true,
       },
       support: {},
@@ -158,21 +154,35 @@ describe('checkStatus', () => {
     assert.ok(logger.messages[0].message.includes('but has a'));
   });
 
+  it('should log error when status is standard_track but missing spec_url', () => {
+    const data: CompatStatement = {
+      status: {
+        experimental: false,
+        standard_track: true,
+        deprecated: false,
+      },
+      support: {},
+    };
+
+    test.check(logger, { data, path: { category: 'api' } });
+
+    assert.equal(logger.messages.length, 1);
+    assert.ok(logger.messages[0].message.includes('missing required'));
+  });
+
   it('should log error when status is experimental and supported by more than one engine', () => {
     const data: CompatStatement = {
       status: {
         experimental: true,
-        standard_track: true,
+        standard_track: false,
         deprecated: false,
       },
       support: {
         firefox: {
           version_added: '1',
-          version_removed: null,
         },
         chrome: {
           version_added: '1',
-          version_removed: null,
         },
       },
     };

@@ -110,6 +110,12 @@ const checkStatus = (
     );
   }
 
+  if (!data.spec_url && status.standard_track === true) {
+    logger.error(
+      chalk`{red Marked as {bold standard_track}, but missing required {bold spec_url}}`,
+    );
+  }
+
   if (!checkExperimental(data)) {
     logger.error(
       chalk`{red {bold Experimental} should be set to {bold false} as the feature is {bold supported} in {bold multiple browser} engines.}`,
