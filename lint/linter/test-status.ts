@@ -1,12 +1,31 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
+
 import chalk from 'chalk-template';
 
 import { Linter, Logger, LinterData } from '../utils.js';
 import { BrowserName, CompatStatement } from '../../types/types.js';
 import bcd from '../../index.js';
 const { browsers } = bcd;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Load exception list for standard_track features without spec_url
+const exceptionListPath = join(
+  __dirname,
+  'standard_track_without_spec_url.txt',
+);
+const standardTrackExceptions = new Set(
+  readFileSync(exceptionListPath, 'utf-8')
+    .split('\n')
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0 && !line.startsWith('#')),
+);
 
 // See: https://github.com/web-platform-dx/web-features/blob/main/docs/baseline.md#core-browser-set
 const CORE_BROWSER_SET = new Set([
@@ -81,11 +100,13 @@ export const checkExperimental = (data: CompatStatement): boolean => {
  * @param data The data to test
  * @param logger The logger to output errors to
  * @param category The feature category
+ * @param featurePath The full path to the feature (e.g., "api.Animation.remove_filling_animation")
  */
 const checkStatus = (
   data: CompatStatement,
   logger: Logger,
   category: string,
+  featurePath: string,
 ): void => {
   const status = data.status;
 
@@ -110,9 +131,21 @@ const checkStatus = (
     );
   }
 
-  if (!data.spec_url && status.standard_track === true) {
+  // Check for standard_track without spec_url
+  const isInExceptionList = standardTrackExceptions.has(featurePath);
+  const missingSpecUrl = !data.spec_url && status.standard_track === true;
+
+  if (missingSpecUrl && !isInExceptionList) {
+    // New violation - not in baseline exception list
     logger.error(
       chalk`{red Marked as {bold standard_track}, but missing required {bold spec_url}}`,
+    );
+  }
+
+  // Warn if exception no longer applies
+  if (isInExceptionList && !missingSpecUrl) {
+    logger.warning(
+      chalk`{yellow Feature is in the exception list but no longer needs to be (spec_url was added or standard_track is false). Remove from {bold standard_track_without_spec_url.txt}}`,
     );
   }
 
@@ -135,8 +168,9 @@ export default {
    * @param root.data The data to test
    * @param root.path The path of the data
    * @param root.path.category The category the data belongs to
+   * @param root.path.full The full path to the feature
    */
-  check: (logger: Logger, { data, path: { category } }: LinterData) => {
-    checkStatus(data, logger, category);
+  check: (logger: Logger, { data, path: { category, full } }: LinterData) => {
+    checkStatus(data, logger, category, full);
   },
 } as Linter;
