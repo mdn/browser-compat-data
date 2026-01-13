@@ -8,6 +8,17 @@ import { BrowserName, CompatStatement } from '../../types/types.js';
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
+// See: https://github.com/web-platform-dx/web-features/blob/main/docs/baseline.md#core-browser-set
+const CORE_BROWSER_SET = new Set([
+  'chrome',
+  'chrome_android',
+  'edge',
+  'firefox',
+  'firefox_android',
+  'safari',
+  'safari_ios',
+]);
+
 /**
  * Check if experimental should be true or false
  * @param data The data to check
@@ -20,6 +31,9 @@ export const checkExperimental = (data: CompatStatement): boolean => {
     const browserSupport = new Set<BrowserName>();
 
     for (const [browser, support] of Object.entries(data.support)) {
+      if (!CORE_BROWSER_SET.has(browser)) {
+        continue;
+      }
       // Consider only the first part of an array statement.
       const statement = Array.isArray(support) ? support[0] : support;
       // Ignore anything behind flag, prefix or alternative name
