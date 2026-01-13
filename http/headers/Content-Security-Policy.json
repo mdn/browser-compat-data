@@ -1012,7 +1012,13 @@
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "26.2",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "SpeculationRules prefetch"
+                    }
+                  ]
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
@@ -1297,9 +1303,17 @@
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
-              "safari": {
-                "version_added": "15.4"
-              },
+              "safari": [
+                {
+                  "version_added": "26.2"
+                },
+                {
+                  "version_added": "15.4",
+                  "version_removed": "26.2",
+                  "partial_implementation": true,
+                  "notes": "The `style-src-elem` directive was parsed, but had no effect. See [bug 276931](https://webkit.org/b/276931)."
+                }
+              ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror",
