@@ -146,6 +146,7 @@ const checkStatus = (
   if (isInExceptionList && !missingSpecUrl) {
     logger.warning(
       chalk`{yellow Feature is in the exception list but no longer needs to be (spec_url was added or standard_track is false). Remove from {bold standard_track_without_spec_url.txt}}`,
+      { fixable: true },
     );
   }
 

@@ -25,6 +25,7 @@ import fixMDNURLs from './fixer/mdn-urls.js';
 import fixStatus from './fixer/status.js';
 import fixMirror from './fixer/mirror.js';
 import fixOverlap from './fixer/overlap.js';
+import fixStandardTrackExceptions from './fixer/standard-track-exceptions.js';
 import { IS_WINDOWS, LintOptions } from './utils.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
@@ -45,6 +46,7 @@ const FIXES: Record<
   feature_order: fixFeatureOrder,
   property_order: fixPropertyOrder,
   statement_order: fixStatementOrder,
+  standard_track_exceptions: fixStandardTrackExceptions,
 });
 
 /**
