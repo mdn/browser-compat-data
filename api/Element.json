@@ -1181,7 +1181,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "26.2"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -2372,7 +2372,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "26.2"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -3067,7 +3067,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "26.2"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -7184,7 +7184,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/281223"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -7922,7 +7923,8 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "77"
+              "version_added": "77",
+              "notes": "Before version 142, `pointerrawupdate` events were exposed to non-secure contexts."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -7931,7 +7933,10 @@
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
-            "opera": "mirror",
+            "opera": {
+              "version_added": "64",
+              "notes": "Before version 126, `pointerrawupdate` events were exposed to non-secure contexts."
+            },
             "opera_android": "mirror",
             "safari": {
               "version_added": false
@@ -9241,8 +9246,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "preview",
-              "impl_url": "https://webkit.org/b/201556"
+              "version_added": "26.2"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -10073,6 +10077,37 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "enforces_trusted_types": {
+          "__compat": {
+            "description": "Requires `value` parameter to be `TrustedHTML` instance (for `iframe.srcdoc`), or `TrustedScriptURL` (for HTML `script.src`, and SVG `script.href`) when trusted types are enforced",
+            "support": {
+              "chrome": {
+                "version_added": "83"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "preview"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "setAttributeNode": {
@@ -10207,6 +10242,37 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "enforces_trusted_types": {
+          "__compat": {
+            "description": "Requires `value` parameter to be `TrustedHTML`, `TrustedScript`, or `TrustedScriptURL` instance when trusted types enforced (matching attribute type)",
+            "support": {
+              "chrome": {
+                "version_added": "83"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "preview"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "setCapture": {
@@ -10262,7 +10328,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview"
+              "version_added": "148"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",

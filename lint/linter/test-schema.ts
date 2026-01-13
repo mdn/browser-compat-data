@@ -1,27 +1,15 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { Ajv } from 'ajv';
-import ajvErrors from 'ajv-errors';
-import ajvFormats from 'ajv-formats';
 import betterAjvErrors from 'better-ajv-errors';
 
+import { createAjv } from '../../scripts/lib/ajv.js';
 import { Linter, Logger, LinterData } from '../utils.js';
 
 import compatDataSchema from './../../schemas/compat-data.schema.json' with { type: 'json' };
 import browserDataSchema from './../../schemas/browsers.schema.json' with { type: 'json' };
 
-const ajv = new Ajv({ allErrors: true });
-// We use 'fast' because as a side effect that makes the "uri" format more lax.
-// By default the "uri" format rejects ① and similar in URLs.
-ajvFormats.default(ajv, { mode: 'fast' });
-// Allow for custom error messages to provide better directions for contributors
-ajvErrors.default(ajv);
-
-// Define keywords for schema->TS converter
-ajv.addKeyword('tsEnumNames');
-ajv.addKeyword('tsName');
-ajv.addKeyword('tsType');
+const ajv = createAjv();
 
 export default {
   name: 'JSON Schema',

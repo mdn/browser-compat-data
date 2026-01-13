@@ -128,9 +128,7 @@
               "partial_implementation": true,
               "notes": "Supported on ChromeOS, macOS, and Windows only."
             },
-            "chrome_android": {
-              "version_added": "127"
-            },
+            "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
               "version_added": "141",
@@ -372,9 +370,9 @@
             "deprecated": false
           }
         },
-        "lost_device_on_duplicate": {
+        "handles_duplicate_calls": {
           "__compat": {
-            "description": "Lost `GPUDevice` returned on duplicate calls.",
+            "description": "Rejects duplicate calls as adapter is consumed.",
             "tags": [
               "web-features:webgpu"
             ],
@@ -382,11 +380,22 @@
               "chrome": {
                 "version_added": "116",
                 "partial_implementation": true,
-                "notes": "Supported on ChromeOS, macOS, and Windows only."
+                "notes": [
+                  "Supported on ChromeOS, macOS, and Windows only.",
+                  "Before Chrome 140, lost `GPUDevice` is returned on duplicate calls."
+                ]
               },
-              "chrome_android": {
-                "version_added": "121"
-              },
+              "chrome_android": [
+                {
+                  "version_added": "140"
+                },
+                {
+                  "version_added": "121",
+                  "version_removed": "140",
+                  "partial_implementation": true,
+                  "notes": "Duplicate calls don't reject; instead, lost `GPUDevice` is returned on duplicate calls."
+                }
+              ],
               "deno": [
                 {
                   "version_added": "1.39",
@@ -395,7 +404,9 @@
                       "type": "runtime_flag",
                       "name": "--unstable-webgpu"
                     }
-                  ]
+                  ],
+                  "partial_implementation": true,
+                  "notes": "Duplicate calls don't reject; instead, lost `GPUDevice` is returned on duplicate calls."
                 },
                 {
                   "version_added": "1.8",
@@ -411,7 +422,9 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "26"
+                "version_added": "26",
+                "partial_implementation": true,
+                "notes": "Duplicate calls don't reject; instead, lost `GPUDevice` is returned on duplicate calls."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -437,9 +450,7 @@
                 "partial_implementation": true,
                 "notes": "Supported on ChromeOS, macOS, and Windows only."
               },
-              "chrome_android": {
-                "version_added": "133"
-              },
+              "chrome_android": "mirror",
               "deno": {
                 "version_added": false
               },

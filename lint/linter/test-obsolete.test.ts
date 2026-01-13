@@ -14,15 +14,15 @@ import {
 const { browsers } = bcd;
 
 const errorTime = new Date(),
-  warningTime = new Date();
+  infoTime = new Date();
 errorTime.setFullYear(errorTime.getFullYear() - 2.5);
-warningTime.setFullYear(warningTime.getFullYear() - 2);
+infoTime.setFullYear(infoTime.getFullYear() - 2);
 const release = Object.entries(browsers.chrome.releases).find((r) => {
   if (r[1].release_date === undefined) {
     return false;
   }
   const date = new Date(r[1].release_date);
-  return errorTime < date && date < warningTime;
+  return errorTime < date && date < infoTime;
 });
 
 describe('neverImplemented', () => {
@@ -158,7 +158,7 @@ describe('implementedAndRemoved', () => {
     );
   });
 
-  it('rule 2 warning: returns "warning" for features which were implemented and removed some time ago', () => {
+  it('rule 2 info: returns "info" for features which were implemented and removed some time ago', () => {
     // Make sure there is a suitable release
     assert.ok(release);
     const version_removed = release[0];
@@ -169,7 +169,7 @@ describe('implementedAndRemoved', () => {
           version_removed,
         },
       }),
-      'warning',
+      'info',
     );
     assert.equal(
       implementedAndRemoved({
@@ -190,7 +190,7 @@ describe('implementedAndRemoved', () => {
           },
         ],
       }),
-      'warning',
+      'info',
     );
     assert.equal(
       implementedAndRemoved({
@@ -215,7 +215,7 @@ describe('implementedAndRemoved', () => {
           version_added: false,
         },
       }),
-      'warning',
+      'info',
     );
   });
 });
@@ -256,7 +256,7 @@ describe('processData', () => {
     assert.equal(logger.messages[0].level, 'error');
   });
 
-  it('logs "warning" for feature according to rule 2', () => {
+  it('logs "info" for feature according to rule 2', () => {
     const logger = new Logger('', '');
     // Make sure there is a suitable release
     assert.ok(release);
@@ -270,6 +270,6 @@ describe('processData', () => {
       },
     });
     assert.equal(logger.messages.length, 1);
-    assert.equal(logger.messages[0].level, 'warning');
+    assert.equal(logger.messages[0].level, 'info');
   });
 });
