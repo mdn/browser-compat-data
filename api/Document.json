@@ -7279,10 +7279,7 @@
           "support": {
             "chrome": {
               "version_added": "119",
-              "notes": [
-                "From version 141 onwards, activating the `storage-access` permission via `requestStorageAccess()` results in third-party cookies being sent only with requests to the calling embed's exact origin.",
-                "Before version 141, `storage-access` activation resulted in third-party cookies being sent with requests to the calling embed's site."
-              ]
+              "notes": "From version 141 onwards, activating the `storage-access` permission via `requestStorageAccess()` results in third-party cookies being sent only with requests to the calling embed's exact origin (see [bug 379030052](https://crbug.com/379030052)). Before version 141, it resulted in third-party cookies being sent with requests to the calling embed's site."
             },
             "chrome_android": {
               "version_added": "120"
@@ -7292,10 +7289,7 @@
             },
             "firefox": {
               "version_added": "65",
-              "notes": [
-                "From version 140 onwards, activating the `storage-access` permission via `requestStorageAccess()` results in third-party cookies being sent only with requests to the calling embed's exact origin.",
-                "Before version 140, `storage-access` activation resulted in third-party cookies being sent with requests to the caling embed's site."
-              ]
+              "notes": "From version 140 onwards, activating the `storage-access` permission via `requestStorageAccess()` results in third-party cookies being sent only with requests to the calling embed's exact origin (see [bug 1965817](https://bugzil.la/1965817)). Before version 140, it resulted in third-party cookies being sent with requests to the calling embed's site."
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -7305,7 +7299,7 @@
               "version_added": "11.1",
               "notes": [
                 "Client-side storage access is granted per-page ([see explanation](https://developer.mozilla.org/docs/Web/API/Storage_Access_API#how_it_works)).",
-                "`storage-access` activation results in third-party cookies being sent with requests to the caling embed's site."
+                "`storage-access` activation results in third-party cookies being sent with requests to the calling embed's site."
               ]
             },
             "safari_ios": "mirror",
@@ -8392,10 +8386,10 @@
             "deprecated": false
           }
         },
-        "options_parameter": {
+        "callbackOptions_parameter": {
           "__compat": {
-            "description": "`options` parameter",
-            "spec_url": "https://drafts.csswg.org/css-view-transitions-2/#dictdef-startviewtransitionoptions",
+            "description": "`callbackOptions` parameter",
+            "spec_url": "https://drafts.csswg.org/css-view-transitions-2/#dom-document-startviewtransition-callbackoptions-callbackoptions",
             "tags": [
               "web-features:view-transitions"
             ],
@@ -8406,7 +8400,8 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "147"
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1860854"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -8425,82 +8420,12 @@
               "standard_track": true,
               "deprecated": false
             }
-          },
-          "types_parameter": {
-            "__compat": {
-              "description": "`options.types` parameter",
-              "spec_url": "https://drafts.csswg.org/css-view-transitions-2/#dom-startviewtransitionoptions-types",
-              "tags": [
-                "web-features:view-transitions"
-              ],
-              "support": {
-                "chrome": {
-                  "version_added": "125"
-                },
-                "chrome_android": "mirror",
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": "147"
-                },
-                "firefox_android": "mirror",
-                "oculus": "mirror",
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": "18.2"
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror",
-                "webview_ios": "mirror"
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
-          "update_parameter": {
-            "__compat": {
-              "description": "`options.update` parameter",
-              "spec_url": "https://drafts.csswg.org/css-view-transitions-2/#dom-startviewtransitionoptions-update",
-              "tags": [
-                "web-features:view-transitions"
-              ],
-              "support": {
-                "chrome": {
-                  "version_added": "125"
-                },
-                "chrome_android": "mirror",
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": "147"
-                },
-                "firefox_android": "mirror",
-                "oculus": "mirror",
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": "18.2"
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror",
-                "webview_ios": "mirror"
-              },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
           }
         },
         "updateCallback_parameter": {
           "__compat": {
             "description": "`updateCallback` parameter",
-            "spec_url": "https://drafts.csswg.org/css-view-transitions-2/#callbackdef-viewtransitionupdatecallback",
+            "spec_url": "https://drafts.csswg.org/css-view-transitions-1/#dom-document-startviewtransition-updatecallback-updatecallback",
             "tags": [
               "web-features:view-transitions"
             ],
