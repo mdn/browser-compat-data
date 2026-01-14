@@ -1,5 +1,66 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.2.3](https://github.com/mdn/browser-compat-data/releases/tag/v7.2.3)
+
+January 6, 2026
+
+### Additions
+
+- `browsers.bun.releases.1.3.5` ([#28706](https://github.com/mdn/browser-compat-data/pull/28706))
+- `css.types.color.color.colorSpace_parameter_accepts_display-p3-linear_value` ([#28479](https://github.com/mdn/browser-compat-data/pull/28479))
+- `html.elements.meta.name.viewport` ([#25392](https://github.com/mdn/browser-compat-data/pull/25392))
+- `html.elements.meta.name.viewport.height` ([#25392](https://github.com/mdn/browser-compat-data/pull/25392))
+- `html.elements.meta.name.viewport.initial-scale` ([#25392](https://github.com/mdn/browser-compat-data/pull/25392))
+- `html.elements.meta.name.viewport.interactive-widget` ([#25392](https://github.com/mdn/browser-compat-data/pull/25392))
+- `html.elements.meta.name.viewport.interactive-widget.overlays-content` ([#25392](https://github.com/mdn/browser-compat-data/pull/25392))
+- `html.elements.meta.name.viewport.interactive-widget.resizes-content` ([#25392](https://github.com/mdn/browser-compat-data/pull/25392))
+- `html.elements.meta.name.viewport.interactive-widget.resizes-visual` ([#25392](https://github.com/mdn/browser-compat-data/pull/25392))
+- `html.elements.meta.name.viewport.maximum-scale` ([#25392](https://github.com/mdn/browser-compat-data/pull/25392))
+- `html.elements.meta.name.viewport.minimum-scale` ([#25392](https://github.com/mdn/browser-compat-data/pull/25392))
+- `html.elements.meta.name.viewport.user-scalable` ([#25392](https://github.com/mdn/browser-compat-data/pull/25392))
+- `html.elements.meta.name.viewport.viewport-fit` ([#25392](https://github.com/mdn/browser-compat-data/pull/25392))
+- `html.elements.meta.name.viewport.viewport-fit.auto` ([#25392](https://github.com/mdn/browser-compat-data/pull/25392))
+- `html.elements.meta.name.viewport.viewport-fit.cover` ([#25392](https://github.com/mdn/browser-compat-data/pull/25392))
+- `html.elements.meta.name.viewport.width` ([#25392](https://github.com/mdn/browser-compat-data/pull/25392))
+- `http.headers.Accept-CH.Sec-CH-Width` ([#28690](https://github.com/mdn/browser-compat-data/pull/28690))
+- `http.headers.Sec-CH-Width` ([#28690](https://github.com/mdn/browser-compat-data/pull/28690))
+- `webextensions.api.proxy.ProxyInfo.masqueTemplate` ([#28213](https://github.com/mdn/browser-compat-data/pull/28213))
+- `webextensions.api.proxy.ProxyInfo.type` ([#28213](https://github.com/mdn/browser-compat-data/pull/28213))
+
+### Statistics
+
+- 11 contributors have changed 147 files with 1,580 additions and 775 deletions in 24 commits ([`v7.2.2...v7.2.3`](https://github.com/mdn/browser-compat-data/compare/v7.2.2...v7.2.3))
+- 19,162 total features
+- 1,213 total contributors
+- 5,543 total stargazers
+
+## [v7.2.2](https://github.com/mdn/browser-compat-data/releases/tag/v7.2.2)
+
+December 17, 2025
+
+### Additions
+
+- `api.CredentialsContainer.get.identity_option.providers_option_nonce` ([#28684](https://github.com/mdn/browser-compat-data/pull/28684))
+- `browsers.safari_ios.releases.26.3` ([#28669](https://github.com/mdn/browser-compat-data/pull/28669))
+- `browsers.safari.releases.26.3` ([#28669](https://github.com/mdn/browser-compat-data/pull/28669))
+- `browsers.webview_ios.releases.26.3` ([#28669](https://github.com/mdn/browser-compat-data/pull/28669))
+- `html.elements.details.search_match_opens` ([#28672](https://github.com/mdn/browser-compat-data/pull/28672))
+- `http.headers.Accept-CH.Sec-CH-Device-Memory` ([#28636](https://github.com/mdn/browser-compat-data/pull/28636))
+- `http.headers.Accept-CH.Sec-CH-DPR` ([#28636](https://github.com/mdn/browser-compat-data/pull/28636))
+- `http.headers.Accept-CH.Sec-CH-Viewport-Height` ([#28636](https://github.com/mdn/browser-compat-data/pull/28636))
+- `http.headers.Accept-CH.Sec-CH-Viewport-Width` ([#28636](https://github.com/mdn/browser-compat-data/pull/28636))
+- `http.headers.Sec-CH-Device-Memory` ([#28636](https://github.com/mdn/browser-compat-data/pull/28636))
+- `http.headers.Sec-CH-DPR` ([#28636](https://github.com/mdn/browser-compat-data/pull/28636))
+- `http.headers.Sec-CH-Viewport-Height` ([#28636](https://github.com/mdn/browser-compat-data/pull/28636))
+- `http.headers.Sec-CH-Viewport-Width` ([#28636](https://github.com/mdn/browser-compat-data/pull/28636))
+
+### Statistics
+
+- 7 contributors have changed 49 files with 735 additions and 220 deletions in 17 commits ([`v7.2.1...v7.2.2`](https://github.com/mdn/browser-compat-data/compare/v7.2.1...v7.2.2))
+- 19,143 total features
+- 1,213 total contributors
+- 5,522 total stargazers
+
 ## [v7.2.1](https://github.com/mdn/browser-compat-data/releases/tag/v7.2.1)
 
 December 12, 2025
