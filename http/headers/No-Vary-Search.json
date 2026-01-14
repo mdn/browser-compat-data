@@ -6,9 +6,20 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/No-Vary-Search",
           "spec_url": "https://httpwg.org/http-extensions/draft-ietf-httpbis-no-vary-search.html#section-2",
           "support": {
-            "chrome": {
-              "version_added": "121"
-            },
+            "chrome": [
+              {
+                "version_added": "141"
+              },
+              {
+                "version_added": "121",
+                "version_removed": "141",
+                "partial_implementation": true,
+                "notes": [
+                  "Before Chrome 127, speculation rules are only supported for navigational prefetch, not prerender.",
+                  "Before Chrome 141, HTTP cache is not supported."
+                ]
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -33,8 +44,9 @@
             "deprecated": false
           }
         },
-        "HTTPcache": {
+        "http_cache": {
           "__compat": {
+            "spec_url": "https://httpwg.org/http-extensions/draft-ietf-httpbis-no-vary-search.html#name-caching",
             "description": "HTTP cache",
             "support": {
               "chrome": {
@@ -67,9 +79,11 @@
             }
           }
         },
-        "Navigational_prefetch": {
+        "speculation_rules_prefetch": {
           "__compat": {
             "description": "Speculation rules Navigational prefetch",
+            "mdn_url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/speculationrules#expects_no_vary_search",
+            "spec_url": "https://html.spec.whatwg.org/multipage/speculative-loading.html#sl-candidate-nvs-hint",
             "support": {
               "chrome": {
                 "version_added": "121"
@@ -99,9 +113,11 @@
             }
           }
         },
-        "Prerender": {
+        "speculation_rules_prerender": {
           "__compat": {
             "description": "Speculation rules Prerender",
+            "mdn_rule": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script/type/speculationrules#expects_no_vary_search",
+            "spec_url": "https://wicg.github.io/nav-speculation/prerendering.html#:~:text=candidate%E2%80%99s%20No%2DVary%2DSearch%20hint",
             "support": {
               "chrome": {
                 "version_added": "127"
