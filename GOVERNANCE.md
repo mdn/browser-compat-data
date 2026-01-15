@@ -60,7 +60,6 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 - Alexis Deveria (@Fyrd), Adobe, https://caniuse.com
 - Chris David Mills (@chrisdavidmills)
 - Claas Augner (@caugner), Mozilla
-- Daniel Beck (@ddbeck)
 - Estelle Weyl (@estelle), Open Web Docs (Peer for CSS compat data)
 - Hamish Willee (@hamishwillee), Mozilla
 - Luca Casonato (@lucacasonato), Deno
@@ -117,6 +116,7 @@ An individual is invited to become an Owner by existing Owners. A nomination wil
 - Philip Jägenstedt (@foolip), Google
 - Ruth John (@Rumyra), Mozilla
 - Vinyl Da.i'gyu (@queengooborg), Gooborg Studios
+- Daniel Beck (@ddbeck)
 
 ## Additional paths to becoming a Peer or Owner
 
@@ -177,7 +177,6 @@ The moderator is responsible for summarizing the discussion of each agenda item 
 
 The `@mdn/browser-compat-data` project would like to thank the following former Owners and Peers for their contributions and the countless hours invested.
 
-- Daniel Beck (@ddbeck) (BCD co-owner until April 2022)
 - Eric Shepherd (@a2sheppy) (BCD peer until August 2020)
 - Jean-Yves Perrier (@teoli2003) (Peer)
 - Joe Medley (@jpmedley) (Peer)

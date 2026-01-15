@@ -1,12 +1,11 @@
 {
   "api": {
-    "IdentityCredentialError": {
+    "Origin": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/IdentityCredentialError",
-        "spec_url": "https://w3c-fedid.github.io/FedCM/#browser-api-identity-credential-error-interface",
+        "spec_url": "https://html.spec.whatwg.org/multipage/browsers.html#the-origin-interface",
         "support": {
           "chrome": {
-            "version_added": "120"
+            "version_added": "145"
           },
           "chrome_android": "mirror",
           "edge": "mirror",
@@ -31,14 +30,13 @@
           "deprecated": false
         }
       },
-      "IdentityCredentialError": {
+      "Origin": {
         "__compat": {
-          "description": "`IdentityCredentialError()` constructor",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/IdentityCredentialError/IdentityCredentialError",
-          "spec_url": "https://w3c-fedid.github.io/FedCM/#dom-identitycredentialerror-identitycredentialerror",
+          "description": "`Origin()` constructor",
+          "spec_url": "https://html.spec.whatwg.org/multipage/browsers.html#dom-origin-constructor",
           "support": {
             "chrome": {
-              "version_added": "120"
+              "version_added": "145"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -64,20 +62,14 @@
           }
         }
       },
-      "error": {
+      "from_static": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/IdentityCredentialError/error",
-          "spec_url": "https://w3c-fedid.github.io/FedCM/#dom-identitycredentialerror-error",
+          "description": "`from()` static method",
+          "spec_url": "https://html.spec.whatwg.org/multipage/browsers.html#dom-origin-from",
           "support": {
-            "chrome": [
-              {
-                "version_added": "144"
-              },
-              {
-                "alternative_name": "code",
-                "version_added": "120"
-              }
-            ],
+            "chrome": {
+              "version_added": "145"
+            },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -102,13 +94,74 @@
           }
         }
       },
-      "url": {
+      "isSameOrigin": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/IdentityCredentialError/url",
-          "spec_url": "https://w3c-fedid.github.io/FedCM/#dom-identitycredentialerror-url",
+          "spec_url": "https://html.spec.whatwg.org/multipage/browsers.html#dom-origin-issameorigin",
           "support": {
             "chrome": {
-              "version_added": "120"
+              "version_added": "145"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "isSameSite": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/browsers.html#dom-origin-issamesite",
+          "support": {
+            "chrome": {
+              "version_added": "145"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "opaque": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/browsers.html#dom-origin-opaque",
+          "support": {
+            "chrome": {
+              "version_added": "145"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
