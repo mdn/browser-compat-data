@@ -1,5 +1,75 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.2.4](https://github.com/mdn/browser-compat-data/releases/tag/v7.2.4)
+
+January 15, 2026
+
+### Removals
+
+- `api.Document.startViewTransition.callbackOptions_parameter` ([#28541](https://github.com/mdn/browser-compat-data/pull/28541))
+- `api.Window.sizeToContent` ([#28829](https://github.com/mdn/browser-compat-data/pull/28829))
+
+### Additions
+
+- `api.Document.startViewTransition.options_parameter` ([#28541](https://github.com/mdn/browser-compat-data/pull/28541))
+- `api.Document.startViewTransition.options_parameter.types_parameter` ([#28541](https://github.com/mdn/browser-compat-data/pull/28541))
+- `api.Document.startViewTransition.options_parameter.update_parameter` ([#28541](https://github.com/mdn/browser-compat-data/pull/28541))
+- `api.NavigationPrecommitController.addHandler` ([#28821](https://github.com/mdn/browser-compat-data/pull/28821))
+- `api.NavigationTransition.to` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `api.Origin` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `api.Origin.from_static` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `api.Origin.isSameOrigin` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `api.Origin.isSameSite` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `api.Origin.opaque` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `api.Origin.Origin` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `api.PerformanceElementTiming.paintTime` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `api.PerformanceElementTiming.presentationTime` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `api.PerformanceLongAnimationFrameTiming.paintTime` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `api.PerformanceLongAnimationFrameTiming.presentationTime` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `api.PerformanceNavigationTiming.confidence` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `api.PerformanceResourceTiming.workerCacheLookupStart` ([#28819](https://github.com/mdn/browser-compat-data/pull/28819))
+- `api.PerformanceResourceTiming.workerRouterEvaluationStart` ([#28819](https://github.com/mdn/browser-compat-data/pull/28819))
+- `api.PerformanceTimingConfidence` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `api.PerformanceTimingConfidence.randomizedTriggerRate` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `api.PerformanceTimingConfidence.toJSON` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `api.PerformanceTimingConfidence.value` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `api.VideoFrame.metadata` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `browsers.bun.releases.1.3.6` ([#28802](https://github.com/mdn/browser-compat-data/pull/28802))
+- `browsers.chrome_android.releases.147` ([#28802](https://github.com/mdn/browser-compat-data/pull/28802))
+- `browsers.chrome.releases.147` ([#28802](https://github.com/mdn/browser-compat-data/pull/28802))
+- `browsers.firefox_android.releases.150` ([#28802](https://github.com/mdn/browser-compat-data/pull/28802))
+- `browsers.firefox.releases.150` ([#28802](https://github.com/mdn/browser-compat-data/pull/28802))
+- `browsers.opera_android.releases.94` ([#28826](https://github.com/mdn/browser-compat-data/pull/28826))
+- `browsers.webview_android.releases.147` ([#28802](https://github.com/mdn/browser-compat-data/pull/28802))
+- `css.properties.buffered-rendering` ([#28827](https://github.com/mdn/browser-compat-data/pull/28827))
+- `css.properties.buffered-rendering.auto` ([#28827](https://github.com/mdn/browser-compat-data/pull/28827))
+- `css.properties.buffered-rendering.dynamic` ([#28827](https://github.com/mdn/browser-compat-data/pull/28827))
+- `css.properties.buffered-rendering.static` ([#28827](https://github.com/mdn/browser-compat-data/pull/28827))
+- `css.properties.color-rendering` ([#28827](https://github.com/mdn/browser-compat-data/pull/28827))
+- `css.properties.color-rendering.auto` ([#28827](https://github.com/mdn/browser-compat-data/pull/28827))
+- `css.properties.color-rendering.optimizeQuality` ([#28827](https://github.com/mdn/browser-compat-data/pull/28827))
+- `css.properties.color-rendering.optimizeSpeed` ([#28827](https://github.com/mdn/browser-compat-data/pull/28827))
+- `css.properties.column-height` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `css.properties.column-height.auto` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `css.properties.column-wrap` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `css.properties.column-wrap.auto` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `css.properties.column-wrap.nowrap` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `css.properties.column-wrap.wrap` ([#28833](https://github.com/mdn/browser-compat-data/pull/28833))
+- `css.properties.content.alt_text.counters` ([#28763](https://github.com/mdn/browser-compat-data/pull/28763))
+- `css.selectors.marker.counter_support` ([#28625](https://github.com/mdn/browser-compat-data/pull/28625))
+- `css.selectors.marker.quotes_support` ([#28625](https://github.com/mdn/browser-compat-data/pull/28625))
+- `http.headers.No-Vary-Search.http_cache` ([#28689](https://github.com/mdn/browser-compat-data/pull/28689))
+- `http.headers.No-Vary-Search.speculation_rules_prefetch` ([#28689](https://github.com/mdn/browser-compat-data/pull/28689))
+- `http.headers.No-Vary-Search.speculation_rules_prerender` ([#28689](https://github.com/mdn/browser-compat-data/pull/28689))
+- `javascript.builtins.Iterator.concat` ([#28788](https://github.com/mdn/browser-compat-data/pull/28788))
+
+### Statistics
+
+- 13 contributors have changed 127 files with 5,813 additions and 1,244 deletions in 53 commits ([`v7.2.3...v7.2.4`](https://github.com/mdn/browser-compat-data/compare/v7.2.3...v7.2.4))
+- 19,204 total features
+- 1,217 total contributors
+- 5,555 total stargazers
+
 ## [v7.2.3](https://github.com/mdn/browser-compat-data/releases/tag/v7.2.3)
 
 January 6, 2026

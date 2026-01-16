@@ -1,30 +1,17 @@
 {
-  "http": {
-    "headers": {
-      "No-Vary-Search": {
+  "css": {
+    "properties": {
+      "column-wrap": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/No-Vary-Search",
-          "spec_url": "https://httpwg.org/http-extensions/draft-ietf-httpbis-no-vary-search.html#section-2",
+          "spec_url": "https://drafts.csswg.org/css-multicol-2/#propdef-column-wrap",
           "support": {
-            "chrome": [
-              {
-                "version_added": "141"
-              },
-              {
-                "version_added": "121",
-                "version_removed": "141",
-                "partial_implementation": true,
-                "notes": [
-                  "Before Chrome 127, speculation rules are only supported for navigational prefetch, not prerender.",
-                  "Before Chrome 141, HTTP cache is not supported."
-                ]
-              }
-            ],
+            "chrome": {
+              "version_added": "145"
+            },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
-              "impl_url": "https://bugzil.la/1967294"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -44,21 +31,17 @@
             "deprecated": false
           }
         },
-        "http_cache": {
+        "auto": {
           "__compat": {
-            "description": "HTTP cache",
-            "spec_url": "https://httpwg.org/http-extensions/draft-ietf-httpbis-no-vary-search.html#name-caching",
+            "spec_url": "https://drafts.csswg.org/css-multicol-2/#valdef-column-wrap-auto",
             "support": {
               "chrome": {
-                "version_added": "141"
+                "version_added": "145"
               },
-              "chrome_android": {
-                "version_added": "144"
-              },
+              "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1967294"
+                "version_added": false
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -79,20 +62,17 @@
             }
           }
         },
-        "speculation_rules_prefetch": {
+        "nowrap": {
           "__compat": {
-            "description": "Speculation rules Navigational prefetch",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/script/type/speculationrules#expects_no_vary_search",
-            "spec_url": "https://html.spec.whatwg.org/multipage/speculative-loading.html#sl-candidate-nvs-hint",
+            "spec_url": "https://drafts.csswg.org/css-multicol-2/#valdef-column-wrap-nowrap",
             "support": {
               "chrome": {
-                "version_added": "121"
+                "version_added": "145"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1967294"
+                "version_added": false
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -113,20 +93,17 @@
             }
           }
         },
-        "speculation_rules_prerender": {
+        "wrap": {
           "__compat": {
-            "description": "Speculation rules Prerender",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/script/type/speculationrules#expects_no_vary_search",
-            "spec_url": "https://wicg.github.io/nav-speculation/prerendering.html#:~:text=candidate%E2%80%99s%20No%2DVary%2DSearch%20hint",
+            "spec_url": "https://drafts.csswg.org/css-multicol-2/#valdef-column-wrap-wrap",
             "support": {
               "chrome": {
-                "version_added": "127"
+                "version_added": "145"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1967294"
+                "version_added": false
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
