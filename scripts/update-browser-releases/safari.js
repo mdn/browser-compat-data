@@ -27,7 +27,7 @@ import { newBrowserEntry, updateBrowserEntry } from './utils.js';
 const extractReleaseData = (str) => {
   // Note: \s is needed as some spaces in Apple source are non-breaking
   const result =
-    /Released\s+(.*)\s*—\s*(?:Version\s+)?(\d+(?:\.\d+)*)\s*(\s*beta)?\s*\((.*)\)/.exec(
+    /Released\s+(.*)\s*—\s*(?:Version\s+)?(\d+(?:\.\d+)*)\s*(?:\s*beta)?\s*\((.*)\)/.exec(
       str,
     );
   if (!result) {
@@ -36,11 +36,12 @@ const extractReleaseData = (str) => {
     );
     return null;
   }
+  const isBeta = /\bbeta\b/i.test(str);
   return {
     date: new Date(`${result[1]} UTC`).toISOString().substring(0, 10),
     version: result[2].replace(/\.0$/, ''),
-    channel: result[3] ? 'beta' : 'retired',
-    engineVersion: result[4].substring(2),
+    channel: isBeta ? 'beta' : 'retired',
+    engineVersion: result[3].substring(2),
     releaseNote: '',
   };
 };
@@ -81,7 +82,10 @@ export const updateSafariReleases = async (options) => {
     if (releases[id].kind !== 'article') {
       continue;
     }
-    const releaseDataEntry = extractReleaseData(releases[id].abstract[0].text);
+
+    const releaseDataEntry = extractReleaseData(
+      releases[id].title + '\n' + releases[id].abstract[0].text,
+    );
 
     if (!releaseDataEntry) {
       console.warn(
