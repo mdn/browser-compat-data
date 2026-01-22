@@ -51,28 +51,9 @@ const getFutureReleaseDate = async (release, releaseScheduleURL) => {
   }
   const releaseDateText = result[1];
 
-  // Get the date from the file
-  const months = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ];
-  const year = releaseDateText.substring(7, 11);
-  const month = months.indexOf(releaseDateText.substring(3, 6)) + 1;
-  const day = releaseDateText.substring(0, 2);
+  const releaseDate = parseReleaseDate(releaseDateText);
 
-  const releaseDate = new Date(`${year}-${month}-${day}Z`);
-
-  return releaseDate.toISOString().substring(0, 10); // Remove the time part
+  return releaseDate.toISOString().substring(0, 10);
 };
 
 /**
@@ -328,4 +309,30 @@ export const updateEdgeReleases = async (options) => {
     result = `### Updates for ${options.browserName}\n${result}`;
   }
   return result;
+};
+
+/**
+ * Parses a release date from the Edge release table.
+ * @param {string} dateText - Release date in the original format.
+ * @returns string
+ */
+export const parseReleaseDate = (dateText) => {
+  const months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
+  const [day, monthText, year] = dateText.split('-');
+  const month = months.findIndex((m) => monthText.startsWith(m)) + 1;
+
+  return new Date(`${year}-${month}-${day}Z`);
 };
