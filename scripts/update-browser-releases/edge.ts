@@ -331,9 +331,8 @@ export const parseReleaseDate = (dateText: string) => {
     'Nov',
     'Dec',
   ];
-  const year = dateText.substring(7, 11);
-  const month = months.indexOf(dateText.substring(3, 6)) + 1;
-  const day = dateText.substring(0, 2);
+  const [day, monthText, year] = dateText.split('-');
+  const month = months.findIndex((m) => monthText.startsWith(m)) + 1;
 
   return new Date(`${year}-${month}-${day}Z`);
 };

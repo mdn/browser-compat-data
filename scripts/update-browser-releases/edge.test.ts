@@ -12,4 +12,11 @@ describe('parseReleaseDate', () => {
     assert.equal(result.getUTCMonth(), 2); // March is 0-indexed as 2
     assert.equal(result.getUTCDate(), 12);
   });
+
+  it('should parse date with full month correctly', () => {
+    const result = parseReleaseDate('09-April-2026');
+    assert.equal(result.getUTCFullYear(), 2026);
+    assert.equal(result.getUTCMonth(), 3); // April is 0-indexed as 3
+    assert.equal(result.getUTCDate(), 9);
+  });
 });
