@@ -9,7 +9,6 @@ import unicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
 import js from '@eslint/js';
 import { FlatCompat } from '@eslint/eslintrc';
-import ts from 'typescript-eslint';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -22,6 +21,7 @@ const compat = new FlatCompat({
 export default [
   {
     ignores: [
+      'eslint.config.js',
       '**/*.json',
       '!*.json',
       '!schemas/*.json',
@@ -39,16 +39,12 @@ export default [
   ...fixupConfigRules(
     compat.extends(
       'eslint:recommended',
-      'plugin:@typescript-eslint/strict',
-      'plugin:@typescript-eslint/stylistic',
       'plugin:import/recommended',
-      'plugin:import/typescript',
-      'plugin:jsdoc/recommended-typescript-flavor',
+      'plugin:jsdoc/recommended',
     ),
   ),
   {
     plugins: {
-      '@typescript-eslint': fixupPluginRules(ts.plugin),
       import: fixupPluginRules(_import),
       // jsdoc: fixupPluginRules(jsdoc), // Plugin already defined
       'prefer-arrow-functions': preferArrowFunctions,
@@ -63,23 +59,18 @@ export default [
         SharedArrayBuffer: 'readonly',
       },
 
-      parser: ts.parser,
       ecmaVersion: 2020,
       sourceType: 'module',
     },
 
     settings: {
       'import/resolver': {
-        typescript: true,
         node: true,
       },
     },
 
     rules: {
-      '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/no-unused-expressions': 'error',
-
-      '@typescript-eslint/no-unused-vars': [
+      'no-unused-vars': [
         'error',
         {
           caughtErrors: 'none',
@@ -150,7 +141,7 @@ export default [
       'no-lone-blocks': 'error',
       'no-return-assign': 'error',
       'no-self-compare': 'error',
-      'no-unused-expressions': 'off',
+      'no-unused-expressions': 'error',
       'no-useless-call': 'error',
 
       'prefer-arrow-functions/prefer-arrow-functions': [
