@@ -43,12 +43,16 @@ export class ConsistencyChecker {
    * @returns {ConsistencyError[]} Any errors found within the data
    */
   check(data) {
-    return this.checkSubfeatures({ ...data, browsers: undefined });
+    const { browsers: _browsers, ...rest } = data;
+    void _browsers; // Intentionally unused
+    return this.checkSubfeatures(
+      /** @type {Identifier} */ (/** @type {unknown} */ (rest)),
+    );
   }
 
   /**
    * Recursively checks the data for any errors
-   * @param {DataType} data The data to test
+   * @param {Identifier} data The data to test
    * @param {string[]} [path] The path of the data
    * @returns {ConsistencyError[]} Any errors found within the data
    */
@@ -72,7 +76,7 @@ export class ConsistencyChecker {
     this.getSubfeatures(data).forEach((key) => {
       allErrors = [
         ...allErrors,
-        ...this.checkSubfeatures(query(key, data), [
+        ...this.checkSubfeatures(/** @type {Identifier} */ (query(key, data)), [
           ...path,
           ...key.split('.'),
         ]),
@@ -129,7 +133,7 @@ export class ConsistencyChecker {
 
     subfeatures.forEach((subfeature) => {
       const unsupportedInChild = this.extractUnsupportedBrowsers(
-        query(subfeature, data).__compat,
+        /** @type {Identifier} */ (query(subfeature, data)).__compat,
       );
 
       const browsers = /** @type {BrowserName[]} */ (
@@ -142,7 +146,7 @@ export class ConsistencyChecker {
           browser,
         );
         const subfeature_value = this.getVersionAdded(
-          query(subfeature, data).__compat.support,
+          /** @type {Identifier} */ (query(subfeature, data)).__compat?.support,
           browser,
         );
         if (feature_value === subfeature_value) {
@@ -182,10 +186,13 @@ export class ConsistencyChecker {
 
     for (const subfeature of subfeatures) {
       for (const browser of supportInParent) {
+        const subfeatureData = /** @type {Identifier} */ (
+          query(subfeature, data)
+        );
         if (
-          query(subfeature, data).__compat.support[browser] != undefined &&
+          subfeatureData.__compat?.support[browser] != undefined &&
           this.isVersionAddedGreater(
-            query(subfeature, data).__compat.support,
+            subfeatureData.__compat?.support,
             data.__compat?.support,
             /** @type {BrowserName} */ (browser),
           )
@@ -193,7 +200,7 @@ export class ConsistencyChecker {
           inconsistentSubfeaturesByBrowser[browser] =
             inconsistentSubfeaturesByBrowser[browser] || [];
           const subfeature_value = this.getVersionAdded(
-            query(subfeature, data).__compat.support,
+            subfeatureData.__compat?.support,
             browser,
           );
           inconsistentSubfeaturesByBrowser[browser]?.push([
@@ -227,7 +234,7 @@ export class ConsistencyChecker {
   /**
    * Checks if the data is a feature
    * @param {Identifier} data The data to test
-   * @returns {boolean} If the data is a feature statement
+   * @returns {data is Identifier & {__compat: CompatStatement}} If the data is a feature statement
    */
   isFeature(data) {
     return '__compat' in data;
@@ -383,8 +390,9 @@ export class ConsistencyChecker {
           return callback({ version_added: false });
         }
 
-        /** @type {InternalSupportStatement} */
-        let browserData = compatData.support[browser];
+        let browserData = /** @type {InternalSupportStatement | undefined} */ (
+          compatData.support[browser]
+        );
         if (
           /** @type {InternalSupportStatement} */ (browserData) === 'mirror'
         ) {
@@ -414,7 +422,7 @@ export default {
    */
   check: (logger, { data }) => {
     const checker = new ConsistencyChecker();
-    const allErrors = checker.check(data);
+    const allErrors = checker.check(/** @type {CompatData} */ (data));
 
     for (const { path, errors } of allErrors) {
       for (const { type, browser, parentValue, subfeatures } of errors) {

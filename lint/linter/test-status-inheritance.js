@@ -6,7 +6,7 @@ import chalk from 'chalk-template';
 import walk from '../../utils/walk.js';
 
 /** @import {Linter, Logger, LinterData} from '../utils.js' */
-/** @import {CompatData} from '../../types/types.js' */
+/** @import {CompatData, Identifier} from '../../types/types.js' */
 
 /**
  * Checks for correct inheritance of statuses.
@@ -18,7 +18,10 @@ const checkStatusInheritance = (data, logger) => {
   for (const feature of walk(undefined, data)) {
     // If a feature is deprecated, all sub-features are also deprecated.
     if (feature.compat.status?.deprecated === true) {
-      for (const subfeature of walk(undefined, feature.data)) {
+      for (const subfeature of walk(
+        undefined,
+        /** @type {Identifier} */ (feature.data),
+      )) {
         if (subfeature.compat.status?.deprecated === false) {
           logger.error(
             chalk`{red Feature {italic ${feature.path}} is {bold deprecated}, but subfeature {italic ${subfeature.path}} is {bold not deprecated}.}`,
@@ -29,7 +32,10 @@ const checkStatusInheritance = (data, logger) => {
     }
     // If a feature is experimental, all sub-features are also experimental, unless they are deprecated.
     if (feature.compat.status?.experimental === true) {
-      for (const subfeature of walk(undefined, feature.data)) {
+      for (const subfeature of walk(
+        undefined,
+        /** @type {Identifier} */ (feature.data),
+      )) {
         if (
           subfeature.compat.status?.experimental === false &&
           subfeature.compat.status?.deprecated === false
@@ -43,7 +49,10 @@ const checkStatusInheritance = (data, logger) => {
     }
     // If a feature is not standardized, then all sub-features aren't either.
     if (feature.compat.status?.standard_track === false) {
-      for (const subfeature of walk(undefined, feature.data)) {
+      for (const subfeature of walk(
+        undefined,
+        /** @type {Identifier} */ (feature.data),
+      )) {
         if (subfeature.compat.status?.standard_track === true) {
           logger.error(
             chalk`{red Feature {italic ${feature.path}} is {bold not standardized}, but subfeature {italic ${subfeature.path}} is {bold standardized}.}`,
@@ -66,6 +75,6 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data }) => {
-    checkStatusInheritance(data, logger);
+    checkStatusInheritance(/** @type {CompatData} */ (data), logger);
   },
 };

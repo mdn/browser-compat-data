@@ -150,7 +150,7 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data, path: { full } }) => {
-    const issues = processData(data, full);
+    const issues = processData(/** @type {CompatStatement} */ (data), full);
     for (const issue of issues) {
       if (issue.expected === '') {
         logger.warning(

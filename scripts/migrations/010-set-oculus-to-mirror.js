@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {InternalSupportStatement} from '../../types/index.js' */
+/** @import {InternalSupportBlock} from '../../types/index.js' */
 /** @import {CompatStatement} from '../../types/types.js' */
 
 import fs from 'node:fs';
@@ -24,7 +24,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 export const doSetOculusToMirror = (key, value) => {
   if (key === '__compat') {
     if (value.support.oculus === undefined) {
-      /** @type {InternalSupportStatement} */ (value.support).oculus = 'mirror';
+      /** @type {InternalSupportBlock} */ (value.support).oculus = 'mirror';
     }
   }
   return value;

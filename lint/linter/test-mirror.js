@@ -8,7 +8,7 @@ const { browsers } = bcd;
 import { isMirrorEquivalent, isMirrorRequired } from '../fixer/mirror.js';
 
 /** @import {Linter, Logger, LinterData} from '../utils.js' */
-/** @import {BrowserName} from '../../types/types.js' */
+/** @import {BrowserName, CompatStatement} from '../../types/types.js' */
 /** @import {InternalSupportBlock} from '../../types/index.js' */
 
 /**
@@ -51,6 +51,10 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data, path: { category } }) => {
-    checkMirroring(data.support, category, logger);
+    checkMirroring(
+      /** @type {CompatStatement} */ (data).support,
+      category,
+      logger,
+    );
   },
 };

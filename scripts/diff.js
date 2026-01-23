@@ -65,8 +65,11 @@ const doMirror = (diff, contents, path, direction) => {
   const browser = /** @type {BrowserName} */ (path[path.length - 1]);
   const dataPath = path.slice(0, path.length - 3).join('.');
   const data = contents[direction];
+  const queried = /** @type {Identifier} */ (query(dataPath, data));
 
-  diff[direction] = mirror(browser, query(dataPath, data).__compat.support);
+  if (queried.__compat?.support) {
+    diff[direction] = mirror(browser, queried.__compat.support);
+  }
 };
 
 /**

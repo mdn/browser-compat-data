@@ -135,7 +135,7 @@ export default {
    */
   check: (logger, { data, path: { category } }) => {
     if (!ignoredCategories.includes(category)) {
-      processData(logger, data);
+      processData(logger, /** @type {CompatStatement} */ (data));
     }
   },
   exceptions: ['html.elements.track.kind.descriptions'],

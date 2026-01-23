@@ -7,7 +7,7 @@ import testFlags, {
 } from '../linter/test-flags.js';
 import walk from '../../utils/walk.js';
 
-/** @import {BrowserName, SupportStatement, SimpleSupportStatement} from '../../types/types.js' */
+/** @import {BrowserName, CompatStatement, SupportStatement, SimpleSupportStatement, Identifier} from '../../types/types.js' */
 
 /**
  * Removes irrelevant flags from the compatibility data
@@ -67,13 +67,16 @@ const fixFlags = (filename, actual) => {
       continue;
     }
 
+    const featureData =
+      /** @type {Identifier & {__compat: CompatStatement}} */ (feature.data);
+
     for (const [
       browser,
       supportData,
     ] of /** @type {[BrowserName, SupportStatement][]} */ (
       Object.entries(feature.compat.support)
     )) {
-      feature.data.__compat.support[browser] =
+      featureData.__compat.support[browser] =
         removeIrrelevantFlags(supportData);
     }
   }

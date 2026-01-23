@@ -114,6 +114,6 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data }) => {
-    processData(data, logger);
+    processData(/** @type {CompatStatement} */ (data), logger);
   },
 };

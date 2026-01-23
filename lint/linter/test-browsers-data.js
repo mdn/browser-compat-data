@@ -82,6 +82,10 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data, path: { browser } }) => {
-    processData(/** @type {BrowserName} */ (browser), data, logger);
+    processData(
+      /** @type {BrowserName} */ (browser),
+      /** @type {BrowserStatement} */ (data),
+      logger,
+    );
   },
 };

@@ -19,8 +19,7 @@ import * as linterModules from './linter/index.js';
 import { Linters } from './utils.js';
 
 /** @import {Stats} from 'node:fs' */
-/** @import {BrowserName} from '../types/types.js' */
-/** @import {DataType} from '../types/index.js' */
+/** @import {BrowserName, CompatData} from '../types/types.js' */
 /** @import {LinterMessage, LinterMessageLevel, LinterPath} from './utils.js' */
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
@@ -52,7 +51,7 @@ const normalizeAndCategorizeFilePath = (file) => {
 /**
  * Recursively load
  * @param {...string} files The files to test
- * @returns {Promise<DataType>} The data from the loaded files
+ * @returns {Promise<CompatData>} The data from the loaded files
  */
 const loadAndCheckFiles = async (...files) => {
   const data = {};
@@ -104,7 +103,7 @@ const loadAndCheckFiles = async (...files) => {
     }
   }
 
-  return /** @type {DataType} */ (data);
+  return /** @type {CompatData} */ (data);
 };
 
 /**

@@ -3,7 +3,12 @@
 
 import bcd from '../index.js';
 
-import { isBrowser, descendantKeys, joinPath } from './walkingUtils.js';
+import {
+  isBrowser,
+  isFeature,
+  descendantKeys,
+  joinPath,
+} from './walkingUtils.js';
 import query from './query.js';
 
 /** @import {CompatData, CompatStatement, Identifier, BrowserStatement, ReleaseStatement} from '../types/types.js' */
@@ -35,7 +40,7 @@ import query from './query.js';
 
 /**
  * Walk through the browser releases
- * @param {DataType} data The data to iterate
+ * @param {BrowserStatement} data The data to iterate
  * @param {string} [path] The current path
  * @yields {BrowserReleaseWalkOutput} The release info
  * @returns {IterableIterator<BrowserReleaseWalkOutput>}
@@ -72,7 +77,7 @@ export function* lowLevelWalk(data = bcd, path, depth = Infinity) {
       yield next;
       yield* browserReleaseWalk(data, path);
     } else {
-      if (data.__compat !== undefined) {
+      if (isFeature(data)) {
         next.compat = data.__compat;
       }
       yield next;

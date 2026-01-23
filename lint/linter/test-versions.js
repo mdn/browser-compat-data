@@ -8,7 +8,7 @@ import bcd from '../../index.js';
 const { browsers } = bcd;
 
 /** @import {Linter, Logger, LinterData} from '../utils.js' */
-/** @import {BrowserName, SimpleSupportStatement, VersionValue} from '../../types/types.js' */
+/** @import {BrowserName, CompatStatement, SimpleSupportStatement, VersionValue} from '../../types/types.js' */
 /** @import {InternalSupportBlock, InternalSupportStatement} from '../../types/index.js' */
 
 /* The latest date a range's release can correspond to */
@@ -204,6 +204,10 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data, path: { category } }) => {
-    checkVersions(data.support, category, logger);
+    checkVersions(
+      /** @type {CompatStatement} */ (data).support,
+      category,
+      logger,
+    );
   },
 };

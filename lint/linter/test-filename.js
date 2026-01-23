@@ -63,6 +63,6 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data, path: { full } }) => {
-    processData(data, full, logger);
+    processData(/** @type {Identifier} */ (data), full, logger);
   },
 };

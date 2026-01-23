@@ -128,7 +128,7 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data }) => {
-    const errors = processData(data);
+    const errors = processData(/** @type {CompatStatement} */ (data));
 
     for (const error of errors) {
       logger.error(

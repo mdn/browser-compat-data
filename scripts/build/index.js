@@ -22,7 +22,7 @@ import mirrorSupport from './mirror.js';
 
 /**
  * @import { InternalSupportStatement } from '../../types/index.js'
- * @import { BrowserName, CompatData, VersionValue } from '../../types/types.js'
+ * @import { BrowserName, CompatData, Identifier, VersionValue } from '../../types/types.js'
  * @import { WalkOutput } from '../../utils/walk.js'
  */
 
@@ -150,9 +150,14 @@ export const addVersionLast = (feature) => {
  * @returns {void}
  */
 export const transformMD = (feature) => {
-  if ('description' in feature.data.__compat) {
-    feature.data.__compat.description = mdToHtml(
-      feature.data.__compat.description,
+  const featureData = /** @type {Identifier} */ (feature.data);
+  if (
+    featureData.__compat &&
+    'description' in featureData.__compat &&
+    featureData.__compat.description
+  ) {
+    featureData.__compat.description = mdToHtml(
+      featureData.__compat.description,
     );
   }
 

@@ -6,7 +6,7 @@ import chalk from 'chalk-template';
 import { createStatementGroupKey } from '../utils.js';
 
 /** @import {Linter, Logger, LinterData} from '../utils.js' */
-/** @import {BrowserName, SupportStatement} from '../../types/types.js' */
+/** @import {BrowserName, CompatStatement, SupportStatement} from '../../types/types.js' */
 
 /**
  * Process data and check to make sure there aren't multiple support statements without
@@ -54,7 +54,9 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data }) => {
-    for (const [browser, support] of Object.entries(data.support)) {
+    for (const [browser, support] of Object.entries(
+      /** @type {CompatStatement} */ (data).support,
+    )) {
       processData(
         /** @type {SupportStatement} */ (support),
         /** @type {BrowserName} */ (browser),

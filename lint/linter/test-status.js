@@ -128,6 +128,6 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data, path: { category } }) => {
-    checkStatus(data, logger, category);
+    checkStatus(/** @type {CompatStatement} */ (data), logger, category);
   },
 };
