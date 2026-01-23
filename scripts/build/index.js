@@ -44,13 +44,13 @@ const verbatimFiles = ['LICENSE', 'README.md'];
  * @param {URL} url The URL of the file
  * @param {string} [description] The description
  */
-function logWrite(url, description = '') {
+const logWrite = (url, description = '') => {
   if (description) {
     description = ` (${description})`;
   }
   const path = relative(fileURLToPath(rootdir), fileURLToPath(url));
   console.log(`Wrote: ${path}${description}`);
-}
+};
 
 /**
  * Generate metadata to embed into BCD builds
@@ -66,13 +66,12 @@ export const generateMeta = () => ({
  * @param {string} markdown The Markdown to convert
  * @returns {string} The HTML output
  */
-const mdToHtml = (markdown) => {
-  // "as string" cast because TS thinks response could be a promise
-  return /** @type {string} */ (marked.parseInline(markdown))
+const mdToHtml = (markdown) =>
+  marked
+    .parseInline(markdown)
     .replace(/&#39;/g, "'")
     .replace(/&quot;/g, '"')
     .replace(/&amp;([\w#]+);/g, '&$1;');
-};
 
 /**
  * Apply mirroring to a feature
@@ -162,7 +161,9 @@ export const transformMD = (feature) => {
   for (const [browser, supportData] of Object.entries(
     /** @type {InternalSupportStatement} */ (feature.compat.support),
   )) {
-    if (!supportData) continue;
+    if (!supportData) {
+      continue;
+    }
 
     if (Array.isArray(supportData)) {
       for (let i = 0; i < supportData.length; i++) {

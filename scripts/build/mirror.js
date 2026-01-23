@@ -47,9 +47,7 @@ const OS_NOTES = [
  * @param {string} notes A single notes string from a support statement
  * @returns {boolean} True if the notes indicate OS-specific limitations
  */
-export const isOSLimitation = (notes) => {
-  return OS_NOTES.includes(notes.toLowerCase());
-};
+export const isOSLimitation = (notes) => OS_NOTES.includes(notes.toLowerCase());
 
 const matchingSafariVersions = new Map([
   ['1', '1'],
