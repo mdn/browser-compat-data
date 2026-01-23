@@ -66,7 +66,7 @@ export const generateMeta = () => ({
  */
 const mdToHtml = (markdown) =>
   marked
-    .parseInline(markdown)
+    .parseInline(markdown, { async: false })
     .replace(/&#39;/g, "'")
     .replace(/&quot;/g, '"')
     .replace(/&amp;([\w#]+);/g, '&$1;');
