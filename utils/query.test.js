@@ -27,6 +27,7 @@ describe('query()', () => {
   it('should return the expected point in the tree (feature)', () => {
     const obj = query('api.HTMLAnchorElement.href');
 
+    assert.ok('__compat' in obj && obj.__compat);
     assert.ok('support' in obj.__compat);
     assert.ok('status' in obj.__compat);
     assert.equal(
