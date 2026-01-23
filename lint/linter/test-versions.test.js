@@ -2,7 +2,6 @@
  * See LICENSE file for more information. */
 
 /** @import {InternalSupportBlock} from '../../types/index.js' */
-/** @import {Logger} from '../utils.js' */
 
 import assert from 'node:assert/strict';
 

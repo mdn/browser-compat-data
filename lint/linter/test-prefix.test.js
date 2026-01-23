@@ -1,8 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {Logger} from '../utils.js' */
-
 import assert from 'node:assert/strict';
 
 import { Logger } from '../utils.js';
