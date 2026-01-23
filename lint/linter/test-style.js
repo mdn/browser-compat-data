@@ -9,11 +9,7 @@ import { orderFeatures } from '../fixer//feature-order.js';
 import { orderStatements } from '../fixer//statement-order.js';
 import stringifyAndOrderProperties from '../../scripts/lib/stringify-and-order-properties.js';
 
-/**
- * @typedef {import('../utils.js').Linter} Linter
- * @typedef {import('../utils.js').Logger} Logger
- * @typedef {import('../utils.js').LinterData} LinterData
- */
+/** @import {Linter, Logger, LinterData} from '../utils.js' */
 
 /**
  * Process the data for any styling errors that cannot be caught by Prettier or the schema

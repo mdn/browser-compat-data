@@ -4,16 +4,8 @@
 import chalk from 'chalk-template';
 import { compare } from 'compare-versions';
 
-/**
- * @typedef {import('../utils.js').Linter} Linter
- * @typedef {import('../utils.js').Logger} Logger
- * @typedef {import('../utils.js').LinterData} LinterData
- * @typedef {import('../../types/types.js').CompatStatement} CompatStatement
- * @typedef {import('../../types/types.js').BrowserName} BrowserName
- * @typedef {import('../../types/types.js').SupportStatement} SupportStatement
- * @typedef {import('../../types/types.js').SimpleSupportStatement} SimpleSupportStatement
- * @typedef {import('../../types/types.js').FlagStatement} FlagStatement
- */
+/** @import {Linter, Logger, LinterData} from '../utils.js' */
+/** @import {CompatStatement, BrowserName, SupportStatement, SimpleSupportStatement, FlagStatement} from '../../types/types.js' */
 
 /**
  * @typedef {object} FlagError

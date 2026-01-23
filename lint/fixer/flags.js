@@ -7,11 +7,7 @@ import testFlags, {
 } from '../linter/test-flags.js';
 import walk from '../../utils/walk.js';
 
-/**
- * @typedef {import('../../types/types.js').BrowserName} BrowserName
- * @typedef {import('../../types/types.js').SupportStatement} SupportStatement
- * @typedef {import('../../types/types.js').SimpleSupportStatement} SimpleSupportStatement
- */
+/** @import {BrowserName, SupportStatement, SimpleSupportStatement} from '../../types/types.js' */
 
 /**
  * Removes irrelevant flags from the compatibility data

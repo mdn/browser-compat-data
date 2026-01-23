@@ -4,12 +4,8 @@
 import chalk from 'chalk-template';
 import specData from 'web-specs' with { type: 'json' };
 
-/**
- * @typedef {import('../utils.js').Linter} Linter
- * @typedef {import('../utils.js').Logger} Logger
- * @typedef {import('../utils.js').LinterData} LinterData
- * @typedef {import('../../types/types.js').CompatStatement} CompatStatement
- */
+/** @import {Linter, Logger, LinterData} from '../utils.js' */
+/** @import {CompatStatement} from '../../types/types.js' */
 
 /*
  * Before adding an exception, open an issue with https://github.com/w3c/browser-specs to

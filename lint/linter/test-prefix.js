@@ -3,12 +3,8 @@
 
 import chalk from 'chalk-template';
 
-/**
- * @typedef {import('../utils.js').Linter} Linter
- * @typedef {import('../utils.js').Logger} Logger
- * @typedef {import('../utils.js').LinterData} LinterData
- * @typedef {import('../../types/types.js').CompatStatement} CompatStatement
- */
+/** @import {Linter, Logger, LinterData} from '../utils.js' */
+/** @import {CompatStatement} from '../../types/types.js' */
 
 /**
  * Process the data for prefix errors

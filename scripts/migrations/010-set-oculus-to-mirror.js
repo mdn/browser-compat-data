@@ -1,10 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/**
- * @typedef {import('../../types/index.js').InternalSupportStatement} InternalSupportStatement
- * @typedef {import('../../types/types.js').CompatStatement} CompatStatement
- */
+/** @import {InternalSupportStatement} from '../../types/index.js' */
+/** @import {CompatStatement} from '../../types/types.js' */
 
 import fs from 'node:fs';
 import path from 'node:path';

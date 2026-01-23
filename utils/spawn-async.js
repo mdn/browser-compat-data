@@ -1,8 +1,6 @@
 import { spawn } from 'node:child_process';
 
-/**
- * @typedef {import('node:child_process').SpawnOptions} SpawnOptions
- */
+/** @import {SpawnOptions} from 'node:child_process' */
 
 /**
  * Execute a command

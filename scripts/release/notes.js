@@ -1,10 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/**
- * @typedef {import('./stats.js').Stats} Stats
- * @typedef {import('./changes.js').Changes} Changes
- */
+/** @import {Stats} from './stats.js' */
+/** @import {Changes} from './changes.js' */
 
 import fs from 'node:fs/promises';
 

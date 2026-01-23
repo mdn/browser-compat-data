@@ -6,14 +6,8 @@ import bcd from '../index.js';
 import { isBrowser, descendantKeys, joinPath } from './walkingUtils.js';
 import query from './query.js';
 
-/**
- * @typedef {import('../types/types.js').CompatData} CompatData
- * @typedef {import('../types/types.js').CompatStatement} CompatStatement
- * @typedef {import('../types/types.js').Identifier} Identifier
- * @typedef {import('../types/types.js').BrowserStatement} BrowserStatement
- * @typedef {import('../types/types.js').ReleaseStatement} ReleaseStatement
- * @typedef {import('../types/index.js').DataType} DataType
- */
+/** @import {CompatData, CompatStatement, Identifier, BrowserStatement, ReleaseStatement} from '../types/types.js' */
+/** @import {DataType} from '../types/index.js' */
 
 /**
  * @typedef {object} BrowserReleaseWalkOutput

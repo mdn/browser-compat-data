@@ -6,12 +6,8 @@ import chalk from 'chalk-template';
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
-/**
- * @typedef {import('../utils.js').Linter} Linter
- * @typedef {import('../utils.js').Logger} Logger
- * @typedef {import('../utils.js').LinterData} LinterData
- * @typedef {import('../../types/types.js').CompatStatement} CompatStatement
- */
+/** @import {Linter, Logger, LinterData} from '../utils.js' */
+/** @import {CompatStatement} from '../../types/types.js' */
 
 /**
  * Check the data for any disallowed browsers or if it's missing required browsers

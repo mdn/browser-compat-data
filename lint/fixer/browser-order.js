@@ -1,11 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/**
- * @typedef {import('../../types/types.js').BrowserName} BrowserName
- * @typedef {import('../../types/types.js').CompatStatement} CompatStatement
- * @typedef {import('../../types/types.js').SupportBlock} SupportBlock
- */
+/** @import {BrowserName, CompatStatement, SupportBlock} from '../../types/types.js' */
 
 /**
  * Return a new "support_block" object whose first-level properties

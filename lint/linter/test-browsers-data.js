@@ -6,13 +6,8 @@ import chalk from 'chalk-template';
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
-/**
- * @typedef {import('../utils.js').Linter} Linter
- * @typedef {import('../utils.js').Logger} Logger
- * @typedef {import('../utils.js').LinterData} LinterData
- * @typedef {import('../../types/types.js').BrowserStatement} BrowserStatement
- * @typedef {import('../../types/types.js').BrowserName} BrowserName
- */
+/** @import {Linter, Logger, LinterData} from '../utils.js' */
+/** @import {BrowserStatement, BrowserName} from '../../types/types.js' */
 
 /**
  * Process and test the data

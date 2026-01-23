@@ -4,9 +4,7 @@
 import { checkExperimental } from '../linter/test-status.js';
 import walk from '../../utils/walk.js';
 
-/**
- * @typedef {import('../../types/types.js').Identifier} Identifier
- */
+/** @import {Identifier} from '../../types/types.js' */
 
 /**
  * Fix the status values

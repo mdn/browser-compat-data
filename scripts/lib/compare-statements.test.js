@@ -1,10 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/**
- * @typedef {import('../../types/types.js').Identifier} Identifier
- * @typedef {import('../../types/types.js').CompatStatement} CompatStatement
- */
+/** @import {Identifier, CompatStatement} from '../../types/types.js' */
 
 import assert from 'node:assert/strict';
 

@@ -3,9 +3,7 @@
 
 import bcd from '../index.js';
 
-/**
- * @typedef {import('../types/index.js').DataType} DataType
- */
+/** @import {DataType} from '../types/index.js' */
 
 /**
  * Get a subtree of compat data.

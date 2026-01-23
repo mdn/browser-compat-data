@@ -1,11 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/**
- * @typedef {import('../../types/types.js').BrowserName} BrowserName
- * @typedef {import('../../types/types.js').BrowserStatus} BrowserStatus
- * @typedef {import('../../types/types.js').CompatData} CompatData
- */
+/** @import {BrowserName, BrowserStatus, CompatData} from '../../types/types.js' */
 
 /**
  * @typedef {object} RSSItem

@@ -3,9 +3,7 @@
 
 import compareFeatures from '../../scripts/lib/compare-features.js';
 
-/**
- * @typedef {import('../../types/types.js').Identifier} Identifier
- */
+/** @import {Identifier} from '../../types/types.js' */
 
 /**
  * Return a new feature object whose first-level properties have been

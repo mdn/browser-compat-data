@@ -5,12 +5,8 @@ import chalk from 'chalk-template';
 
 import walk from '../../utils/walk.js';
 
-/**
- * @typedef {import('../utils.js').Linter} Linter
- * @typedef {import('../utils.js').Logger} Logger
- * @typedef {import('../utils.js').LinterData} LinterData
- * @typedef {import('../../types/types.js').CompatData} CompatData
- */
+/** @import {Linter, Logger, LinterData} from '../utils.js' */
+/** @import {CompatData} from '../../types/types.js' */
 
 /**
  * Checks for correct inheritance of statuses.

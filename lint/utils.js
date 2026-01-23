@@ -5,11 +5,8 @@ import { platform } from 'node:os';
 
 import chalk from 'chalk-template';
 
-/**
- * @typedef {import('../types/index.js').DataType} DataType
- * @typedef {import('../types/types.js').BrowserName} BrowserName
- * @typedef {import('../types/types.js').SimpleSupportStatement} SimpleSupportStatement
- */
+/** @import {DataType} from '../types/index.js' */
+/** @import {BrowserName, SimpleSupportStatement} from '../types/types.js' */
 
 /**
  * @typedef {object} LintOptions

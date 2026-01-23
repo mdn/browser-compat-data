@@ -7,16 +7,9 @@ import chalk from 'chalk-template';
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
-/**
- * @typedef {import('../utils.js').Linter} Linter
- * @typedef {import('../utils.js').Logger} Logger
- * @typedef {import('../utils.js').LinterData} LinterData
- * @typedef {import('../../types/types.js').BrowserName} BrowserName
- * @typedef {import('../../types/types.js').SimpleSupportStatement} SimpleSupportStatement
- * @typedef {import('../../types/types.js').VersionValue} VersionValue
- * @typedef {import('../../types/index.js').InternalSupportBlock} InternalSupportBlock
- * @typedef {import('../../types/index.js').InternalSupportStatement} InternalSupportStatement
- */
+/** @import {Linter, Logger, LinterData} from '../utils.js' */
+/** @import {BrowserName, SimpleSupportStatement, VersionValue} from '../../types/types.js' */
+/** @import {InternalSupportBlock, InternalSupportStatement} from '../../types/index.js' */
 
 /* The latest date a range's release can correspond to */
 const rangeCutoffDate = '2020-05-19';

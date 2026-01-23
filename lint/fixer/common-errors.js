@@ -3,10 +3,7 @@
 
 import { walk } from '../../utils/index.js';
 
-/**
- * @typedef {import('../../types/types.js').CompatStatement} CompatStatement
- * @typedef {import('../../types/types.js').SimpleSupportStatement} SimpleSupportStatement
- */
+/** @import {CompatStatement, SimpleSupportStatement} from '../../types/types.js' */
 
 /**
  * Fixes common errors in CompatStatements.

@@ -8,20 +8,9 @@ import { query } from '../../utils/index.js';
 import mirrorSupport from '../../scripts/build/mirror.js';
 import bcd from '../../index.js';
 
-/**
- * @typedef {import('../utils.js').Linter} Linter
- * @typedef {import('../utils.js').Logger} Logger
- * @typedef {import('../utils.js').LinterData} LinterData
- * @typedef {import('../../types/types.js').BrowserName} BrowserName
- * @typedef {import('../../types/types.js').CompatData} CompatData
- * @typedef {import('../../types/types.js').CompatStatement} CompatStatement
- * @typedef {import('../../types/types.js').Identifier} Identifier
- * @typedef {import('../../types/types.js').SimpleSupportStatement} SimpleSupportStatement
- * @typedef {import('../../types/types.js').VersionValue} VersionValue
- * @typedef {import('../../types/index.js').DataType} DataType
- * @typedef {import('../../types/index.js').InternalSupportBlock} InternalSupportBlock
- * @typedef {import('../../types/index.js').InternalSupportStatement} InternalSupportStatement
- */
+/** @import {Linter, Logger, LinterData} from '../utils.js' */
+/** @import {BrowserName, CompatData, CompatStatement, Identifier, SimpleSupportStatement, VersionValue} from '../../types/types.js' */
+/** @import {DataType, InternalSupportBlock, InternalSupportStatement} from '../../types/index.js' */
 
 /**
  * @typedef {'unsupported' | 'subfeature_earlier_implementation'} ErrorType

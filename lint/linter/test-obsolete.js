@@ -6,16 +6,9 @@ import chalk from 'chalk-template';
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
-/**
- * @typedef {import('../utils.js').Linter} Linter
- * @typedef {import('../utils.js').Logger} Logger
- * @typedef {import('../utils.js').LinterData} LinterData
- * @typedef {import('../utils.js').LinterMessageLevel} LinterMessageLevel
- * @typedef {import('../../types/types.js').BrowserName} BrowserName
- * @typedef {import('../../types/types.js').CompatStatement} CompatStatement
- * @typedef {import('../../types/index.js').InternalSupportBlock} InternalSupportBlock
- * @typedef {import('../../types/index.js').InternalSupportStatement} InternalSupportStatement
- */
+/** @import {Linter, Logger, LinterData, LinterMessageLevel} from '../utils.js' */
+/** @import {BrowserName, CompatStatement} from '../../types/types.js' */
+/** @import {InternalSupportBlock, InternalSupportStatement} from '../../types/index.js' */
 
 // Once a category has been stripped of unsupported features, remove it from this list
 const ignoredCategories = ['css'];

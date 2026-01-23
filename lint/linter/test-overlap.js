@@ -3,13 +3,8 @@
 
 import { checkOverlap } from '../common/overlap.js';
 
-/**
- * @typedef {import('../utils.js').Linter} Linter
- * @typedef {import('../utils.js').Logger} Logger
- * @typedef {import('../utils.js').LinterData} LinterData
- * @typedef {import('../../types/types.js').BrowserName} BrowserName
- * @typedef {import('../../types/types.js').SupportStatement} SupportStatement
- */
+/** @import {Linter, Logger, LinterData} from '../utils.js' */
+/** @import {BrowserName, SupportStatement} from '../../types/types.js' */
 
 /** @type {Linter} */
 export default {

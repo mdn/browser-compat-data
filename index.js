@@ -1,9 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/**
- * @typedef {import('./types/types.js').CompatData} CompatData
- */
+/** @import {CompatData} from './types/types.js' */
 
 import fs from 'node:fs/promises';
 import path from 'node:path';

@@ -1,10 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/**
- * @typedef {import('../../types/types.js').CompatStatement} CompatStatement
- * @typedef {import('../../types/types.js').Identifier} Identifier
- */
+/** @import {CompatStatement, Identifier} from '../../types/types.js' */
 
 /**
  * @typedef {Record<string, Identifier | CompatStatement>} TestValue

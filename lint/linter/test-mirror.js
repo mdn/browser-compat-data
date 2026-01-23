@@ -7,13 +7,9 @@ import bcd from '../../index.js';
 const { browsers } = bcd;
 import { isMirrorEquivalent, isMirrorRequired } from '../fixer/mirror.js';
 
-/**
- * @typedef {import('../utils.js').Linter} Linter
- * @typedef {import('../utils.js').Logger} Logger
- * @typedef {import('../utils.js').LinterData} LinterData
- * @typedef {import('../../types/types.js').BrowserName} BrowserName
- * @typedef {import('../../types/index.js').InternalSupportBlock} InternalSupportBlock
- */
+/** @import {Linter, Logger, LinterData} from '../utils.js' */
+/** @import {BrowserName} from '../../types/types.js' */
+/** @import {InternalSupportBlock} from '../../types/index.js' */
 
 /**
  * Check the data to ensure all statements that should use `mirror` do

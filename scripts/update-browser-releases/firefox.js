@@ -1,9 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/**
- * @typedef {import('../../types/types.js').ReleaseStatement} ReleaseStatement
- */
+/** @import {ReleaseStatement} from '../../types/types.js' */
 
 import * as fs from 'node:fs';
 

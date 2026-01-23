@@ -5,11 +5,7 @@ import chalk from 'chalk-template';
 
 import { IS_WINDOWS, indexToPos, indexToPosRaw } from '../utils.js';
 
-/**
- * @typedef {import('../utils.js').Linter} Linter
- * @typedef {import('../utils.js').Logger} Logger
- * @typedef {import('../utils.js').LinterData} LinterData
- */
+/** @import {Linter, Logger, LinterData} from '../utils.js' */
 
 /**
  * @typedef {object} LinkError

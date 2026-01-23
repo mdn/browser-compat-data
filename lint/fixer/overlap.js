@@ -3,10 +3,7 @@
 
 import { checkOverlap as checkOverlap } from '../common/overlap.js';
 
-/**
- * @typedef {import('../../types/types.js').BrowserName} BrowserName
- * @typedef {import('../../types/types.js').CompatStatement} CompatStatement
- */
+/** @import {BrowserName, CompatStatement} from '../../types/types.js' */
 
 /**
  * Return a new "support_block" object whose support statements have

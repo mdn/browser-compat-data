@@ -18,14 +18,10 @@ import { walk } from '../utils/index.js';
 import * as linterModules from './linter/index.js';
 import { Linters } from './utils.js';
 
-/**
- * @typedef {import('node:fs').Stats} Stats
- * @typedef {import('../types/types.js').BrowserName} BrowserName
- * @typedef {import('../types/index.js').DataType} DataType
- * @typedef {import('./utils.js').LinterMessage} LinterMessage
- * @typedef {import('./utils.js').LinterMessageLevel} LinterMessageLevel
- * @typedef {import('./utils.js').LinterPath} LinterPath
- */
+/** @import {Stats} from 'node:fs' */
+/** @import {BrowserName} from '../types/types.js' */
+/** @import {DataType} from '../types/index.js' */
+/** @import {LinterMessage, LinterMessageLevel, LinterPath} from './utils.js' */
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 

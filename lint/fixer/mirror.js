@@ -7,12 +7,8 @@ import bcd from '../../index.js';
 import { walk } from '../../utils/index.js';
 import mirrorSupport from '../../scripts/build/mirror.js';
 
-/**
- * @typedef {import('../../types/types.js').CompatData} CompatData
- * @typedef {import('../../types/types.js').BrowserName} BrowserName
- * @typedef {import('../../types/index.js').InternalSupportStatement} InternalSupportStatement
- * @typedef {import('../../types/index.js').InternalSupportBlock} InternalSupportBlock
- */
+/** @import {CompatData, BrowserName} from '../../types/types.js' */
+/** @import {InternalSupportStatement, InternalSupportBlock} from '../../types/index.js' */
 
 const downstreamBrowsers = /** @type {(keyof typeof bcd.browsers)[]} */ (
   Object.keys(bcd.browsers)

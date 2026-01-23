@@ -7,14 +7,8 @@ import { marked } from 'marked';
 
 import { VALID_ELEMENTS } from '../utils.js';
 
-/**
- * @typedef {import('../utils.js').Linter} Linter
- * @typedef {import('../utils.js').Logger} Logger
- * @typedef {import('../utils.js').LinterData} LinterData
- * @typedef {import('../../types/types.js').BrowserName} BrowserName
- * @typedef {import('../../types/types.js').CompatStatement} CompatStatement
- * @typedef {import('../../types/types.js').SupportStatement} SupportStatement
- */
+/** @import {Linter, Logger, LinterData} from '../utils.js' */
+/** @import {BrowserName, CompatStatement, SupportStatement} from '../../types/types.js' */
 
 const parser = new HTMLParser();
 

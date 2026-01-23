@@ -1,13 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/**
- * @typedef {import('../../types/types.js').CompatData} CompatData
- * @typedef {import('../../types/types.js').BrowserName} BrowserName
- * @typedef {import('../../types/types.js').Identifier} Identifier
- * @typedef {import('../../types/types.js').ReleaseStatement} ReleaseStatement
- * @typedef {import('../../types/types.js').SimpleSupportStatement} SimpleSupportStatement
- */
+/** @import {CompatData, BrowserName, Identifier, ReleaseStatement, SimpleSupportStatement} from '../../types/types.js' */
 
 import fs from 'node:fs';
 import path from 'node:path';

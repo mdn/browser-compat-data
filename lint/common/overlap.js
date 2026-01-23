@@ -7,12 +7,8 @@ import { compareVersions } from 'compare-versions';
 import { createStatementGroupKey } from '../utils.js';
 import compareStatements from '../../scripts/lib/compare-statements.js';
 
-/**
- * @typedef {import('../utils.js').Logger} Logger
- * @typedef {import('../../types/types.js').BrowserName} BrowserName
- * @typedef {import('../../types/types.js').SimpleSupportStatement} SimpleSupportStatement
- * @typedef {import('../../types/types.js').SupportStatement} SupportStatement
- */
+/** @import {Logger} from '../utils.js' */
+/** @import {BrowserName, SimpleSupportStatement, SupportStatement} from '../../types/types.js' */
 
 /**
  * Groups statements by group key.

@@ -1,12 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/**
- * @typedef {import('../../types/types.js').Identifier} Identifier
- * @typedef {import('../utils.js').Linter} Linter
- * @typedef {import('../utils.js').Logger} Logger
- * @typedef {import('../utils.js').LinterData} LinterData
- */
+/** @import {Identifier} from '../../types/types.js' */
+/** @import {Linter, Logger, LinterData} from '../utils.js' */
 
 /**
  * Test the filename based on the identifier

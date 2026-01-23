@@ -1,9 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/**
- * @typedef {import('./utils.js').RSSItem} RSSItem
- */
+/** @import {RSSItem} from './utils.js' */
 
 /**
  * @typedef {object} Release

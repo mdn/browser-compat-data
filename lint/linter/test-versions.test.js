@@ -1,9 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/**
- * @typedef {import('../../types/index.js').InternalSupportBlock} InternalSupportBlock
- */
+/** @import {InternalSupportBlock} from '../../types/index.js' */
 
 import assert from 'node:assert/strict';
 

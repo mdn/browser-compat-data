@@ -3,13 +3,7 @@
 
 import { compareVersions } from 'compare-versions';
 
-/**
- * @typedef {import('../../types/types.js').CompatStatement} CompatStatement
- * @typedef {import('../../types/types.js').SimpleSupportStatement} SimpleSupportStatement
- * @typedef {import('../../types/types.js').StatusBlock} StatusBlock
- * @typedef {import('../../types/types.js').BrowserStatement} BrowserStatement
- * @typedef {import('../../types/types.js').ReleaseStatement} ReleaseStatement
- */
+/** @import {CompatStatement, SimpleSupportStatement, StatusBlock, BrowserStatement, ReleaseStatement} from '../../types/types.js' */
 
 const propOrder = {
   browsers: {

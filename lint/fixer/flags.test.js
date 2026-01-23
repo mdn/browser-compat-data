@@ -1,9 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/**
- * @typedef {import('../../types/types.js').SupportStatement} SupportStatement
- */
+/** @import {SupportStatement} from '../../types/types.js' */
 
 import assert from 'node:assert/strict';
 

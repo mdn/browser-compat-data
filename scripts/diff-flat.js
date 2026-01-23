@@ -1,10 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/**
- * @typedef {import('../types/types.js').CompatData} CompatData
- * @typedef {import('../types/types.js').SimpleSupportStatement} SimpleSupportStatement
- */
+/** @import {CompatData, SimpleSupportStatement} from '../types/types.js' */
 
 /**
  * @typedef {'color' | 'html' | 'patch'} Format

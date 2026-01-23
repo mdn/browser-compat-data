@@ -1,8 +1,6 @@
 import { spawnSync } from 'node:child_process';
 
-/**
- * @typedef {import('node:child_process').SpawnSyncOptionsWithStringEncoding} SpawnSyncOptionsWithStringEncoding
- */
+/** @import {SpawnSyncOptionsWithStringEncoding} from 'node:child_process' */
 
 /**
  * Execute a command

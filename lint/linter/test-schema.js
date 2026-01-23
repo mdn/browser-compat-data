@@ -8,11 +8,7 @@ import { createAjv } from '../../scripts/lib/ajv.js';
 import compatDataSchema from './../../schemas/compat-data.schema.json' with { type: 'json' };
 import browserDataSchema from './../../schemas/browsers.schema.json' with { type: 'json' };
 
-/**
- * @typedef {import('../utils.js').Linter} Linter
- * @typedef {import('../utils.js').Logger} Logger
- * @typedef {import('../utils.js').LinterData} LinterData
- */
+/** @import {Linter, Logger, LinterData} from '../utils.js' */
 
 const ajv = createAjv();
 

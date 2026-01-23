@@ -11,12 +11,7 @@ import bcdData from '../index.js';
 
 import { getRefDate } from './release/utils.js';
 
-/**
- * @typedef {import('../types/types.js').BrowserName} BrowserName
- * @typedef {import('../types/types.js').CompatStatement} CompatStatement
- * @typedef {import('../types/types.js').SupportStatement} SupportStatement
- * @typedef {import('../types/types.js').Identifier} Identifier
- */
+/** @import {BrowserName, CompatStatement, SupportStatement, Identifier} from '../types/types.js' */
 
 /**
  * @typedef {object} VersionStatsEntry

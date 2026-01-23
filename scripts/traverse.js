@@ -8,12 +8,8 @@ import { hideBin } from 'yargs/helpers';
 import dataFolders from '../scripts/lib/data-folders.js';
 import bcd from '../index.js';
 
-/**
- * @typedef {import('../types/types.js').BrowserName} BrowserName
- * @typedef {import('../types/types.js').Identifier} Identifier
- * @typedef {import('../types/types.js').SimpleSupportStatement} SimpleSupportStatement
- * @typedef {import('../types/index.js').InternalSupportStatement} InternalSupportStatement
- */
+/** @import {BrowserName, Identifier, SimpleSupportStatement} from '../types/types.js' */
+/** @import {InternalSupportStatement} from '../types/index.js' */
 
 /**
  * @typedef {object} StatusFilters

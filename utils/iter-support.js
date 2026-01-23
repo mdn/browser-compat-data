@@ -1,11 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/**
- * @typedef {import('../types/types.js').CompatStatement} CompatStatement
- * @typedef {import('../types/types.js').BrowserName} BrowserName
- * @typedef {import('../types/types.js').SimpleSupportStatement} SimpleSupportStatement
- */
+/** @import {CompatStatement, BrowserName, SimpleSupportStatement} from '../types/types.js' */
 
 /**
  * Get support for a specific browser in array form

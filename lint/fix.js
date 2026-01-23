@@ -26,10 +26,8 @@ import fixMirror from './fixer/mirror.js';
 import fixOverlap from './fixer/overlap.js';
 import { IS_WINDOWS } from './utils.js';
 
-/**
- * @typedef {import('node:fs').Stats} Stats
- * @typedef {import('./utils.js').LintOptions} LintOptions
- */
+/** @import {Stats} from 'node:fs' */
+/** @import {LintOptions} from './utils.js' */
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 

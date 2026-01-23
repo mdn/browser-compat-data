@@ -3,9 +3,7 @@
 
 import { compareVersions } from 'compare-versions';
 
-/**
- * @typedef {import('../../types/types.js').SimpleSupportStatement} SimpleSupportStatement
- */
+/** @import {SimpleSupportStatement} from '../../types/types.js' */
 
 /**
  *
