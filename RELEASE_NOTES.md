@@ -1,5 +1,33 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.2.5](https://github.com/mdn/browser-compat-data/releases/tag/v7.2.5)
+
+January 23, 2026
+
+### Additions
+
+- `api.Document.requestStorageAccess.strict_same_origin_policy` ([#28682](https://github.com/mdn/browser-compat-data/pull/28682))
+- `api.ShadowRoot.referenceTarget` ([#28570](https://github.com/mdn/browser-compat-data/pull/28570))
+- `browsers.edge.releases.147` ([#28859](https://github.com/mdn/browser-compat-data/pull/28859))
+- `css.at-rules.media.display-mode.browser` ([#28868](https://github.com/mdn/browser-compat-data/pull/28868))
+- `css.at-rules.media.display-mode.fullscreen` ([#28868](https://github.com/mdn/browser-compat-data/pull/28868))
+- `css.at-rules.media.display-mode.minimal-ui` ([#28868](https://github.com/mdn/browser-compat-data/pull/28868))
+- `css.at-rules.media.display-mode.standalone` ([#28868](https://github.com/mdn/browser-compat-data/pull/28868))
+- `css.at-rules.media.display-mode.window-controls-overlay` ([#28868](https://github.com/mdn/browser-compat-data/pull/28868))
+- `css.types.random` ([#28840](https://github.com/mdn/browser-compat-data/pull/28840))
+- `html.elements.input.switch` ([#28897](https://github.com/mdn/browser-compat-data/pull/28897))
+- `html.elements.template.shadowrootreferencetarget` ([#28570](https://github.com/mdn/browser-compat-data/pull/28570))
+- `javascript.builtins.AsyncFunction.AsyncFunction.enforces_trusted_types` ([#28778](https://github.com/mdn/browser-compat-data/pull/28778))
+- `javascript.builtins.AsyncGeneratorFunction.AsyncGeneratorFunction.enforces_trusted_types` ([#28778](https://github.com/mdn/browser-compat-data/pull/28778))
+- `javascript.builtins.GeneratorFunction.GeneratorFunction.enforces_trusted_types` ([#28778](https://github.com/mdn/browser-compat-data/pull/28778))
+
+### Statistics
+
+- 12 contributors have changed 44 files with 830 additions and 254 deletions in 39 commits ([`v7.2.4...v7.2.5`](https://github.com/mdn/browser-compat-data/compare/v7.2.4...v7.2.5))
+- 19,217 total features
+- 1,219 total contributors
+- 5,567 total stargazers
+
 ## [v7.2.4](https://github.com/mdn/browser-compat-data/releases/tag/v7.2.4)
 
 January 15, 2026
