@@ -1,7 +1,14 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { SupportStatement } from '../types';
+import {
+  BrowserName,
+  BrowserStatement,
+  CompatData,
+  CompatStatement,
+  Identifier,
+  SupportStatement,
+} from '../build/types.js';
 
 export type InternalSupportStatement = SupportStatement | 'mirror';
 
