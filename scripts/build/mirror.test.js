@@ -174,6 +174,7 @@ describe('mirror', () => {
 
     describe('Notes', () => {
       it('version numbers in notes are mapped', () => {
+        /** @type {InternalSupportBlock} */
         const support = {
           chrome: {
             version_added: '65',
@@ -226,6 +227,7 @@ describe('mirror', () => {
       });
 
       it('OS-specific partial_implementation and notes are not mirrored', () => {
+        /** @type {InternalSupportBlock} */
         const support = {
           chrome: {
             version_added: '134',
@@ -241,6 +243,7 @@ describe('mirror', () => {
       });
 
       it('Non-OS-specific partial_implementation and notes are still mirrored', () => {
+        /** @type {InternalSupportBlock} */
         const support = {
           chrome: {
             version_added: '70',

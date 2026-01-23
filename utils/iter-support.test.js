@@ -5,6 +5,8 @@ import assert from 'node:assert/strict';
 
 import iterSupport from './iter-support.js';
 
+/** @import {CompatStatement} from '../types/types.js' */
+
 describe('iterSupport()', () => {
   it('returns a `"version_added": false` support statement for non-existent browsers', () => {
     assert.deepEqual(
@@ -21,6 +23,7 @@ describe('iterSupport()', () => {
   });
 
   it('returns an array of support statements as an array', () => {
+    /** @type {CompatStatement} */
     const compatObj = {
       support: {
         firefox: [
