@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {InternalSupportBlock} from '../../types/index.js' */
 
 import assert from 'node:assert/strict';
 
@@ -12,7 +12,7 @@ import test from './test-browsers-presence.js';
 describe('test-browsers-presence', () => {
   /** @type {Logger} */
   let logger;
-  /** @type {CompatStatement} */
+  /** @type {{ support: InternalSupportBlock }} */
   let data;
   /** @type {string} */
   let category;

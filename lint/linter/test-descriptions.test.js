@@ -2,6 +2,7 @@
  * See LICENSE file for more information. */
 
 /** @import {CompatStatement} from '../../types/types.js' */
+/** @import {DescriptionError} from './test-descriptions.js' */
 
 import assert from 'node:assert/strict';
 
@@ -30,7 +31,10 @@ describe('test-descriptions', () => {
 
       const errors = processData(data, 'api', path);
       assert.equal(errors.length, 1);
-      assert.equal(errors[0].ruleName, 'constructor');
+      assert.equal(
+        /** @type {DescriptionError} */ (errors[0]).ruleName,
+        'constructor',
+      );
     });
 
     it('should check description for event', () => {
@@ -43,7 +47,10 @@ describe('test-descriptions', () => {
 
       const errors = processData(data, 'api', path);
       assert.equal(errors.length, 1);
-      assert.equal(errors[0].ruleName, 'event');
+      assert.equal(
+        /** @type {DescriptionError} */ (errors[0]).ruleName,
+        'event',
+      );
     });
 
     it('should check description for permission', () => {
@@ -56,7 +63,10 @@ describe('test-descriptions', () => {
 
       const errors = processData(data, 'api', path);
       assert.equal(errors.length, 1);
-      assert.equal(errors[0].ruleName, 'permission');
+      assert.equal(
+        /** @type {DescriptionError} */ (errors[0]).ruleName,
+        'permission',
+      );
     });
 
     it('should check description for secure context required', () => {
@@ -69,7 +79,10 @@ describe('test-descriptions', () => {
 
       const errors = processData(data, 'api', path);
       assert.equal(errors.length, 1);
-      assert.equal(errors[0].ruleName, 'secure context required');
+      assert.equal(
+        /** @type {DescriptionError} */ (errors[0]).ruleName,
+        'secure context required',
+      );
     });
 
     it('should check description for worker support', () => {
@@ -82,7 +95,10 @@ describe('test-descriptions', () => {
 
       const errors = processData(data, 'api', path);
       assert.equal(errors.length, 1);
-      assert.equal(errors[0].ruleName, 'worker');
+      assert.equal(
+        /** @type {DescriptionError} */ (errors[0]).ruleName,
+        'worker',
+      );
     });
 
     it('should check for redundant description', () => {
