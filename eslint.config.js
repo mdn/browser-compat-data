@@ -31,7 +31,7 @@ export default [
       '**/.editorconfig',
       'package-lock.json',
       'CODE_OF_CONDUCT.md',
-      '**/build/',
+      'build/',
       '**/coverage/',
       '**/types.d.ts',
     ],
