@@ -101,6 +101,7 @@ export default [
 
       'import/no-named-as-default-member': 'off',
       'jsdoc/check-param-names': 'error',
+      'jsdoc/prefer-import-tag': 'error',
       'jsdoc/require-description': 'warn',
 
       'jsdoc/require-jsdoc': [
