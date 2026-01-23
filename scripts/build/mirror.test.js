@@ -2,8 +2,8 @@
  * See LICENSE file for more information. */
 
 /**
- * @typedef {import('../../types/types.js').BrowserName} BrowserName
- * @typedef {import('../../types/index.js').InternalSupportBlock} InternalSupportBlock
+ * @import { BrowserName } from '../../types/types.js'
+ * @import { InternalSupportBlock } from '../../types/index.js'
  */
 
 import assert from 'node:assert/strict';

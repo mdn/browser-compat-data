@@ -6,10 +6,8 @@ import { compareVersions, compare } from 'compare-versions';
 import bcd from '../../index.js';
 
 /**
- * @typedef {import('../../types/types.js').BrowserName} BrowserName
- * @typedef {import('../../types/types.js').SimpleSupportStatement} SimpleSupportStatement
- * @typedef {import('../../types/types.js').SupportStatement} SupportStatement
- * @typedef {import('../../types/index.js').InternalSupportBlock} InternalSupportBlock
+ * @import { BrowserName, SimpleSupportStatement, SupportStatement } from '../../types/types.js'
+ * @import { InternalSupportBlock } from '../../types/index.js'
  */
 
 /**

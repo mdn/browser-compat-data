@@ -21,11 +21,9 @@ import bcd from '../../index.js';
 import mirrorSupport from './mirror.js';
 
 /**
- * @typedef {import('../../types/index.js').InternalSupportStatement} InternalSupportStatement
- * @typedef {import('../../types/types.js').BrowserName} BrowserName
- * @typedef {import('../../types/types.js').CompatData} CompatData
- * @typedef {import('../../types/types.js').VersionValue} VersionValue
- * @typedef {import('../../utils/walk.js').WalkOutput} WalkOutput
+ * @import { InternalSupportStatement } from '../../types/index.js'
+ * @import { BrowserName, CompatData, VersionValue } from '../../types/types.js'
+ * @import { WalkOutput } from '../../utils/walk.js'
  */
 
 const dirname = new URL('.', import.meta.url);
