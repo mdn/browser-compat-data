@@ -117,6 +117,20 @@ export default [
         },
       ],
 
+      'jsdoc/no-restricted-syntax': [
+        'error',
+        {
+          contexts: [
+            {
+              comment:
+                'JsdocBlock:has(JsdocTag[tag="typedef"]:has(JsdocTypeImport))',
+              context: 'any',
+              message: 'Use @import JSDoc instead of @typedef.',
+            },
+          ],
+        },
+      ],
+
       'jsdoc/require-returns': 'error',
       'jsdoc/require-yields': 'error',
       'linebreak-style': ['error', 'unix'],
