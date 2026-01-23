@@ -67,10 +67,10 @@ const tests = [
       __compat: {
         support: {
           firefox: {
-            version_added: true,
+            version_added: '1',
           },
           safari: {
-            version_added: true,
+            version_added: '1',
           },
         },
         status: {
@@ -84,10 +84,10 @@ const tests = [
       __compat: {
         support: {
           firefox: {
-            version_added: true,
+            version_added: '1',
           },
           safari: {
-            version_added: true,
+            version_added: '1',
           },
         },
         status: {

@@ -35,11 +35,9 @@ describe('checkExperimental', () => {
       support: {
         firefox: {
           version_added: '1',
-          version_removed: null,
         },
         chrome: {
           version_added: 'preview',
-          version_removed: null,
         },
       },
     };
@@ -58,11 +56,9 @@ describe('checkExperimental', () => {
       support: {
         firefox: {
           version_added: '1',
-          version_removed: null,
         },
         chrome: {
           version_added: '1',
-          version_removed: null,
         },
       },
     };
@@ -179,11 +175,9 @@ describe('checkStatus', () => {
       support: {
         firefox: {
           version_added: '1',
-          version_removed: null,
         },
         chrome: {
           version_added: '1',
-          version_removed: null,
         },
       },
     };

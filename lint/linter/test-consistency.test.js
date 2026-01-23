@@ -39,7 +39,10 @@ describe('ConsistencyChecker.getVersionAdded()', () => {
         {
           chrome: [
             { version_added: 'preview' },
-            { version_added: '≤11', flags: [] },
+            {
+              version_added: '≤11',
+              flags: [{ type: 'preference', name: 'test' }],
+            },
           ],
         },
         'chrome',
@@ -51,7 +54,10 @@ describe('ConsistencyChecker.getVersionAdded()', () => {
         {
           chrome: [
             { version_added: '20' },
-            { version_added: '≤11', flags: [] },
+            {
+              version_added: '≤11',
+              flags: [{ type: 'preference', name: 'test' }],
+            },
           ],
         },
         'chrome',
@@ -61,7 +67,13 @@ describe('ConsistencyChecker.getVersionAdded()', () => {
     assert.equal(
       check.getVersionAdded(
         {
-          chrome: [{ version_added: '87' }, { version_added: true, flags: [] }],
+          chrome: [
+            { version_added: '87' },
+            {
+              version_added: '1',
+              flags: [{ type: 'preference', name: 'test' }],
+            },
+          ],
         },
         'chrome',
       ),
