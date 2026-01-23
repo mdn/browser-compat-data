@@ -7,9 +7,10 @@ import iterSupport from './iter-support.js';
 
 describe('iterSupport()', () => {
   it('returns a `"version_added": false` support statement for non-existent browsers', () => {
-    assert.deepEqual(iterSupport({ support: { firefox: [] } }, 'chrome'), [
-      { version_added: false },
-    ]);
+    assert.deepEqual(
+      iterSupport({ support: { firefox: { version_added: '1' } } }, 'chrome'),
+      [{ version_added: false }],
+    );
   });
 
   it('returns a single support statement as an array', () => {

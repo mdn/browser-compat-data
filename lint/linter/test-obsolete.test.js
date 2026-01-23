@@ -53,12 +53,6 @@ describe('neverImplemented', () => {
   it('returns true for features which were not implemented', () => {
     assert.equal(
       neverImplemented({
-        chrome: { version_added: null },
-      }),
-      true,
-    );
-    assert.equal(
-      neverImplemented({
         chrome: { version_added: false },
       }),
       true,

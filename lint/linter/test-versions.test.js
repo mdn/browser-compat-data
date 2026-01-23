@@ -87,7 +87,7 @@ describe('test-versions', () => {
   it('should log error when flags are present but not supported by the browser', () => {
     support.samsunginternet_android = {
       version_added: '1.0',
-      flags: [],
+      flags: [{ type: 'preference', name: 'test' }],
     };
     test.check(logger, {
       data: { support },
