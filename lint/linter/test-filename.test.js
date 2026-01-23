@@ -2,6 +2,7 @@
  * See LICENSE file for more information. */
 
 /** @import {Identifier} from '../../types/types.js' */
+/** @import {Logger} from '../utils.js' */
 
 import assert from 'node:assert/strict';
 
@@ -10,7 +11,7 @@ import { Logger } from '../utils.js';
 import test from './test-filename.js';
 
 describe('test-filename', () => {
-  /** @type {import('../utils.js').Logger} */
+  /** @type {Logger} */
   let logger;
   /** @type {Identifier} */
   let data;

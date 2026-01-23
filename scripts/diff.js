@@ -1,6 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+/** @import {SupportStatement, Identifier, BrowserName} from '../types/types.js' */
+
 import chalk from 'chalk-template';
 import deepDiff from 'deep-diff';
 import esMain from 'es-main';
@@ -51,18 +53,16 @@ const stringifyChange = (lhs, rhs) =>
 /**
  * Perform mirroring on specified diff statement
  * @param {object} diff - The diff to perform mirroring on
- * @param {import('../types/types.js').SupportStatement} diff.base
- * @param {import('../types/types.js').SupportStatement} diff.head
+ * @param {SupportStatement} diff.base
+ * @param {SupportStatement} diff.head
  * @param {object} contents - The contents to mirror from
- * @param {import('../types/types.js').Identifier} contents.base
- * @param {import('../types/types.js').Identifier} contents.head
+ * @param {Identifier} contents.base
+ * @param {Identifier} contents.head
  * @param {string[]} path - The feature path to mirror
  * @param {'base' | 'head'} direction - Whether to mirror 'base' or 'head'
  */
 const doMirror = (diff, contents, path, direction) => {
-  const browser = /** @type {import('../types/types.js').BrowserName} */ (
-    path[path.length - 1]
-  );
+  const browser = /** @type {BrowserName} */ (path[path.length - 1]);
   const dataPath = path.slice(0, path.length - 3).join('.');
   const data = contents[direction];
 
@@ -158,7 +158,7 @@ const mergeAsMap = (items) => {
 /**
  * Get the diffs as a map
  * @param {string} base - Base ref
- * @param {string} [head=''] - Head ref
+ * @param {string} [head] - Head ref
  * @returns {Map<string, string[]>} A map of the diff items
  */
 const getDiffs = (base, head = '') => {

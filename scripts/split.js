@@ -1,3 +1,8 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+/** @import {Identifier} from '../types/types.js' */
+
 import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { join, relative, resolve, sep } from 'node:path';
 
@@ -31,7 +36,7 @@ const getBaseKeyFromPath = (filePath) => {
  * Creates the JSON for the subfeature.
  * @param {string[]} baseKeys - The parent keys in which to nest the data.
  * @param {string} key - The key of the subfeature.
- * @param {import('../types/types.js').Identifier} value - The value of the subfeature.
+ * @param {Identifier} value - The value of the subfeature.
  * @returns {object} JSON for the subfeature data nested in parent structure.
  */
 const createSubfeatureJSON = (baseKeys, key, value) => {
@@ -60,7 +65,7 @@ const hasCompatData = (data) =>
 /**
  * Writes a JSON file.
  * @param {string} path - The path to the file.
- * @param {import('../types/types.js').Identifier} data - The data to write as JSON.
+ * @param {Identifier} data - The data to write as JSON.
  * @returns {Promise<void>} Promise.
  */
 const writeJSONFile = async (path, data) =>
@@ -75,9 +80,7 @@ const writeJSONFile = async (path, data) =>
 const splitFile = async (file) => {
   const fullPath = resolve(file);
   const raw = await readFile(fullPath, 'utf-8');
-  const data = /** @type {import('../types/types.js').Identifier} */ (
-    JSON.parse(raw)
-  );
+  const data = /** @type {Identifier} */ (JSON.parse(raw));
 
   const baseKeys = getBaseKeyFromPath(file);
   let current = data;
