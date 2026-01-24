@@ -524,20 +524,9 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "47",
-                "notes": "Firefox 47 and later support `display-mode` values `fullscreen` and `browser`. Firefox 57 added support for `minimal-ui` and `standalone` values."
+                "version_added": "47"
               },
-              "firefox_android": [
-                {
-                  "version_added": "116"
-                },
-                {
-                  "version_added": "47",
-                  "version_removed": "116",
-                  "partial_implementation": true,
-                  "notes": "Only supports the `browser` value, which always reports `true`."
-                }
-              ],
+              "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -555,6 +544,142 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "browser": {
+            "__compat": {
+              "description": "`browser` value",
+              "spec_url": "https://drafts.csswg.org/mediaqueries-5/#valdef-media-display-mode-browser",
+              "support": {
+                "chrome": {
+                  "version_added": "42"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "47"
+                },
+                "firefox_android": [
+                  {
+                    "version_added": "116"
+                  },
+                  {
+                    "version_added": "47",
+                    "version_removed": "116",
+                    "partial_implementation": true,
+                    "notes": "`display-mode: browser` is always true."
+                  }
+                ],
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "13",
+                  "notes": "In a Safari browser window, `display-mode: browser` is always true, even in a macOS Full Screen window or when using the Fullscreen API. In an installed web application, other `display-mode` values are true only when given by a supported manifest `display` member value. See [mdn/browser-compat-data#18807 (comment)](https://github.com/mdn/browser-compat-data/issues/18807#issuecomment-2607031785)."
+                },
+                "safari_ios": {
+                  "version_added": "12.2",
+                  "notes": "In the Safari app, `display-mode: browser` is always true, even when using the Fullscreen API. In an installed web application, other `display-mode` values are true only when given by a supported manifest `display` member value. See [mdn/browser-compat-data#18807 (comment)](https://github.com/mdn/browser-compat-data/issues/18807#issuecomment-2607031785)."
+                },
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "fullscreen": {
+            "__compat": {
+              "description": "`fullscreen` value",
+              "spec_url": "https://drafts.csswg.org/mediaqueries-5/#valdef-media-display-mode-fullscreen",
+              "support": {
+                "chrome": {
+                  "version_added": "47"
+                },
+                "chrome_android": {
+                  "version_added": false,
+                  "impl_url": "https://crbug.com/40831406"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "47",
+                  "partial_implementation": true,
+                  "notes": "In Firefox's \"Full Screen\" user interface, browser tabs and other user interface appear but `display-mode: fullscreen` is true."
+                },
+                "firefox_android": {
+                  "version_added": "116"
+                },
+                "oculus": "mirror",
+                "opera": {
+                  "version_added": false
+                },
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "13",
+                  "partial_implementation": true,
+                  "notes": "In a Safari browser window, `display-mode: fullscreen` is never true, even when using the Fullscreen API. See [mdn/browser-compat-data#18807 (comment)](https://github.com/mdn/browser-compat-data/issues/18807#issuecomment-2607031785)."
+                },
+                "safari_ios": {
+                  "version_added": "12.2",
+                  "partial_implementation": true,
+                  "notes": [
+                    "In the Safari app, `display-mode: fullscreen` is never true, even when using the Fullscreen API. See [mdn/browser-compat-data#18807 (comment)](https://github.com/mdn/browser-compat-data/issues/18807#issuecomment-2607031785).",
+                    "In an installed web application with the `display` manifest member set to `standalone`, `display-mode: fullscreen` is true, even though the system status bar is visible. See [bug 264218](https://webkit.org/b/264218)."
+                  ]
+                },
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "minimal-ui": {
+            "__compat": {
+              "description": "`minimal-ui` value",
+              "spec_url": "https://drafts.csswg.org/mediaqueries-5/#valdef-media-display-mode-minimal-ui",
+              "support": {
+                "chrome": {
+                  "version_added": "42"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "57",
+                  "notes": "`display-mode: minimal-ui` is never true."
+                },
+                "firefox_android": {
+                  "version_added": "116"
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "13",
+                  "notes": "`display-mode: minimal-ui` is never true."
+                },
+                "safari_ios": {
+                  "version_added": "12.2",
+                  "partial_implementation": true,
+                  "notes": "`display-mode: minimal-ui` is never true."
+                },
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
             }
           },
           "picture-in-picture": {
@@ -575,6 +700,82 @@
                 "firefox": {
                   "version_added": "preview",
                   "impl_url": "https://bugzil.la/1858562"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "standalone": {
+            "__compat": {
+              "description": "`standalone` value",
+              "spec_url": "https://drafts.csswg.org/mediaqueries-5/#valdef-media-display-mode-standalone",
+              "support": {
+                "chrome": {
+                  "version_added": "42"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "57",
+                  "notes": "`display-mode: standalone` is never true."
+                },
+                "firefox_android": {
+                  "version_added": "116"
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "13"
+                },
+                "safari_ios": {
+                  "version_added": "12.2",
+                  "partial_implementation": true,
+                  "notes": "In an installed web application with the `display` manifest member set to `standalone`, `display-mode: standalone` is false and `display-mode: fullscreen` is true. See [bug 264218](https://webkit.org/b/264218)."
+                },
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "window-controls-overlay": {
+            "__compat": {
+              "description": "`window-controls-overlay` value",
+              "spec_url": "https://wicg.github.io/window-controls-overlay/#addition-of-new-window-controls-overlay-display-mode",
+              "tags": [
+                "web-features:window-controls-overlay"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "105"
+                },
+                "chrome_android": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
