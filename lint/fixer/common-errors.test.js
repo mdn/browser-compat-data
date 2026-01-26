@@ -5,7 +5,11 @@ import assert from 'node:assert/strict';
 
 import { fixCommonErrorsInCompatStatement } from './common-errors.js';
 
-/** @type {{ input: any; output?: any }[]} */
+/**
+ * @import { InternalSupportBlock } from '../../types/index.js'
+ */
+
+/** @type {{ input: any; output?: InternalSupportBlock }[]} */
 const tests = [
   // Replace unwrapped "false".
   {
@@ -23,7 +27,7 @@ const tests = [
     },
     output: { firefox_android: 'mirror' },
   },
-  // Remove unnnecessary IE statement.
+  // Remove unnecessary IE statement.
   {
     input: {
       ie: { version_added: false },
