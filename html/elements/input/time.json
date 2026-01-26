@@ -20,7 +20,14 @@
               },
               "firefox": {
                 "version_added": "57",
-                "notes": "Before Firefox 144, there is no time picker. See [bug 1726107](https://bugzil.la/1726107)."
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.forms.datetime.timepicker",
+                    "value_to_set": "true",
+                    "notes": "Before Firefox 144, there is no time picker. See [bug 1726107](https://bugzil.la/1726107)."
+                  }
+                ]
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
