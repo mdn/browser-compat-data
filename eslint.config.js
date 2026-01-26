@@ -91,6 +91,15 @@ export default [
       ],
 
       'import/no-named-as-default-member': 'off',
+      'import/no-unresolved': [
+        'error',
+        {
+          ignore: [
+            // https://github.com/import-js/eslint-plugin-import/issues/1810
+            '^yargs/helpers$',
+          ],
+        },
+      ],
       'jsdoc/check-param-names': 'error',
       'jsdoc/prefer-import-tag': 'error',
       'jsdoc/require-description': 'warn',
