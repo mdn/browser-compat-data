@@ -3,7 +3,7 @@
 
 import { walk } from '../../utils/index.js';
 
-/** @import {CompatStatement, SimpleSupportStatement} from '../../types/types.js' */
+/** @import {CompatStatement} from '../../types/types.js' */
 
 /**
  * Fixes common errors in CompatStatements.
@@ -16,9 +16,9 @@ import { walk } from '../../utils/index.js';
 export const fixCommonErrorsInCompatStatement = (compat) => {
   for (const browser of Object.keys(compat.support)) {
     if (compat.support[browser] === false) {
-      compat.support[browser] = /** @type {SimpleSupportStatement} */ ({
+      compat.support[browser] = {
         version_added: false,
-      });
+      };
     } else if (
       typeof compat.support[browser] === 'object' &&
       JSON.stringify(compat.support[browser]) === '{"version_added":"mirror"}'
