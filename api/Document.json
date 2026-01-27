@@ -5009,13 +5009,17 @@
             },
             "firefox": [
               {
-                "version_added": "57"
+                "version_added": "57",
+                "notes": "Before Firefox 139, `getSelection().toString()` returns an empty string on form elements. See [bug 85686](https://bugzil.la/85686)."
               },
               {
                 "version_added": "1",
                 "version_removed": "57",
                 "partial_implementation": true,
-                "notes": "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects."
+                "notes": [
+                  "Only supported for [`HTMLDocument`](https://developer.mozilla.org/docs/Web/API/HTMLDocument), not all `Document` objects.",
+                  "`getSelection().toString()` returns an empty string on form elements. See [bug 85686](https://bugzil.la/85686)."
+                ]
               }
             ],
             "firefox_android": "mirror",
