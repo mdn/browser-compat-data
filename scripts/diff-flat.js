@@ -629,10 +629,7 @@ if (esMain(import.meta)) {
        * @param {string} value
        * @returns {Format}
        */
-      coerce: (value) =>
-        FORMATS.some((format) => format === value)
-          ? /** @type {Format} */ (value)
-          : DEFAULT_FORMAT,
+      coerce: (value) => FORMATS.find((f) => f === value) ?? DEFAULT_FORMAT,
     })
     .option('group', {
       type: 'boolean',
