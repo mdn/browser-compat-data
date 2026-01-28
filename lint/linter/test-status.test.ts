@@ -32,11 +32,9 @@ describe('checkExperimental', () => {
       support: {
         firefox: {
           version_added: '1',
-          version_removed: null,
         },
         chrome: {
           version_added: 'preview',
-          version_removed: null,
         },
       },
     };
@@ -54,11 +52,9 @@ describe('checkExperimental', () => {
       support: {
         firefox: {
           version_added: '1',
-          version_removed: null,
         },
         chrome: {
           version_added: '1',
-          version_removed: null,
         },
       },
     };
@@ -104,7 +100,7 @@ describe('checkStatus', () => {
       support: {},
     };
 
-    test.check(logger, { data, path: { category: 'api' } });
+    test.check(logger, { data, path: { category: 'api', full: 'api.Test' } });
 
     assert.equal(logger.messages.length, 0);
   });
@@ -113,13 +109,16 @@ describe('checkStatus', () => {
     const data: CompatStatement = {
       status: {
         experimental: false,
-        standard_track: true,
+        standard_track: false,
         deprecated: false,
       },
       support: {},
     };
 
-    test.check(logger, { data, path: { category: 'webextensions' } });
+    test.check(logger, {
+      data,
+      path: { category: 'webextensions', full: 'webextensions.api.test' },
+    });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('not allowed'));
@@ -129,13 +128,13 @@ describe('checkStatus', () => {
     const data: CompatStatement = {
       status: {
         experimental: true,
-        standard_track: true,
+        standard_track: false,
         deprecated: true,
       },
       support: {},
     };
 
-    test.check(logger, { data, path: { category: 'api' } });
+    test.check(logger, { data, path: { category: 'api', full: 'api.Test' } });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('Unexpected simultaneous'));
@@ -152,34 +151,113 @@ describe('checkStatus', () => {
       support: {},
     };
 
-    test.check(logger, { data, path: { category: 'api' } });
+    test.check(logger, { data, path: { category: 'api', full: 'api.Test' } });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('but has a'));
+  });
+
+  it('should log error when status is standard_track but missing spec_url', () => {
+    const data: CompatStatement = {
+      status: {
+        experimental: false,
+        standard_track: true,
+        deprecated: false,
+      },
+      support: {},
+    };
+
+    test.check(logger, {
+      data,
+      path: { category: 'api', full: 'api.NewFeature' },
+    });
+
+    assert.equal(logger.messages.length, 1);
+    assert.ok(logger.messages[0].message.includes('missing required'));
   });
 
   it('should log error when status is experimental and supported by more than one engine', () => {
     const data: CompatStatement = {
       status: {
         experimental: true,
-        standard_track: true,
+        standard_track: false,
         deprecated: false,
       },
       support: {
         firefox: {
           version_added: '1',
-          version_removed: null,
         },
         chrome: {
           version_added: '1',
-          version_removed: null,
         },
       },
     };
 
-    test.check(logger, { data, path: { category: 'api' } });
+    test.check(logger, { data, path: { category: 'api', full: 'api.Test' } });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('should be set to'));
+  });
+
+  it('should not log error for features in exception list missing spec_url', () => {
+    const data: CompatStatement = {
+      status: {
+        experimental: false,
+        standard_track: true,
+        deprecated: false,
+      },
+      support: {},
+    };
+
+    // This feature is in the exception list
+    test.check(logger, {
+      data,
+      path: { category: 'api', full: 'api.AudioProcessingEvent' },
+    });
+
+    assert.equal(logger.messages.length, 0);
+  });
+
+  it('should log warning when exception no longer applies (has spec_url)', () => {
+    const data: CompatStatement = {
+      status: {
+        experimental: false,
+        standard_track: true,
+        deprecated: false,
+      },
+      spec_url: 'https://example.com/spec',
+      support: {},
+    };
+
+    // This feature is in the exception list but now has spec_url
+    test.check(logger, {
+      data,
+      path: { category: 'api', full: 'api.AudioProcessingEvent' },
+    });
+
+    assert.equal(logger.messages.length, 1);
+    assert.equal(logger.messages[0].level, 'warning');
+    assert.ok(logger.messages[0].message.includes('exception list'));
+  });
+
+  it('should log warning when exception no longer applies (standard_track false)', () => {
+    const data: CompatStatement = {
+      status: {
+        experimental: false,
+        standard_track: false,
+        deprecated: false,
+      },
+      support: {},
+    };
+
+    // This feature is in the exception list but standard_track is now false
+    test.check(logger, {
+      data,
+      path: { category: 'api', full: 'api.AudioProcessingEvent' },
+    });
+
+    assert.equal(logger.messages.length, 1);
+    assert.equal(logger.messages[0].level, 'warning');
+    assert.ok(logger.messages[0].message.includes('exception list'));
   });
 });
