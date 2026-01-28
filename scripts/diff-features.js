@@ -168,7 +168,7 @@ const enumerateFeatures = (ref = 'HEAD', quiet = false) => {
     } else if (existsSync(`${worktree}/index.ts`)) {
       spawn('npx', [
         '-y',
-        'tsx',
+        'tsx@^4.19.2',
         `${worktree}/scripts/enumerate-features.ts`,
         `--data-from=${worktree}`,
       ]);
