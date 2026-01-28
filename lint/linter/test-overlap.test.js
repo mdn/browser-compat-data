@@ -10,6 +10,8 @@ import { Logger } from '../utils.js';
 import test from './test-overlap.js';
 
 describe('overlap', () => {
+  const path = { full: 'api.Test', category: 'api' };
+
   /** @type {Logger} */
   let logger;
 
@@ -28,7 +30,7 @@ describe('overlap', () => {
       },
     };
 
-    test.check(logger, { data });
+    test.check(logger, { data, path });
 
     assert.equal(logger.messages.length, 0);
   });
@@ -44,7 +46,7 @@ describe('overlap', () => {
       },
     };
 
-    test.check(logger, { data });
+    test.check(logger, { data, path });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('statements overlap'));
@@ -61,7 +63,7 @@ describe('overlap', () => {
       },
     };
 
-    test.check(logger, { data });
+    test.check(logger, { data, path });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('statements overlap'));
@@ -78,7 +80,7 @@ describe('overlap', () => {
       },
     };
 
-    test.check(logger, { data });
+    test.check(logger, { data, path });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('statements overlap'));
@@ -99,7 +101,7 @@ describe('overlap', () => {
       },
     };
 
-    test.check(logger, { data });
+    test.check(logger, { data, path });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('statements overlap'));
@@ -120,7 +122,7 @@ describe('overlap', () => {
       },
     };
 
-    test.check(logger, { data });
+    test.check(logger, { data, path });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('statements overlap'));
@@ -141,7 +143,7 @@ describe('overlap', () => {
       },
     };
 
-    test.check(logger, { data });
+    test.check(logger, { data, path });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('statements overlap'));
@@ -163,7 +165,7 @@ describe('overlap', () => {
       },
     };
 
-    test.check(logger, { data });
+    test.check(logger, { data, path });
 
     assert.equal(logger.messages.length, 0);
   });
@@ -184,7 +186,7 @@ describe('overlap', () => {
       },
     };
 
-    test.check(logger, { data });
+    test.check(logger, { data, path });
 
     assert.equal(logger.messages.length, 0);
   });

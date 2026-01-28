@@ -10,6 +10,8 @@ import { Logger } from '../utils.js';
 import test from './test-browsers-data.js';
 
 describe('test-browsers-data', () => {
+  const category = 'browsers';
+
   /** @type {Logger} */
   let logger;
 
@@ -37,7 +39,10 @@ describe('test-browsers-data', () => {
       },
     };
 
-    test.check(logger, { data, path: { full: 'nodejs', browser } });
+    test.check(logger, {
+      data,
+      path: { full: `${category}.${browser}`, category, browser },
+    });
     assert.equal(logger.messages.length, 1);
   });
 
@@ -54,7 +59,10 @@ describe('test-browsers-data', () => {
         2: { status: 'nightly' },
       },
     };
-    test.check(logger, { data, path: { full: 'firefox', browser } });
+    test.check(logger, {
+      data,
+      path: { full: `${category}.${browser}`, category, browser },
+    });
     assert.equal(logger.messages.length, 1);
   });
 
@@ -71,7 +79,10 @@ describe('test-browsers-data', () => {
         2: { status: 'nightly' },
       },
     };
-    test.check(logger, { data, path: { full: 'nodejs', browser } });
+    test.check(logger, {
+      data,
+      path: { full: `${category}.${browser}`, category, browser },
+    });
     assert.equal(logger.messages.length, 1);
   });
 
@@ -87,7 +98,10 @@ describe('test-browsers-data', () => {
       releases: {},
     };
 
-    test.check(logger, { data, path: { full: 'safari_ios', browser } });
+    test.check(logger, {
+      data,
+      path: { full: `${category}.${browser}`, category, browser },
+    });
     assert.equal(logger.messages.length, 1);
   });
 
@@ -103,7 +117,10 @@ describe('test-browsers-data', () => {
       releases: {},
     };
 
-    test.check(logger, { data, path: { full: 'safari_ios', browser } });
+    test.check(logger, {
+      data,
+      path: { full: `${category}.${browser}`, category, browser },
+    });
     assert.equal(logger.messages.length, 1);
   });
 
@@ -130,7 +147,10 @@ describe('test-browsers-data', () => {
         },
       },
     };
-    test.check(logger, { data, path: { full: 'opera', browser } });
+    test.check(logger, {
+      data,
+      path: { full: `${category}.${browser}`, category, browser },
+    });
     assert.equal(logger.messages.length, 2);
   });
 });

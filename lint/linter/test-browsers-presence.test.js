@@ -42,7 +42,7 @@ describe('test-browsers-presence', () => {
   it('should log an error if a browser is not defined in BCD', () => {
     data.support['unknownBrowser'] = { version_added: '1' };
 
-    test.check(logger, { data, path: { category } });
+    test.check(logger, { data, path: { full: `${category}.Test`, category } });
     assert.equal(logger.messages.length, 2);
   });
 
@@ -50,14 +50,14 @@ describe('test-browsers-presence', () => {
     category = 'webextensions';
     data.support['nodejs'] = { version_added: '1' };
 
-    test.check(logger, { data, path: { category } });
+    test.check(logger, { data, path: { full: `${category}.Test`, category } });
     assert.equal(logger.messages.length, 1);
   });
 
   it('should log an error if a required browser is missing', () => {
     delete data.support.chrome;
 
-    test.check(logger, { data, path: { category } });
+    test.check(logger, { data, path: { full: `${category}.Test`, category } });
     assert.equal(logger.messages.length, 1);
   });
 });

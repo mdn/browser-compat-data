@@ -25,7 +25,7 @@ describe('test-multiple-statements', () => {
       },
     };
 
-    test.check(logger, { data });
+    test.check(logger, { data, path: { full: 'api.Test', category: 'api' } });
 
     assert.equal(logger.messages.length, 0);
   });
@@ -35,7 +35,7 @@ describe('test-multiple-statements', () => {
       support: { firefox: [{ version_added: '1' }, { version_added: '2' }] },
     };
 
-    test.check(logger, { data });
+    test.check(logger, { data, path: { full: 'api.Test', category: 'api' } });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('has multiple statements'));
@@ -51,7 +51,7 @@ describe('test-multiple-statements', () => {
       },
     };
 
-    test.check(logger, { data });
+    test.check(logger, { data, path: { full: 'api.Test', category: 'api' } });
 
     assert.equal(logger.messages.length, 0);
   });
@@ -67,7 +67,7 @@ describe('test-multiple-statements', () => {
       },
     };
 
-    test.check(logger, { data });
+    test.check(logger, { data, path: { full: 'api.Test', category: 'api' } });
 
     assert.equal(logger.messages.length, 0);
   });

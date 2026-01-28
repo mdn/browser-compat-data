@@ -58,7 +58,7 @@ describe('test-versions', () => {
     support.chrome = 'mirror';
     test.check(logger, {
       data: { support },
-      path: { category: 'api' },
+      path: { full: 'api.Test', category: 'api' },
     });
     assert.equal(logger.messages.length, 1);
     assert.ok(
@@ -77,7 +77,7 @@ describe('test-versions', () => {
     };
     test.check(logger, {
       data: { support },
-      path: { category: 'api' },
+      path: { full: 'api.Test', category: 'api' },
     });
     assert.equal(logger.messages.length, 2);
     assert.ok(logger.messages[0].message.includes('must be greater than'));
@@ -91,7 +91,7 @@ describe('test-versions', () => {
     };
     test.check(logger, {
       data: { support },
-      path: { category: 'api' },
+      path: { full: 'api.Test', category: 'api' },
     });
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('does not support flags'));
@@ -104,7 +104,7 @@ describe('test-versions', () => {
     };
     test.check(logger, {
       data: { support },
-      path: { category: 'api' },
+      path: { full: 'api.Test', category: 'api' },
     });
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('suggest support'));
@@ -114,7 +114,7 @@ describe('test-versions', () => {
     support.chrome = [{ version_added: false }, { version_added: '1' }];
     test.check(logger, {
       data: { support },
-      path: { category: 'api' },
+      path: { full: 'api.Test', category: 'api' },
     });
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('in an array of statements'));

@@ -26,7 +26,10 @@ describe('test-mirror', () => {
     };
     const category = 'api';
 
-    test.check(logger, { data: { support: supportData }, path: { category } });
+    test.check(logger, {
+      data: { support: supportData },
+      path: { full: `${category}.Test`, category },
+    });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(
@@ -48,6 +51,7 @@ describe('test-mirror', () => {
         },
       },
       path: {
+        full: 'webextensions.Test',
         category: 'webextensions',
       },
     });
@@ -68,7 +72,10 @@ describe('test-mirror', () => {
     };
     const category = 'webextensions';
 
-    test.check(logger, { data: { support: supportData }, path: { category } });
+    test.check(logger, {
+      data: { support: supportData },
+      path: { full: `${category}.Test`, category },
+    });
     assert.equal(logger.messages.length, 0);
   });
 });

@@ -107,7 +107,7 @@ describe('checkStatus', () => {
       support: {},
     };
 
-    test.check(logger, { data, path: { category: 'api' } });
+    test.check(logger, { data, path: { full: 'api.Test', category: 'api' } });
 
     assert.equal(logger.messages.length, 0);
   });
@@ -123,7 +123,10 @@ describe('checkStatus', () => {
       support: {},
     };
 
-    test.check(logger, { data, path: { category: 'webextensions' } });
+    test.check(logger, {
+      data,
+      path: { full: 'webextensions.Test', category: 'webextensions' },
+    });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('not allowed'));
@@ -140,7 +143,7 @@ describe('checkStatus', () => {
       support: {},
     };
 
-    test.check(logger, { data, path: { category: 'api' } });
+    test.check(logger, { data, path: { full: 'api.Test', category: 'api' } });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('Unexpected simultaneous'));
@@ -158,7 +161,7 @@ describe('checkStatus', () => {
       support: {},
     };
 
-    test.check(logger, { data, path: { category: 'api' } });
+    test.check(logger, { data, path: { full: 'api.Test', category: 'api' } });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('but has a'));
@@ -182,7 +185,7 @@ describe('checkStatus', () => {
       },
     };
 
-    test.check(logger, { data, path: { category: 'api' } });
+    test.check(logger, { data, path: { full: 'api.Test', category: 'api' } });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('should be set to'));

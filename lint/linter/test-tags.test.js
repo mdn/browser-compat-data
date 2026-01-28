@@ -24,7 +24,7 @@ describe('test.check', () => {
       support: {},
     };
 
-    test.check(logger, { data });
+    test.check(logger, { data, path: { full: 'api.Test', category: 'api' } });
 
     assert.equal(logger.messages.length, 0);
   });
@@ -36,7 +36,7 @@ describe('test.check', () => {
       support: {},
     };
 
-    test.check(logger, { data });
+    test.check(logger, { data, path: { full: 'api.Test', category: 'api' } });
 
     assert.equal(logger.messages.length, 0);
   });
@@ -48,7 +48,7 @@ describe('test.check', () => {
       support: {},
     };
 
-    test.check(logger, { data });
+    test.check(logger, { data, path: { full: 'api.Test', category: 'api' } });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('Invalid tag found:'));
@@ -61,7 +61,7 @@ describe('test.check', () => {
       support: {},
     };
 
-    test.check(logger, { data });
+    test.check(logger, { data, path: { full: 'api.Test', category: 'api' } });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('Invalid tag found:'));
@@ -74,7 +74,7 @@ describe('test.check', () => {
       support: {},
     };
 
-    test.check(logger, { data });
+    test.check(logger, { data, path: { full: 'api.Test', category: 'api' } });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(
