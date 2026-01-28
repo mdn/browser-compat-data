@@ -294,7 +294,7 @@ export default {
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */
-  check: async (logger, { rawdata }) => {
+  check: async (logger, { rawdata = '' }) => {
     const errors = await processData(rawdata);
 
     for (const error of errors) {
