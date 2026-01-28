@@ -153,7 +153,7 @@ export const getMatchingBrowserVersion = (targetBrowser, sourceVersion) => {
  * @param {Notes | null} notes The notes to update
  * @param {RegExp} regex The regex to check and search
  * @param {string} replace The text to replace with
- * @param {function(string): (string | false)} versionMapper - Receives the source browser version and returns the target browser version.
+ * @param {(string) => (string | false)} versionMapper - Receives the source browser version and returns the target browser version.
  * @returns {Notes | null} The notes with replacement performed
  */
 const updateNotes = (notes, regex, replace, versionMapper) => {

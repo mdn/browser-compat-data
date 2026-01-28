@@ -52,7 +52,7 @@ import chalk from 'chalk-template';
  * @property {string} name
  * @property {string} description
  * @property {LinterScope} scope
- * @property {function(Logger, object): void | Promise<void>} check
+ * @property {(Logger, object) => void | Promise<void>} check
  * @property {string[]} [exceptions]
  */
 
