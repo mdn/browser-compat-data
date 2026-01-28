@@ -413,9 +413,17 @@
                 "version_added": "138"
               },
               "firefox_android": "mirror",
-              "nodejs": {
-                "version_added": "24.0.0"
-              },
+              "nodejs": [
+                {
+                  "version_added": "24.3.0"
+                },
+                {
+                  "version_added": "24.0.0",
+                  "version_removed": "24.3.0",
+                  "partial_implementation": true,
+                  "notes": "Returns `false` for `DOMException` instances. See [issue 56497](https://github.com/nodejs/node/issues/56497)."
+                }
+              ],
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
