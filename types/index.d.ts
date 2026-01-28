@@ -16,8 +16,21 @@ export type InternalSupportBlock = Partial<
   Record<BrowserName, InternalSupportStatement>
 >;
 
+export interface InternalCompatStatement extends Omit<
+  CompatStatement,
+  'support'
+> {
+  support: InternalSupportBlock;
+}
+
 export type DataType =
   | CompatData
   | BrowserStatement
   | CompatStatement
+  | Identifier;
+
+export type InternalDataType =
+  | CompatData
+  | BrowserStatement
+  | InternalCompatStatement
   | Identifier;

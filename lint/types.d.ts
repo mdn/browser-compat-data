@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { DataType } from '../types/index.js';
+import { InternalDataType } from '../types/index.js';
 import { BrowserName } from '../types/types.js';
 
 import { Logger } from './utils.js';
@@ -32,7 +32,7 @@ export interface LinterPath {
 }
 
 export interface LinterData {
-  data: DataType;
+  data: InternalDataType;
   rawdata?: string;
   path: LinterPath;
 }
