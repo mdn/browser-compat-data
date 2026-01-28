@@ -1,5 +1,20 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.2.6](https://github.com/mdn/browser-compat-data/releases/tag/v7.2.6)
+
+January 28, 2026
+
+### Additions
+
+- `browsers.bun.releases.1.3.7` ([#28932](https://github.com/mdn/browser-compat-data/pull/28932))
+
+### Statistics
+
+- 4 contributors have changed 21 files with 180 additions and 271 deletions in 10 commits ([`v7.2.5...v7.2.6`](https://github.com/mdn/browser-compat-data/compare/v7.2.5...v7.2.6))
+- 19,217 total features
+- 1,219 total contributors
+- 5,568 total stargazers
+
 ## [v7.2.5](https://github.com/mdn/browser-compat-data/releases/tag/v7.2.5)
 
 January 23, 2026
