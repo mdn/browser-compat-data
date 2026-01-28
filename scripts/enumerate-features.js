@@ -12,13 +12,12 @@ import { lowLevelWalk } from '../utils/walk.js';
 
 /**
  * Enumerate features and write to a destination file
- * @param {object} argv Arguments
- * @param {string} argv.dest Destination file name
- * @param {string} [argv.dataFrom] Where the data is (leave blank for repository folder)
+ * @param {object} options Options
+ * @param {string} options.dest Destination file name
+ * @param {string} [options.dataFrom] Where the data is (leave blank for repository folder)
  * @returns {Promise<void>}
  */
-const main = async (argv) => {
-  const { dest, dataFrom } = argv;
+const main = async ({ dest, dataFrom }) => {
   fs.writeFileSync(dest, JSON.stringify(await enumerateFeatures(dataFrom)));
 };
 
@@ -47,23 +46,22 @@ const enumerateFeatures = async (dataFrom) => {
 };
 
 if (esMain(import.meta)) {
-  const { argv } = yargs(hideBin(process.argv)).command(
-    '$0 [dest]',
-    'Write a JSON-formatted list of feature paths',
-    (yargs) => {
-      yargs
-        .positional('dest', {
-          default: '.features.json',
-          description: 'File destination',
-        })
-        .option('data-from', {
-          nargs: 1,
-          description: 'Require compat data from an alternate path',
-        });
-    },
-  );
+  const argv = yargs(hideBin(process.argv))
+    .command('$0 [dest]', 'Write a JSON-formatted list of feature paths')
+    .positional('dest', {
+      default: '.features.json',
+      description: 'File destination',
+    })
+    .option('data-from', {
+      type: 'string',
+      nargs: 1,
+      description: 'Require compat data from an alternate path',
+    })
+    .parseSync();
 
-  await main(/** @type {*} */ (argv));
+  const { dest, dataFrom } = argv;
+
+  await main({ dest, dataFrom });
 }
 
 export default enumerateFeatures;

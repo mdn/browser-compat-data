@@ -256,20 +256,21 @@ const main = async (files = dataFolders, options = {}) => {
 };
 
 if (esMain(import.meta)) {
-  const { argv } = yargs(hideBin(process.argv))
-    .command('$0 [files..]', false, (yargs) =>
-      yargs.positional('files...', {
-        description: 'The files to lint (leave blank to test everything)',
-        type: 'string',
-      }),
-    )
+  const argv = yargs(hideBin(process.argv))
+    .command('$0 [files..]', false)
+    .positional('files', {
+      array: true,
+      description: 'The files to lint (leave blank to test everything)',
+      type: 'string',
+    })
     .option('fail-on-warnings', {
       type: 'boolean',
       description: 'Treat warnings as errors (non-zero exit code)',
       default: false,
-    });
+    })
+    .parseSync();
 
-  const { files, failOnWarnings } = /** @type {*} */ (argv);
+  const { files, failOnWarnings } = argv;
   process.exit((await main(files, { failOnWarnings })) ? 1 : 0);
 }
 

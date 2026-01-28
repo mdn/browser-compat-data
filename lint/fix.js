@@ -113,21 +113,21 @@ const main = async (files, options) => {
 };
 
 if (esMain(import.meta)) {
-  const { argv } = yargs(hideBin(process.argv))
-    .command('$0 [files..]', false, (yargs) =>
-      yargs.positional('files...', {
-        description: 'The files to fix (leave blank to test everything)',
-        type: 'string',
-      }),
-    )
+  const argv = yargs(hideBin(process.argv))
+    .command('$0 [files..]', false)
+    .positional('files', {
+      array: true,
+      description: 'The files to fix (leave blank to test everything)',
+      type: 'string',
+    })
     .option('only', {
       array: true,
       description: 'The checks to run',
+      choices: Object.keys(FIXES),
     })
-    .choices('only', Object.keys(FIXES));
+    .parseSync();
 
-  const { files = dataFolders, only } =
-    /** @type {{ files?: string[] } & LintOptions} */ (argv);
+  const { files = dataFolders, only } = argv;
 
   await main(files, { only });
 }

@@ -208,37 +208,38 @@ const printMarkdown = (added, removed) => {
 };
 
 if (esMain(import.meta)) {
-  const { argv } = yargs(hideBin(process.argv)).command(
-    '$0 [ref1] [ref2]',
-    'Compare the set of features at refA and refB',
-    (yargs) => {
-      yargs
-        .positional('ref1', {
-          description: 'A Git ref (branch, tag, or commit)',
-          defaultDescription: 'ref1^',
-        })
-        .positional('ref2', {
-          description: 'A Git ref (branch, tag, or commit)',
-          defaultDescription: 'HEAD',
-        })
-        .option('format', {
-          type: 'string',
-          nargs: 1,
-          choices: ['json', 'markdown'],
-          demandOption: 'a named format is required',
-          default: 'markdown',
-        })
-        .option('no-github', {
-          type: 'boolean',
-          description: "Don't fetch artifacts from GitHub.",
-        })
-        .example('$0', 'compare HEAD to parent commit')
-        .example('$0 176d4ed', 'compare 176d4ed to its parent commit')
-        .example('$0 topic-branch main', 'compare a branch to main');
-    },
-  );
+  const argv = yargs(hideBin(process.argv))
+    .command('$0 [ref1] [ref2]', 'Compare the set of features at refA and refB')
+    .positional('ref1', {
+      type: 'string',
+      description: 'A Git ref (branch, tag, or commit)',
+      defaultDescription: 'ref1^',
+    })
+    .positional('ref2', {
+      type: 'string',
+      description: 'A Git ref (branch, tag, or commit)',
+      defaultDescription: 'HEAD',
+    })
+    .option('format', {
+      type: 'string',
+      nargs: 1,
+      choices: /** @type {const} */ (['json', 'markdown']),
+      demandOption: 'a named format is required',
+      default: 'markdown',
+    })
+    .option('github', {
+      type: 'boolean',
+      description: "Don't fetch artifacts from GitHub.",
+      default: true,
+    })
+    .example('$0', 'compare HEAD to parent commit')
+    .example('$0 176d4ed', 'compare 176d4ed to its parent commit')
+    .example('$0 topic-branch main', 'compare a branch to main')
+    .parseSync();
 
-  await main(/** @type {any} */ (argv));
+  const { ref1, ref2, format, github } = argv;
+
+  await main({ ref1, ref2, format, github });
 }
 
 export default diff;

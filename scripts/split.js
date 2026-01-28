@@ -9,16 +9,16 @@ import { join, relative, resolve, sep } from 'node:path';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
-const argv = /** @type {any} */ (
-  yargs(hideBin(process.argv))
-    .command('$0 [files..]', 'Split BCD JSON files', (yargs) => {
-      yargs.positional('files', {
-        describe: 'One or more JSON files to split',
-        type: 'string',
-      });
-    })
-    .help().argv
-);
+const argv = yargs(hideBin(process.argv))
+  .command('$0 [files..]', 'Split BCD JSON files')
+  .positional('files', {
+    array: true,
+    describe: 'One or more JSON files to split',
+    type: 'string',
+    default: [],
+  })
+  .help()
+  .parseSync();
 
 /**
  * Extracts the base key path (as array of strings) from a JSON file path.

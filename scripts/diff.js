@@ -197,27 +197,26 @@ const getDiffs = (base, head = '') => {
 };
 
 if (esMain(import.meta)) {
-  const { argv } = yargs(hideBin(process.argv)).command(
-    '$0 [base] [head]',
-    'Print a formatted diff for changes between base and head commits',
-    (yargs) => {
-      yargs
-        .positional('base', {
-          describe:
-            'The base commit; may be commit hash or other git ref (e.g. "origin/main")',
-          type: 'string',
-          default: 'origin/main',
-        })
-        .positional('head', {
-          describe:
-            'The head commit that changes are applied to; may be commit hash or other git ref (e.g. "origin/main")',
-          type: 'string',
-          default: 'HEAD',
-        });
-    },
-  );
+  const argv = yargs(hideBin(process.argv))
+    .command(
+      '$0 [base] [head]',
+      'Print a formatted diff for changes between base and head commits',
+    )
+    .positional('base', {
+      describe:
+        'The base commit; may be commit hash or other git ref (e.g. "origin/main")',
+      type: 'string',
+      default: 'origin/main',
+    })
+    .positional('head', {
+      describe:
+        'The head commit that changes are applied to; may be commit hash or other git ref (e.g. "origin/main")',
+      type: 'string',
+      default: 'HEAD',
+    })
+    .parseSync();
 
-  const { base, head } = /** @type {any} */ (argv);
+  const { base, head } = argv;
   for (const [key, values] of getDiffs(getMergeBase(base, head), head)) {
     console.log(chalk`{bold ${key}}:`);
     for (const value of values) {

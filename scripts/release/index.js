@@ -150,17 +150,18 @@ const main = async ({ dryRun }) => {
 };
 
 if (esMain(import.meta)) {
-  const { argv } = yargs(hideBin(process.argv)).command(
-    '$0',
-    'Prepares a release by determining changes since the last release, and creating/updating a release PR',
-    (yargs) =>
-      yargs.option('dry-run', {
-        alias: 'n',
-        describe: "Don't commit, push or PR",
-        type: 'boolean',
-        default: false,
-      }),
-  );
+  const argv = yargs(hideBin(process.argv))
+    .command(
+      '$0',
+      'Prepares a release by determining changes since the last release, and creating/updating a release PR',
+    )
+    .option('dry-run', {
+      alias: 'n',
+      describe: "Don't commit, push or PR",
+      type: 'boolean',
+      default: false,
+    })
+    .parseSync();
 
-  await main({ dryRun: /** @type {*} */ (argv).dryRun });
+  await main({ dryRun: argv.dryRun });
 }

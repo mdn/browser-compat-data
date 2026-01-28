@@ -213,36 +213,31 @@ const printStats = (stats, folder, counts) => {
 };
 
 if (esMain(import.meta)) {
-  const { argv } = yargs(hideBin(process.argv)).command(
-    '$0 [folder]',
-    'Print a markdown-formatted table displaying the statistics of exact and values for each browser',
-    (yargs) => {
-      yargs
-        .positional('folder', {
-          describe: 'Limit the statistics to a specific folder',
-          type: 'string',
-          default: '',
-        })
-        .option('all', {
-          alias: 'a',
-          describe: 'Show statistics for all browsers within BCD',
-          type: 'boolean',
-          nargs: 0,
-        })
-        .option('counts', {
-          alias: 'c',
-          describe: 'Show feature count rather than percentages',
-          type: 'boolean',
-          nargs: 0,
-        });
-    },
-  );
+  const argv = yargs(hideBin(process.argv))
+    .command(
+      '$0 [folder]',
+      'Print a markdown-formatted table displaying the statistics of exact and values for each browser',
+    )
+    .positional('folder', {
+      describe: 'Limit the statistics to a specific folder',
+      type: 'string',
+      default: '',
+    })
+    .option('all', {
+      alias: 'a',
+      describe: 'Show statistics for all browsers within BCD',
+      type: 'boolean',
+      nargs: 0,
+    })
+    .option('counts', {
+      alias: 'c',
+      describe: 'Show feature count rather than percentages',
+      type: 'boolean',
+      nargs: 0,
+    })
+    .parseSync();
 
-  printStats(
-    getStats(/** @type {*} */ (argv).folder, /** @type {*} */ (argv).all),
-    /** @type {*} */ (argv).folder,
-    /** @type {*} */ (argv).counts,
-  );
+  printStats(getStats(argv.folder, !!argv.all), argv.folder, !!argv.counts);
 }
 
 export default getStats;

@@ -4,7 +4,7 @@
 /** @import {CompatData, SimpleSupportStatement} from '../types/types.js' */
 
 /**
- * @typedef {'color' | 'html' | 'patch'} Format
+ * @typedef {'html' | 'plain'} Format
  */
 
 import chalk from 'chalk-template';
@@ -30,6 +30,11 @@ const BROWSER_NAMES = [
   'safari_ios',
   'webview_android',
 ];
+
+/** @type {Format[]} */
+const FORMATS = ['html', 'plain'];
+
+const DEFAULT_FORMAT = 'plain';
 
 // FIXME This is bad.
 /** @type {string[]} */
@@ -598,45 +603,52 @@ const printDiffs = (base, head, options) => {
 };
 
 if (esMain(import.meta)) {
-  const { argv } = yargs(hideBin(process.argv)).command(
-    '$0 [base] [head]',
-    'Print a formatted diff for changes between base and head commits',
-    (yargs) => {
-      yargs
-        .positional('base', {
-          describe:
-            'The base commit; may be commit hash or other git ref (e.g. "origin/main")',
-          type: 'string',
-          default: 'origin/main',
-        })
-        .positional('head', {
-          describe:
-            'The head commit that changes are applied to; may be commit hash or other git ref (e.g. "origin/main")',
-          type: 'string',
-          default: 'HEAD',
-        })
-        .option('format', {
-          alias: 'f',
-          type: 'string',
-          default: 'plain',
-          choices: ['html', 'plain'],
-        })
-        .option('group', {
-          type: 'boolean',
-          default: true,
-        })
-        .option('mirror', {
-          type: 'boolean',
-          default: false,
-        })
-        .option('transform', {
-          type: 'boolean',
-          default: false,
-        });
-    },
-  );
+  const argv = yargs(hideBin(process.argv))
+    .command(
+      '$0 [base] [head]',
+      'Print a formatted diff for changes between base and head commits',
+    )
+    .positional('base', {
+      describe:
+        'The base commit; may be commit hash or other git ref (e.g. "origin/main")',
+      type: 'string',
+      default: 'origin/main',
+    })
+    .positional('head', {
+      describe:
+        'The head commit that changes are applied to; may be commit hash or other git ref (e.g. "origin/main")',
+      type: 'string',
+      default: 'HEAD',
+    })
+    .option('format', {
+      alias: 'f',
+      type: 'string',
+      default: DEFAULT_FORMAT,
+      choices: /** @type {Readonly<Format[]>} */ (FORMATS),
+      /**
+       * @param {string} value
+       * @returns {Format}
+       */
+      coerce: (value) =>
+        FORMATS.some((format) => format === value)
+          ? /** @type {Format} */ (value)
+          : DEFAULT_FORMAT,
+    })
+    .option('group', {
+      type: 'boolean',
+      default: true,
+    })
+    .option('mirror', {
+      type: 'boolean',
+      default: false,
+    })
+    .option('transform', {
+      type: 'boolean',
+      default: false,
+    })
+    .parseSync();
 
-  const options = /** @type {*} */ (argv);
+  const options = argv;
 
   if (/^\d+$/.test(options.base)) {
     options.head = `pull/${options.base}/merge`;

@@ -216,128 +216,136 @@ const main = (
 };
 
 if (esMain(import.meta)) {
-  const { argv } = yargs(hideBin(process.argv)).command(
-    '$0 [folder...]',
-    'Print feature names in the folder (and optionally filter features to specific browser or version values)',
-    (yargs) => {
-      yargs
-        .positional('folder', {
-          describe: 'The folder(s) to traverse',
-          type: 'string',
-          array: true,
-          default: Object.keys(bcd).filter((k) => k !== 'browsers'),
-        })
-        .option('browser', {
-          alias: 'b',
-          describe: 'Filter by a browser. May repeat.',
-          type: 'array',
-          nargs: 1,
-          default: Object.keys(bcd.browsers).filter(
-            (b) => bcd.browsers[b].type !== 'server',
-          ),
-        })
-        .option('filter', {
-          alias: 'f',
-          describe:
-            'Filter by version value. May repeat. Set to "≤" or "ranged" for ranged values (ex. ≤58), "mirror" for mirrored entries, and "nonmirror" for non-mirrored entries.',
-          type: 'array',
-          string: true,
-          nargs: 1,
-          default: [],
-        })
-        .option('tag', {
-          alias: 't',
-          describe:
-            'Filter by tag value. Set to `false` to search for features with no tags.',
-          type: 'string',
-          nargs: 1,
-          default: '',
-        })
-        .option('depth', {
-          alias: 'd',
-          describe:
-            'Depth of features to traverse (ex. "2" will capture "api.CSSStyleSheet.insertRule" but not "api.CSSStyleSheet.insertRule.optional_index")',
-          type: 'number',
-          nargs: 1,
-          default: 10,
-        })
-        .option('show-count', {
-          alias: 'c',
-          describe: 'Show the count of features traversed at the end',
-          type: 'boolean',
-          default: process.stdout.isTTY,
-        })
-        .option('status.deprecated', {
-          alias: 'x',
-          describe:
-            'Filter features by deprecation status. Set to `true` to only show deprecated features or `false` to only show non-deprecated features.',
-          type: 'boolean',
-          default: undefined,
-        })
-        .option('status.standard_track', {
-          alias: 's',
-          describe:
-            'Filter features by standard_track status. Set to `true` to only show standards track features or `false` to only show non-standards track features.',
-          type: 'boolean',
-          default: undefined,
-        })
-        .option('status.experimental', {
-          alias: 'e',
-          describe:
-            'Filter features by experimental status. Set to `true` to only show experimental features or `false` to only show non-experimental features.',
-          type: 'boolean',
-          default: undefined,
-        })
-        .example(
-          'npm run traverse -- -b webview_android -f ≤37',
-          'Find all features marked as ≤37 for WebView',
-        )
-        .example(
-          'npm run traverse -- -b firefox -f 10',
-          'Find all features marked as supported since Firefox 10',
-        )
-        .example(
-          'npm run traverse -- -b samsunginternet_android -f mirror',
-          'Find all features in Samsung Internet that mirror data from Chrome Android',
-        )
-        .example(
-          'npm run traverse -- -t web-features:idle-detection',
-          'Find all features tagged with web-features:idle-detection.',
-        )
-        .example(
-          'npm run traverse -- -t false',
-          'Find all features with no tags.',
-        )
-        .example(
-          'npm run traverse -- --status.deprecated',
-          'Find all features that are deprecated.',
-        )
-        .example(
-          'npm run traverse -- --no-status.deprecated',
-          'Omit all features that are deprecated.',
-        )
-        .example(
-          'npm run traverse -- --status.standard_track',
-          'Find all features that are on the standard track.',
-        )
-        .example(
-          'npm run traverse -- --status.experimental',
-          'Find all features that are experimental.',
-        );
-    },
-  );
+  const argv = yargs(hideBin(process.argv))
+    .command(
+      '$0 [folder...]',
+      'Print feature names in the folder (and optionally filter features to specific browser or version values)',
+    )
+    .positional('folder', {
+      describe: 'The folder(s) to traverse',
+      type: 'string',
+      array: true,
+      default: Object.keys(bcd).filter((k) => k !== 'browsers'),
+    })
+    .option('browser', {
+      alias: 'b',
+      describe: 'Filter by a browser. May repeat.',
+      type: 'string',
+      nargs: 1,
+      default: Object.keys(bcd.browsers).filter(
+        (b) => bcd.browsers[b].type !== 'server',
+      ),
+      /**
+       *
+       * @param value
+       * @returns {BrowserName[]}
+       */
+      coerce: (value) =>
+        /** @type {BrowserName[]} */ (
+          (Array.isArray(value) ? value : [value]).filter((value) =>
+            Object.keys(bcd.browsers).some((browser) => browser === value),
+          )
+        ),
+    })
+    .option('filter', {
+      alias: 'f',
+      describe:
+        'Filter by version value. May repeat. Set to "≤" or "ranged" for ranged values (ex. ≤58), "mirror" for mirrored entries, and "nonmirror" for non-mirrored entries.',
+      type: 'array',
+      string: true,
+      nargs: 1,
+      default: [],
+    })
+    .option('tag', {
+      alias: 't',
+      describe:
+        'Filter by tag value. Set to `false` to search for features with no tags.',
+      type: 'string',
+      nargs: 1,
+      default: '',
+    })
+    .option('depth', {
+      alias: 'd',
+      describe:
+        'Depth of features to traverse (ex. "2" will capture "api.CSSStyleSheet.insertRule" but not "api.CSSStyleSheet.insertRule.optional_index")',
+      type: 'number',
+      nargs: 1,
+      default: 10,
+    })
+    .option('show-count', {
+      alias: 'c',
+      describe: 'Show the count of features traversed at the end',
+      type: 'boolean',
+      default: process.stdout.isTTY,
+    })
+    .option('deprecated', {
+      alias: ['x', 'status.deprecated'],
+      describe:
+        'Filter features by deprecation status. Set to `true` to only show deprecated features or `false` to only show non-deprecated features.',
+      type: 'boolean',
+      default: undefined,
+    })
+    .option('standard-track', {
+      alias: ['s', 'status.standard_track'],
+      describe:
+        'Filter features by standard_track status. Set to `true` to only show standards track features or `false` to only show non-standards track features.',
+      type: 'boolean',
+      default: undefined,
+    })
+    .option('experimental', {
+      alias: ['e', 'status.experimental'],
+      describe:
+        'Filter features by experimental status. Set to `true` to only show experimental features or `false` to only show non-experimental features.',
+      type: 'boolean',
+      default: undefined,
+    })
+    .example(
+      'npm run traverse -- -b webview_android -f ≤37',
+      'Find all features marked as ≤37 for WebView',
+    )
+    .example(
+      'npm run traverse -- -b firefox -f 10',
+      'Find all features marked as supported since Firefox 10',
+    )
+    .example(
+      'npm run traverse -- -b samsunginternet_android -f mirror',
+      'Find all features in Samsung Internet that mirror data from Chrome Android',
+    )
+    .example(
+      'npm run traverse -- -t web-features:idle-detection',
+      'Find all features tagged with web-features:idle-detection.',
+    )
+    .example('npm run traverse -- -t false', 'Find all features with no tags.')
+    .example(
+      'npm run traverse -- --status.deprecated',
+      'Find all features that are deprecated.',
+    )
+    .example(
+      'npm run traverse -- --no-status.deprecated',
+      'Omit all features that are deprecated.',
+    )
+    .example(
+      'npm run traverse -- --status.standard_track',
+      'Find all features that are on the standard track.',
+    )
+    .example(
+      'npm run traverse -- --status.experimental',
+      'Find all features that are experimental.',
+    )
+    .parseSync();
 
-  const args = /** @type {*} */ (argv);
+  const { deprecated, standardTrack: standard_track, experimental } = argv;
+
   const features = main(
-    args.folder,
-    args.browser,
-    args.filter,
-    args.depth,
-    args.tag,
-    args.status,
+    argv.folder,
+    argv.browser,
+    argv.filter,
+    argv.depth,
+    argv.tag,
+    { deprecated, standard_track, experimental },
   );
   console.log(features.join('\n'));
-  if (args.showCount) {
+  if (argv.showCount) {
     console.log(features.length);
   }
 }
