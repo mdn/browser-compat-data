@@ -229,7 +229,7 @@ if (esMain(import.meta)) {
     })
     .option('github', {
       type: 'boolean',
-      description: "Don't fetch artifacts from GitHub.",
+      description: 'Fetch artifacts from GitHub.',
       default: true,
     })
     .example('$0', 'compare HEAD to parent commit')
