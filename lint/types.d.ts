@@ -26,8 +26,8 @@ export interface LinterMessage {
 }
 
 export interface LinterPath {
-  full?: string;
-  category?: string;
+  full: string;
+  category: string;
   browser?: BrowserName;
 }
 

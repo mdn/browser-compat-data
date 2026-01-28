@@ -37,7 +37,7 @@ describe('test-browsers-data', () => {
       },
     };
 
-    test.check(logger, { data, path: { browser } });
+    test.check(logger, { data, path: { full: 'nodejs', browser } });
     assert.equal(logger.messages.length, 1);
   });
 
@@ -54,7 +54,7 @@ describe('test-browsers-data', () => {
         2: { status: 'nightly' },
       },
     };
-    test.check(logger, { data, path: { browser } });
+    test.check(logger, { data, path: { full: 'firefox', browser } });
     assert.equal(logger.messages.length, 1);
   });
 
@@ -71,7 +71,7 @@ describe('test-browsers-data', () => {
         2: { status: 'nightly' },
       },
     };
-    test.check(logger, { data, path: { browser } });
+    test.check(logger, { data, path: { full: 'nodejs', browser } });
     assert.equal(logger.messages.length, 1);
   });
 
@@ -87,7 +87,7 @@ describe('test-browsers-data', () => {
       releases: {},
     };
 
-    test.check(logger, { data, path: { browser } });
+    test.check(logger, { data, path: { full: 'safari_ios', browser } });
     assert.equal(logger.messages.length, 1);
   });
 
@@ -103,7 +103,7 @@ describe('test-browsers-data', () => {
       releases: {},
     };
 
-    test.check(logger, { data, path: { browser } });
+    test.check(logger, { data, path: { full: 'safari_ios', browser } });
     assert.equal(logger.messages.length, 1);
   });
 
@@ -130,7 +130,7 @@ describe('test-browsers-data', () => {
         },
       },
     };
-    test.check(logger, { data, path: { browser } });
+    test.check(logger, { data, path: { full: 'opera', browser } });
     assert.equal(logger.messages.length, 2);
   });
 });
