@@ -19,6 +19,7 @@ describe('test-prefix', () => {
     const data = {
       support: {
         firefox: {
+          version_added: '42',
           prefix: 'moz',
           alternative_name: 'otherFeatureName',
         },
@@ -39,6 +40,7 @@ describe('test-prefix', () => {
     const data = {
       support: {
         firefox: {
+          version_added: '42',
           prefix: 'invalidPrefix',
         },
       },
@@ -54,9 +56,11 @@ describe('test-prefix', () => {
     const data = {
       support: {
         firefox: {
+          version_added: '42',
           alternative_name: 'mozfeature',
         },
         safari: {
+          version_added: '10',
           alternative_name: '::webkitFeature',
         },
       },
@@ -73,6 +77,7 @@ describe('test-prefix', () => {
     const data = {
       support: {
         firefox: {
+          version_added: '42',
           prefix: 'moz',
         },
       },
