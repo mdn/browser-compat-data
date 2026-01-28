@@ -20,7 +20,7 @@ import { Linters } from './utils.js';
 
 /** @import {Stats} from 'node:fs' */
 /** @import {BrowserName, CompatData} from '../types/types.js' */
-/** @import {LinterMessage, LinterMessageLevel, LinterPath} from './utils.js' */
+/** @import {LinterMessage, LinterMessageLevel, LinterPath} from './types.js' */
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 

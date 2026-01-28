@@ -8,7 +8,8 @@ import { query } from '../../utils/index.js';
 import mirrorSupport from '../../scripts/build/mirror.js';
 import bcd from '../../index.js';
 
-/** @import {Linter, Logger, LinterData} from '../utils.js' */
+/** @import {Linter, LinterData} from '../types.js' */
+/** @import {Logger} from '../utils.js' */
 /** @import {BrowserName, CompatData, CompatStatement, Identifier, SimpleSupportStatement, VersionValue} from '../../types/types.js' */
 /** @import {DataType, InternalSupportBlock, InternalSupportStatement} from '../../types/index.js' */
 

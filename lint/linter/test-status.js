@@ -6,7 +6,8 @@ import chalk from 'chalk-template';
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
-/** @import {Linter, Logger, LinterData} from '../utils.js' */
+/** @import {Linter, LinterData} from '../types.js' */
+/** @import {Logger} from '../utils.js' */
 /** @import {BrowserName, CompatStatement} from '../../types/types.js' */
 
 // See: https://github.com/web-platform-dx/web-features/blob/main/docs/baseline.md#core-browser-set

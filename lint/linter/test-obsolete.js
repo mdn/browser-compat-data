@@ -6,7 +6,8 @@ import chalk from 'chalk-template';
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
-/** @import {Linter, Logger, LinterData, LinterMessageLevel} from '../utils.js' */
+/** @import {Linter, LinterData, LinterMessageLevel} from '../types.js' */
+/** @import {Logger} from '../utils.js' */
 /** @import {BrowserName, CompatStatement} from '../../types/types.js' */
 /** @import {InternalSupportBlock, InternalSupportStatement} from '../../types/index.js' */
 

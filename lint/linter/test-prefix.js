@@ -3,7 +3,8 @@
 
 import chalk from 'chalk-template';
 
-/** @import {Linter, Logger, LinterData} from '../utils.js' */
+/** @import {Linter, LinterData} from '../types.js' */
+/** @import {Logger} from '../utils.js' */
 /** @import {CompatStatement} from '../../types/types.js' */
 
 /**

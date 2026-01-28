@@ -2,7 +2,8 @@
  * See LICENSE file for more information. */
 
 /** @import {Identifier} from '../../types/types.js' */
-/** @import {Linter, Logger, LinterData} from '../utils.js' */
+/** @import {Linter, LinterData} from '../types.js' */
+/** @import {Logger} from '../utils.js' */
 
 /**
  * Test the filename based on the identifier

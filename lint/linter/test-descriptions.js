@@ -5,7 +5,8 @@ import chalk from 'chalk-template';
 
 import { validateHTML } from './test-notes.js';
 
-/** @import {Linter, Logger, LinterData} from '../utils.js' */
+/** @import {Linter, LinterData} from '../types.js' */
+/** @import {Logger} from '../utils.js' */
 /** @import {CompatStatement} from '../../types/types.js' */
 
 /**

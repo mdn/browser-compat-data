@@ -4,7 +4,8 @@
 import chalk from 'chalk-template';
 import mdnContentInventory from '@ddbeck/mdn-content-inventory';
 
-/** @import {Linter, Logger, LinterData} from '../utils.js' */
+/** @import {Linter, LinterData} from '../types.js' */
+/** @import {Logger} from '../utils.js' */
 /** @import {CompatStatement} from '../../types/types.js' */
 
 /**

@@ -5,56 +5,8 @@ import { platform } from 'node:os';
 
 import chalk from 'chalk-template';
 
-/** @import {DataType} from '../types/index.js' */
-/** @import {BrowserName, SimpleSupportStatement} from '../types/types.js' */
-
-/**
- * @typedef {object} LintOptions
- * @property {string[]} [only]
- */
-
-/**
- * @typedef {'file' | 'feature' | 'browser' | 'tree'} LinterScope
- */
-
-/**
- * @typedef {'error' | 'warning' | 'info'} LinterMessageLevel
- */
-
-/**
- * @typedef {object} LinterMessage
- * @property {LinterMessageLevel} level
- * @property {string} title
- * @property {string} path
- * @property {string} message
- * @property {true} [fixable]
- * @property {string} [tip]
- * @property {*} [actual]
- * @property {*} [expected]
- */
-
-/**
- * @typedef {object} LinterPath
- * @property {string} full
- * @property {string} category
- * @property {BrowserName} [browser]
- */
-
-/**
- * @typedef {object} LinterData
- * @property {DataType} data
- * @property {string} rawdata
- * @property {LinterPath} path
- */
-
-/**
- * @typedef {object} Linter
- * @property {string} name
- * @property {string} description
- * @property {LinterScope} scope
- * @property {(Logger, object) => void | Promise<void>} check
- * @property {string[]} [exceptions]
- */
+/** @import {SimpleSupportStatement} from '../types/types.js' */
+/** @import {Linter, LinterData, LinterMessage, LinterScope} from './types.js' */
 
 /** @type {Readonly<Record<string, string>>} */
 const INVISIBLES_MAP = Object.freeze(

@@ -7,7 +7,8 @@ import { marked } from 'marked';
 
 import { VALID_ELEMENTS } from '../utils.js';
 
-/** @import {Linter, Logger, LinterData} from '../utils.js' */
+/** @import {Linter, LinterData} from '../types.js' */
+/** @import {Logger} from '../utils.js' */
 /** @import {BrowserName, CompatStatement, SupportStatement} from '../../types/types.js' */
 
 const parser = new HTMLParser();

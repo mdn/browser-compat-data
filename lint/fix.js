@@ -27,7 +27,7 @@ import fixOverlap from './fixer/overlap.js';
 import { IS_WINDOWS } from './utils.js';
 
 /** @import {Stats} from 'node:fs' */
-/** @import {LintOptions} from './utils.js' */
+/** @import {LintOptions} from './types.js' */
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 

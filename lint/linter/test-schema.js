@@ -8,7 +8,8 @@ import { createAjv } from '../../scripts/lib/ajv.js';
 import compatDataSchema from './../../schemas/compat-data.schema.json' with { type: 'json' };
 import browserDataSchema from './../../schemas/browsers.schema.json' with { type: 'json' };
 
-/** @import {Linter, Logger, LinterData} from '../utils.js' */
+/** @import {Linter, LinterData} from '../types.js' */
+/** @import {Logger} from '../utils.js' */
 
 const ajv = createAjv();
 
