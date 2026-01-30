@@ -6,7 +6,15 @@ January 30, 2026
 
 ### Notable changes
 
-<!-- TODO: Fill me out with the appropriate information about breaking changes or new backwards-compatible additions! -->
+This release includes _one notable change_.
+
+#### 1. Deprecate `experimental` status ([#28811](https://github.com/mdn/browser-compat-data/pull/28811))
+
+Previously, the `status.experimental` field was used to indicate feature stability.
+
+Now, this field is deprecated and should no longer be used by consumers.
+
+For details, see the [Status information](https://github.com/mdn/browser-compat-data/blob/v7.3.0/schemas/compat-data-schema.md#status-information) section of the compat data JSON schema documentation.
 
 ### Statistics
 
