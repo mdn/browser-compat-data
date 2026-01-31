@@ -4,10 +4,7 @@
       "Accept-Encoding": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Accept-Encoding",
-          "spec_url": [
-            "https://httpwg.org/specs/rfc9110.html#field.accept-encoding",
-            "https://www.rfc-editor.org/rfc/rfc8878#name-content-encoding"
-          ],
+          "spec_url": "https://httpwg.org/specs/rfc9110.html#field.accept-encoding",
           "tags": [
             "web-features:http11"
           ],
@@ -162,6 +159,10 @@
         "zstd": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Accept-Encoding#zstd",
+            "spec_url": [
+              "https://www.rfc-editor.org/rfc/rfc8878#name-content-encoding",
+              "https://www.rfc-editor.org/rfc/rfc9659"
+            ],
             "tags": [
               "web-features:zstd"
             ],
@@ -179,9 +180,12 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "26.3",
+                "notes": "Unsupported before macOS 26.3 Tahoe."
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": "26.3"
+              },
               "samsunginternet_android": "mirror",
               "webview_android": "mirror",
               "webview_ios": "mirror"
