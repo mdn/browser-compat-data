@@ -7907,9 +7907,17 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "140"
-            },
+            "firefox": [
+              {
+                "version_added": "148"
+              },
+              {
+                "version_added": "140",
+                "version_removed": "148",
+                "partial_implementation": true,
+                "notes": "The `pointerrawupdate` event handler receives a `MouseEvent` whose movement properties (`movementX`, `movementY`) are always `0`. See [bug 1987671](https://bugzil.la/1987671)."
+              }
+            ],
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": {

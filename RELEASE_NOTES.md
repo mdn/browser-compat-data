@@ -1,5 +1,48 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.3.0](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.0)
+
+January 30, 2026
+
+### Notable changes
+
+This release includes _one notable change_.
+
+#### 1. Deprecate `experimental` status ([#28811](https://github.com/mdn/browser-compat-data/pull/28811))
+
+Previously, the `status.experimental` field was used to indicate feature stability.
+
+Now, this field is deprecated and should no longer be used by consumers.
+
+For details, see the [Status information](https://github.com/mdn/browser-compat-data/blob/v7.3.0/schemas/compat-data-schema.md#status-information) section of the compat data JSON schema documentation.
+
+### Statistics
+
+- 2 contributors have changed 2 files with 15 additions and 4 deletions in 1 commit ([`v7.2.6...v7.3.0`](https://github.com/mdn/browser-compat-data/compare/v7.2.6...v7.3.0))
+- 19,221 total features
+- 1,219 total contributors
+- 5,570 total stargazers
+
+## [v7.2.6](https://github.com/mdn/browser-compat-data/releases/tag/v7.2.6)
+
+January 30, 2026
+
+### Additions
+
+- `api.GPUSupportedFeatures.feature_subgroups.subgroup_id_num_subgroups` ([#28891](https://github.com/mdn/browser-compat-data/pull/28891))
+- `api.RTCRtpSender.setParameters.parameters_degradationPreference_parameter.maintain-framerate-and-resolution_value` ([#28898](https://github.com/mdn/browser-compat-data/pull/28898))
+- `api.WGSLLanguageFeatures.extension_subgroup_id` ([#28891](https://github.com/mdn/browser-compat-data/pull/28891))
+- `browsers.bun.releases.1.3.7` ([#28932](https://github.com/mdn/browser-compat-data/pull/28932))
+- `browsers.bun.releases.1.3.8` ([#28943](https://github.com/mdn/browser-compat-data/pull/28943))
+- `css.types.image.filter` ([#28916](https://github.com/mdn/browser-compat-data/pull/28916))
+
+### Statistics
+
+- 8 contributors have changed 27 files with 401 additions and 315 deletions in 24 commits ([`v7.2.5...v7.2.6`](https://github.com/mdn/browser-compat-data/compare/v7.2.5...v7.2.6))
+- 19,221 total features
+- 1,219 total contributors
+- 5,570 total stargazers
+
 ## [v7.2.5](https://github.com/mdn/browser-compat-data/releases/tag/v7.2.5)
 
 January 23, 2026
