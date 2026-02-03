@@ -1,6 +1,6 @@
 # Publishing a new version of `@mdn/browser-compat-data`
 
-New releases of the [`@mdn/browser-compat-data`](https://www.npmjs.com/package/@mdn/browser-compat-data) NPM package are published 1-2 times per week, usually on Tuesday and/or Friday, except during year-end holidays.
+New releases of the [`@mdn/browser-compat-data`](https://www.npmjs.com/package/@mdn/browser-compat-data) NPM package are usually published once per week or more often around browser releases.
 
 The release process is mostly automated using two GitHub workflows:
 
