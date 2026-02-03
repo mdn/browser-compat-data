@@ -38,9 +38,12 @@ describe('walk()', () => {
     const results = Array.from(
       walk(['api.Notification', 'css.properties.color']),
     );
-    assert.equal(results.length, 30);
+    assert.equal(results.length, 31);
     assert.equal(results[0].path, 'api.Notification');
-    assert.equal(results[results.length - 1].path, 'css.properties.color');
+    assert.equal(
+      results[results.length - 1].path,
+      'css.properties.color.transparent',
+    );
   });
 
   it('should yield every feature by default', () => {

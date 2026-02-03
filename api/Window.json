@@ -879,7 +879,8 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "1"
+              "version_added": "1",
+              "notes": "Before Chrome 95, script-closeability depended on having an opener, not on being created by web content."
             },
             "chrome_android": "mirror",
             "deno": {
@@ -888,12 +889,11 @@
               "notes": "Exits the current Deno process."
             },
             "edge": {
-              "version_added": "12",
-              "notes": "Before Edge 79, scripts can close windows that weren't opened by the same script."
+              "version_added": "12"
             },
             "firefox": {
               "version_added": "1",
-              "notes": "Before Firefox 46, scripts can close windows that weren't opened by the same script."
+              "notes": "Before Firefox 128, script-closeability depended on having an opener, not on being created by web content."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -1400,7 +1400,8 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "preview",
+              "impl_url": "https://bugzil.la/1858562"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -1974,24 +1975,42 @@
             "web-features:gamepad"
           ],
           "support": {
-            "chrome": {
-              "version_added": "35",
-              "partial_implementation": true,
-              "notes": "The `ongamepadconnected` event handler property is not supported. See [bug 40175074](https://crbug.com/40175074)."
-            },
-            "chrome_android": {
-              "version_added": "37",
-              "partial_implementation": true,
-              "notes": "The `ongamepadconnected` event handler property is not supported. See [bug 40175074](https://crbug.com/40175074)."
-            },
+            "chrome": [
+              {
+                "version_added": "143"
+              },
+              {
+                "version_added": "35",
+                "version_removed": "143",
+                "partial_implementation": true,
+                "notes": "The `ongamepadconnected` event handler property is not supported. See [bug 40175074](https://crbug.com/40175074)."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "143"
+              },
+              {
+                "version_added": "37",
+                "version_removed": "143",
+                "partial_implementation": true,
+                "notes": "The `ongamepadconnected` event handler property is not supported. See [bug 40175074](https://crbug.com/40175074)."
+              }
+            ],
             "deno": {
               "version_added": false
             },
-            "edge": {
-              "version_added": "≤18",
-              "partial_implementation": true,
-              "notes": "The `ongamepadconnected` event handler property is not supported. See [bug 40175074](https://crbug.com/40175074)."
-            },
+            "edge": [
+              {
+                "version_added": "143"
+              },
+              {
+                "version_added": "≤18",
+                "version_removed": "143",
+                "partial_implementation": true,
+                "notes": "The `ongamepadconnected` event handler property is not supported. See [bug 40175074](https://crbug.com/40175074)."
+              }
+            ],
             "firefox": [
               {
                 "version_added": "89"
@@ -2049,24 +2068,42 @@
             "web-features:gamepad"
           ],
           "support": {
-            "chrome": {
-              "version_added": "35",
-              "partial_implementation": true,
-              "notes": "The `ongamepaddisconnected` event handler property is not supported. See [bug 40175074](https://crbug.com/40175074)."
-            },
-            "chrome_android": {
-              "version_added": "37",
-              "partial_implementation": true,
-              "notes": "The `ongamepaddisconnected` event handler property is not supported. See [bug 40175074](https://crbug.com/40175074)."
-            },
+            "chrome": [
+              {
+                "version_added": "143"
+              },
+              {
+                "version_added": "35",
+                "version_removed": "143",
+                "partial_implementation": true,
+                "notes": "The `ongamepaddisconnected` event handler property is not supported. See [bug 40175074](https://crbug.com/40175074)."
+              }
+            ],
+            "chrome_android": [
+              {
+                "version_added": "143"
+              },
+              {
+                "version_added": "37",
+                "version_removed": "143",
+                "partial_implementation": true,
+                "notes": "The `ongamepaddisconnected` event handler property is not supported. See [bug 40175074](https://crbug.com/40175074)."
+              }
+            ],
             "deno": {
               "version_added": false
             },
-            "edge": {
-              "version_added": "≤18",
-              "partial_implementation": true,
-              "notes": "The `ongamepaddisconnected` event handler property is not supported. See [bug 40175074](https://crbug.com/40175074)."
-            },
+            "edge": [
+              {
+                "version_added": "143"
+              },
+              {
+                "version_added": "≤18",
+                "version_removed": "143",
+                "partial_implementation": true,
+                "notes": "The `ongamepaddisconnected` event handler property is not supported. See [bug 40175074](https://crbug.com/40175074)."
+              }
+            ],
             "firefox": [
               {
                 "version_added": "89"
@@ -3433,15 +3470,14 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
-              "impl_url": "https://bugzil.la/1777171"
+              "version_added": "147"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "26.2"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -3449,7 +3485,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -3723,9 +3759,9 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
-              "deprecated": false
+              "deprecated": true
             }
           }
         },
@@ -6827,9 +6863,9 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -6949,45 +6985,6 @@
           "status": {
             "experimental": true,
             "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "sizeToContent": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/sizeToContent",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": "mirror",
-            "deno": {
-              "version_added": false
-            },
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "1",
-              "version_removed": "120"
-            },
-            "firefox_android": {
-              "version_added": "4",
-              "version_removed": "120",
-              "notes": "This method has no effect as a page is always in a tab."
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
             "deprecated": false
           }
         }
@@ -7442,7 +7439,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         }
       },

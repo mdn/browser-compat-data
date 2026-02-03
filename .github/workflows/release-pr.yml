@@ -19,13 +19,13 @@ concurrency:
 
 jobs:
   manage-release-pr:
-    if: github.repository == 'mdn/browser-compat-data' && github.actor != 'dependabot[bot]' && !startsWith(github.event.head_commit.message, 'Release v')
+    if: github.repository == 'mdn/browser-compat-data' && github.secret_source == 'Actions' && !startsWith(github.event.head_commit.message, 'Release v')
     name: Manage release PR
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: 0
           fetch-tags: true
@@ -34,7 +34,7 @@ jobs:
           persist-credentials: true
 
       - name: Setup Node
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
         with:
           node-version-file: ".nvmrc"
           package-manager-cache: false

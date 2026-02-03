@@ -47,6 +47,16 @@ const specsExceptions = [
   'https://github.com/WebAssembly/js-string-builtins/blob/main/proposals/js-string-builtins/Overview.md',
   'https://github.com/WebAssembly/function-references/blob/main/proposals/function-references/Overview.md',
   'https://github.com/WebAssembly/js-promise-integration',
+  'https://github.com/WebAssembly/branch-hinting/blob/main/proposals/branch-hinting/Overview.md',
+
+  // Media types
+  'https://developers.google.com/speed/webp/docs/riff_container',
+  'https://developers.google.com/speed/webp/docs/webp_lossless_bitstream_specification',
+  'https://jpeg.org/jpeg/',
+  'https://www.adobe.com/devnet-apps/photoshop/fileformatashtml/',
+  'https://www.iso.org/standard/89035.html',
+  'https://www.rfc-editor.org/rfc/rfc7903',
+  'https://www.w3.org/Graphics/GIF/spec-gif87.txt',
 ];
 
 const allowedSpecURLs = [

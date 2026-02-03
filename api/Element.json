@@ -1181,7 +1181,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "26.2"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -2372,7 +2372,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "26.2"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -3067,7 +3067,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "26.2"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -5710,14 +5710,7 @@
             "description": "Serializes `<` and `>` in attributes as `&amp;lt;` and `&amp;gt;` (see [this spec issue](https://github.com/whatwg/html/issues/6235))",
             "support": {
               "chrome": {
-                "version_added": "114",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
+                "version_added": "138"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -6068,14 +6061,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "135",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.trusted_types.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "preview"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -6101,14 +6087,7 @@
             "description": "Serializes `<` and `>` in attributes as `&amp;lt;` and `&amp;gt;` (see [this spec issue](https://github.com/whatwg/html/issues/6235))",
             "support": {
               "chrome": {
-                "version_added": "114",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
+                "version_added": "138"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -6321,14 +6300,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "135",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.trusted_types.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "preview"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -7198,7 +7170,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/281223"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -7361,14 +7334,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "135",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.trusted_types.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "preview"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -7394,14 +7360,7 @@
             "description": "Serializes `<` and `>` in attributes as `&amp;lt;` and `&amp;gt;` (see [this spec issue](https://github.com/whatwg/html/issues/6235))",
             "support": {
               "chrome": {
-                "version_added": "114",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
+                "version_added": "138"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -7431,7 +7390,7 @@
       "part": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/part",
-          "spec_url": "https://drafts.csswg.org/css-shadow-parts/#idl",
+          "spec_url": "https://drafts.csswg.org/css-shadow/#idl",
           "tags": [
             "web-features:shadow-parts"
           ],
@@ -7943,16 +7902,28 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "77"
+              "version_added": "77",
+              "notes": "Before version 142, `pointerrawupdate` events were exposed to non-secure contexts."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "140"
-            },
+            "firefox": [
+              {
+                "version_added": "148"
+              },
+              {
+                "version_added": "140",
+                "version_removed": "148",
+                "partial_implementation": true,
+                "notes": "The `pointerrawupdate` event handler receives a `MouseEvent` whose movement properties (`movementX`, `movementY`) are always `0`. See [bug 1987671](https://bugzil.la/1987671)."
+              }
+            ],
             "firefox_android": "mirror",
             "oculus": "mirror",
-            "opera": "mirror",
+            "opera": {
+              "version_added": "64",
+              "notes": "Before version 126, `pointerrawupdate` events were exposed to non-secure contexts."
+            },
             "opera_android": "mirror",
             "safari": {
               "version_added": false
@@ -9262,8 +9233,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "preview",
-              "impl_url": "https://webkit.org/b/201556"
+              "version_added": "26.2"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -10094,6 +10064,37 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "enforces_trusted_types": {
+          "__compat": {
+            "description": "Requires `value` parameter to be `TrustedHTML` instance (for `iframe.srcdoc`), or `TrustedScriptURL` (for HTML `script.src`, and SVG `script.href`) when trusted types are enforced",
+            "support": {
+              "chrome": {
+                "version_added": "83"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "preview"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "setAttributeNode": {
@@ -10228,6 +10229,37 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "enforces_trusted_types": {
+          "__compat": {
+            "description": "Requires `value` parameter to be `TrustedHTML`, `TrustedScript`, or `TrustedScriptURL` instance when trusted types enforced (matching attribute type)",
+            "support": {
+              "chrome": {
+                "version_added": "83"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "preview"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "setCapture": {
@@ -10277,20 +10309,13 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false,
+              "version_added": "145",
               "notes": "Chrome 105 to Chrome 118 (inclusive) supported this method with a significantly different specification."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "138",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.security.sanitizer.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "148"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -10305,7 +10330,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -10367,14 +10392,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "135",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.trusted_types.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "preview"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
