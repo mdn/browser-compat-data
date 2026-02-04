@@ -40,8 +40,10 @@ export default [
   ...fixupConfigRules(
     compat.extends(
       'eslint:recommended',
+      'plugin:@typescript-eslint/strict',
+      'plugin:@typescript-eslint/stylistic',
       'plugin:import/recommended',
-      'plugin:jsdoc/recommended',
+      'plugin:jsdoc/recommended-typescript-flavor',
     ),
   ),
   {
