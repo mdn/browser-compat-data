@@ -5,12 +5,26 @@ on:
     branches:
       - main
 
-permissions: {} # No GITHUB_TOKEN permissions, as we use GH_TOKEN instead.
+# No GITHUB_TOKEN permissions, because we use GH_TOKEN instead.
+permissions: {}
 
 jobs:
   auto-merge:
-    uses: mdn/workflows/.github/workflows/auto-merge.yml@main
-    with:
-      target-repo: "mdn/browser-compat-data"
-    secrets:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
+
+    steps:
+      - name: Dependabot metadata
+        id: dependabot-metadata
+        uses: dependabot/fetch-metadata@21025c705c08248db411dc16f3619e6b5f9ea21a # v2.5.0
+        with:
+          github-token: ${{ secrets.GH_TOKEN }}
+
+      - name: Squash and merge
+
+        if: ${{ steps.dependabot-metadata.outputs.update-type == 'version-update:semver-minor' && !startsWith(steps.dependabot-metadata.outputs.previous-version, '0.') || steps.dependabot-metadata.outputs.update-type == 'version-update:semver-patch' && !startsWith(steps.dependabot-metadata.outputs.previous-version, '0.0.') }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          gh pr review ${{ github.event.pull_request.html_url }} --approve
+          gh pr merge ${{ github.event.pull_request.html_url }} --auto --squash
