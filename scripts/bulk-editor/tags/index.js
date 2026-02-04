@@ -8,7 +8,7 @@ const command = {
   command: 'tags',
   description: 'Modify tags',
   // Yargs requires a handler method present, regardless if it does anything
-  // eslint-disable-next-line jsdoc/require-jsdoc
+  // eslint-disable-next-line jsdoc/require-jsdoc, @typescript-eslint/no-empty-function
   handler: () => {},
   // eslint-disable-next-line jsdoc/require-jsdoc
   builder: (yargs) =>
