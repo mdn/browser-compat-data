@@ -141,6 +141,11 @@ export default [
               context: 'any',
               message: 'Use @import JSDoc instead of @typedef.',
             },
+            {
+              comment: 'JsdocBlock:has(JsdocTypeName[value="unknown"])',
+              context: 'any',
+              message: 'Avoid using unknown type in JSDoc.',
+            },
           ],
         },
       ],
