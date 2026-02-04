@@ -9,6 +9,7 @@ import unicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
 import js from '@eslint/js';
 import { FlatCompat } from '@eslint/eslintrc';
+import ts from 'typescript-eslint';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -45,6 +46,7 @@ export default [
   ),
   {
     plugins: {
+      '@typescript-eslint': fixupPluginRules(ts.plugin),
       import: fixupPluginRules(_import),
       // jsdoc: fixupPluginRules(jsdoc), // Plugin already defined
       'prefer-arrow-functions': preferArrowFunctions,
@@ -59,6 +61,7 @@ export default [
         SharedArrayBuffer: 'readonly',
       },
 
+      parser: ts.parser,
       ecmaVersion: 'latest',
       sourceType: 'module',
     },
@@ -70,6 +73,16 @@ export default [
     },
 
     rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-unused-expressions': 'error',
+
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          caughtErrors: 'none',
+        },
+      ],
+
       'no-unused-vars': [
         'error',
         {
