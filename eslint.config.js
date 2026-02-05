@@ -77,11 +77,13 @@ export default [
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-unused-expressions': 'error',
+      '@typescript-eslint/no-unused-vars': 'off',
 
       'no-unused-vars': [
         'error',
         {
-          caughtErrors: 'none',
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
         },
       ],
 
