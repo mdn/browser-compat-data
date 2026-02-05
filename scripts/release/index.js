@@ -68,7 +68,7 @@ const commitAndPR = async (message, wait, { branch, pr }) => {
     try {
       const stdout = spawn('gh', ['pr', 'create', '--draft', ...commonArgs]);
       console.log(stdout);
-    } catch (e) {
+    } catch {
       const stdout = spawn('gh', ['pr', 'edit', ...commonArgs]);
       console.log(stdout);
     }

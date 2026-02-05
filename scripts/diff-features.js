@@ -157,7 +157,7 @@ const enumerateFeatures = (ref = 'HEAD', quiet = false) => {
 
     try {
       spawn('npm', ['ci'], { cwd: worktree });
-    } catch (e) {
+    } catch {
       // If the clean install fails, proceed anyways
     }
     if (existsSync(`${worktree}/index.js`)) {

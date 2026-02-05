@@ -68,7 +68,7 @@ const load = async (options, ...files) => {
 
     try {
       fsStats = await stat(file);
-    } catch (e) {
+    } catch {
       console.warn(chalk`{yellow File {bold ${file}} doesn't exist!}`);
       continue;
     }

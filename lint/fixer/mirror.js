@@ -31,7 +31,7 @@ export const isMirrorEquivalent = (support, browser) => {
   let mirrored;
   try {
     mirrored = mirrorSupport(browser, support);
-  } catch (e) {
+  } catch {
     // This can happen with missing engine_version. Don't mirror anything.
     return false;
   }

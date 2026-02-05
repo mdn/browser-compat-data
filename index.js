@@ -46,7 +46,7 @@ const load = async (...dirs) => {
 
         extend(result, contents);
         /* c8 ignore start */
-      } catch (e) {
+      } catch {
         // Skip invalid JSON. Tests will flag the problem separately.
         continue;
       }

@@ -71,7 +71,7 @@ const generateBrowserNames = async () => {
     try {
       const contents = await fs.readFile(fp);
       extend(browserData, JSON.parse(contents.toString('utf8')));
-    } catch (e) {
+    } catch {
       // Skip invalid JSON. Tests will flag the problem separately.
       continue;
     }
