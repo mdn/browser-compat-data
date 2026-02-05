@@ -78,13 +78,6 @@ export default [
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-unused-expressions': 'error',
 
-      '@typescript-eslint/no-unused-vars': [
-        'error',
-        {
-          caughtErrors: 'none',
-        },
-      ],
-
       'no-unused-vars': [
         'error',
         {
