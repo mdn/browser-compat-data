@@ -44,8 +44,7 @@ export class ConsistencyChecker {
    * @returns {ConsistencyError[]} Any errors found within the data
    */
   check(data) {
-    // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
-    const { browsers, __meta, ...rest } = data;
+    const { browsers: _browsers, __meta, ...rest } = data;
     return this.checkSubfeatures(rest);
   }
 
