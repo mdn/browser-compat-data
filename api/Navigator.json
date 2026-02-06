@@ -1545,6 +1545,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/getInstalledRelatedApps",
           "spec_url": "https://wicg.github.io/get-installed-related-apps/spec/#dom-navigator-getinstalledrelatedapps",
+          "tags": [
+            "web-features:related-apps"
+          ],
           "support": {
             "chrome": [
               {
@@ -1841,7 +1844,10 @@
             "chrome": {
               "version_added": "113",
               "partial_implementation": true,
-              "notes": "Supported on ChromeOS, macOS, and Windows only."
+              "notes": [
+                "Supported on ChromeOS, macOS, and Windows.",
+                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+              ]
             },
             "chrome_android": {
               "version_added": "121"

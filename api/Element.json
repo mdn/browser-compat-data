@@ -1934,6 +1934,9 @@
         "__compat": {
           "description": "`ariaNotify() method`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/ariaNotify",
+          "tags": [
+            "web-features:arianotify"
+          ],
           "support": {
             "chrome": {
               "version_added": "141",
@@ -5710,14 +5713,7 @@
             "description": "Serializes `<` and `>` in attributes as `&amp;lt;` and `&amp;gt;` (see [this spec issue](https://github.com/whatwg/html/issues/6235))",
             "support": {
               "chrome": {
-                "version_added": "114",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
+                "version_added": "138"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -6094,14 +6090,7 @@
             "description": "Serializes `<` and `>` in attributes as `&amp;lt;` and `&amp;gt;` (see [this spec issue](https://github.com/whatwg/html/issues/6235))",
             "support": {
               "chrome": {
-                "version_added": "114",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
+                "version_added": "138"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -7374,14 +7363,7 @@
             "description": "Serializes `<` and `>` in attributes as `&amp;lt;` and `&amp;gt;` (see [this spec issue](https://github.com/whatwg/html/issues/6235))",
             "support": {
               "chrome": {
-                "version_added": "114",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
+                "version_added": "138"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -7411,7 +7393,7 @@
       "part": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/part",
-          "spec_url": "https://drafts.csswg.org/css-shadow-parts/#idl",
+          "spec_url": "https://drafts.csswg.org/css-shadow/#idl",
           "tags": [
             "web-features:shadow-parts"
           ],
@@ -7928,9 +7910,17 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "140"
-            },
+            "firefox": [
+              {
+                "version_added": "148"
+              },
+              {
+                "version_added": "140",
+                "version_removed": "148",
+                "partial_implementation": true,
+                "notes": "The `pointerrawupdate` event handler receives a `MouseEvent` whose movement properties (`movementX`, `movementY`) are always `0`. See [bug 1987671](https://bugzil.la/1987671)."
+              }
+            ],
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": {
@@ -9471,7 +9461,7 @@
               "description": "`container` option",
               "spec_url": "https://drafts.csswg.org/cssom-view/#dom-scrollintoviewoptions-container",
               "tags": [
-                "web-features:scroll-into-view"
+                "web-features:scroll-into-view-container"
               ],
               "support": {
                 "chrome": {
@@ -10322,7 +10312,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false,
+              "version_added": "145",
               "notes": "Chrome 105 to Chrome 118 (inclusive) supported this method with a significantly different specification."
             },
             "chrome_android": "mirror",
@@ -10343,7 +10333,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

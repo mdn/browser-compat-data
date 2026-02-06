@@ -79,7 +79,10 @@
               "safari": {
                 "version_added": "1"
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": "1",
+                "notes": "Does not support `audio/*` MIME type. See [bug 242110](https://webkit.org/b/242110)."
+              },
               "samsunginternet_android": "mirror",
               "webview_android": "mirror",
               "webview_ios": "mirror"
@@ -135,7 +138,7 @@
           "__compat": {
             "spec_url": "https://html.spec.whatwg.org/multipage/input.html#attr-input-alpha",
             "tags": [
-              "web-features:input-color"
+              "web-features:input-color-alpha"
             ],
             "support": {
               "chrome": {
@@ -342,7 +345,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/input/color",
             "spec_url": "https://html.spec.whatwg.org/multipage/input.html#attr-input-colorspace",
             "tags": [
-              "web-features:input-color"
+              "web-features:input-color-alpha"
             ],
             "support": {
               "chrome": {
@@ -955,7 +958,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/multiple",
             "spec_url": "https://html.spec.whatwg.org/multipage/input.html#attr-input-multiple",
             "tags": [
-              "web-features:input"
+              "web-features:input-file-multiple"
             ],
             "support": {
               "chrome": {
@@ -1458,6 +1461,40 @@
             }
           }
         },
+        "switch": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/input/checkbox#switch",
+            "tags": [
+              "web-features:input-checkbox"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "17.4"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": false,
+              "deprecated": false
+            }
+          }
+        },
         "usemap": {
           "__compat": {
             "spec_url": "https://html.spec.whatwg.org/multipage/obsolete.html#attr-input-usemap",
@@ -1500,6 +1537,9 @@
         },
         "webkitdirectory": {
           "__compat": {
+            "tags": [
+              "web-features:input-file-webkitdirectory"
+            ],
             "support": {
               "chrome": {
                 "version_added": "7"
