@@ -3711,6 +3711,44 @@
             "standard_track": true,
             "deprecated": false
           }
+        },        
+        "paste": {
+          "__compat": {
+            "description": "`paste` command",
+            "tags": [
+              "web-features:execcommand"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "42"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "41",
+                "notes": "From version 148, also supports paste in content scripts via the [Clipboard API](https://developer.mozilla.org/docs/Web/API/Clipboard_API)"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "10",
+                "notes": "From version 16.5, also supports paste in content scripts via the [Clipboard API](https://developer.mozilla.org/docs/Web/API/Clipboard_API)"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": true
+            }
+          }
         },
         "returns_promise": {
           "__compat": {
