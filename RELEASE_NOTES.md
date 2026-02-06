@@ -1,5 +1,38 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.3.2](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.2)
+
+February 6, 2026
+
+### Additions
+
+- `api.HTMLGeolocationElement` ([#28801](https://github.com/mdn/browser-compat-data/pull/28801))
+- `api.HTMLGeolocationElement.autolocate` ([#28801](https://github.com/mdn/browser-compat-data/pull/28801))
+- `api.HTMLGeolocationElement.error` ([#28801](https://github.com/mdn/browser-compat-data/pull/28801))
+- `api.HTMLGeolocationElement.HTMLGeolocationElement` ([#28801](https://github.com/mdn/browser-compat-data/pull/28801))
+- `api.HTMLGeolocationElement.initialPermissionStatus` ([#28801](https://github.com/mdn/browser-compat-data/pull/28801))
+- `api.HTMLGeolocationElement.invalidReason` ([#28801](https://github.com/mdn/browser-compat-data/pull/28801))
+- `api.HTMLGeolocationElement.isValid` ([#28801](https://github.com/mdn/browser-compat-data/pull/28801))
+- `api.HTMLGeolocationElement.location_event` ([#28801](https://github.com/mdn/browser-compat-data/pull/28801))
+- `api.HTMLGeolocationElement.permissionStatus` ([#28801](https://github.com/mdn/browser-compat-data/pull/28801))
+- `api.HTMLGeolocationElement.position` ([#28801](https://github.com/mdn/browser-compat-data/pull/28801))
+- `api.HTMLGeolocationElement.promptaction_event` ([#28801](https://github.com/mdn/browser-compat-data/pull/28801))
+- `api.HTMLGeolocationElement.promptdismiss_event` ([#28801](https://github.com/mdn/browser-compat-data/pull/28801))
+- `api.HTMLGeolocationElement.validationstatuschange_event` ([#28801](https://github.com/mdn/browser-compat-data/pull/28801))
+- `api.HTMLGeolocationElement.watch` ([#28801](https://github.com/mdn/browser-compat-data/pull/28801))
+- `css.at-rules.container.scroll-state_queries.scrolled` ([#28983](https://github.com/mdn/browser-compat-data/pull/28983))
+- `html.elements.geolocation` ([#28801](https://github.com/mdn/browser-compat-data/pull/28801))
+- `html.elements.geolocation.autolocate` ([#28801](https://github.com/mdn/browser-compat-data/pull/28801))
+- `html.elements.geolocation.watch` ([#28801](https://github.com/mdn/browser-compat-data/pull/28801))
+- `webextensions.api.permissions.Permissions.data_collection` ([#28978](https://github.com/mdn/browser-compat-data/pull/28978))
+
+### Statistics
+
+- 3 contributors have changed 4 files with 631 additions and 0 deletions in 3 commits ([`v7.3.1...v7.3.2`](https://github.com/mdn/browser-compat-data/compare/v7.3.1...v7.3.2))
+- 19,250 total features
+- 1,221 total contributors
+- 5,580 total stargazers
+
 ## [v7.3.1](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.1)
 
 February 6, 2026
