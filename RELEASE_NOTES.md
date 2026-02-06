@@ -1,5 +1,34 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.3.1](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.1)
+
+February 6, 2026
+
+### Removals
+
+- `css.types.color.system-color.mark_marktext_buttonborder` ([#28924](https://github.com/mdn/browser-compat-data/pull/28924))
+
+### Additions
+
+- `css.at-rules.media.color-gamut.p3` ([#28892](https://github.com/mdn/browser-compat-data/pull/28892))
+- `css.at-rules.media.color-gamut.rec2020` ([#28892](https://github.com/mdn/browser-compat-data/pull/28892))
+- `css.at-rules.media.color-gamut.srgb` ([#28892](https://github.com/mdn/browser-compat-data/pull/28892))
+- `css.properties.columns.column-height` ([#28923](https://github.com/mdn/browser-compat-data/pull/28923))
+- `css.types.color.system-color.buttonborder` ([#28924](https://github.com/mdn/browser-compat-data/pull/28924))
+- `css.types.color.system-color.mark` ([#28924](https://github.com/mdn/browser-compat-data/pull/28924))
+- `css.types.color.system-color.marktext` ([#28924](https://github.com/mdn/browser-compat-data/pull/28924))
+- `http.headers.Permissions-Policy.ch-ua-high-entropy-values` ([#28895](https://github.com/mdn/browser-compat-data/pull/28895))
+- `javascript.builtins.Iterator.zip` ([#28960](https://github.com/mdn/browser-compat-data/pull/28960))
+- `javascript.builtins.Iterator.zipKeyed` ([#28960](https://github.com/mdn/browser-compat-data/pull/28960))
+- `webextensions.api.runtime.getVersion` ([#28942](https://github.com/mdn/browser-compat-data/pull/28942))
+
+### Statistics
+
+- 8 contributors have changed 286 files with 5,079 additions and 4,490 deletions in 32 commits ([`v7.3.0...v7.3.1`](https://github.com/mdn/browser-compat-data/compare/v7.3.0...v7.3.1))
+- 19,231 total features
+- 1,221 total contributors
+- 5,580 total stargazers
+
 ## [v7.3.0](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.0)
 
 January 30, 2026
