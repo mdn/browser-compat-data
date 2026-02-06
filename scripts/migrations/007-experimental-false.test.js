@@ -3,6 +3,7 @@
 
 /** @import {CompatStatement} from '../../types/types.js' */
 
+import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
 import { fixExperimental } from './007-experimental-false.js';
