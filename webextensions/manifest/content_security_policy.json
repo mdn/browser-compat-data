@@ -36,13 +36,17 @@
                 "version_added": "88",
                 "notes": [
                   "Available for use in Manifest V3 or later.",
-                  "Until Chrome 110, the `object-src` directive was required with a secure source. From Chrome 111, the `object-src` directive is optional."
+                  "Until Chrome 110, the `object-src` directive was required with a secure source. From Chrome 111, the `object-src` directive is optional.",
+                  "From Chrome 110, unpacked extensions can relax the CSP to allow scripts from localhost."
                 ]
               },
               "edge": "mirror",
               "firefox": {
                 "version_added": "72",
-                "notes": "Until Firefox 105, the `object-src` directive was required with a secure source. From Firefox 106, the `object-src` directive is optional."
+                "notes": [
+                  "Until Firefox 105, the `object-src` directive was required with a secure source. From Firefox 106, the `object-src` directive is optional.",
+                  "From Firefox 147, temporarily loaded extensions can relax the CSP to allow scripts from localhost. For more information, see the [Scripts from localhost](https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/Content_Security_Policy#scripts_from_localhost) section of the extension-specific Content Security Policy article."
+                ]
               },
               "firefox_android": "mirror",
               "opera": "mirror",

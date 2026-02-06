@@ -125,7 +125,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/allow",
           "spec_url": "https://html.spec.whatwg.org/multipage/iframe-embed-object.html#dom-iframe-allow",
           "tags": [
-            "web-features:iframe"
+            "web-features:permissions-policy"
           ],
           "support": {
             "chrome": {
@@ -247,6 +247,9 @@
       "browsingTopics": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/browsingTopics",
+          "tags": [
+            "web-features:topics"
+          ],
           "support": {
             "chrome": {
               "version_added": "126"
@@ -269,9 +272,9 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": false,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -440,6 +443,9 @@
       "featurePolicy": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/featurePolicy",
+          "tags": [
+            "web-features:feature-policy"
+          ],
           "support": {
             "chrome": {
               "version_added": "74"
@@ -820,6 +826,7 @@
       },
       "privateToken": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLIFrameElement/privateToken",
           "spec_url": "https://wicg.github.io/trust-token-api/#dom-htmliframeelement-privatetoken",
           "support": {
             "chrome": {
@@ -839,7 +846,9 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
+            "webview_android": {
+              "version_added": false
+            },
             "webview_ios": "mirror"
           },
           "status": {
@@ -1110,9 +1119,9 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -1210,14 +1219,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "135",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.security.trusted_types.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "preview"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",

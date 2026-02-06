@@ -3213,6 +3213,27 @@
                 "safari_ios": "mirror"
               }
             },
+            "cookieStoreId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "141"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            },
             "properties": {
               "__compat": {
                 "support": {
@@ -3365,9 +3386,18 @@
               "firefox": {
                 "version_added": "45"
               },
-              "firefox_android": {
-                "version_added": "54"
-              },
+              "firefox_android": [
+                {
+                  "version_added": "85",
+                  "impl_url": "https://bugzil.la/1583281",
+                  "partial_implementation": true,
+                  "notes": "May only return a subset of the matching tabs open in the Firefox for Android."
+                },
+                {
+                  "version_added": "54",
+                  "version_removed": "79"
+                }
+              ],
               "opera": "mirror",
               "safari": {
                 "version_added": "14"
@@ -3389,9 +3419,15 @@
                 "firefox": {
                   "version_added": "45"
                 },
-                "firefox_android": {
-                  "version_added": "54"
-                },
+                "firefox_android": [
+                  {
+                    "version_added": "85"
+                  },
+                  {
+                    "version_added": "54",
+                    "version_removed": "79"
+                  }
+                ],
                 "opera": "mirror",
                 "safari": {
                   "version_added": "14"
@@ -3413,9 +3449,15 @@
                   "firefox": {
                     "version_added": "45"
                   },
-                  "firefox_android": {
-                    "version_added": "54"
-                  },
+                  "firefox_android": [
+                    {
+                      "version_added": "85"
+                    },
+                    {
+                      "version_added": "54",
+                      "version_removed": "79"
+                    }
+                  ],
                   "opera": "mirror",
                   "safari": {
                     "version_added": "14"
@@ -3457,9 +3499,15 @@
                   "firefox": {
                     "version_added": "45"
                   },
-                  "firefox_android": {
-                    "version_added": "54"
-                  },
+                  "firefox_android": [
+                    {
+                      "version_added": "85"
+                    },
+                    {
+                      "version_added": "54",
+                      "version_removed": "79"
+                    }
+                  ],
                   "opera": "mirror",
                   "safari": {
                     "version_added": "14"
@@ -3504,10 +3552,16 @@
                       "version_added": "97"
                     },
                     {
-                      "version_added": "52",
+                      "version_added": "85",
                       "version_removed": "97",
                       "partial_implementation": true,
-                      "notes": "Before Firefox 97, this property only supported a single string, not an array of strings."
+                      "notes": "Before Firefox 97, this property only supported one string, not an array of strings."
+                    },
+                    {
+                      "version_added": "52",
+                      "version_removed": "79",
+                      "partial_implementation": true,
+                      "notes": "Before Firefox 97, this property only supported one string, not an array of strings."
                     }
                   ],
                   "firefox_android": {
@@ -3533,9 +3587,15 @@
                   "firefox": {
                     "version_added": "45"
                   },
-                  "firefox_android": {
-                    "version_added": "54"
-                  },
+                  "firefox_android": [
+                    {
+                      "version_added": "85"
+                    },
+                    {
+                      "version_added": "54",
+                      "version_removed": "79"
+                    }
+                  ],
                   "opera": "mirror",
                   "safari": {
                     "version_added": "14"
@@ -3556,10 +3616,15 @@
                   "firefox": {
                     "version_added": "57"
                   },
-                  "firefox_android": {
-                    "version_added": "57",
-                    "version_removed": "79"
-                  },
+                  "firefox_android": [
+                    {
+                      "version_added": "85"
+                    },
+                    {
+                      "version_added": "57",
+                      "version_removed": "79"
+                    }
+                  ],
                   "opera": "mirror",
                   "safari": {
                     "version_added": false,
@@ -3635,9 +3700,15 @@
                   "firefox": {
                     "version_added": "45"
                   },
-                  "firefox_android": {
-                    "version_added": "54"
-                  },
+                  "firefox_android": [
+                    {
+                      "version_added": "85"
+                    },
+                    {
+                      "version_added": "54",
+                      "version_removed": "79"
+                    }
+                  ],
                   "opera": "mirror",
                   "safari": {
                     "version_added": "14"
@@ -3660,9 +3731,15 @@
                   "firefox": {
                     "version_added": "45"
                   },
-                  "firefox_android": {
-                    "version_added": "54"
-                  },
+                  "firefox_android": [
+                    {
+                      "version_added": "85"
+                    },
+                    {
+                      "version_added": "54",
+                      "version_removed": "79"
+                    }
+                  ],
                   "opera": "mirror",
                   "safari": {
                     "version_added": "14"
@@ -3683,9 +3760,15 @@
                   "firefox": {
                     "version_added": "45"
                   },
-                  "firefox_android": {
-                    "version_added": "54"
-                  },
+                  "firefox_android": [
+                    {
+                      "version_added": "85"
+                    },
+                    {
+                      "version_added": "54",
+                      "version_removed": "79"
+                    }
+                  ],
                   "opera": "mirror",
                   "safari": {
                     "version_added": "14"
@@ -3729,10 +3812,15 @@
                   "firefox": {
                     "version_added": "45"
                   },
-                  "firefox_android": {
-                    "version_added": "54",
-                    "version_removed": "79"
-                  },
+                  "firefox_android": [
+                    {
+                      "version_added": "85"
+                    },
+                    {
+                      "version_added": "54",
+                      "version_removed": "79"
+                    }
+                  ],
                   "opera": "mirror",
                   "safari": {
                     "version_added": "14"
@@ -3755,9 +3843,15 @@
                   "firefox": {
                     "version_added": "45"
                   },
-                  "firefox_android": {
-                    "version_added": "54"
-                  },
+                  "firefox_android": [
+                    {
+                      "version_added": "85"
+                    },
+                    {
+                      "version_added": "54",
+                      "version_removed": "79"
+                    }
+                  ],
                   "opera": "mirror",
                   "safari": {
                     "version_added": "14"
@@ -3780,9 +3874,15 @@
                   "firefox": {
                     "version_added": "45"
                   },
-                  "firefox_android": {
-                    "version_added": "54"
-                  },
+                  "firefox_android": [
+                    {
+                      "version_added": "85"
+                    },
+                    {
+                      "version_added": "54",
+                      "version_removed": "79"
+                    }
+                  ],
                   "opera": "mirror",
                   "safari": {
                     "version_added": "14"
@@ -3809,13 +3909,20 @@
                       "Before Firefox 56, moz-extension:// URLs were not allowed."
                     ]
                   },
-                  "firefox_android": {
-                    "version_added": "54",
-                    "notes": [
-                      "Fails if the extension doesn't have the `tabs` permission.",
-                      "Before Firefox 56, moz-extension:// URLs were not allowed."
-                    ]
-                  },
+                  "firefox_android": [
+                    {
+                      "version_added": "85",
+                      "notes": "Fails if the extension doesn't have the `tabs` permission."
+                    },
+                    {
+                      "version_added": "54",
+                      "version_removed": "79",
+                      "notes": [
+                        "Fails if the extension doesn't have the `tabs` permission.",
+                        "Before Firefox 56, moz-extension:// URLs were not allowed."
+                      ]
+                    }
+                  ],
                   "opera": "mirror",
                   "safari": {
                     "version_added": "14"
@@ -3838,9 +3945,15 @@
                   "firefox": {
                     "version_added": "45"
                   },
-                  "firefox_android": {
-                    "version_added": "54"
-                  },
+                  "firefox_android": [
+                    {
+                      "version_added": "85"
+                    },
+                    {
+                      "version_added": "54",
+                      "version_removed": "79"
+                    }
+                  ],
                   "opera": "mirror",
                   "safari": {
                     "version_added": "14"
@@ -3863,9 +3976,15 @@
                   "firefox": {
                     "version_added": "45"
                   },
-                  "firefox_android": {
-                    "version_added": "54"
-                  },
+                  "firefox_android": [
+                    {
+                      "version_added": "85"
+                    },
+                    {
+                      "version_added": "54",
+                      "version_removed": "79"
+                    }
+                  ],
                   "opera": "mirror",
                   "safari": {
                     "version_added": "14"

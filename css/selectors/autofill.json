@@ -4,7 +4,7 @@
       "autofill": {
         "__compat": {
           "description": "`:autofill`",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/:autofill",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:autofill",
           "spec_url": [
             "https://html.spec.whatwg.org/multipage/semantics-other.html#selector-autofill",
             "https://drafts.csswg.org/selectors/#selectordef-autofill"
@@ -26,11 +26,15 @@
             "edge": "mirror",
             "firefox": [
               {
-                "version_added": "86"
+                "version_added": "86",
+                "partial_implementation": true,
+                "notes": "The `:autofill` pseudo-class matches autofilled username and password fields, but not other autocompleted fields. See [bug 1923525](https://bugzil.la/1923525)."
               },
               {
                 "prefix": "-webkit-",
-                "version_added": "86"
+                "version_added": "86",
+                "partial_implementation": true,
+                "notes": "The `:-webkit-autofill` pseudo-class matches autofilled username and password fields, but not other autocompleted fields. See [bug 1923525](https://bugzil.la/1923525)."
               }
             ],
             "firefox_android": "mirror",
