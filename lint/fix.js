@@ -4,11 +4,11 @@
 import { readdir, readFile, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { styleText } from 'node:util';
 
 import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import chalk from 'chalk-template';
 
 import dataFolders from '../scripts/lib/data-folders.js';
 
@@ -69,7 +69,9 @@ const load = async (options, ...files) => {
     try {
       fsStats = await stat(file);
     } catch {
-      console.warn(chalk`{yellow File {bold ${file}} doesn't exist!}`);
+      console.warn(
+        styleText('yellow', `File ${styleText('bold', file)} doesn't exist!`),
+      );
       continue;
     }
 
