@@ -58,14 +58,30 @@ const checkImplUrlStatus = async ({
     }
   }
 
-  // Firefox.
-  if (checkFirefox) {
+  const browsers = [
+    {
+      enabled: checkFirefox,
+      shortUrlPrefix: 'https://bugzil.la/',
+      apiUrl: 'https://bugzilla.mozilla.org/rest/bug',
+    },
+    {
+      enabled: checkSafari,
+      shortUrlPrefix: 'https://webkit.org/b/',
+      apiUrl: 'https://bugs.webkit.org/rest/bug',
+    },
+  ];
+
+  for (const { enabled, shortUrlPrefix, apiUrl } of browsers) {
+    if (!enabled) {
+      continue;
+    }
+
     const ids = [...byImplUrl.keys()]
-      .filter((url) => url.startsWith('https://bugzil.la/'))
+      .filter((url) => url.startsWith(shortUrlPrefix))
       .map((url) => url.split('/').at(-1))
       .sort();
 
-    const url = new URL('https://bugzilla.mozilla.org/rest/bug');
+    const url = new URL(apiUrl);
     url.searchParams.set('id', ids.join(','));
     url.searchParams.set(
       'include_fields',
@@ -73,9 +89,7 @@ const checkImplUrlStatus = async ({
     );
 
     const response = await fetch(url.toString(), {
-      headers: {
-        'User-Agent': USER_AGENT,
-      },
+      headers: { 'User-Agent': USER_AGENT },
     });
     const result = await response.json();
     for (const bug of result.bugs) {
@@ -83,37 +97,7 @@ const checkImplUrlStatus = async ({
         continue;
       }
 
-      const impl_url = `https://bugzil.la/${bug.id}`;
-      console.log(`[${bug.resolution}] ${impl_url} - ${bug.summary}`);
-      for (const item of byImplUrl.get(impl_url) ?? []) {
-        console.log(`${item.path} -> ${item.browser}`);
-      }
-      console.log();
-    }
-  }
-
-  // Safari.
-  if (checkSafari) {
-    const firefoxBugIds = [...byImplUrl.keys()]
-      .filter((url) => url.startsWith('https://webkit.org/b/'))
-      .map((url) => url.split('/').at(-1))
-      .sort();
-
-    const url = new URL('https://bugs.webkit.org/rest/bug');
-    url.searchParams.set('id', firefoxBugIds.join(','));
-    url.searchParams.set(
-      'include_fields',
-      ['id', 'summary', 'status', 'resolution'].join(','),
-    );
-
-    const response = await fetch(url.toString());
-    const result = await response.json();
-    for (const bug of result.bugs) {
-      if (bug.status !== 'RESOLVED') {
-        continue;
-      }
-
-      const impl_url = `https://webkit.org/b/${bug.id}`;
+      const impl_url = `${shortUrlPrefix}${bug.id}`;
       console.log(`[${bug.resolution}] ${impl_url} - ${bug.summary}`);
       for (const item of byImplUrl.get(impl_url) ?? []) {
         console.log(`${item.path} -> ${item.browser}`);
