@@ -20,6 +20,36 @@
       ]
     },
 
+    "browser_name": {
+      "type": "string",
+      "description": "Browser key (e.g. 'firefox', 'chrome_android', or 'webview_ios').",
+      "enum": [
+        "bun",
+        "chrome",
+        "chrome_android",
+        "deno",
+        "edge",
+        "firefox",
+        "firefox_android",
+        "ie",
+        "nodejs",
+        "oculus",
+        "opera",
+        "opera_android",
+        "safari",
+        "safari_ios",
+        "samsunginternet_android",
+        "webview_android",
+        "webview_ios"
+      ]
+    },
+
+    "upstream_browser_name": {
+      "type": "string",
+      "description": "Upstream browser key (e.g. 'firefox' or 'chrome_android').",
+      "enum": ["chrome", "chrome_android", "firefox", "safari", "safari_ios"]
+    },
+
     "browser_status": {
       "type": "string",
       "enum": ["retired", "current", "beta", "nightly", "esr", "planned"]
@@ -27,6 +57,9 @@
 
     "browsers": {
       "type": "object",
+      "propertyNames": {
+        "$ref": "#/definitions/browser_name"
+      },
       "additionalProperties": {
         "$ref": "#/definitions/browser_statement"
       },
@@ -36,7 +69,7 @@
         "minProperties": "A browser must be described within the file.",
         "maxProperties": "Each browser JSON file may only describe one browser."
       },
-      "tsType": "Record<BrowserName, BrowserStatement>"
+      "tsType": "{ [browser: BrowserName]:  BrowserStatement }"
     },
 
     "browser_statement": {
