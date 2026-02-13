@@ -2,27 +2,31 @@
   "$schema": "http://json-schema.org/schema",
 
   "definitions": {
-    "meta": {
+    "meta_block": {
       "type": "object",
+      "description": "Metadata of the present BCD data.",
       "properties": {
         "version": {
           "type": "string"
         },
         "timestamp": {
           "type": "string",
-          "format": "date-time",
-          "tsType": "string"
+          "format": "date-time"
         }
-      }
+      },
+      "required": ["version", "timestamp"],
+      "additionalProperties": false
     },
 
     "browser_type": {
       "type": "string",
+      "description": "Platform the browser runs on (e.g. desktop, mobile, XR, or server engine).",
       "enum": ["desktop", "mobile", "xr", "server"]
     },
 
     "browser_engine": {
       "type": "string",
+      "description": "Browser engine.",
       "enum": [
         "Blink",
         "EdgeHTML",
@@ -34,21 +38,52 @@
       ]
     },
 
+    "browser_name": {
+      "type": "string",
+      "description": "Browser key (e.g. 'firefox', 'chrome_android', or 'webview_ios').",
+      "enum": [
+        "bun",
+        "chrome",
+        "chrome_android",
+        "deno",
+        "edge",
+        "firefox",
+        "firefox_android",
+        "ie",
+        "nodejs",
+        "oculus",
+        "opera",
+        "opera_android",
+        "safari",
+        "safari_ios",
+        "samsunginternet_android",
+        "webview_android",
+        "webview_ios"
+      ]
+    },
+
+    "upstream_browser_name": {
+      "type": "string",
+      "description": "Upstream browser key (e.g. 'firefox' or 'chrome_android').",
+      "enum": ["chrome", "chrome_android", "firefox", "safari", "safari_ios"]
+    },
+
     "browser_status": {
       "type": "string",
+      "description": "Lifetime cycle status of a browser release (e.g. 'current', 'retired', 'beta', 'nightly').",
       "enum": ["retired", "current", "beta", "nightly", "esr", "planned"]
     },
 
     "browsers": {
       "type": "object",
+      "description": "Data for each known and tracked browser/runtime.",
+      "propertyNames": {
+        "$ref": "#/definitions/browser_name"
+      },
       "additionalProperties": {
         "$ref": "#/definitions/browser_statement"
       },
-      "minProperties": 1,
-      "errorMessage": {
-        "minProperties": "A browser must be described within the file."
-      },
-      "tsType": "Record<BrowserName, BrowserStatement>"
+      "tsType": "{ [browser: BrowserName]:  BrowserStatement }"
     },
 
     "browser_statement": {
@@ -56,21 +91,17 @@
       "properties": {
         "name": {
           "type": "string",
-          "description": "The browser brand name (e.g. Firefox, Firefox Android, Chrome, etc.)."
+          "description": "Name of the browser (e.g. 'Firefox', 'Firefox Android', 'Chrome', etc.)."
         },
         "type": {
-          "$ref": "#/definitions/browser_type",
-          "description": "The platform the browser runs on (e.g. desktop, mobile, XR, or server engine).",
-          "tsType": "BrowserType"
+          "$ref": "#/definitions/browser_type"
         },
         "upstream": {
-          "type": "string",
-          "description": "The upstream browser this browser derives from (e.g. Firefox Android is derived from Firefox, Edge is derived from Chrome).",
-          "tsType": "BrowserName"
+          "$ref": "#/definitions/upstream_browser_name"
         },
         "preview_name": {
           "type": "string",
-          "description": "The name of the browser's preview channel (e.g. 'Nightly' for Firefox or 'TP' for Safari)."
+          "description": "Name of the browser's preview channel (e.g. 'Nightly' for Firefox or 'TP' for Safari)."
         },
         "pref_url": {
           "type": "string",
@@ -87,8 +118,7 @@
         "releases": {
           "type": "object",
           "additionalProperties": { "$ref": "#/definitions/release_statement" },
-          "description": "The known versions of this browser.",
-          "tsType": "{ [version: string]: ReleaseStatement };"
+          "description": "The known versions of this browser."
         }
       },
       "required": [
@@ -116,14 +146,10 @@
           "description": "A link to the release notes or changelog for a given release."
         },
         "status": {
-          "$ref": "#/definitions/browser_status",
-          "description": "A property indicating where in the lifetime cycle this release is in (e.g. current, retired, beta, nightly).",
-          "tsType": "BrowserStatus"
+          "$ref": "#/definitions/browser_status"
         },
         "engine": {
-          "$ref": "#/definitions/browser_engine",
-          "description": "Name of the browser's underlying engine.",
-          "tsType": "BrowserEngine"
+          "$ref": "#/definitions/browser_engine"
         },
         "engine_version": {
           "type": "string",
@@ -141,29 +167,17 @@
       "type": "object",
       "properties": {
         "version_added": {
-          "description": "A string (indicating which browser version added this feature), or the value false (indicating the feature is not supported).",
-          "anyOf": [
-            {
-              "type": "string",
-              "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$"
-            },
-            {
-              "const": false
-            }
-          ],
-          "tsType": "VersionValue"
+          "$ref": "#/definitions/version_value"
         },
         "version_removed": {
           "description": "A string, indicating which browser version removed this feature.",
           "type": "string",
-          "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$",
-          "tsType": "string"
+          "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$"
         },
         "version_last": {
           "description": "A string, indicating the last browser version that supported this feature. This is automatically generated.",
           "type": "string",
-          "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$",
-          "tsType": "string"
+          "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$"
         },
         "prefix": {
           "type": "string",
@@ -179,24 +193,24 @@
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/flag_statement"
-          },
-          "tsType": "[FlagStatement, ...FlagStatement[]]"
+          }
         },
         "impl_url": {
           "anyOf": [
             {
-              "$ref": "#/definitions/impl_url_value"
+              "type": "string",
+              "format": "uri"
             },
             {
               "type": "array",
               "minItems": 2,
               "items": {
-                "$ref": "#/definitions/impl_url_value"
+                "type": "string",
+                "format": "uri"
               }
             }
           ],
           "description": "An optional changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser.",
-          "tsType": "string | [string, string, ...string[]]",
           "errorMessage": {
             "pattern": "impl_url must be a link to a browser commit or bug URL. URLs must be in shortened form (ex. bugs.chromium.org -> crbug.com). Note: `npm run fix` may resolve these issues."
           }
@@ -218,8 +232,7 @@
                 "type": "string"
               }
             }
-          ],
-          "tsType": "string | [string, string, ...string[]]"
+          ]
         }
       },
       "required": ["version_added"],
@@ -229,9 +242,25 @@
             "properties": { "partial_implementation": { "const": true } }
           },
           "then": { "required": ["notes"] }
+        },
+        "version_removed": {
+          "required": ["version_last"]
         }
       },
       "additionalProperties": false
+    },
+
+    "version_value": {
+      "description": "A string (indicating which browser version added this feature), or the value false (indicating the feature is not supported).",
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$"
+        },
+        {
+          "const": false
+        }
+      ]
     },
 
     "flag_statement": {
@@ -265,12 +294,12 @@
             "$ref": "#/definitions/simple_support_statement"
           }
         }
-      ],
-      "tsType": "SimpleSupportStatement | [SimpleSupportStatement, SimpleSupportStatement, ...SimpleSupportStatement[]]"
+      ]
     },
 
     "status_block": {
       "type": "object",
+      "description": "An object containing information about the stability of the feature.",
       "properties": {
         "experimental": {
           "type": "boolean",
@@ -292,94 +321,67 @@
 
     "support_block": {
       "type": "object",
+      "description": "The data for the support of each browser, containing a `support_statement` object for each browser identifier with information about versions, prefixes, or alternate names, as well as notes.",
       "propertyNames": {
-        "enum": [
-          "bun",
-          "chrome",
-          "chrome_android",
-          "deno",
-          "edge",
-          "firefox",
-          "firefox_android",
-          "ie",
-          "nodejs",
-          "oculus",
-          "opera",
-          "opera_android",
-          "safari",
-          "safari_ios",
-          "samsunginternet_android",
-          "webview_android",
-          "webview_ios"
-        ]
+        "$ref": "#/definitions/browser_name"
       },
       "additionalProperties": {
         "$ref": "#/definitions/support_statement"
       },
-      "tsType": "Partial<Record<BrowserName, SupportStatement>>"
-    },
-
-    "spec_url_value": {
-      "type": "string",
-      "format": "uri",
-      "pattern": "(^https://[^#]+#.+)|(^https://github.com/WebAssembly/.+)|(^https://registry.khronos.org/webgl/extensions/[^/]+/)"
-    },
-
-    "impl_url_value": {
-      "type": "string",
-      "format": "uri",
-      "pattern": "^https://(trac.webkit.org/changeset/|hg.mozilla.org/mozilla-central/rev/|crrev.com/|bugzil.la/|crbug.com/|webkit.org/b/|github.com/GoogleChromeLabs/chromium-bidi/issues/)"
+      "tsType": "{ [browser: BrowserName]:  SupportStatement }"
     },
 
     "compat_statement": {
       "type": "object",
+      "description": "A feature is described by an identifier containing the `__compat` property.\n\nIn other words, identifiers without `__compat` aren't necessarily features, but help to nest the features properly.\n\nWhen an identifier has a `__compat` block, it represents its basic support, indicating that a minimal implementation of a functionality is included.\n\nWhat it represents exactly depends of the evolution of the feature over time, both in terms of specifications and of browser support.",
       "properties": {
         "description": {
           "type": "string",
-          "description": "A string containing a human-readable description of the feature."
+          "description": "Human-readable description of the feature."
         },
         "mdn_url": {
           "type": "string",
           "format": "uri",
           "pattern": "^https://developer\\.mozilla\\.org/docs/",
-          "description": "A URL that points to an MDN reference page documenting the feature. The URL should be language-agnostic."
+          "description": "Link to the MDN reference page documenting the feature."
         },
         "spec_url": {
           "anyOf": [
             {
-              "$ref": "#/definitions/spec_url_value"
+              "type": "string",
+              "format": "uri"
             },
             {
               "type": "array",
               "minItems": 2,
               "items": {
-                "$ref": "#/definitions/spec_url_value"
+                "type": "string",
+                "format": "uri"
               }
             }
           ],
-          "description": "An optional URL or array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier.",
-          "tsType": "string | [string, string, ...string[]]"
+          "description": "An optional URL or array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier."
         },
         "tags": {
           "description": "An optional array of strings allowing to assign tags to the feature.",
           "type": "array",
           "minItems": 1,
-          "tsType": "[string, ...string[]]"
+          "items": {
+            "type": "string"
+          }
         },
         "source_file": {
           "type": "string",
           "description": "The path to the file that defines this feature in browser-compat-data, relative to the repository root. Useful for guiding potential contributors towards the correct file to edit. This is automatically generated at build time and should never manually be specified."
         },
         "support": {
-          "$ref": "#/definitions/support_block",
-          "description": "The data for the support of each browser, containing a `support_statement` object for each browser identifier with information about versions, prefixes, or alternate names, as well as notes."
+          "$ref": "#/definitions/support_block"
         },
         "status": {
-          "$ref": "#/definitions/status_block",
-          "description": "An object containing information about the stability of the feature."
+          "$ref": "#/definitions/status_block"
         }
       },
-      "required": ["support"],
+      "required": ["source_file", "support"],
       "additionalProperties": false
     },
 
@@ -387,11 +389,7 @@
       "type": "object",
       "properties": {
         "__compat": {
-          "type": "object",
-          "$ref": "#/definitions/compat_statement",
-          "required": ["status"],
-          "description": "A feature is described by an identifier containing the `__compat` property.\n\nIn other words, identifiers without `__compat` aren't necessarily features, but help to nest the features properly.\n\nWhen an identifier has a `__compat` block, it represents its basic support, indicating that a minimal implementation of a functionality is included.\n\nWhat it represents exactly depends of the evolution of the feature over time, both in terms of specifications and of browser support.",
-          "tsType": "CompatStatement"
+          "$ref": "#/definitions/compat_statement"
         }
       },
       "patternProperties": {
@@ -400,51 +398,26 @@
       "additionalProperties": false,
       "errorMessage": {
         "additionalProperties": "Feature names can only contain alphanumerical characters or the following symbols: _-$@"
-      },
-      "tsType": "{[key: string]: Identifier} & {__compat?: CompatStatement};"
-    },
-
-    "webextensions_identifier": {
-      "type": "object",
-      "properties": {
-        "__compat": { "$ref": "#/definitions/compat_statement" }
-      },
-      "patternProperties": {
-        "^(?!__compat)[a-zA-Z_0-9-$@]*$": {
-          "$ref": "#/definitions/webextensions_identifier",
-          "tsType": "Identifier"
-        }
-      },
-      "additionalProperties": false,
-      "errorMessage": {
-        "additionalProperties": "Feature names can only contain alphanumerical characters or the following symbols: _-$@"
-      },
-      "tsType": "{[key: string]: Identifier} & {__compat?: CompatStatement}"
+      }
     }
   },
 
-  "title": "PublicDataFile",
+  "title": "CompatData",
   "type": "object",
-  "patternProperties": {
-    "^(?!browsers)(?!__compat)(?!__meta)(?!webextensions)[a-zA-Z_0-9-$@]*$": {
-      "$ref": "#/definitions/identifier"
+  "description": "Shape of the `data.json` file in published BCD releases",
+  "properties": {
+    "__meta": {
+      "$ref": "#/definitions/meta_block"
     },
-    "^__meta$": {
-      "$ref": "#/definitions/meta"
-    },
-    "^browsers$": {
+    "browsers": {
       "$ref": "#/definitions/browsers"
-    },
-    "^webextensions*$": {
-      "$ref": "#/definitions/webextensions_identifier",
-      "tsType": "Identifier"
-    },
-    "^__compat$": {
-      "$ref": "#/definitions/compat_statement"
     }
   },
-  "additionalProperties": false,
-  "errorMessage": {
-    "additionalProperties": "Feature names can only contain alphanumerical characters or the following symbols: _-$@"
-  }
+  "patternProperties": {
+    "^(api|css|html|http|javascript|manifests|mathml|mediatypes|svg|webassembly|webdriver|webextensions)$": {
+      "$ref": "#/definitions/identifier"
+    }
+  },
+  "required": ["__meta", "browsers"],
+  "additionalProperties": false
 }
