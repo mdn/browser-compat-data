@@ -7,10 +7,27 @@ import type {
   CompatData,
   CompatStatement,
   Identifier,
+  SimpleSupportStatement,
   SupportStatement,
-} from '../build/types.js';
+} from './types.js';
+
+export type {
+  Browsers,
+  BrowserName,
+  BrowserStatement,
+  BrowserStatus,
+  FlagStatement,
+  MetaBlock,
+  ReleaseStatement,
+  SimpleSupportStatement,
+  StatusBlock,
+  VersionValue,
+} from './types.js';
+
+export type InternalCompatData = Omit<CompatData, '__meta'>;
 
 export type InternalSupportStatement = SupportStatement | 'mirror';
+export type InternalSimpleSupportStatement = SimpleSupportStatement | 'mirror';
 
 export type InternalSupportBlock = Partial<
   Record<BrowserName, InternalSupportStatement>
@@ -18,10 +35,23 @@ export type InternalSupportBlock = Partial<
 
 export interface InternalCompatStatement extends Omit<
   CompatStatement,
-  'support'
+  'source_file' | 'support'
 > {
   support: InternalSupportBlock;
 }
+
+export type InternalIdentifier =
+  | {
+      __compat: InternalCompatStatement;
+      [k: string]: InternalIdentifier;
+    }
+  | {
+      __compat?: InternalCompatStatement;
+      [k: string]: InternalIdentifier;
+    }
+  | {
+      [k: string]: InternalIdentifier;
+    };
 
 export type DataType =
   | CompatData
@@ -30,7 +60,7 @@ export type DataType =
   | Identifier;
 
 export type InternalDataType =
-  | CompatData
+  | InternalCompatData
   | BrowserStatement
   | InternalCompatStatement
-  | Identifier;
+  | InternalIdentifier;

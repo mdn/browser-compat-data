@@ -3,7 +3,7 @@
 
 import { compareVersions } from 'compare-versions';
 
-/** @import {CompatStatement, SimpleSupportStatement, StatusBlock, BrowserStatement, ReleaseStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement, SimpleSupportStatement, StatusBlock, BrowserStatement, ReleaseStatement} from '../../types/index.js' */
 
 const propOrder = {
   browsers: {
@@ -115,7 +115,7 @@ export const orderProperties = (key, value) => {
     // Order properties for data
     if ('__compat' in value) {
       value.__compat = doOrder(
-        /** @type {CompatStatement} */ (value.__compat),
+        /** @type {InternalCompatStatement} */ (value.__compat),
         propOrder.data.__compat,
       );
 

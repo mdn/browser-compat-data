@@ -9,7 +9,7 @@ import { fixCommonErrorsInCompatStatement } from './common-errors.js';
  * @import { InternalSupportBlock } from '../../types/index.js'
  */
 
-/** @type {{ input: any; output?: InternalSupportBlock }[]} */
+/** @type {{ input: any; output?: Partial<InternalSupportBlock> }[]} */
 const tests = [
   // Replace unwrapped "false".
   {

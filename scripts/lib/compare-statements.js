@@ -3,7 +3,7 @@
 
 import { compareVersions } from 'compare-versions';
 
-/** @import {SimpleSupportStatement} from '../../types/types.js' */
+/** @import {SimpleSupportStatement} from '../../types/index.js' */
 
 /**
  *

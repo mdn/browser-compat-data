@@ -3,14 +3,14 @@
 
 import { walk } from '../../utils/index.js';
 
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement} from '../../types/index.js' */
 
 /**
- * Fixes common errors in CompatStatements.
+ * Fixes common errors in InternalCompatStatements.
  *
  * - Replaces `browser: { version_added: "mirror" }` with `browser: "mirror"`
  * - Wraps `browser: false` with `browser: `{ version_added: false }`
- * @param {CompatStatement} compat The compat statement to fix
+ * @param {Pick<InternalCompatStatement, "support">} compat The compat statement to fix
  * @returns {void}
  */
 export const fixCommonErrorsInCompatStatement = (compat) => {

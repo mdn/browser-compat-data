@@ -3,16 +3,18 @@
 
 import stringify from 'fast-json-stable-stringify';
 
-import bcd from '../../index.js';
+import { browsers } from '../../index.js';
 import { walk } from '../../utils/index.js';
 import mirrorSupport from '../../scripts/build/mirror.js';
 
-/** @import {CompatData, BrowserName} from '../../types/types.js' */
+/** @import {InternalCompatData, BrowserName} from '../../types/index.js' */
 /** @import {InternalSupportStatement, InternalSupportBlock} from '../../types/index.js' */
 
-const downstreamBrowsers = /** @type {(keyof typeof bcd.browsers)[]} */ (
-  Object.keys(bcd.browsers)
-).filter((browser) => bcd.browsers[browser].upstream);
+const downstreamBrowsers = /** @type {BrowserName[]} */ (
+  Object.entries(browsers).flatMap(([browser, stmt]) =>
+    stmt.upstream ? [browser] : [],
+  )
+);
 
 /**
  * Check to see if the statement is equal to the mirrored statement
@@ -45,7 +47,8 @@ export const isMirrorEquivalent = (support, browser) => {
  * @returns {boolean} Whether mirroring is required
  */
 export const isMirrorRequired = (supportData, browser) => {
-  const current = bcd.browsers[browser];
+  const current = browsers[browser];
+
   /** @type {BrowserName | undefined} */
   const upstream = current.upstream;
 
@@ -69,7 +72,7 @@ export const isMirrorRequired = (supportData, browser) => {
 
 /**
  * Set the support statement for each browser to mirror if it matches mirroring
- * @param {CompatData} bcd The compat data to update
+ * @param {InternalCompatData} bcd The compat data to update
  * @returns {void}
  */
 export const mirrorIfEquivalent = (bcd) => {

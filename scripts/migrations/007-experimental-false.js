@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatData, BrowserName, Identifier, ReleaseStatement, SimpleSupportStatement} from '../../types/types.js' */
+/** @import {InternalCompatData, BrowserName, InternalIdentifier, ReleaseStatement, SimpleSupportStatement} from '../../types/index.js' */
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -11,14 +11,13 @@ import esMain from 'es-main';
 
 import { walk } from '../../utils/index.js';
 import { dataFoldersMinusBrowsers } from '../lib/data-folders.js';
-import bcd from '../../index.js';
-const { browsers } = bcd;
+import { browsers } from '../../index.js';
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * Fix the experimental status throughout compatibility data
- * @param {CompatData | Identifier} bcd Parsed BCD object to be updated in place.
+ * @param {InternalCompatData | InternalIdentifier} bcd Parsed BCD object to be updated in place.
  * @returns {void}
  */
 export const fixExperimental = (bcd) => {
@@ -33,7 +32,7 @@ export const fixExperimental = (bcd) => {
     const browserSupport = new Set();
 
     for (const [browser, support] of Object.entries(compat.support)) {
-      if (!support) {
+      if (!support || support === 'mirror') {
         continue;
       }
 
@@ -56,7 +55,7 @@ export const fixExperimental = (bcd) => {
 
     for (const browser of browserSupport) {
       const currentRelease = Object.values(browsers[browser].releases).find(
-        (/** @type {ReleaseStatement} */ r) => r.status === 'current',
+        (r) => r.status === 'current',
       );
       if (!currentRelease) {
         continue;

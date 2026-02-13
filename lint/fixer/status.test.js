@@ -1,17 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatStatement, Identifier} from '../../types/types.js' */
-
-/**
- * @typedef {Record<string, Identifier | CompatStatement>} TestValue
- */
-
 import assert from 'node:assert/strict';
 
 import { fixStatusValue } from './status.js';
 
-/** @type {{ name: string; input: TestValue; output: TestValue }[]} */
+/** @type {{ name: string; input: *; output: * }[]} */
 const tests = [
   {
     name: 'should unset experimental when feature is deprecated',
@@ -102,34 +96,46 @@ const tests = [
     name: 'should set deprecated when parent feature is deprecated',
     input: {
       __compat: {
-        support: {},
+        support: {
+          firefox: {
+            version_added: '1',
+          },
+        },
         status: {
           experimental: false,
           standard_track: true,
           deprecated: true,
         },
       },
-      subfeature: /** @type {Identifier} */ ({
+      subfeature: {
         __compat: {
-          support: {},
+          support: {
+            firefox: {
+              version_added: '1',
+            },
+          },
           status: {
             experimental: false,
             standard_track: true,
             deprecated: false,
           },
         },
-      }),
+      },
     },
     output: {
       __compat: {
-        support: {},
+        support: {
+          firefox: {
+            version_added: '1',
+          },
+        },
         status: {
           experimental: false,
           standard_track: true,
           deprecated: true,
         },
       },
-      subfeature: /** @type {Identifier} */ ({
+      subfeature: {
         __compat: {
           support: {},
           status: {
@@ -138,7 +144,7 @@ const tests = [
             deprecated: true,
           },
         },
-      }),
+      },
     },
   },
 ];
@@ -146,7 +152,7 @@ const tests = [
 describe('fixStatus', () => {
   for (const test of tests) {
     it(test.name, () => {
-      const result = fixStatusValue(/** @type {Identifier} */ (test.input));
+      const result = fixStatusValue(test.input);
 
       assert.deepStrictEqual(result, test.output);
     });

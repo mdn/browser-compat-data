@@ -3,18 +3,16 @@
 
 import { compareVersions, compare } from 'compare-versions';
 
-import bcd from '../../index.js';
+import { browsers } from '../../index.js';
 
 /**
- * @import { BrowserName, SimpleSupportStatement, SupportStatement } from '../../types/types.js'
+ * @import { BrowserName, SimpleSupportStatement, InternalSupportStatement } from '../../types/index.js'
  * @import { InternalSupportBlock } from '../../types/index.js'
  */
 
 /**
  * @typedef {string | [string, string, ...string[]] | null} Notes
  */
-
-const { browsers } = bcd;
 
 const OS_NOTES = [
   'Available on macOS and Windows only.',
@@ -192,10 +190,10 @@ const copyStatement = (data) => {
 
 /**
  * Perform mirroring of data
- * @param {SupportStatement} sourceData The data to mirror from
+ * @param {InternalSupportStatement} sourceData The data to mirror from
  * @param {BrowserName} sourceBrowser The source browser
  * @param {BrowserName} destination The destination browser
- * @returns {SupportStatement} The mirrored support statement
+ * @returns {InternalSupportStatement} The mirrored support statement
  */
 export const bumpSupport = (sourceData, sourceBrowser, destination) => {
   if (Array.isArray(sourceData)) {
@@ -232,6 +230,7 @@ export const bumpSupport = (sourceData, sourceBrowser, destination) => {
   if (
     browsers[sourceBrowser].type === 'desktop' &&
     browsers[destination].type === 'mobile' &&
+    typeof sourceData === 'object' &&
     sourceData.partial_implementation
   ) {
     const notes = Array.isArray(sourceData.notes)
@@ -258,19 +257,27 @@ export const bumpSupport = (sourceData, sourceBrowser, destination) => {
     return { version_added: false };
   }
 
-  if (typeof sourceData.version_added === 'string') {
+  if (
+    typeof sourceData === 'object' &&
+    typeof sourceData.version_added === 'string'
+  ) {
     newData.version_added = getMatchingBrowserVersion(
       destination,
       sourceData.version_added,
     );
   }
 
-  if (newData.version_added === false && sourceData.version_added !== false) {
+  if (
+    newData.version_added === false &&
+    typeof sourceData === 'object' &&
+    sourceData.version_added !== false
+  ) {
     // If the feature is added in an upstream version newer than available in the downstream browser, don't copy notes, etc.
     return { version_added: false };
   }
 
   if (
+    typeof sourceData === 'object' &&
     sourceData.version_removed &&
     typeof sourceData.version_removed === 'string'
   ) {
@@ -293,7 +300,11 @@ export const bumpSupport = (sourceData, sourceBrowser, destination) => {
   }
 
   // Only process notes if they weren't already removed (e.g., for OS-specific limitations)
-  if (sourceData.notes && newData.notes !== undefined) {
+  if (
+    typeof sourceData === 'object' &&
+    sourceData.notes &&
+    newData.notes !== undefined
+  ) {
     const sourceBrowserName =
       sourceBrowser === 'chrome'
         ? '(Google )?Chrome'
@@ -316,7 +327,7 @@ export const bumpSupport = (sourceData, sourceBrowser, destination) => {
  * Perform mirroring for the target browser
  * @param {BrowserName} destination The browser to mirror to
  * @param {InternalSupportBlock} data The data to mirror with
- * @returns {SupportStatement} The mirrored data
+ * @returns {InternalSupportStatement} The mirrored data
  */
 const mirrorSupport = (destination, data) => {
   /** @type {BrowserName | undefined} */

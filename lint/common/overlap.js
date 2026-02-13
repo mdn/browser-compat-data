@@ -9,7 +9,7 @@ import { createStatementGroupKey } from '../utils.js';
 import compareStatements from '../../scripts/lib/compare-statements.js';
 
 /** @import {Logger} from '../utils.js' */
-/** @import {BrowserName, SimpleSupportStatement, SupportStatement} from '../../types/types.js' */
+/** @import {BrowserName, SimpleSupportStatement, InternalSupportStatement} from '../../types/index.js' */
 
 /**
  * Groups statements by group key.
@@ -52,12 +52,12 @@ const formatRange = (support) => {
 
 /**
  * Process data and check to make sure there aren't support statements whose version ranges overlap.
- * @param {SupportStatement} data The data to test
+ * @param {InternalSupportStatement} data The data to test
  * @param {BrowserName} browser The name of the browser
  * @param {object} options The check options
  * @param {Logger} [options.logger] The logger to output errors to
  * @param {boolean} [options.fix] Whether the statements should be fixed (if possible)
- * @returns {SupportStatement} the data (with fixes, if specified)
+ * @returns {InternalSupportStatement} the data (with fixes, if specified)
  */
 export const checkOverlap = (data, browser, { logger, fix = false }) => {
   if (!Array.isArray(data)) {

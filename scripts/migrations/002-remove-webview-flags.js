@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatStatement, SimpleSupportStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement, SimpleSupportStatement} from '../../types/index.js' */
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -18,8 +18,8 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
  * Check to see if the key is __compat and modify the value to remove
  * flags from WebView Android.
  * @param {string} key The key in the object
- * @param {CompatStatement} value The value of the key
- * @returns {CompatStatement} The new value with WebView flags removed
+ * @param {InternalCompatStatement} value The value of the key
+ * @returns {InternalCompatStatement} The new value with WebView flags removed
  */
 export const removeWebViewFlags = (key, value) => {
   if (key === '__compat') {
@@ -43,7 +43,10 @@ export const removeWebViewFlags = (key, value) => {
               result
             );
         }
-      } else if (value.support.webview_android.flags !== undefined) {
+      } else if (
+        typeof value.support.webview_android === 'object' &&
+        value.support.webview_android.flags !== undefined
+      ) {
         value.support.webview_android = { version_added: false };
       }
     }

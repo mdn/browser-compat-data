@@ -4,7 +4,7 @@
 import { platform } from 'node:os';
 import { styleText } from 'node:util';
 
-/** @import {SimpleSupportStatement} from '../types/types.js' */
+/** @import {SimpleSupportStatement} from '../types/index.js' */
 /** @import {Linter, LinterData, LinterMessage, LinterScope} from './types.js' */
 
 /** @type {Readonly<Record<string, string>>} */

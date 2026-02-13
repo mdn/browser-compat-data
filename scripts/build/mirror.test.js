@@ -2,13 +2,13 @@
  * See LICENSE file for more information. */
 
 /**
- * @import { BrowserName } from '../../types/types.js'
+ * @import { BrowserName } from '../../types/index.js'
  * @import { InternalSupportBlock } from '../../types/index.js'
  */
 
 import assert from 'node:assert/strict';
 
-import bcd from '../../index.js';
+import { browsers } from '../../index.js';
 
 import mirrorSupport, { isOSLimitation } from './mirror.js';
 
@@ -153,7 +153,7 @@ describe('mirror', () => {
 
       for (const [browser, versionMap] of Object.entries(mappings)) {
         describe(browser, () => {
-          const upstream = bcd.browsers[browser].upstream;
+          const upstream = browsers[browser].upstream;
           for (const pair of versionMap) {
             it(`${pair[0]} => ${pair[1]}`, () => {
               const support = {

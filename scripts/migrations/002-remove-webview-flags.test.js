@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {Identifier} from '../../types/types.js' */
+/** @import {InternalIdentifier} from '../../types/index.js' */
 
 import assert from 'node:assert/strict';
 
@@ -9,7 +9,7 @@ import { removeWebViewFlags } from './002-remove-webview-flags.js';
 
 /**
  * Objects of each test, with input and expected output
- * @type {{ input: Identifier; output: Identifier }[]}
+ * @type {{ input: InternalIdentifier; output: InternalIdentifier }[]}
  */
 const tests = /** @type {*} */ ([
   {

@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatData, SimpleSupportStatement} from '../types/types.js' */
+/** @import {InternalCompatData, SimpleSupportStatement} from '../types/index.js' */
 
 /**
  * @typedef {'html' | 'plain'} Format
@@ -281,9 +281,9 @@ const printDiffs = (base, head, options) => {
   /** @type {Map<string, Set<string>>} */
   const groups = new Map();
 
-  /** @type {CompatData} */
+  /** @type {InternalCompatData} */
   const baseContents = /** @type {*} */ ({});
-  /** @type {CompatData} */
+  /** @type {InternalCompatData} */
   const headContents = /** @type {*} */ ({});
 
   for (const status of getGitDiffStatuses(base, head)) {
@@ -296,12 +296,12 @@ const printDiffs = (base, head, options) => {
       continue;
     }
 
-    const baseFileContents = /** @type {CompatData} */ (
+    const baseFileContents = /** @type {InternalCompatData} */ (
       status.value !== 'A'
         ? JSON.parse(getFileContent(base, status.basePath))
         : {}
     );
-    const headFileContents = /** @type {CompatData} */ (
+    const headFileContents = /** @type {InternalCompatData} */ (
       status.value !== 'D'
         ? JSON.parse(getFileContent(head, status.headPath))
         : {}

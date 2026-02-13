@@ -4,12 +4,12 @@
 import { checkExperimental } from '../linter/test-status.js';
 import walk from '../../utils/walk.js';
 
-/** @import {Identifier} from '../../types/types.js' */
+/** @import {InternalCompatStatement, InternalIdentifier} from '../../types/index.js' */
 
 /**
  * Fix the status values
- * @param {Identifier} value The value to update
- * @returns {Identifier} The updated value
+ * @param {InternalIdentifier} value The value to update
+ * @returns {InternalIdentifier} The updated value
  */
 export const fixStatusValue = (value) => {
   const compat = value?.__compat;
@@ -22,7 +22,7 @@ export const fixStatusValue = (value) => {
       compat.status.standard_track = true;
     }
 
-    if (!checkExperimental(compat)) {
+    if (!checkExperimental(/** @type {InternalCompatStatement} */ (compat))) {
       compat.status.experimental = false;
     }
 
@@ -71,7 +71,7 @@ const fixStatusFromFile = (filename, actual) => {
   return JSON.stringify(
     JSON.parse(
       actual,
-      (/** @type {string} */ _key, /** @type {Identifier} */ value) =>
+      (/** @type {string} */ _key, /** @type {InternalIdentifier} */ value) =>
         fixStatusValue(value),
     ),
     null,

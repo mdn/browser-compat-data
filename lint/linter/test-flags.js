@@ -7,7 +7,7 @@ import { compare } from 'compare-versions';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {CompatStatement, BrowserName, SupportStatement, SimpleSupportStatement, FlagStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement, BrowserName, InternalSupportStatement, SimpleSupportStatement, FlagStatement} from '../../types/index.js' */
 
 /**
  * @typedef {object} FlagError
@@ -83,7 +83,7 @@ export const isIrrelevantFlagData = (statement, basicSupport) => {
 };
 /**
  * Process data and check for any irrelevant flag data
- * @param {CompatStatement} data The data to test
+ * @param {InternalCompatStatement} data The data to test
  * @returns {FlagError[]} The errors found
  */
 export const processData = (data) => {
@@ -93,7 +93,7 @@ export const processData = (data) => {
   for (const [
     browser,
     supportData,
-  ] of /** @type {[BrowserName, SupportStatement][]} */ (
+  ] of /** @type {[BrowserName, InternalSupportStatement][]} */ (
     Object.entries(data.support)
   )) {
     if (typeof supportData === 'string') {
@@ -130,7 +130,7 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data }) => {
-    const errors = processData(/** @type {CompatStatement} */ (data));
+    const errors = processData(/** @type {InternalCompatStatement} */ (data));
 
     for (const error of errors) {
       logger.error(

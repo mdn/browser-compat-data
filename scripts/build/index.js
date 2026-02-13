@@ -20,8 +20,8 @@ import bcd from '../../index.js';
 import mirrorSupport from './mirror.js';
 
 /**
- * @import { InternalSupportStatement } from '../../types/index.js'
- * @import { BrowserName, CompatData, Identifier, MetaBlock, VersionValue } from '../../types/types.js'
+ * @import { CompatData } from '../../types/types.js'
+ * @import { BrowserName, InternalCompatData, InternalIdentifier, InternalSupportStatement, MetaBlock, VersionValue } from '../../types/index.js'
  * @import { WalkOutput } from '../../utils/walk.js'
  */
 
@@ -149,7 +149,7 @@ export const addVersionLast = (feature) => {
  * @returns {void}
  */
 export const transformMD = (feature) => {
-  const featureData = /** @type {Identifier} */ (feature.data);
+  const featureData = /** @type {InternalIdentifier} */ (feature.data);
   if (
     featureData.__compat &&
     'description' in featureData.__compat &&
@@ -238,7 +238,7 @@ export const createDataBundle = async () => {
 
 /**
  * Validates the given data against the schema.
- * @param {CompatData} data - The data to validate.
+ * @param {InternalCompatData} data - The data to validate.
  */
 const validate = (data) => {
   const ajv = createAjv();
@@ -293,9 +293,9 @@ const writeTypeScript = async () => {
   const content = `/* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { CompatData } from "./types.js";
+import { InternalCompatData } from "./types.js";
 
-declare var bcd: CompatData;
+declare var bcd: InternalCompatData;
 export default bcd;
 export * from "./types.js";`;
 

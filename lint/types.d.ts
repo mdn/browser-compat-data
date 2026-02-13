@@ -2,7 +2,7 @@
  * See LICENSE file for more information. */
 
 import { InternalDataType } from '../types/index.js';
-import { BrowserName } from '../types/types.js';
+import { BrowserName } from '../types/index.js';
 
 import { Logger } from './utils.js';
 

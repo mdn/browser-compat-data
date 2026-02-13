@@ -5,12 +5,11 @@ import { styleText } from 'node:util';
 
 import { compare, validate } from 'compare-versions';
 
-import bcd from '../../index.js';
-const { browsers } = bcd;
+import { browsers } from '../../index.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {BrowserName, CompatStatement, SimpleSupportStatement, VersionValue} from '../../types/types.js' */
+/** @import {BrowserName, InternalCompatStatement, SimpleSupportStatement, VersionValue} from '../../types/index.js' */
 /** @import {InternalSupportBlock, InternalSupportStatement} from '../../types/index.js' */
 
 /* The latest date a range's release can correspond to */
@@ -205,7 +204,7 @@ export default {
    */
   check: (logger, { data, path: { category } }) => {
     checkVersions(
-      /** @type {CompatStatement} */ (data).support,
+      /** @type {InternalCompatStatement} */ (data).support,
       category,
       logger,
     );
