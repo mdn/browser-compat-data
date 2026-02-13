@@ -126,7 +126,7 @@
         },
         { "const": "mirror" }
       ],
-      "tsType": "SimpleSupportStatement | [SimpleSupportStatement, SimpleSupportStatement, ...SimpleSupportStatement[]]"
+      "tsType": "InternalSimpleSupportStatement | [InternalSimpleSupportStatement, InternalSimpleSupportStatement, ...InternalSimpleSupportStatement[]]"
     },
 
     "status_block": {
@@ -176,7 +176,7 @@
       "additionalProperties": {
         "$ref": "#/definitions/support_statement"
       },
-      "tsType": "Partial<Record<BrowserName, SupportStatement>>"
+      "tsType": "Partial<Record<BrowserName, InternalSupportStatement>>"
     },
 
     "spec_url_value": {
