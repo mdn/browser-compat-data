@@ -96,11 +96,7 @@ const tests = [
     name: 'should set deprecated when parent feature is deprecated',
     input: {
       __compat: {
-        support: {
-          firefox: {
-            version_added: '1',
-          },
-        },
+        support: {},
         status: {
           experimental: false,
           standard_track: true,
@@ -109,11 +105,7 @@ const tests = [
       },
       subfeature: {
         __compat: {
-          support: {
-            firefox: {
-              version_added: '1',
-            },
-          },
+          support: {},
           status: {
             experimental: false,
             standard_track: true,
@@ -124,11 +116,7 @@ const tests = [
     },
     output: {
       __compat: {
-        support: {
-          firefox: {
-            version_added: '1',
-          },
-        },
+        support: {},
         status: {
           experimental: false,
           standard_track: true,
