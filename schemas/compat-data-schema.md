@@ -22,6 +22,8 @@ Compatibility data is organized in top-level directories for each broad area cov
 
 - [mathml/](../mathml) contains data for [MathML](https://developer.mozilla.org/docs/Web/MathML) elements, attributes, and global attributes.
 
+- [mediatypes/](../mediatypes) contains data for [Media types](https://developer.mozilla.org/docs/Web/HTTP/Guides/MIME_types).
+
 - [svg/](../svg) contains data for [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) elements, attributes, and global attributes.
 
 - [webdriver/](../webdriver) contains data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) commands.
@@ -74,7 +76,7 @@ When an identifier has a `__compat` block, it represents its basic support, indi
 
 To add a sub-feature, a new identifier is added below the main feature at the level of a `__compat` object (see the sub-features "start" and "end" above). The same could be done for sub-sub-features. There is no depth limit.
 
-See [Data guidelines](../docs/data-guidelines/index.md) for more information about feature naming conventions and other best practices.
+See [Data guidelines](../docs/data-guidelines/README.md) for more information about feature naming conventions and other best practices.
 
 ### The `__compat` object
 
@@ -195,6 +197,7 @@ The `__compat` object consists of the following:
 
 The currently accepted browser identifiers should be declared in alphabetical order:
 
+- `bun`, Bun JavaScript runtime built on WebKit
 - `chrome`, Google Chrome (on desktops)
 - `chrome_android`, Google Chrome (on Android)
 - `deno`, Deno JavaScript runtime built on Chrome's V8 JavaScript engine
@@ -460,7 +463,7 @@ Notes may be formatted in Markdown. Only links, bold, italics, codeblocks, and `
 
 #### `partial_implementation`
 
-A `boolean` value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, it is [required](../docs/data-guidelines/index.md#partial_implementation-requires-a-note) that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard).
+A `boolean` value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, it is [required](../docs/data-guidelines/README.md#partial_implementation-requires-a-note) that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard).
 
 ```json
 {
@@ -474,11 +477,21 @@ A `boolean` value indicating whether or not the implementation of the sub-featur
 
 The mandatory status property contains information about stability of the feature. It is an object named `status` and has three mandatory properties:
 
-- `experimental`: a `boolean` value.
+- `experimental` (DEPRECATED): a `boolean` value.
 
-  If `experimental` is `true`, it means the feature was implemented in only one browser engine and was implemented recently. It also means that Web developers _should not_ rely on the feature's continued existence in its current (or potentially any) form in future browser releases.
+  **Warning**: The `experimental` property is deprecated.
+  Prefer using a more well-defined stability calculations, such as Baseline, instead.
 
-  If `experimental` is `false`, it means the feature was implemented in multiple browser engines, or the feature had been implemented over two years ago in any one browser engine.
+  If `experimental` is `true`, then it usually means that the feature is implemented in only one browser engine.
+
+  If `experimental` is `false`, then it usually means that the feature is implemented in two or more browser engines.
+  Sometimes a `false` value means that a single-implementer feature is not expected to change.
+
+  The `experimental` field does not have a precise definition.
+  It was created to support the migration of data to BCD from MDN wiki pages.
+  The meaning of `experimental` has evolved, reflecting MDN and BCD's conventions over time.
+
+  See the [_Setting `experimental`_ data guideline](/docs/data-guidelines/README.md#setting-experimental) for more information on how BCD's maintainers set this value today.
 
 - `standard_track`: a `boolean` value.
 

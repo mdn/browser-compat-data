@@ -10,7 +10,11 @@
         "support": {
           "chrome": {
             "version_added": "113",
-            "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+            "partial_implementation": true,
+            "notes": [
+              "Supported on ChromeOS, macOS, and Windows.",
+              "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+            ]
           },
           "chrome_android": {
             "version_added": "121"
@@ -34,7 +38,14 @@
           "firefox": {
             "version_added": "141",
             "partial_implementation": true,
-            "notes": "Currently supported on Windows only, in all contexts except for service workers."
+            "notes": [
+              "Supports all contexts except service workers. See [bug 1942431](https://bugzil.la/1942431).",
+              "Supports Windows since Firefox 141. See [bug 1972486](https://bugzil.la/1972486).",
+              "Supports macOS Tahoe on Apple silicon since Firefox 145. See [bug 1992212](https://bugzil.la/1992212).",
+              "Supports older macOS versions on Apple silicon since Firefox 147. See [bug 1993341](https://bugzil.la/1993341).",
+              "Does not support macOS on Intel CPUs. See [bug 2004105](https://bugzil.la/2004105).",
+              "Does not support Linux. See [bug 2006676](https://bugzil.la/2006676)."
+            ]
           },
           "firefox_android": {
             "version_added": false
@@ -66,7 +77,11 @@
           "support": {
             "chrome": {
               "version_added": "113",
-              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              "partial_implementation": true,
+              "notes": [
+                "Supported on ChromeOS, macOS, and Windows.",
+                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+              ]
             },
             "chrome_android": {
               "version_added": "121"
@@ -90,7 +105,14 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only, in all contexts except for service workers."
+              "notes": [
+                "Supports all contexts except service workers. See [bug 1942431](https://bugzil.la/1942431).",
+                "Supports Windows since Firefox 141. See [bug 1972486](https://bugzil.la/1972486).",
+                "Supports macOS Tahoe on Apple silicon since Firefox 145. See [bug 1992212](https://bugzil.la/1992212).",
+                "Supports older macOS versions on Apple silicon since Firefox 147. See [bug 1993341](https://bugzil.la/1993341).",
+                "Does not support macOS on Intel CPUs. See [bug 2004105](https://bugzil.la/2004105).",
+                "Does not support Linux. See [bug 2006676](https://bugzil.la/2006676)."
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -122,11 +144,13 @@
             "support": {
               "chrome": {
                 "version_added": "121",
-                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+                "partial_implementation": true,
+                "notes": [
+                  "Supported on ChromeOS, macOS, and Windows.",
+                  "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+                ]
               },
-              "chrome_android": {
-                "version_added": "121"
-              },
+              "chrome_android": "mirror",
               "deno": {
                 "version_added": false
               },
@@ -164,7 +188,11 @@
           "support": {
             "chrome": {
               "version_added": "113",
-              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              "partial_implementation": true,
+              "notes": [
+                "Supported on ChromeOS, macOS, and Windows.",
+                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+              ]
             },
             "chrome_android": {
               "version_added": "121"
@@ -188,7 +216,14 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only, in all contexts except for service workers."
+              "notes": [
+                "Supports all contexts except service workers. See [bug 1942431](https://bugzil.la/1942431).",
+                "Supports Windows since Firefox 141. See [bug 1972486](https://bugzil.la/1972486).",
+                "Supports macOS Tahoe on Apple silicon since Firefox 145. See [bug 1992212](https://bugzil.la/1992212).",
+                "Supports older macOS versions on Apple silicon since Firefox 147. See [bug 1993341](https://bugzil.la/1993341).",
+                "Does not support macOS on Intel CPUs. See [bug 2004105](https://bugzil.la/2004105).",
+                "Does not support Linux. See [bug 2006676](https://bugzil.la/2006676)."
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -210,6 +245,48 @@
             "deprecated": false
           }
         },
+        "accepts_GPUTexture_resources": {
+          "__compat": {
+            "description": "Accepts `GPUTexture` resources instead of `GPUTextureView` (provided default view is desired).",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "140",
+                "partial_implementation": true,
+                "notes": [
+                  "Supported on ChromeOS, macOS, and Windows.",
+                  "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+                ]
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "depthSlice_option": {
           "__compat": {
             "description": "color attachment `depthSlice` option",
@@ -220,11 +297,13 @@
             "support": {
               "chrome": {
                 "version_added": "125",
-                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+                "partial_implementation": true,
+                "notes": [
+                  "Supported on ChromeOS, macOS, and Windows.",
+                  "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+                ]
               },
-              "chrome_android": {
-                "version_added": "125"
-              },
+              "chrome_android": "mirror",
               "deno": {
                 "version_added": false
               },
@@ -260,11 +339,13 @@
             "support": {
               "chrome": {
                 "version_added": "123",
-                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+                "partial_implementation": true,
+                "notes": [
+                  "Supported on ChromeOS, macOS, and Windows.",
+                  "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+                ]
               },
-              "chrome_android": {
-                "version_added": "123"
-              },
+              "chrome_android": "mirror",
               "deno": {
                 "version_added": false
               },
@@ -301,11 +382,13 @@
             "support": {
               "chrome": {
                 "version_added": "121",
-                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+                "partial_implementation": true,
+                "notes": [
+                  "Supported on ChromeOS, macOS, and Windows.",
+                  "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+                ]
               },
-              "chrome_android": {
-                "version_added": "121"
-              },
+              "chrome_android": "mirror",
               "deno": {
                 "version_added": false
               },
@@ -343,7 +426,11 @@
           "support": {
             "chrome": {
               "version_added": "113",
-              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              "partial_implementation": true,
+              "notes": [
+                "Supported on ChromeOS, macOS, and Windows.",
+                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+              ]
             },
             "chrome_android": {
               "version_added": "121"
@@ -367,7 +454,14 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only, in all contexts except for service workers."
+              "notes": [
+                "Supports all contexts except service workers. See [bug 1942431](https://bugzil.la/1942431).",
+                "Supports Windows since Firefox 141. See [bug 1972486](https://bugzil.la/1972486).",
+                "Supports macOS Tahoe on Apple silicon since Firefox 145. See [bug 1992212](https://bugzil.la/1992212).",
+                "Supports older macOS versions on Apple silicon since Firefox 147. See [bug 1993341](https://bugzil.la/1993341).",
+                "Does not support macOS on Intel CPUs. See [bug 2004105](https://bugzil.la/2004105).",
+                "Does not support Linux. See [bug 2006676](https://bugzil.la/2006676)."
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -400,7 +494,11 @@
           "support": {
             "chrome": {
               "version_added": "113",
-              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              "partial_implementation": true,
+              "notes": [
+                "Supported on ChromeOS, macOS, and Windows.",
+                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+              ]
             },
             "chrome_android": {
               "version_added": "121"
@@ -424,7 +522,14 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only, in all contexts except for service workers."
+              "notes": [
+                "Supports all contexts except service workers. See [bug 1942431](https://bugzil.la/1942431).",
+                "Supports Windows since Firefox 141. See [bug 1972486](https://bugzil.la/1972486).",
+                "Supports macOS Tahoe on Apple silicon since Firefox 145. See [bug 1992212](https://bugzil.la/1992212).",
+                "Supports older macOS versions on Apple silicon since Firefox 147. See [bug 1993341](https://bugzil.la/1993341).",
+                "Does not support macOS on Intel CPUs. See [bug 2004105](https://bugzil.la/2004105).",
+                "Does not support Linux. See [bug 2006676](https://bugzil.la/2006676)."
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -455,11 +560,13 @@
             "support": {
               "chrome": {
                 "version_added": "137",
-                "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+                "partial_implementation": true,
+                "notes": [
+                  "Supported on ChromeOS, macOS, and Windows.",
+                  "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+                ]
               },
-              "chrome_android": {
-                "version_added": "137"
-              },
+              "chrome_android": "mirror",
               "deno": {
                 "version_added": false
               },
@@ -497,7 +604,11 @@
           "support": {
             "chrome": {
               "version_added": "113",
-              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              "partial_implementation": true,
+              "notes": [
+                "Supported on ChromeOS, macOS, and Windows.",
+                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+              ]
             },
             "chrome_android": {
               "version_added": "121"
@@ -521,7 +632,14 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only, in all contexts except for service workers."
+              "notes": [
+                "Supports all contexts except service workers. See [bug 1942431](https://bugzil.la/1942431).",
+                "Supports Windows since Firefox 141. See [bug 1972486](https://bugzil.la/1972486).",
+                "Supports macOS Tahoe on Apple silicon since Firefox 145. See [bug 1992212](https://bugzil.la/1992212).",
+                "Supports older macOS versions on Apple silicon since Firefox 147. See [bug 1993341](https://bugzil.la/1993341).",
+                "Does not support macOS on Intel CPUs. See [bug 2004105](https://bugzil.la/2004105).",
+                "Does not support Linux. See [bug 2006676](https://bugzil.la/2006676)."
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -554,7 +672,11 @@
           "support": {
             "chrome": {
               "version_added": "113",
-              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              "partial_implementation": true,
+              "notes": [
+                "Supported on ChromeOS, macOS, and Windows.",
+                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+              ]
             },
             "chrome_android": {
               "version_added": "121"
@@ -578,7 +700,14 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only, in all contexts except for service workers."
+              "notes": [
+                "Supports all contexts except service workers. See [bug 1942431](https://bugzil.la/1942431).",
+                "Supports Windows since Firefox 141. See [bug 1972486](https://bugzil.la/1972486).",
+                "Supports macOS Tahoe on Apple silicon since Firefox 145. See [bug 1992212](https://bugzil.la/1992212).",
+                "Supports older macOS versions on Apple silicon since Firefox 147. See [bug 1993341](https://bugzil.la/1993341).",
+                "Does not support macOS on Intel CPUs. See [bug 2004105](https://bugzil.la/2004105).",
+                "Does not support Linux. See [bug 2006676](https://bugzil.la/2006676)."
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -611,7 +740,11 @@
           "support": {
             "chrome": {
               "version_added": "113",
-              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              "partial_implementation": true,
+              "notes": [
+                "Supported on ChromeOS, macOS, and Windows.",
+                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+              ]
             },
             "chrome_android": {
               "version_added": "121"
@@ -635,7 +768,14 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only, in all contexts except for service workers."
+              "notes": [
+                "Supports all contexts except service workers. See [bug 1942431](https://bugzil.la/1942431).",
+                "Supports Windows since Firefox 141. See [bug 1972486](https://bugzil.la/1972486).",
+                "Supports macOS Tahoe on Apple silicon since Firefox 145. See [bug 1992212](https://bugzil.la/1992212).",
+                "Supports older macOS versions on Apple silicon since Firefox 147. See [bug 1993341](https://bugzil.la/1993341).",
+                "Does not support macOS on Intel CPUs. See [bug 2004105](https://bugzil.la/2004105).",
+                "Does not support Linux. See [bug 2006676](https://bugzil.la/2006676)."
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -668,7 +808,11 @@
           "support": {
             "chrome": {
               "version_added": "113",
-              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              "partial_implementation": true,
+              "notes": [
+                "Supported on ChromeOS, macOS, and Windows.",
+                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+              ]
             },
             "chrome_android": {
               "version_added": "121"
@@ -692,7 +836,14 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only, in all contexts except for service workers."
+              "notes": [
+                "Supports all contexts except service workers. See [bug 1942431](https://bugzil.la/1942431).",
+                "Supports Windows since Firefox 141. See [bug 1972486](https://bugzil.la/1972486).",
+                "Supports macOS Tahoe on Apple silicon since Firefox 145. See [bug 1992212](https://bugzil.la/1992212).",
+                "Supports older macOS versions on Apple silicon since Firefox 147. See [bug 1993341](https://bugzil.la/1993341).",
+                "Does not support macOS on Intel CPUs. See [bug 2004105](https://bugzil.la/2004105).",
+                "Does not support Linux. See [bug 2006676](https://bugzil.la/2006676)."
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -725,7 +876,11 @@
           "support": {
             "chrome": {
               "version_added": "113",
-              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              "partial_implementation": true,
+              "notes": [
+                "Supported on ChromeOS, macOS, and Windows.",
+                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+              ]
             },
             "chrome_android": {
               "version_added": "121"
@@ -749,7 +904,14 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only, in all contexts except for service workers."
+              "notes": [
+                "Supports all contexts except service workers. See [bug 1942431](https://bugzil.la/1942431).",
+                "Supports Windows since Firefox 141. See [bug 1972486](https://bugzil.la/1972486).",
+                "Supports macOS Tahoe on Apple silicon since Firefox 145. See [bug 1992212](https://bugzil.la/1992212).",
+                "Supports older macOS versions on Apple silicon since Firefox 147. See [bug 1993341](https://bugzil.la/1993341).",
+                "Does not support macOS on Intel CPUs. See [bug 2004105](https://bugzil.la/2004105).",
+                "Does not support Linux. See [bug 2006676](https://bugzil.la/2006676)."
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -782,7 +944,11 @@
           "support": {
             "chrome": {
               "version_added": "113",
-              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              "partial_implementation": true,
+              "notes": [
+                "Supported on ChromeOS, macOS, and Windows.",
+                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+              ]
             },
             "chrome_android": {
               "version_added": "121"
@@ -806,7 +972,14 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only, in all contexts except for service workers."
+              "notes": [
+                "Supports all contexts except service workers. See [bug 1942431](https://bugzil.la/1942431).",
+                "Supports Windows since Firefox 141. See [bug 1972486](https://bugzil.la/1972486).",
+                "Supports macOS Tahoe on Apple silicon since Firefox 145. See [bug 1992212](https://bugzil.la/1992212).",
+                "Supports older macOS versions on Apple silicon since Firefox 147. See [bug 1993341](https://bugzil.la/1993341).",
+                "Does not support macOS on Intel CPUs. See [bug 2004105](https://bugzil.la/2004105).",
+                "Does not support Linux. See [bug 2006676](https://bugzil.la/2006676)."
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -839,7 +1012,11 @@
           "support": {
             "chrome": {
               "version_added": "113",
-              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              "partial_implementation": true,
+              "notes": [
+                "Supported on ChromeOS, macOS, and Windows.",
+                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+              ]
             },
             "chrome_android": {
               "version_added": "121"
@@ -863,7 +1040,14 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only, in all contexts except for service workers."
+              "notes": [
+                "Supports all contexts except service workers. See [bug 1942431](https://bugzil.la/1942431).",
+                "Supports Windows since Firefox 141. See [bug 1972486](https://bugzil.la/1972486).",
+                "Supports macOS Tahoe on Apple silicon since Firefox 145. See [bug 1992212](https://bugzil.la/1992212).",
+                "Supports older macOS versions on Apple silicon since Firefox 147. See [bug 1993341](https://bugzil.la/1993341).",
+                "Does not support macOS on Intel CPUs. See [bug 2004105](https://bugzil.la/2004105).",
+                "Does not support Linux. See [bug 2006676](https://bugzil.la/2006676)."
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -896,7 +1080,11 @@
           "support": {
             "chrome": {
               "version_added": "113",
-              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              "partial_implementation": true,
+              "notes": [
+                "Supported on ChromeOS, macOS, and Windows.",
+                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+              ]
             },
             "chrome_android": {
               "version_added": "121"
@@ -920,7 +1108,14 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only, in all contexts except for service workers."
+              "notes": [
+                "Supports all contexts except service workers. See [bug 1942431](https://bugzil.la/1942431).",
+                "Supports Windows since Firefox 141. See [bug 1972486](https://bugzil.la/1972486).",
+                "Supports macOS Tahoe on Apple silicon since Firefox 145. See [bug 1992212](https://bugzil.la/1992212).",
+                "Supports older macOS versions on Apple silicon since Firefox 147. See [bug 1993341](https://bugzil.la/1993341).",
+                "Does not support macOS on Intel CPUs. See [bug 2004105](https://bugzil.la/2004105).",
+                "Does not support Linux. See [bug 2006676](https://bugzil.la/2006676)."
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -953,7 +1148,11 @@
           "support": {
             "chrome": {
               "version_added": "113",
-              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              "partial_implementation": true,
+              "notes": [
+                "Supported on ChromeOS, macOS, and Windows.",
+                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+              ]
             },
             "chrome_android": {
               "version_added": "121"
@@ -977,7 +1176,14 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only, in all contexts except for service workers."
+              "notes": [
+                "Supports all contexts except service workers. See [bug 1942431](https://bugzil.la/1942431).",
+                "Supports Windows since Firefox 141. See [bug 1972486](https://bugzil.la/1972486).",
+                "Supports macOS Tahoe on Apple silicon since Firefox 145. See [bug 1992212](https://bugzil.la/1992212).",
+                "Supports older macOS versions on Apple silicon since Firefox 147. See [bug 1993341](https://bugzil.la/1993341).",
+                "Does not support macOS on Intel CPUs. See [bug 2004105](https://bugzil.la/2004105).",
+                "Does not support Linux. See [bug 2006676](https://bugzil.la/2006676)."
+              ]
             },
             "firefox_android": {
               "version_added": false
@@ -1030,7 +1236,14 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only, in all contexts except for service workers."
+              "notes": [
+                "Supports all contexts except service workers. See [bug 1942431](https://bugzil.la/1942431).",
+                "Supports Windows since Firefox 141. See [bug 1972486](https://bugzil.la/1972486).",
+                "Supports macOS Tahoe on Apple silicon since Firefox 145. See [bug 1992212](https://bugzil.la/1992212).",
+                "Supports older macOS versions on Apple silicon since Firefox 147. See [bug 1993341](https://bugzil.la/1993341).",
+                "Does not support macOS on Intel CPUs. See [bug 2004105](https://bugzil.la/2004105).",
+                "Does not support Linux. See [bug 2006676](https://bugzil.la/2006676)."
+              ]
             },
             "firefox_android": {
               "version_added": false

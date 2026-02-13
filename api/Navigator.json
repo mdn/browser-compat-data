@@ -8,6 +8,9 @@
           "web-features:navigator"
         ],
         "support": {
+          "bun": {
+            "version_added": "1.0.0"
+          },
           "chrome": {
             "version_added": "1"
           },
@@ -231,7 +234,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         }
       },
@@ -275,7 +278,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         }
       },
@@ -319,7 +322,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         }
       },
@@ -654,9 +657,18 @@
                 "version_added": "81"
               },
               "firefox": {
-                "version_added": false
+                "version_added": "96",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webshare.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               },
-              "firefox_android": "mirror",
+              "firefox_android": {
+                "version_added": "96"
+              },
               "nodejs": {
                 "version_added": false
               },
@@ -1533,6 +1545,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/getInstalledRelatedApps",
           "spec_url": "https://wicg.github.io/get-installed-related-apps/spec/#dom-navigator-getinstalledrelatedapps",
+          "tags": [
+            "web-features:related-apps"
+          ],
           "support": {
             "chrome": [
               {
@@ -1719,7 +1734,7 @@
             "chrome_android": {
               "version_added": "79",
               "version_removed": "80",
-              "notes": "Currently supported only by Google Daydream."
+              "notes": "Supported only by Google Daydream."
             },
             "edge": {
               "version_added": "15",
@@ -1794,7 +1809,8 @@
               "notes": "Opt-in to GPC using the Website Privacy Preference setting (`about:preferences#privacy`) checkbox 'Tell websites not to sell or share my data', or by setting the preference `privacy.globalprivacycontrol.enabled` to `true`."
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": "122",
+              "notes": "Opt-in to GPC using the Enhanced Tracking Protection toggle 'Tell web sites not to share & sell data', or by setting the preference `privacy.globalprivacycontrol.enabled` to `true`."
             },
             "nodejs": {
               "version_added": false
@@ -1827,7 +1843,11 @@
           "support": {
             "chrome": {
               "version_added": "113",
-              "notes": "Currently supported on ChromeOS, macOS, and Windows only."
+              "partial_implementation": true,
+              "notes": [
+                "Supported on ChromeOS, macOS, and Windows.",
+                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+              ]
             },
             "chrome_android": {
               "version_added": "121"
@@ -1851,7 +1871,7 @@
             "firefox": {
               "version_added": "141",
               "partial_implementation": true,
-              "notes": "Currently supported on Windows only."
+              "notes": "Supported on Windows only."
             },
             "firefox_android": {
               "version_added": false
@@ -1885,6 +1905,9 @@
             "web-features:hardware-concurrency"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "37"
             },
@@ -2051,7 +2074,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         }
       },
@@ -2285,7 +2308,7 @@
             },
             "firefox_android": "mirror",
             "nodejs": {
-              "version_added": false
+              "version_added": "24.5.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -2635,7 +2658,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         },
         "returns_plugin_type": {
@@ -2684,7 +2707,7 @@
             "status": {
               "experimental": false,
               "standard_track": false,
-              "deprecated": true
+              "deprecated": false
             }
           }
         }
@@ -2706,9 +2729,7 @@
                 }
               ]
             },
-            "chrome_android": {
-              "version_added": false
-            },
+            "chrome_android": "mirror",
             "deno": {
               "version_added": false
             },
@@ -2830,7 +2851,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         }
       },
@@ -2918,6 +2939,9 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/platform",
           "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-platform-dev",
           "support": {
+            "bun": {
+              "version_added": "1.0.1"
+            },
             "chrome": {
               "version_added": "1"
             },
@@ -2959,7 +2983,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         }
       },
@@ -3003,7 +3027,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         },
         "returns_plugins": {
@@ -3052,7 +3076,7 @@
             "status": {
               "experimental": false,
               "standard_track": false,
-              "deprecated": true
+              "deprecated": false
             }
           }
         }
@@ -3135,7 +3159,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         }
       },
@@ -3175,7 +3199,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         }
       },
@@ -4748,6 +4772,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/scheduling",
           "spec_url": "https://wicg.github.io/is-input-pending/#dom-navigator-scheduling",
+          "tags": [
+            "web-features:is-input-pending"
+          ],
           "support": {
             "chrome": {
               "version_added": "87"
@@ -5109,10 +5136,17 @@
                 "version_added": "81"
               },
               "firefox": {
-                "version_added": "71"
+                "version_added": "71",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webshare.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": "79"
               },
               "nodejs": {
                 "version_added": false
@@ -5256,7 +5290,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         }
       },
@@ -5427,6 +5461,9 @@
             "web-features:user-agent-sniffing"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.0.0"
+            },
             "chrome": {
               "version_added": "1"
             },
@@ -5585,7 +5622,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         }
       },
@@ -5624,7 +5661,7 @@
           "status": {
             "experimental": false,
             "standard_track": true,
-            "deprecated": true
+            "deprecated": false
           }
         }
       },

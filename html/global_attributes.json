@@ -137,12 +137,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "14.1",
-              "partial_implementation": true,
-              "notes": [
-                "Takes values of `true`/`false` (instead of `on`/`off`).",
-                "Allowed on `<input type='password'>` elements."
-              ]
+              "version_added": "14.1"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -159,7 +154,7 @@
       "autofocus": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/autofocus",
-          "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-fe-autofocus",
+          "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#the-autofocus-attribute",
           "tags": [
             "web-features:autofocus"
           ],
@@ -521,7 +516,7 @@
       "exportparts": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/exportparts",
-          "spec_url": "https://drafts.csswg.org/css-shadow-parts/#element-attrdef-html-global-exportparts",
+          "spec_url": "https://drafts.csswg.org/css-shadow/#element-attrdef-html-global-exportparts",
           "tags": [
             "web-features:shadow-parts"
           ],
@@ -607,15 +602,18 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "139"
+                "version_added": "139",
+                "partial_implementation": true,
+                "notes": "The browser does not correctly scroll to the matching text. See [bug 2006040](https://bugzil.la/2006040)."
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "preview",
-                "impl_url": "https://webkit.org/b/238266"
+                "version_added": "26.2",
+                "partial_implementation": true,
+                "notes": "The browser does not correctly scroll to the matching text. See [bug 304174](https://webkit.org/b/304174)."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -941,7 +939,7 @@
       "part": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/part",
-          "spec_url": "https://drafts.csswg.org/css-shadow-parts/#part-attr",
+          "spec_url": "https://drafts.csswg.org/css-shadow/#part-attr",
           "tags": [
             "web-features:shadow-parts"
           ],

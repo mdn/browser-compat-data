@@ -242,6 +242,7 @@
         },
         "fetchpriority": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/fetchpriority",
             "spec_url": "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-fetchpriority",
             "tags": [
               "web-features:fetch-priority"
@@ -430,7 +431,7 @@
         },
         "integrity": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/Security/Subresource_Integrity",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/Security/Defenses/Subresource_Integrity",
             "spec_url": [
               "https://html.spec.whatwg.org/multipage/semantics.html#attr-link-integrity",
               "https://w3c.github.io/webappsec-subresource-integrity/#the-integrity-attribute"
@@ -751,7 +752,7 @@
             "__compat": {
               "description": "rel=compression-dictionary",
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/rel#compression-dictionary",
-              "spec_url": "https://httpwg.org/http-extensions/draft-ietf-httpbis-compression-dictionary.html#name-link-relation-registration",
+              "spec_url": "https://www.rfc-editor.org/rfc/rfc9842#name-link-relation-registration",
               "tags": [
                 "web-features:compression-dictionary-transport"
               ],
@@ -1386,9 +1387,17 @@
               "description": "rel=prerender",
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/rel/prerender",
               "support": {
-                "chrome": {
-                  "version_added": "13"
-                },
+                "chrome": [
+                  {
+                    "version_added": "63",
+                    "partial_implementation": true,
+                    "notes": "Does not trigger prerendering. Triggers NoState Prefetch instead. See [blog post](https://developer.chrome.com/blog/nostate-prefetch)."
+                  },
+                  {
+                    "version_added": "13",
+                    "version_removed": "62"
+                  }
+                ],
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {

@@ -4,7 +4,7 @@
       "highlight": {
         "__compat": {
           "description": "`::highlight()`",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/::highlight",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/::highlight",
           "spec_url": [
             "https://drafts.csswg.org/css-highlight-api/#custom-highlight-pseudo",
             "https://drafts.csswg.org/css-pseudo/#selectordef-highlight-custom-ident"
@@ -21,7 +21,10 @@
             "firefox": {
               "version_added": "140",
               "partial_implementation": true,
-              "notes": "Cannot yet be used with `text-decoration` and `text-shadow`."
+              "notes": [
+                "Cannot yet be used with `text-shadow`. See [bug 1845447](https://bugzil.la/1845447).",
+                "Before Firefox 146, cannot be used with `text-decoration`. See [bug 1845446](https://bugzil.la/1845446)."
+              ]
             },
             "firefox_android": "mirror",
             "oculus": "mirror",

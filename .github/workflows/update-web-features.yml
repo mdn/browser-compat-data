@@ -18,15 +18,17 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.GH_TOKEN }}
+          persist-credentials: false
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
         with:
           node-version-file: ".nvmrc"
+          package-manager-cache: false
 
       - name: "Setup git"
         run: |
@@ -47,11 +49,12 @@ jobs:
           echo "EOF" >> "$GITHUB_OUTPUT"
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7.0.8
+        uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
         with:
           token: ${{ secrets.GH_TOKEN }} # need the rights to create and edit PRs
           commit-message: Update web-features tags
           author: mdn-bot <108879845+mdn-bot@users.noreply.github.com>
+          committer: mdn-bot <108879845+mdn-bot@users.noreply.github.com>
           signoff: false
           branch: web-features-tags
           delete-branch: true
