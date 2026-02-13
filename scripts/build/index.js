@@ -55,7 +55,7 @@ const logWrite = (url, description = '') => {
  */
 export const generateMeta = () => ({
   version: packageJson.version,
-  timestamp: new Date(),
+  timestamp: new Date().toISOString(),
 });
 
 /**
