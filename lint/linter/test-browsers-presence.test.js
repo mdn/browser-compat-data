@@ -4,6 +4,7 @@
 /** @import {InternalSupportBlock} from '../../types/index.js' */
 
 import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
 
 import { Logger } from '../utils.js';
 

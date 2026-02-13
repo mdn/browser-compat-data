@@ -2,6 +2,7 @@
  * See LICENSE file for more information. */
 
 import assert from 'node:assert/strict';
+import { describe, it } from 'node:test';
 
 import bcd from '../../index.js';
 import { Logger } from '../utils.js';
