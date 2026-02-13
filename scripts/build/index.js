@@ -12,8 +12,7 @@ import { compareVersions } from 'compare-versions';
 import { marked } from 'marked';
 
 import compileTS from '../generate-types.js';
-import compatDataSchema from '../../schemas/compat-data.schema.json' with { type: 'json' };
-import browserDataSchema from '../../schemas/browsers.schema.json' with { type: 'json' };
+import schema from '../../schemas/public.schema.json' with { type: 'json' };
 import { createAjv } from '../lib/ajv.js';
 import { walk } from '../../utils/index.js';
 import bcd from '../../index.js';
@@ -244,25 +243,16 @@ export const createDataBundle = async () => {
 const validate = (data) => {
   const ajv = createAjv();
 
-  for (const [key, value] of Object.entries(data)) {
-    if (key === '__meta') {
-      // Not covered by the schema.
-      continue;
+  if (!ajv.validate(schema, data)) {
+    const errors = ajv.errors || [];
+    if (!errors.length) {
+      console.error('Public data failed validation with unknown errors!');
     }
-
-    const schema = key === 'browsers' ? browserDataSchema : compatDataSchema;
-    const data = { [key]: value };
-    if (!ajv.validate(schema, data)) {
-      const errors = ajv.errors || [];
-      if (!errors.length) {
-        console.error(`${key} data failed validation with unknown errors!`);
-      }
-      // Output messages by one since better-ajv-errors wrongly joins messages
-      // (see https://github.com/atlassian/better-ajv-errors/pull/21)
-      errors.forEach((e) => {
-        console.error(betterAjvErrors(schema, data, [e], { indent: 2 }));
-      });
-    }
+    // Output messages by one since better-ajv-errors wrongly joins messages
+    // (see https://github.com/atlassian/better-ajv-errors/pull/21)
+    errors.forEach((e) => {
+      console.error(betterAjvErrors(schema, data, [e], { indent: 2 }));
+    });
   }
 };
 
