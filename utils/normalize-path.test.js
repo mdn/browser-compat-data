@@ -15,13 +15,13 @@ describe('normalizePath()', () => {
     sep: '/',
   };
 
-  describe('On Windows should replace "\\" with "/"', () => {
+  it('should replace "\\" with "/" on Windows', () => {
     assert.equal(normalizePathInternal('\\', pathWindows), '/');
     assert.equal(normalizePathInternal('\\a\\b', pathWindows), '/a/b');
     assert.equal(normalizePathInternal('a\\b', pathWindows), 'a/b');
   });
 
-  describe('should do nothing with anything else', () => {
+  it('should do nothing with anything else', () => {
     assert.equal(normalizePathInternal('/', pathPOSIX), '/');
     assert.equal(normalizePathInternal('/a-b', pathPOSIX), '/a-b');
     assert.equal(normalizePathInternal('ab', pathPOSIX), 'ab');
