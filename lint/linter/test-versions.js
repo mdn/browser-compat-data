@@ -9,7 +9,7 @@ import { browsers } from '../../index.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {BrowserName, InternalCompatStatement, SimpleSupportStatement, VersionValue} from '../../types/index.js' */
+/** @import {BrowserName, InternalCompatStatement, InternalSimpleSupportStatement, VersionValue} from '../../types/index.js' */
 /** @import {InternalSupportBlock, InternalSupportStatement} from '../../types/index.js' */
 
 /* The latest date a range's release can correspond to */
@@ -46,7 +46,7 @@ const isValidVersion = (browser, category, version) => {
  * Checks if the version number of version_removed is greater than or equal to
  * that of version_added, assuming they are both version strings. If either one
  * is not a valid version string, return null.
- * @param {SimpleSupportStatement} statement The statement to test
+ * @param {InternalSimpleSupportStatement} statement The statement to test
  * @returns {boolean | null} Whether the version added was earlier than the version removed
  */
 const addedBeforeRemoved = (statement) => {

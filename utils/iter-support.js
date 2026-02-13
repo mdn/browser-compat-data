@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {InternalCompatStatement, BrowserName, InternalSimpleSupportStatement} from '../types/index.js' */
+/** @import {InternalCompatStatement, BrowserName, InternalSimpleSupportStatement, InternalSupportStatement} from '../types/index.js' */
 
 /**
  * Get support for a specific browser in array form
@@ -11,8 +11,10 @@
  */
 export default (compat, browser) => {
   if (browser in compat.support) {
+    /** @type {InternalSupportStatement|undefined} */
     const data = compat.support[browser];
     if (data) {
+      // @ts-expect-error FIXME Handle "mirror" value.
       return Array.isArray(data) ? data : [data];
     }
   }

@@ -69,7 +69,6 @@ const doMirror = (diff, contents, path, direction) => {
   const queried = /** @type {InternalIdentifier} */ (query(dataPath, data));
 
   if (queried.__compat?.support) {
-    // @ts-expect-error I need to figure out what to do here.
     diff[direction] = mirror(browser, queried.__compat.support);
   }
 };

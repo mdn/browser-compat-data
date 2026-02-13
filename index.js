@@ -17,14 +17,13 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * Recursively load one or more directories passed as arguments.
- * @param {...string} dirs The directories to load
- * @returns {Promise<InternalCompatData>} All of the browser compatibility data
+ * @template {keyof InternalCompatData} Dir
+ * @param {...Dir} dirs The directories to load
+ * @returns {Promise<Pick<InternalCompatData, Dir>>} All of the browser compatibility data
  */
 const load = async (...dirs) => {
-  /** @type {InternalCompatData} */
-  const result = {
-    browsers: {},
-  };
+  /** @type {Partial<Pick<InternalCompatData, Dir>>} */
+  const result = {};
 
   for (const dir of dirs) {
     const paths = /** @type {string[]} */ (
@@ -58,7 +57,7 @@ const load = async (...dirs) => {
     }
   }
 
-  return result;
+  return /** @type {Pick<InternalCompatData, Dir>} */ (result);
 };
 
 /** @type {InternalCompatData} */

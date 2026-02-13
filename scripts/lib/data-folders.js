@@ -1,6 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+/** @import { InternalCompatData } from "../../types/types.js" */
+
 export const dataFoldersMinusBrowsers = [
   'api',
   'css',
@@ -16,4 +18,7 @@ export const dataFoldersMinusBrowsers = [
   'webextensions',
 ];
 
-export default [...dataFoldersMinusBrowsers, 'browsers'];
+export default /** @type {Array<keyof InternalCompatData>} */ ([
+  ...dataFoldersMinusBrowsers,
+  'browsers',
+]);

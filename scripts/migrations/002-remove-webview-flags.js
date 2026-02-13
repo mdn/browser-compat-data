@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {InternalCompatStatement, SimpleSupportStatement} from '../../types/index.js' */
+/** @import {InternalCompatStatement, InternalSimpleSupportStatement, InternalSupportStatement} from '../../types/index.js' */
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -25,10 +25,10 @@ export const removeWebViewFlags = (key, value) => {
   if (key === '__compat') {
     if (value.support.webview_android !== undefined) {
       if (Array.isArray(value.support.webview_android)) {
-        /** @type {SimpleSupportStatement[]} */
+        /** @type {InternalSimpleSupportStatement[]} */
         const result = [];
         for (const support of value.support.webview_android) {
-          if (support.flags === undefined) {
+          if (typeof support === 'object' && support.flags === undefined) {
             result.push(support);
           }
         }
@@ -39,9 +39,7 @@ export const removeWebViewFlags = (key, value) => {
           value.support.webview_android = result[0];
         } else {
           value.support.webview_android =
-            /** @type {[SimpleSupportStatement, SimpleSupportStatement, ...SimpleSupportStatement[]]} */ (
-              result
-            );
+            /** @type {InternalSupportStatement} */ (result);
         }
       } else if (
         typeof value.support.webview_android === 'object' &&

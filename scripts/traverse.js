@@ -8,8 +8,7 @@ import { hideBin } from 'yargs/helpers';
 import dataFolders from '../scripts/lib/data-folders.js';
 import bcd, { browsers } from '../index.js';
 
-/** @import {BrowserName, InternalIdentifier, InternalSimpleSupportStatement, InternalSupportBlock, SimpleSupportStatement} from '../types/index.js' */
-/** @import {InternalSupportStatement} from '../types/index.js' */
+/** @import {BrowserName, InternalIdentifier, InternalSimpleSupportStatement, InternalSupportBlock, InternalSupportStatement} from '../types/index.js' */
 
 /**
  * @typedef {object} StatusFilters
@@ -76,7 +75,6 @@ export function* iterateFeatures(
               continue;
             }
             for (const browser of browserNames) {
-              /** @type {InternalSimpleSupportStatement | InternalSimpleSupportStatement[] | undefined} */
               let browserData = comp[browser];
 
               if (!browserData) {
@@ -95,9 +93,11 @@ export function* iterateFeatures(
                 continue;
               }
               if (!Array.isArray(browserData)) {
+                // @ts-expect-error FIXME Handle "mirror" value.
                 browserData = [browserData];
               }
 
+              // @ts-expect-error FIXME Handle "mirror" value.
               for (const range in browserData) {
                 if (
                   /** @type {InternalSupportStatement} */ (

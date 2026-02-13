@@ -11,8 +11,7 @@ import bcd from '../../index.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {BrowserName, InternalCompatData, InternalCompatStatement, InternalIdentifier, SimpleSupportStatement, VersionValue} from '../../types/index.js' */
-/** @import {DataType, InternalSupportBlock, InternalSupportStatement} from '../../types/index.js' */
+/** @import {BrowserName, InternalCompatData, InternalCompatStatement, InternalIdentifier, InternalSimpleSupportStatement, InternalSupportBlock, InternalSupportStatement, VersionValue} from '../../types/index.js' */
 
 /**
  * @typedef {'unsupported' | 'subfeature_earlier_implementation'} ErrorType
@@ -264,7 +263,7 @@ export class ConsistencyChecker {
   extractSupportedBrowsersWithVersion(InternalcompatData) {
     return this.extractBrowsers(
       InternalcompatData,
-      (/** @type {SimpleSupportStatement} */ data) =>
+      (/** @type {InternalSimpleSupportStatement} */ data) =>
         typeof data.version_added === 'string',
     );
   }
@@ -294,7 +293,7 @@ export class ConsistencyChecker {
 
     /**
      * A convenience function to squash preview and flag support into `false`
-     * @param {SimpleSupportStatement} statement The statement to use
+     * @param {InternalSimpleSupportStatement} statement The statement to use
      * @returns {VersionValue} The version number or `false`
      */
     const resolveVersionAddedValue = (statement) =>
@@ -378,7 +377,7 @@ export class ConsistencyChecker {
   /**
    * Get all of the browsers within the data and pass the data to the callback.
    * @param {InternalCompatStatement | undefined} InternalcompatData The compat data to process
-   * @param {(browserData: SimpleSupportStatement) => boolean} callback The function to pass the data to
+   * @param {(browserData: InternalSimpleSupportStatement) => boolean} callback The function to pass the data to
    * @returns {BrowserName[]} The list of browsers using the callback as a filter
    */
   extractBrowsers(InternalcompatData, callback) {

@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {InternalCompatData, SimpleSupportStatement} from '../types/index.js' */
+/** @import {InternalCompatData, InternalSimpleSupportStatement} from '../types/index.js' */
 
 /**
  * @typedef {'html' | 'plain'} Format
@@ -125,13 +125,14 @@ const flattenObject = (obj, parentKey = '', result = {}) => {
 
           const {
             version_added,
+            // @ts-expect-error FIXME Handle internal-public transition.
             version_last,
             partial_implementation,
             alternative_name,
             prefix,
             flags,
             notes,
-          } = /** @type {SimpleSupportStatement} */ (obj[key]);
+          } = /** @type {InternalSimpleSupportStatement} */ (obj[key]);
 
           const parts = [
             typeof version_added === 'string'

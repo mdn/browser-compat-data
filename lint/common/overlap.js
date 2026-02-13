@@ -9,15 +9,15 @@ import { createStatementGroupKey } from '../utils.js';
 import compareStatements from '../../scripts/lib/compare-statements.js';
 
 /** @import {Logger} from '../utils.js' */
-/** @import {BrowserName, SimpleSupportStatement, InternalSupportStatement} from '../../types/index.js' */
+/** @import {BrowserName, InternalSimpleSupportStatement, InternalSupportStatement} from '../../types/index.js' */
 
 /**
  * Groups statements by group key.
- * @param {SimpleSupportStatement[]} data The support statements to group.
- * @returns {Map<string, SimpleSupportStatement[]>} the statement groups
+ * @param {InternalSimpleSupportStatement[]} data The support statements to group.
+ * @returns {Map<string, InternalSimpleSupportStatement[]>} the statement groups
  */
 const groupByStatementKey = (data) => {
-  /** @type {Map<string, SimpleSupportStatement[]>} */
+  /** @type {Map<string, InternalSimpleSupportStatement[]>} */
   const groups = new Map();
 
   for (const support of data) {
@@ -34,7 +34,7 @@ const groupByStatementKey = (data) => {
 
 /**
  * Formats a support statement as a simplified JSON-like version range.
- * @param {SimpleSupportStatement} support The statement to format
+ * @param {InternalSimpleSupportStatement} support The statement to format
  * @returns {string} The formatted range
  */
 const formatRange = (support) => {
@@ -73,8 +73,12 @@ export const checkOverlap = (data, browser, { logger, fix = false }) => {
     const statements = groupData.slice().sort(compareStatements).reverse();
 
     for (let i = 0; i < statements.length - 1; i++) {
-      const current = /** @type {SimpleSupportStatement} */ (statements.at(i));
-      const next = /** @type {SimpleSupportStatement} */ (statements.at(i + 1));
+      const current = /** @type {InternalSimpleSupportStatement} */ (
+        statements.at(i)
+      );
+      const next = /** @type {InternalSimpleSupportStatement} */ (
+        statements.at(i + 1)
+      );
 
       if (!statementsOverlap(current, next)) {
         continue;
@@ -106,8 +110,8 @@ export const checkOverlap = (data, browser, { logger, fix = false }) => {
 
 /**
  * Checks if the support statements overlap in terms of their version ranges.
- * @param {SimpleSupportStatement} current the current statement.
- * @param {SimpleSupportStatement} next the chronologically following statement.
+ * @param {InternalSimpleSupportStatement} current the current statement.
+ * @param {InternalSimpleSupportStatement} next the chronologically following statement.
  * @returns {boolean} Whether the support statements overlap.
  */
 const statementsOverlap = (current, next) => {

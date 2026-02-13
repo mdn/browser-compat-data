@@ -7,7 +7,7 @@ import { compare } from 'compare-versions';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {InternalCompatStatement, BrowserName, InternalSupportStatement, SimpleSupportStatement, FlagStatement} from '../../types/index.js' */
+/** @import {InternalCompatStatement, BrowserName, InternalSupportStatement, InternalSimpleSupportStatement, FlagStatement} from '../../types/index.js' */
 
 /**
  * @typedef {object} FlagError
@@ -17,8 +17,8 @@ import { compare } from 'compare-versions';
 
 /**
  * Get the support statement with basic, non-aliased and non-flagged support
- * @param {SimpleSupportStatement[]} supportData The statements to check
- * @returns {SimpleSupportStatement | undefined} The support statement with basic, non-aliased and non-flagged support
+ * @param {InternalSimpleSupportStatement[]} supportData The statements to check
+ * @returns {InternalSimpleSupportStatement | undefined} The support statement with basic, non-aliased and non-flagged support
  */
 export const getBasicSupportStatement = (supportData) =>
   supportData.find((statement) => {
@@ -33,8 +33,8 @@ export const getBasicSupportStatement = (supportData) =>
 
 /**
  * Determines if a support statement is for irrelevant flag data
- * @param {SimpleSupportStatement} statement The statement to check
- * @param {SimpleSupportStatement | undefined} basicSupport The support statement for the same browser that has no alt. name, prefix or flag
+ * @param {InternalSimpleSupportStatement} statement The statement to check
+ * @param {InternalSimpleSupportStatement | undefined} basicSupport The support statement for the same browser that has no alt. name, prefix or flag
  * @returns {boolean} Whether the support statement is irrelevant
  */
 export const isIrrelevantFlagData = (statement, basicSupport) => {

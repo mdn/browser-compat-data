@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {InternalCompatData, BrowserName, InternalIdentifier, ReleaseStatement, SimpleSupportStatement} from '../../types/index.js' */
+/** @import {InternalCompatData, BrowserName, InternalIdentifier, InternalSimpleSupportStatement} from '../../types/index.js' */
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -37,7 +37,7 @@ export const fixExperimental = (bcd) => {
       }
 
       // Consider only the first part of an array statement.
-      /** @type {SimpleSupportStatement} */
+      /** @type {InternalSimpleSupportStatement} */
       const statement = Array.isArray(support) ? support[0] : support;
 
       // Ignore anything behind flag, prefix or alternative name

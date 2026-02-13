@@ -3,7 +3,7 @@
 
 import { compareVersions } from 'compare-versions';
 
-/** @import {InternalCompatStatement, SimpleSupportStatement, StatusBlock, BrowserStatement, ReleaseStatement} from '../../types/index.js' */
+/** @import {InternalCompatStatement, InternalSimpleSupportStatement, InternalStatusBlock, BrowserStatement, ReleaseStatement} from '../../types/index.js' */
 
 const propOrder = {
   browsers: {
@@ -120,7 +120,7 @@ export const orderProperties = (key, value) => {
       );
 
       for (const browser of Object.keys(value.__compat.support)) {
-        /** @type {SimpleSupportStatement[]} */
+        /** @type {InternalSimpleSupportStatement[]} */
         const result = [];
         let data = value.__compat.support[browser];
         if (!Array.isArray(data)) {
@@ -130,7 +130,7 @@ export const orderProperties = (key, value) => {
         for (const statement of data) {
           result.push(
             doOrder(
-              /** @type {SimpleSupportStatement} */ (statement),
+              /** @type {InternalSimpleSupportStatement} */ (statement),
               propOrder.data.support,
             ),
           );
@@ -142,7 +142,7 @@ export const orderProperties = (key, value) => {
 
       if ('status' in value.__compat) {
         value.__compat.status = doOrder(
-          /** @type {StatusBlock} */ (value.__compat.status),
+          /** @type {InternalStatusBlock} */ (value.__compat.status),
           propOrder.data.status,
         );
       }

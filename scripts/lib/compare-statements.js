@@ -3,7 +3,7 @@
 
 import { compareVersions } from 'compare-versions';
 
-/** @import {SimpleSupportStatement} from '../../types/index.js' */
+/** @import {InternalSimpleSupportStatement} from '../../types/index.js' */
 
 /**
  *
@@ -13,8 +13,8 @@ import { compareVersions } from 'compare-versions';
  * 3. Statements with partial support
  * 4. Statements with flags
  * 5. Statements with a version removed (or otherwise no support)
- * @param {SimpleSupportStatement} a - The first support statement object to perform comparison with
- * @param {SimpleSupportStatement} b - The second support statement object to perform comparison with
+ * @param {InternalSimpleSupportStatement} a - The first support statement object to perform comparison with
+ * @param {InternalSimpleSupportStatement} b - The second support statement object to perform comparison with
  * @returns {number} Direction to sort
  */
 const compareStatements = (a, b) => {

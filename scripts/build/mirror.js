@@ -6,7 +6,7 @@ import { compareVersions, compare } from 'compare-versions';
 import { browsers } from '../../index.js';
 
 /**
- * @import { BrowserName, SimpleSupportStatement, InternalSupportStatement } from '../../types/index.js'
+ * @import { BrowserName, InternalSimpleSupportStatement, InternalSupportStatement } from '../../types/index.js'
  * @import { InternalSupportBlock } from '../../types/index.js'
  */
 
@@ -175,17 +175,17 @@ const updateNotes = (notes, regex, replace, versionMapper) => {
 
 /**
  * Copy a support statement
- * @param {SimpleSupportStatement} data The data to copied
- * @returns {SimpleSupportStatement} The new copied object
+ * @param {InternalSimpleSupportStatement} data The data to copied
+ * @returns {InternalSimpleSupportStatement} The new copied object
  */
 const copyStatement = (data) => {
-  /** @type {Partial<SimpleSupportStatement>} */
+  /** @type {Partial<InternalSimpleSupportStatement>} */
   const newData = {};
   for (const i in data) {
     newData[i] = data[i];
   }
 
-  return /** @type {SimpleSupportStatement} */ (newData);
+  return /** @type {InternalSimpleSupportStatement} */ (newData);
 };
 
 /**
@@ -204,7 +204,7 @@ export const bumpSupport = (sourceData, sourceBrowser, destination) => {
     const newData = sourceData
       .map(
         (data) =>
-          /** @type {SimpleSupportStatement} */ (
+          /** @type {InternalSimpleSupportStatement} */ (
             bumpSupport(data, sourceBrowser, destination)
           ),
       )
@@ -218,13 +218,14 @@ export const bumpSupport = (sourceData, sourceBrowser, destination) => {
         return newData[0];
 
       default:
-        return /** @type {[SimpleSupportStatement, SimpleSupportStatement, ...SimpleSupportStatement[]]} */ (
+        return /** @type {[InternalSimpleSupportStatement, InternalSimpleSupportStatement, ...InternalSimpleSupportStatement[]]} */ (
           newData
         );
     }
   }
 
-  /** @type {SimpleSupportStatement} */
+  /** @type {InternalSimpleSupportStatement} */
+  // @ts-expect-error FIXME Handle "mirror" value.
   const newData = copyStatement(sourceData);
 
   if (

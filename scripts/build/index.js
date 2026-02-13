@@ -20,8 +20,8 @@ import bcd from '../../index.js';
 import mirrorSupport from './mirror.js';
 
 /**
- * @import { CompatData } from '../../types/types.js'
- * @import { BrowserName, InternalCompatData, InternalIdentifier, InternalSupportStatement, MetaBlock, VersionValue } from '../../types/index.js'
+ * @import { BrowserName, InternalIdentifier, InternalSupportStatement, MetaBlock, VersionValue } from '../../types/index.js'
+ * @import { CompatData } from '../../types/public.js'
  * @import { WalkOutput } from '../../utils/walk.js'
  */
 
@@ -195,7 +195,7 @@ export const transformMD = (feature) => {
 const addIE = (feature) => {
   if (
     feature.path.startsWith('webextensions.') &&
-    !bcd.browsers.ie.accepts_webextensions
+    !bcd.browsers['ie'].accepts_webextensions
   ) {
     return;
   }
@@ -230,15 +230,18 @@ export const createDataBundle = async () => {
 
   applyTransforms(bcd);
 
-  return {
+  /** @type {*} */
+  const result = {
     ...bcd,
     __meta: generateMeta(),
   };
+
+  return /** @type {CompatData}*/ (result);
 };
 
 /**
  * Validates the given data against the schema.
- * @param {InternalCompatData} data - The data to validate.
+ * @param {CompatData} data - The data to validate.
  */
 const validate = (data) => {
   const ajv = createAjv();

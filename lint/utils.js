@@ -4,7 +4,7 @@
 import { platform } from 'node:os';
 import { styleText } from 'node:util';
 
-/** @import {SimpleSupportStatement} from '../types/index.js' */
+/** @import {InternalSimpleSupportStatement} from '../types/index.js' */
 /** @import {Linter, LinterData, LinterMessage, LinterScope} from './types.js' */
 
 /** @type {Readonly<Record<string, string>>} */
@@ -264,7 +264,7 @@ export class Linters {
 
 /**
  * Returns the key for the group that this statement belongs to.
- * @param {SimpleSupportStatement} support The support statement.
+ * @param {InternalSimpleSupportStatement} support The support statement.
  * @returns {string} The key of the support statement group.
  */
 export const createStatementGroupKey = (support) => {

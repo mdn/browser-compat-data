@@ -7,7 +7,7 @@ import testFlags, {
 } from '../linter/test-flags.js';
 import walk from '../../utils/walk.js';
 
-/** @import {BrowserName, InternalCompatStatement, InternalSupportStatement, SimpleSupportStatement, InternalIdentifier} from '../../types/index.js' */
+/** @import {BrowserName, InternalCompatStatement, InternalSupportStatement, InternalSimpleSupportStatement, InternalIdentifier} from '../../types/index.js' */
 
 /**
  * Removes irrelevant flags from the compatibility data
@@ -27,7 +27,7 @@ export const removeIrrelevantFlags = (supportData) => {
     return supportData;
   }
 
-  /** @type {SimpleSupportStatement[]} */
+  /** @type {InternalSimpleSupportStatement[]} */
   const result = [];
   const basicSupport = getBasicSupportStatement(supportData);
 
@@ -43,7 +43,7 @@ export const removeIrrelevantFlags = (supportData) => {
   if (result.length == 1) {
     return result[0];
   }
-  return /** @type {[SimpleSupportStatement, SimpleSupportStatement, ...SimpleSupportStatement[]]} */ (
+  return /** @type {[InternalSimpleSupportStatement, InternalSimpleSupportStatement, ...InternalSimpleSupportStatement[]]} */ (
     result
   );
 };
