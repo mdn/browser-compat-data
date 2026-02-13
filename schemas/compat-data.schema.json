@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/schema",
 
   "definitions": {
-    "simple_support_statement": {
+    "internal_simple_support_statement": {
       "type": "object",
       "properties": {
         "version_added": {
@@ -116,12 +116,12 @@
 
     "support_statement": {
       "anyOf": [
-        { "$ref": "#/definitions/simple_support_statement" },
+        { "$ref": "#/definitions/internal_simple_support_statement" },
         {
           "type": "array",
           "minItems": 2,
           "items": {
-            "$ref": "#/definitions/simple_support_statement"
+            "$ref": "#/definitions/internal_simple_support_statement"
           }
         },
         { "const": "mirror" }
@@ -129,7 +129,7 @@
       "tsType": "InternalSimpleSupportStatement | [InternalSimpleSupportStatement, InternalSimpleSupportStatement, ...InternalSimpleSupportStatement[]]"
     },
 
-    "status_block": {
+    "internal_status_block": {
       "type": "object",
       "properties": {
         "experimental": {
@@ -150,7 +150,7 @@
       "additionalProperties": false
     },
 
-    "support_block": {
+    "internal_support_block": {
       "type": "object",
       "propertyNames": {
         "enum": [
@@ -191,7 +191,7 @@
       "pattern": "^https://(trac.webkit.org/changeset/|hg.mozilla.org/mozilla-central/rev/|crrev.com/|bugzil.la/|crbug.com/|webkit.org/b/|github.com/GoogleChromeLabs/chromium-bidi/issues/)"
     },
 
-    "compat_statement": {
+    "internal_compat_statement": {
       "type": "object",
       "properties": {
         "description": {
@@ -217,7 +217,7 @@
               }
             }
           ],
-          "description": "An optional URL or array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier.",
+          "description": "An optional URL or array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment internal_identifier.",
           "tsType": "string | [string, string, ...string[]]"
         },
         "tags": {
@@ -231,11 +231,11 @@
           "description": "The path to the file that defines this feature in browser-compat-data, relative to the repository root. Useful for guiding potential contributors towards the correct file to edit. This is automatically generated at build time and should never manually be specified."
         },
         "support": {
-          "$ref": "#/definitions/support_block",
-          "description": "The data for the support of each browser, containing a `support_statement` object for each browser identifier with information about versions, prefixes, or alternate names, as well as notes."
+          "$ref": "#/definitions/internal_support_block",
+          "description": "The data for the support of each browser, containing a `support_statement` object for each browser internal_identifier with information about versions, prefixes, or alternate names, as well as notes."
         },
         "status": {
-          "$ref": "#/definitions/status_block",
+          "$ref": "#/definitions/internal_status_block",
           "description": "An object containing information about the stability of the feature."
         }
       },
@@ -243,43 +243,45 @@
       "additionalProperties": false
     },
 
-    "identifier": {
+    "internal_identifier": {
       "type": "object",
       "properties": {
         "__compat": {
           "type": "object",
-          "$ref": "#/definitions/compat_statement",
+          "$ref": "#/definitions/internal_compat_statement",
           "required": ["status"],
-          "description": "A feature is described by an identifier containing the `__compat` property.\n\nIn other words, identifiers without `__compat` aren't necessarily features, but help to nest the features properly.\n\nWhen an identifier has a `__compat` block, it represents its basic support, indicating that a minimal implementation of a functionality is included.\n\nWhat it represents exactly depends of the evolution of the feature over time, both in terms of specifications and of browser support.",
-          "tsType": "CompatStatement"
+          "description": "A feature is described by an internal_identifier containing the `__compat` property.\n\nIn other words, internal_identifiers without `__compat` aren't necessarily features, but help to nest the features properly.\n\nWhen an internal_identifier has a `__compat` block, it represents its basic support, indicating that a minimal implementation of a functionality is included.\n\nWhat it represents exactly depends of the evolution of the feature over time, both in terms of specifications and of browser support.",
+          "tsType": "InternalCompatStatement"
         }
-      },
-      "patternProperties": {
-        "^(?!__compat)[a-zA-Z_0-9-$@]*$": { "$ref": "#/definitions/identifier" }
-      },
-      "additionalProperties": false,
-      "errorMessage": {
-        "additionalProperties": "Feature names can only contain alphanumerical characters or the following symbols: _-$@"
-      },
-      "tsType": "{[key: string]: Identifier} & {__compat?: CompatStatement};"
-    },
-
-    "webextensions_identifier": {
-      "type": "object",
-      "properties": {
-        "__compat": { "$ref": "#/definitions/compat_statement" }
       },
       "patternProperties": {
         "^(?!__compat)[a-zA-Z_0-9-$@]*$": {
-          "$ref": "#/definitions/webextensions_identifier",
-          "tsType": "Identifier"
+          "$ref": "#/definitions/internal_identifier"
         }
       },
       "additionalProperties": false,
       "errorMessage": {
         "additionalProperties": "Feature names can only contain alphanumerical characters or the following symbols: _-$@"
       },
-      "tsType": "{[key: string]: Identifier} & {__compat?: CompatStatement}"
+      "tsType": "{[key: string]: InternalIdentifier} & {__compat?: InternalCompatStatement};"
+    },
+
+    "webextensions_internal_identifier": {
+      "type": "object",
+      "properties": {
+        "__compat": { "$ref": "#/definitions/internal_compat_statement" }
+      },
+      "patternProperties": {
+        "^(?!__compat)[a-zA-Z_0-9-$@]*$": {
+          "$ref": "#/definitions/webextensions_internal_identifier",
+          "tsType": "InternalIdentifier"
+        }
+      },
+      "additionalProperties": false,
+      "errorMessage": {
+        "additionalProperties": "Feature names can only contain alphanumerical characters or the following symbols: _-$@"
+      },
+      "tsType": "{[key: string]: InternalIdentifier} & {__compat?: InternalCompatStatement}"
     }
   },
 
@@ -287,14 +289,14 @@
   "type": "object",
   "patternProperties": {
     "^(?!__compat)(?!webextensions)[a-zA-Z_0-9-$@]*$": {
-      "$ref": "#/definitions/identifier"
+      "$ref": "#/definitions/internal_identifier"
     },
     "^webextensions*$": {
-      "$ref": "#/definitions/webextensions_identifier",
-      "tsType": "Identifier"
+      "$ref": "#/definitions/webextensions_internal_identifier",
+      "tsType": "InternalIdentifier"
     },
     "^__compat$": {
-      "$ref": "#/definitions/compat_statement"
+      "$ref": "#/definitions/internal_compat_statement"
     }
   },
   "additionalProperties": false,
