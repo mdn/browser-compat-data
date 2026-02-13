@@ -44,7 +44,7 @@ export class ConsistencyChecker {
    * @returns {ConsistencyError[]} Any errors found within the data
    */
   check(data) {
-    const { browsers: _browsers, __meta, ...rest } = data;
+    const { browsers: _browsers, ...rest } = data;
     return this.checkSubfeatures(rest);
   }
 

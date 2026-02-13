@@ -20,8 +20,8 @@ import bcd from '../../index.js';
 import mirrorSupport from './mirror.js';
 
 /**
- * @import { BrowserName, InternalIdentifier, InternalSupportStatement, MetaBlock, VersionValue } from '../../types/index.js'
- * @import { CompatData } from '../../types/public.js'
+ * @import { BrowserName, InternalIdentifier, InternalSupportStatement, VersionValue } from '../../types/index.js'
+ * @import { CompatData, MetaBlock } from '../../types/public.js'
  * @import { WalkOutput } from '../../utils/walk.js'
  */
 
