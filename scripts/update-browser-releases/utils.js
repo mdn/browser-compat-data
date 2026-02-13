@@ -11,7 +11,8 @@
  * @property {string} link
  */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
+
 import xml2js from 'xml2js';
 
 const USER_AGENT =
@@ -51,7 +52,10 @@ export const newBrowserEntry = (
   if (engineVersion) {
     release['engine_version'] = engineVersion.toString();
   }
-  return chalk`{yellow \n- New release detected for {bold ${browser}}: Version {bold ${version}} as a {bold ${status}} release.}`;
+  return styleText(
+    'yellow',
+    `\n- New release detected for ${styleText('bold', browser)}: Version ${styleText('bold', version)} as a ${styleText('bold', status)} release.`,
+  );
 };
 
 /**
@@ -77,20 +81,32 @@ export const updateBrowserEntry = (
   const entry = json.browsers[browser].releases[version];
   let result = '';
   if (entry['status'] !== status) {
-    result += chalk`{cyan \n- New status for {bold ${browser} ${version}}: {bold ${status}}, previously ${entry['status']}.}`;
+    result += styleText(
+      'cyan',
+      `\n- New status for ${styleText('bold', `${browser} ${version}`)}: ${styleText('bold', status)}, previously ${entry['status']}.`,
+    );
     entry['status'] = status;
   }
   if (releaseDate && entry['release_date'] !== releaseDate) {
-    result += chalk`{cyan \n- New release date for {bold ${browser} ${version}}: {bold ${releaseDate}}, previously ${entry['release_date']}.}`;
+    result += styleText(
+      'cyan',
+      `\n- New release date for ${styleText('bold', `${browser} ${version}`)}: ${styleText('bold', releaseDate)}, previously ${entry['release_date']}.`,
+    );
     entry['release_date'] = releaseDate;
   }
   if (releaseNotesURL && entry['release_notes'] !== releaseNotesURL) {
-    result += chalk`{cyan \n- New release notes for {bold ${browser} ${version}}: {bold ${releaseNotesURL}}, previously ${entry['release_notes']}.}`;
+    result += styleText(
+      'cyan',
+      `\n- New release notes for ${styleText('bold', `${browser} ${version}`)}: ${styleText('bold', releaseNotesURL)}, previously ${entry['release_notes']}.`,
+    );
     entry['release_notes'] = releaseNotesURL;
   }
 
   if (engineVersion && entry['engine_version'] != engineVersion) {
-    result += chalk`{cyan \n- New engine version for {bold ${browser} ${version}}: {bold ${engineVersion}}, previously ${entry['engine_version']}.}`;
+    result += styleText(
+      'cyan',
+      `\n- New engine version for ${styleText('bold', `${browser} ${version}`)}: ${styleText('bold', String(engineVersion))}, previously ${entry['engine_version']}.`,
+    );
     entry['engine_version'] = engineVersion.toString();
   }
 

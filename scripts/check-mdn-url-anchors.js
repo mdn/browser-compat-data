@@ -1,8 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { styleText } from 'node:util';
+
 import esMain from 'es-main';
-import chalk from 'chalk-template';
 
 import { lowLevelWalk } from '../utils/walk.js';
 
@@ -51,7 +52,10 @@ const checkAnchors = async () => {
       for (const { path, hash } of items) {
         if (!text.includes(`id="${hash.slice(1)}"`)) {
           console.warn(
-            chalk`{yellow Invalid mdn_url anchor https://developer.mozilla.org${slug}{bold ${hash}}} in {italic ${path}}`,
+            styleText(
+              'yellow',
+              `Invalid mdn_url anchor https://developer.mozilla.org${slug}${styleText('bold', hash)} in ${styleText('italic', path)}`,
+            ),
           );
         }
       }

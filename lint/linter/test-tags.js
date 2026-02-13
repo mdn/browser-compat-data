@@ -1,7 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
+
 import { features } from 'web-features';
 
 /** @import {Linter, LinterData} from '../types.js' */
@@ -27,9 +28,9 @@ const processData = (data, logger) => {
       !allowedNamespaces.some((namespace) => tag.startsWith(namespace + ':'))
     ) {
       logger.error(
-        chalk`Invalid tag found: {bold ${tag}}. Check if:
+        `Invalid tag found: ${styleText('bold', tag)}. Check if:
          - the tag has a namespace
-         - the tag uses one of the allowed namespaces: {bold ${allowedNamespaces}}`,
+         - the tag uses one of the allowed namespaces: ${styleText('bold', String(allowedNamespaces))}`,
       );
     }
 
@@ -41,7 +42,7 @@ const processData = (data, logger) => {
         !validFeatureIDs.includes(featureID)
       ) {
         logger.error(
-          chalk`Non-registered web-features ID found: {bold ${featureID}}.
+          `Non-registered web-features ID found: ${styleText('bold', featureID)}.
           - New web-feature IDs need to be present in https://github.com/web-platform-dx/web-features first.
           - Check for typos or remove tag. Tagging will be taken care of by web-features maintainers.`,
         );

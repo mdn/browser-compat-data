@@ -1,8 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { styleText } from 'node:util';
+
 import { compare } from 'compare-versions';
-import chalk from 'chalk-template';
 
 import { query } from '../../utils/index.js';
 import mirrorSupport from '../../scripts/build/mirror.js';
@@ -426,15 +427,16 @@ export default {
       for (const { type, browser, parentValue, subfeatures } of errors) {
         let errorMessage = '';
         if (type == 'unsupported') {
-          errorMessage += chalk`No support in {bold ${browser}}, but support is declared in the following sub-feature(s):`;
+          errorMessage += `No support in ${styleText('bold', browser)}, but support is declared in the following sub-feature(s):`;
         } else if (type == 'subfeature_earlier_implementation') {
-          errorMessage += chalk`Basic support in {bold ${browser}} was declared implemented in a later version ({bold ${parentValue}}) than the following sub-feature(s):`;
+          errorMessage += `Basic support in ${styleText('bold', browser)} was declared implemented in a later version (${styleText('bold', String(parentValue))}) than the following sub-feature(s):`;
         }
 
         for (const subfeature of subfeatures) {
-          errorMessage += chalk`\n{red         → {bold ${path.join('.')}.${
-            subfeature[0]
-          }}: ${subfeature[1] === undefined ? '[Array]' : subfeature[1]}}`;
+          errorMessage += styleText(
+            'red',
+            `\n         → ${styleText('bold', `${path.join('.')}.${subfeature[0]}`)}: ${subfeature[1] === undefined ? '[Array]' : subfeature[1]}`,
+          );
         }
 
         logger.error(errorMessage, { path: path.join('.') });
