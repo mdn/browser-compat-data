@@ -83,7 +83,7 @@
       "additionalProperties": {
         "$ref": "#/definitions/browser_statement"
       },
-      "tsType": "{ [browser: BrowserName]:  BrowserStatement }"
+      "tsType": "Record<BrowserName, BrowserStatement>"
     },
 
     "browser_statement": {
@@ -328,7 +328,7 @@
       "additionalProperties": {
         "$ref": "#/definitions/support_statement"
       },
-      "tsType": "{ [browser: BrowserName]:  SupportStatement }"
+      "tsType": "Record<BrowserName, SupportStatement>"
     },
 
     "compat_statement": {
