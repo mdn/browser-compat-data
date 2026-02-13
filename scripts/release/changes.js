@@ -15,7 +15,8 @@
  * @property {FeatureChange[]} removed
  */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
+
 import cliProgress from 'cli-progress';
 
 import diffFeatures from '../diff-features.js';
@@ -82,24 +83,26 @@ const getDiff = async (pull) => {
     diff = await diffFeatures({ ref1: pull.mergeCommit, quiet: true });
   } catch (e) {
     throw new Error(
-      chalk`{red ${e}}\n {yellow (Failed to diff features for #${pull.number}, skipping)}`,
+      `${styleText('red', String(e))}\n ${styleText('yellow', `(Failed to diff features for #${pull.number}, skipping)`)}`,
     );
   }
 
   if (diff.added.length && diff.removed.length) {
     console.log(
-      chalk` | #${pull.number} - {blue ({green ${diff.added.length} added}, {red ${diff.removed.length} removed})}`,
+      ` | #${pull.number} - ${styleText('blue', `(${styleText('green', `${diff.added.length} added`)}, ${styleText('red', `${diff.removed.length} removed`)})`)}`,
     );
   } else if (diff.added.length) {
     console.log(
-      chalk` | #${pull.number} - {blue ({green ${diff.added.length} added})}`,
+      ` | #${pull.number} - ${styleText('blue', `(${styleText('green', `${diff.added.length} added`)})`)}`,
     );
   } else if (diff.removed.length) {
     console.log(
-      chalk` | #${pull.number} - {blue ({red ${diff.removed.length} removed})}`,
+      ` | #${pull.number} - ${styleText('blue', `(${styleText('red', `${diff.removed.length} removed`)})`)}`,
     );
   } else {
-    console.log(chalk` | #${pull.number} - {blue (No feature count changes)}`);
+    console.log(
+      ` | #${pull.number} - ${styleText('blue', '(No feature count changes)')}`,
+    );
   }
 
   return diff;

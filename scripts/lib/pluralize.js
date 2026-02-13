@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
 
 const formatter = new Intl.NumberFormat('en-US');
 
@@ -16,14 +16,14 @@ const formatNumber = (n) => formatter.format(n);
  * Pluralizes a string
  * @param {string} word Word in singular form
  * @param {number} quantifier The quantifier
- * @param {boolean} [useChalk] Use chalk formatting
+ * @param {boolean} [useStyleText] Use styleText formatting
  * @returns {string} The pluralized string
  */
-const pluralize = (word, quantifier, useChalk = false) => {
+const pluralize = (word, quantifier, useStyleText = false) => {
   const formattedQuantifier = formatNumber(quantifier);
   const formattedWord = `${word}${quantifier === 1 ? '' : 's'}`;
-  return useChalk
-    ? chalk`{bold ${formattedQuantifier}} ${formattedWord}`
+  return useStyleText
+    ? `${styleText('bold', formattedQuantifier)} ${formattedWord}`
     : `${formattedQuantifier} ${formattedWord}`;
 };
 

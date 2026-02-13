@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
@@ -56,7 +56,7 @@ const processData = (data, category, feature, logger) => {
       }
       if (statement.prefix && statement.alternative_name) {
         logger.error(
-          chalk`Both prefix and alternative name are defined, which is not allowed.`,
+          'Both prefix and alternative name are defined, which is not allowed.',
         );
       }
       if (
@@ -64,7 +64,7 @@ const processData = (data, category, feature, logger) => {
         !prefixes.some((p) => statement.prefix?.startsWith(p))
       ) {
         logger.error(
-          chalk`Prefix is set to {bold ${statement.prefix}}, which is invalid for ${category}`,
+          `Prefix is set to ${styleText('bold', statement.prefix)}, which is invalid for ${category}`,
         );
       }
       if (statement.alternative_name) {
@@ -79,7 +79,7 @@ const processData = (data, category, feature, logger) => {
         });
         if (altNameMatchesPrefix) {
           logger.error(
-            chalk`Use {bold "prefix": "${altNameMatchesPrefix}"} instead of {bold "alternative_name": "${statement.alternative_name}"}`,
+            `Use ${styleText('bold', `"prefix": "${altNameMatchesPrefix}"`)} instead of ${styleText('bold', `"alternative_name": "${statement.alternative_name}"`)}`,
           );
         }
       }
