@@ -4,8 +4,8 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import fs from 'node:fs';
+import { styleText } from 'node:util';
 
-import chalk from 'chalk-template';
 import { fdir } from 'fdir';
 
 import dataFolders from '../../scripts/lib/data-folders.js';
@@ -78,7 +78,7 @@ export const updateFeatures = (featureIDs, updater) => {
             2,
           );
           if (before != after) {
-            console.log(chalk`{yellow Updated ${featureID}}`);
+            console.log(styleText('yellow', `Updated ${featureID}`));
             changed = true;
           }
         }

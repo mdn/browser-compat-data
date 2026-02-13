@@ -1,7 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
+
 import HTMLParser from '@desertnet/html-parser';
 import { marked } from 'marked';
 
@@ -26,9 +27,7 @@ const testNode = (node) => {
     if (tag && !VALID_ELEMENTS.includes(tag)) {
       // Ensure we're only using select nodes
       errors.push(
-        chalk`HTML element {bold <${tag}>} is {bold not allowed}. Allowed HTML elements are: ${VALID_ELEMENTS.join(
-          ', ',
-        )}`,
+        `HTML element ${styleText('bold', `<${tag}>`)} is ${styleText('bold', 'not allowed')}. Allowed HTML elements are: ${VALID_ELEMENTS.join(', ')}`,
       );
     }
 
@@ -38,18 +37,14 @@ const testNode = (node) => {
       if (attrs.length !== 1 || !attrs.includes('href')) {
         // Ensure 'a' nodes only contain an 'href'
         errors.push(
-          chalk`HTML element {bold <${tag}>} has {bold invalid attributes}. {bold <${tag}>} elements may only have (and must have) an {bold href} attribute; found {bold ${
-            attrs.length ? attrs.join(', ') : 'no attributes'
-          }}.`,
+          `HTML element ${styleText('bold', `<${tag}>`)} has ${styleText('bold', 'invalid attributes')}. ${styleText('bold', `<${tag}>`)} elements may only have (and must have) an ${styleText('bold', 'href')} attribute; found ${styleText('bold', attrs.length ? attrs.join(', ') : 'no attributes')}.`,
         );
       }
     } else {
       if (attrs.length > 0) {
         // Ensure nodes (besides 'a') contain no attributes
         errors.push(
-          chalk`HTML element {bold <${tag}>} has {bold invalid attributes}. Elements other than {bold <a>} may {bold not} have any attributes; found {bold ${attrs.join(
-            ', ',
-          )}}.`,
+          `HTML element ${styleText('bold', `<${tag}>`)} has ${styleText('bold', 'invalid attributes')}. Elements other than ${styleText('bold', '<a>')} may ${styleText('bold', 'not')} have any attributes; found ${styleText('bold', attrs.join(', '))}.`,
         );
       }
     }
@@ -78,16 +73,16 @@ export const validateHTML = (string) => {
     errors.push(...testNode(parser.parse(html)));
   } else {
     errors.push(
-      chalk`Invalid HTML: ${htmlErrors.map((x) => x._message).join(', ')}`,
+      `Invalid HTML: ${htmlErrors.map((x) => x._message).join(', ')}`,
     );
   }
 
   if (string.includes('  ')) {
-    errors.push(chalk`Double-spaces are not allowed.`);
+    errors.push('Double-spaces are not allowed.');
   }
 
   if (string.includes('\n')) {
-    errors.push(chalk`Newlines are not allowed.`);
+    errors.push('Newlines are not allowed.');
   }
 
   return errors;
@@ -114,7 +109,7 @@ const checkNotes = (notes, browser, feature, logger) => {
 
   if (errors) {
     for (const error of errors) {
-      logger.error(chalk`Notes for {bold ${browser}} → ${error}`);
+      logger.error(`Notes for ${styleText('bold', browser)} → ${error}`);
     }
   }
 };

@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
@@ -180,7 +180,7 @@ const processData = (data, logger) => {
       !validSpecHosts.some((host) => specURL.startsWith(host.alternateUrl))
     ) {
       logger.error(
-        chalk`Invalid specification URL found: {bold ${specURL}}. Check if:
+        `Invalid specification URL found: ${styleText('bold', specURL)}. Check if:
          - there is a more current specification URL
          - the specification is listed in https://github.com/w3c/browser-specs
          - the specification has a "good" standing`,
