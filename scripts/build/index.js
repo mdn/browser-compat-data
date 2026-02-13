@@ -21,7 +21,7 @@ import mirrorSupport from './mirror.js';
 
 /**
  * @import { InternalSupportStatement } from '../../types/index.js'
- * @import { BrowserName, CompatData, Identifier, VersionValue } from '../../types/types.js'
+ * @import { BrowserName, CompatData, Identifier, MetaBlock, VersionValue } from '../../types/types.js'
  * @import { WalkOutput } from '../../utils/walk.js'
  */
 
@@ -51,7 +51,7 @@ const logWrite = (url, description = '') => {
 
 /**
  * Generate metadata to embed into BCD builds
- * @returns {*} Metadata to embed into BCD
+ * @returns {MetaBlock} Metadata to embed into BCD
  */
 export const generateMeta = () => ({
   version: packageJson.version,
