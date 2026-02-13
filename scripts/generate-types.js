@@ -11,7 +11,7 @@ import { compileFromFile } from 'json-schema-to-typescript';
 
 import { spawn } from '../utils/index.js';
 
-const dirname = fileURLToPath(new URL('.', import.meta.url));
+const root = new URL('..', import.meta.url);
 
 const opts = {
   bannerComment:
@@ -38,24 +38,30 @@ const transformTS = (ts) => {
 
 /**
  * Compile the TypeScript typedefs from the schema JSON
- * @param {URL | string} [destination] Output destination
+ * @param {string} source - JSON schema source
+ * @param {URL | string} destination - Output destination
  */
-const compile = async (
-  destination = new URL('../types/types.d.ts', import.meta.url),
-) => {
-  let ts = await compileFromFile('schemas/public.schema.json', opts);
+const compile = async (source, destination) => {
+  let ts = await compileFromFile(source, opts);
 
   ts = transformTS(ts);
 
-  await fs.writeFile(destination, ts);
-  spawn('tsc', ['--skipLibCheck', '../types/types.d.ts'], {
-    cwd: dirname,
+  const file =
+    destination instanceof URL ? destination : new URL(destination, root);
+
+  await fs.writeFile(file, ts);
+  spawn('tsc', ['--skipLibCheck', fileURLToPath(file)], {
+    cwd: fileURLToPath(root),
     stdio: 'inherit',
   });
 };
 
 if (esMain(import.meta)) {
-  await compile();
+  await Promise.all([
+    compile('schemas/browsers.schema.json', 'types/browsers.d.ts'),
+    compile('schemas/compat-data.schema.json', 'types/compat-data.d.ts'),
+    compile('schemas/public.schema.json', 'types/types.d.ts'),
+  ]);
 }
 
 export default compile;

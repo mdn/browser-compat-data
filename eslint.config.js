@@ -34,6 +34,8 @@ export default [
       'CODE_OF_CONDUCT.md',
       'build/',
       '**/coverage/',
+      '**/browsers.d.ts',
+      '**/compat-data.d.ts',
       '**/types.d.ts',
     ],
   },

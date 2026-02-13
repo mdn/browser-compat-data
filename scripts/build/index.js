@@ -305,7 +305,7 @@ export * from "./types.js";`;
   await fs.writeFile(destImport, content);
   logWrite(destImport, 'ESM types');
 
-  await compileTS(destTypes);
+  await compileTS('schemas/browsers.schema.json', destTypes);
   logWrite(destTypes, 'data types');
 };
 
