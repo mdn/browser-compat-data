@@ -114,7 +114,7 @@
       "required": ["type", "name"]
     },
 
-    "support_statement": {
+    "internal_support_statement": {
       "anyOf": [
         { "$ref": "#/definitions/internal_simple_support_statement" },
         {
@@ -125,8 +125,7 @@
           }
         },
         { "const": "mirror" }
-      ],
-      "tsType": "InternalSimpleSupportStatement | [InternalSimpleSupportStatement, InternalSimpleSupportStatement, ...InternalSimpleSupportStatement[]]"
+      ]
     },
 
     "internal_status_block": {
@@ -174,7 +173,7 @@
         ]
       },
       "additionalProperties": {
-        "$ref": "#/definitions/support_statement"
+        "$ref": "#/definitions/internal_support_statement"
       },
       "tsType": "Partial<Record<BrowserName, InternalSupportStatement>>"
     },
@@ -228,7 +227,7 @@
         },
         "support": {
           "$ref": "#/definitions/internal_support_block",
-          "description": "The data for the support of each browser, containing a `support_statement` object for each browser internal_identifier with information about versions, prefixes, or alternate names, as well as notes."
+          "description": "The data for the support of each browser, containing a `internal_support_statement` object for each browser internal_identifier with information about versions, prefixes, or alternate names, as well as notes."
         },
         "status": {
           "$ref": "#/definitions/internal_status_block",
