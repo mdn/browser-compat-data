@@ -409,15 +409,61 @@
     "__meta": {
       "$ref": "#/definitions/meta_block"
     },
+    "api": {
+      "$ref": "#/definitions/identifier"
+    },
     "browsers": {
       "$ref": "#/definitions/browsers"
-    }
-  },
-  "patternProperties": {
-    "^(api|css|html|http|javascript|manifests|mathml|mediatypes|svg|webassembly|webdriver|webextensions)$": {
+    },
+    "css": {
+      "$ref": "#/definitions/identifier"
+    },
+    "html": {
+      "$ref": "#/definitions/identifier"
+    },
+    "http": {
+      "$ref": "#/definitions/identifier"
+    },
+    "javascript": {
+      "$ref": "#/definitions/identifier"
+    },
+    "manifests": {
+      "$ref": "#/definitions/identifier"
+    },
+    "mathml": {
+      "$ref": "#/definitions/identifier"
+    },
+    "mediatypes": {
+      "$ref": "#/definitions/identifier"
+    },
+    "svg": {
+      "$ref": "#/definitions/identifier"
+    },
+    "webassembly": {
+      "$ref": "#/definitions/identifier"
+    },
+    "webdriver": {
+      "$ref": "#/definitions/identifier"
+    },
+    "webextensions": {
       "$ref": "#/definitions/identifier"
     }
   },
-  "required": ["__meta", "browsers"],
+  "required": [
+    "__meta",
+    "api",
+    "browsers",
+    "css",
+    "html",
+    "http",
+    "javascript",
+    "manifests",
+    "mathml",
+    "mediatypes",
+    "svg",
+    "webassembly",
+    "webdriver",
+    "webextensions"
+  ],
   "additionalProperties": false
 }
