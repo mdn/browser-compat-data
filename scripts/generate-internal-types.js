@@ -147,7 +147,7 @@ const transformTS = (browserTS, compatTS) => {
  * @param {URL | string} [destination] Output destination
  */
 const compile = async (
-  destination = new URL('../types/types.d.ts', import.meta.url),
+  destination = new URL('../types/internal.d.ts', import.meta.url),
 ) => {
   const browserTS = await compileFromFile('schemas/browsers.schema.json', opts);
   const compatTS = await compileFromFile(
@@ -163,7 +163,7 @@ const compile = async (
     generateCompatDataTypes(),
   ].join('\n\n');
   await fs.writeFile(destination, ts);
-  spawn('tsc', ['--skipLibCheck', '../types/types.d.ts'], {
+  spawn('tsc', ['--skipLibCheck', '../types/internal.d.ts'], {
     cwd: dirname,
     stdio: 'inherit',
   });

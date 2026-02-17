@@ -34,8 +34,8 @@ export default [
       'CODE_OF_CONDUCT.md',
       'build/',
       '**/coverage/',
+      'types/internal.d.ts',
       'types/public.d.ts',
-      'types/types.d.ts',
     ],
   },
   ...fixupConfigRules(
