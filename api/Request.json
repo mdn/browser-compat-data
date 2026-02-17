@@ -179,15 +179,18 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
-              "deprecated": false
+              "deprecated": true
             }
           }
         },
         "init_browsingTopics_parameter": {
           "__compat": {
             "description": "`init.browsingTopics` parameter",
+            "tags": [
+              "web-features:topics"
+            ],
             "support": {
               "chrome": {
                 "version_added": "126"
@@ -216,9 +219,9 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": false,
-              "deprecated": false
+              "deprecated": true
             }
           }
         },
@@ -1044,7 +1047,13 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "26.2",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "SpeculationRules prefetch"
+                  }
+                ]
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
