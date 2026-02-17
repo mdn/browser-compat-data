@@ -182,7 +182,7 @@ The `__compat` object consists of the following:
   It needs to be a valid URL, and should be the language-neutral URL (e.g. use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
 
 - An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined.
-  Each URL must either contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`), or else must match the regular-expression pattern `^https://registry.khronos.org/webgl/extensions/[^/]+/` (e.g. `https://registry.khronos.org/webgl/extensions/ANGLE_instanced_arrays/`).
+  Each URL must either contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`), or else must match the regular-expression pattern `^https://registry.khronos.org/webgl/extensions/[^/]+/` (e.g. `https://registry.khronos.org/webgl/extensions/ANGLE_instanced_arrays/`) or `^https://github.com/WebAssembly/.+` for WebAssembly specs.
   Each URL must link to a specification published by a standards body or a formal proposal that may lead to such publication.
 
 - An optional `tags` property which is an array of strings allowing to assign tags to the feature.
@@ -213,7 +213,7 @@ The currently accepted browser identifiers should be declared in alphabetical or
 - `webview_android`, WebView, the embedded browser for Android applications
 - `webview_ios`, WebKit WebView, the embedded browser for iOS applications, based on the iOS version
 
-Desktop browser identifiers are mandatory, with the `version_added` property set to `null` if support is unknown.
+Desktop browser identifiers are mandatory, with the `version_added` property set to `false` if the feature is not supported.
 
 #### The `support_statement` object
 
@@ -269,7 +269,7 @@ The `simple_support_statement` object is the core object containing the compatib
 
 #### `version_added`
 
-This is the only mandatory property and it contains a string with the version number indicating when a sub-feature has been added (and is therefore supported). The Boolean values indicate that a sub-feature is supported (`true`, with the additional meaning that it is unknown in which version support was added) or not supported (`false`). A value of `null` indicates that support information is entirely unknown. Examples:
+This is the only mandatory property and it contains a string with the version number indicating when a sub-feature has been added (and is therefore supported), or the value `false` indicating the feature is not supported. Examples:
 
 - Support from version 3.5 (inclusive):
 
@@ -305,7 +305,7 @@ This is the only mandatory property and it contains a string with the version nu
 
 #### `version_removed`
 
-Contains a string with the version number the sub-feature was removed in. It may also be `true`, meaning that it is unknown in which version support was removed. If the feature has not been removed from the browser, this property is omitted, rather than being set to `false`.
+Contains a string with the version number the sub-feature was removed in. If the feature has not been removed from the browser, this property is omitted, rather than being set to `false`.
 
 Examples:
 
@@ -422,7 +422,7 @@ Example for two flags required:
 
 An optional changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser. The presence of an `impl_url` value indicates that the associated browser has implemented the feature or intends to implement the feature.
 
-For changeset/commit URLs, this is typically a https://trac.webkit.org/changeset/, https://hg.mozilla.org/mozilla-central/rev/, or https://crrev.com/ URL for a changeset with a subject line that will typically be something of the form _"Implement [feature]"_, _"Support [feature]"_, or _"Enable [feature]"_. For bug URLs, this is typically a https://webkit.org/b/, https://bugzil.la/, or https://crbug.com/ URL indicating an intent to implement and ship the feature.
+For changeset/commit URLs, this is typically a https://trac.webkit.org/changeset/, https://hg.mozilla.org/mozilla-central/rev/, or https://crrev.com/ URL for a changeset with a subject line that will typically be something of the form _"Implement [feature]"_, _"Support [feature]"_, or _"Enable [feature]"_. For bug URLs, this is typically a https://webkit.org/b/, https://bugzil.la/, https://crbug.com/, or https://github.com/GoogleChromeLabs/chromium-bidi/issues/ URL indicating an intent to implement and ship the feature.
 
 #### `notes`
 

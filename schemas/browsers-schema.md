@@ -1,6 +1,6 @@
 # The browser JSON schema
 
-This document helps you to understand the structure of the browser (and JavaScript runtime) data in BCD, including the browser type, a display-friendly name, release data and more. Each browser is defined by a unique identifier (e.g. `firefox` or `chrome_android`).
+This document helps you to understand the structure of the browser (and JavaScript runtime) data in BCD, including the browser type, a display-friendly name, release data and more. Each browser is defined by a unique identifier (e.g. `firefox` or `chrome_android`). Each browser JSON file describes exactly one browser.
 
 Note: while NodeJS and Deno are JavaScript runtimes and not browsers, data for them is placed in `browsers`, and are included whenever we use the term "browsers".
 
@@ -48,11 +48,11 @@ The `upstream` string is an optional property which indicates the upstream brows
 
 ### `accepts_flags`
 
-An optional boolean indicating whether the browser supports flags. If it is set to `false`, flag data will not be allowed for that browser.
+A required boolean indicating whether the browser supports flags. If it is set to `false`, flag data will not be allowed for that browser.
 
 ### `accepts_webextensions`
 
-An optional boolean indicating whether the browser supports web extensions. A `true` value will allow this browser to be defined in web extensions support.
+A required boolean indicating whether the browser supports web extensions. A `true` value will allow this browser to be defined in web extensions support.
 
 ### `pref_url`
 
@@ -78,9 +78,9 @@ The `releases` object contains data regarding the browsers' releases, using the 
 
 - An optional `release_notes` property which points to release notes. It needs to be a valid URL.
 
-- An optional `engine` property which is the name of the browser's engine. This property is placed on the individual release as a browser may switch to a different engine (e.g. Microsoft Edge switched to Chrome as its base engine).
+- An optional `engine` property which is the name of the browser's engine. Valid values are `"Blink"`, `"EdgeHTML"`, `"Gecko"`, `"Presto"`, `"Trident"`, `"WebKit"`, and `"V8"`. This property is placed on the individual release as a browser may switch to a different engine (e.g. Microsoft Edge switched to Chrome as its base engine). If `engine` is specified, `engine_version` must also be provided.
 
-- An optional `engine_version` property which is the version of the browser's engine. Depending on the browser, this may or may not differ from the browser version.
+- An optional `engine_version` property which is the version of the browser's engine. Depending on the browser, this may or may not differ from the browser version. Required when `engine` is specified.
 
 #### Initial versions
 
@@ -104,6 +104,7 @@ The following table indicates initial versions for browsers in BCD. These are th
 | iOS Safari       | 1               |                                                                                                                                                                          |
 | Samsung Internet | 1.0             |                                                                                                                                                                          |
 | WebView Android  | 1               |                                                                                                                                                                          |
+| WebView iOS      | 1               |                                                                                                                                                                          |
 
 ## Exports
 
