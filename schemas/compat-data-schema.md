@@ -178,8 +178,6 @@ The `__compat` object consists of the following:
   It is intended to be used as a caption or title and should be kept short.
   This property may be formatted using Markdown, see the rules for `notes`.
 
-- An automated `source_file` property containing the path to the source file containing the feature. This is used to create links to the repository source (in the form of `https://github.com/mdn/browser-compat-data/blob/main/<source_file>`). For example, `api.History.forward` will contain a `source_file` property of `api/History.json` since the feature is defined in that file.
-
 - An optional `mdn_url` property which **points to an MDN reference page documenting the feature**.
   It needs to be a valid URL, and should be the language-neutral URL (e.g. use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
 
@@ -317,21 +315,6 @@ Examples:
 {
   "version_added": "4",
   "version_removed": "10"
-}
-```
-
-#### `version_last`
-
-> [!NOTE]
-> This property is automatically generated at build time.
-
-If `version_removed` is present, a `version_last` is automatically generated during build time, which will be set to the version number of the last browser version that supported the feature. For example, assuming the browser version only incremented in whole numbers, if a feature was added in version 20 and supported until 29, then was no longer supported in 30, `version_removed` would be `30` and `version_last` will be `29`:
-
-```json
-{
-  "version_added": "20",
-  "version_removed": "30",
-  "version_last": "29"
 }
 ```
 

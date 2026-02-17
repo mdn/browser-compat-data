@@ -44,7 +44,7 @@ The `type` string is a required property which indicates the platform category t
 
 ### `upstream`
 
-The `upstream` string is an optional property which indicates the upstream browser updates are derived from. For example, Firefox Android's upstream browser is Firefox (desktop), and Edge's upstream browser is Chrome. This is used for mirroring data between browsers. Valid options are any browser defined in the data.
+The `upstream` string is an optional property which indicates the upstream browser updates are derived from. For example, Firefox Android's upstream browser is Firefox (desktop), and Edge's upstream browser is Chrome. This is used for mirroring data between browsers. Valid options are `"chrome"`, `"chrome_android"`, `"firefox"`, `"safari"`, and `"safari_ios"`.
 
 ### `accepts_flags`
 
