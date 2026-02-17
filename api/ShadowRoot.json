@@ -146,7 +146,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "146"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -166,7 +166,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -401,7 +401,7 @@
             "description": "Serializes `<` and `>` in attributes as `&amp;lt;` and `&amp;gt;` (see [this spec issue](https://github.com/whatwg/html/issues/6235))",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "138"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -564,14 +564,7 @@
             "description": "Serializes `<` and `>` in attributes as `&amp;lt;` and `&amp;gt;` (see [this spec issue](https://github.com/whatwg/html/issues/6235))",
             "support": {
               "chrome": {
-                "version_added": "114",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "enable-experimental-web-platform-features",
-                    "value_to_set": "enabled"
-                  }
-                ]
+                "version_added": "138"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -707,6 +700,66 @@
           "status": {
             "experimental": false,
             "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "referenceTarget": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot#shadowroot.referencetarget",
+          "tags": [
+            "web-features:shadow-dom"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "133",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "149",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.shadowdom.referenceTarget.enabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "26",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "referenceTarget",
+                  "value_to_set": "true"
+                },
+                {
+                  "type": "preference",
+                  "name": "referenceTarget support for aria-owns",
+                  "value_to_set": "true"
+                }
+              ]
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
             "deprecated": false
           }
         }

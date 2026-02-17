@@ -765,6 +765,9 @@
         "__compat": {
           "description": "`ariaNotify() method`",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/ariaNotify",
+          "tags": [
+            "web-features:arianotify"
+          ],
           "support": {
             "chrome": {
               "version_added": "141",
@@ -970,6 +973,9 @@
       "browsingTopics": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/browsingTopics",
+          "tags": [
+            "web-features:topics"
+          ],
           "support": {
             "chrome": {
               "version_added": "126"
@@ -2666,7 +2672,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "146"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -2686,7 +2692,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -3595,6 +3601,41 @@
               }
             }
           }
+        },
+        "paste": {
+          "__compat": {
+            "description": "`paste` command",
+            "tags": [
+              "web-features:execcommand"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "42"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "148",
+                "notes": "Supported in content scripts (not just extensions) via the [Clipboard API](https://developer.mozilla.org/docs/Web/API/Clipboard_API)"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": true
+            }
+          }
         }
       },
       "exitFullscreen": {
@@ -3841,6 +3882,9 @@
       "featurePolicy": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/featurePolicy",
+          "tags": [
+            "web-features:feature-policy"
+          ],
           "support": {
             "chrome": {
               "version_added": "74"
@@ -7295,7 +7339,7 @@
             "opera_android": "mirror",
             "safari": {
               "version_added": "11.1",
-              "notes": "Client-side storage access granted per-page ([see explanation](https://developer.mozilla.org/docs/Web/API/Storage_Access_API#how_it_works))"
+              "notes": "Client-side storage access is granted per-page ([see explanation](https://developer.mozilla.org/docs/Web/API/Storage_Access_API#how_it_works:~:text=In%20older%20spec%20versions%2C%20the%20access%20was%20per%2Dpage))."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -7308,6 +7352,43 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "strict_same_origin_policy": {
+          "__compat": {
+            "description": "Third-party cookies sent only with requests to the calling embed's exact origin, not the whole site.",
+            "spec_url": "https://privacycg.github.io/storage-access/#dom-document-requeststorageaccess:~:text=is%20not%20same%20origin",
+            "tags": [
+              "web-features:storage-access"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "141"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "140"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": false
+              },
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         },
         "types_parameter": {
@@ -7862,7 +7943,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/requestStorageAccessFor",
           "spec_url": "https://privacycg.github.io/requestStorageAccessFor/#dom-document-requeststorageaccessfor",
           "tags": [
-            "web-features:storage-access"
+            "web-features:related-website-sets"
           ],
           "support": {
             "chrome": {

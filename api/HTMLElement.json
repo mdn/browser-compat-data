@@ -905,7 +905,8 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "9"
+              "version_added": "9",
+              "notes": "The `drag` event handler receives a `DragEvent` whose coordinate properties (`clientX`/`clientY`, `pageX`/`pageY`, `screenX`/`screenY`) are always `0`. See [bug 505521](https://bugzil.la/505521)."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -1479,7 +1480,7 @@
             ],
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "145"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -1790,6 +1791,9 @@
         "__compat": {
           "description": "`interest` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/interest_event",
+          "tags": [
+            "web-features:interest-invokers"
+          ],
           "support": {
             "chrome": {
               "version_added": "142"
@@ -1963,6 +1967,9 @@
         "__compat": {
           "description": "`loseinterest` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/loseinterest_event",
+          "tags": [
+            "web-features:interest-invokers"
+          ],
           "support": {
             "chrome": {
               "version_added": "142"

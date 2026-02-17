@@ -1,0 +1,68 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+import { styleText } from 'node:util';
+
+import esMain from 'es-main';
+
+import { lowLevelWalk } from '../utils/walk.js';
+
+/**
+ * Checks the anchors of all `mdn_url` values.
+ */
+const checkAnchors = async () => {
+  /** @type {Map<string, { path: string; hash: string }[]>} */
+  const bySlug = new Map();
+
+  for (const support of lowLevelWalk()) {
+    const { compat, path } = support;
+    if (!compat) {
+      continue;
+    }
+
+    const { mdn_url } = compat;
+    if (!mdn_url) {
+      continue;
+    }
+
+    const { pathname, hash } = new URL(mdn_url);
+    if (!hash) {
+      continue;
+    }
+
+    const item = {
+      path,
+      hash,
+    };
+
+    const items = bySlug.get(pathname) ?? [];
+    items.push(item);
+    bySlug.set(pathname, items);
+  }
+
+  await Promise.all(
+    [...bySlug.entries()].map(async ([slug, items]) => {
+      const url = `https://developer.mozilla.org${slug}`;
+      const res = await fetch(url);
+      const text = await res.text();
+      if (!res.ok) {
+        console.error(`Failed to fetch ${url}`, text);
+        return;
+      }
+      for (const { path, hash } of items) {
+        if (!text.includes(`id="${hash.slice(1)}"`)) {
+          console.warn(
+            styleText(
+              'yellow',
+              `Invalid mdn_url anchor https://developer.mozilla.org${slug}${styleText('bold', hash)} in ${styleText('italic', path)}`,
+            ),
+          );
+        }
+      }
+    }),
+  );
+};
+
+if (esMain(import.meta)) {
+  await checkAnchors();
+}
