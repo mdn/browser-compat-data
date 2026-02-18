@@ -1,19 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { readFile, writeFile } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
-
 import bcd from '../../index.js';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const exceptionListPath = join(
-  __dirname,
-  '../common/standard-track-exceptions.txt',
-);
+import {
+  getStandardTrackExceptions,
+  setStandardTrackExceptions,
+} from '../common/standard-track-exceptions.js';
 
 /**
  * Check if a feature should remain in the exception list.
@@ -56,53 +48,28 @@ let hasRun = false;
  * @returns {Promise<string>} The unchanged content (this fixer modifies the exception list file directly)
  */
 const fixStandardTrackExceptions = async (filename, actual) => {
-  // Only run once per fix session
   if (hasRun) {
+    // Only run once.
     return actual;
   }
   hasRun = true;
 
-  try {
-    const content = await readFile(exceptionListPath, 'utf-8');
-    const lines = content.trim().split('\n');
+  const features = [...(await getStandardTrackExceptions())];
 
-    /** @type {string[]} */
-    const headerLines = [];
-    /** @type {string[]} */
-    const featureLines = [];
+  // Filter features that should remain
+  const remainingFeatures = features.filter((featurePath) =>
+    shouldRemainInExceptionList(featurePath),
+  );
 
-    // Separate header comments from feature lines
-    for (const line of lines) {
-      const trimmed = line.trim();
-      if (trimmed.startsWith('#') || trimmed.length === 0) {
-        headerLines.push(line);
-      } else {
-        featureLines.push(trimmed);
-      }
-    }
+  // Check if anything changed
+  if (features.length !== remainingFeatures.length) {
+    const removed = features.length - remainingFeatures.length;
 
-    // Filter features that should remain
-    const remainingFeatures = featureLines.filter((featurePath) =>
-      shouldRemainInExceptionList(featurePath),
+    await setStandardTrackExceptions(remainingFeatures);
+
+    console.log(
+      `Removed ${removed} feature(s) from standard-track-exceptions.txt exception list`,
     );
-
-    // Check if anything changed
-    if (remainingFeatures.length !== featureLines.length) {
-      const removed = featureLines.length - remainingFeatures.length;
-
-      // Reconstruct the file with header and remaining features
-      const newContent = [...headerLines, ...remainingFeatures.sort()].join(
-        '\n',
-      );
-
-      await writeFile(exceptionListPath, newContent + '\n', 'utf-8');
-
-      console.log(
-        `Removed ${removed} feature(s) from standard-track-exceptions.txt exception list`,
-      );
-    }
-  } catch {
-    // Exception list file doesn't exist or can't be read, skip silently
   }
 
   return actual;

@@ -1,33 +1,16 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { readFileSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
-
 import chalk from 'chalk-template';
 
 import bcd from '../../index.js';
+import { getStandardTrackExceptions } from '../common/standard-track-exceptions.js';
 const { browsers } = bcd;
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
 /** @import {BrowserName, CompatStatement} from '../../types/types.js' */
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-// Load exception list for standard_track features without spec_url
-const exceptionListPath = join(
-  __dirname,
-  '../common/standard-track-exceptions.txt',
-);
-const standardTrackExceptions = new Set(
-  readFileSync(exceptionListPath, 'utf-8')
-    .split('\n')
-    .map((line) => line.trim())
-    .filter((line) => line.length > 0 && !line.startsWith('#')),
-);
+const standardTrackExceptions = new Set(await getStandardTrackExceptions());
 
 // See: https://github.com/web-platform-dx/web-features/blob/main/docs/baseline.md#core-browser-set
 const CORE_BROWSER_SET = new Set([

@@ -3,18 +3,10 @@
 
 import assert from 'node:assert/strict';
 import { readFile, writeFile } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
-import { dirname, join } from 'node:path';
+
+import { exceptionListPath } from '../common/standard-track-exceptions.js';
 
 import fixStandardTrackExceptions from './standard-track-exceptions.js';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const exceptionListPath = join(
-  __dirname,
-  '../common/standard-track-exceptions.txt',
-);
 
 describe('fixStandardTrackExceptions', () => {
   /** @type {string} */
@@ -87,7 +79,7 @@ describe('fixStandardTrackExceptions', () => {
     );
     assert.ok(
       updatedLines.some((line) =>
-        line.includes('Baseline exception list for standard_track'),
+        line.includes('Exception list for status linter'),
       ),
       'Expected header comment to be preserved',
     );
