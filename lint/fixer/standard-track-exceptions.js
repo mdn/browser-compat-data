@@ -89,9 +89,6 @@ const fixStandardTrackExceptions = async (filename, actual) => {
     // Check if anything changed
     if (remainingFeatures.length !== featureLines.length) {
       const removed = featureLines.length - remainingFeatures.length;
-      console.log(
-        `Removed ${removed} feature(s) from standard_track_without_spec_url.txt exception list`,
-      );
 
       // Reconstruct the file with header and remaining features
       const newContent = [
@@ -101,6 +98,10 @@ const fixStandardTrackExceptions = async (filename, actual) => {
       ].join('\n');
 
       await writeFile(exceptionListPath, newContent, 'utf-8');
+
+      console.log(
+        `Removed ${removed} feature(s) from standard_track_without_spec_url.txt exception list`,
+      );
     }
   } catch {
     // Exception list file doesn't exist or can't be read, skip silently
