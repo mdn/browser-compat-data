@@ -879,16 +879,32 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "75"
-            },
+            "firefox": [
+              {
+                "version_added": "75"
+              },
+              {
+                "version_added": "31",
+                "version_removed": "75",
+                "partial_implementation": true,
+                "notes": "No `nonce` hiding behavior."
+              }
+            ],
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "15.5"
-            },
+            "safari": [
+              {
+                "version_added": "15.5"
+              },
+              {
+                "version_added": "15.4",
+                "version_removed": "15.5",
+                "partial_implementation": true,
+                "notes": "No `nonce` hiding behavior."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
