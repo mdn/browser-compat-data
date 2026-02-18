@@ -1,14 +1,11 @@
-# Baseline exception list for standard_track features without spec_url
+# Exception list for status linter.
 #
-# This file contains features that have status.standard_track set to true
-# but are missing the required spec_url field.
+# This file contains a list of pre-listing BCD features that have
+# `status.standard_track: true` but are missing the required `spec_url`.
 #
-# New features MUST include a spec_url when status.standard_track is true.
+# New features MUST have a `spec_url` when `status.standard_track` is true.
 #
-# When you add a spec_url to a feature or set standard_track to false,
-# the linter will warn that the exception should be removed from this file.
-#
-
+# Resolved exceptions are automatically removed via `npm run lint:fix`.
 
 api.Animation.remove_filling_animation
 api.AudioNode.disconnect.destination_parameter
