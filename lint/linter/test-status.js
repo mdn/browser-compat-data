@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
 
 import bcd from '../../index.js';
 import { getStandardTrackExceptions } from '../common/standard-track-exceptions.js';
@@ -96,20 +96,29 @@ const checkStatus = (data, logger, category, featurePath) => {
     return;
   } else if (category === 'webextensions') {
     logger.error(
-      chalk`{red Has a {bold status object}, which is {bold not allowed} for web extensions.}`,
+      styleText(
+        'red',
+        `Has a ${styleText('bold', 'status object')}, which is ${styleText('bold', 'not allowed')} for web extensions.`,
+      ),
     );
   }
 
   if (status.experimental && status.deprecated) {
     logger.error(
-      chalk`{red Unexpected simultaneous {bold experimental} and {bold deprecated} status}`,
+      styleText(
+        'red',
+        `Unexpected simultaneous ${styleText('bold', 'experimental')} and ${styleText('bold', 'deprecated')} status`,
+      ),
       { fixable: true },
     );
   }
 
   if (data.spec_url && status.standard_track === false) {
     logger.error(
-      chalk`{red Marked as {bold non-standard}, but has a {bold spec_url}}`,
+      styleText(
+        'red',
+        `Marked as ${styleText('bold', 'non-standard')}, but has a ${styleText('bold', 'spec_url')}`,
+      ),
     );
   }
 
@@ -134,7 +143,10 @@ const checkStatus = (data, logger, category, featurePath) => {
 
   if (!checkExperimental(data)) {
     logger.error(
-      chalk`{red {bold Experimental} should be set to {bold false} as the feature is {bold supported} in {bold multiple browser} engines.}`,
+      styleText(
+        'red',
+        `${styleText('bold', 'Experimental')} should be set to ${styleText('bold', 'false')} as the feature is ${styleText('bold', 'supported')} in ${styleText('bold', 'multiple browser')} engines.`,
+      ),
       { fixable: true },
     );
   }

@@ -1,7 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
+
 import esMain from 'es-main';
 import { markdownTable } from 'markdown-table';
 import yargs from 'yargs';
@@ -140,7 +141,9 @@ const getStats = (folder, allBrowsers, bcd = bcdData) => {
       iterateData(bcd[folder], browsers, stats);
     } else {
       if (process.env.NODE_ENV !== 'test') {
-        console.error(chalk`{red.bold Folder "${folder}/" doesn't exist!}`);
+        console.error(
+          styleText(['red', 'bold'], `Folder "${folder}/" doesn't exist!`),
+        );
       }
       return null;
     }
@@ -190,11 +193,10 @@ const printStats = (stats, folder, counts) => {
   );
 
   console.log(
-    chalk`{bold Status as of version ${
-      process.env.npm_package_version
-    } (released on ${releaseDate}) for ${
-      folder ? `the \`${folder}/\` directory` : 'web platform features'
-    }}: \n`,
+    styleText(
+      'bold',
+      `Status as of version ${process.env.npm_package_version} (released on ${releaseDate}) for ${folder ? `the \`${folder}/\` directory` : 'web platform features'}:`,
+    ) + ' \n',
   );
 
   const header = ['browser', 'exact', 'ranged'];

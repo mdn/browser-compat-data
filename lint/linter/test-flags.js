@@ -1,7 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
+
 import { compare } from 'compare-versions';
 
 /** @import {Linter, LinterData} from '../types.js' */
@@ -133,11 +134,7 @@ export default {
 
     for (const error of errors) {
       logger.error(
-        chalk`Irrelevant flag data detected for {bold ${
-          error.browser
-        }}. Remove statement with {bold ${error.flagData
-          .map((flag) => flag.name)
-          .join(', ')}} flag`,
+        `Irrelevant flag data detected for ${styleText('bold', error.browser)}. Remove statement with ${styleText('bold', error.flagData.map((flag) => flag.name).join(', '))} flag`,
         { fixable: true },
       );
     }
