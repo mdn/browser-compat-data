@@ -20,7 +20,7 @@ const __dirname = dirname(__filename);
 // Load exception list for standard_track features without spec_url
 const exceptionListPath = join(
   __dirname,
-  'standard_track_without_spec_url.txt',
+  '../common/standard_track_without_spec_url.txt',
 );
 const standardTrackExceptions = new Set(
   readFileSync(exceptionListPath, 'utf-8')

@@ -12,7 +12,7 @@ const __dirname = dirname(__filename);
 
 const exceptionListPath = join(
   __dirname,
-  '../linter/standard_track_without_spec_url.txt',
+  '../common/standard_track_without_spec_url.txt',
 );
 
 /**
