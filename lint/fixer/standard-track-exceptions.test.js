@@ -13,7 +13,7 @@ const __dirname = dirname(__filename);
 
 const exceptionListPath = join(
   __dirname,
-  '../common/standard_track_without_spec_url.txt',
+  '../common/standard-track-exceptions.txt',
 );
 
 describe('fixStandardTrackExceptions', () => {

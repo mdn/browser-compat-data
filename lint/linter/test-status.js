@@ -20,7 +20,7 @@ const __dirname = dirname(__filename);
 // Load exception list for standard_track features without spec_url
 const exceptionListPath = join(
   __dirname,
-  '../common/standard_track_without_spec_url.txt',
+  '../common/standard-track-exceptions.txt',
 );
 const standardTrackExceptions = new Set(
   readFileSync(exceptionListPath, 'utf-8')
@@ -144,7 +144,7 @@ const checkStatus = (data, logger, category, featurePath) => {
   // Warn if exception no longer applies
   if (isInExceptionList && !missingSpecUrl) {
     logger.warning(
-      chalk`{yellow Feature is in the exception list but no longer needs to be (spec_url was added or standard_track is false). Remove from {bold standard_track_without_spec_url.txt}}`,
+      chalk`{yellow Feature is in the exception list but no longer needs to be (spec_url was added or standard_track is false). Remove from {bold standard-track-exceptions.txt}}`,
       { fixable: true },
     );
   }

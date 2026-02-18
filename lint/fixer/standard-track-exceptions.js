@@ -12,7 +12,7 @@ const __dirname = dirname(__filename);
 
 const exceptionListPath = join(
   __dirname,
-  '../common/standard_track_without_spec_url.txt',
+  '../common/standard-track-exceptions.txt',
 );
 
 /**
@@ -98,7 +98,7 @@ const fixStandardTrackExceptions = async (filename, actual) => {
       await writeFile(exceptionListPath, newContent + '\n', 'utf-8');
 
       console.log(
-        `Removed ${removed} feature(s) from standard_track_without_spec_url.txt exception list`,
+        `Removed ${removed} feature(s) from standard-track-exceptions.txt exception list`,
       );
     }
   } catch {
