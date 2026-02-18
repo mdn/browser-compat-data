@@ -129,14 +129,20 @@ const checkStatus = (data, logger, category, featurePath) => {
   if (missingSpecUrl && !isInExceptionList) {
     // New violation - not in exception list
     logger.error(
-      chalk`{red Marked as {bold standard_track}, but missing required {bold spec_url}}`,
+      styleText(
+        'red',
+        `Marked as ${styleText('bold', 'standard_track')}, but missing required ${styleText('bold', 'spec_url')}`,
+      ),
     );
   }
 
   // Warn if exception no longer applies
   if (isInExceptionList && !missingSpecUrl) {
     logger.warning(
-      chalk`{yellow Feature is in the exception list but no longer needs to be (spec_url was added or standard_track is false). Remove from {bold standard-track-exceptions.txt}}`,
+      styleText(
+        'yellow',
+        `Feature is in the exception list but no longer needs to be (spec_url was added or standard_track is false). Remove from ${styleText('bold', 'standard-track-exceptions.txt')}`,
+      ),
       { fixable: true },
     );
   }
