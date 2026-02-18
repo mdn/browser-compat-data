@@ -64,7 +64,7 @@ const fixStandardTrackExceptions = async (filename, actual) => {
 
   try {
     const content = await readFile(exceptionListPath, 'utf-8');
-    const lines = content.split('\n');
+    const lines = content.trim().split('\n');
 
     /** @type {string[]} */
     const headerLines = [];
@@ -91,13 +91,11 @@ const fixStandardTrackExceptions = async (filename, actual) => {
       const removed = featureLines.length - remainingFeatures.length;
 
       // Reconstruct the file with header and remaining features
-      const newContent = [
-        ...headerLines,
-        ...remainingFeatures.sort(),
-        '', // trailing newline
-      ].join('\n');
+      const newContent = [...headerLines, ...remainingFeatures.sort()].join(
+        '\n',
+      );
 
-      await writeFile(exceptionListPath, newContent, 'utf-8');
+      await writeFile(exceptionListPath, newContent + '\n', 'utf-8');
 
       console.log(
         `Removed ${removed} feature(s) from standard_track_without_spec_url.txt exception list`,
