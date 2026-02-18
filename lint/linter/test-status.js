@@ -135,7 +135,7 @@ const checkStatus = (data, logger, category, featurePath) => {
   const missingSpecUrl = !data.spec_url && status.standard_track === true;
 
   if (missingSpecUrl && !isInExceptionList) {
-    // New violation - not in baseline exception list
+    // New violation - not in exception list
     logger.error(
       chalk`{red Marked as {bold standard_track}, but missing required {bold spec_url}}`,
     );
