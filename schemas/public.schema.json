@@ -401,7 +401,7 @@
         "^(?!__compat)[a-zA-Z_0-9-$@]*$": { "$ref": "#/definitions/identifier" }
       },
       "additionalProperties": false,
-      "tsType": "{__compat?: CompatStatement} & {[key: string]: Identifier}"
+      "tsType": "{__compat?: InternalCompatStatement} & Record<Exclude<string, '__compat'>, InternalIdentifier>"
     }
   },
 

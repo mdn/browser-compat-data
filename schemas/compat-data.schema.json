@@ -258,7 +258,7 @@
       "errorMessage": {
         "additionalProperties": "Feature names can only contain alphanumerical characters or the following symbols: _-$@"
       },
-      "tsType": "{[key: string]: InternalIdentifier} & {__compat?: InternalCompatStatement};"
+      "tsType": "{__compat?: InternalCompatStatement} & Record<Exclude<string, '__compat'>, InternalIdentifier>"
     },
 
     "webextensions_internal_identifier": {
