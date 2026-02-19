@@ -115,7 +115,7 @@ The `__compat` object describes a feature's compatibility data. It consists of t
 - An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined.
   Each URL must contain a fragment identifier.
 
-- An optional `tags` property which is an array of strings allowing to assign tags to the feature.
+- An optional `tags` property to assign tags to the feature.
 
 - A mandatory `source_file` property containing the path to the source file that defines this feature, relative to the repository root (e.g. `"api/AbortController.json"`). This is automatically generated at build time.
 
@@ -263,13 +263,13 @@ Note that you can't have both `prefix` and `alternative_name`.
 
 #### `flags`
 
-An optional array of objects describing flags that must be configured for this browser to support this feature. Usually this array will have one item, but there are cases where two or more flags can be required to activate a feature. An object in the `flags` array consists of three properties:
+An array of objects describing feature flags that must be configured for this browser to support this feature. Usually this array will have one item, but there are cases where two or more flags can be required to activate a feature. An object in the `flags` array consists of three properties:
 
-- `type` (mandatory): an enum that indicates the flag type:
+- `type` (mandatory): the flag type:
   - `preference` a flag the user can set (like in `about:config` in Firefox).
   - `runtime_flag` a flag to be set before starting the browser.
-- `name` (mandatory): a string giving the name of the flag or preference that must be configured.
-- `value_to_set` (optional): representing the actual value to set the flag to. It is a string, that may be converted to the right type (that is `true` or `false` for Boolean value, or `4` for an integer value).
+- `name` (mandatory): the name of the flag or preference to configure.
+- `value_to_set` (optional): the value to set the flag to. It is a string, that may be converted to the right type (that is `true` or `false` for Boolean value, or `4` for an integer value).
 
 Example for one flag required:
 
@@ -288,15 +288,15 @@ Example for one flag required:
 
 #### `impl_url`
 
-An optional changeset/commit URL (or array of URLs) for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser.
+A URL or array of URLs linking to the bug or issue that tracks the implementation of this feature.
 
 #### `notes`
 
-A string or array of strings containing additional information. In the published data, notes are formatted as HTML.
+A string or array of strings containing additional information about the feature's support. In the published data, notes are formatted as HTML.
 
 #### `partial_implementation`
 
-A `boolean` value indicating whether or not the implementation of the subfeature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, a `notes` field explaining the divergence is always present.
+Set to `true` if the browser's support does not implement mandatory specified behavior, is inconsistent with other browsers, causes confusing feature detection results, and has a demonstrable negative impact on web developers. It defaults to `false`. If set to `true`, a `notes` field explaining the divergence is always present.
 
 ```json
 {
@@ -338,7 +338,7 @@ The status property contains information about stability of the feature. It is a
 
 - `deprecated`: a `boolean` value.
 
-  If `deprecated` is `true`, then the feature is no longer recommended. It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality.
+  If `deprecated` is `true`, then the feature is no longer recommended. It might be removed in the future or kept only for compatibility purposes.
 
 ```json
 "__compat": {

@@ -74,13 +74,13 @@ The `releases` object contains data regarding the browsers' releases, using the 
   - `esr`: This release is an Extended Support Release or Long Term Support release.
   - `planned`: This release is planned in the future.
 
-- An optional `release_date` property with the `YYYY-MM-DD` release date of the browser's release.
+- An optional `release_date` property with the `YYYY-MM-DD` date of when this version was released or will be released.
 
 - An optional `release_notes` property which points to release notes. It needs to be a valid URL.
 
 - An optional `engine` property which is the name of the browser's engine. Valid values are `"Blink"`, `"EdgeHTML"`, `"Gecko"`, `"Presto"`, `"Trident"`, `"WebKit"`, and `"V8"`. This property is placed on the individual release as a browser may switch to a different engine (e.g. Microsoft Edge switched to Chrome as its base engine). If `engine` is specified, `engine_version` must also be provided.
 
-- An optional `engine_version` property which is the version of the browser's engine. Depending on the browser, this may or may not differ from the browser version. Required when `engine` is specified.
+- An optional `engine_version` property indicating the engine version used in this release. Required when `engine` is specified.
 
 #### Initial versions
 

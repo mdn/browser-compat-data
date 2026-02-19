@@ -185,7 +185,7 @@ The `__compat` object consists of the following:
   Each URL must either contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`), or else must match the regular-expression pattern `^https://registry.khronos.org/webgl/extensions/[^/]+/` (e.g. `https://registry.khronos.org/webgl/extensions/ANGLE_instanced_arrays/`) or `^https://github.com/WebAssembly/.+` for WebAssembly specs.
   Each URL must link to a specification published by a standards body or a formal proposal that may lead to such publication.
 
-- An optional `tags` property which is an array of strings allowing to assign tags to the feature.
+- An optional `tags` property to assign tags to the feature.
   Each tag in the array must be namespaced. The currently allowed namespaces are:
   - `web-features`: A namespace to tag features belonging to a web platform feature group as defined by [web-platform-dx/web-features](https://github.com/web-platform-dx/web-features/blob/main/features/README.md).
 
@@ -375,13 +375,13 @@ Note that you can’t have both `prefix` and `alternative_name`.
 
 #### `flags`
 
-An optional array of objects describing flags that must be configured for this browser to support this feature. Usually this array will have one item, but there are cases where two or more flags can be required to activate a feature. An object in the `flags` array consists of three properties:
+An array of objects describing feature flags that must be configured for this browser to support this feature. Usually this array will have one item, but there are cases where two or more flags can be required to activate a feature. An object in the `flags` array consists of three properties:
 
-- `type` (mandatory): an enum that indicates the flag type:
+- `type` (mandatory): the flag type:
   - `preference` a flag the user can set (like in `about:config` in Firefox).
   - `runtime_flag` a flag to be set before starting the browser.
-- `name` (mandatory): a string giving the value which the specified flag must be set to for this feature to work.
-- `value_to_set` (optional): representing the actual value to set the flag to. It is a string, that may be converted to the right type (that is `true` or `false` for Boolean value, or `4` for an integer value). It doesn't need to be enclosed in backticks.
+- `name` (mandatory): the name of the flag or preference to configure.
+- `value_to_set` (optional): the value to set the flag to. It is a string, that may be converted to the right type (that is `true` or `false` for Boolean value, or `4` for an integer value).
 
 Example for one flag required:
 
@@ -420,13 +420,11 @@ Example for two flags required:
 
 #### `impl_url`
 
-An optional changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser. The presence of an `impl_url` value indicates that the associated browser has implemented the feature or intends to implement the feature.
-
-For changeset/commit URLs, this is typically a https://trac.webkit.org/changeset/, https://hg.mozilla.org/mozilla-central/rev/, or https://crrev.com/ URL for a changeset with a subject line that will typically be something of the form _"Implement [feature]"_, _"Support [feature]"_, or _"Enable [feature]"_. For bug URLs, this is typically a https://webkit.org/b/, https://bugzil.la/, https://crbug.com/, or https://github.com/GoogleChromeLabs/chromium-bidi/issues/ URL indicating an intent to implement and ship the feature.
+A URL or array of URLs linking to the bug or issue that tracks the implementation of this feature.
 
 #### `notes`
 
-A string or `array` of strings containing additional information. If there is only one entry, the value of `notes` must simply be a string instead of an array.
+A string or `array` of strings containing additional information about the feature's support. If there is only one entry, the value of `notes` must simply be a string instead of an array.
 
 Example:
 
@@ -446,7 +444,7 @@ Notes may be formatted in Markdown. Only links, bold, italics, codeblocks, and `
 
 #### `partial_implementation`
 
-A `boolean` value indicating whether or not the implementation of the subfeature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, it is [required](../docs/data-guidelines/README.md#partial_implementation-requires-a-note) that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard).
+Set to `true` if the browser's support does not implement mandatory specified behavior, is inconsistent with other browsers, causes confusing feature detection results, and has a demonstrable negative impact on web developers. It defaults to `false`. If set to `true`, it is [required](../docs/data-guidelines/README.md#partial_implementation-requires-a-note) that you add a note explaining how it diverges from the standard.
 
 ```json
 {
@@ -482,7 +480,7 @@ The mandatory status property contains information about stability of the featur
 
 - `deprecated`: a `boolean` value.
 
-  If `deprecated` is `true`, then the feature is no longer recommended. It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality.
+  If `deprecated` is `true`, then the feature is no longer recommended. It might be removed in the future or kept only for compatibility purposes.
 
 ```json
 "__compat": {
