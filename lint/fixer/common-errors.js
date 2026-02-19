@@ -3,33 +3,33 @@
 
 import { walk } from '../../utils/index.js';
 
-/** @import {InternalCompatStatement} from '../../types/index.js' */
+/** @import {InternalSupportBlock} from '../../types/index.js' */
 
 /**
- * Fixes common errors in InternalCompatStatements.
+ * Fixes common errors in an InternalSupportBlock.
  *
  * - Replaces `browser: { version_added: "mirror" }` with `browser: "mirror"`
  * - Wraps `browser: false` with `browser: `{ version_added: false }`
- * @param {Pick<InternalCompatStatement, "support">} compat The compat statement to fix
+ * @param {InternalSupportBlock} support The support block to fix
  * @returns {void}
  */
-export const fixCommonErrorsInCompatStatement = (compat) => {
-  for (const browser of Object.keys(compat.support)) {
-    if (compat.support[browser] === false) {
-      compat.support[browser] = {
+export const fixCommonErrorsInSupportBlock = (support) => {
+  for (const browser of Object.keys(support)) {
+    if (support[browser] === false) {
+      support[browser] = {
         version_added: false,
       };
     } else if (
-      typeof compat.support[browser] === 'object' &&
-      JSON.stringify(compat.support[browser]) === '{"version_added":"mirror"}'
+      typeof support[browser] === 'object' &&
+      JSON.stringify(support[browser]) === '{"version_added":"mirror"}'
     ) {
-      compat.support[browser] = 'mirror';
+      support[browser] = 'mirror';
     }
     if (
       browser == 'ie' &&
-      JSON.stringify(compat.support[browser]) === '{"version_added":false}'
+      JSON.stringify(support[browser]) === '{"version_added":false}'
     ) {
-      Reflect.deleteProperty(compat.support, browser);
+      Reflect.deleteProperty(support, browser);
     }
   }
 };
@@ -48,7 +48,7 @@ const fixCommonErrors = (filename, actual) => {
   const bcd = JSON.parse(actual);
 
   for (const { compat } of walk(undefined, bcd)) {
-    fixCommonErrorsInCompatStatement(compat);
+    fixCommonErrorsInSupportBlock(compat.support);
   }
 
   return JSON.stringify(bcd, null, 2);
