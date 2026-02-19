@@ -157,7 +157,7 @@ The `simple_support_statement` object is the core object containing the compatib
 
 #### `version_added`
 
-This is the only mandatory property and it contains a string with the version number indicating when a sub-feature has been added (and is therefore supported), or `false` indicating the feature is not supported. Examples:
+This is the only mandatory property and it contains a string with the version number indicating when a subfeature has been added (and is therefore supported), or `false` indicating the feature is not supported. Examples:
 
 - Support from version 3.5 (inclusive):
 
@@ -193,7 +193,7 @@ This is the only mandatory property and it contains a string with the version nu
 
 #### `version_removed`
 
-Contains a string with the version number the sub-feature was removed in. If the feature has not been removed from the browser, this property is omitted. When `version_removed` is present, `version_last` is always present as well.
+Contains a string with the version number the subfeature was removed in. If the feature has not been removed from the browser, this property is omitted. When `version_removed` is present, `version_last` is always present as well.
 
 Example:
 
@@ -221,7 +221,7 @@ A string indicating the last browser version that supported the feature. This pr
 
 #### `prefix`
 
-A prefix to add to the sub-feature name (defaults to empty string).
+A prefix to add to the subfeature name (defaults to empty string).
 If applicable, leading and trailing `-` must be included.
 
 Examples:
@@ -296,7 +296,7 @@ A string or array of strings containing additional information. In the published
 
 #### `partial_implementation`
 
-A `boolean` value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, a `notes` field explaining the divergence is always present.
+A `boolean` value indicating whether or not the implementation of the subfeature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, a `notes` field explaining the divergence is always present.
 
 ```json
 {

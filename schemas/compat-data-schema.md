@@ -72,9 +72,9 @@ A feature is described by an identifier containing the `__compat` property. In o
 
 When an identifier has a `__compat` block, it represents its basic support, indicating that a minimal implementation of a functionality is included. What it represents exactly depends on the evolution of the feature over time, both in terms of specifications and of browser support.
 
-#### Sub-features
+#### Subfeatures
 
-To add a sub-feature, a new identifier is added below the main feature at the level of a `__compat` object (see the sub-features "start" and "end" above). The same could be done for sub-sub-features. There is no depth limit.
+To add a subfeature, a new identifier is added below the main feature at the level of a `__compat` object (see the subfeatures "start" and "end" above). The same could be done for sub-subfeatures. There is no depth limit.
 
 See [Data guidelines](../docs/data-guidelines/README.md) for more information about feature naming conventions and other best practices.
 
@@ -269,7 +269,7 @@ The `simple_support_statement` object is the core object containing the compatib
 
 #### `version_added`
 
-This is the only mandatory property and it contains a string with the version number indicating when a sub-feature has been added (and is therefore supported), or the value `false` indicating the feature is not supported. Examples:
+This is the only mandatory property and it contains a string with the version number indicating when a subfeature has been added (and is therefore supported), or the value `false` indicating the feature is not supported. Examples:
 
 - Support from version 3.5 (inclusive):
 
@@ -305,7 +305,7 @@ This is the only mandatory property and it contains a string with the version nu
 
 #### `version_removed`
 
-Contains a string with the version number the sub-feature was removed in. If the feature has not been removed from the browser, this property is omitted, rather than being set to `false`.
+Contains a string with the version number the subfeature was removed in. If the feature has not been removed from the browser, this property is omitted, rather than being set to `false`.
 
 Examples:
 
@@ -334,7 +334,7 @@ Ranged versions should be used sparingly and only when it is impossible or highl
 
 #### `prefix`
 
-A prefix to add to the sub-feature name (defaults to empty string).
+A prefix to add to the subfeature name (defaults to empty string).
 If applicable, leading and trailing `-` must be included.
 
 Examples:
@@ -446,7 +446,7 @@ Notes may be formatted in Markdown. Only links, bold, italics, codeblocks, and `
 
 #### `partial_implementation`
 
-A `boolean` value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, it is [required](../docs/data-guidelines/README.md#partial_implementation-requires-a-note) that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard).
+A `boolean` value indicating whether or not the implementation of the subfeature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, it is [required](../docs/data-guidelines/README.md#partial_implementation-requires-a-note) that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard).
 
 ```json
 {
