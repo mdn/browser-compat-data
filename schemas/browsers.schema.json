@@ -111,7 +111,7 @@
         "releases": {
           "type": "object",
           "additionalProperties": { "$ref": "#/definitions/release_statement" },
-          "description": "Known versions of this browser.",
+          "description": "Releases of this browser.",
           "tsType": "{ [version: string]: ReleaseStatement };"
         }
       },
@@ -131,7 +131,7 @@
         "release_date": {
           "type": "string",
           "format": "date",
-          "description": "Date this version was released (`YYYY-MM-DD`)."
+          "description": "When this version was released or will be released (`YYYY-MM-DD`)."
         },
         "release_notes": {
           "type": "string",
@@ -151,7 +151,7 @@
         },
         "engine_version": {
           "type": "string",
-          "description": "Engine version corresponding to this browser version."
+          "description": "Engine version used in this release."
         }
       },
       "required": ["status"],
