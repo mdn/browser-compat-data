@@ -125,15 +125,13 @@ export class ConsistencyChecker {
 
     // Test whether sub-features are supported when basic support is not implemented
     // For all unsupported browsers (basic support == false), sub-features should be set to false
-    const unsupportedInParent = this.extractUnsupportedBrowsers(
-      /** @type {InternalCompatStatement} */ (data.__compat),
-    );
+    const unsupportedInParent = this.extractUnsupportedBrowsers(data.__compat);
     /** @type {Partial<Record<BrowserName, [string, VersionValue][]>>} */
     let inconsistentSubfeaturesByBrowser = {};
 
     subfeatures.forEach((subfeature) => {
       const unsupportedInChild = this.extractUnsupportedBrowsers(
-        /** @type {InternalIdentifier} */ (query(subfeature, data)).__compat,
+        query(subfeature, data).__compat,
       );
 
       const browsers = /** @type {BrowserName[]} */ (
@@ -146,8 +144,7 @@ export class ConsistencyChecker {
           browser,
         );
         const subfeature_value = this.getVersionAdded(
-          /** @type {InternalIdentifier} */ (query(subfeature, data)).__compat
-            ?.support,
+          query(subfeature, data).__compat?.support,
           browser,
         );
         if (feature_value === subfeature_value) {
@@ -187,9 +184,7 @@ export class ConsistencyChecker {
 
     for (const subfeature of subfeatures) {
       for (const browser of supportInParent) {
-        const subfeatureData = /** @type {InternalIdentifier} */ (
-          query(subfeature, data)
-        );
+        const subfeatureData = query(subfeature, data);
         if (
           subfeatureData.__compat?.support[browser] != undefined &&
           this.isVersionAddedGreater(
@@ -423,7 +418,7 @@ export default {
    */
   check: (logger, { data }) => {
     const checker = new ConsistencyChecker();
-    const allErrors = checker.check(/** @type {InternalCompatData} */ (data));
+    const allErrors = checker.check(data);
 
     for (const { path, errors } of allErrors) {
       for (const { type, browser, parentValue, subfeatures } of errors) {
