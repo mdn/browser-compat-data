@@ -5,7 +5,9 @@ import assert from 'node:assert/strict';
 
 import { fixStatusValue } from './status.js';
 
-/** @type {{ name: string; input: *; output: * }[]} */
+/** @import {InternalIdentifier} from '../../types/internal.js' */
+
+/** @type {{ name: string; input: InternalIdentifier; output: InternalIdentifier }[]} */
 const tests = [
   {
     name: 'should unset experimental when feature is deprecated',
