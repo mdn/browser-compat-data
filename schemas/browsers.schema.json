@@ -22,7 +22,7 @@
 
     "browser_name": {
       "type": "string",
-      "description": "Browser key (e.g. 'firefox', 'chrome_android', or 'webview_ios').",
+      "description": "Browser key.",
       "enum": [
         "bun",
         "chrome",
@@ -46,7 +46,7 @@
 
     "upstream_browser_name": {
       "type": "string",
-      "description": "Upstream browser key (e.g. 'firefox' or 'chrome_android').",
+      "description": "Upstream browser key.",
       "enum": ["chrome", "chrome_android", "firefox", "safari", "safari_ios"]
     },
 
@@ -77,25 +77,28 @@
       "properties": {
         "name": {
           "type": "string",
-          "description": "The browser brand name (e.g. Firefox, Firefox Android, Chrome, etc.)."
+          "description": "The browser brand name.",
+          "examples": ["Firefox", "Firefox Android", "Chrome"]
         },
         "type": {
           "$ref": "#/definitions/browser_type",
-          "description": "The platform the browser runs on (e.g. desktop, mobile, XR, or server engine).",
+          "description": "The platform the browser runs on.",
           "tsType": "BrowserType"
         },
         "upstream": {
           "type": "string",
-          "description": "The upstream browser this browser derives from (e.g. Firefox Android is derived from Firefox, Edge is derived from Chrome).",
+          "description": "The upstream browser this browser derives from.",
           "tsType": "BrowserName"
         },
         "preview_name": {
           "type": "string",
-          "description": "The name of the browser's preview channel (e.g. 'Nightly' for Firefox or 'TP' for Safari)."
+          "description": "The name of the browser's preview channel.",
+          "examples": ["Nightly", "TP"]
         },
         "pref_url": {
           "type": "string",
-          "description": "URL of the page where feature flags can be changed (e.g. 'about:config' for Firefox or 'chrome://flags' for Chrome)."
+          "description": "URL of the page where feature flags can be changed.",
+          "examples": ["about:config", "chrome://flags"]
         },
         "accepts_flags": {
           "type": "boolean",
@@ -138,7 +141,7 @@
         },
         "status": {
           "$ref": "#/definitions/browser_status",
-          "description": "A property indicating where in the lifetime cycle this release is in (e.g. current, retired, beta, nightly).",
+          "description": "A property indicating where in the lifetime cycle this release is in.",
           "tsType": "BrowserStatus"
         },
         "engine": {
