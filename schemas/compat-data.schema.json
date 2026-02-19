@@ -6,7 +6,7 @@
       "type": "object",
       "properties": {
         "version_added": {
-          "description": "The browser version that added this feature, or false if the feature is not supported.",
+          "description": "Browser version that added this feature, or false if not supported.",
           "anyOf": [
             {
               "type": "string",
@@ -19,18 +19,18 @@
           "tsType": "VersionValue"
         },
         "version_removed": {
-          "description": "The browser version that removed this feature.",
+          "description": "Browser version that removed this feature.",
           "type": "string",
           "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$",
           "tsType": "string"
         },
         "prefix": {
           "type": "string",
-          "description": "A prefix to add to the sub-feature name (defaults to empty string). If applicable, leading and trailing '-' must be included."
+          "description": "Prefix for the sub-feature name. Leading and trailing '-' must be included if applicable."
         },
         "alternative_name": {
           "type": "string",
-          "description": "An alternative name for the feature, for cases where a feature is implemented under an entirely different name and not just prefixed."
+          "description": "Alternative name for the feature, when implemented under an entirely different name."
         },
         "flags": {
           "type": "array",
@@ -54,7 +54,7 @@
               }
             }
           ],
-          "description": "Changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser.",
+          "description": "URL for the changeset/commit or bug that tracks the implementation of this feature.",
           "tsType": "string | [string, string, ...string[]]",
           "errorMessage": {
             "pattern": "impl_url must be a link to a browser commit or bug URL. URLs must be in shortened form (ex. bugs.chromium.org -> crbug.com). Note: `npm run fix` may resolve these issues."
@@ -62,7 +62,7 @@
         },
         "partial_implementation": {
           "const": true,
-          "description": "Whether the implementation of the sub-feature deviates from the specification in a way that may cause compatibility problems. It defaults to false (no interoperability problems expected). If set to true, it is recommended that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard, for example)."
+          "description": "Whether the implementation deviates from the specification in a way that may cause compatibility problems. If true, a note explaining the divergence is required."
         },
         "notes": {
           "description": "Additional information about the feature's support.",
@@ -98,16 +98,16 @@
       "properties": {
         "type": {
           "type": "string",
-          "description": "The flag type.",
+          "description": "Flag type.",
           "enum": ["preference", "runtime_flag"]
         },
         "name": {
           "type": "string",
-          "description": "The name of the flag or preference that must be configured."
+          "description": "Name of the flag or preference to configure."
         },
         "value_to_set": {
           "type": "string",
-          "description": "The value which the specified flag must be set to for this feature to work."
+          "description": "Value to set the flag to."
         }
       },
       "additionalProperties": false,
@@ -142,7 +142,7 @@
         },
         "deprecated": {
           "type": "boolean",
-          "description": "Whether the feature is no longer recommended. It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality."
+          "description": "Whether the feature is no longer recommended. It might be removed in the future or kept only for compatibility purposes."
         }
       },
       "required": ["experimental", "standard_track", "deprecated"],
@@ -201,7 +201,7 @@
           "type": "string",
           "format": "uri",
           "pattern": "^https://developer\\.mozilla\\.org/docs/",
-          "description": "Link to the MDN reference page documenting the feature. The URL should be language-agnostic."
+          "description": "Link to the MDN reference page for this feature. Must be language-agnostic."
         },
         "spec_url": {
           "anyOf": [
@@ -227,7 +227,7 @@
         },
         "support": {
           "$ref": "#/definitions/internal_support_block",
-          "description": "The data for the support of each browser, containing a `support_statement` object for each browser identifier with information about versions, prefixes, or alternate names, as well as notes."
+          "description": "Browser support data for this feature."
         },
         "status": {
           "$ref": "#/definitions/internal_status_block",
@@ -245,7 +245,7 @@
           "type": "object",
           "$ref": "#/definitions/internal_compat_statement",
           "required": ["status"],
-          "description": "A feature is described by an identifier containing the `__compat` property.\n\nIn other words, identifiers without `__compat` aren't necessarily features, but help to nest the features properly.\n\nWhen an identifier has a `__compat` block, it represents its basic support, indicating that a minimal implementation of a functionality is included.\n\nWhat it represents exactly depends of the evolution of the feature over time, both in terms of specifications and of browser support.",
+          "description": "The compatibility data for a feature, nested under the `__compat` property of an identifier.",
           "tsType": "InternalCompatStatement"
         }
       },

@@ -4,7 +4,7 @@
   "definitions": {
     "meta_block": {
       "type": "object",
-      "description": "Metadata of the present BCD data.",
+      "description": "Release metadata.",
       "properties": {
         "version": {
           "type": "string"
@@ -121,7 +121,7 @@
         "releases": {
           "type": "object",
           "additionalProperties": { "$ref": "#/definitions/release_statement" },
-          "description": "The known versions of this browser.",
+          "description": "Known versions of this browser.",
           "tsType": "Record<string, ReleaseStatement>"
         }
       },
@@ -141,13 +141,13 @@
         "release_date": {
           "type": "string",
           "format": "date",
-          "description": "The date on which this version was released, formatted as `YYYY-MM-DD`."
+          "description": "Date this version was released (`YYYY-MM-DD`)."
         },
         "release_notes": {
           "type": "string",
           "format": "uri",
           "pattern": "^https://",
-          "description": "A link to the release notes or changelog for a given release."
+          "description": "Link to the release notes or changelog."
         },
         "status": {
           "$ref": "#/definitions/browser_status"
@@ -157,7 +157,7 @@
         },
         "engine_version": {
           "type": "string",
-          "description": "Version of the engine corresponding to the browser version."
+          "description": "Engine version corresponding to this browser version."
         }
       },
       "required": ["status"],
@@ -174,22 +174,22 @@
           "$ref": "#/definitions/version_value"
         },
         "version_removed": {
-          "description": "The browser version that removed this feature.",
+          "description": "Browser version that removed this feature.",
           "type": "string",
           "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$"
         },
         "version_last": {
-          "description": "The last browser version that supported this feature. This is automatically generated.",
+          "description": "Last browser version that supported this feature. Automatically generated.",
           "type": "string",
           "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$"
         },
         "prefix": {
           "type": "string",
-          "description": "A prefix to add to the sub-feature name (defaults to empty string). If applicable, leading and trailing '-' must be included."
+          "description": "Prefix for the sub-feature name. Leading and trailing '-' must be included if applicable."
         },
         "alternative_name": {
           "type": "string",
-          "description": "An alternative name for the feature, for cases where a feature is implemented under an entirely different name and not just prefixed."
+          "description": "Alternative name for the feature, when implemented under an entirely different name."
         },
         "flags": {
           "type": "array",
@@ -214,14 +214,14 @@
               }
             }
           ],
-          "description": "Changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser.",
+          "description": "URL for the changeset/commit or bug that tracks the implementation of this feature.",
           "errorMessage": {
             "pattern": "impl_url must be a link to a browser commit or bug URL. URLs must be in shortened form (ex. bugs.chromium.org -> crbug.com). Note: `npm run fix` may resolve these issues."
           }
         },
         "partial_implementation": {
           "const": true,
-          "description": "Whether the implementation of the sub-feature deviates from the specification in a way that may cause compatibility problems. It defaults to false (no interoperability problems expected). If set to true, it is recommended that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard, for example)."
+          "description": "Whether the implementation deviates from the specification in a way that may cause compatibility problems. If true, a note explaining the divergence is required."
         },
         "notes": {
           "description": "Additional information about the feature's support.",
@@ -255,7 +255,7 @@
     },
 
     "version_value": {
-      "description": "The browser version that added this feature, or false if the feature is not supported.",
+      "description": "Browser version that added this feature, or false if not supported.",
       "anyOf": [
         {
           "type": "string",
@@ -272,16 +272,16 @@
       "properties": {
         "type": {
           "type": "string",
-          "description": "The flag type.",
+          "description": "Flag type.",
           "enum": ["preference", "runtime_flag"]
         },
         "name": {
           "type": "string",
-          "description": "The name of the flag or preference that must be configured."
+          "description": "Name of the flag or preference to configure."
         },
         "value_to_set": {
           "type": "string",
-          "description": "The value which the specified flag must be set to for this feature to work."
+          "description": "Value to set the flag to."
         }
       },
       "additionalProperties": false,
@@ -316,7 +316,7 @@
         },
         "deprecated": {
           "type": "boolean",
-          "description": "Whether the feature is no longer recommended. It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality."
+          "description": "Whether the feature is no longer recommended. It might be removed in the future or kept only for compatibility purposes."
         }
       },
       "required": ["experimental", "standard_track", "deprecated"],
@@ -325,7 +325,7 @@
 
     "support_block": {
       "type": "object",
-      "description": "The data for the support of each browser, containing a `support_statement` object for each browser identifier with information about versions, prefixes, or alternate names, as well as notes.",
+      "description": "Browser support data for this feature.",
       "propertyNames": {
         "$ref": "#/definitions/browser_name"
       },
@@ -337,7 +337,7 @@
 
     "compat_statement": {
       "type": "object",
-      "description": "A feature is described by an identifier containing the `__compat` property.\n\nIn other words, identifiers without `__compat` aren't necessarily features, but help to nest the features properly.\n\nWhen an identifier has a `__compat` block, it represents its basic support, indicating that a minimal implementation of a functionality is included.\n\nWhat it represents exactly depends of the evolution of the feature over time, both in terms of specifications and of browser support.",
+      "description": "The compatibility data for a feature, nested under the `__compat` property of an identifier.",
       "properties": {
         "description": {
           "type": "string",
@@ -376,7 +376,7 @@
         },
         "source_file": {
           "type": "string",
-          "description": "The path to the file that defines this feature in browser-compat-data, relative to the repository root. Useful for guiding potential contributors towards the correct file to edit. This is automatically generated at build time and should never manually be specified."
+          "description": "Path to the file defining this feature, relative to the repository root. Automatically generated at build time."
         },
         "support": {
           "$ref": "#/definitions/support_block"
@@ -409,7 +409,7 @@
 
   "title": "CompatData",
   "type": "object",
-  "description": "Shape of the `data.json` file in published BCD releases",
+  "description": "Published BCD data.",
   "properties": {
     "__meta": {
       "$ref": "#/definitions/meta_block"

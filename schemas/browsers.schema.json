@@ -77,22 +77,22 @@
       "properties": {
         "name": {
           "type": "string",
-          "description": "The browser brand name.",
+          "description": "Browser brand name.",
           "examples": ["Firefox", "Firefox Android", "Chrome"]
         },
         "type": {
           "$ref": "#/definitions/browser_type",
-          "description": "The platform the browser runs on.",
+          "description": "Platform the browser runs on.",
           "tsType": "BrowserType"
         },
         "upstream": {
           "type": "string",
-          "description": "The upstream browser this browser derives from.",
+          "description": "Upstream browser this browser derives from.",
           "tsType": "BrowserName"
         },
         "preview_name": {
           "type": "string",
-          "description": "The name of the browser's preview channel.",
+          "description": "Name of the browser's preview channel.",
           "examples": ["Nightly", "TP"]
         },
         "pref_url": {
@@ -111,7 +111,7 @@
         "releases": {
           "type": "object",
           "additionalProperties": { "$ref": "#/definitions/release_statement" },
-          "description": "The known versions of this browser.",
+          "description": "Known versions of this browser.",
           "tsType": "{ [version: string]: ReleaseStatement };"
         }
       },
@@ -131,27 +131,27 @@
         "release_date": {
           "type": "string",
           "format": "date",
-          "description": "The date on which this version was released, formatted as `YYYY-MM-DD`."
+          "description": "Date this version was released (`YYYY-MM-DD`)."
         },
         "release_notes": {
           "type": "string",
           "format": "uri",
           "pattern": "^https://",
-          "description": "A link to the release notes or changelog for a given release."
+          "description": "Link to the release notes or changelog."
         },
         "status": {
           "$ref": "#/definitions/browser_status",
-          "description": "A property indicating where in the lifetime cycle this release is in.",
+          "description": "Where in the lifetime cycle this release is.",
           "tsType": "BrowserStatus"
         },
         "engine": {
           "$ref": "#/definitions/browser_engine",
-          "description": "Name of the browser's underlying engine.",
+          "description": "Browser engine name.",
           "tsType": "BrowserEngine"
         },
         "engine_version": {
           "type": "string",
-          "description": "Version of the engine corresponding to the browser version."
+          "description": "Engine version corresponding to this browser version."
         }
       },
       "required": ["status"],
