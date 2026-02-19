@@ -40,6 +40,6 @@ export interface Linter {
   name: string;
   description: string;
   scope: LinterScope;
-  check: (_logger: Logger, _data: LinterData) => void | Promise<void>;
+  check: (logger: Logger, data: LinterData) => void | Promise<void>;
   exceptions?: string[];
 }
