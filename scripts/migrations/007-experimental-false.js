@@ -11,6 +11,8 @@ import esMain from 'es-main';
 
 import { walk } from '../../utils/index.js';
 import { dataFoldersMinusBrowsers } from '../lib/data-folders.js';
+import bcd from '../../index.js';
+const { browsers } = bcd;
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
@@ -53,7 +55,7 @@ export const fixExperimental = (bcd) => {
     const engineSupport = new Set();
 
     for (const browser of browserSupport) {
-      const currentRelease = Object.values(bcd.browsers[browser].releases).find(
+      const currentRelease = Object.values(browsers[browser].releases).find(
         (r) => r.status === 'current',
       );
       if (!currentRelease) {
