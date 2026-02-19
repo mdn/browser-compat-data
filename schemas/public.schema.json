@@ -218,10 +218,7 @@
               }
             }
           ],
-          "description": "Link to the bug or issue that tracks the implementation of this feature.",
-          "errorMessage": {
-            "pattern": "impl_url must be a link to a browser commit or bug URL. URLs must be in shortened form (ex. bugs.chromium.org -> crbug.com). Note: `npm run fix` may resolve these issues."
-          }
+          "description": "Link to the bug or issue that tracks the implementation of this feature."
         },
         "partial_implementation": {
           "const": true,
@@ -404,9 +401,6 @@
         "^(?!__compat)[a-zA-Z_0-9-$@]*$": { "$ref": "#/definitions/identifier" }
       },
       "additionalProperties": false,
-      "errorMessage": {
-        "additionalProperties": "Feature names can only contain alphanumerical characters or the following symbols: _-$@"
-      },
       "tsType": "{__compat?: CompatStatement} & {[key: string]: Identifier}"
     }
   },
