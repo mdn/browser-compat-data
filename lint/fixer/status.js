@@ -22,7 +22,7 @@ export const fixStatusValue = (value) => {
       compat.status.standard_track = true;
     }
 
-    if (!checkExperimental(/** @type {InternalCompatStatement} */ (compat))) {
+    if (!checkExperimental(compat)) {
       compat.status.experimental = false;
     }
 
@@ -69,11 +69,7 @@ const fixStatusFromFile = (filename, actual) => {
   }
 
   return JSON.stringify(
-    JSON.parse(
-      actual,
-      (/** @type {string} */ _key, /** @type {InternalIdentifier} */ value) =>
-        fixStatusValue(value),
-    ),
+    JSON.parse(actual, (_key, value) => fixStatusValue(value)),
     null,
     2,
   );
