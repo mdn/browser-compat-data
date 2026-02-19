@@ -7,11 +7,15 @@
       "description": "Release metadata.",
       "properties": {
         "version": {
-          "type": "string"
+          "type": "string",
+          "description": "Package version number of this BCD release.",
+          "examples": ["5.6.14", "6.0.0"]
         },
         "timestamp": {
           "type": "string",
-          "format": "date-time"
+          "format": "date-time",
+          "description": "Timestamp of when this BCD release was built.",
+          "examples": ["2025-06-15T14:32:00.000Z"]
         }
       },
       "required": ["version", "timestamp"],
