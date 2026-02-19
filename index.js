@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {Browsers, InternalCompatData} from './types/index.js' */
+/** @import {InternalCompatData} from './types/index.js' */
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -64,6 +64,3 @@ const load = async (...dirs) => {
 const bcd = await load(...dataFolders);
 
 export default bcd;
-
-/** @type {Browsers} */
-export const browsers = bcd.browsers;

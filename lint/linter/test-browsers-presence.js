@@ -3,7 +3,7 @@
 
 import { styleText } from 'node:util';
 
-import { browsers } from '../../index.js';
+import bcd from '../../index.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
@@ -21,7 +21,7 @@ const processData = (data, category, logger) => {
     const support = data.support;
     const definedBrowsers = Object.keys(support);
 
-    const displayBrowsers = Object.entries(browsers).flatMap(
+    const displayBrowsers = Object.entries(bcd.browsers).flatMap(
       ([name, browser]) =>
         [
           'desktop',
@@ -35,15 +35,15 @@ const processData = (data, category, logger) => {
           ? [name]
           : [],
     );
-    const requiredBrowsers = Object.keys(browsers).filter(
+    const requiredBrowsers = Object.keys(bcd.browsers).filter(
       (b) =>
         !['ie'].includes(b) &&
-        ['desktop', 'mobile'].includes(browsers[b].type) &&
-        (category !== 'webextensions' || browsers[b].accepts_webextensions),
+        ['desktop', 'mobile'].includes(bcd.browsers[b].type) &&
+        (category !== 'webextensions' || bcd.browsers[b].accepts_webextensions),
     );
 
     const undefEntries = definedBrowsers.filter(
-      (value) => !(value in browsers),
+      (value) => !(value in bcd.browsers),
     );
     if (undefEntries.length > 0) {
       logger.error(

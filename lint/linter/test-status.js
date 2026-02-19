@@ -3,7 +3,7 @@
 
 import { styleText } from 'node:util';
 
-import { browsers } from '../../index.js';
+import bcd from '../../index.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
@@ -59,7 +59,7 @@ export const checkExperimental = (data) => {
     const engineSupport = new Set();
 
     for (const browser of browserSupport) {
-      const currentRelease = Object.values(browsers[browser].releases).find(
+      const currentRelease = Object.values(bcd.browsers[browser].releases).find(
         (r) => r.status === 'current',
       );
       const engine = currentRelease?.engine;

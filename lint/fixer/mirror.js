@@ -3,7 +3,7 @@
 
 import stringify from 'fast-json-stable-stringify';
 
-import { browsers } from '../../index.js';
+import bcd from '../../index.js';
 import { walk } from '../../utils/index.js';
 import mirrorSupport from '../../scripts/build/mirror.js';
 
@@ -11,7 +11,7 @@ import mirrorSupport from '../../scripts/build/mirror.js';
 /** @import {InternalSupportStatement, InternalSupportBlock} from '../../types/index.js' */
 
 const downstreamBrowsers = /** @type {BrowserName[]} */ (
-  Object.entries(browsers).flatMap(([browser, stmt]) =>
+  Object.entries(bcd.browsers).flatMap(([browser, stmt]) =>
     stmt.upstream ? [browser] : [],
   )
 );
@@ -47,7 +47,7 @@ export const isMirrorEquivalent = (support, browser) => {
  * @returns {boolean} Whether mirroring is required
  */
 export const isMirrorRequired = (supportData, browser) => {
-  const current = browsers[browser];
+  const current = bcd.browsers[browser];
 
   /** @type {BrowserName | undefined} */
   const upstream = current.upstream;

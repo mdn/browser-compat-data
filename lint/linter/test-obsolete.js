@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { browsers } from '../../index.js';
+import bcd from '../../index.js';
 
 /** @import {Linter, LinterData, LinterMessageLevel} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
@@ -72,7 +72,7 @@ export const implementedAndRemoved = (support) => {
       }
 
       const releaseDateData =
-        browsers[browser].releases[d.version_removed.replace('≤', '')]
+        bcd.browsers[browser].releases[d.version_removed.replace('≤', '')]
           .release_date;
 
       // No browser release date

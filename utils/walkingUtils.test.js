@@ -3,7 +3,7 @@
 
 import assert from 'node:assert/strict';
 
-import { browsers } from '../index.js';
+import bcd from '../index.js';
 
 import query from './query.js';
 import {
@@ -26,7 +26,7 @@ describe('joinPath()', () => {
 
 describe('isBrowser()', () => {
   it('returns true for browser-like objects', () => {
-    assert.equal(isBrowser(browsers['firefox']), true);
+    assert.equal(isBrowser(bcd.browsers['firefox']), true);
   });
 
   it('returns false for feature-like objects', () => {
@@ -36,7 +36,7 @@ describe('isBrowser()', () => {
 
 describe('isFeature()', () => {
   it('returns false for browser-like objects', () => {
-    assert.equal(isFeature(browsers['chrome']), false);
+    assert.equal(isFeature(bcd.browsers['chrome']), false);
   });
 
   it('returns true for feature-like objects', () => {

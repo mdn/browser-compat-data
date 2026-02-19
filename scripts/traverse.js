@@ -6,7 +6,7 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
 import dataFolders from '../scripts/lib/data-folders.js';
-import bcd, { browsers } from '../index.js';
+import bcd from '../index.js';
 
 /** @import {BrowserName, InternalIdentifier, InternalSimpleSupportStatement, InternalSupportBlock, InternalSupportStatement} from '../types/index.js' */
 
@@ -83,7 +83,7 @@ export function* iterateFeatures(
                   if (
                     !(
                       identifier.startsWith('webextensions.') &&
-                      browsers[browser].accepts_webextensions
+                      bcd.browsers[browser].accepts_webextensions
                     )
                   ) {
                     continue;
@@ -192,7 +192,7 @@ const traverseFeatures = (
  */
 const main = (
   folders = dataFolders.concat('webextensions'),
-  browserNames = Object.entries(browsers).flatMap(([name, browser]) =>
+  browserNames = Object.entries(bcd.browsers).flatMap(([name, browser]) =>
     browser.type !== 'server' ? [/** @type {BrowserName} */ (name)] : [],
   ),
   values = [],
@@ -237,8 +237,8 @@ if (esMain(import.meta)) {
       describe: 'Filter by a browser. May repeat.',
       type: 'string',
       nargs: 1,
-      default: Object.keys(browsers).filter(
-        (b) => browsers[b].type !== 'server',
+      default: Object.keys(bcd.browsers).filter(
+        (b) => bcd.browsers[b].type !== 'server',
       ),
       /**
        *
@@ -248,7 +248,7 @@ if (esMain(import.meta)) {
       coerce: (value) =>
         /** @type {BrowserName[]} */ (
           (Array.isArray(value) ? value : [value]).filter((value) =>
-            Object.keys(browsers).some((browser) => browser === value),
+            Object.keys(bcd.browsers).some((browser) => browser === value),
           )
         ),
     })

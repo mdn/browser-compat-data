@@ -8,7 +8,7 @@
 
 import assert from 'node:assert/strict';
 
-import { browsers } from '../../index.js';
+import bcd from '../../index.js';
 
 import mirrorSupport, { isOSLimitation } from './mirror.js';
 
@@ -153,7 +153,7 @@ describe('mirror', () => {
 
       for (const [browser, versionMap] of Object.entries(mappings)) {
         describe(browser, () => {
-          const upstream = browsers[browser].upstream;
+          const upstream = bcd.browsers[browser].upstream;
           for (const pair of versionMap) {
             it(`${pair[0]} => ${pair[1]}`, () => {
               const support = {
