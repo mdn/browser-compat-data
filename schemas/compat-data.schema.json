@@ -6,7 +6,7 @@
       "type": "object",
       "properties": {
         "version_added": {
-          "description": "A string (indicating which browser version added this feature), or the value false (indicating the feature is not supported).",
+          "description": "The browser version that added this feature, or false if the feature is not supported.",
           "anyOf": [
             {
               "type": "string",
@@ -19,7 +19,7 @@
           "tsType": "VersionValue"
         },
         "version_removed": {
-          "description": "A string, indicating which browser version removed this feature.",
+          "description": "The browser version that removed this feature.",
           "type": "string",
           "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$",
           "tsType": "string"
@@ -34,7 +34,7 @@
         },
         "flags": {
           "type": "array",
-          "description": "An optional array of objects describing flags that must be configured for this browser to support this feature.",
+          "description": "Flags that must be configured for this browser to support this feature.",
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/flag_statement"
@@ -54,7 +54,7 @@
               }
             }
           ],
-          "description": "An optional changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser.",
+          "description": "Changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser.",
           "tsType": "string | [string, string, ...string[]]",
           "errorMessage": {
             "pattern": "impl_url must be a link to a browser commit or bug URL. URLs must be in shortened form (ex. bugs.chromium.org -> crbug.com). Note: `npm run fix` may resolve these issues."
@@ -62,10 +62,10 @@
         },
         "partial_implementation": {
           "const": true,
-          "description": "A boolean value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause compatibility problems. It defaults to false (no interoperability problems expected). If set to true, it is recommended that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard, for example)."
+          "description": "Whether the implementation of the sub-feature deviates from the specification in a way that may cause compatibility problems. It defaults to false (no interoperability problems expected). If set to true, it is recommended that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard, for example)."
         },
         "notes": {
-          "description": "A string or array of strings containing additional information.",
+          "description": "Additional information about the feature's support.",
           "anyOf": [
             {
               "type": "string"
@@ -98,16 +98,16 @@
       "properties": {
         "type": {
           "type": "string",
-          "description": "An enum that indicates the flag type.",
+          "description": "The flag type.",
           "enum": ["preference", "runtime_flag"]
         },
         "name": {
           "type": "string",
-          "description": "A string giving the name of the flag or preference that must be configured."
+          "description": "The name of the flag or preference that must be configured."
         },
         "value_to_set": {
           "type": "string",
-          "description": "A string giving the value which the specified flag must be set to for this feature to work."
+          "description": "The value which the specified flag must be set to for this feature to work."
         }
       },
       "additionalProperties": false,
@@ -134,15 +134,15 @@
         "experimental": {
           "type": "boolean",
           "deprecated": true,
-          "description": "(This property is deprecated. Prefer using more well-defined stability calculations, such as Baseline, instead.) A boolean value. Usually, this value is true for single-implementer features and false for multiple-implementer features or single-implementer features that are not expected to change."
+          "description": "(This property is deprecated. Prefer using more well-defined stability calculations, such as Baseline, instead.) Usually, this value is true for single-implementer features and false for multiple-implementer features or single-implementer features that are not expected to change."
         },
         "standard_track": {
           "type": "boolean",
-          "description": "A boolean value indicating whether the feature is part of an active specification or specification process."
+          "description": "Whether the feature is part of an active specification or specification process."
         },
         "deprecated": {
           "type": "boolean",
-          "description": "A boolean value that indicates whether the feature is no longer recommended. It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality."
+          "description": "Whether the feature is no longer recommended. It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality."
         }
       },
       "required": ["experimental", "standard_track", "deprecated"],
@@ -195,13 +195,13 @@
       "properties": {
         "description": {
           "type": "string",
-          "description": "A string containing a human-readable description of the feature."
+          "description": "Human-readable description of the feature."
         },
         "mdn_url": {
           "type": "string",
           "format": "uri",
           "pattern": "^https://developer\\.mozilla\\.org/docs/",
-          "description": "A URL that points to an MDN reference page documenting the feature. The URL should be language-agnostic."
+          "description": "Link to the MDN reference page documenting the feature. The URL should be language-agnostic."
         },
         "spec_url": {
           "anyOf": [
@@ -216,11 +216,11 @@
               }
             }
           ],
-          "description": "An optional URL or array of URLs, each of which is for a specific part of a specification in which this feature is defined. Each URL must contain a fragment identifier.",
+          "description": "URL(s) for specific parts of a specification in which this feature is defined. Each URL must contain a fragment identifier.",
           "tsType": "string | [string, string, ...string[]]"
         },
         "tags": {
-          "description": "An optional array of strings allowing to assign tags to the feature.",
+          "description": "Tags assigned to the feature.",
           "type": "array",
           "minItems": 1,
           "tsType": "[string, ...string[]]"
@@ -231,7 +231,7 @@
         },
         "status": {
           "$ref": "#/definitions/internal_status_block",
-          "description": "An object containing information about the stability of the feature."
+          "description": "Information about the stability of the feature."
         }
       },
       "required": ["support"],
