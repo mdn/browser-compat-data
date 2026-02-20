@@ -328,6 +328,7 @@
       },
       "audioSession": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/audioSession",
           "spec_url": "https://w3c.github.io/audio-session/#dom-navigator-audiosession",
           "tags": [
             "web-features:audio-session"
@@ -1127,9 +1128,19 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "63"
+              "version_added": "63",
+              "notes": [
+                "From Chrome 147, reported values are 2, 4, 8, 16, and 32.",
+                "Before Chrome 147, reported values were 0.25, 0.5, 1, 2, 4, and 8."
+              ]
             },
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": "63",
+              "notes": [
+                "From Chrome 147, reported values are 1, 2, 4, and 8.",
+                "Before Chrome 147, reported values were 0.25, 0.5, 1, 2, 4, and 8."
+              ]
+            },
             "edge": "mirror",
             "firefox": {
               "version_added": false
@@ -1545,6 +1556,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/getInstalledRelatedApps",
           "spec_url": "https://wicg.github.io/get-installed-related-apps/spec/#dom-navigator-getinstalledrelatedapps",
+          "tags": [
+            "web-features:related-apps"
+          ],
           "support": {
             "chrome": [
               {

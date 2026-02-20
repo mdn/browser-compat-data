@@ -278,7 +278,7 @@
         "__compat": {
           "description": "`canmakepayment` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/canmakepayment_event",
-          "spec_url": "https://w3c.github.io/payment-handler/#the-canmakepaymentevent",
+          "spec_url": "https://w3c.github.io/web-based-payment-handler/#the-canmakepaymentevent",
           "tags": [
             "web-features:payment-handler"
           ],
@@ -528,7 +528,8 @@
               "version_added": "17"
             },
             "firefox": {
-              "version_added": "44"
+              "version_added": "44",
+              "notes": "The `install` event handler is called with an `ExtendableEvent`, not an `InstallEvent`."
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -539,7 +540,8 @@
               "version_added": "24"
             },
             "safari": {
-              "version_added": "11.1"
+              "version_added": "11.1",
+              "notes": "Returns `ExtendableEvent` instead of `InstallEvent`."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -740,7 +742,7 @@
         "__compat": {
           "description": "`paymentrequest` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ServiceWorkerGlobalScope/paymentrequest_event",
-          "spec_url": "https://w3c.github.io/payment-handler/#the-paymentrequestevent",
+          "spec_url": "https://w3c.github.io/web-based-payment-handler/#the-paymentrequestevent",
           "tags": [
             "web-features:payment-handler"
           ],
