@@ -2,8 +2,7 @@
  * See LICENSE file for more information. */
 
 import * as fs from 'node:fs';
-
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
 
 import stringify from '../lib/stringify-and-order-properties.js';
 
@@ -25,7 +24,7 @@ const getFutureReleaseDate = async (release, releaseScheduleURL) => {
   const scheduleHTML = await fetch(releaseScheduleURL);
   const text = await scheduleHTML.text();
   if (!text) {
-    throw chalk`{red \nRelease file not found.}`;
+    throw styleText('red', '\nRelease file not found.');
   }
   /**
    * Find the table row:
@@ -47,7 +46,10 @@ const getFutureReleaseDate = async (release, releaseScheduleURL) => {
   );
   const result = text.match(regexp);
   if (!result) {
-    throw chalk`{yellow \nNo entry found for Edge ${release} on [this page](<${releaseScheduleURL}>).}`;
+    throw styleText(
+      'yellow',
+      `\nNo entry found for Edge ${release} on [this page](<${releaseScheduleURL}>).`,
+    );
   }
   const releaseDateText = result[1];
 
@@ -73,7 +75,10 @@ const getReleaseNotesURL = async (status, version) => {
       return '';
     }
 
-    throw chalk`{red \nFailed to fetch Edge ${version} release notes at ${url}!}`;
+    throw styleText(
+      'red',
+      `\nFailed to fetch Edge ${version} release notes at ${url}!`,
+    );
   }
 
   return url;
@@ -234,7 +239,10 @@ export const updateEdgeReleases = async (options) => {
       } else {
         // There is a retired version missing. Edgeupdates doesn't list them.
         // There is an oddity: the version is not skipped but not in edgeupdates
-        result += chalk`{yellow \nEdge ${i} not found in Edgeupdates! Add it manually or add an exception.}`;
+        result += styleText(
+          'yellow',
+          `\nEdge ${i} not found in Edgeupdates! Add it manually or add an exception.`,
+        );
       }
     }
   }

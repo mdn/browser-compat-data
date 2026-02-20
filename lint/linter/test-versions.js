@@ -1,8 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { styleText } from 'node:util';
+
 import { compare, validate } from 'compare-versions';
-import chalk from 'chalk-template';
 
 import bcd from '../../index.js';
 const { browsers } = bcd;
@@ -110,7 +111,7 @@ const checkVersions = (supportData, category, logger) => {
         // If the data is to be mirrored, make sure it is mirrorable
         if (!browsers[browser].upstream) {
           logger.error(
-            chalk`{bold ${browser}} is set to mirror, however {bold ${browser}} does not have an upstream browser.`,
+            `${styleText('bold', browser)} is set to mirror, however ${styleText('bold', browser)} does not have an upstream browser.`,
           );
         }
         continue;
@@ -124,9 +125,7 @@ const checkVersions = (supportData, category, logger) => {
         }
         if (!isValidVersion(browser, category, version)) {
           logger.error(
-            chalk`{bold ${property}: "${version}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${Object.keys(
-              browsers[browser].releases,
-            ).join(', ')}, false`,
+            `${styleText('bold', `${property}: "${version}"`)} is ${styleText('bold', 'NOT')} a valid version number for ${styleText('bold', browser)}\n    Valid ${styleText('bold', browser)} versions are: ${Object.keys(browsers[browser].releases).join(', ')}, false`,
             { tip: browserTips[browser] },
           );
         }
@@ -140,7 +139,7 @@ const checkVersions = (supportData, category, logger) => {
             releaseData.release_date > rangeCutoffDate
           ) {
             logger.error(
-              chalk`{bold ${property}: "${version}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Ranged values are only allowed for browser versions released on or before ${rangeCutoffDate}. (Ranged values are also not allowed for browser versions without a known release date.)`,
+              `${styleText('bold', `${property}: "${version}"`)} is ${styleText('bold', 'NOT')} a valid version number for ${styleText('bold', browser)}\n    Ranged values are only allowed for browser versions released on or before ${rangeCutoffDate}. (Ranged values are also not allowed for browser versions without a known release date.)`,
             );
           }
         }
@@ -153,14 +152,14 @@ const checkVersions = (supportData, category, logger) => {
           addedBeforeRemoved(statement) === false
         ) {
           logger.error(
-            chalk`{bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}`,
+            `${styleText('bold', `version_removed: "${statement.version_removed}"`)} must be greater than ${styleText('bold', `version_added: "${statement.version_added}"`)}`,
           );
         }
       }
 
       if ('flags' in statement && !browsers[browser].accepts_flags) {
         logger.error(
-          chalk`This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.`,
+          `This browser (${styleText('bold', browser)}) does not support flags, so support cannot be behind a flag for this feature.`,
         );
       }
 
@@ -171,7 +170,7 @@ const checkVersions = (supportData, category, logger) => {
           )
         ) {
           logger.error(
-            chalk`The data for ({bold ${browser}}) says no support, but contains additional properties that suggest support.`,
+            `The data for (${styleText('bold', browser)}) says no support, but contains additional properties that suggest support.`,
           );
         }
       }
@@ -181,13 +180,13 @@ const checkVersions = (supportData, category, logger) => {
         statement.version_added === false
       ) {
         logger.error(
-          chalk`{bold ${browser}} cannot have a {bold version_added: false} in an array of statements.`,
+          `${styleText('bold', browser)} cannot have a ${styleText('bold', 'version_added: false')} in an array of statements.`,
         );
       }
 
       if ('version_last' in statement) {
         logger.error(
-          chalk`{bold version_last} is automatically generated and should not be defined manually.`,
+          `${styleText('bold', 'version_last')} is automatically generated and should not be defined manually.`,
         );
       }
     }
