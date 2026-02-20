@@ -5,7 +5,7 @@ import { checkOverlap } from '../common/overlap.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {BrowserName, CompatStatement, SupportStatement} from '../../types/types.js' */
+/** @import {BrowserName, InternalCompatStatement, InternalSupportStatement} from '../../types/index.js' */
 
 /** @type {Linter} */
 export default {
@@ -19,10 +19,10 @@ export default {
    */
   check: (logger, { data }) => {
     for (const [browser, support] of Object.entries(
-      /** @type {CompatStatement} */ (data).support,
+      /** @type {InternalCompatStatement} */ (data).support,
     )) {
       checkOverlap(
-        /** @type {SupportStatement} */ (support),
+        /** @type {InternalSupportStatement} */ (support),
         /** @type {BrowserName} */ (browser),
         {
           logger,

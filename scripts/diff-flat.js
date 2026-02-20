@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatData, SimpleSupportStatement} from '../types/types.js' */
+/** @import {InternalCompatData, InternalSimpleSupportStatement} from '../types/index.js' */
 
 /**
  * @typedef {'html' | 'plain'} Format
@@ -125,13 +125,14 @@ const flattenObject = (obj, parentKey = '', result = {}) => {
 
           const {
             version_added,
+            // @ts-expect-error FIXME Handle internal-public transition.
             version_last,
             partial_implementation,
             alternative_name,
             prefix,
             flags,
             notes,
-          } = /** @type {SimpleSupportStatement} */ (obj[key]);
+          } = /** @type {InternalSimpleSupportStatement} */ (obj[key]);
 
           const parts = [
             typeof version_added === 'string'
@@ -281,9 +282,9 @@ const printDiffs = (base, head, options) => {
   /** @type {Map<string, Set<string>>} */
   const groups = new Map();
 
-  /** @type {CompatData} */
+  /** @type {InternalCompatData} */
   const baseContents = /** @type {*} */ ({});
-  /** @type {CompatData} */
+  /** @type {InternalCompatData} */
   const headContents = /** @type {*} */ ({});
 
   for (const status of getGitDiffStatuses(base, head)) {
@@ -296,12 +297,12 @@ const printDiffs = (base, head, options) => {
       continue;
     }
 
-    const baseFileContents = /** @type {CompatData} */ (
+    const baseFileContents = /** @type {InternalCompatData} */ (
       status.value !== 'A'
         ? JSON.parse(getFileContent(base, status.basePath))
         : {}
     );
-    const headFileContents = /** @type {CompatData} */ (
+    const headFileContents = /** @type {InternalCompatData} */ (
       status.value !== 'D'
         ? JSON.parse(getFileContent(head, status.headPath))
         : {}

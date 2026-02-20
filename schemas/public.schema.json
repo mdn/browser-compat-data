@@ -1,0 +1,472 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+
+  "definitions": {
+    "meta_block": {
+      "type": "object",
+      "description": "Release metadata.",
+      "properties": {
+        "version": {
+          "type": "string",
+          "description": "Package version number of this BCD release.",
+          "examples": ["5.6.14", "6.0.0"]
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of when this BCD release was built.",
+          "examples": ["2025-06-15T14:32:00.000Z"]
+        }
+      },
+      "required": ["version", "timestamp"],
+      "additionalProperties": false
+    },
+
+    "browser_type": {
+      "type": "string",
+      "description": "Platform the browser runs on.",
+      "enum": ["desktop", "mobile", "xr", "server"]
+    },
+
+    "browser_engine": {
+      "type": "string",
+      "description": "Browser engine.",
+      "enum": [
+        "Blink",
+        "EdgeHTML",
+        "Gecko",
+        "Presto",
+        "Trident",
+        "WebKit",
+        "V8"
+      ]
+    },
+
+    "browser_name": {
+      "type": "string",
+      "description": "Browser key.",
+      "enum": [
+        "bun",
+        "chrome",
+        "chrome_android",
+        "deno",
+        "edge",
+        "firefox",
+        "firefox_android",
+        "ie",
+        "nodejs",
+        "oculus",
+        "opera",
+        "opera_android",
+        "safari",
+        "safari_ios",
+        "samsunginternet_android",
+        "webview_android",
+        "webview_ios"
+      ]
+    },
+
+    "upstream_browser_name": {
+      "type": "string",
+      "description": "Upstream browser key.",
+      "enum": ["chrome", "chrome_android", "firefox", "safari", "safari_ios"]
+    },
+
+    "browser_status": {
+      "type": "string",
+      "description": "Lifetime cycle status of a browser release.",
+      "enum": ["retired", "current", "beta", "nightly", "esr", "planned"]
+    },
+
+    "browsers": {
+      "type": "object",
+      "description": "Data about browsers, such as name, type and releases.",
+      "propertyNames": {
+        "$ref": "#/definitions/browser_name"
+      },
+      "additionalProperties": {
+        "$ref": "#/definitions/browser_statement"
+      },
+      "tsType": "Record<BrowserName, BrowserStatement>"
+    },
+
+    "browser_statement": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the browser.",
+          "examples": ["Firefox", "Firefox Android", "Chrome"]
+        },
+        "type": {
+          "$ref": "#/definitions/browser_type"
+        },
+        "upstream": {
+          "$ref": "#/definitions/upstream_browser_name"
+        },
+        "preview_name": {
+          "type": "string",
+          "description": "Name of the browser's preview channel.",
+          "examples": ["Nightly", "TP"]
+        },
+        "pref_url": {
+          "type": "string",
+          "description": "URL of the page where feature flags can be changed.",
+          "examples": ["about:config", "chrome://flags"]
+        },
+        "accepts_flags": {
+          "type": "boolean",
+          "description": "Whether the browser supports feature flags that enable or disable features."
+        },
+        "accepts_webextensions": {
+          "type": "boolean",
+          "description": "Whether the browser supports extensions."
+        },
+        "releases": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/definitions/release_statement" },
+          "description": "Releases of this browser.",
+          "tsType": "Record<string, ReleaseStatement>"
+        }
+      },
+      "required": [
+        "name",
+        "type",
+        "releases",
+        "accepts_flags",
+        "accepts_webextensions"
+      ],
+      "additionalProperties": false
+    },
+
+    "release_statement": {
+      "type": "object",
+      "properties": {
+        "release_date": {
+          "type": "string",
+          "format": "date",
+          "description": "When this version was released or will be released (`YYYY-MM-DD`)."
+        },
+        "release_notes": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://",
+          "description": "Link to the release notes or changelog."
+        },
+        "status": {
+          "$ref": "#/definitions/browser_status"
+        },
+        "engine": {
+          "$ref": "#/definitions/browser_engine"
+        },
+        "engine_version": {
+          "type": "string",
+          "description": "Engine version used in this release."
+        }
+      },
+      "required": ["status"],
+      "dependencies": {
+        "engine": ["engine_version"]
+      },
+      "additionalProperties": false
+    },
+
+    "simple_support_statement": {
+      "type": "object",
+      "properties": {
+        "version_added": {
+          "$ref": "#/definitions/version_value"
+        },
+        "version_removed": {
+          "description": "Browser version that removed this feature.",
+          "type": "string",
+          "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$"
+        },
+        "version_last": {
+          "description": "Last browser version that supported this feature.",
+          "type": "string",
+          "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$"
+        },
+        "prefix": {
+          "type": "string",
+          "description": "Prefix for the subfeature name. Leading and trailing '-' must be included if applicable."
+        },
+        "alternative_name": {
+          "type": "string",
+          "description": "Alternative name for the feature, when implemented under an entirely different name."
+        },
+        "flags": {
+          "type": "array",
+          "description": "Feature flags that must be configured for this browser to support this feature.",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/flag_statement"
+          }
+        },
+        "impl_url": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          ],
+          "description": "Link to the bug or issue that tracks the implementation of this feature."
+        },
+        "partial_implementation": {
+          "const": true,
+          "description": "Set if the browser's support does not implement mandatory specified behavior, is inconsistent with other browsers, causes confusing feature detection results, and has a demonstrable negative impact on web developers."
+        },
+        "notes": {
+          "description": "Additional information about the feature's support.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        }
+      },
+      "required": ["version_added"],
+      "dependencies": {
+        "partial_implementation": {
+          "if": {
+            "properties": { "partial_implementation": { "const": true } }
+          },
+          "then": { "required": ["notes"] }
+        },
+        "version_removed": {
+          "required": ["version_last"]
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "version_value": {
+      "description": "Browser version that added this feature, or false if not supported.",
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$"
+        },
+        {
+          "const": false
+        }
+      ]
+    },
+
+    "flag_statement": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "description": "Flag type.",
+          "enum": ["preference", "runtime_flag"]
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the flag or preference to configure."
+        },
+        "value_to_set": {
+          "type": "string",
+          "description": "Value to set the flag to."
+        }
+      },
+      "additionalProperties": false,
+      "required": ["type", "name"]
+    },
+
+    "support_statement": {
+      "anyOf": [
+        { "$ref": "#/definitions/simple_support_statement" },
+        {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/definitions/simple_support_statement"
+          }
+        }
+      ]
+    },
+
+    "status_block": {
+      "type": "object",
+      "description": "Information about the stability of the feature.",
+      "properties": {
+        "experimental": {
+          "type": "boolean",
+          "deprecated": true,
+          "description": "(This property is deprecated. Prefer using more well-defined stability calculations, such as Baseline, instead.) Usually, this value is true for single-implementer features and false for multiple-implementer features or single-implementer features that are not expected to change."
+        },
+        "standard_track": {
+          "type": "boolean",
+          "description": "Whether the feature is part of an active specification or specification process."
+        },
+        "deprecated": {
+          "type": "boolean",
+          "description": "Whether the feature is no longer recommended. It might be removed in the future or kept only for compatibility purposes."
+        }
+      },
+      "required": ["experimental", "standard_track", "deprecated"],
+      "additionalProperties": false
+    },
+
+    "support_block": {
+      "type": "object",
+      "description": "Browser support data for this feature.",
+      "propertyNames": {
+        "$ref": "#/definitions/browser_name"
+      },
+      "additionalProperties": {
+        "$ref": "#/definitions/support_statement"
+      },
+      "tsType": "Partial<Record<BrowserName, SupportStatement>>"
+    },
+
+    "compat_statement": {
+      "type": "object",
+      "description": "The compatibility data for a feature, nested under the `__compat` property of an identifier.",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Human-readable description of the feature."
+        },
+        "mdn_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://developer\\.mozilla\\.org/docs/",
+          "description": "Link to the MDN reference page documenting the feature."
+        },
+        "spec_url": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          ],
+          "description": "URL(s) for specific parts of a specification in which this feature is defined. Each URL must contain a fragment identifier."
+        },
+        "tags": {
+          "description": "Tags assigned to the feature.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_file": {
+          "type": "string",
+          "description": "Path to the file defining this feature, relative to the repository root. Automatically generated at build time."
+        },
+        "support": {
+          "$ref": "#/definitions/support_block"
+        },
+        "status": {
+          "$ref": "#/definitions/status_block"
+        }
+      },
+      "required": ["source_file", "support"],
+      "additionalProperties": false
+    },
+
+    "identifier": {
+      "type": "object",
+      "properties": {
+        "__compat": {
+          "$ref": "#/definitions/compat_statement"
+        }
+      },
+      "patternProperties": {
+        "^(?!__compat)[a-zA-Z_0-9-$@]*$": { "$ref": "#/definitions/identifier" }
+      },
+      "additionalProperties": false,
+      "tsType": "{__compat?: InternalCompatStatement} & Record<Exclude<string, '__compat'>, InternalIdentifier>"
+    }
+  },
+
+  "title": "CompatData",
+  "type": "object",
+  "description": "Published BCD data.",
+  "properties": {
+    "__meta": {
+      "$ref": "#/definitions/meta_block"
+    },
+    "api": {
+      "$ref": "#/definitions/identifier"
+    },
+    "browsers": {
+      "$ref": "#/definitions/browsers"
+    },
+    "css": {
+      "$ref": "#/definitions/identifier"
+    },
+    "html": {
+      "$ref": "#/definitions/identifier"
+    },
+    "http": {
+      "$ref": "#/definitions/identifier"
+    },
+    "javascript": {
+      "$ref": "#/definitions/identifier"
+    },
+    "manifests": {
+      "$ref": "#/definitions/identifier"
+    },
+    "mathml": {
+      "$ref": "#/definitions/identifier"
+    },
+    "mediatypes": {
+      "$ref": "#/definitions/identifier"
+    },
+    "svg": {
+      "$ref": "#/definitions/identifier"
+    },
+    "webassembly": {
+      "$ref": "#/definitions/identifier"
+    },
+    "webdriver": {
+      "$ref": "#/definitions/identifier"
+    },
+    "webextensions": {
+      "$ref": "#/definitions/identifier"
+    }
+  },
+  "required": [
+    "__meta",
+    "api",
+    "browsers",
+    "css",
+    "html",
+    "http",
+    "javascript",
+    "manifests",
+    "mathml",
+    "mediatypes",
+    "svg",
+    "webassembly",
+    "webdriver",
+    "webextensions"
+  ],
+  "additionalProperties": false
+}

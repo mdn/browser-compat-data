@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {Identifier} from '../../types/types.js' */
+/** @import {InternalIdentifier} from '../../types/index.js' */
 
 import assert from 'node:assert/strict';
 
@@ -12,7 +12,7 @@ import test from './test-filename.js';
 describe('test-filename', () => {
   /** @type {Logger} */
   let logger;
-  /** @type {Identifier} */
+  /** @type {InternalIdentifier} */
   let data;
   beforeEach(() => {
     logger = new Logger('test', 'test');

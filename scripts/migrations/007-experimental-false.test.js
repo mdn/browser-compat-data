@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {CompatStatement} from '../../types/index.js' */
 
 import assert from 'node:assert/strict';
 

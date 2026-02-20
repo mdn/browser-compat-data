@@ -11,9 +11,8 @@ import stringify from 'fast-json-stable-stringify';
 import { compareVersions } from 'compare-versions';
 import { marked } from 'marked';
 
-import compileTS from '../generate-types.js';
-import compatDataSchema from '../../schemas/compat-data.schema.json' with { type: 'json' };
-import browserDataSchema from '../../schemas/browsers.schema.json' with { type: 'json' };
+import compileTS from '../generate-public-types.js';
+import schema from '../../schemas/public.schema.json' with { type: 'json' };
 import { createAjv } from '../lib/ajv.js';
 import { walk } from '../../utils/index.js';
 import bcd from '../../index.js';
@@ -21,8 +20,8 @@ import bcd from '../../index.js';
 import mirrorSupport from './mirror.js';
 
 /**
- * @import { InternalSupportStatement } from '../../types/index.js'
- * @import { BrowserName, CompatData, Identifier, VersionValue } from '../../types/types.js'
+ * @import { BrowserName, InternalIdentifier, InternalSupportStatement, VersionValue } from '../../types/index.js'
+ * @import { CompatData, MetaBlock } from '../../types/public.js'
  * @import { WalkOutput } from '../../utils/walk.js'
  */
 
@@ -52,11 +51,11 @@ const logWrite = (url, description = '') => {
 
 /**
  * Generate metadata to embed into BCD builds
- * @returns {*} Metadata to embed into BCD
+ * @returns {MetaBlock} Metadata to embed into BCD
  */
 export const generateMeta = () => ({
   version: packageJson.version,
-  timestamp: new Date(),
+  timestamp: new Date().toISOString(),
 });
 
 /**
@@ -150,7 +149,7 @@ export const addVersionLast = (feature) => {
  * @returns {void}
  */
 export const transformMD = (feature) => {
-  const featureData = /** @type {Identifier} */ (feature.data);
+  const featureData = /** @type {InternalIdentifier} */ (feature.data);
   if (
     featureData.__compat &&
     'description' in featureData.__compat &&
@@ -196,7 +195,7 @@ export const transformMD = (feature) => {
 const addIE = (feature) => {
   if (
     feature.path.startsWith('webextensions.') &&
-    !bcd.browsers.ie.accepts_webextensions
+    !bcd.browsers['ie'].accepts_webextensions
   ) {
     return;
   }
@@ -231,10 +230,13 @@ export const createDataBundle = async () => {
 
   applyTransforms(bcd);
 
-  return {
+  /** @type {*} */
+  const result = {
     ...bcd,
     __meta: generateMeta(),
   };
+
+  return /** @type {CompatData}*/ (result);
 };
 
 /**
@@ -244,25 +246,16 @@ export const createDataBundle = async () => {
 const validate = (data) => {
   const ajv = createAjv();
 
-  for (const [key, value] of Object.entries(data)) {
-    if (key === '__meta') {
-      // Not covered by the schema.
-      continue;
+  if (!ajv.validate(schema, data)) {
+    const errors = ajv.errors || [];
+    if (!errors.length) {
+      console.error('Public data failed validation with unknown errors!');
     }
-
-    const schema = key === 'browsers' ? browserDataSchema : compatDataSchema;
-    const data = { [key]: value };
-    if (!ajv.validate(schema, data)) {
-      const errors = ajv.errors || [];
-      if (!errors.length) {
-        console.error(`${key} data failed validation with unknown errors!`);
-      }
-      // Output messages by one since better-ajv-errors wrongly joins messages
-      // (see https://github.com/atlassian/better-ajv-errors/pull/21)
-      errors.forEach((e) => {
-        console.error(betterAjvErrors(schema, data, [e], { indent: 2 }));
-      });
-    }
+    // Output messages by one since better-ajv-errors wrongly joins messages
+    // (see https://github.com/atlassian/better-ajv-errors/pull/21)
+    errors.forEach((e) => {
+      console.error(betterAjvErrors(schema, data, [e], { indent: 2 }));
+    });
   }
 };
 
@@ -303,9 +296,9 @@ const writeTypeScript = async () => {
   const content = `/* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { CompatData } from "./types.js";
+import { InternalCompatData } from "./types.js";
 
-declare var bcd: CompatData;
+declare var bcd: InternalCompatData;
 export default bcd;
 export * from "./types.js";`;
 
@@ -315,7 +308,7 @@ export * from "./types.js";`;
   await fs.writeFile(destImport, content);
   logWrite(destImport, 'ESM types');
 
-  await compileTS(destTypes);
+  await compileTS('schemas/public.schema.json', destTypes);
   logWrite(destTypes, 'data types');
 };
 

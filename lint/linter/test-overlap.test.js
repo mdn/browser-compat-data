@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement} from '../../types/index.js' */
 
 import assert from 'node:assert/strict';
 
@@ -20,7 +20,7 @@ describe('overlap', () => {
   });
 
   it('should skip processing when data is not an array', () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       support: {
         chrome: {
@@ -36,7 +36,7 @@ describe('overlap', () => {
   });
 
   it('should log error when statements overlap', () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       support: {
         firefox: [
@@ -53,7 +53,7 @@ describe('overlap', () => {
   });
 
   it('should log error when overlapping statements are not sorted', () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       support: {
         firefox: [
@@ -70,7 +70,7 @@ describe('overlap', () => {
   });
 
   it('should log error when statements with same prefix overlap', () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       support: {
         firefox: [
@@ -87,7 +87,7 @@ describe('overlap', () => {
   });
 
   it('should log error when statements with same alternative name overlap', () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       support: {
         firefox: [
@@ -108,7 +108,7 @@ describe('overlap', () => {
   });
 
   it('should log error when there are two statements without version_added', () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       support: {
         firefox: [
@@ -129,7 +129,7 @@ describe('overlap', () => {
   });
 
   it('should log error when there are two statements without version_added incl. preview', () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       support: {
         firefox: [
@@ -150,7 +150,7 @@ describe('overlap', () => {
   });
 
   it('should ignore when partial support in stable and full support in preview overlap', () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       support: {
         firefox: [
@@ -171,7 +171,7 @@ describe('overlap', () => {
   });
 
   it('should ignore preview version without overlap', () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       support: {
         firefox: [

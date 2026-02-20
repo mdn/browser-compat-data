@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {SimpleSupportStatement} from '../types/types.js' */
+/** @import {InternalSimpleSupportStatement} from '../types/index.js' */
 
 import assert from 'node:assert/strict';
 
@@ -80,7 +80,7 @@ describe('utils', () => {
   });
 
   it('createStatementGroupKey() works correctly', () => {
-    /** @type {Record<string, SimpleSupportStatement>} */
+    /** @type {Record<string, InternalSimpleSupportStatement>} */
     const tests = {
       'normal name': {
         version_added: '1',

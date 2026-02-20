@@ -1,10 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { InternalDataType } from '../types/index.js';
-import { BrowserName } from '../types/types.js';
-
 import { Logger } from './utils.js';
+
+import type { BrowserName, InternalDataType } from '../types/index.js';
 
 export interface LintOptions {
   only?: string[];

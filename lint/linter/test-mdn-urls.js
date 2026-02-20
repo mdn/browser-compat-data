@@ -7,7 +7,7 @@ import mdnContentInventory from '@ddbeck/mdn-content-inventory';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement} from '../../types/index.js' */
 
 /**
  * @typedef {object} MDNURLError
@@ -69,7 +69,7 @@ const redirects = mdnContentInventory.redirects;
 
 /**
  * Process the data for MDN URL issues
- * @param {CompatStatement} data The data to test
+ * @param {InternalCompatStatement} data The data to test
  * @param {string} path The path of the feature
  * @returns {MDNURLError[]} The issues caught in the file
  */
@@ -152,7 +152,10 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data, path: { full } }) => {
-    const issues = processData(/** @type {CompatStatement} */ (data), full);
+    const issues = processData(
+      /** @type {InternalCompatStatement} */ (data),
+      full,
+    );
     for (const issue of issues) {
       if (issue.expected === '') {
         logger.warning(
