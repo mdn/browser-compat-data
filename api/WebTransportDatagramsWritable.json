@@ -1,29 +1,16 @@
 {
   "api": {
-    "WebTransportReceiveStream": {
+    "WebTransportDatagramsWritable": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransportReceiveStream",
-        "spec_url": "https://w3c.github.io/webtransport/#webtransportreceivestream",
-        "tags": [
-          "web-features:webtransport"
-        ],
+        "spec_url": "https://w3c.github.io/webtransport/#datagram-writable",
         "support": {
           "chrome": {
             "version_added": false
           },
           "chrome_android": "mirror",
-          "deno": {
-            "version_added": "2.2",
-            "flags": [
-              {
-                "type": "runtime_flag",
-                "name": "--unstable-net"
-              }
-            ]
-          },
           "edge": "mirror",
           "firefox": {
-            "version_added": "114"
+            "version_added": false
           },
           "firefox_android": "mirror",
           "oculus": "mirror",
@@ -38,35 +25,22 @@
           "webview_ios": "mirror"
         },
         "status": {
-          "experimental": false,
+          "experimental": true,
           "standard_track": true,
           "deprecated": false
         }
       },
-      "getStats": {
+      "sendGroup": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransportReceiveStream/getStats",
-          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportreceivestream-getstats",
-          "tags": [
-            "web-features:webtransport"
-          ],
+          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportdatagramswritable-sendgroup",
           "support": {
             "chrome": {
               "version_added": false
             },
             "chrome_android": "mirror",
-            "deno": {
-              "version_added": "2.2",
-              "flags": [
-                {
-                  "type": "runtime_flag",
-                  "name": "--unstable-net"
-                }
-              ]
-            },
             "edge": "mirror",
             "firefox": {
-              "version_added": "114"
+              "version_added": false
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -81,7 +55,38 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "sendOrder": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportdatagramswritable-sendorder",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "26.4"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
