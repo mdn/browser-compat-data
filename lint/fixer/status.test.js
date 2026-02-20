@@ -7,6 +7,7 @@
  * @typedef {Record<string, Identifier | CompatStatement>} TestValue
  */
 
+import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
 import { fixStatusValue } from './status.js';
