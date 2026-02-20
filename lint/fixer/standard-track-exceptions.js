@@ -3,6 +3,7 @@
 
 import bcd from '../../index.js';
 import {
+  exceptionListPath,
   getStandardTrackExceptions,
   setStandardTrackExceptions,
 } from '../common/standard-track-exceptions.js';
@@ -67,9 +68,7 @@ const fixStandardTrackExceptions = async (filename, actual) => {
 
     await setStandardTrackExceptions(remainingFeatures);
 
-    console.log(
-      `Removed ${removed} feature(s) from standard-track-exceptions.txt exception list`,
-    );
+    console.log(`Removed ${removed} exceptions from ${exceptionListPath}`);
   }
 
   return actual;
