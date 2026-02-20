@@ -2672,7 +2672,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "146"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -2692,7 +2692,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -3599,6 +3599,41 @@
                 "standard_track": true,
                 "deprecated": true
               }
+            }
+          }
+        },
+        "paste": {
+          "__compat": {
+            "description": "`paste` command",
+            "tags": [
+              "web-features:execcommand"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "42"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "148",
+                "notes": "Supported in content scripts (not just extensions) via the [Clipboard API](https://developer.mozilla.org/docs/Web/API/Clipboard_API)"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": true
             }
           }
         }
