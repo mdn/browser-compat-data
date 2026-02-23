@@ -367,16 +367,19 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": false
+                  "version_added": "110",
+                  "notes": "Can only contain an integer value for the ID of a tab to check."
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "109"
+                  "version_added": "109",
+                  "notes": "Until Firefox 149 could only contain an object containing either `tabId` or `windowId`. From Firefox 149 can also be an integer value for the ID of a tab to check."
                 },
                 "firefox_android": "mirror",
                 "opera": "mirror",
                 "safari": {
-                  "version_added": "15.4"
+                  "version_added": "15.4",
+                  "notes": "Can only contain an object containing either `tabId` or `windowId`."
                 },
                 "safari_ios": "mirror"
               }
@@ -398,25 +401,6 @@
                   },
                   "safari_ios": "mirror"
                 }
-              }
-            }
-          },
-          "tabId": {
-            "__compat": {
-              "support": {
-                "chrome": {
-                  "version_added": "110"
-                },
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": "149"
-                },
-                "firefox_android": "mirror",
-                "opera": "mirror",
-                "safari": {
-                  "version_added": false
-                },
-                "safari_ios": "mirror"
               }
             }
           }
