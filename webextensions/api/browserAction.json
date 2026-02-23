@@ -423,22 +423,25 @@
           },
           "details": {
             "__compat": {
+              "description": "`details` (object)",
               "support": {
                 "chrome": {
                   "version_added": false
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "109",
-                  "notes": "Until Firefox 149 could only contain an object containing `tabId` or `windowId`. From Firefox 149 can also be an integer value for the ID of a tab to check."
+                  "version_added": "59"
                 },
-                "firefox_android": "mirror",
+                "firefox_android": {
+                  "version_added": "79"
+                },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": "15.4",
-                  "notes": "Can only contain an object containing `tabId` or `windowId`."
+                  "version_added": "14"
                 },
-                "safari_ios": "mirror"
+                "safari_ios": {
+                  "version_added": "15"
+                }
               }
             },
             "windowId": {
@@ -449,15 +452,37 @@
                   },
                   "edge": "mirror",
                   "firefox": {
-                    "version_added": "109"
+                    "version_added": "62"
                   },
-                  "firefox_android": "mirror",
+                  "firefox_android": {
+                    "version_added": "79"
+                  },
                   "opera": "mirror",
                   "safari": {
                     "version_added": "18"
                   },
                   "safari_ios": "mirror"
                 }
+              }
+            }
+          },
+          "details_integer": {
+            "__compat": {
+              "description": "`details` (integer, `tabId`)",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "149"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
               }
             }
           }
