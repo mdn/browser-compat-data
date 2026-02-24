@@ -1059,6 +1059,37 @@
           }
         }
       },
+      "crashReport": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/crash-reporting/#dom-window-crashreport",
+          "support": {
+            "chrome": {
+              "version_added": "145"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "credentialless": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/credentialless",
@@ -1400,7 +1431,8 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "preview",
+              "impl_url": "https://bugzil.la/1858562"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -4313,7 +4345,9 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "18.2"
+              "version_added": "18.2",
+              "partial_implementation": true,
+              "notes": "Cross-origin navigation does not fire `pageswap`. See [bug 306447](https://webkit.org/b/306447)."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -6984,45 +7018,6 @@
           "status": {
             "experimental": true,
             "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
-      "sizeToContent": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/sizeToContent",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": "mirror",
-            "deno": {
-              "version_added": false
-            },
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "1",
-              "version_removed": "120"
-            },
-            "firefox_android": {
-              "version_added": "4",
-              "version_removed": "120",
-              "notes": "This method has no effect as a page is always in a tab."
-            },
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
             "deprecated": false
           }
         }

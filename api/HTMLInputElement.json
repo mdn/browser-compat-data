@@ -134,7 +134,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/alpha",
           "spec_url": "https://html.spec.whatwg.org/multipage/input.html#dom-input-alpha",
           "tags": [
-            "web-features:input-color"
+            "web-features:input-color-alpha"
           ],
           "support": {
             "chrome": {
@@ -429,7 +429,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/colorSpace",
           "spec_url": "https://html.spec.whatwg.org/multipage/input.html#dom-input-colorspace",
           "tags": [
-            "web-features:input-color"
+            "web-features:input-color-alpha"
           ],
           "support": {
             "chrome": {
@@ -1398,7 +1398,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/multiple",
           "spec_url": "https://html.spec.whatwg.org/multipage/input.html#dom-input-multiple",
           "tags": [
-            "web-features:input"
+            "web-features:input-file-multiple"
           ],
           "support": {
             "chrome": {
@@ -1643,6 +1643,10 @@
         "implicit_anchor_reference": {
           "__compat": {
             "description": "Implicit anchor reference via `popoverTargetElement`",
+            "spec_url": [
+              "https://drafts.csswg.org/css-anchor-position/#implicit-anchor-element",
+              "https://html.spec.whatwg.org/multipage/popover.html#:~:text=implicit%20anchor%20element"
+            ],
             "tags": [
               "web-features:anchor-positioning"
             ],
@@ -1653,15 +1657,14 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "preview",
-                "impl_url": "https://bugzil.la/1838746"
+                "version_added": "147"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "26"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1669,7 +1672,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -3153,6 +3156,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/webkitdirectory",
           "spec_url": "https://wicg.github.io/entries-api/#dom-htmlinputelement-webkitdirectory",
+          "tags": [
+            "web-features:input-file-webkitdirectory"
+          ],
           "support": {
             "chrome": {
               "version_added": "7"
@@ -3223,6 +3229,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLInputElement/webkitEntries",
           "spec_url": "https://wicg.github.io/entries-api/#dom-htmlinputelement-webkitentries",
+          "tags": [
+            "web-features:input-file-multiple"
+          ],
           "support": {
             "chrome": {
               "version_added": "22"

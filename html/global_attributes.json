@@ -154,7 +154,7 @@
       "autofocus": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/autofocus",
-          "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-fe-autofocus",
+          "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#the-autofocus-attribute",
           "tags": [
             "web-features:autofocus"
           ],
@@ -516,7 +516,7 @@
       "exportparts": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/exportparts",
-          "spec_url": "https://drafts.csswg.org/css-shadow-parts/#element-attrdef-html-global-exportparts",
+          "spec_url": "https://drafts.csswg.org/css-shadow/#element-attrdef-html-global-exportparts",
           "tags": [
             "web-features:shadow-parts"
           ],
@@ -601,11 +601,17 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "139",
-                "partial_implementation": true,
-                "notes": "The browser does not correctly scroll to the matching text. See [bug 2006040](https://bugzil.la/2006040)."
-              },
+              "firefox": [
+                {
+                  "version_added": "148"
+                },
+                {
+                  "version_added": "139",
+                  "version_removed": "148",
+                  "partial_implementation": true,
+                  "notes": "The browser does not correctly scroll to the matching text. See [bug 2006040](https://bugzil.la/2006040)."
+                }
+              ],
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
@@ -879,16 +885,32 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "31"
-            },
+            "firefox": [
+              {
+                "version_added": "75"
+              },
+              {
+                "version_added": "31",
+                "version_removed": "75",
+                "partial_implementation": true,
+                "notes": "Firefox does not prevent `nonce` exfiltration through content attributes."
+              }
+            ],
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "15.4"
-            },
+            "safari": [
+              {
+                "version_added": "15.5"
+              },
+              {
+                "version_added": "15.4",
+                "version_removed": "15.5",
+                "partial_implementation": true,
+                "notes": "Safari does not prevent `nonce` exfiltration through content attributes."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -899,47 +921,12 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "nonce_hiding": {
-          "__compat": {
-            "description": "`nonce` hiding behavior",
-            "spec_url": "https://html.spec.whatwg.org/multipage/urls-and-fetching.html#nonce-does-not-update-dom",
-            "tags": [
-              "web-features:csp"
-            ],
-            "support": {
-              "chrome": {
-                "version_added": "61"
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "75"
-              },
-              "firefox_android": "mirror",
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": "15.5"
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror",
-              "webview_ios": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
         }
       },
       "part": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/part",
-          "spec_url": "https://drafts.csswg.org/css-shadow-parts/#part-attr",
+          "spec_url": "https://drafts.csswg.org/css-shadow/#part-attr",
           "tags": [
             "web-features:shadow-parts"
           ],
