@@ -4,15 +4,14 @@
 import { styleText } from 'node:util';
 
 import bcd from '../../index.js';
-const { browsers } = bcd;
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement} from '../../types/index.js' */
 
 /**
  * Check the data for any disallowed browsers or if it's missing required browsers
- * @param {CompatStatement} data The data to test
+ * @param {InternalCompatStatement} data The data to test
  * @param {string} category The category the data belongs to.
  * @param {Logger} logger The logger to output errors to.
  * @returns {void}
@@ -22,10 +21,8 @@ const processData = (data, category, logger) => {
     const support = data.support;
     const definedBrowsers = Object.keys(support);
 
-    const displayBrowsers = /** @type {(keyof typeof browsers)[]} */ (
-      Object.keys(browsers)
-    ).filter(
-      (b) =>
+    const displayBrowsers = Object.entries(bcd.browsers).flatMap(
+      ([name, browser]) =>
         [
           'desktop',
           'mobile',
@@ -33,20 +30,20 @@ const processData = (data, category, logger) => {
           ...(['api', 'javascript', 'webassembly'].includes(category)
             ? ['server']
             : []),
-        ].includes(browsers[b].type) &&
-        (category !== 'webextensions' || browsers[b].accepts_webextensions),
+        ].includes(browser.type) &&
+        (category !== 'webextensions' || browser.accepts_webextensions)
+          ? [name]
+          : [],
     );
-    const requiredBrowsers = /** @type {(keyof typeof browsers)[]} */ (
-      Object.keys(browsers)
-    ).filter(
+    const requiredBrowsers = Object.keys(bcd.browsers).filter(
       (b) =>
         !['ie'].includes(b) &&
-        ['desktop', 'mobile'].includes(browsers[b].type) &&
-        (category !== 'webextensions' || browsers[b].accepts_webextensions),
+        ['desktop', 'mobile'].includes(bcd.browsers[b].type) &&
+        (category !== 'webextensions' || bcd.browsers[b].accepts_webextensions),
     );
 
     const undefEntries = definedBrowsers.filter(
-      (value) => !(value in browsers),
+      (value) => !(value in bcd.browsers),
     );
     if (undefEntries.length > 0) {
       logger.error(
@@ -54,9 +51,9 @@ const processData = (data, category, logger) => {
       );
     }
 
-    const invalidEntries = /** @type {(keyof typeof support)[]} */ (
-      Object.keys(support)
-    ).filter((value) => !displayBrowsers.includes(value));
+    const invalidEntries = Object.keys(support).filter(
+      (value) => !displayBrowsers.includes(value),
+    );
     if (invalidEntries.length > 0) {
       logger.error(
         `Has the following browsers, which are invalid for ${styleText('bold', category)} compat data: ${styleText('bold', invalidEntries.join(', '))}`,
@@ -86,6 +83,10 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data, path: { category } }) => {
-    processData(/** @type {CompatStatement} */ (data), category, logger);
+    processData(
+      /** @type {InternalCompatStatement} */ (data),
+      category,
+      logger,
+    );
   },
 };

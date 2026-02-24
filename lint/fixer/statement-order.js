@@ -3,15 +3,15 @@
 
 import compareStatements from '../../scripts/lib/compare-statements.js';
 
-/** @import {BrowserName, CompatStatement} from '../../types/types.js' */
+/** @import {BrowserName, InternalCompatStatement} from '../../types/index.js' */
 
 /**
  * Return a new "support_block" object whose support statements have
  * been ordered in reverse chronological order, moving statements
  * with flags, partial support, prefixes, or alternative names lower.
  * @param {string} key The key in the object
- * @param {CompatStatement} value The value of the key
- * @returns {CompatStatement} The new value
+ * @param {InternalCompatStatement} value The value of the key
+ * @returns {InternalCompatStatement} The new value
  */
 export const orderStatements = (key, value) => {
   if (key === '__compat') {

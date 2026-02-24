@@ -11,13 +11,13 @@ import {
 } from './walkingUtils.js';
 import query from './query.js';
 
-/** @import {CompatData, CompatStatement, Identifier, BrowserStatement, ReleaseStatement} from '../types/types.js' */
-/** @import {DataType} from '../types/index.js' */
+/** @import {InternalCompatStatement, BrowserStatement, ReleaseStatement, InternalIdentifier} from '../types/index.js' */
+/** @import {InternalDataType} from '../types/index.js' */
 
 /**
  * @typedef {object} BrowserReleaseWalkOutput
  * @property {string} path
- * @property {DataType} data
+ * @property {InternalDataType} data
  * @property {BrowserStatement} browser
  * @property {ReleaseStatement} browserRelease
  */
@@ -25,17 +25,17 @@ import query from './query.js';
 /**
  * @typedef {object} LowLevelWalkOutput
  * @property {string} path
- * @property {DataType} data
+ * @property {InternalDataType} data
  * @property {BrowserStatement} [browser]
- * @property {CompatStatement} [compat]
+ * @property {InternalCompatStatement} [compat]
  * @property {ReleaseStatement} [browserRelease]
  */
 
 /**
  * @typedef {object} WalkOutput
  * @property {string} path
- * @property {DataType} data
- * @property {CompatStatement} compat
+ * @property {InternalDataType} data
+ * @property {InternalCompatStatement} compat
  */
 
 /**
@@ -58,7 +58,7 @@ export function* browserReleaseWalk(data, path) {
 
 /**
  * Walk through the compatibility statements
- * @param {DataType} [data] The data to iterate
+ * @param {InternalDataType} [data] The data to iterate
  * @param {string} [path] The current path
  * @param {number} [depth] The maximum depth to iterate
  * @yields {LowLevelWalkOutput} The feature info
@@ -78,7 +78,7 @@ export function* lowLevelWalk(data = bcd, path, depth = Infinity) {
       yield* browserReleaseWalk(data, path);
     } else {
       if (isFeature(data)) {
-        next.compat = data.__compat;
+        next.compat = /** @type {InternalCompatStatement} */ (data.__compat);
       }
       yield next;
     }
@@ -94,7 +94,7 @@ export function* lowLevelWalk(data = bcd, path, depth = Infinity) {
 /**
  * Walk the data for compat features
  * @param {string | string[]} [entryPoints] Entry points to iterate
- * @param {CompatData | CompatStatement | Identifier} [data] The data to iterate
+ * @param {InternalDataType} [data] The data to iterate
  * @yields {WalkOutput} The feature info
  * @returns {IterableIterator<WalkOutput>}
  */

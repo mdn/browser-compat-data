@@ -4,11 +4,10 @@
 import { styleText } from 'node:util';
 
 import bcd from '../../index.js';
-const { browsers } = bcd;
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {BrowserName, CompatStatement} from '../../types/types.js' */
+/** @import {BrowserName, InternalCompatStatement} from '../../types/index.js' */
 
 // See: https://github.com/web-platform-dx/web-features/blob/main/docs/baseline.md#core-browser-set
 const CORE_BROWSER_SET = new Set([
@@ -23,7 +22,7 @@ const CORE_BROWSER_SET = new Set([
 
 /**
  * Check if experimental should be true or false
- * @param {CompatStatement} data The data to check
+ * @param {InternalCompatStatement} data The data to check
  * @returns {boolean} The expected experimental status
  */
 export const checkExperimental = (data) => {
@@ -40,7 +39,12 @@ export const checkExperimental = (data) => {
       // Consider only the first part of an array statement.
       const statement = Array.isArray(support) ? support[0] : support;
       // Ignore anything behind flag, prefix or alternative name
-      if (statement.flags || statement.prefix || statement.alternative_name) {
+      if (
+        typeof statement !== 'object' ||
+        statement.flags ||
+        statement.prefix ||
+        statement.alternative_name
+      ) {
         continue;
       }
       if (statement.version_added && !statement.version_removed) {
@@ -55,7 +59,7 @@ export const checkExperimental = (data) => {
     const engineSupport = new Set();
 
     for (const browser of browserSupport) {
-      const currentRelease = Object.values(browsers[browser].releases).find(
+      const currentRelease = Object.values(bcd.browsers[browser].releases).find(
         (r) => r.status === 'current',
       );
       const engine = currentRelease?.engine;
@@ -81,7 +85,7 @@ export const checkExperimental = (data) => {
 
 /**
  * Check the status blocks of the compat date
- * @param {CompatStatement} data The data to test
+ * @param {InternalCompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
  * @param {string} category The feature category
  * @returns {void}
@@ -141,6 +145,10 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data, path: { category } }) => {
-    checkStatus(/** @type {CompatStatement} */ (data), logger, category);
+    checkStatus(
+      /** @type {InternalCompatStatement} */ (data),
+      logger,
+      category,
+    );
   },
 };

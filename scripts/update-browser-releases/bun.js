@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatData} from '../../types/types.js' */
+/** @import {Browsers, InternalCompatData} from '../../types/index.js' */
 
 /**
  * @typedef {object} BunVersionsResponse
@@ -219,7 +219,7 @@ export const updateBunReleases = async (options) => {
     );
   }
 
-  /** @type {CompatData} */
+  /** @type {InternalCompatData} */
   const data = JSON.parse(fileText);
 
   let result = '';
@@ -287,7 +287,9 @@ export const updateBunReleases = async (options) => {
       rel.release_notes,
     );
 
-    const entry = data.browsers[browser].releases[rel.version];
+    const entry = /** @type {Browsers} */ (data.browsers)[browser].releases[
+      rel.version
+    ];
 
     if (entry) {
       const { webkitRev } = await getBunInfoFromVersionData(rel);

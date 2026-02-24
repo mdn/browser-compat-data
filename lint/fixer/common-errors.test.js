@@ -3,13 +3,13 @@
 
 import assert from 'node:assert/strict';
 
-import { fixCommonErrorsInCompatStatement } from './common-errors.js';
+import { fixCommonErrorsInSupportBlock } from './common-errors.js';
 
 /**
  * @import { InternalSupportBlock } from '../../types/index.js'
  */
 
-/** @type {{ input: any; output?: InternalSupportBlock }[]} */
+/** @type {{ input: any; output: InternalSupportBlock }[]} */
 const tests = [
   // Replace unwrapped "false".
   {
@@ -40,14 +40,10 @@ describe('fix -> common errors', () => {
   let i = 1;
   for (const test of tests) {
     it(`Test #${i}`, () => {
-      const input = {
-        support: test.input,
-      };
-      const output = {
-        support: test.output ?? test.input,
-      };
+      const input = test.input;
+      const output = test.output ?? test.input;
 
-      fixCommonErrorsInCompatStatement(input);
+      fixCommonErrorsInSupportBlock(input);
 
       assert.deepStrictEqual(input, output);
     });

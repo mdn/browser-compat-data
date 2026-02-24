@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {BrowserName, BrowserStatus, CompatData} from '../../types/types.js' */
+/** @import {BrowserName, Browsers, BrowserStatus, InternalCompatData} from '../../types/index.js' */
 
 /**
  * @typedef {object} RSSItem
@@ -161,14 +161,16 @@ export const createOrUpdateBrowserEntry = (
 
 /**
  * Updates the status of a browser release.
- * @param {CompatData} json json file to update
+ * @param {InternalCompatData} json json file to update
  * @param {BrowserName} browser the entry name where to add it in the bcd file
  * @param {string} version the version to add
  * @param {BrowserStatus} status the status
  * @returns {string} Text describing what has been updated
  */
 export const setBrowserReleaseStatus = (json, browser, version, status) => {
-  const release = json.browsers[browser].releases[version];
+  const release = /** @type {Browsers} */ (json.browsers)[browser].releases[
+    version
+  ];
 
   if (release.status === status) {
     return '';

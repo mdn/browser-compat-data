@@ -7,12 +7,12 @@ import { createStatementGroupKey } from '../utils.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {BrowserName, CompatStatement, SupportStatement} from '../../types/types.js' */
+/** @import {BrowserName, InternalCompatStatement, InternalSupportStatement} from '../../types/index.js' */
 
 /**
  * Process data and check to make sure there aren't multiple support statements without
  * `partial_implementation` or `prefix`/`alternative_name`
- * @param {SupportStatement} data The data to test
+ * @param {InternalSupportStatement} data The data to test
  * @param {BrowserName} browser The name of the browser
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
@@ -56,10 +56,10 @@ export default {
    */
   check: (logger, { data }) => {
     for (const [browser, support] of Object.entries(
-      /** @type {CompatStatement} */ (data).support,
+      /** @type {InternalCompatStatement} */ (data).support,
     )) {
       processData(
-        /** @type {SupportStatement} */ (support),
+        /** @type {InternalSupportStatement} */ (support),
         /** @type {BrowserName} */ (browser),
         logger,
       );
