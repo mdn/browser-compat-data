@@ -125,12 +125,14 @@ jobs:
 
       - name: Install
         run: |
+          # sed command prefixes each line of output with [base] or [pr]
           cd base && npm ci | sed "s/^/[base] /" &
           cd pr && npm ci | sed "s/^/[pr] /" &
           wait
 
       - name: Format
         run: |
+          # sed command prefixes each line of output with [base] or [pr]
           cd base/build && npx prettier --write . | sed "s/^/[base] /" &
           cd pr/build && npx prettier --write . | sed "s/^/[pr] /" &
           wait
