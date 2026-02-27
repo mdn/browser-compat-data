@@ -1,13 +1,15 @@
 {
-  "css": {
-    "properties": {
-      "background-repeat-x": {
+  "http": {
+    "headers": {
+      "Signature": {
         "__compat": {
-          "spec_url": "https://drafts.csswg.org/css-backgrounds-4/#background-repeat-longhands",
+          "spec_url": [
+            "https://datatracker.ietf.org/doc/html/rfc9421#section-4.2",
+            "https://wicg.github.io/signature-based-sri/#signature-enforcement"
+          ],
           "support": {
             "chrome": {
-              "version_added": "5",
-              "version_removed": "120"
+              "version_added": "141"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -19,10 +21,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "5",
-              "version_removed": "15",
-              "partial_implementation": true,
-              "notes": "`CSS.supports('background-repeat-x')` returns `true`, but the property has no effect."
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

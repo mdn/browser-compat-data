@@ -1,5 +1,28 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.3.4](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.4)
+
+February 25, 2026
+
+### Additions
+
+- `api.HTMLButtonElement.commandForElement.implicit_anchor_reference` ([#29093](https://github.com/mdn/browser-compat-data/pull/29093))
+- `browsers.deno.releases.2.6` ([#29121](https://github.com/mdn/browser-compat-data/pull/29121))
+- `browsers.deno.releases.2.6.7` ([#29121](https://github.com/mdn/browser-compat-data/pull/29121))
+- `browsers.deno.releases.2.7` ([#29121](https://github.com/mdn/browser-compat-data/pull/29121))
+- `html.elements.button.commandfor.implicit_anchor_reference` ([#29093](https://github.com/mdn/browser-compat-data/pull/29093))
+- `html.elements.link.rel.modulepreload.as-json` ([#29048](https://github.com/mdn/browser-compat-data/pull/29048))
+- `html.elements.link.rel.modulepreload.as-script` ([#29048](https://github.com/mdn/browser-compat-data/pull/29048))
+- `html.elements.link.rel.modulepreload.as-style` ([#29048](https://github.com/mdn/browser-compat-data/pull/29048))
+- `http.headers.Permissions-Policy.gamepad` ([#28744](https://github.com/mdn/browser-compat-data/pull/28744))
+
+### Statistics
+
+- 8 contributors have changed 50 files with 870 additions and 1,909 deletions in 21 commits ([`v7.3.3...v7.3.4`](https://github.com/mdn/browser-compat-data/compare/v7.3.3...v7.3.4))
+- 19,370 total features
+- 1,228 total contributors
+- 5,590 total stargazers
+
 ## [v7.3.3](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.3)
 
 February 20, 2026
