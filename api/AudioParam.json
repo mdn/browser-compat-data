@@ -115,23 +115,49 @@
             "web-features:web-audio"
           ],
           "support": {
-            "chrome": {
-              "version_added": "14"
-            },
+            "chrome": [
+              {
+                "version_added": "83"
+              },
+              {
+                "version_added": "14",
+                "version_removed": "83",
+                "partial_implementation": true,
+                "notes": "Before Chrome 83, `cancelScheduledValues()` does not cancel in-progress curve events created by `setValueCurveAtTime()`. See [bug 1063502](https://crbug.com/1063502)."
+              }
+            ],
             "chrome_android": "mirror",
-            "edge": {
-              "version_added": "12"
-            },
+            "edge": [
+              {
+                "version_added": "83"
+              },
+              {
+                "version_added": "12",
+                "version_removed": "83",
+                "partial_implementation": true,
+                "notes": "Before Edge 83, `cancelScheduledValues()` does not cancel in-progress curve events created by `setValueCurveAtTime()`."
+              }
+            ],
             "firefox": {
-              "version_added": "25"
+              "version_added": "25",
+              "partial_implementation": true,
+              "notes": "Does not cancel in-progress curve events created by `setValueCurveAtTime()`. See [bug 1752775](https://bugzil.la/1752775)."
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "6"
-            },
+            "safari": [
+              {
+                "version_added": "14.1"
+              },
+              {
+                "version_added": "6",
+                "version_removed": "14.1",
+                "partial_implementation": true,
+                "notes": "Before Safari 14.1, `cancelScheduledValues()` does not cancel in-progress curve events created by `setValueCurveAtTime()`. See [bug 216132](https://webkit.org/b/216132)."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
