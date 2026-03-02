@@ -3,11 +3,15 @@
 
 import { styleText } from 'node:util';
 
-import specData from 'web-specs' with { type: 'json' };
-
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
 /** @import {CompatStatement} from '../../types/types.js' */
+
+/**
+ * @typedef {object} ValidSpecHosts
+ * @property {string} url
+ * @property {string} alternateUrl
+ */
 
 /*
  * Before adding an exception, open an issue with https://github.com/w3c/browser-specs to
@@ -15,18 +19,20 @@ import specData from 'web-specs' with { type: 'json' };
  * When adding an exception here, provide a reason and indicate how the exception can be removed.
  */
 const specsExceptions = [
+  // Remove once SVG specs are more compatible with reffy
+  // See https://github.com/mdn/browser-compat-data/pull/23958#issuecomment-3108406135
+  'https://svgwg.org/',
+  'https://www.w3.org/TR/SVG11/',
+
+  // Remove once https://github.com/w3c/fxtf-drafts/issues/599 is resolved
+  'https://drafts.fxtf.org/filter-effects/',
+
   // Remove once https://github.com/whatwg/html/pull/6715 is resolved
   'https://wicg.github.io/controls-list/',
-
-  // Exception for April Fools' joke for "418 I'm a teapot"
-  'https://www.rfc-editor.org/rfc/rfc2324',
 
   // Unfortunately this doesn't produce a rendered spec, so it isn't in browser-specs
   // Remove if it is in the main ECMA spec
   'https://github.com/tc39/proposal-regexp-legacy-features/',
-
-  // Remove once tc39/ecma262#3221 is merged
-  'https://github.com/tc39/proposal-regexp-modifiers',
 
   // See https://github.com/w3c/browser-specs/issues/305
   // Features with this URL need to be checked after some time
@@ -61,21 +67,72 @@ const specsExceptions = [
   'https://www.w3.org/Graphics/GIF/spec-gif87.txt',
 ];
 
-const allowedSpecURLs = [
-  .../** @type {string[]} */ (
-    specData
-      .filter((spec) => spec.standing == 'good')
-      .map((spec) => [
-        spec.url,
-        spec.nightly?.url,
-        ...(spec.nightly ? spec.nightly.alternateUrls : []),
-        spec.series.nightlyUrl,
-      ])
-      .flat()
-      .filter((url) => !!url)
-  ),
-  ...specsExceptions,
-];
+/** @type {ValidSpecHosts[]} */
+const validSpecHosts = [];
+
+/**
+ * Get valid specification URLs from webref ids
+ * @returns {Promise<string[]>} array of valid spec urls (including fragment id)
+ */
+const getValidSpecURLs = async () => {
+  const indexFile = await fetch(
+    'https://raw.githubusercontent.com/w3c/webref/main/ed/index.json',
+  );
+  const index = JSON.parse(await indexFile.text());
+  /** @type {string[]} */
+  const webrefFiles = [];
+
+  index.results.forEach((spec) => {
+    if (spec.standing === 'good') {
+      if (spec.shortname === 'webnn') {
+        validSpecHosts.push({
+          url: spec.series.releaseUrl,
+          alternateUrl: spec.nightly?.url,
+        });
+      } else {
+        validSpecHosts.push({
+          url: spec.series.nightlyUrl,
+          alternateUrl: spec.nightly?.url,
+        });
+      }
+      if (spec.dfns) {
+        webrefFiles.push(spec.dfns);
+      }
+      if (spec.headings) {
+        webrefFiles.push(spec.headings);
+      }
+    }
+  });
+
+  const responses = await Promise.all(
+    webrefFiles.map(async (file) => {
+      const res = await fetch(
+        `https://raw.githubusercontent.com/w3c/webref/main/ed/${file}`,
+      );
+      const type = file.match(/^([^/]+)\//)?.[1] ?? 'dfns';
+      const json = await res.json();
+      const dfns = json[type];
+      return dfns
+        .map((entry) =>
+          [entry].concat(entry.links ?? []).concat(
+            (entry.alternateIds ?? []).map((altId) => {
+              const url = new URL(entry.href);
+              return url.origin + url.pathname + '#' + altId;
+            }),
+          ),
+        )
+        .flatMap((links) =>
+          links.map((link) => {
+            const url = new URL(link.href ?? link);
+            return url.origin + url.pathname + decodeURIComponent(url.hash);
+          }),
+        );
+    }),
+  );
+  return responses.flat();
+};
+
+const validSpecURLsWithFragments = await getValidSpecURLs();
 
 /**
  * Process the data for spec URL errors
@@ -93,7 +150,35 @@ const processData = (data, logger) => {
     : [data.spec_url];
 
   for (const specURL of featureSpecURLs) {
-    if (!allowedSpecURLs.some((prefix) => specURL.startsWith(prefix))) {
+    if (specsExceptions.some((host) => specURL.startsWith(host))) {
+      continue;
+    }
+
+    if (specURL.includes('#') && !specURL.includes('#:~:text=')) {
+      const hasSpec = validSpecURLsWithFragments.includes(specURL);
+
+      const alternateSpecURLs = validSpecHosts.filter(
+        (spec) => spec.url === specURL.split('#')[0],
+      );
+
+      const hasAlternateSpec = alternateSpecURLs.some((altSpecURL) => {
+        const specToLookup =
+          altSpecURL.alternateUrl + '#' + specURL.split('#')[1];
+        if (validSpecURLsWithFragments.includes(specToLookup)) {
+          return true;
+        }
+        return false;
+      });
+
+      if (!hasSpec && !hasAlternateSpec) {
+        logger.error(
+          chalk`Invalid specification fragment found: {bold ${specURL}}.`,
+        );
+      }
+    } else if (
+      !validSpecHosts.some((host) => specURL.startsWith(host.url)) &&
+      !validSpecHosts.some((host) => specURL.startsWith(host.alternateUrl))
+    ) {
       logger.error(
         `Invalid specification URL found: ${styleText('bold', specURL)}. Check if:
          - there is a more current specification URL
