@@ -24,6 +24,7 @@ import fixMDNURLs from './fixer/mdn-urls.js';
 import fixStatus from './fixer/status.js';
 import fixMirror from './fixer/mirror.js';
 import fixOverlap from './fixer/overlap.js';
+import fixStandardTrackExceptions from './fixer/standard-track-exceptions.js';
 import { IS_WINDOWS } from './utils.js';
 
 /** @import {Stats} from 'node:fs' */
@@ -45,6 +46,7 @@ const FIXES = Object.freeze({
   feature_order: fixFeatureOrder,
   property_order: fixPropertyOrder,
   statement_order: fixStatementOrder,
+  standard_track_exceptions: fixStandardTrackExceptions,
 });
 
 /**
