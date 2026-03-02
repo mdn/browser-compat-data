@@ -1,5 +1,24 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.3.6](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.6)
+
+March 2, 2026
+
+### Additions
+
+- `webextensions.api.tabs.onUpdated.changeInfo.splitViewId` ([#29128](https://github.com/mdn/browser-compat-data/pull/29128))
+- `webextensions.api.tabs.onUpdated.filter.properties.splitViewId` ([#29128](https://github.com/mdn/browser-compat-data/pull/29128))
+- `webextensions.api.tabs.query.queryInfo.splitViewId` ([#29128](https://github.com/mdn/browser-compat-data/pull/29128))
+- `webextensions.api.tabs.SPLIT_VIEW_ID_NONE` ([#29128](https://github.com/mdn/browser-compat-data/pull/29128))
+- `webextensions.api.tabs.Tab.splitViewId` ([#29128](https://github.com/mdn/browser-compat-data/pull/29128))
+
+### Statistics
+
+- 3 contributors have changed 4 files with 118 additions and 15 deletions in 4 commits ([`v7.3.5...v7.3.6`](https://github.com/mdn/browser-compat-data/compare/v7.3.5...v7.3.6))
+- 19,389 total features
+- 1,228 total contributors
+- 5,595 total stargazers
+
 ## [v7.3.5](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.5)
 
 February 27, 2026
