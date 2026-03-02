@@ -4,6 +4,7 @@
 /** @import {CompatStatement} from '../../types/types.js' */
 /** @import {DescriptionError} from './test-descriptions.js' */
 
+import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
 import { processData } from './test-descriptions.js';
