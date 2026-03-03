@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
 
 import { IS_WINDOWS, indexToPos, indexToPosRaw } from '../utils.js';
 
@@ -299,7 +299,7 @@ export default {
 
     for (const error of errors) {
       logger.error(
-        chalk`${error.posString} – ${error.issue} ({yellow ${error.actual}} → {green ${error.expected}}).`,
+        `${error.posString} – ${error.issue} (${styleText('yellow', error.actual)} → ${styleText('green', error.expected ?? '')}).`,
         { fixable: true },
       );
     }

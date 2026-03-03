@@ -173,7 +173,10 @@
                 "firefox": {
                   "version_added": "104",
                   "partial_implementation": true,
-                  "notes": "When produced by sandboxed code, the realm reference is incorrect. It returns the window’s realm instead."
+                  "notes": [
+                    "When produced by sandboxed code, the realm reference is incorrect. It returns the window’s realm instead.",
+                    "Requires the addition of the `userContext` field."
+                  ]
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",

@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
 
 import walk from '../../utils/walk.js';
 
@@ -25,7 +25,10 @@ const checkStatusInheritance = (data, logger) => {
       )) {
         if (subfeature.compat.status?.deprecated === false) {
           logger.error(
-            chalk`{red Feature {italic ${feature.path}} is {bold deprecated}, but subfeature {italic ${subfeature.path}} is {bold not deprecated}.}`,
+            styleText(
+              'red',
+              `Feature ${styleText('italic', feature.path)} is ${styleText('bold', 'deprecated')}, but subfeature ${styleText('italic', subfeature.path)} is ${styleText('bold', 'not deprecated')}.`,
+            ),
             { fixable: true },
           );
         }
@@ -42,7 +45,10 @@ const checkStatusInheritance = (data, logger) => {
           subfeature.compat.status?.deprecated === false
         ) {
           logger.error(
-            chalk`{red Feature {italic ${feature.path}} is {bold experimental}, but subfeature {italic ${subfeature.path}} is {bold not experimental}.}`,
+            styleText(
+              'red',
+              `Feature ${styleText('italic', feature.path)} is ${styleText('bold', 'experimental')}, but subfeature ${styleText('italic', subfeature.path)} is ${styleText('bold', 'not experimental')}.`,
+            ),
             { fixable: true },
           );
         }
@@ -56,7 +62,10 @@ const checkStatusInheritance = (data, logger) => {
       )) {
         if (subfeature.compat.status?.standard_track === true) {
           logger.error(
-            chalk`{red Feature {italic ${feature.path}} is {bold not standardized}, but subfeature {italic ${subfeature.path}} is {bold standardized}.}`,
+            styleText(
+              'red',
+              `Feature ${styleText('italic', feature.path)} is ${styleText('bold', 'not standardized')}, but subfeature ${styleText('italic', subfeature.path)} is ${styleText('bold', 'standardized')}.`,
+            ),
             { fixable: true },
           );
         }

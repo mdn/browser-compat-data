@@ -3,7 +3,8 @@
 
 /** @import {SupportStatement, Identifier, BrowserName} from '../types/types.js' */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
+
 import deepDiff from 'deep-diff';
 import esMain from 'es-main';
 import yargs from 'yargs';
@@ -218,7 +219,7 @@ if (esMain(import.meta)) {
 
   const { base, head } = argv;
   for (const [key, values] of getDiffs(getMergeBase(base, head), head)) {
-    console.log(chalk`{bold ${key}}:`);
+    console.log(`${styleText('bold', key)}:`);
     for (const value of values) {
       console.log(` → ${value}`);
     }

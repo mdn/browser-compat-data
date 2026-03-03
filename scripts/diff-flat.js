@@ -7,7 +7,8 @@
  * @typedef {'html' | 'plain'} Format
  */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
+
 import { diffArrays } from 'diff';
 import esMain from 'es-main';
 import stripAnsi from 'strip-ansi';
@@ -217,7 +218,7 @@ const diffKeys = (key, lastKey, options) => {
         return (
           (options.format === 'html'
             ? `<strong>${key}</strong>`
-            : chalk`{blue ${key}}`) + space
+            : styleText('blue', key)) + space
         );
       }
 
@@ -395,11 +396,11 @@ const printDiffs = (base, head, options) => {
         if (part.removed) {
           return options.format == 'html'
             ? `<ins style="color: green">${value}</ins>`
-            : chalk`{green ${value}}`;
+            : styleText('green', value);
         } else if (part.added) {
           return options.format == 'html'
             ? `<del style="color: red">${value}</del>`
-            : chalk`{red ${value}}`;
+            : styleText('red', value);
         }
 
         return value;
@@ -419,7 +420,7 @@ const printDiffs = (base, head, options) => {
         BROWSER_NAMES.includes(part),
       );
       const field = reverseKeyParts.find((part) => !/^\d+$/.test(part));
-      const groupKey = `${!browser ? '' : options.format == 'html' ? `<strong>${browser}</strong>.` : chalk`{cyan ${browser}}.`}${field} = ${value}`;
+      const groupKey = `${!browser ? '' : options.format == 'html' ? `<strong>${browser}</strong>.` : `${styleText('cyan', browser)}.`}${field} = ${value}`;
       const groupValue = key
         .split('.')
         .map((part) => (part !== browser && part !== field ? part : '{}'))
@@ -431,17 +432,14 @@ const printDiffs = (base, head, options) => {
             ? value
             : options.format == 'html'
               ? '<small>{}</small>'
-              : chalk`{dim \{\}}`,
+              : styleText('dim', '{}'),
         )
         .join('.');
       const group = groups.get(groupKey) ?? new Set();
       group.add(groupValue);
       groups.set(groupKey, group);
     } else {
-      const change =
-        options.format == 'html'
-          ? `${keyDiff} = ${value}`
-          : chalk`${keyDiff} = ${value}`;
+      const change = `${keyDiff} = ${value}`;
       const group = groups.get(commonName) ?? new Set();
       group.add(change);
       groups.set(commonName, group);
@@ -528,7 +526,7 @@ const printDiffs = (base, head, options) => {
         console.log(
           options.format == 'html'
             ? `<em>${line}</em>`
-            : chalk`{italic ${line}}`,
+            : styleText('italic', line),
         ),
       );
     }
