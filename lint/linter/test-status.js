@@ -4,11 +4,13 @@
 import { styleText } from 'node:util';
 
 import bcd from '../../index.js';
+import { getStandardTrackExceptions } from '../common/standard-track-exceptions.js';
 const { browsers } = bcd;
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
 /** @import {BrowserName, CompatStatement} from '../../types/types.js' */
+const standardTrackExceptions = new Set(await getStandardTrackExceptions());
 
 // See: https://github.com/web-platform-dx/web-features/blob/main/docs/baseline.md#core-browser-set
 const CORE_BROWSER_SET = new Set([
@@ -84,9 +86,10 @@ export const checkExperimental = (data) => {
  * @param {CompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
  * @param {string} category The feature category
+ * @param {string} featurePath The full path to the feature (e.g., "api.Animation.remove_filling_animation")
  * @returns {void}
  */
-const checkStatus = (data, logger, category) => {
+const checkStatus = (data, logger, category, featurePath) => {
   const status = data.status;
 
   if (!status) {
@@ -119,6 +122,31 @@ const checkStatus = (data, logger, category) => {
     );
   }
 
+  // Check for standard_track without spec_url
+  const isInExceptionList = standardTrackExceptions.has(featurePath);
+  const missingSpecUrl = !data.spec_url && status.standard_track === true;
+
+  if (missingSpecUrl && !isInExceptionList) {
+    // New violation - not in exception list
+    logger.error(
+      styleText(
+        'red',
+        `Marked as ${styleText('bold', 'standard_track')}, but missing required ${styleText('bold', 'spec_url')}`,
+      ),
+    );
+  }
+
+  // Warn if exception no longer applies
+  if (isInExceptionList && !missingSpecUrl) {
+    logger.warning(
+      styleText(
+        'yellow',
+        `Feature is in the exception list but no longer needs to be (spec_url was added or standard_track is false). Remove from ${styleText('bold', 'standard-track-exceptions.txt')}`,
+      ),
+      { fixable: true },
+    );
+  }
+
   if (!checkExperimental(data)) {
     logger.error(
       styleText(
@@ -140,7 +168,7 @@ export default {
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */
-  check: (logger, { data, path: { category } }) => {
-    checkStatus(/** @type {CompatStatement} */ (data), logger, category);
+  check: (logger, { data, path: { category, full } }) => {
+    checkStatus(/** @type {CompatStatement} */ (data), logger, category, full);
   },
 };
