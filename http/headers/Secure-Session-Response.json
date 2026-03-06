@@ -1,18 +1,23 @@
 {
-  "css": {
-    "selectors": {
-      "picker-icon": {
+  "http": {
+    "headers": {
+      "Secure-Session-Response": {
         "__compat": {
-          "description": "`::picker-icon`",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/::picker-icon",
-          "spec_url": "https://drafts.csswg.org/css-forms-1/#picker-icon",
-          "tags": [
-            "web-features:customizable-select"
-          ],
+          "spec_url": "https://w3c.github.io/webappsec-dbsc/#header-secure-session-registration",
           "support": {
-            "chrome": {
-              "version_added": "133"
-            },
+            "chrome": [
+              {
+                "version_added": "147",
+                "partial_implementation": true,
+                "notes": "Supported on Windows and macOS only."
+              },
+              {
+                "version_added": "145",
+                "version_removed": "147",
+                "partial_implementation": true,
+                "notes": "Supported on Windows only."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -23,7 +28,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "preview"
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -31,7 +36,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": false,
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
