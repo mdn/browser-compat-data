@@ -104,6 +104,47 @@
               "deprecated": false
             }
           }
+        },
+        "search_match_opens": {
+          "__compat": {
+            "description": "Auto-opens when matched via page search",
+            "support": {
+              "chrome": {
+                "version_added": "97"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": [
+                {
+                  "version_added": "148"
+                },
+                {
+                  "version_added": "139",
+                  "version_removed": "148",
+                  "partial_implementation": true,
+                  "notes": "The browser does not correctly scroll to the matching text. See [bug 2006040](https://bugzil.la/2006040)."
+                }
+              ],
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26.2",
+                "partial_implementation": true,
+                "notes": "The browser does not correctly scroll to the matching text. See [bug 304174](https://webkit.org/b/304174)."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       }
     }

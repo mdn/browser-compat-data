@@ -114,9 +114,9 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
-              "deprecated": false
+              "deprecated": true
             }
           }
         },
@@ -313,6 +313,38 @@
               "experimental": false,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "ed25519_public_key": {
+            "__compat": {
+              "description": "Signature-based integrity (Ed25519 public key values)",
+              "spec_url": "https://wicg.github.io/signature-based-sri/#monkey-patch-csp",
+              "support": {
+                "chrome": {
+                  "version_added": "141"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
             }
           }
         },
@@ -751,7 +783,13 @@
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "26.2",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "SpeculationRules prefetch"
+                    }
+                  ]
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
@@ -786,7 +824,15 @@
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "26.2",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "SpeculationRules prefetch"
+                      }
+                    ],
+                    "partial_implementation": true,
+                    "notes": "Only `conservative` is supported for document rules (though `moderate` automatically falls back to `conservative`). Only `eager` and `immediate` is supported for list rules."
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
@@ -869,7 +915,13 @@
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false,
+                    "version_added": "26.2",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "SpeculationRules prefetch"
+                      }
+                    ],
                     "impl_url": "https://webkit.org/b/295193"
                   },
                   "safari_ios": "mirror",
@@ -914,8 +966,9 @@
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
                   "webview_android": {
-                    "version_added": false,
-                    "impl_url": "https://crbug.com/41490450"
+                    "version_added": "135",
+                    "partial_implementation": true,
+                    "notes": "Can be enabled via a Java API rather than a Web API. See https://goo.gle/android-prerender"
                   },
                   "webview_ios": "mirror"
                 },
@@ -948,7 +1001,13 @@
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "26.2",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "SpeculationRules prefetch"
+                      }
+                    ]
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
@@ -984,7 +1043,13 @@
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "26.2",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "SpeculationRules prefetch"
+                      }
+                    ]
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
@@ -1104,7 +1169,13 @@
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "26.2",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "SpeculationRules prefetch"
+                      }
+                    ]
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
@@ -1140,7 +1211,13 @@
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "26.2",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "SpeculationRules prefetch"
+                      }
+                    ]
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
@@ -1216,7 +1293,13 @@
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "26.2",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "SpeculationRules prefetch"
+                      }
+                    ]
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
@@ -1252,7 +1335,13 @@
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "26.2",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "SpeculationRules prefetch"
+                      }
+                    ]
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",

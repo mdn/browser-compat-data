@@ -5,6 +5,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy",
           "spec_url": "https://w3c.github.io/webappsec-permissions-policy/#permissions-policy-http-header-field",
+          "tags": [
+            "web-features:permissions-policy"
+          ],
           "support": {
             "chrome": {
               "version_added": "88"
@@ -113,6 +116,7 @@
         "aria-notify": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy/aria-notify",
+            "spec_url": "https://w3c.github.io/aria/#ARIANotifyMixin",
             "support": {
               "chrome": {
                 "version_added": "141",
@@ -138,7 +142,7 @@
             },
             "status": {
               "experimental": true,
-              "standard_track": false,
+              "standard_track": true,
               "deprecated": false
             }
           }
@@ -172,9 +176,9 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
-              "deprecated": false
+              "deprecated": true
             }
           }
         },
@@ -248,6 +252,9 @@
         "browsing-topics": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy/browsing-topics",
+            "tags": [
+              "web-features:topics"
+            ],
             "support": {
               "chrome": {
                 "version_added": "115"
@@ -270,7 +277,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": false,
               "deprecated": true
             }
@@ -318,6 +325,40 @@
             "support": {
               "chrome": {
                 "version_added": "136"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "ch-ua-high-entropy-values": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy/ch-ua-high-entropy-values",
+            "spec_url": "https://wicg.github.io/ua-client-hints/#ch-ua-high-entropy-values",
+            "support": {
+              "chrome": {
+                "version_added": "144"
               },
               "chrome_android": {
                 "version_added": false
@@ -564,6 +605,38 @@
             "support": {
               "chrome": {
                 "version_added": "88"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "gamepad": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy/gamepad",
+            "spec_url": "https://w3c.github.io/gamepad/#permission-policy",
+            "support": {
+              "chrome": {
+                "version_added": "103"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -1077,6 +1150,7 @@
         },
         "private-state-token-issuance": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy/private-state-token-issuance",
             "spec_url": "https://wicg.github.io/trust-token-api/#policy-controlled-feature-private-state-token-issuance",
             "support": {
               "chrome": {
@@ -1110,6 +1184,7 @@
         },
         "private-state-token-redemption": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy/private-state-token-redemption",
             "spec_url": "https://wicg.github.io/trust-token-api/#policy-controlled-feature-private-state-token-redemption",
             "support": {
               "chrome": {
@@ -1451,6 +1526,9 @@
         "wildcards": {
           "__compat": {
             "description": "Wildcards in allowlist origins",
+            "tags": [
+              "web-features:permissions-policy"
+            ],
             "support": {
               "chrome": {
                 "version_added": "108"

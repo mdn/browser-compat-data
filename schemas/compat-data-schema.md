@@ -22,6 +22,8 @@ Compatibility data is organized in top-level directories for each broad area cov
 
 - [mathml/](../mathml) contains data for [MathML](https://developer.mozilla.org/docs/Web/MathML) elements, attributes, and global attributes.
 
+- [mediatypes/](../mediatypes) contains data for [Media types](https://developer.mozilla.org/docs/Web/HTTP/Guides/MIME_types).
+
 - [svg/](../svg) contains data for [SVG](https://developer.mozilla.org/en-US/docs/Web/SVG) elements, attributes, and global attributes.
 
 - [webdriver/](../webdriver) contains data for [WebDriver](https://developer.mozilla.org/en-US/docs/Web/WebDriver) commands.
@@ -475,11 +477,21 @@ A `boolean` value indicating whether or not the implementation of the sub-featur
 
 The mandatory status property contains information about stability of the feature. It is an object named `status` and has three mandatory properties:
 
-- `experimental`: a `boolean` value.
+- `experimental` (DEPRECATED): a `boolean` value.
 
-  If `experimental` is `true`, it means the feature was implemented in only one browser engine and was implemented recently. It also means that Web developers _should not_ rely on the feature's continued existence in its current (or potentially any) form in future browser releases.
+  **Warning**: The `experimental` property is deprecated.
+  Prefer using a more well-defined stability calculations, such as Baseline, instead.
 
-  If `experimental` is `false`, it means the feature was implemented in multiple browser engines, or the feature had been implemented over two years ago in any one browser engine.
+  If `experimental` is `true`, then it usually means that the feature is implemented in only one browser engine.
+
+  If `experimental` is `false`, then it usually means that the feature is implemented in two or more browser engines.
+  Sometimes a `false` value means that a single-implementer feature is not expected to change.
+
+  The `experimental` field does not have a precise definition.
+  It was created to support the migration of data to BCD from MDN wiki pages.
+  The meaning of `experimental` has evolved, reflecting MDN and BCD's conventions over time.
+
+  See the [_Setting `experimental`_ data guideline](/docs/data-guidelines/README.md#setting-experimental) for more information on how BCD's maintainers set this value today.
 
 - `standard_track`: a `boolean` value.
 

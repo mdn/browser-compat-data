@@ -42,19 +42,24 @@
         },
         "side-relative_values": {
           "__compat": {
-            "description": "Side-relative values (such as `bottom 10%`)",
+            "description": "Side-relative values (such as `left 10%`)",
             "tags": [
               "web-features:background-position"
             ],
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "144"
               },
               "chrome_android": "mirror",
-              "edge": {
-                "version_added": "12",
-                "version_removed": "79"
-              },
+              "edge": [
+                {
+                  "version_added": "144"
+                },
+                {
+                  "version_added": "12",
+                  "version_removed": "79"
+                }
+              ],
               "firefox": {
                 "version_added": "49"
               },
@@ -75,6 +80,70 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "x-end": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-values-5/#valdef-position-x-end",
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "impl_url": "https://crbug.com/432676117"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "x-start": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-values-5/#valdef-position-x-start",
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "impl_url": "https://crbug.com/432676117"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }

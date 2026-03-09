@@ -328,6 +328,7 @@
       },
       "audioSession": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/audioSession",
           "spec_url": "https://w3c.github.io/audio-session/#dom-navigator-audiosession",
           "tags": [
             "web-features:audio-session"
@@ -657,9 +658,18 @@
                 "version_added": "81"
               },
               "firefox": {
-                "version_added": false
+                "version_added": "96",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.webshare.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
               },
-              "firefox_android": "mirror",
+              "firefox_android": {
+                "version_added": "96"
+              },
               "nodejs": {
                 "version_added": false
               },
@@ -1118,9 +1128,19 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "63"
+              "version_added": "63",
+              "notes": [
+                "From Chrome 147, reported values are 2, 4, 8, 16, and 32.",
+                "Before Chrome 147, reported values were 0.25, 0.5, 1, 2, 4, and 8."
+              ]
             },
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": "63",
+              "notes": [
+                "From Chrome 147, reported values are 1, 2, 4, and 8.",
+                "Before Chrome 147, reported values were 0.25, 0.5, 1, 2, 4, and 8."
+              ]
+            },
             "edge": "mirror",
             "firefox": {
               "version_added": false
@@ -1536,6 +1556,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/getInstalledRelatedApps",
           "spec_url": "https://wicg.github.io/get-installed-related-apps/spec/#dom-navigator-getinstalledrelatedapps",
+          "tags": [
+            "web-features:related-apps"
+          ],
           "support": {
             "chrome": [
               {
@@ -1832,7 +1855,10 @@
             "chrome": {
               "version_added": "113",
               "partial_implementation": true,
-              "notes": "Supported on ChromeOS, macOS, and Windows only."
+              "notes": [
+                "Supported on ChromeOS, macOS, and Windows.",
+                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
+              ]
             },
             "chrome_android": {
               "version_added": "121"
@@ -2931,6 +2957,9 @@
               "version_added": "1"
             },
             "chrome_android": "mirror",
+            "deno": {
+              "version_added": "2.7"
+            },
             "edge": {
               "version_added": "12"
             },
@@ -3063,6 +3092,37 @@
               "standard_track": false,
               "deprecated": false
             }
+          }
+        }
+      },
+      "preferences": {
+        "__compat": {
+          "spec_url": "https://drafts.csswg.org/mediaqueries-5/#preferences-attribute",
+          "support": {
+            "chrome": {
+              "version_added": "preview"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
@@ -4852,7 +4912,9 @@
               "version_added": "89"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "138",
+              "partial_implementation": true,
+              "notes": "Serial ports are only available if they're provided by Bluetooth RFCOMM serial port emulation."
             },
             "edge": "mirror",
             "firefox": {
@@ -5130,7 +5192,9 @@
                   }
                 ]
               },
-              "firefox_android": "mirror",
+              "firefox_android": {
+                "version_added": "79"
+              },
               "nodejs": {
                 "version_added": false
               },
