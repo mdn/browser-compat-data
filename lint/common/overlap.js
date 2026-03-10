@@ -1,7 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
+
 import { compareVersions } from 'compare-versions';
 
 import { createStatementGroupKey } from '../utils.js';
@@ -93,7 +94,7 @@ export const checkOverlap = (data, browser, { logger, fix = false }) => {
 
       if (!fixed && logger) {
         logger.error(
-          chalk`{bold ${browser}} statements overlap for {bold ${groupKey}}: ` +
+          `${styleText('bold', browser)} statements overlap for ${styleText('bold', groupKey)}: ` +
             `[${formatRange(next)}, ${formatRange(current)}]`,
         );
       }

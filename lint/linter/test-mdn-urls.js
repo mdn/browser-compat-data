@@ -1,7 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
+
 import mdnContentInventory from '@ddbeck/mdn-content-inventory';
 
 /** @import {Linter, LinterData} from '../types.js' */
@@ -155,21 +156,30 @@ export default {
     for (const issue of issues) {
       if (issue.expected === '') {
         logger.warning(
-          chalk`{red Current mdn_url is a 404:
-          {bold ${issue.actual}}}`,
+          styleText(
+            'red',
+            `Current mdn_url is a 404:
+          ${styleText('bold', issue.actual)}`,
+          ),
           { fixable: true },
         );
       } else if (issue.actual === '') {
         logger.warning(
-          chalk`{red New mdn_url to add:
-          {bold ${issue.expected}}}`,
+          styleText(
+            'red',
+            `New mdn_url to add:
+          ${styleText('bold', issue.expected)}`,
+          ),
           { fixable: true },
         );
       } else {
         logger.warning(
-          chalk`{red Issues with mdn_url found:
+          styleText(
+            'red',
+            `Issues with mdn_url found:
             Actual:   ${issue.actual}
-            Expected: ${issue.expected}}`,
+            Expected: ${issue.expected}`,
+          ),
           { fixable: true },
         );
       }

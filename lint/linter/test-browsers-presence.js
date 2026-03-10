@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
 
 import bcd from '../../index.js';
 const { browsers } = bcd;
@@ -50,9 +50,7 @@ const processData = (data, category, logger) => {
     );
     if (undefEntries.length > 0) {
       logger.error(
-        chalk`Has the following browsers, which are not defined in BCD: {bold ${undefEntries.join(
-          ', ',
-        )}}`,
+        `Has the following browsers, which are not defined in BCD: ${styleText('bold', undefEntries.join(', '))}`,
       );
     }
 
@@ -61,9 +59,7 @@ const processData = (data, category, logger) => {
     ).filter((value) => !displayBrowsers.includes(value));
     if (invalidEntries.length > 0) {
       logger.error(
-        chalk`Has the following browsers, which are invalid for {bold ${category}} compat data: {bold ${invalidEntries.join(
-          ', ',
-        )}}`,
+        `Has the following browsers, which are invalid for ${styleText('bold', category)} compat data: ${styleText('bold', invalidEntries.join(', '))}`,
       );
     }
 
@@ -72,9 +68,7 @@ const processData = (data, category, logger) => {
     );
     if (missingEntries.length > 0) {
       logger.error(
-        chalk`Missing the following browsers, which are required for {bold ${category}} compat data: {bold ${missingEntries.join(
-          ', ',
-        )}}`,
+        `Missing the following browsers, which are required for ${styleText('bold', category)} compat data: ${styleText('bold', missingEntries.join(', '))}`,
       );
     }
   }

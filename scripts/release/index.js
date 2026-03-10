@@ -1,7 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
+
 import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
@@ -35,14 +36,17 @@ const commitAndPR = async (message, wait, { branch, pr }) => {
   if (wait) {
     console.log('');
     console.log(
-      chalk`{yellow Please {bold modify RELEASE_NOTES.md} and fill out the {bold Notable changes} section. I'll wait for you.}`,
+      styleText(
+        'yellow',
+        `Please ${styleText('bold', 'modify RELEASE_NOTES.md')} and fill out the ${styleText('bold', 'Notable changes')} section. I'll wait for you.`,
+      ),
     );
-    console.log(chalk`{yellow Press any key to continue.}`);
+    console.log(styleText('yellow', 'Press any key to continue.'));
     await keypress();
     console.log('');
   }
 
-  console.log(chalk`{blue Preparing ${branch} branch...}`);
+  console.log(styleText('blue', `Preparing ${branch} branch...`));
   spawn('git', ['stash']);
   spawn('git', ['switch', '-C', branch, 'origin/main']);
   spawn('git', ['stash', 'pop']);
@@ -54,15 +58,15 @@ const commitAndPR = async (message, wait, { branch, pr }) => {
     'release_notes/',
   ]);
 
-  console.log(chalk`{blue Committing changes...}`);
+  console.log(styleText('blue', 'Committing changes...'));
   await temporaryWriteTask(message, (commitFile) =>
     spawn('git', ['commit', '--file', commitFile]),
   );
 
-  console.log(chalk`{blue Pushing ${branch} branch...}`);
+  console.log(styleText('blue', `Pushing ${branch} branch...`));
   spawn('git', ['push', '--force', '--set-upstream', 'origin', branch]);
 
-  console.log(chalk`{blue Creating/editing pull request...}`);
+  console.log(styleText('blue', 'Creating/editing pull request...'));
   await temporaryWriteTask(pr.body, (bodyFile) => {
     const commonArgs = ['--title', pr.title, '--body-file', bodyFile];
     try {
@@ -86,7 +90,7 @@ const commitAndPR = async (message, wait, { branch, pr }) => {
  */
 const main = async ({ dryRun }) => {
   if (dryRun) {
-    console.log(chalk`{green Simulating release...}`);
+    console.log(styleText('green', 'Simulating release...'));
   }
 
   requireGitHubCLI();
@@ -94,16 +98,16 @@ const main = async ({ dryRun }) => {
     requireWriteAccess();
   }
 
-  console.log(chalk`{blue Fetching main branch...}`);
+  console.log(styleText('blue', 'Fetching main branch...'));
   fetchMain();
 
-  console.log(chalk`{blue Getting last version...}`);
+  console.log(styleText('blue', 'Getting last version...'));
   const lastVersion = getLatestTag();
   const lastVersionDate = getRefDate(lastVersion);
 
   // Determine what semver part to bump
   console.log(
-    chalk`{blue Checking merged PRs to determine semver bump level...}`,
+    styleText('blue', 'Checking merged PRs to determine semver bump level...'),
   );
   const semverBumpPulls = getSemverBumpPulls(lastVersionDate);
   /** @type {'major' | 'minor' | 'patch'} */
@@ -120,16 +124,19 @@ const main = async ({ dryRun }) => {
     JSON.parse(spawn('npm', ['version', '--json']))['@mdn/browser-compat-data'];
 
   console.log(
-    chalk`{green Performed {bold ${versionBump}} bump from {bold ${lastVersion}} to {bold ${thisVersion}}}`,
+    styleText(
+      'green',
+      `Performed ${styleText('bold', versionBump)} bump from ${styleText('bold', lastVersion)} to ${styleText('bold', thisVersion)}`,
+    ),
   );
 
-  console.log(chalk`{blue Getting statistics...}`);
+  console.log(styleText('blue', 'Getting statistics...'));
   const stats = await getStats(lastVersion, thisVersion, lastVersionDate);
 
-  console.log(chalk`{blue Getting lists of added/removed features...}`);
+  console.log(styleText('blue', 'Getting lists of added/removed features...'));
   const changes = await getChanges(lastVersionDate);
 
-  console.log(chalk`{blue Updating release notes...}`);
+  console.log(styleText('blue', 'Updating release notes...'));
   const notes = getNotes(thisVersion, changes, stats, versionBump);
   await addNotes(notes, versionBump, lastVersion);
 
@@ -146,7 +153,7 @@ const main = async ({ dryRun }) => {
     );
   }
 
-  console.log(chalk`{blue {bold Done!}}`);
+  console.log(styleText('blue', styleText('bold', 'Done!')));
 };
 
 if (esMain(import.meta)) {

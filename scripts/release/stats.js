@@ -19,7 +19,7 @@
  * @typedef {Pick<Stats, 'commits' | 'changed' | 'insertions' | 'deletions'>} ChangeStats
  */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
 
 import { spawn, walk } from '../../utils/index.js';
 import pluralize from '../lib/pluralize.js';
@@ -57,7 +57,9 @@ const stats = (start) => {
   // Get just the diff stats summary
   const diff = spawn('git', ['diff', '--shortstat', `${start}...origin/main`]);
   if (diff === '') {
-    console.error(chalk`{red No changes for which to generate statistics.}`);
+    console.error(
+      styleText('red', 'No changes for which to generate statistics.'),
+    );
     process.exit(1);
   }
 
@@ -67,7 +69,9 @@ const stats = (start) => {
     /(?<changed>\d+) files? changed(?:, (?<insertions>\d+) insertions?(\(\+\)))?(?:, (?<deletions>\d+) deletions?\(-\))?/,
   );
   if (!match) {
-    console.error(chalk`{red No changes for which to generate statistics.}`);
+    console.error(
+      styleText('red', 'No changes for which to generate statistics.'),
+    );
     process.exit(1);
   }
 

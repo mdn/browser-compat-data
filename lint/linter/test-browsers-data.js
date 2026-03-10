@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
 
 import bcd from '../../index.js';
 const { browsers } = bcd;
@@ -25,9 +25,10 @@ const processData = (browser, data, logger) => {
 
     if (releasesForStatus.length > 1) {
       logger.error(
-        chalk`{red {bold ${browser}} has multiple {bold ${status}} releases (${releasesForStatus.join(
-          ', ',
-        )}), which is {bold not} allowed.}`,
+        styleText(
+          'red',
+          `${styleText('bold', browser)} has multiple ${styleText('bold', status)} releases (${releasesForStatus.join(', ')}), which is ${styleText('bold', 'not')} allowed.`,
+        ),
       );
     }
   }
@@ -36,15 +37,19 @@ const processData = (browser, data, logger) => {
   if (data.upstream) {
     if (data.upstream === browser) {
       logger.error(
-        chalk`{red The upstream for {bold ${browser}} is set to itself.}`,
+        styleText(
+          'red',
+          `The upstream for ${styleText('bold', browser)} is set to itself.`,
+        ),
       );
     }
 
     if (!Object.keys(browsers).includes(data.upstream)) {
       logger.error(
-        chalk`{red The upstream for {bold ${browser}} is an unknown browser (${
-          data.upstream
-        }) Valid options are: ${Object.keys(browsers).join(', ')}.}`,
+        styleText(
+          'red',
+          `The upstream for ${styleText('bold', browser)} is an unknown browser (${data.upstream}) Valid options are: ${Object.keys(browsers).join(', ')}.`,
+        ),
       );
     }
   }
@@ -64,9 +69,10 @@ const processData = (browser, data, logger) => {
 
     if (releasesWithoutDate.length > 0) {
       logger.error(
-        chalk`{red {bold ${browser}} has {bold ${status}} releases without release date (${releasesWithoutDate.join(
-          ', ',
-        )}), which is {bold not} allowed.}`,
+        styleText(
+          'red',
+          `${styleText('bold', browser)} has ${styleText('bold', status)} releases without release date (${releasesWithoutDate.join(', ')}), which is ${styleText('bold', 'not')} allowed.`,
+        ),
       );
     }
   }

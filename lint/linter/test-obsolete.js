@@ -1,8 +1,6 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
-
 import bcd from '../../index.js';
 const { browsers } = bcd;
 
@@ -108,7 +106,7 @@ export const processData = (logger, data) => {
   if (data && data.support) {
     const rule1Fail = neverImplemented(data.support);
     if (rule1Fail) {
-      logger.error(chalk`feature was never implemented.`);
+      logger.error('feature was never implemented.');
 
       // No need to perform the next check if the first one fails
       return;
@@ -118,7 +116,7 @@ export const processData = (logger, data) => {
     const rule2Fail = implementedAndRemoved(data.support);
     if (rule2Fail) {
       logger[rule2Fail](
-        chalk`feature was implemented and has since been removed from all browsers dating back two or more years ago.`,
+        'feature was implemented and has since been removed from all browsers dating back two or more years ago.',
       );
     }
   }

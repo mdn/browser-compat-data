@@ -2,8 +2,7 @@
  * See LICENSE file for more information. */
 
 import { platform } from 'node:os';
-
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
 
 /** @import {SimpleSupportStatement} from '../types/types.js' */
 /** @import {Linter, LinterData, LinterMessage, LinterScope} from './types.js' */
@@ -106,16 +105,22 @@ export const jsonDiff = (actual, expected) => {
   const expectedLines = expected.split(/\n/);
 
   if (actualLines.length !== expectedLines.length) {
-    return chalk`{bold different number of lines:
-    {yellow → Actual:   {bold ${actualLines.length}}}
-    {green → Expected: {bold ${expectedLines.length}}}}`;
+    return styleText(
+      'bold',
+      `different number of lines:
+    ${styleText('yellow', `→ Actual:   ${styleText('bold', String(actualLines.length))}`)}
+    ${styleText('green', `→ Expected: ${styleText('bold', String(expectedLines.length))}`)}`,
+    );
   }
 
   for (let i = 0; i < actualLines.length; i++) {
     if (actualLines[i] !== expectedLines[i]) {
-      return chalk`{bold line #${i + 1}}:
-      {yellow → Actual:   {bold ${escapeInvisibles(actualLines[i])}}}
-      {green → Expected: {bold ${escapeInvisibles(expectedLines[i])}}}`;
+      return styleText(
+        'bold',
+        `line #${i + 1}:
+      ${styleText('yellow', `→ Actual:   ${styleText('bold', escapeInvisibles(actualLines[i]))}`)}
+      ${styleText('green', `→ Expected: ${styleText('bold', escapeInvisibles(expectedLines[i]))}`)}`,
+      );
     }
   }
 

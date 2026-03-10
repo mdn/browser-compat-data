@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
 
 import { IS_WINDOWS, jsonDiff } from '../utils.js';
 import { orderSupportBlock } from '../fixer//browser-order.js';
@@ -31,11 +31,10 @@ const processData = (rawData, logger, category) => {
 
   if (actual !== expectedPropertySorting) {
     logger.error(
-      chalk`Property sorting error on ${jsonDiff(
-        actual,
-        expectedPropertySorting,
-      )}`,
-      { tip: chalk`Run {bold npm run fix} to fix sorting automatically` },
+      `Property sorting error on ${jsonDiff(actual, expectedPropertySorting)}`,
+      {
+        tip: `Run ${styleText('bold', 'npm run fix')} to fix sorting automatically`,
+      },
     );
   }
 
@@ -59,35 +58,26 @@ const processData = (rawData, logger, category) => {
   }
 
   if (actual !== expected) {
-    logger.error(chalk`{red → Error on ${jsonDiff(actual, expected)}}`);
+    logger.error(styleText('red', `→ Error on ${jsonDiff(actual, expected)}`));
   }
 
   if (actual !== expectedBrowserSorting) {
     logger.error(
-      chalk`Browser sorting error on ${jsonDiff(
-        actual,
-        expectedBrowserSorting,
-      )}`,
+      `Browser sorting error on ${jsonDiff(actual, expectedBrowserSorting)}`,
       { fixable: true },
     );
   }
 
   if (actual !== expectedFeatureSorting) {
     logger.error(
-      chalk`Feature sorting error on ${jsonDiff(
-        actual,
-        expectedFeatureSorting,
-      )}`,
+      `Feature sorting error on ${jsonDiff(actual, expectedFeatureSorting)}`,
       { fixable: true },
     );
   }
 
   if (actual !== expectedStatementSorting) {
     logger.error(
-      chalk`Statement sorting error on ${jsonDiff(
-        actual,
-        expectedStatementSorting,
-      )}`,
+      `Statement sorting error on ${jsonDiff(actual, expectedStatementSorting)}`,
       { fixable: true },
     );
   }

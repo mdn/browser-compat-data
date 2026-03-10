@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
 
 import { validateHTML } from './test-notes.js';
 
@@ -142,12 +142,15 @@ export default {
 
     for (const error of errors) {
       if (typeof error === 'string') {
-        logger.error(chalk`{red ${error}}`);
+        logger.error(styleText('red', error));
       } else {
         logger.error(
-          chalk`{red Incorrect ${error.ruleName} description for {bold ${error.path}}
-      Actual: {yellow "${error.actual}"}
-      Expected: {green "${error.expected}"}}`,
+          styleText(
+            'red',
+            `Incorrect ${error.ruleName} description for ${styleText('bold', error.path)}
+      Actual: ${styleText('yellow', `"${error.actual}"`)}
+      Expected: ${styleText('green', `"${error.expected}"`)}`,
+          ),
           { fixable: true },
         );
       }
