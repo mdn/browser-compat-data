@@ -57,7 +57,7 @@ export default [
 
     languageOptions: {
       globals: {
-        ...globals.jest,
+        ...globals.mocha,
         ...globals.node,
         Atomics: 'readonly',
         SharedArrayBuffer: 'readonly',
