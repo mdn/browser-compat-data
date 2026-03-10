@@ -6,7 +6,8 @@
           "spec_url": "https://drafts.csswg.org/css-backgrounds-4/#background-repeat-longhands",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "5",
+              "version_removed": "120"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -18,7 +19,10 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "5"
+              "version_added": "5",
+              "version_removed": "15",
+              "partial_implementation": true,
+              "notes": "`CSS.supports('background-repeat-x')` returns `true`, but the property has no effect."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

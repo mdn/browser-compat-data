@@ -4,6 +4,7 @@
       "Sec-Speculation-Tags": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Sec-Speculation-Tags",
+          "spec_url": "https://html.spec.whatwg.org/multipage/speculative-loading.html#the-sec-speculation-tags-header",
           "tags": [
             "web-features:speculation-rules"
           ],
@@ -21,7 +22,13 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "26.2",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "SpeculationRules prefetch"
+                }
+              ]
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -30,7 +37,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
