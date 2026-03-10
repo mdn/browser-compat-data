@@ -138,10 +138,14 @@ const checkStatus = (data, logger, category, featurePath) => {
 
   // Warn if exception no longer applies
   if (isInExceptionList && !missingSpecUrl) {
+    const reason =
+      status.standard_track === false
+        ? 'standard_track is false'
+        : 'spec_url was added';
     logger.warning(
       styleText(
         'yellow',
-        `Feature is in the exception list but no longer needs to be (spec_url was added or standard_track is false). Remove from ${styleText('bold', 'standard-track-exceptions.txt')}`,
+        `Feature is in the exception list but no longer needs to be (${reason}).`,
       ),
       { fixable: true },
     );
