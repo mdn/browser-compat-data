@@ -7,7 +7,10 @@ import assert from 'node:assert/strict';
 
 import { Logger } from '../utils.js';
 
-import test, { checkExperimental } from './test-status.js';
+import test, {
+  checkExperimental,
+  standardTrackExceptions,
+} from './test-status.js';
 
 describe('checkExperimental', () => {
   it('should return true when data is not experimental', () => {
@@ -212,67 +215,83 @@ describe('checkStatus', () => {
   });
 
   it('should not log error for features in exception list missing spec_url', () => {
-    /** @type {CompatStatement} */
-    const data = {
-      status: {
-        experimental: false,
-        standard_track: true,
-        deprecated: false,
-      },
-      support: {},
-    };
+    // Temporarily add test feature to exception list
+    standardTrackExceptions.add('api.AudioProcessingEvent');
+    try {
+      /** @type {CompatStatement} */
+      const data = {
+        status: {
+          experimental: false,
+          standard_track: true,
+          deprecated: false,
+        },
+        support: {},
+      };
 
-    // This feature is in the exception list
-    test.check(logger, {
-      data,
-      path: { category: 'api', full: 'api.AudioProcessingEvent' },
-    });
+      // This feature is in the exception list
+      test.check(logger, {
+        data,
+        path: { category: 'api', full: 'api.AudioProcessingEvent' },
+      });
 
-    assert.equal(logger.messages.length, 0);
+      assert.equal(logger.messages.length, 0);
+    } finally {
+      standardTrackExceptions.delete('api.AudioProcessingEvent');
+    }
   });
 
   it('should log warning when exception no longer applies (has spec_url)', () => {
-    /** @type {CompatStatement} */
-    const data = {
-      status: {
-        experimental: false,
-        standard_track: true,
-        deprecated: false,
-      },
-      spec_url: 'https://example.com/spec',
-      support: {},
-    };
+    standardTrackExceptions.add('api.AudioProcessingEvent');
+    try {
+      /** @type {CompatStatement} */
+      const data = {
+        status: {
+          experimental: false,
+          standard_track: true,
+          deprecated: false,
+        },
+        spec_url: 'https://example.com/spec',
+        support: {},
+      };
 
-    // This feature is in the exception list but now has spec_url
-    test.check(logger, {
-      data,
-      path: { category: 'api', full: 'api.AudioProcessingEvent' },
-    });
+      // This feature is in the exception list but now has spec_url
+      test.check(logger, {
+        data,
+        path: { category: 'api', full: 'api.AudioProcessingEvent' },
+      });
 
-    assert.equal(logger.messages.length, 1);
-    assert.equal(logger.messages[0].level, 'warning');
-    assert.ok(logger.messages[0].message.includes('exception list'));
+      assert.equal(logger.messages.length, 1);
+      assert.equal(logger.messages[0].level, 'warning');
+      assert.ok(logger.messages[0].message.includes('exception list'));
+    } finally {
+      standardTrackExceptions.delete('api.AudioProcessingEvent');
+    }
   });
 
   it('should log warning when exception no longer applies (standard_track false)', () => {
-    /** @type {CompatStatement} */
-    const data = {
-      status: {
-        experimental: false,
-        standard_track: false,
-        deprecated: false,
-      },
-      support: {},
-    };
+    standardTrackExceptions.add('api.AudioProcessingEvent');
+    try {
+      /** @type {CompatStatement} */
+      const data = {
+        status: {
+          experimental: false,
+          standard_track: false,
+          deprecated: false,
+        },
+        support: {},
+      };
 
-    // This feature is in the exception list but standard_track is now false
-    test.check(logger, {
-      data,
-      path: { category: 'api', full: 'api.AudioProcessingEvent' },
-    });
+      // This feature is in the exception list but standard_track is now false
+      test.check(logger, {
+        data,
+        path: { category: 'api', full: 'api.AudioProcessingEvent' },
+      });
 
-    assert.equal(logger.messages.length, 1);
-    assert.equal(logger.messages[0].level, 'warning');
-    assert.ok(logger.messages[0].message.includes('exception list'));
+      assert.equal(logger.messages.length, 1);
+      assert.equal(logger.messages[0].level, 'warning');
+      assert.ok(logger.messages[0].message.includes('exception list'));
+    } finally {
+      standardTrackExceptions.delete('api.AudioProcessingEvent');
+    }
   });
 });
