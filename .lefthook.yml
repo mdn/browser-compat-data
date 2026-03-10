@@ -8,7 +8,7 @@ pre-commit:
       stage_fixed: true
 
     - name: eslint
-      glob: "*.{js,jsx,tsx}"
+      glob: "*.js"
       run: npx eslint --fix --cache {staged_files}
       stage_fixed: true
 

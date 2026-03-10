@@ -60,7 +60,6 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 - Alexis Deveria (@Fyrd), Adobe, https://caniuse.com
 - Chris David Mills (@chrisdavidmills)
 - Claas Augner (@caugner), Mozilla
-- Daniel Beck (@ddbeck)
 - Estelle Weyl (@estelle), Open Web Docs (Peer for CSS compat data)
 - Hamish Willee (@hamishwillee), Mozilla
 - Luca Casonato (@lucacasonato), Deno
@@ -78,7 +77,7 @@ A Peer who shows an above-average level of contribution to the project, particul
 
 ### Owners
 
-The `@mdn/browser-compat-data` project is jointly governed by the [Mozilla MDN staff team](https://wiki.mozilla.org/Engagement/MDN_Durable_Team#Team_Members), the [MDN Product Advisory Board Members](https://developer.mozilla.org/en-US/docs/MDN/MDN_Product_Advisory_Board/Members), and the [Owner group](#list-of-current-owners). They are collectively responsible for high-level guidance of the project.
+The `@mdn/browser-compat-data` project is jointly governed by the [Mozilla MDN staff team](https://developer.mozilla.org/en-US/about#our_team), the [MDN Product Advisory Board Members](https://developer.mozilla.org/en-US/docs/MDN/MDN_Product_Advisory_Board/Members), and the [Owner group](#list-of-current-owners). They are collectively responsible for high-level guidance of the project.
 
 The [Owner group](#list-of-current-owners) has final authority over this project including:
 
@@ -117,6 +116,7 @@ An individual is invited to become an Owner by existing Owners. A nomination wil
 - Philip Jägenstedt (@foolip), Google
 - Ruth John (@Rumyra), Mozilla
 - Vinyl Da.i'gyu (@queengooborg), Gooborg Studios
+- Daniel Beck (@ddbeck)
 
 ## Additional paths to becoming a Peer or Owner
 
@@ -177,7 +177,6 @@ The moderator is responsible for summarizing the discussion of each agenda item 
 
 The `@mdn/browser-compat-data` project would like to thank the following former Owners and Peers for their contributions and the countless hours invested.
 
-- Daniel Beck (@ddbeck) (BCD co-owner until April 2022)
 - Eric Shepherd (@a2sheppy) (BCD peer until August 2020)
 - Jean-Yves Perrier (@teoli2003) (Peer)
 - Joe Medley (@jpmedley) (Peer)

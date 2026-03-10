@@ -114,9 +114,9 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
-              "deprecated": false
+              "deprecated": true
             }
           }
         },
@@ -243,6 +243,7 @@
         },
         "fetchpriority": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/fetchpriority",
             "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-fetchpriority",
             "tags": [
               "web-features:fetch-priority"
@@ -313,6 +314,38 @@
               "standard_track": true,
               "deprecated": false
             }
+          },
+          "ed25519_public_key": {
+            "__compat": {
+              "description": "Signature-based integrity (Ed25519 public key values)",
+              "spec_url": "https://wicg.github.io/signature-based-sri/#monkey-patch-csp",
+              "support": {
+                "chrome": {
+                  "version_added": "141"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "nomodule": {
@@ -362,9 +395,7 @@
                 "version_added": "70"
               },
               "chrome_android": "mirror",
-              "edge": {
-                "version_added": "≤79"
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": "65"
               },
@@ -396,9 +427,7 @@
                   "version_added": "70"
                 },
                 "chrome_android": "mirror",
-                "edge": {
-                  "version_added": "≤79"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": "65",
                   "version_removed": "92"
@@ -432,9 +461,7 @@
                   "version_added": "70"
                 },
                 "chrome_android": "mirror",
-                "edge": {
-                  "version_added": "≤79"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": "65",
                   "version_removed": "92"
@@ -468,9 +495,7 @@
                   "version_added": "70"
                 },
                 "chrome_android": "mirror",
-                "edge": {
-                  "version_added": "≤79"
-                },
+                "edge": "mirror",
                 "firefox": {
                   "version_added": "65",
                   "version_removed": "92"
@@ -722,7 +747,7 @@
             "__compat": {
               "description": "`type=\"speculationrules\"`",
               "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/script/type/speculationrules",
-              "spec_url": "https://wicg.github.io/nav-speculation/speculation-rules.html#speculation-rules-script",
+              "spec_url": "https://html.spec.whatwg.org/multipage/speculative-loading.html#speculative-loading",
               "tags": [
                 "web-features:speculation-rules"
               ],
@@ -758,13 +783,17 @@
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "26.2",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "SpeculationRules prefetch"
+                    }
+                  ]
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
-                "webview_android": {
-                  "version_added": false
-                },
+                "webview_android": "mirror",
                 "webview_ios": "mirror"
               },
               "status": {
@@ -777,7 +806,7 @@
               "__compat": {
                 "description": "`eagerness` key",
                 "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/script/type/speculationrules#eagerness",
-                "spec_url": "https://wicg.github.io/nav-speculation/speculation-rules.html#speculation-rule-eagerness",
+                "spec_url": "https://html.spec.whatwg.org/multipage/speculative-loading.html#speculation-rule-eagerness",
                 "tags": [
                   "web-features:speculation-rules"
                 ],
@@ -795,13 +824,19 @@
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "26.2",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "SpeculationRules prefetch"
+                      }
+                    ],
+                    "partial_implementation": true,
+                    "notes": "Only `conservative` is supported for document rules (though `moderate` automatically falls back to `conservative`). Only `eager` and `immediate` is supported for list rules."
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": {
-                    "version_added": false
-                  },
+                  "webview_android": "mirror",
                   "webview_ios": "mirror"
                 },
                 "status": {
@@ -815,7 +850,7 @@
               "__compat": {
                 "description": "`expects_no_vary_search` key",
                 "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/script/type/speculationrules#expects_no_vary_search",
-                "spec_url": "https://wicg.github.io/nav-speculation/speculation-rules.html#speculation-rule-no-vary-search-hint",
+                "spec_url": "https://html.spec.whatwg.org/multipage/speculative-loading.html#valid-speculation-rule:~:text=%22expects_no_vary_search%22%20key",
                 "tags": [
                   "web-features:speculation-rules"
                 ],
@@ -845,9 +880,7 @@
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": {
-                    "version_added": false
-                  },
+                  "webview_android": "mirror",
                   "webview_ios": "mirror"
                 },
                 "status": {
@@ -861,7 +894,7 @@
               "__compat": {
                 "description": "`prefetch` key",
                 "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/script/type/speculationrules#prefetch",
-                "spec_url": "https://wicg.github.io/nav-speculation/speculation-rules.html#speculation-rule-set-prefetch-rules",
+                "spec_url": "https://html.spec.whatwg.org/multipage/speculative-loading.html#speculation-rule-set-authoring-requirements:~:text=keys%20%22tag%22%2C-,%22prefetch%22,-and%20%22prerender",
                 "tags": [
                   "web-features:speculation-rules"
                 ],
@@ -874,20 +907,26 @@
                   },
                   "edge": "mirror",
                   "firefox": {
-                    "version_added": false
+                    "version_added": false,
+                    "impl_url": "https://bugzil.la/1969396"
                   },
                   "firefox_android": "mirror",
                   "oculus": "mirror",
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "26.2",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "SpeculationRules prefetch"
+                      }
+                    ],
+                    "impl_url": "https://webkit.org/b/295193"
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": {
-                    "version_added": false
-                  },
+                  "webview_android": "mirror",
                   "webview_ios": "mirror"
                 },
                 "status": {
@@ -901,7 +940,7 @@
               "__compat": {
                 "description": "`prerender` key",
                 "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/script/type/speculationrules#prerender",
-                "spec_url": "https://wicg.github.io/nav-speculation/speculation-rules.html#speculation-rule-set-prerender-rules",
+                "spec_url": "https://wicg.github.io/nav-speculation/prerendering.html#speculation-rules",
                 "tags": [
                   "web-features:speculation-rules"
                 ],
@@ -914,7 +953,8 @@
                   },
                   "edge": "mirror",
                   "firefox": {
-                    "version_added": false
+                    "version_added": false,
+                    "impl_url": "https://bugzil.la/1969838"
                   },
                   "firefox_android": "mirror",
                   "oculus": "mirror",
@@ -926,7 +966,9 @@
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
                   "webview_android": {
-                    "version_added": false
+                    "version_added": "135",
+                    "partial_implementation": true,
+                    "notes": "Can be enabled via a Java API rather than a Web API. See https://goo.gle/android-prerender"
                   },
                   "webview_ios": "mirror"
                 },
@@ -941,7 +983,7 @@
               "__compat": {
                 "description": "`referrer_policy` key",
                 "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/script/type/speculationrules#referrer_policy",
-                "spec_url": "https://wicg.github.io/nav-speculation/speculation-rules.html#speculation-rule-referrer-policy",
+                "spec_url": "https://html.spec.whatwg.org/multipage/speculative-loading.html#valid-speculation-rule:~:text=%22referrer_policy%22%20key",
                 "tags": [
                   "web-features:speculation-rules"
                 ],
@@ -959,13 +1001,17 @@
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "26.2",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "SpeculationRules prefetch"
+                      }
+                    ]
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": {
-                    "version_added": false
-                  },
+                  "webview_android": "mirror",
                   "webview_ios": "mirror"
                 },
                 "status": {
@@ -979,6 +1025,7 @@
               "__compat": {
                 "description": "`relative_to` key",
                 "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/script/type/speculationrules#relative_to_2",
+                "spec_url": "https://html.spec.whatwg.org/multipage/speculative-loading.html#valid-speculation-rule:~:text=%20to%20the%20%22relative_to%22%20key",
                 "tags": [
                   "web-features:speculation-rules"
                 ],
@@ -996,13 +1043,17 @@
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "26.2",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "SpeculationRules prefetch"
+                      }
+                    ]
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": {
-                    "version_added": false
-                  },
+                  "webview_android": "mirror",
                   "webview_ios": "mirror"
                 },
                 "status": {
@@ -1016,7 +1067,7 @@
               "__compat": {
                 "description": "`requires` key",
                 "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/script/type/speculationrules#requires",
-                "spec_url": "https://wicg.github.io/nav-speculation/speculation-rules.html#speculation-rule-requirements",
+                "spec_url": "https://html.spec.whatwg.org/multipage/speculative-loading.html#speculation-rule-requirement",
                 "tags": [
                   "web-features:speculation-rules"
                 ],
@@ -1040,9 +1091,7 @@
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": {
-                    "version_added": false
-                  },
+                  "webview_android": "mirror",
                   "webview_ios": "mirror"
                 },
                 "status": {
@@ -1055,6 +1104,7 @@
                 "__compat": {
                   "description": "`anonymous-client-ip-when-cross-origin` value",
                   "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/script/type/speculationrules#anonymous-client-ip-when-cross-origin",
+                  "spec_url": "https://html.spec.whatwg.org/multipage/speculative-loading.html#speculation-rule-requirement",
                   "tags": [
                     "web-features:speculation-rules"
                   ],
@@ -1086,9 +1136,7 @@
                     "samsunginternet_android": {
                       "version_added": false
                     },
-                    "webview_android": {
-                      "version_added": false
-                    },
+                    "webview_android": "mirror",
                     "webview_ios": "mirror"
                   },
                   "status": {
@@ -1103,6 +1151,7 @@
               "__compat": {
                 "description": "`source` key is optional",
                 "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/script/type/speculationrules#source",
+                "spec_url": "https://html.spec.whatwg.org/multipage/speculative-loading.html#valid-speculation-rule:~:text=%22source%22%20key",
                 "tags": [
                   "web-features:speculation-rules"
                 ],
@@ -1120,13 +1169,17 @@
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "26.2",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "SpeculationRules prefetch"
+                      }
+                    ]
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": {
-                    "version_added": false
-                  },
+                  "webview_android": "mirror",
                   "webview_ios": "mirror"
                 },
                 "status": {
@@ -1140,7 +1193,7 @@
               "__compat": {
                 "description": "`tag` key",
                 "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/script/type/speculationrules#tag",
-                "spec_url": "https://wicg.github.io/nav-speculation/speculation-rules.html#speculation-rules-tag",
+                "spec_url": "https://html.spec.whatwg.org/multipage/speculative-loading.html#speculation-rule-tag",
                 "tags": [
                   "web-features:speculation-rules"
                 ],
@@ -1158,13 +1211,17 @@
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "26.2",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "SpeculationRules prefetch"
+                      }
+                    ]
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": {
-                    "version_added": false
-                  },
+                  "webview_android": "mirror",
                   "webview_ios": "mirror"
                 },
                 "status": {
@@ -1178,7 +1235,7 @@
               "__compat": {
                 "description": "`target_hint` key",
                 "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/script/type/speculationrules#target_hint",
-                "spec_url": "https://wicg.github.io/nav-speculation/speculation-rules.html#speculation-rules-parsing",
+                "spec_url": "https://wicg.github.io/nav-speculation/prerendering.html#:~:text=Let-,targetHint,-be%20null.",
                 "tags": [
                   "web-features:speculation-rules"
                 ],
@@ -1202,9 +1259,7 @@
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": {
-                    "version_added": false
-                  },
+                  "webview_android": "mirror",
                   "webview_ios": "mirror"
                 },
                 "status": {
@@ -1217,7 +1272,8 @@
             "urls": {
               "__compat": {
                 "description": "`urls` key",
-                "spec_url": "https://wicg.github.io/nav-speculation/speculation-rules.html#speculation-rule-urls",
+                "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/script/type/speculationrules#urls",
+                "spec_url": "https://html.spec.whatwg.org/multipage/speculative-loading.html#valid-speculation-rule:~:text=%22urls%22%20key",
                 "tags": [
                   "web-features:speculation-rules"
                 ],
@@ -1237,13 +1293,17 @@
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "26.2",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "SpeculationRules prefetch"
+                      }
+                    ]
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": {
-                    "version_added": false
-                  },
+                  "webview_android": "mirror",
                   "webview_ios": "mirror"
                 },
                 "status": {
@@ -1256,6 +1316,8 @@
             "where": {
               "__compat": {
                 "description": "`where` key",
+                "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/script/type/speculationrules#where",
+                "spec_url": "https://html.spec.whatwg.org/multipage/speculative-loading.html#valid-document-rule-predicate",
                 "tags": [
                   "web-features:speculation-rules"
                 ],
@@ -1273,13 +1335,17 @@
                   "opera": "mirror",
                   "opera_android": "mirror",
                   "safari": {
-                    "version_added": false
+                    "version_added": "26.2",
+                    "flags": [
+                      {
+                        "type": "preference",
+                        "name": "SpeculationRules prefetch"
+                      }
+                    ]
                   },
                   "safari_ios": "mirror",
                   "samsunginternet_android": "mirror",
-                  "webview_android": {
-                    "version_added": false
-                  },
+                  "webview_android": "mirror",
                   "webview_ios": "mirror"
                 },
                 "status": {

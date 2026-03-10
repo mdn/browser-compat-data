@@ -22,6 +22,7 @@ const compat = new FlatCompat({
 export default [
   {
     ignores: [
+      'eslint.config.js',
       '**/*.json',
       '!*.json',
       '!schemas/*.json',
@@ -31,7 +32,7 @@ export default [
       '**/.editorconfig',
       'package-lock.json',
       'CODE_OF_CONDUCT.md',
-      '**/build/',
+      'build/',
       '**/coverage/',
       '**/types.d.ts',
     ],
@@ -42,8 +43,7 @@ export default [
       'plugin:@typescript-eslint/strict',
       'plugin:@typescript-eslint/stylistic',
       'plugin:import/recommended',
-      'plugin:import/typescript',
-      'plugin:jsdoc/recommended-typescript',
+      'plugin:jsdoc/recommended-typescript-flavor',
     ),
   ),
   {
@@ -64,13 +64,12 @@ export default [
       },
 
       parser: ts.parser,
-      ecmaVersion: 2020,
+      ecmaVersion: 'latest',
       sourceType: 'module',
     },
 
     settings: {
       'import/resolver': {
-        typescript: true,
         node: true,
       },
     },
@@ -78,11 +77,13 @@ export default [
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-unused-expressions': 'error',
+      '@typescript-eslint/no-unused-vars': 'off',
 
-      '@typescript-eslint/no-unused-vars': [
+      'no-unused-vars': [
         'error',
         {
-          caughtErrors: 'none',
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
         },
       ],
 
@@ -100,7 +101,17 @@ export default [
       ],
 
       'import/no-named-as-default-member': 'off',
+      'import/no-unresolved': [
+        'error',
+        {
+          ignore: [
+            // https://github.com/import-js/eslint-plugin-import/issues/1810
+            '^yargs/helpers$',
+          ],
+        },
+      ],
       'jsdoc/check-param-names': 'error',
+      'jsdoc/prefer-import-tag': 'error',
       'jsdoc/require-description': 'warn',
 
       'jsdoc/require-jsdoc': [
@@ -114,6 +125,25 @@ export default [
             FunctionExpression: true,
             MethodDefinition: true,
           },
+        },
+      ],
+
+      'jsdoc/no-restricted-syntax': [
+        'error',
+        {
+          contexts: [
+            {
+              comment:
+                'JsdocBlock:has(JsdocTag[tag="typedef"]:has(JsdocTypeImport))',
+              context: 'any',
+              message: 'Use @import JSDoc instead of @typedef.',
+            },
+            {
+              comment: 'JsdocBlock:has(JsdocTypeName[value="unknown"])',
+              context: 'any',
+              message: 'Avoid using unknown type in JSDoc.',
+            },
+          ],
         },
       ],
 
@@ -135,7 +165,7 @@ export default [
       'no-lone-blocks': 'error',
       'no-return-assign': 'error',
       'no-self-compare': 'error',
-      'no-unused-expressions': 'off',
+      'no-unused-expressions': 'error',
       'no-useless-call': 'error',
 
       'prefer-arrow-functions/prefer-arrow-functions': [

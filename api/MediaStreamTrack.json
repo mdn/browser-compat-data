@@ -303,6 +303,76 @@
               "standard_track": true,
               "deprecated": false
             }
+          },
+          "all": {
+            "__compat": {
+              "description": "`\"all\"` value",
+              "spec_url": "https://w3c.github.io/mediacapture-main/#dom-echocancellationmodeenum-all",
+              "tags": [
+                "web-features:media-capture"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "141"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "remote-only": {
+            "__compat": {
+              "description": "`\"remote-only\"` value",
+              "spec_url": "https://w3c.github.io/mediacapture-main/#dom-echocancellationmodeenum-remote-only",
+              "tags": [
+                "web-features:media-capture"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "141"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "facingMode_constraint": {
@@ -607,6 +677,43 @@
             }
           }
         },
+        "restrictOwnAudio_constraint": {
+          "__compat": {
+            "description": "`restrictOwnAudio` constraint",
+            "spec_url": "https://w3c.github.io/mediacapture-screen-share/#dom-mediatrackconstraintset-restrictownaudio",
+            "tags": [
+              "web-features:media-capture"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "141"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "sampleRate_constraint": {
           "__compat": {
             "description": "`sampleRate` constraint",
@@ -799,6 +906,9 @@
             "https://w3c.github.io/mediacapture-handle/identity/#capturehandlechange",
             "https://w3c.github.io/mediacapture-handle/identity/#oncapturehandlechange"
           ],
+          "tags": [
+            "web-features:capture-handle"
+          ],
           "support": {
             "chrome": {
               "version_added": "102"
@@ -978,7 +1088,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaStreamTrack/getCapabilities",
           "spec_url": "https://w3c.github.io/mediacapture-main/#dom-mediastreamtrack-getcapabilities",
           "tags": [
-            "web-features:media-capabilities"
+            "web-features:media-capture"
           ],
           "support": {
             "chrome": {
@@ -1013,6 +1123,9 @@
       "getCaptureHandle": {
         "__compat": {
           "spec_url": "https://w3c.github.io/mediacapture-handle/identity/#dom-mediastreamtrack-getcapturehandle",
+          "tags": [
+            "web-features:capture-handle"
+          ],
           "support": {
             "chrome": {
               "version_added": "102"
@@ -1118,6 +1231,42 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "return_object_property_screenPixelRatio": {
+          "__compat": {
+            "description": "`screenPixelRatio` property in returned object",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaTrackSettings/screenPixelRatio",
+            "spec_url": "https://w3c.github.io/mediacapture-screen-share/#dom-mediatracksettings-screenpixelratio",
+            "support": {
+              "chrome": {
+                "version_added": "136"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1965499"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },

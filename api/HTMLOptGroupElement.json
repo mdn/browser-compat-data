@@ -74,11 +74,21 @@
             "opera_android": {
               "version_added": "≤12.1"
             },
-            "safari": {
-              "version_added": "3"
-            },
+            "safari": [
+              {
+                "version_added": "7"
+              },
+              {
+                "version_added": "3",
+                "version_removed": "7",
+                "partial_implementation": true,
+                "notes": "The property can be set, but has no effect (see [bug 227042](https://webkit.org/b/227042))."
+              }
+            ],
             "safari_ios": {
-              "version_added": "1"
+              "version_added": "1",
+              "partial_implementation": true,
+              "notes": "The property can be set, but has no effect (see [bug 227042](https://webkit.org/b/227042))."
             },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",

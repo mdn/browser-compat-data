@@ -258,9 +258,17 @@
             "web-features:font-loading"
           ],
           "support": {
-            "chrome": {
-              "version_added": "35"
-            },
+            "chrome": [
+              {
+                "version_added": "140"
+              },
+              {
+                "version_added": "35",
+                "version_removed": "140",
+                "partial_implementation": true,
+                "notes": "The property can be set, but has no effect. See [bug 324519293](https://crbug.com/324519293)"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -590,7 +598,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "140"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -610,7 +618,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

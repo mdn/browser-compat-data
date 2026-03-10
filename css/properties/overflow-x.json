@@ -3,7 +3,7 @@
     "properties": {
       "overflow-x": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/overflow-x",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overflow-x",
           "spec_url": "https://drafts.csswg.org/css-overflow/#overflow-properties",
           "tags": [
             "web-features:overflow-shorthand"
@@ -100,7 +100,8 @@
                 },
                 {
                   "alternative_name": "overlay",
-                  "version_added": "≤13.1"
+                  "version_added": "6",
+                  "notes": "Before Safari 12.1, `overlay` only had an effect on legacy scrollbars on macOS. Since Safari 12.1, it is parsed as `auto`."
                 }
               ],
               "safari_ios": "mirror",
@@ -182,6 +183,40 @@
               "opera_android": "mirror",
               "safari": {
                 "version_added": "3"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "replaced_elements": {
+          "__compat": {
+            "description": "`overflow-x` applies to replaced elements.",
+            "spec_url": "https://drafts.csswg.org/css-overflow-4/#overflow-control",
+            "support": {
+              "chrome": {
+                "version_added": "108"
+              },
+              "chrome_android": "mirror",
+              "edge": {
+                "version_added": "12"
+              },
+              "firefox": {
+                "version_added": "148"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",

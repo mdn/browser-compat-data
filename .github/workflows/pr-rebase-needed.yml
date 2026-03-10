@@ -2,6 +2,8 @@ name: PR Needs Rebase
 on:
   push:
   pull_request_target:
+    branches:
+      - main
     types: [synchronize]
 
 permissions:
@@ -9,7 +11,7 @@ permissions:
   pull-requests: write # To add labels and comment on PRs
 
 concurrency:
-  group: pr-rebase-needed-${{ github.event.pull_request.number }}
+  group: pr-rebase-needed-${{ github.event.pull_request.number || github.ref_name }}
   cancel-in-progress: true
 
 jobs:

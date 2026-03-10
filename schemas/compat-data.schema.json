@@ -22,13 +22,13 @@
           "description": "A string, indicating which browser version removed this feature.",
           "type": "string",
           "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$",
-          "tsType": "VersionValue"
+          "tsType": "string"
         },
         "version_last": {
           "description": "A string, indicating the last browser version that supported this feature. This is automatically generated.",
           "type": "string",
           "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$",
-          "tsType": "VersionValue"
+          "tsType": "string"
         },
         "prefix": {
           "type": "string",
@@ -140,7 +140,8 @@
       "properties": {
         "experimental": {
           "type": "boolean",
-          "description": "A boolean value that indicates the general stability of this feature. This value will be true if the feature was implemented in one browser engine recently. This value will be false if the feature was implemented in multiple browser engines, or if the feature had been implemented over two years ago in any one browser engine."
+          "deprecated": true,
+          "description": "(This property is deprecated. Prefer using more well-defined stability calculations, such as Baseline, instead.) A boolean value. Usually, this value is true for single-implementer features and false for multiple-implementer features or single-implementer features that are not expected to change."
         },
         "standard_track": {
           "type": "boolean",
@@ -159,6 +160,7 @@
       "type": "object",
       "propertyNames": {
         "enum": [
+          "bun",
           "chrome",
           "chrome_android",
           "deno",
