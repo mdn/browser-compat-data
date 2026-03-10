@@ -55,7 +55,7 @@ const fixStandardTrackExceptions = async (filename, actual) => {
   }
   hasRun = true;
 
-  const features = [...(await getStandardTrackExceptions())];
+  const features = await getStandardTrackExceptions();
 
   // Filter features that should remain
   const remainingFeatures = features.filter((featurePath) =>

@@ -11,7 +11,7 @@ export const exceptionListPath = join(
 );
 
 /**
- * @returns {Promise<Iterable<string>>}
+ * @returns {Promise<string[]>}
  */
 export const getStandardTrackExceptions = async () =>
   (await readFile(exceptionListPath, 'utf-8'))
