@@ -8,7 +8,7 @@
  *
  * Walks through each exception and prompts for an action:
  *
- *   https://...  — Add the URL as spec_url
+ *   https://...  — Add the URL as spec_url (comma-separated for multiple)
  *   f / false    — Set standard_track to false (includes all subfeatures)
  *   p            — Copy the parent feature's spec_url
  *   (empty)      — Skip this entry
@@ -35,7 +35,7 @@ import { updateFeatures } from './bulk-editor/utils.js';
 
 const instructions = `
   ${styleText('bold', 'Actions:')}
-    ${styleText('cyan', 'https://...')}  Add the URL as spec_url
+    ${styleText('cyan', 'https://...')}  Add the URL as spec_url (comma-separated for multiple)
     ${styleText('cyan', 'p')}            Use parent feature's spec_url
     ${styleText('cyan', 'f')}            Set standard_track to false (+ all subfeatures)
     ${styleText('cyan', '(Enter)')}      Skip this entry
@@ -221,8 +221,10 @@ for (const [i, featurePath] of exceptions.entries()) {
     }
 
     if (answer.startsWith('https://')) {
+      const urls = answer.split(',').map((u) => u.trim());
+      const specUrl = urls.length === 1 ? urls[0] : urls;
       updateFeatures([featurePath], (c) => {
-        c.spec_url = answer;
+        c.spec_url = specUrl;
         return c;
       });
       remaining.delete(featurePath);
