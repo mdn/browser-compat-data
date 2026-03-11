@@ -216,11 +216,11 @@ describe('checkStatus', () => {
 
   describe('standard-track-exceptions', () => {
     beforeEach(() => {
-      standardTrackExceptions.add('api.AudioProcessingEvent');
+      standardTrackExceptions.add('api.Foo');
     });
 
     afterEach(() => {
-      standardTrackExceptions.delete('api.AudioProcessingEvent');
+      standardTrackExceptions.delete('api.Foo');
     });
 
     it('should not log error for features in exception list missing spec_url', () => {
@@ -236,7 +236,7 @@ describe('checkStatus', () => {
 
       test.check(logger, {
         data,
-        path: { category: 'api', full: 'api.AudioProcessingEvent' },
+        path: { category: 'api', full: 'api.Foo' },
       });
 
       assert.equal(logger.messages.length, 0);
@@ -256,7 +256,7 @@ describe('checkStatus', () => {
 
       test.check(logger, {
         data,
-        path: { category: 'api', full: 'api.AudioProcessingEvent' },
+        path: { category: 'api', full: 'api.Foo' },
       });
 
       assert.equal(logger.messages.length, 1);
@@ -277,7 +277,7 @@ describe('checkStatus', () => {
 
       test.check(logger, {
         data,
-        path: { category: 'api', full: 'api.AudioProcessingEvent' },
+        path: { category: 'api', full: 'api.Foo' },
       });
 
       assert.equal(logger.messages.length, 1);
