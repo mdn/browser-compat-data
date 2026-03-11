@@ -168,6 +168,18 @@ for (const [i, featurePath] of exceptions.entries()) {
         styleText(['cyan', 'bold'], featurePath.slice(lastDot + 1));
   console.log(`\n${styleText('bold', `[${i + 1}/${total}]`)} ${pathDisplay}`);
 
+  // Print status flags
+  const statusParts = [];
+  if (compat.status?.experimental) {
+    statusParts.push(styleText('yellow', 'experimental'));
+  }
+  if (compat.status?.deprecated) {
+    statusParts.push(styleText('green', 'deprecated'));
+  }
+  if (statusParts.length > 0) {
+    console.log(`  status: ${statusParts.join(' ')}`);
+  }
+
   // Print description
   if (compat.description) {
     console.log(`  desc:   ${compat.description}`);
