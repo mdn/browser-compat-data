@@ -239,6 +239,8 @@ describe('checkStatus', () => {
         path: { category: 'api', full: 'api.Foo' },
       });
 
+      // Feature is in the exception list.
+
       assert.equal(logger.messages.length, 0);
     });
 
@@ -258,6 +260,8 @@ describe('checkStatus', () => {
         data,
         path: { category: 'api', full: 'api.Foo' },
       });
+
+      // Feature is in the exception list but now has `spec_url`.
 
       assert.equal(logger.messages.length, 1);
       assert.equal(logger.messages[0].level, 'warning');
@@ -279,6 +283,8 @@ describe('checkStatus', () => {
         data,
         path: { category: 'api', full: 'api.Foo' },
       });
+
+      // Feature is in the exception list but `standard_track` is now false.
 
       assert.equal(logger.messages.length, 1);
       assert.equal(logger.messages[0].level, 'warning');
