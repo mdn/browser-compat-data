@@ -11,6 +11,7 @@
  *   https://...  — Add the URL as spec_url (comma-separated for multiple)
  *   f / false    — Set standard_track to false (includes all subfeatures)
  *   p            — Copy the parent feature's spec_url
+ *   p=https://.. — Set spec_url on both the parent and this subfeature
  *   (empty)      — Skip this entry
  *   /foo         — Skip ahead until the next entry containing "foo"
  *   ?            — Print instructions
@@ -37,6 +38,7 @@ const instructions = `
   ${styleText('bold', 'Actions:')}
     ${styleText('cyan', 'https://...')}  Add the URL as spec_url (comma-separated for multiple)
     ${styleText('cyan', 'p')}            Use parent feature's spec_url
+    ${styleText('cyan', 'p=https://...')} Set spec_url on parent + this subfeature
     ${styleText('cyan', 'f')}            Set standard_track to false (+ all subfeatures)
     ${styleText('cyan', '(Enter)')}      Skip this entry
     ${styleText('cyan', '/foo')}         Skip ahead until an entry containing "foo"
@@ -214,6 +216,23 @@ for (const [i, featurePath] of exceptions.entries()) {
       }
       updateFeatures([featurePath], (c) => {
         c.spec_url = ancestor.spec_url;
+        return c;
+      });
+      remaining.delete(featurePath);
+      break;
+    }
+
+    if (answer.startsWith('p=https://')) {
+      const raw = answer.slice(2);
+      const urls = raw.split(',').map((u) => u.trim());
+      const specUrl = urls.length === 1 ? urls[0] : urls;
+      const parentPath = featurePath.split('.').slice(0, -1).join('.');
+      updateFeatures([parentPath], (c) => {
+        c.spec_url = specUrl;
+        return c;
+      });
+      updateFeatures([featurePath], (c) => {
+        c.spec_url = specUrl;
         return c;
       });
       remaining.delete(featurePath);
