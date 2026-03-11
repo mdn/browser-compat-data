@@ -10,7 +10,9 @@ const { browsers } = bcd;
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
 /** @import {BrowserName, CompatStatement} from '../../types/types.js' */
-const standardTrackExceptions = new Set(await getStandardTrackExceptions());
+export const standardTrackExceptions = new Set(
+  await getStandardTrackExceptions(),
+);
 
 // See: https://github.com/web-platform-dx/web-features/blob/main/docs/baseline.md#core-browser-set
 const CORE_BROWSER_SET = new Set([
