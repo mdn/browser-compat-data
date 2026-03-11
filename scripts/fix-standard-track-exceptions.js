@@ -22,6 +22,8 @@
 import readline from 'node:readline/promises';
 import { styleText } from 'node:util';
 
+/** @import {Identifier} from '../types/types.js' */
+
 import bcd from '../index.js';
 import query from '../utils/query.js';
 import {
@@ -51,7 +53,7 @@ const findAncestorSpecUrl = (featurePath) => {
   for (let i = parts.length - 1; i >= 1; i--) {
     const ancestorPath = parts.slice(0, i).join('.');
     try {
-      const node = query(ancestorPath, bcd);
+      const node = /** @type {Identifier} */ (query(ancestorPath, bcd));
       if (node?.__compat?.spec_url) {
         return { path: ancestorPath, spec_url: node.__compat.spec_url };
       }
@@ -113,7 +115,7 @@ for (const [i, featurePath] of exceptions.entries()) {
   // Load feature data
   let compat;
   try {
-    const node = query(featurePath, bcd);
+    const node = /** @type {Identifier} */ (query(featurePath, bcd));
     compat = node?.__compat;
   } catch {
     console.log(
