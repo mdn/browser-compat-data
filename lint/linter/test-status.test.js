@@ -214,10 +214,16 @@ describe('checkStatus', () => {
     assert.ok(logger.messages[0].message.includes('should be set to'));
   });
 
-  it('should not log error for features in exception list missing spec_url', () => {
-    // Temporarily add test feature to exception list
-    standardTrackExceptions.add('api.AudioProcessingEvent');
-    try {
+  describe('standard-track-exceptions', () => {
+    beforeEach(() => {
+      standardTrackExceptions.add('api.AudioProcessingEvent');
+    });
+
+    afterEach(() => {
+      standardTrackExceptions.delete('api.AudioProcessingEvent');
+    });
+
+    it('should not log error for features in exception list missing spec_url', () => {
       /** @type {CompatStatement} */
       const data = {
         status: {
@@ -228,21 +234,15 @@ describe('checkStatus', () => {
         support: {},
       };
 
-      // This feature is in the exception list
       test.check(logger, {
         data,
         path: { category: 'api', full: 'api.AudioProcessingEvent' },
       });
 
       assert.equal(logger.messages.length, 0);
-    } finally {
-      standardTrackExceptions.delete('api.AudioProcessingEvent');
-    }
-  });
+    });
 
-  it('should log warning when exception no longer applies (has spec_url)', () => {
-    standardTrackExceptions.add('api.AudioProcessingEvent');
-    try {
+    it('should log warning when exception no longer applies (has spec_url)', () => {
       /** @type {CompatStatement} */
       const data = {
         status: {
@@ -254,7 +254,6 @@ describe('checkStatus', () => {
         support: {},
       };
 
-      // This feature is in the exception list but now has spec_url
       test.check(logger, {
         data,
         path: { category: 'api', full: 'api.AudioProcessingEvent' },
@@ -263,14 +262,9 @@ describe('checkStatus', () => {
       assert.equal(logger.messages.length, 1);
       assert.equal(logger.messages[0].level, 'warning');
       assert.ok(logger.messages[0].message.includes('exception list'));
-    } finally {
-      standardTrackExceptions.delete('api.AudioProcessingEvent');
-    }
-  });
+    });
 
-  it('should log warning when exception no longer applies (standard_track false)', () => {
-    standardTrackExceptions.add('api.AudioProcessingEvent');
-    try {
+    it('should log warning when exception no longer applies (standard_track false)', () => {
       /** @type {CompatStatement} */
       const data = {
         status: {
@@ -281,7 +275,6 @@ describe('checkStatus', () => {
         support: {},
       };
 
-      // This feature is in the exception list but standard_track is now false
       test.check(logger, {
         data,
         path: { category: 'api', full: 'api.AudioProcessingEvent' },
@@ -290,8 +283,6 @@ describe('checkStatus', () => {
       assert.equal(logger.messages.length, 1);
       assert.equal(logger.messages[0].level, 'warning');
       assert.ok(logger.messages[0].message.includes('exception list'));
-    } finally {
-      standardTrackExceptions.delete('api.AudioProcessingEvent');
-    }
+    });
   });
 });
