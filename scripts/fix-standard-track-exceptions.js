@@ -14,12 +14,14 @@
  *   p=https://.. — Set spec_url on both the parent and this subfeature
  *   (empty)      — Skip this entry
  *   /foo         — Skip ahead until the next entry containing "foo"
+ *   o            — Open ancestor spec_url(s) in the browser
  *   ?            — Print instructions
  *
  * Changes are written to disk immediately. The exception list is updated
  * on exit (including Ctrl+C).
  */
 
+import { execFile } from 'node:child_process';
 import readline from 'node:readline/promises';
 import { styleText } from 'node:util';
 
@@ -42,6 +44,7 @@ const instructions = `
     ${styleText('cyan', 'f')}            Set standard_track to false (+ all subfeatures)
     ${styleText('cyan', '(Enter)')}      Skip this entry
     ${styleText('cyan', '/foo')}         Skip ahead until an entry containing "foo"
+    ${styleText('cyan', 'o')}            Open ancestor spec_url(s) in the browser
     ${styleText('cyan', '?')}            Show these instructions
 `;
 
@@ -64,6 +67,17 @@ const findAncestorSpecUrl = (featurePath) => {
     }
   }
   return null;
+};
+
+/**
+ * Open one or more URLs in the default browser.
+ * @param {string | string[]} urls
+ */
+const openUrls = (urls) => {
+  const cmd = process.platform === 'darwin' ? 'open' : 'xdg-open';
+  for (const url of Array.isArray(urls) ? urls : [urls]) {
+    execFile(cmd, [url]);
+  }
 };
 
 const exceptions = await getStandardTrackExceptions();
@@ -180,6 +194,15 @@ for (const [i, featurePath] of exceptions.entries()) {
 
     if (answer === '?') {
       console.log(instructions);
+      continue;
+    }
+
+    if (answer === 'o') {
+      if (ancestor) {
+        openUrls(ancestor.spec_url);
+      } else {
+        console.log(styleText('red', '  No ancestor with spec_url to open.'));
+      }
       continue;
     }
 
