@@ -15,6 +15,7 @@
  *   (empty)      — Skip this entry
  *   /foo         — Skip ahead until the next entry containing "foo"
  *   o            — Open ancestor spec_url(s) in the browser
+ *   u            — Undo last change and revisit that feature
  *   ?            — Print instructions
  *
  * Changes are written to disk immediately. The exception list is updated
@@ -45,6 +46,7 @@ const instructions = `
     ${styleText('cyan', '(Enter)')}      Skip this entry
     ${styleText('cyan', '/foo')}         Skip ahead until an entry containing "foo"
     ${styleText('cyan', 'o')}            Open ancestor spec_url(s) in the browser
+    ${styleText('cyan', 'u')}            Undo last change and revisit that feature
     ${styleText('cyan', '?')}            Show these instructions
 `;
 
@@ -114,7 +116,15 @@ console.log(instructions);
 
 let skipUntil = null;
 
-for (const [i, featurePath] of exceptions.entries()) {
+/** @type {{ index: number, undo: () => void } | null} */
+let lastAction = null;
+
+let idx = 0;
+while (idx < exceptions.length) {
+  const i = idx;
+  const featurePath = exceptions[i];
+  idx++;
+
   // Handle skip-until filter
   if (skipUntil) {
     if (!featurePath.includes(skipUntil)) {
@@ -204,7 +214,7 @@ for (const [i, featurePath] of exceptions.entries()) {
     console.log(styleText('dim', '  (no ancestor with spec_url)'));
   }
 
-  // Prompt loop (re-prompt on ? and invalid p)
+  // Prompt loop (re-prompt on ?, o, and invalid input)
   while (true) {
     const answer = (await rl.question(prompt)).trim();
 
@@ -222,6 +232,18 @@ for (const [i, featurePath] of exceptions.entries()) {
       continue;
     }
 
+    if (answer === 'u') {
+      if (!lastAction) {
+        console.log(styleText('red', '  Nothing to undo.'));
+        continue;
+      }
+      lastAction.undo();
+      idx = lastAction.index;
+      lastAction = null;
+      console.log(styleText('dim', '  Undone.'));
+      break;
+    }
+
     if (answer === '') {
       break;
     }
@@ -232,19 +254,34 @@ for (const [i, featurePath] of exceptions.entries()) {
     }
 
     if (answer === 'f' || answer === 'false') {
+      // Collect subfeatures that will be removed
+      const prefix = featurePath + '.';
+      const removedSubs = [...remaining].filter((e) => e.startsWith(prefix));
       // Update this feature and all subfeatures
       updateFeatures([featurePath, featurePath + '.*'], (c) => {
         c.status.standard_track = false;
         return c;
       });
       remaining.delete(featurePath);
-      // Also remove subfeatures from exception list
-      const prefix = featurePath + '.';
-      for (const entry of remaining) {
-        if (entry.startsWith(prefix)) {
-          remaining.delete(entry);
-        }
+      for (const sub of removedSubs) {
+        remaining.delete(sub);
       }
+      lastAction = {
+        index: i,
+        /**
+         *
+         */
+        undo: () => {
+          updateFeatures([featurePath, featurePath + '.*'], (c) => {
+            c.status.standard_track = true;
+            return c;
+          });
+          remaining.add(featurePath);
+          for (const sub of removedSubs) {
+            remaining.add(sub);
+          }
+        },
+      };
       break;
     }
 
@@ -258,6 +295,19 @@ for (const [i, featurePath] of exceptions.entries()) {
         return c;
       });
       remaining.delete(featurePath);
+      lastAction = {
+        index: i,
+        /**
+         *
+         */
+        undo: () => {
+          updateFeatures([featurePath], (c) => {
+            delete c.spec_url;
+            return c;
+          });
+          remaining.add(featurePath);
+        },
+      };
       break;
     }
 
@@ -275,6 +325,23 @@ for (const [i, featurePath] of exceptions.entries()) {
         return c;
       });
       remaining.delete(featurePath);
+      lastAction = {
+        index: i,
+        /**
+         *
+         */
+        undo: () => {
+          updateFeatures([parentPath], (c) => {
+            delete c.spec_url;
+            return c;
+          });
+          updateFeatures([featurePath], (c) => {
+            delete c.spec_url;
+            return c;
+          });
+          remaining.add(featurePath);
+        },
+      };
       break;
     }
 
@@ -286,6 +353,19 @@ for (const [i, featurePath] of exceptions.entries()) {
         return c;
       });
       remaining.delete(featurePath);
+      lastAction = {
+        index: i,
+        /**
+         *
+         */
+        undo: () => {
+          updateFeatures([featurePath], (c) => {
+            delete c.spec_url;
+            return c;
+          });
+          remaining.add(featurePath);
+        },
+      };
       break;
     }
 
