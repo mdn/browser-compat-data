@@ -159,10 +159,14 @@ for (const [i, featurePath] of exceptions.entries()) {
     continue;
   }
 
-  // Print header
-  console.log(
-    `\n${styleText('bold', `[${i + 1}/${total}]`)} ${styleText('cyan', featurePath)}`,
-  );
+  // Print header with last path segment bold
+  const lastDot = featurePath.lastIndexOf('.');
+  const pathDisplay =
+    lastDot === -1
+      ? styleText(['cyan', 'bold'], featurePath)
+      : styleText('cyan', featurePath.slice(0, lastDot + 1)) +
+        styleText(['cyan', 'bold'], featurePath.slice(lastDot + 1));
+  console.log(`\n${styleText('bold', `[${i + 1}/${total}]`)} ${pathDisplay}`);
 
   // Print description
   if (compat.description) {
