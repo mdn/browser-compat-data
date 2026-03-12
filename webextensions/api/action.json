@@ -349,7 +349,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/action/isEnabled",
             "support": {
               "chrome": {
-                "version_added": "108"
+                "version_added": "110"
               },
               "edge": "mirror",
               "firefox": {
@@ -363,9 +363,9 @@
               "safari_ios": "mirror"
             }
           },
-          "details_windowId_parameter": {
+          "details": {
             "__compat": {
-              "description": "`details.windowId` parameter",
+              "description": "`details` (object)",
               "support": {
                 "chrome": {
                   "version_added": false
@@ -377,7 +377,46 @@
                 "firefox_android": "mirror",
                 "opera": "mirror",
                 "safari": {
-                  "version_added": "18"
+                  "version_added": "15.4"
+                },
+                "safari_ios": "mirror"
+              }
+            },
+            "windowId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "109"
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": "18"
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            }
+          },
+          "details_integer": {
+            "__compat": {
+              "description": "`details` (integer, `tabId`)",
+              "support": {
+                "chrome": {
+                  "version_added": "110"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "149"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
                 },
                 "safari_ios": "mirror"
               }
