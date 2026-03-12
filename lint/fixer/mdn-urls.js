@@ -4,6 +4,9 @@
 import testMDNURLs, { processData } from '../linter/test-mdn-urls.js';
 import walk from '../../utils/walk.js';
 
+/** @type {Map<string, string>} path → mdn_url, persisted across files */
+const urlsByPath = new Map();
+
 /**
  * Fixes issues with MDN URLs
  * @param {string} filename The filename containing compatibility info
@@ -17,9 +20,6 @@ const fixMDNURLs = async (filename, actual) => {
 
   const data = JSON.parse(actual);
   const walker = walk(undefined, data);
-
-  /** @type {Map<string, string>} path → mdn_url */
-  const urlsByPath = new Map();
 
   for (const feature of walker) {
     if (testMDNURLs.exceptions?.includes(feature.path)) {
