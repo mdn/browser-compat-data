@@ -193,9 +193,32 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data }) => {
+    /** @type {Map<string, string>} path → mdn_url */
+    const urlsByPath = new Map();
+
     for (const feature of walk(undefined, /** @type {CompatData} */ (data))) {
       const issues = processData(feature.compat, feature.path);
       logIssues(issues, logger);
+
+      if (feature.compat.mdn_url) {
+        // Check if any ancestor has the same mdn_url.
+        const parts = feature.path.split('.');
+        for (let i = 1; i < parts.length; i++) {
+          const ancestorPath = parts.slice(0, i).join('.');
+          if (urlsByPath.get(ancestorPath) === feature.compat.mdn_url) {
+            logger.error(
+              styleText(
+                'red',
+                `${styleText('bold', feature.path)} has the same mdn_url as ancestor ${styleText('bold', ancestorPath)}: ${styleText('italic', feature.compat.mdn_url)}`,
+              ),
+              { fixable: true },
+            );
+            break;
+          }
+        }
+
+        urlsByPath.set(feature.path, feature.compat.mdn_url);
+      }
     }
   },
 };
