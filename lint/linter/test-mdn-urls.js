@@ -69,6 +69,9 @@ const slugByPath = (() => {
 
 const redirects = mdnContentInventory.redirects;
 
+/** @type {Map<string, string>} path → mdn_url, persisted across calls */
+export const urlsByPath = new Map();
+
 /**
  * Process the data for MDN URL issues
  * @param {CompatStatement} data The data to test
@@ -132,6 +135,23 @@ export const processData = (data, path) => {
         expected: `https://developer.mozilla.org/docs/${slug}${hash.toLowerCase()}`,
       });
     }
+
+    // Check if mdn_url duplicates an ancestor's mdn_url.
+    const parts = path.split('.');
+    for (let i = 1; i < parts.length; i++) {
+      const ancestorPath = parts.slice(0, i).join('.');
+      if (urlsByPath.get(ancestorPath) === data.mdn_url) {
+        issues.push({
+          ruleName: 'mdn_url_duplicate_ancestor',
+          path,
+          actual: data.mdn_url,
+          expected: '',
+        });
+        break;
+      }
+    }
+    // Track this path's mdn_url for future ancestor checks.
+    urlsByPath.set(path, data.mdn_url);
   } else if (slugByPath.has(path)) {
     issues.push({
       ruleName: 'mdn_url_new_page',
@@ -150,7 +170,15 @@ export const processData = (data, path) => {
  */
 const logIssues = (issues, logger) => {
   for (const issue of issues) {
-    if (issue.expected === '') {
+    if (issue.ruleName === 'mdn_url_duplicate_ancestor') {
+      logger.error(
+        styleText(
+          'red',
+          `${styleText('bold', issue.path)} has mdn_url duplicated from ancestor: ${styleText('italic', issue.actual)}`,
+        ),
+        { fixable: true },
+      );
+    } else if (issue.expected === '') {
       logger.warning(
         styleText(
           'red',
