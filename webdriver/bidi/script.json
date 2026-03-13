@@ -3,6 +3,7 @@
     "bidi": {
       "script": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/script",
           "spec_url": "https://w3c.github.io/webdriver-bidi/#module-script",
           "support": {
             "chrome": {
@@ -1039,7 +1040,9 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "114"
+                  "version_added": "114",
+                  "partial_implementation": true,
+                  "notes": "Requires the addition of the `userContext` field."
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1168,7 +1171,8 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/1936770"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",

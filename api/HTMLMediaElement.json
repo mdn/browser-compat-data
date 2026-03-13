@@ -489,10 +489,27 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "prefix": "moz",
-              "version_added": "15"
-            },
+            "firefox": [
+              {
+                "version_added": "149"
+              },
+              {
+                "prefix": "moz",
+                "version_added": "149"
+              },
+              {
+                "prefix": "moz",
+                "version_added": "15",
+                "version_removed": "149",
+                "partial_implementation": true,
+                "notes": [
+                  "From Firefox 51, if the source changes from a `MediaStream` after capture starts, the captured stream data cannot be updated until you switch the source back to a `MediaStream`.",
+                  "From Firefox 51, if `mozCaptureMediaStream()` is called on a media element with a `MediaStream` source, the returned object only contains tracks while the element is playing a `MediaStream`.",
+                  "From Firefox 51, if `mozCaptureMediaStream()` is called on a media element with no source media, its compatibility mode is be based on the first source that's added; and the stream will only work with that kind of stream from then on.",
+                  "Before Firefox 51, `mozCaptureMediaStream()` could not be used on a media element whose source is itself a `MediaStream` (such as a `<video>` element presenting a stream being received over an `RTCPeerConnection`)."
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
