@@ -5,9 +5,11 @@ import { styleText } from 'node:util';
 
 import mdnContentInventory from '@ddbeck/mdn-content-inventory';
 
+import walk from '../../utils/walk.js';
+
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {CompatData, CompatStatement} from '../../types/types.js' */
 
 /**
  * @typedef {object} MDNURLError
@@ -141,47 +143,81 @@ export const processData = (data, path) => {
   return issues;
 };
 
+/**
+ * Log issues found by processData
+ * @param {MDNURLError[]} issues The issues to log
+ * @param {Logger} logger The logger to output errors to
+ */
+const logIssues = (issues, logger) => {
+  for (const issue of issues) {
+    if (issue.expected === '') {
+      logger.warning(
+        styleText(
+          'red',
+          `Current mdn_url is a 404:
+          ${styleText('bold', issue.actual)}`,
+        ),
+        { fixable: true },
+      );
+    } else if (issue.actual === '') {
+      logger.warning(
+        styleText(
+          'red',
+          `New mdn_url to add:
+          ${styleText('bold', issue.expected)}`,
+        ),
+        { fixable: true },
+      );
+    } else {
+      logger.warning(
+        styleText(
+          'red',
+          `Issues with mdn_url found:
+            Actual:   ${issue.actual}
+            Expected: ${issue.expected}`,
+        ),
+        { fixable: true },
+      );
+    }
+  }
+};
+
 /** @type {Linter} */
 export default {
   name: 'MDN URLs',
   description: 'Ensure the mdn_url values point to existing MDN Web Docs pages',
-  scope: 'feature',
+  scope: 'tree',
   /**
    * Test the data
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */
-  check: (logger, { data, path: { full } }) => {
-    const issues = processData(/** @type {CompatStatement} */ (data), full);
-    for (const issue of issues) {
-      if (issue.expected === '') {
-        logger.warning(
-          styleText(
-            'red',
-            `Current mdn_url is a 404:
-          ${styleText('bold', issue.actual)}`,
-          ),
-          { fixable: true },
-        );
-      } else if (issue.actual === '') {
-        logger.warning(
-          styleText(
-            'red',
-            `New mdn_url to add:
-          ${styleText('bold', issue.expected)}`,
-          ),
-          { fixable: true },
-        );
-      } else {
-        logger.warning(
-          styleText(
-            'red',
-            `Issues with mdn_url found:
-            Actual:   ${issue.actual}
-            Expected: ${issue.expected}`,
-          ),
-          { fixable: true },
-        );
+  check: (logger, { data }) => {
+    /** @type {Map<string, string>} path → mdn_url */
+    const urlsByPath = new Map();
+
+    for (const feature of walk(undefined, /** @type {CompatData} */ (data))) {
+      const issues = processData(feature.compat, feature.path);
+      logIssues(issues, logger);
+
+      if (feature.compat.mdn_url) {
+        // Check if any ancestor has the same mdn_url.
+        const parts = feature.path.split('.');
+        for (let i = 1; i < parts.length; i++) {
+          const ancestorPath = parts.slice(0, i).join('.');
+          if (urlsByPath.get(ancestorPath) === feature.compat.mdn_url) {
+            logger.error(
+              styleText(
+                'red',
+                `${styleText('bold', feature.path)} has the same mdn_url as ancestor ${styleText('bold', ancestorPath)}: ${styleText('italic', feature.compat.mdn_url)}`,
+              ),
+              { fixable: true },
+            );
+            break;
+          }
+        }
+
+        urlsByPath.set(feature.path, feature.compat.mdn_url);
       }
     }
   },
