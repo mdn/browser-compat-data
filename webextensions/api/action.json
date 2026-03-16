@@ -349,7 +349,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/action/isEnabled",
             "support": {
               "chrome": {
-                "version_added": "108"
+                "version_added": "110"
               },
               "edge": "mirror",
               "firefox": {
@@ -363,9 +363,9 @@
               "safari_ios": "mirror"
             }
           },
-          "details_windowId_parameter": {
+          "details": {
             "__compat": {
-              "description": "`details.windowId` parameter",
+              "description": "`details` (object)",
               "support": {
                 "chrome": {
                   "version_added": false
@@ -377,7 +377,46 @@
                 "firefox_android": "mirror",
                 "opera": "mirror",
                 "safari": {
-                  "version_added": "18"
+                  "version_added": "15.4"
+                },
+                "safari_ios": "mirror"
+              }
+            },
+            "windowId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "109"
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": "18"
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            }
+          },
+          "details_integer": {
+            "__compat": {
+              "description": "`details` (integer, `tabId`)",
+              "support": {
+                "chrome": {
+                  "version_added": "110"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "149"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
                 },
                 "safari_ios": "mirror"
               }
@@ -477,13 +516,13 @@
                 {
                   "version_added": "118",
                   "version_removed": "127",
-                  "notes": "Is only available to policy installed extensions and dev builds (e.g., Canary)."
+                  "notes": "Between Chrome 118 and Chrome 126, was only available to policy installed extensions."
                 }
               ],
               "edge": "mirror",
               "firefox": {
                 "version_added": "109",
-                "notes": "User interaction is not required to call this API when the `extensions.openPopupWithoutUserGesture.enabled` preference is set ([bug 1799344](https://bugzil.la/1799344))."
+                "notes": "Before Firefox 149, a user gesture is required to call this API."
               },
               "firefox_android": "mirror",
               "opera": "mirror",
