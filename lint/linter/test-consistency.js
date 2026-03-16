@@ -11,8 +11,8 @@ import bcd from '../../index.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {BrowserName, CompatData, CompatStatement, Identifier, SimpleSupportStatement, VersionValue} from '../../types/types.js' */
-/** @import {DataType, InternalSupportBlock, InternalSupportStatement} from '../../types/index.js' */
+/** @import {BrowserName, CompatData, CompatStatement, Identifier, SimpleSupportStatement, SupportStatement, VersionValue} from '../../types/types.js' */
+/** @import {InternalSupportBlock, InternalSupportStatement} from '../../types/index.js' */
 
 /**
  * @typedef {'unsupported' | 'subfeature_earlier_implementation'} ErrorType
@@ -39,6 +39,29 @@ import bcd from '../../index.js';
  * by detecting inconsistent information.
  */
 export class ConsistencyChecker {
+  /** @type {WeakMap<object, Map<string, SupportStatement>>} */
+  #mirrorCache = new WeakMap();
+
+  /**
+   * Resolve a mirror support statement with caching.
+   * @param {BrowserName} browser The browser to resolve
+   * @param {InternalSupportBlock} supportBlock The support block containing the mirror
+   * @returns {SupportStatement} The resolved support statement
+   */
+  #resolveMirror(browser, supportBlock) {
+    let byBrowser = this.#mirrorCache.get(supportBlock);
+    if (!byBrowser) {
+      byBrowser = new Map();
+      this.#mirrorCache.set(supportBlock, byBrowser);
+    }
+    let resolved = byBrowser.get(browser);
+    if (resolved === undefined) {
+      resolved = mirrorSupport(browser, supportBlock);
+      byBrowser.set(browser, resolved);
+    }
+    return resolved;
+  }
+
   /**
    * Checks the data for any errors
    * @param {CompatData} data The data to test
@@ -284,7 +307,7 @@ export class ConsistencyChecker {
 
     if (supportStatement === 'mirror') {
       return this.getVersionAdded(
-        { [browser]: mirrorSupport(browser, supportBlock) },
+        { [browser]: this.#resolveMirror(browser, supportBlock) },
         browser,
       );
     }
@@ -395,7 +418,7 @@ export class ConsistencyChecker {
         if (
           /** @type {InternalSupportStatement} */ (browserData) === 'mirror'
         ) {
-          browserData = mirrorSupport(browser, compatData.support);
+          browserData = this.#resolveMirror(browser, compatData.support);
         }
 
         if (Array.isArray(browserData)) {
