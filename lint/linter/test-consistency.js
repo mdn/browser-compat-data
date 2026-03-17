@@ -38,6 +38,29 @@ import bcd from '../../index.js';
  * by detecting inconsistent information.
  */
 export class ConsistencyChecker {
+  /** @type {WeakMap<object, Map<string, InternalSupportStatement>>} */
+  #mirrorCache = new WeakMap();
+
+  /**
+   * Resolve a mirror support statement with caching.
+   * @param {BrowserName} browser The browser to resolve
+   * @param {InternalSupportBlock} supportBlock The support block containing the mirror
+   * @returns {InternalSupportStatement} The resolved support statement
+   */
+  #resolveMirror(browser, supportBlock) {
+    let byBrowser = this.#mirrorCache.get(supportBlock);
+    if (!byBrowser) {
+      byBrowser = new Map();
+      this.#mirrorCache.set(supportBlock, byBrowser);
+    }
+    let resolved = byBrowser.get(browser);
+    if (resolved === undefined) {
+      resolved = mirrorSupport(browser, supportBlock);
+      byBrowser.set(browser, resolved);
+    }
+    return resolved;
+  }
+
   /**
    * Checks the data for any errors
    * @param {InternalCompatData} data The data to test
@@ -281,7 +304,7 @@ export class ConsistencyChecker {
 
     if (supportStatement === 'mirror') {
       return this.getVersionAdded(
-        { [browser]: mirrorSupport(browser, supportBlock) },
+        { [browser]: this.#resolveMirror(browser, supportBlock) },
         browser,
       );
     }
@@ -392,7 +415,10 @@ export class ConsistencyChecker {
         if (
           /** @type {InternalSupportStatement} */ (browserData) === 'mirror'
         ) {
-          browserData = mirrorSupport(browser, InternalcompatData.support);
+          browserData = this.#resolveMirror(
+            browser,
+            InternalcompatData.support,
+          );
         }
 
         if (Array.isArray(browserData)) {

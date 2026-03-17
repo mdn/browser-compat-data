@@ -1131,7 +1131,9 @@
               "version_added": "1.0.0"
             },
             "chrome": {
-              "version_added": "60"
+              "version_added": "60",
+              "partial_implementation": true,
+              "notes": "If the form data is empty, then Chrome throws `TypeError: Failed to fetch`. See [bug 40065051](https://crbug.com/40065051) and [bug 40764130](https://crbug.com/40764130)."
             },
             "chrome_android": "mirror",
             "deno": {

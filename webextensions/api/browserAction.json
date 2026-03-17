@@ -421,23 +421,66 @@
               }
             }
           },
-          "details_windowId_parameter": {
+          "details": {
             "__compat": {
-              "description": "`details.windowId` parameter",
+              "description": "`details` (object)",
               "support": {
                 "chrome": {
                   "version_added": false
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "62"
+                  "version_added": "59"
                 },
                 "firefox_android": {
                   "version_added": "79"
                 },
                 "opera": "mirror",
                 "safari": {
-                  "version_added": "18"
+                  "version_added": "14"
+                },
+                "safari_ios": {
+                  "version_added": "15"
+                }
+              }
+            },
+            "windowId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": false
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "62"
+                  },
+                  "firefox_android": {
+                    "version_added": "79"
+                  },
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": "18"
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            }
+          },
+          "details_integer": {
+            "__compat": {
+              "description": "`details` (integer, `tabId`)",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "149"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
                 },
                 "safari_ios": "mirror"
               }
@@ -555,7 +598,7 @@
               "firefox": {
                 "version_added": "57",
                 "notes": [
-                  "Since Firefox 108, user interaction is no longer required to call this API when the `extensions.openPopupWithoutUserGesture.enabled` preference is set ([bug 1799344](https://bugzil.la/1799344)).",
+                  "Before Firefox 149, a user gesture is required to call this API.",
                   "Support for the `windowId` parameter was added in Firefox 108."
                 ]
               },
