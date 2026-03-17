@@ -108,8 +108,8 @@ export class ConsistencyChecker {
   }
 
   /**
-   * Get the subfeatures of an Internalidentifier
-   * @param {InternalIdentifier} data The Internalidentifier
+   * Get the subfeatures of an identifier
+   * @param {InternalIdentifier} data The identifier
    * @returns {string[]} The subfeatures
    */
   getSubfeatures(data) {
