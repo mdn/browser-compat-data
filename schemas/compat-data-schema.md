@@ -242,7 +242,7 @@ Example of a `support` compat object (with 1 entry, array omitted):
 
 ```json
 "support": {
-  "ie": { "version_added": "6.0" }
+  "ie": { "version_added": "6" }
 }
 ```
 
