@@ -394,31 +394,28 @@ export class ConsistencyChecker {
 
   /**
    * Get all of the browsers within the data and pass the data to the callback.
-   * @param {InternalCompatStatement | undefined} InternalcompatData The compat data to process
+   * @param {InternalCompatStatement | undefined} compatData The compat data to process
    * @param {(browserData: InternalSimpleSupportStatement) => boolean} callback The function to pass the data to
    * @returns {BrowserName[]} The list of browsers using the callback as a filter
    */
-  extractBrowsers(InternalcompatData, callback) {
-    if (!InternalcompatData) {
+  extractBrowsers(compatData, callback) {
+    if (!compatData) {
       return [];
     }
 
     return /** @type {BrowserName[]} */ (Object.keys(bcd.browsers)).filter(
       (browser) => {
-        if (!(browser in InternalcompatData.support)) {
+        if (!(browser in compatData.support)) {
           return callback({ version_added: false });
         }
 
         let browserData = /** @type {InternalSupportStatement | undefined} */ (
-          InternalcompatData.support[browser]
+          compatData.support[browser]
         );
         if (
           /** @type {InternalSupportStatement} */ (browserData) === 'mirror'
         ) {
-          browserData = this.#resolveMirror(
-            browser,
-            InternalcompatData.support,
-          );
+          browserData = this.#resolveMirror(browser, compatData.support);
         }
 
         if (Array.isArray(browserData)) {
