@@ -103,19 +103,22 @@ describe('checkStatus', () => {
     logger = new Logger('test', 'test');
   });
 
-  it('should not log error when status is not defined', () => {
+  it('should not log error when status is not defined', async () => {
     /** @type {CompatStatement} */
     const data = {
       status: undefined,
       support: {},
     };
 
-    test.check(logger, { data, path: { full: 'api.Test', category: 'api' } });
+    await test.check(logger, {
+      data,
+      path: { full: 'api.Test', category: 'api' },
+    });
 
     assert.equal(logger.messages.length, 0);
   });
 
-  it('should log error when category is webextensions and status is defined', () => {
+  it('should log error when category is webextensions and status is defined', async () => {
     /** @type {CompatStatement} */
     const data = {
       status: {
@@ -126,7 +129,7 @@ describe('checkStatus', () => {
       support: {},
     };
 
-    test.check(logger, {
+    await test.check(logger, {
       data,
       path: { full: 'webextensions.Test', category: 'webextensions' },
     });
@@ -135,7 +138,7 @@ describe('checkStatus', () => {
     assert.ok(logger.messages[0].message.includes('not allowed'));
   });
 
-  it('should log error when status is both experimental and deprecated', () => {
+  it('should log error when status is both experimental and deprecated', async () => {
     /** @type {CompatStatement} */
     const data = {
       status: {
@@ -146,13 +149,16 @@ describe('checkStatus', () => {
       support: {},
     };
 
-    test.check(logger, { data, path: { full: 'api.Test', category: 'api' } });
+    await test.check(logger, {
+      data,
+      path: { full: 'api.Test', category: 'api' },
+    });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('Unexpected simultaneous'));
   });
 
-  it('should log error when status is non-standard but has a spec_url', () => {
+  it('should log error when status is non-standard but has a spec_url', async () => {
     /** @type {CompatStatement} */
     const data = {
       status: {
@@ -164,13 +170,16 @@ describe('checkStatus', () => {
       support: {},
     };
 
-    test.check(logger, { data, path: { full: 'api.Test', category: 'api' } });
+    await test.check(logger, {
+      data,
+      path: { full: 'api.Test', category: 'api' },
+    });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('but has a'));
   });
 
-  it('should log error when status is standard_track but missing spec_url', () => {
+  it('should log error when status is standard_track but missing spec_url', async () => {
     /** @type {CompatStatement} */
     const data = {
       status: {
@@ -181,7 +190,7 @@ describe('checkStatus', () => {
       support: {},
     };
 
-    test.check(logger, {
+    await test.check(logger, {
       data,
       path: { category: 'api', full: 'api.NewFeature' },
     });
@@ -190,7 +199,7 @@ describe('checkStatus', () => {
     assert.ok(logger.messages[0].message.includes('missing required'));
   });
 
-  it('should log error when status is experimental and supported by more than one engine', () => {
+  it('should log error when status is experimental and supported by more than one engine', async () => {
     /** @type {CompatStatement} */
     const data = {
       status: {
@@ -208,7 +217,10 @@ describe('checkStatus', () => {
       },
     };
 
-    test.check(logger, { data, path: { full: 'api.Test', category: 'api' } });
+    await test.check(logger, {
+      data,
+      path: { full: 'api.Test', category: 'api' },
+    });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('should be set to'));
@@ -223,7 +235,7 @@ describe('checkStatus', () => {
       standardTrackExceptions.delete('api.Foo');
     });
 
-    it('should not log error for features in exception list missing spec_url', () => {
+    it('should not log error for features in exception list missing spec_url', async () => {
       /** @type {CompatStatement} */
       const data = {
         status: {
@@ -234,7 +246,7 @@ describe('checkStatus', () => {
         support: {},
       };
 
-      test.check(logger, {
+      await test.check(logger, {
         data,
         path: { category: 'api', full: 'api.Foo' },
       });
@@ -244,7 +256,7 @@ describe('checkStatus', () => {
       assert.equal(logger.messages.length, 0);
     });
 
-    it('should log warning when exception no longer applies (has spec_url)', () => {
+    it('should log warning when exception no longer applies (has spec_url)', async () => {
       /** @type {CompatStatement} */
       const data = {
         status: {
@@ -256,7 +268,7 @@ describe('checkStatus', () => {
         support: {},
       };
 
-      test.check(logger, {
+      await test.check(logger, {
         data,
         path: { category: 'api', full: 'api.Foo' },
       });
@@ -268,7 +280,7 @@ describe('checkStatus', () => {
       assert.ok(logger.messages[0].message.includes('exception list'));
     });
 
-    it('should log warning when exception no longer applies (standard_track false)', () => {
+    it('should log warning when exception no longer applies (standard_track false)', async () => {
       /** @type {CompatStatement} */
       const data = {
         status: {
@@ -279,7 +291,7 @@ describe('checkStatus', () => {
         support: {},
       };
 
-      test.check(logger, {
+      await test.check(logger, {
         data,
         path: { category: 'api', full: 'api.Foo' },
       });
