@@ -11,7 +11,7 @@ import stringify from 'fast-json-stable-stringify';
 import { compareVersions } from 'compare-versions';
 import { marked } from 'marked';
 
-import compileTS from '../generate-public-types.js';
+import { compilePublicTypes } from '../generate-types.js';
 import schema from '../../schemas/public.schema.json' with { type: 'json' };
 import { createAjv } from '../lib/ajv.js';
 import { walk } from '../../utils/index.js';
@@ -308,7 +308,7 @@ export * from "./types.js";`;
   await fs.writeFile(destImport, content);
   logWrite(destImport, 'ESM types');
 
-  await compileTS('schemas/public.schema.json', destTypes);
+  await compilePublicTypes('schemas/public.schema.json', destTypes);
   logWrite(destTypes, 'data types');
 };
 
