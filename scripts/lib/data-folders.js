@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import { InternalCompatData } from "../../types/internal.js" */
+/** @import { InternalCompatData } from "../../types/index.js" */
 
 export const dataFoldersMinusBrowsers = [
   'api',

@@ -14,3 +14,21 @@ export type InternalDataType =
   | BrowserStatement
   | InternalCompatStatement
   | InternalIdentifier;
+
+export interface InternalCompatData {
+  api: InternalIdentifier;
+  browsers: Browsers;
+  css: InternalIdentifier;
+  html: InternalIdentifier;
+  http: InternalIdentifier;
+  javascript: InternalIdentifier;
+  manifests: InternalIdentifier;
+  mathml: InternalIdentifier;
+  mediatypes: InternalIdentifier;
+  svg: InternalIdentifier;
+  webassembly: InternalIdentifier;
+  webdriver: InternalIdentifier;
+  webextensions: InternalIdentifier;
+}
+
+export type VersionValue = string | false;
