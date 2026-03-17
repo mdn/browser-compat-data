@@ -60,7 +60,7 @@ const compile = async (
 };
 
 if (esMain(import.meta)) {
-  compile();
+  await compile();
 }
 
 export default compile;
