@@ -2,29 +2,15 @@ name: auto-merge
 
 on:
   pull_request_target:
-    branches:
-      - main
 
-# No GITHUB_TOKEN permissions, because we use GH_TOKEN instead.
-permissions: {}
+permissions:
+  contents: read
 
 jobs:
   auto-merge:
-    runs-on: ubuntu-latest
-    if: github.event.pull_request.user.login == 'dependabot[bot]'
-
-    steps:
-      - name: Dependabot metadata
-        id: dependabot-metadata
-        uses: dependabot/fetch-metadata@21025c705c08248db411dc16f3619e6b5f9ea21a # v2.5.0
-        with:
-          github-token: ${{ secrets.GH_TOKEN }}
-
-      - name: Squash and merge
-
-        if: ${{ steps.dependabot-metadata.outputs.update-type == 'version-update:semver-minor' && !startsWith(steps.dependabot-metadata.outputs.previous-version, '0.') || steps.dependabot-metadata.outputs.update-type == 'version-update:semver-patch' && !startsWith(steps.dependabot-metadata.outputs.previous-version, '0.0.') }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          gh pr review ${{ github.event.pull_request.html_url }} --approve
-          gh pr merge ${{ github.event.pull_request.html_url }} --auto --squash
+    if: github.repository_owner == 'mdn'
+    uses: mdn/workflows/.github/workflows/auto-merge.yml@main
+    with:
+      auto-merge: true
+    secrets:
+      GH_TOKEN: ${{ secrets.AUTOMERGE_TOKEN }}
