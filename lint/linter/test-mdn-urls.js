@@ -3,9 +3,8 @@
 
 import { styleText } from 'node:util';
 
-import mdnContentInventory from '@ddbeck/mdn-content-inventory';
-
 import walk from '../../utils/walk.js';
+import { inventory } from '../../utils/mdn-content-inventory.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
@@ -18,56 +17,6 @@ import walk from '../../utils/walk.js';
  * @property {string} actual
  * @property {string} expected
  */
-
-const slugs = (() => {
-  /** @type {Map<string, string>} */
-  const result = new Map();
-  for (const item of mdnContentInventory.inventory) {
-    result.set(item.frontmatter.slug.toLowerCase(), item.frontmatter.slug);
-  }
-  return result;
-})();
-
-const slugByPath = (() => {
-  /** @type {Map<string, string[]>} */
-  const slugsByPath = new Map();
-  for (const item of mdnContentInventory.inventory) {
-    if (!('browser-compat' in item.frontmatter)) {
-      continue;
-    }
-
-    const value = item.frontmatter['browser-compat'];
-    const paths = Array.isArray(value) ? value : [value];
-
-    const slug = item.frontmatter.slug;
-
-    for (const path of paths) {
-      const slugTail = slug.split('/').at(-1);
-      const pathTail = path.split('.').at(-1);
-
-      if (!slugTail.includes(pathTail) && !pathTail?.includes(slugTail)) {
-        // Ignore unrelated pages/features.
-        continue;
-      }
-
-      if (!slugsByPath.has(path)) {
-        slugsByPath.set(path, []);
-      }
-      slugsByPath.get(path)?.push(item.frontmatter.slug);
-    }
-  }
-
-  /** @type {Map<string, string>} */
-  const slugByPath = new Map();
-  slugsByPath.forEach((values, key) => {
-    if (values.length === 1) {
-      slugByPath.set(key, values[0]);
-    }
-  });
-  return slugByPath;
-})();
-
-const redirects = mdnContentInventory.redirects;
 
 /** @type {Map<string, string>} path → mdn_url, persisted across calls */
 export const urlsByPath = new Map();
@@ -87,27 +36,29 @@ export const processData = (data, path) => {
     const slug = mdnURL.pathname.replace('/docs/', '');
     const hash = mdnURL.hash;
 
-    if (redirectURL in redirects) {
+    if (redirectURL in inventory.redirects) {
       // Replace redirects with the new URL.
       issues.push({
         ruleName: 'mdn_url_redirect',
         path,
         actual: data.mdn_url,
-        expected: mdnURL.origin + redirects[redirectURL]?.replace('/en-US', ''),
+        expected:
+          mdnURL.origin +
+          inventory.redirects[redirectURL]?.replace('/en-US', ''),
       });
     } else if (
       // Check if casing is wrong.
       // slugs.values().some(v => v === slug) when https://tc39.es/proposal-iterator-helpers is available
-      !Array.from(slugs.values()).includes(slug) &&
-      Array.from(slugs.keys()).includes(slug.toLowerCase())
+      !Array.from(inventory.slugs.values()).includes(slug) &&
+      Array.from(inventory.slugs.keys()).includes(slug.toLowerCase())
     ) {
       issues.push({
         ruleName: 'mdn_url_casing',
         path,
         actual: data.mdn_url,
-        expected: `https://developer.mozilla.org/docs/${slugs.get(slug.toLowerCase())}${hash}`,
+        expected: `https://developer.mozilla.org/docs/${inventory.slugs.get(slug.toLowerCase())}${hash}`,
       });
-    } else if (!Array.from(slugs.values()).includes(slug)) {
+    } else if (!Array.from(inventory.slugs.values()).includes(slug)) {
       // Delete non-existing MDN pages.
       issues.push({
         ruleName: 'mdn_url_404',
@@ -115,15 +66,15 @@ export const processData = (data, path) => {
         actual: data.mdn_url,
         expected: '',
       });
-    } else if (slugByPath.has(path) && !hash) {
+    } else if (inventory.slugByPath.has(path) && !hash) {
       // Overwrite url, unless it has a fragment.
-      const expected = `https://developer.mozilla.org/docs/${slugByPath.get(path)}`;
+      const expected = `https://developer.mozilla.org/docs/${inventory.slugByPath.get(path)}`;
       if (expected != data.mdn_url) {
         issues.push({
           ruleName: 'mdn_url_other_page',
           path,
           actual: data.mdn_url,
-          expected: `https://developer.mozilla.org/docs/${slugByPath.get(path)}`,
+          expected: `https://developer.mozilla.org/docs/${inventory.slugByPath.get(path)}`,
         });
       }
     } else if (hash !== hash.toLowerCase()) {
@@ -152,12 +103,12 @@ export const processData = (data, path) => {
     }
     // Track this path's mdn_url for future ancestor checks.
     urlsByPath.set(path, data.mdn_url);
-  } else if (slugByPath.has(path)) {
+  } else if (inventory.slugByPath.has(path)) {
     issues.push({
       ruleName: 'mdn_url_new_page',
       path,
       actual: '',
-      expected: `https://developer.mozilla.org/docs/${slugByPath.get(path)}`,
+      expected: `https://developer.mozilla.org/docs/${inventory.slugByPath.get(path)}`,
     });
   }
   return issues;
