@@ -67,6 +67,11 @@ export default [
       parser: ts.parser,
       ecmaVersion: 'latest',
       sourceType: 'module',
+
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: __dirname,
+      },
     },
 
     settings: {
@@ -77,6 +82,7 @@ export default [
 
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-floating-promises': 'error',
       '@typescript-eslint/no-unused-expressions': 'error',
       '@typescript-eslint/no-unused-vars': [
         'error',

@@ -54,9 +54,9 @@ describe('test-versions', () => {
     };
   });
 
-  it('should log error when a browser is set to mirror but does not have an upstream browser', () => {
+  it('should log error when a browser is set to mirror but does not have an upstream browser', async () => {
     support.chrome = 'mirror';
-    test.check(logger, {
+    await test.check(logger, {
       data: { support },
       path: { full: 'api.Test', category: 'api' },
     });
@@ -66,7 +66,7 @@ describe('test-versions', () => {
     );
   });
 
-  it('should log error when version_removed is less than or equal to version_added', () => {
+  it('should log error when version_removed is less than or equal to version_added', async () => {
     support.chrome = {
       version_added: '2',
       version_removed: '1',
@@ -75,7 +75,7 @@ describe('test-versions', () => {
       version_added: '2',
       version_removed: '2',
     };
-    test.check(logger, {
+    await test.check(logger, {
       data: { support },
       path: { full: 'api.Test', category: 'api' },
     });
@@ -84,12 +84,12 @@ describe('test-versions', () => {
     assert.ok(logger.messages[1].message.includes('must be greater than'));
   });
 
-  it('should log error when flags are present but not supported by the browser', () => {
+  it('should log error when flags are present but not supported by the browser', async () => {
     support.samsunginternet_android = {
       version_added: '1.0',
       flags: [{ type: 'preference', name: 'test' }],
     };
-    test.check(logger, {
+    await test.check(logger, {
       data: { support },
       path: { full: 'api.Test', category: 'api' },
     });
@@ -97,12 +97,12 @@ describe('test-versions', () => {
     assert.ok(logger.messages[0].message.includes('does not support flags'));
   });
 
-  it('should log error when version_added is false but additional properties suggest support', () => {
+  it('should log error when version_added is false but additional properties suggest support', async () => {
     support.chrome = {
       version_added: false,
       version_removed: '1',
     };
-    test.check(logger, {
+    await test.check(logger, {
       data: { support },
       path: { full: 'api.Test', category: 'api' },
     });
@@ -110,9 +110,9 @@ describe('test-versions', () => {
     assert.ok(logger.messages[0].message.includes('suggest support'));
   });
 
-  it('should log error when version_added is false in an array of statements', () => {
+  it('should log error when version_added is false in an array of statements', async () => {
     support.chrome = [{ version_added: false }, { version_added: '1' }];
-    test.check(logger, {
+    await test.check(logger, {
       data: { support },
       path: { full: 'api.Test', category: 'api' },
     });
