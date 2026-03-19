@@ -153,8 +153,11 @@ export class ConsistencyChecker {
     let inconsistentSubfeaturesByBrowser = {};
 
     subfeatures.forEach((subfeature) => {
+      const subfeatureId = /** @type {InternalIdentifier} */ (
+        query(subfeature, data)
+      );
       const unsupportedInChild = this.extractUnsupportedBrowsers(
-        query(subfeature, data).__compat,
+        subfeatureId.__compat,
       );
 
       const browsers = /** @type {BrowserName[]} */ (
@@ -167,7 +170,7 @@ export class ConsistencyChecker {
           browser,
         );
         const subfeature_value = this.getVersionAdded(
-          query(subfeature, data).__compat?.support,
+          subfeatureId.__compat?.support,
           browser,
         );
         if (feature_value === subfeature_value) {
@@ -207,7 +210,9 @@ export class ConsistencyChecker {
 
     for (const subfeature of subfeatures) {
       for (const browser of supportInParent) {
-        const subfeatureData = query(subfeature, data);
+        const subfeatureData = /** @type {InternalIdentifier} */ (
+          query(subfeature, data)
+        );
         if (
           subfeatureData.__compat?.support[browser] != undefined &&
           this.isVersionAddedGreater(
@@ -441,7 +446,7 @@ export default {
    */
   check: (logger, { data }) => {
     const checker = new ConsistencyChecker();
-    const allErrors = checker.check(data);
+    const allErrors = checker.check(/** @type {InternalCompatData} */ (data));
 
     for (const { path, errors } of allErrors) {
       for (const { type, browser, parentValue, subfeatures } of errors) {

@@ -7,7 +7,6 @@ import { fixStatusValue } from './status.js';
 
 /** @import {InternalIdentifier} from '../../types/internal.js' */
 
-/** @type {{ name: string; input: InternalIdentifier; output: InternalIdentifier }[]} */
 const tests = [
   {
     name: 'should unset experimental when feature is deprecated',
@@ -142,7 +141,9 @@ const tests = [
 describe('fixStatus', () => {
   for (const test of tests) {
     it(test.name, () => {
-      const result = fixStatusValue(test.input);
+      const result = fixStatusValue(
+        /** @type {InternalIdentifier} */ (test.input),
+      );
 
       assert.deepStrictEqual(result, test.output);
     });
