@@ -1,6 +1,14 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import type {
+  BrowserStatement,
+  InternalCompatStatement,
+  InternalIdentifier,
+  Browsers,
+} from './internal.js';
+import type { CompatData, CompatStatement, Identifier } from './public.js';
+
 export type * from './internal.js';
 
 export type DataType =
