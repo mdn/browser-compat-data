@@ -296,9 +296,9 @@ const writeTypeScript = async () => {
   const content = `/* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { InternalCompatData } from "./types.js";
+import { CompatData } from "./types.js";
 
-declare var bcd: InternalCompatData;
+declare var bcd: CompatData;
 export default bcd;
 export * from "./types.js";`;
 
