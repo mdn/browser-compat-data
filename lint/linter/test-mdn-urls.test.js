@@ -39,7 +39,7 @@ afterEach(() => {
 
 describe('test-mdn-urls', () => {
   describe('mdn_url_redirect', () => {
-    it('returns an issue when mdn_url points to a redirected page', () => {
+    it('flags redirected mdn_url', () => {
       mockInventory({
         redirects: {
           '/en-US/docs/Old/Page': '/en-US/docs/New/Page',
@@ -64,7 +64,7 @@ describe('test-mdn-urls', () => {
       );
     });
 
-    it('returns no redirect issue when the URL is not redirected', () => {
+    it('ignores non-redirected URL', () => {
       mockInventory({
         slugs: new Map([['web/api/foo', 'Web/API/Foo']]),
       });
@@ -81,7 +81,7 @@ describe('test-mdn-urls', () => {
   });
 
   describe('mdn_url_casing', () => {
-    it('returns an issue when the slug casing is wrong', () => {
+    it('flags wrong slug casing', () => {
       mockInventory({
         slugs: new Map([['web/api/foo', 'Web/API/Foo']]),
       });
@@ -121,7 +121,7 @@ describe('test-mdn-urls', () => {
   });
 
   describe('mdn_url_404', () => {
-    it('returns an issue when the slug does not exist', () => {
+    it('flags non-existent slug', () => {
       mockInventory();
       const issues = processData(
         {
@@ -137,7 +137,7 @@ describe('test-mdn-urls', () => {
   });
 
   describe('mdn_url_other_page', () => {
-    it('returns an issue when slugByPath maps to a different page', () => {
+    it('flags when slugByPath maps to different page', () => {
       mockInventory({
         slugs: new Map([['web/api/wrong', 'Web/API/Wrong']]),
         slugByPath: new Map([['api.Foo', 'Web/API/Correct']]),
@@ -157,7 +157,7 @@ describe('test-mdn-urls', () => {
       );
     });
 
-    it('does not flag when URL has a hash fragment', () => {
+    it('does not flag when URL has hash fragment', () => {
       mockInventory({
         slugs: new Map([['web/api/wrong', 'Web/API/Wrong']]),
         slugByPath: new Map([['api.Foo', 'Web/API/Correct']]),
@@ -191,7 +191,7 @@ describe('test-mdn-urls', () => {
   });
 
   describe('mdn_url_casing_hash', () => {
-    it('returns an issue when the hash has uppercase characters', () => {
+    it('flags uppercase hash characters', () => {
       mockInventory({
         slugs: new Map([['web/api/foo', 'Web/API/Foo']]),
       });
@@ -212,7 +212,7 @@ describe('test-mdn-urls', () => {
       );
     });
 
-    it('returns no issue when the hash is already lowercase', () => {
+    it('ignores lowercase hash', () => {
       mockInventory({
         slugs: new Map([['web/api/foo', 'Web/API/Foo']]),
       });
@@ -231,7 +231,7 @@ describe('test-mdn-urls', () => {
   });
 
   describe('mdn_url_new_page', () => {
-    it('returns an issue when no mdn_url is set but slugByPath has a match', () => {
+    it('flags missing mdn_url when slugByPath has match', () => {
       mockInventory({
         slugByPath: new Map([['api.Foo', 'Web/API/Foo']]),
       });
@@ -245,7 +245,7 @@ describe('test-mdn-urls', () => {
       );
     });
 
-    it('returns no issue when no mdn_url and no slugByPath match', () => {
+    it('ignores missing mdn_url when no slugByPath match', () => {
       mockInventory();
       const issues = processData(noUrl, 'api.Unknown');
       const matches = issues.filter((i) => i.ruleName === 'mdn_url_new_page');
@@ -254,7 +254,7 @@ describe('test-mdn-urls', () => {
   });
 
   describe('mdn_url_duplicate_ancestor', () => {
-    it('returns no issues when no ancestor has the same mdn_url', () => {
+    it('ignores different ancestor mdn_url', () => {
       mockInventory({
         slugs: new Map([
           ['web/api/foo', 'Web/API/Foo'],
@@ -279,7 +279,7 @@ describe('test-mdn-urls', () => {
       );
     });
 
-    it('returns an issue when mdn_url matches a direct parent', () => {
+    it('flags mdn_url matching direct parent', () => {
       mockInventory({
         slugs: new Map([['web/api/foo', 'Web/API/Foo']]),
       });
@@ -294,7 +294,7 @@ describe('test-mdn-urls', () => {
       assert.equal(dupes[0].expected, '');
     });
 
-    it('returns an issue when mdn_url matches a grandparent ancestor', () => {
+    it('flags mdn_url matching grandparent ancestor', () => {
       mockInventory({
         slugs: new Map([['web/api/foo', 'Web/API/Foo']]),
       });
@@ -311,7 +311,7 @@ describe('test-mdn-urls', () => {
       assert.equal(dupes.length, 1);
     });
 
-    it('returns no issues when ancestor has a different mdn_url', () => {
+    it('ignores ancestor with different mdn_url', () => {
       mockInventory({
         slugs: new Map([
           ['web/api/foo', 'Web/API/Foo'],
@@ -335,7 +335,7 @@ describe('test-mdn-urls', () => {
       assert.equal(dupes.length, 0);
     });
 
-    it('returns no issues for a top-level path with no ancestors', () => {
+    it('ignores top-level path with no ancestors', () => {
       mockInventory({
         slugs: new Map([['web/api', 'Web/API']]),
       });
@@ -352,7 +352,7 @@ describe('test-mdn-urls', () => {
       assert.equal(dupes.length, 0);
     });
 
-    it('returns only one issue even if multiple ancestors match', () => {
+    it('reports only one issue even if multiple ancestors match', () => {
       mockInventory({
         slugs: new Map([['web/api/foo', 'Web/API/Foo']]),
       });
