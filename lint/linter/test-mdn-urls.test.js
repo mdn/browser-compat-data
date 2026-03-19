@@ -9,13 +9,6 @@ import { inventory } from '../../utils/mdn-content-inventory.js';
 
 import { processData, urlsByPath } from './test-mdn-urls.js';
 
-/**
- * Create a minimal CompatStatement with the given mdn_url
- * @param {string} url The MDN URL
- * @returns {CompatStatement} The compat statement
- */
-const compat = (url) => /** @type {CompatStatement} */ ({ mdn_url: url });
-
 /** @type {CompatStatement} */
 const noUrl = /** @type {CompatStatement} */ ({});
 
@@ -52,7 +45,10 @@ describe('processData - mdn_url_redirect', () => {
       },
     });
     const issues = processData(
-      compat('https://developer.mozilla.org/docs/Old/Page'),
+      {
+        mdn_url: 'https://developer.mozilla.org/docs/Old/Page',
+        support: {},
+      },
       'some.feature',
     );
     const matches = issues.filter((i) => i.ruleName === 'mdn_url_redirect');
@@ -72,7 +68,10 @@ describe('processData - mdn_url_redirect', () => {
       slugs: new Map([['web/api/foo', 'Web/API/Foo']]),
     });
     const issues = processData(
-      compat('https://developer.mozilla.org/docs/Web/API/Foo'),
+      {
+        mdn_url: 'https://developer.mozilla.org/docs/Web/API/Foo',
+        support: {},
+      },
       'some.feature',
     );
     const matches = issues.filter((i) => i.ruleName === 'mdn_url_redirect');
@@ -86,7 +85,10 @@ describe('processData - mdn_url_casing', () => {
       slugs: new Map([['web/api/foo', 'Web/API/Foo']]),
     });
     const issues = processData(
-      compat('https://developer.mozilla.org/docs/Web/API/foo'),
+      {
+        mdn_url: 'https://developer.mozilla.org/docs/Web/API/foo',
+        support: {},
+      },
       'some.feature',
     );
     const matches = issues.filter((i) => i.ruleName === 'mdn_url_casing');
@@ -102,7 +104,10 @@ describe('processData - mdn_url_casing', () => {
       slugs: new Map([['web/api/foo', 'Web/API/Foo']]),
     });
     const issues = processData(
-      compat('https://developer.mozilla.org/docs/Web/API/foo#bar'),
+      {
+        mdn_url: 'https://developer.mozilla.org/docs/Web/API/foo#bar',
+        support: {},
+      },
       'some.feature',
     );
     const matches = issues.filter((i) => i.ruleName === 'mdn_url_casing');
@@ -118,7 +123,10 @@ describe('processData - mdn_url_404', () => {
   it('returns an issue when the slug does not exist', () => {
     mockInventory();
     const issues = processData(
-      compat('https://developer.mozilla.org/docs/Web/API/NoSuchPage'),
+      {
+        mdn_url: 'https://developer.mozilla.org/docs/Web/API/NoSuchPage',
+        support: {},
+      },
       'some.feature',
     );
     const matches = issues.filter((i) => i.ruleName === 'mdn_url_404');
@@ -134,7 +142,10 @@ describe('processData - mdn_url_other_page', () => {
       slugByPath: new Map([['api.Foo', 'Web/API/Correct']]),
     });
     const issues = processData(
-      compat('https://developer.mozilla.org/docs/Web/API/Wrong'),
+      {
+        mdn_url: 'https://developer.mozilla.org/docs/Web/API/Wrong',
+        support: {},
+      },
       'api.Foo',
     );
     const matches = issues.filter((i) => i.ruleName === 'mdn_url_other_page');
@@ -151,7 +162,10 @@ describe('processData - mdn_url_other_page', () => {
       slugByPath: new Map([['api.Foo', 'Web/API/Correct']]),
     });
     const issues = processData(
-      compat('https://developer.mozilla.org/docs/Web/API/Wrong#section'),
+      {
+        mdn_url: 'https://developer.mozilla.org/docs/Web/API/Wrong#section',
+        support: {},
+      },
       'api.Foo',
     );
     const matches = issues.filter((i) => i.ruleName === 'mdn_url_other_page');
@@ -164,7 +178,10 @@ describe('processData - mdn_url_other_page', () => {
       slugByPath: new Map([['api.Foo', 'Web/API/Foo']]),
     });
     const issues = processData(
-      compat('https://developer.mozilla.org/docs/Web/API/Foo'),
+      {
+        mdn_url: 'https://developer.mozilla.org/docs/Web/API/Foo',
+        support: {},
+      },
       'api.Foo',
     );
     const matches = issues.filter((i) => i.ruleName === 'mdn_url_other_page');
@@ -178,7 +195,10 @@ describe('processData - mdn_url_casing_hash', () => {
       slugs: new Map([['web/api/foo', 'Web/API/Foo']]),
     });
     const issues = processData(
-      compat('https://developer.mozilla.org/docs/Web/API/Foo#SomeSection'),
+      {
+        mdn_url: 'https://developer.mozilla.org/docs/Web/API/Foo#SomeSection',
+        support: {},
+      },
       'some.feature',
     );
     const matches = issues.filter((i) => i.ruleName === 'mdn_url_casing_hash');
@@ -194,7 +214,10 @@ describe('processData - mdn_url_casing_hash', () => {
       slugs: new Map([['web/api/foo', 'Web/API/Foo']]),
     });
     const issues = processData(
-      compat('https://developer.mozilla.org/docs/Web/API/Foo#somesection'),
+      {
+        mdn_url: 'https://developer.mozilla.org/docs/Web/API/Foo#somesection',
+        support: {},
+      },
       'some.feature',
     );
     const matches = issues.filter((i) => i.ruleName === 'mdn_url_casing_hash');
@@ -235,7 +258,10 @@ describe('processData - mdn_url_duplicate_ancestor', () => {
     });
     urlsByPath.set('api.Foo', 'https://developer.mozilla.org/docs/Web/API/Foo');
     const issues = processData(
-      compat('https://developer.mozilla.org/docs/Web/API/Foo/bar'),
+      {
+        mdn_url: 'https://developer.mozilla.org/docs/Web/API/Foo/bar',
+        support: {},
+      },
       'api.Foo.bar',
     );
     assert.equal(
@@ -250,7 +276,7 @@ describe('processData - mdn_url_duplicate_ancestor', () => {
     });
     const url = 'https://developer.mozilla.org/docs/Web/API/Foo';
     urlsByPath.set('api.Foo', url);
-    const issues = processData(compat(url), 'api.Foo.bar');
+    const issues = processData({ mdn_url: url, support: {} }, 'api.Foo.bar');
     const dupes = issues.filter(
       (i) => i.ruleName === 'mdn_url_duplicate_ancestor',
     );
@@ -266,7 +292,10 @@ describe('processData - mdn_url_duplicate_ancestor', () => {
     const url = 'https://developer.mozilla.org/docs/Web/API/Foo';
     urlsByPath.set('api', 'https://developer.mozilla.org/docs/Web/API');
     urlsByPath.set('api.Foo', url);
-    const issues = processData(compat(url), 'api.Foo.bar.baz');
+    const issues = processData(
+      { mdn_url: url, support: {} },
+      'api.Foo.bar.baz',
+    );
     const dupes = issues.filter(
       (i) => i.ruleName === 'mdn_url_duplicate_ancestor',
     );
@@ -282,7 +311,10 @@ describe('processData - mdn_url_duplicate_ancestor', () => {
     });
     urlsByPath.set('api.Foo', 'https://developer.mozilla.org/docs/Web/API/Foo');
     const issues = processData(
-      compat('https://developer.mozilla.org/docs/Web/API/Foo/bar'),
+      {
+        mdn_url: 'https://developer.mozilla.org/docs/Web/API/Foo/bar',
+        support: {},
+      },
       'api.Foo.bar',
     );
     const dupes = issues.filter(
@@ -296,7 +328,10 @@ describe('processData - mdn_url_duplicate_ancestor', () => {
       slugs: new Map([['web/api', 'Web/API']]),
     });
     const issues = processData(
-      compat('https://developer.mozilla.org/docs/Web/API'),
+      {
+        mdn_url: 'https://developer.mozilla.org/docs/Web/API',
+        support: {},
+      },
       'api',
     );
     const dupes = issues.filter(
@@ -312,7 +347,7 @@ describe('processData - mdn_url_duplicate_ancestor', () => {
     const url = 'https://developer.mozilla.org/docs/Web/API/Foo';
     urlsByPath.set('api', url);
     urlsByPath.set('api.Foo', url);
-    const issues = processData(compat(url), 'api.Foo.bar');
+    const issues = processData({ mdn_url: url, support: {} }, 'api.Foo.bar');
     const dupes = issues.filter(
       (i) => i.ruleName === 'mdn_url_duplicate_ancestor',
     );
