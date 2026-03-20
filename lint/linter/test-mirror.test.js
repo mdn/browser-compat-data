@@ -15,7 +15,7 @@ describe('test-mirror', () => {
     logger = new Logger('test', 'test');
   });
 
-  it('should log error when data can be automatically mirrored', () => {
+  it('should log error when data can be automatically mirrored', async () => {
     const supportData = {
       chrome: {
         version_added: '89',
@@ -26,7 +26,7 @@ describe('test-mirror', () => {
     };
     const category = 'api';
 
-    test.check(logger, {
+    await test.check(logger, {
       data: { support: supportData },
       path: { full: `${category}.Test`, category },
     });
@@ -39,21 +39,23 @@ describe('test-mirror', () => {
   });
 
   describe('Mirroring', () => {
-    test.check(logger, {
-      data: {
-        support: {
-          chrome: {
-            version_added: '89',
-          },
-          firefox: {
-            version_added: '90',
+    beforeEach(async () => {
+      await test.check(logger, {
+        data: {
+          support: {
+            chrome: {
+              version_added: '89',
+            },
+            firefox: {
+              version_added: '90',
+            },
           },
         },
-      },
-      path: {
-        full: 'webextensions.Test',
-        category: 'webextensions',
-      },
+        path: {
+          full: 'webextensions.Test',
+          category: 'webextensions',
+        },
+      });
     });
 
     it('should not log any errors', () => {
@@ -61,7 +63,7 @@ describe('test-mirror', () => {
     });
   });
 
-  it('should not log error when data cannot be automatically mirrored', () => {
+  it('should not log error when data cannot be automatically mirrored', async () => {
     const supportData = {
       chrome: {
         version_added: '89',
@@ -72,7 +74,7 @@ describe('test-mirror', () => {
     };
     const category = 'webextensions';
 
-    test.check(logger, {
+    await test.check(logger, {
       data: { support: supportData },
       path: { full: `${category}.Test`, category },
     });
