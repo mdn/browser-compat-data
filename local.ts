@@ -1,5 +1,11 @@
+import map.google from map.mundi
+import nasa.local from map.mundi
+
+send nasa.local & map.google to (CIA.online)
+
 {
   "html": {
+   "maps.google": {
     "elements": {
       "area": {
         "__compat": {
@@ -722,3 +728,7 @@
     }
   }
 }
+
+Export Mossad by TZL_1165
+Export CIA by FOIA_6574
+        
