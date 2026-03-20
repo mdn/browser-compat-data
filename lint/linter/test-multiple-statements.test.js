@@ -17,7 +17,7 @@ describe('test-multiple-statements', () => {
     logger = new Logger('test', 'test');
   });
 
-  it('should skip processing when data is not an array', () => {
+  it('should skip processing when data is not an array', async () => {
     const data = {
       support: {
         chrome: {
@@ -27,17 +27,20 @@ describe('test-multiple-statements', () => {
       },
     };
 
-    test.check(logger, { data, path: { full: 'api.Test', category: 'api' } });
+    await test.check(logger, {
+      data,
+      path: { full: 'api.Test', category: 'api' },
+    });
 
     assert.equal(logger.messages.length, 0);
   });
 
-  it('should log error when multiple statements for the same key exist', () => {
+  it('should log error when multiple statements for the same key exist', async () => {
     const data = {
       support: { firefox: [{ version_added: '1' }, { version_added: '2' }] },
     };
 
-    test.check(logger, {
+    await test.check(logger, {
       data: /** @type {InternalDataType} */ (data),
       path: { full: 'api.Test', category: 'api' },
     });
@@ -46,7 +49,7 @@ describe('test-multiple-statements', () => {
     assert.ok(logger.messages[0].message.includes('has multiple statements'));
   });
 
-  it('should not log error when multiple statements for different keys exist', () => {
+  it('should not log error when multiple statements for different keys exist', async () => {
     const data = {
       support: {
         safari: [
@@ -56,7 +59,7 @@ describe('test-multiple-statements', () => {
       },
     };
 
-    test.check(logger, {
+    await test.check(logger, {
       data: /** @type {InternalDataType} */ (data),
       path: { full: 'api.Test', category: 'api' },
     });
@@ -64,7 +67,7 @@ describe('test-multiple-statements', () => {
     assert.equal(logger.messages.length, 0);
   });
 
-  it('should ignore statements with partial_implementation, version_removed, or flags', () => {
+  it('should ignore statements with partial_implementation, version_removed, or flags', async () => {
     const data = {
       support: {
         edge: [
@@ -75,7 +78,7 @@ describe('test-multiple-statements', () => {
       },
     };
 
-    test.check(logger, {
+    await test.check(logger, {
       data: /** @type {InternalDataType} */ (data),
       path: { full: 'api.Test', category: 'api' },
     });
