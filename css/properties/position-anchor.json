@@ -9,9 +9,17 @@
             "web-features:anchor-positioning"
           ],
           "support": {
-            "chrome": {
-              "version_added": "125"
-            },
+            "chrome": [
+              {
+                "version_added": "144"
+              },
+              {
+                "version_added": "125",
+                "version_removed": "144",
+                "partial_implementation": true,
+                "notes": "The initial value is `normal` instead of `none` (see [bug 460415950](https://crbug.com/460415950))."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -22,7 +30,9 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "26"
+              "version_added": "26",
+              "partial_implementation": true,
+              "notes": "The initial value is `normal` instead of `none` (see [bug 308981](https://webkit.org/b/308981))."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -75,6 +85,7 @@
         "none": {
           "__compat": {
             "description": "`none` value",
+            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-anchor-none",
             "tags": [
               "web-features:anchor-positioning"
             ],
@@ -101,7 +112,7 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": false,
+              "standard_track": true,
               "deprecated": false
             }
           }
