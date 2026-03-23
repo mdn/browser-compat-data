@@ -32,20 +32,11 @@ const hasCompatData = (obj) => {
  */
 export const orderFeatures = (_, value) => {
   if (value instanceof Object && hasCompatData(value)) {
-    value = Object.keys(value)
-      .sort(compareFeatures)
-      .reduce(
-        /**
-         * @param {Identifier} result
-         * @param {string} key
-         * @returns {Identifier}
-         */
-        (result, key) => {
-          result[key] = value[key];
-          return result;
-        },
-        /** @type {Identifier} */ ({}),
-      );
+    value = /** @type {Identifier} */ (
+      Object.fromEntries(
+        Object.entries(value).sort(([a], [b]) => compareFeatures(a, b)),
+      )
+    );
   }
   return value;
 };
