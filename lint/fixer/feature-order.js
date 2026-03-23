@@ -16,7 +16,11 @@ import compareFeatures from '../../scripts/lib/compare-features.js';
  * @returns {Identifier} The new value
  */
 export const orderFeatures = (_, value) => {
-  if (value instanceof Object && '__compat' in value) {
+  if (
+    value instanceof Object &&
+    ('__compat' in value ||
+      Object.values(value).some((v) => v instanceof Object && '__compat' in v))
+  ) {
     value = Object.keys(value)
       .sort(compareFeatures)
       .reduce(
