@@ -27,6 +27,27 @@ describe('fix -> feature order', () => {
     assert.deepStrictEqual(keys, ['__compat', 'alpha', 'zebra']);
   });
 
+  it('sorts two levels of nested namespace containers', () => {
+    const input = JSON.stringify({
+      svg: {
+        elements: {
+          zebra_group: {
+            zebra: { __compat: compat },
+            alpha: { __compat: compat },
+          },
+          alpha_group: {
+            zebra: { __compat: compat },
+            alpha: { __compat: compat },
+          },
+        },
+      },
+    });
+
+    const result = JSON.parse(fixFeatureOrder('svg/elements.json', input));
+    const topKeys = Object.keys(result.svg.elements);
+    assert.deepStrictEqual(topKeys, ['alpha_group', 'zebra_group']);
+  });
+
   it('sorts subfeatures of a namespace container that has no __compat', () => {
     const input = JSON.stringify({
       svg: {
