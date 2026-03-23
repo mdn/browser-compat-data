@@ -235,6 +235,53 @@
               "standard_track": true,
               "deprecated": false
             }
+          },
+          "more_than_two_colors": {
+            "__compat": {
+              "description": "color-mix() with one or more color arguments",
+              "spec_url": "https://drafts.csswg.org/css-color-5/#color-mix",
+              "tags": [
+                "web-features:color"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "preview",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.color-mix-multi-color.enabled",
+                      "value_to_set": "true"
+                    }
+                  ],
+                  "partial_implementation": true,
+                  "notes": "Does not support a single color argument"
+                },
+                "firefox_android": "mirror",
+                "ie": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "contrast-color": {
