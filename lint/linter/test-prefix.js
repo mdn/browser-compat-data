@@ -5,11 +5,11 @@ import { styleText } from 'node:util';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement} from '../../types/index.js' */
 
 /**
  * Process the data for prefix errors
- * @param {CompatStatement} data The data to test
+ * @param {InternalCompatStatement} data The data to test
  * @param {string} category The category the data belongs to
  * @param {string} feature The full feature path
  * @param {Logger} logger The logger to output errors to
@@ -51,7 +51,7 @@ const processData = (data, category, feature, logger) => {
     const supportStatements = Array.isArray(support) ? support : [support];
 
     for (const statement of supportStatements) {
-      if (!statement) {
+      if (typeof statement !== 'object') {
         continue;
       }
       if (statement.prefix && statement.alternative_name) {
@@ -98,6 +98,11 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data, path: { category, full } }) => {
-    processData(/** @type {CompatStatement} */ (data), category, full, logger);
+    processData(
+      /** @type {InternalCompatStatement} */ (data),
+      category,
+      full,
+      logger,
+    );
   },
 };

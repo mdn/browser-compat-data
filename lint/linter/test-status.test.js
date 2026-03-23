@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement} from '../../types/index.js' */
 
 import assert from 'node:assert/strict';
 
@@ -14,7 +14,7 @@ import test, {
 
 describe('checkExperimental', () => {
   it('should return true when data is not experimental', () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       status: {
         experimental: false,
@@ -28,7 +28,7 @@ describe('checkExperimental', () => {
   });
 
   it('should return true when data is experimental but supported by only one engine', () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       status: {
         experimental: true,
@@ -49,7 +49,7 @@ describe('checkExperimental', () => {
   });
 
   it('should return false when data is experimental and supported by more than one engine', () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       status: {
         experimental: true,
@@ -70,7 +70,7 @@ describe('checkExperimental', () => {
   });
 
   it('should ignore non-relevant browsers when determining experimental status', () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       status: {
         experimental: true,
@@ -104,7 +104,7 @@ describe('checkStatus', () => {
   });
 
   it('should not log error when status is not defined', async () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       status: undefined,
       support: {},
@@ -119,7 +119,7 @@ describe('checkStatus', () => {
   });
 
   it('should log error when category is webextensions and status is defined', async () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       status: {
         experimental: false,
@@ -139,7 +139,7 @@ describe('checkStatus', () => {
   });
 
   it('should log error when status is both experimental and deprecated', async () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       status: {
         experimental: true,
@@ -159,7 +159,7 @@ describe('checkStatus', () => {
   });
 
   it('should log error when status is non-standard but has a spec_url', async () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       status: {
         experimental: false,
@@ -180,7 +180,7 @@ describe('checkStatus', () => {
   });
 
   it('should log error when status is standard_track but missing spec_url', async () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       status: {
         experimental: false,
@@ -200,7 +200,7 @@ describe('checkStatus', () => {
   });
 
   it('should log error when status is experimental and supported by more than one engine', async () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       status: {
         experimental: true,
@@ -236,7 +236,7 @@ describe('checkStatus', () => {
     });
 
     it('should not log error for features in exception list missing spec_url', async () => {
-      /** @type {CompatStatement} */
+      /** @type {InternalCompatStatement} */
       const data = {
         status: {
           experimental: false,
@@ -257,7 +257,7 @@ describe('checkStatus', () => {
     });
 
     it('should log warning when exception no longer applies (has spec_url)', async () => {
-      /** @type {CompatStatement} */
+      /** @type {InternalCompatStatement} */
       const data = {
         status: {
           experimental: false,
@@ -281,7 +281,7 @@ describe('checkStatus', () => {
     });
 
     it('should log warning when exception no longer applies (standard_track false)', async () => {
-      /** @type {CompatStatement} */
+      /** @type {InternalCompatStatement} */
       const data = {
         status: {
           experimental: false,

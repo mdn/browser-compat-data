@@ -7,11 +7,11 @@ import walk from '../../utils/walk.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {CompatData, Identifier} from '../../types/types.js' */
+/** @import {InternalCompatData, InternalIdentifier} from '../../types/index.js' */
 
 /**
  * Checks for correct inheritance of statuses.
- * @param {CompatData} data The data to test
+ * @param {InternalCompatData} data The data to test
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
@@ -21,7 +21,7 @@ const checkStatusInheritance = (data, logger) => {
     if (feature.compat.status?.deprecated === true) {
       for (const subfeature of walk(
         undefined,
-        /** @type {Identifier} */ (feature.data),
+        /** @type {InternalIdentifier} */ (feature.data),
       )) {
         if (subfeature.compat.status?.deprecated === false) {
           logger.error(
@@ -38,7 +38,7 @@ const checkStatusInheritance = (data, logger) => {
     if (feature.compat.status?.experimental === true) {
       for (const subfeature of walk(
         undefined,
-        /** @type {Identifier} */ (feature.data),
+        /** @type {InternalIdentifier} */ (feature.data),
       )) {
         if (
           subfeature.compat.status?.experimental === false &&
@@ -58,7 +58,7 @@ const checkStatusInheritance = (data, logger) => {
     if (feature.compat.status?.standard_track === false) {
       for (const subfeature of walk(
         undefined,
-        /** @type {Identifier} */ (feature.data),
+        /** @type {InternalIdentifier} */ (feature.data),
       )) {
         if (subfeature.compat.status?.standard_track === true) {
           logger.error(
@@ -85,6 +85,6 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data }) => {
-    checkStatusInheritance(/** @type {CompatData} */ (data), logger);
+    checkStatusInheritance(/** @type {InternalCompatData} */ (data), logger);
   },
 };

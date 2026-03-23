@@ -3,7 +3,7 @@
 
 import compareFeatures from '../../scripts/lib/compare-features.js';
 
-/** @import {Identifier} from '../../types/types.js' */
+/** @import {InternalIdentifier} from '../../types/index.js' */
 
 /**
  * Return a new feature object whose first-level properties have been
@@ -12,8 +12,8 @@ import compareFeatures from '../../scripts/lib/compare-features.js';
  * property ordering, which is insertion order for non-integer keys
  * (which is our case).
  * @param {string} _ The key in the object
- * @param {Identifier} value The value of the key
- * @returns {Identifier} The new value
+ * @param {InternalIdentifier} value The value of the key
+ * @returns {InternalIdentifier} The new value
  */
 export const orderFeatures = (_, value) => {
   if (value instanceof Object && '__compat' in value) {
@@ -21,15 +21,15 @@ export const orderFeatures = (_, value) => {
       .sort(compareFeatures)
       .reduce(
         /**
-         * @param {Identifier} result
+         * @param {InternalIdentifier} result
          * @param {string} key
-         * @returns {Identifier}
+         * @returns {InternalIdentifier}
          */
         (result, key) => {
           result[key] = value[key];
           return result;
         },
-        /** @type {Identifier} */ ({}),
+        /** @type {InternalIdentifier} */ ({}),
       );
   }
   return value;

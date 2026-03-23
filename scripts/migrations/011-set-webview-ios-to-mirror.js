@@ -1,8 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {InternalSupportBlock} from '../../types/index.js' */
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement, InternalSupportBlock} from '../../types/index.js' */
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -18,8 +17,8 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 /**
  * Check to see if the key is __compat and set 'webview_ios' to 'mirror'
  * @param {string} key The key in the object
- * @param {CompatStatement} value The value of the key
- * @returns {CompatStatement} The new value with 'webview_ios' set to 'mirror'
+ * @param {InternalCompatStatement} value The value of the key
+ * @returns {InternalCompatStatement} The new value with 'webview_ios' set to 'mirror'
  */
 export const doSetWebViewIOSToMirror = (key, value) => {
   if (key === '__compat') {

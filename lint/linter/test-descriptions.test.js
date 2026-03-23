@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement} from '../../types/index.js' */
 /** @import {DescriptionError} from './test-descriptions.js' */
 
 import assert from 'node:assert/strict';
@@ -12,7 +12,7 @@ describe('test-descriptions', () => {
   describe('API data', () => {
     it('should ignore anything that is not an interface subfeature', () => {
       const path = 'api.Interface.feature.subfeature';
-      /** @type {CompatStatement} */
+      /** @type {InternalCompatStatement} */
       const data = {
         support: {},
       };
@@ -23,7 +23,7 @@ describe('test-descriptions', () => {
 
     it('should check description for constructor', () => {
       const path = 'api.Interface.Interface';
-      /** @type {CompatStatement} */
+      /** @type {InternalCompatStatement} */
       const data = {
         description: '',
         support: {},
@@ -39,7 +39,7 @@ describe('test-descriptions', () => {
 
     it('should check description for event', () => {
       const path = 'api.Interface.click_event';
-      /** @type {CompatStatement} */
+      /** @type {InternalCompatStatement} */
       const data = {
         description: '',
         support: {},
@@ -55,7 +55,7 @@ describe('test-descriptions', () => {
 
     it('should check description for permission', () => {
       const path = 'api.Interface.geolocation_permission';
-      /** @type {CompatStatement} */
+      /** @type {InternalCompatStatement} */
       const data = {
         description: '',
         support: {},
@@ -71,7 +71,7 @@ describe('test-descriptions', () => {
 
     it('should check description for secure context required', () => {
       const path = 'api.Interface.secure_context_required';
-      /** @type {CompatStatement} */
+      /** @type {InternalCompatStatement} */
       const data = {
         description: '',
         support: {},
@@ -87,7 +87,7 @@ describe('test-descriptions', () => {
 
     it('should check description for worker support', () => {
       const path = 'api.Interface.worker_support';
-      /** @type {CompatStatement} */
+      /** @type {InternalCompatStatement} */
       const data = {
         description: '',
         support: {},
@@ -103,7 +103,7 @@ describe('test-descriptions', () => {
 
     it('should check for redundant description', () => {
       const path = 'css.properties.width.auto';
-      /** @type {CompatStatement} */
+      /** @type {InternalCompatStatement} */
       const data = {
         description: '`auto`',
         support: {},

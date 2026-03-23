@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {Identifier, BrowserStatement} from '../types/types.js' */
+/** @import {InternalIdentifier, BrowserStatement} from '../types/index.js' */
 
 /**
  * Join a path array together
@@ -13,7 +13,7 @@ export const joinPath = (...args) => Array.from(args).filter(Boolean).join('.');
 /**
  * Check if an object is a BCD feature
  * @param {*} obj The object to check
- * @returns {obj is Identifier} Whether the object is a BCD feature
+ * @returns {obj is InternalIdentifier} Whether the object is a BCD feature
  */
 export const isFeature = (obj) => '__compat' in obj;
 

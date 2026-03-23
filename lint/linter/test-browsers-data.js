@@ -8,7 +8,7 @@ const { browsers } = bcd;
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {BrowserStatement, BrowserName} from '../../types/types.js' */
+/** @import {BrowserStatement, BrowserName} from '../../types/index.js' */
 
 /**
  * Process and test the data
