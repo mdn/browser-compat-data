@@ -11,7 +11,8 @@
           "support": {
             "chrome": [
               {
-                "version_added": "129"
+                "version_added": "129",
+                "notes": "The `position-area` property changes the position of absolutely positioned elements that do not find an anchor. See [bug 388575663](https://crbug.com/388575663)."
               },
               {
                 "alternative_name": "inset-area",
@@ -213,6 +214,47 @@
               "opera_android": "mirror",
               "safari": {
                 "version_added": "26"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "disables_auto_margins_and_insets": {
+          "__compat": {
+            "description": "`position-area` resolves `margin: auto` and `inset: auto` to 0",
+            "spec_url": "https://drafts.csswg.org/css-anchor-position/#:~:text=available%0Afor%20positioning.-,the%20used%20value%20of%20any%20auto%20inset%20properties%20and%20auto%20margin%20properties%20resolves%20to%200.,-The%20normal%20value",
+            "tags": [
+              "web-features:anchor-positioning"
+            ],
+            "support": {
+              "chrome": [
+                {
+                  "version_added": "143"
+                },
+                {
+                  "version_added": "125",
+                  "version_removed": "130"
+                }
+              ],
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "148"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26.2"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
