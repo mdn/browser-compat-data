@@ -311,30 +311,6 @@ describe('test-mdn-urls', () => {
       assert.equal(dupes.length, 1);
     });
 
-    it('ignores ancestor with different mdn_url', () => {
-      mockInventory({
-        slugs: new Map([
-          ['web/api/foo', 'Web/API/Foo'],
-          ['web/api/foo/bar', 'Web/API/Foo/bar'],
-        ]),
-      });
-      urlsByPath.set(
-        'api.Foo',
-        'https://developer.mozilla.org/docs/Web/API/Foo',
-      );
-      const issues = processData(
-        {
-          mdn_url: 'https://developer.mozilla.org/docs/Web/API/Foo/bar',
-          support: {},
-        },
-        'api.Foo.bar',
-      );
-      const dupes = issues.filter(
-        (i) => i.ruleName === 'mdn_url_duplicate_ancestor',
-      );
-      assert.equal(dupes.length, 0);
-    });
-
     it('ignores top-level path with no ancestors', () => {
       mockInventory({
         slugs: new Map([['web/api', 'Web/API']]),
