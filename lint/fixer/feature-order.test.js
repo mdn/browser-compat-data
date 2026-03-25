@@ -75,4 +75,22 @@ describe('fix -> feature order', () => {
     const keys = Object.keys(result.svg.global_attributes);
     assert.deepStrictEqual(keys, ['alpha', 'zebra']);
   });
+
+  it('returns input unchanged for browsers/ files', () => {
+    const input = JSON.stringify({
+      browsers: {
+        firefox: {
+          name: 'Firefox',
+          type: 'desktop',
+          preview_name: 'Nightly',
+          pref_url: 'about:config',
+          accepts_flags: true,
+          accepts_webextensions: true,
+        },
+      },
+    });
+
+    const result = fixFeatureOrder('path/to/browsers/firefox.json', input);
+    assert.strictEqual(result, input);
+  });
 });
