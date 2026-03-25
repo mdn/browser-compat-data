@@ -44,8 +44,19 @@ describe('fix -> feature order', () => {
     });
 
     const result = JSON.parse(fixFeatureOrder('svg/elements.json', input));
-    const topKeys = Object.keys(result.svg.elements);
-    assert.deepStrictEqual(topKeys, ['alpha_group', 'zebra_group']);
+    const { elements } = result.svg;
+    assert.deepStrictEqual(Object.keys(elements), [
+      'alpha_group',
+      'zebra_group',
+    ]);
+    assert.deepStrictEqual(Object.keys(elements.alpha_group), [
+      'alpha',
+      'zebra',
+    ]);
+    assert.deepStrictEqual(Object.keys(elements.zebra_group), [
+      'alpha',
+      'zebra',
+    ]);
   });
 
   it('sorts subfeatures of a namespace container that has no __compat', () => {
