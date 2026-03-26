@@ -328,7 +328,14 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
+                "version_added": "preview",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.style-queries.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
                 "impl_url": "https://bugzil.la/1795622"
               },
               "firefox_android": "mirror",

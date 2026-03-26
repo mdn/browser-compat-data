@@ -1,5 +1,27 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.3.8](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.8)
+
+March 20, 2026
+
+### Additions
+
+- `api.HTMLMediaElement.playbackRate.negative_values` ([#29253](https://github.com/mdn/browser-compat-data/pull/29253))
+- `api.VideoFrame.VideoFrame.metadata_option` ([#29298](https://github.com/mdn/browser-compat-data/pull/29298))
+- `browsers.bun.releases.1.3.11` ([#29291](https://github.com/mdn/browser-compat-data/pull/29291))
+- `browsers.edge.releases.149` ([#29263](https://github.com/mdn/browser-compat-data/pull/29263))
+- `css.properties.anchor-name.position_after_layout` ([#29282](https://github.com/mdn/browser-compat-data/pull/29282))
+- `css.properties.letter-spacing.percentages` ([#29200](https://github.com/mdn/browser-compat-data/pull/29200))
+- `css.properties.position-area.disables_auto_margins_and_insets` ([#29280](https://github.com/mdn/browser-compat-data/pull/29280))
+- `webdriver.bidi.network.disownData.dataType_parameter.request` ([#29275](https://github.com/mdn/browser-compat-data/pull/29275))
+
+### Statistics
+
+- 10 contributors have changed 50 files with 926 additions and 295 deletions in 31 commits ([`v7.3.7...v7.3.8`](https://github.com/mdn/browser-compat-data/compare/v7.3.7...v7.3.8))
+- 19,510 total features
+- 1,234 total contributors
+- 5,616 total stargazers
+
 ## [v7.3.7](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.7)
 
 March 13, 2026
