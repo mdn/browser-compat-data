@@ -69,4 +69,25 @@ describe('test-browsers-presence', () => {
     });
     assert.equal(logger.messages.length, 1);
   });
+
+  it('should log an error for unnecessary ie: { version_added: false }', async () => {
+    data.support.ie = { version_added: false };
+
+    await test.check(logger, {
+      data,
+      path: { full: `${category}.Test`, category },
+    });
+    assert.equal(logger.messages.length, 1);
+    assert.ok(logger.messages[0].message.includes('ie'));
+  });
+
+  it('should not log an error for ie with actual support data', async () => {
+    data.support.ie = { version_added: '11' };
+
+    await test.check(logger, {
+      data,
+      path: { full: `${category}.Test`, category },
+    });
+    assert.equal(logger.messages.length, 0);
+  });
 });
