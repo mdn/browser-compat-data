@@ -19,7 +19,7 @@ describe('test-browsers-data', () => {
     logger = new Logger('test', 'test');
   });
 
-  it('should log an error if a browser has multiple current releases', () => {
+  it('should log an error if a browser has multiple current releases', async () => {
     const browser = 'nodejs';
     /** @type {BrowserStatement} */
     const data = {
@@ -39,14 +39,14 @@ describe('test-browsers-data', () => {
       },
     };
 
-    test.check(logger, {
+    await test.check(logger, {
       data,
       path: { full: `${category}.${browser}`, category, browser },
     });
     assert.equal(logger.messages.length, 1);
   });
 
-  it('should log an error if a browser has multiple nightly releases', () => {
+  it('should log an error if a browser has multiple nightly releases', async () => {
     const browser = 'firefox';
     /** @type {BrowserStatement} */
     const data = {
@@ -59,14 +59,14 @@ describe('test-browsers-data', () => {
         2: { status: 'nightly' },
       },
     };
-    test.check(logger, {
+    await test.check(logger, {
       data,
       path: { full: `${category}.${browser}`, category, browser },
     });
     assert.equal(logger.messages.length, 1);
   });
 
-  it('should not log an error if a server engine has multiple nightly releases', () => {
+  it('should not log an error if a server engine has multiple nightly releases', async () => {
     const browser = 'nodejs';
     /** @type {BrowserStatement} */
     const data = {
@@ -79,14 +79,14 @@ describe('test-browsers-data', () => {
         2: { status: 'nightly' },
       },
     };
-    test.check(logger, {
+    await test.check(logger, {
       data,
       path: { full: `${category}.${browser}`, category, browser },
     });
     assert.equal(logger.messages.length, 1);
   });
 
-  it('should log an error if the upstream for a browser is set to itself', () => {
+  it('should log an error if the upstream for a browser is set to itself', async () => {
     const browser = 'safari_ios';
     /** @type {BrowserStatement} */
     const data = {
@@ -98,14 +98,14 @@ describe('test-browsers-data', () => {
       releases: {},
     };
 
-    test.check(logger, {
+    await test.check(logger, {
       data,
       path: { full: `${category}.${browser}`, category, browser },
     });
     assert.equal(logger.messages.length, 1);
   });
 
-  it('should log an error if the upstream for a browser is an unknown browser', () => {
+  it('should log an error if the upstream for a browser is an unknown browser', async () => {
     const browser = 'safari_ios';
     /** @type {BrowserStatement} */
     const data = {
@@ -117,14 +117,14 @@ describe('test-browsers-data', () => {
       releases: {},
     };
 
-    test.check(logger, {
+    await test.check(logger, {
       data,
       path: { full: `${category}.${browser}`, category, browser },
     });
     assert.equal(logger.messages.length, 1);
   });
 
-  it('should log an error if a retired or current release has no release date', () => {
+  it('should log an error if a retired or current release has no release date', async () => {
     const browser = 'opera';
     /** @type {BrowserStatement} */
     const data = {
@@ -147,7 +147,7 @@ describe('test-browsers-data', () => {
         },
       },
     };
-    test.check(logger, {
+    await test.check(logger, {
       data,
       path: { full: `${category}.${browser}`, category, browser },
     });

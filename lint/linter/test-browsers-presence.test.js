@@ -39,25 +39,55 @@ describe('test-browsers-presence', () => {
     category = 'api';
   });
 
-  it('should log an error if a browser is not defined in BCD', () => {
+  it('should log an error if a browser is not defined in BCD', async () => {
     data.support['unknownBrowser'] = { version_added: '1' };
 
-    test.check(logger, { data, path: { full: `${category}.Test`, category } });
+    await test.check(logger, {
+      data,
+      path: { full: `${category}.Test`, category },
+    });
     assert.equal(logger.messages.length, 2);
   });
 
-  it('should log an error if a browser is invalid for the category', () => {
+  it('should log an error if a browser is invalid for the category', async () => {
     category = 'webextensions';
     data.support['nodejs'] = { version_added: '1' };
 
-    test.check(logger, { data, path: { full: `${category}.Test`, category } });
+    await test.check(logger, {
+      data,
+      path: { full: `${category}.Test`, category },
+    });
     assert.equal(logger.messages.length, 1);
   });
 
-  it('should log an error if a required browser is missing', () => {
+  it('should log an error if a required browser is missing', async () => {
     delete data.support.chrome;
 
-    test.check(logger, { data, path: { full: `${category}.Test`, category } });
+    await test.check(logger, {
+      data,
+      path: { full: `${category}.Test`, category },
+    });
     assert.equal(logger.messages.length, 1);
+  });
+
+  it('should log an error for unnecessary ie: { version_added: false }', async () => {
+    data.support.ie = { version_added: false };
+
+    await test.check(logger, {
+      data,
+      path: { full: `${category}.Test`, category },
+    });
+    assert.equal(logger.messages.length, 1);
+    assert.ok(logger.messages[0].message.includes('ie'));
+  });
+
+  it('should not log an error for ie with actual support data', async () => {
+    data.support.ie = { version_added: '11' };
+
+    await test.check(logger, {
+      data,
+      path: { full: `${category}.Test`, category },
+    });
+    assert.equal(logger.messages.length, 0);
   });
 });
