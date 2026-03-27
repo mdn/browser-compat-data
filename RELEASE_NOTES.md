@@ -1,5 +1,47 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.9)
+
+March 27, 2026
+
+### Removals
+
+- `css.properties.-webkit-margin-after` ([#29322](https://github.com/mdn/browser-compat-data/pull/29322))
+- `css.properties.-webkit-margin-before` ([#29322](https://github.com/mdn/browser-compat-data/pull/29322))
+
+### Additions
+
+- `api.CookieStore.set.maxAge_option` ([#29197](https://github.com/mdn/browser-compat-data/pull/29197))
+- `api.CSSFontFaceDescriptors.ascent-override` ([#29352](https://github.com/mdn/browser-compat-data/pull/29352))
+- `api.CSSFontFaceDescriptors.ascentOverride` ([#29352](https://github.com/mdn/browser-compat-data/pull/29352))
+- `api.CSSFontFaceDescriptors.descent-override` ([#29352](https://github.com/mdn/browser-compat-data/pull/29352))
+- `api.CSSFontFaceDescriptors.descentOverride` ([#29352](https://github.com/mdn/browser-compat-data/pull/29352))
+- `api.CSSFontFaceDescriptors.font-language-override` ([#29352](https://github.com/mdn/browser-compat-data/pull/29352))
+- `api.CSSFontFaceDescriptors.font-variation-settings` ([#29352](https://github.com/mdn/browser-compat-data/pull/29352))
+- `api.CSSFontFaceDescriptors.fontLanguageOverride` ([#29352](https://github.com/mdn/browser-compat-data/pull/29352))
+- `api.CSSFontFaceDescriptors.fontVariationSettings` ([#29352](https://github.com/mdn/browser-compat-data/pull/29352))
+- `api.CSSFontFaceDescriptors.line-gap-override` ([#29352](https://github.com/mdn/browser-compat-data/pull/29352))
+- `api.CSSFontFaceDescriptors.lineGapOverride` ([#29352](https://github.com/mdn/browser-compat-data/pull/29352))
+- `api.Document.createElement.options_parameter.customElementRegistry_option` ([#29216](https://github.com/mdn/browser-compat-data/pull/29216))
+- `api.Document.createElement.options_parameter.options_is_parameter` ([#29216](https://github.com/mdn/browser-compat-data/pull/29216))
+- `api.Document.createElementNS.options_parameter.customElementRegistry_option` ([#29216](https://github.com/mdn/browser-compat-data/pull/29216))
+- `api.Document.createElementNS.options_parameter.options_is_parameter` ([#29216](https://github.com/mdn/browser-compat-data/pull/29216))
+- `api.HTMLMediaElement.loading` ([#29256](https://github.com/mdn/browser-compat-data/pull/29256))
+- `browsers.firefox_android.releases.152` ([#29334](https://github.com/mdn/browser-compat-data/pull/29334))
+- `browsers.firefox.releases.152` ([#29334](https://github.com/mdn/browser-compat-data/pull/29334))
+- `css.properties.all.revert-rule` ([#29352](https://github.com/mdn/browser-compat-data/pull/29352))
+- `css.properties.shape-outside.xywh` ([#29284](https://github.com/mdn/browser-compat-data/pull/29284))
+- `css.types.color.color-mix.variadic_color_arguments` ([#29214](https://github.com/mdn/browser-compat-data/pull/29214))
+- `html.elements.audio.loading` ([#29256](https://github.com/mdn/browser-compat-data/pull/29256))
+- `html.elements.video.autoplay.loading` ([#29256](https://github.com/mdn/browser-compat-data/pull/29256))
+
+### Statistics
+
+- 11 contributors have changed 88 files with 2,426 additions and 1,395 deletions in 29 commits ([`v7.3.8...v7.3.9`](https://github.com/mdn/browser-compat-data/compare/v7.3.8...v7.3.9))
+- 19,529 total features
+- 1,236 total contributors
+- 5,620 total stargazers
+
 ## [v7.3.8](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.8)
 
 March 20, 2026
