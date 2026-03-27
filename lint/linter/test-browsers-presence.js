@@ -71,6 +71,16 @@ const processData = (data, category, logger) => {
         `Missing the following browsers, which are required for ${styleText('bold', category)} compat data: ${styleText('bold', missingEntries.join(', '))}`,
       );
     }
+
+    if (
+      'ie' in support &&
+      JSON.stringify(support.ie) === '{"version_added":false}'
+    ) {
+      logger.error(
+        `Unnecessary ${styleText('bold', 'ie')} statement: ${styleText('bold', '"ie": {"version_added": false}')} is implicit and can be removed`,
+        { fixable: true },
+      );
+    }
   }
 };
 
