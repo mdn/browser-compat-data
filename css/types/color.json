@@ -935,6 +935,49 @@
               "standard_track": true,
               "deprecated": false
             }
+          },
+          "accepts `<image>`": {
+            "__compat": {
+              "description": "`light-dark()` accepts `<image>` values for setting `background-image` based upon the color-scheme.",
+              "tags": [
+                "web-features:color"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "148",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "#enable-experimental-web-platform-features",
+                      "value_to_set": "Enabled"
+                    }
+                  ],
+                  "impl_url": "https://crbug.com/491829958"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "150"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false,
+                  "impl_url": "https://webkit.org/b/309689"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "named-color": {
