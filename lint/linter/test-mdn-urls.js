@@ -3,11 +3,12 @@
 
 import { styleText } from 'node:util';
 
-import mdnContentInventory from '@ddbeck/mdn-content-inventory';
+import walk from '../../utils/walk.js';
+import { inventory } from '../../utils/mdn-content-inventory.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {CompatData, CompatStatement} from '../../types/types.js' */
 
 /**
  * @typedef {object} MDNURLError
@@ -17,55 +18,8 @@ import mdnContentInventory from '@ddbeck/mdn-content-inventory';
  * @property {string} expected
  */
 
-const slugs = (() => {
-  /** @type {Map<string, string>} */
-  const result = new Map();
-  for (const item of mdnContentInventory.inventory) {
-    result.set(item.frontmatter.slug.toLowerCase(), item.frontmatter.slug);
-  }
-  return result;
-})();
-
-const slugByPath = (() => {
-  /** @type {Map<string, string[]>} */
-  const slugsByPath = new Map();
-  for (const item of mdnContentInventory.inventory) {
-    if (!('browser-compat' in item.frontmatter)) {
-      continue;
-    }
-
-    const value = item.frontmatter['browser-compat'];
-    const paths = Array.isArray(value) ? value : [value];
-
-    const slug = item.frontmatter.slug;
-
-    for (const path of paths) {
-      const slugTail = slug.split('/').at(-1);
-      const pathTail = path.split('.').at(-1);
-
-      if (!slugTail.includes(pathTail) && !pathTail?.includes(slugTail)) {
-        // Ignore unrelated pages/features.
-        continue;
-      }
-
-      if (!slugsByPath.has(path)) {
-        slugsByPath.set(path, []);
-      }
-      slugsByPath.get(path)?.push(item.frontmatter.slug);
-    }
-  }
-
-  /** @type {Map<string, string>} */
-  const slugByPath = new Map();
-  slugsByPath.forEach((values, key) => {
-    if (values.length === 1) {
-      slugByPath.set(key, values[0]);
-    }
-  });
-  return slugByPath;
-})();
-
-const redirects = mdnContentInventory.redirects;
+/** @type {Map<string, string>} path → mdn_url, persisted across calls */
+export const urlsByPath = new Map();
 
 /**
  * Process the data for MDN URL issues
@@ -82,27 +36,29 @@ export const processData = (data, path) => {
     const slug = mdnURL.pathname.replace('/docs/', '');
     const hash = mdnURL.hash;
 
-    if (redirectURL in redirects) {
+    if (redirectURL in inventory.redirects) {
       // Replace redirects with the new URL.
       issues.push({
         ruleName: 'mdn_url_redirect',
         path,
         actual: data.mdn_url,
-        expected: mdnURL.origin + redirects[redirectURL]?.replace('/en-US', ''),
+        expected:
+          mdnURL.origin +
+          inventory.redirects[redirectURL]?.replace('/en-US', ''),
       });
     } else if (
       // Check if casing is wrong.
       // slugs.values().some(v => v === slug) when https://tc39.es/proposal-iterator-helpers is available
-      !Array.from(slugs.values()).includes(slug) &&
-      Array.from(slugs.keys()).includes(slug.toLowerCase())
+      !Array.from(inventory.slugs.values()).includes(slug) &&
+      Array.from(inventory.slugs.keys()).includes(slug.toLowerCase())
     ) {
       issues.push({
         ruleName: 'mdn_url_casing',
         path,
         actual: data.mdn_url,
-        expected: `https://developer.mozilla.org/docs/${slugs.get(slug.toLowerCase())}${hash}`,
+        expected: `https://developer.mozilla.org/docs/${inventory.slugs.get(slug.toLowerCase())}${hash}`,
       });
-    } else if (!Array.from(slugs.values()).includes(slug)) {
+    } else if (!Array.from(inventory.slugs.values()).includes(slug)) {
       // Delete non-existing MDN pages.
       issues.push({
         ruleName: 'mdn_url_404',
@@ -110,15 +66,15 @@ export const processData = (data, path) => {
         actual: data.mdn_url,
         expected: '',
       });
-    } else if (slugByPath.has(path) && !hash) {
+    } else if (inventory.slugByPath.has(path) && !hash) {
       // Overwrite url, unless it has a fragment.
-      const expected = `https://developer.mozilla.org/docs/${slugByPath.get(path)}`;
+      const expected = `https://developer.mozilla.org/docs/${inventory.slugByPath.get(path)}`;
       if (expected != data.mdn_url) {
         issues.push({
           ruleName: 'mdn_url_other_page',
           path,
           actual: data.mdn_url,
-          expected: `https://developer.mozilla.org/docs/${slugByPath.get(path)}`,
+          expected: `https://developer.mozilla.org/docs/${inventory.slugByPath.get(path)}`,
         });
       }
     } else if (hash !== hash.toLowerCase()) {
@@ -130,59 +86,95 @@ export const processData = (data, path) => {
         expected: `https://developer.mozilla.org/docs/${slug}${hash.toLowerCase()}`,
       });
     }
-  } else if (slugByPath.has(path)) {
+
+    // Check if mdn_url duplicates an ancestor's mdn_url.
+    const parts = path.split('.');
+    for (let i = 1; i < parts.length; i++) {
+      const ancestorPath = parts.slice(0, i).join('.');
+      if (urlsByPath.get(ancestorPath) === data.mdn_url) {
+        issues.push({
+          ruleName: 'mdn_url_duplicate_ancestor',
+          path,
+          actual: data.mdn_url,
+          expected: '',
+        });
+        break;
+      }
+    }
+    // Track this path's mdn_url for future ancestor checks.
+    urlsByPath.set(path, data.mdn_url);
+  } else if (inventory.slugByPath.has(path)) {
     issues.push({
       ruleName: 'mdn_url_new_page',
       path,
       actual: '',
-      expected: `https://developer.mozilla.org/docs/${slugByPath.get(path)}`,
+      expected: `https://developer.mozilla.org/docs/${inventory.slugByPath.get(path)}`,
     });
   }
   return issues;
+};
+
+/**
+ * Log issues found by processData
+ * @param {MDNURLError[]} issues The issues to log
+ * @param {Logger} logger The logger to output errors to
+ */
+const logIssues = (issues, logger) => {
+  for (const issue of issues) {
+    if (issue.ruleName === 'mdn_url_duplicate_ancestor') {
+      logger.error(
+        styleText(
+          'red',
+          `${styleText('bold', issue.path)} has mdn_url duplicated from ancestor: ${styleText('italic', issue.actual)}`,
+        ),
+        { fixable: true },
+      );
+    } else if (issue.expected === '') {
+      logger.warning(
+        styleText(
+          'red',
+          `Current mdn_url is a 404:
+          ${styleText('bold', issue.actual)}`,
+        ),
+        { fixable: true },
+      );
+    } else if (issue.actual === '') {
+      logger.warning(
+        styleText(
+          'red',
+          `New mdn_url to add:
+          ${styleText('bold', issue.expected)}`,
+        ),
+        { fixable: true },
+      );
+    } else {
+      logger.warning(
+        styleText(
+          'red',
+          `Issues with mdn_url found:
+            Actual:   ${issue.actual}
+            Expected: ${issue.expected}`,
+        ),
+        { fixable: true },
+      );
+    }
+  }
 };
 
 /** @type {Linter} */
 export default {
   name: 'MDN URLs',
   description: 'Ensure the mdn_url values point to existing MDN Web Docs pages',
-  scope: 'feature',
+  scope: 'tree',
   /**
    * Test the data
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */
-  check: (logger, { data, path: { full } }) => {
-    const issues = processData(/** @type {CompatStatement} */ (data), full);
-    for (const issue of issues) {
-      if (issue.expected === '') {
-        logger.warning(
-          styleText(
-            'red',
-            `Current mdn_url is a 404:
-          ${styleText('bold', issue.actual)}`,
-          ),
-          { fixable: true },
-        );
-      } else if (issue.actual === '') {
-        logger.warning(
-          styleText(
-            'red',
-            `New mdn_url to add:
-          ${styleText('bold', issue.expected)}`,
-          ),
-          { fixable: true },
-        );
-      } else {
-        logger.warning(
-          styleText(
-            'red',
-            `Issues with mdn_url found:
-            Actual:   ${issue.actual}
-            Expected: ${issue.expected}`,
-          ),
-          { fixable: true },
-        );
-      }
+  check: (logger, { data }) => {
+    for (const feature of walk(undefined, /** @type {CompatData} */ (data))) {
+      const issues = processData(feature.compat, feature.path);
+      logIssues(issues, logger);
     }
   },
 };
