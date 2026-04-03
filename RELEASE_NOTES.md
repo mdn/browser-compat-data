@@ -1,5 +1,44 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.3.10](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.10)
+
+April 3, 2026
+
+### Removals
+
+- `html.elements.video.autoplay.loading` ([#29359](https://github.com/mdn/browser-compat-data/pull/29359))
+
+### Additions
+
+- `api.Element.attachShadow.options_referenceTarget_parameter` ([#29261](https://github.com/mdn/browser-compat-data/pull/29261))
+- `api.fetch.init_targetAddressSpace_parameter` ([#29331](https://github.com/mdn/browser-compat-data/pull/29331))
+- `api.HTMLTemplateElement.shadowRootReferenceTarget` ([#29261](https://github.com/mdn/browser-compat-data/pull/29261))
+- `api.Permissions.permission_local-network` ([#29331](https://github.com/mdn/browser-compat-data/pull/29331))
+- `api.Permissions.permission_local-network-access` ([#29331](https://github.com/mdn/browser-compat-data/pull/29331))
+- `api.Permissions.permission_loopback-network` ([#29331](https://github.com/mdn/browser-compat-data/pull/29331))
+- `api.Request.Request.init_targetAddressSpace_parameter` ([#29331](https://github.com/mdn/browser-compat-data/pull/29331))
+- `browsers.safari_ios.releases.26.5` ([#29370](https://github.com/mdn/browser-compat-data/pull/29370))
+- `browsers.safari.releases.26.5` ([#29370](https://github.com/mdn/browser-compat-data/pull/29370))
+- `browsers.webview_ios.releases.26.5` ([#29370](https://github.com/mdn/browser-compat-data/pull/29370))
+- `html.elements.video.loading` ([#29359](https://github.com/mdn/browser-compat-data/pull/29359))
+- `http.headers.Permissions-Policy.local-network` ([#29331](https://github.com/mdn/browser-compat-data/pull/29331))
+- `http.headers.Permissions-Policy.local-network-access` ([#29331](https://github.com/mdn/browser-compat-data/pull/29331))
+- `http.headers.Permissions-Policy.loopback-network` ([#29331](https://github.com/mdn/browser-compat-data/pull/29331))
+- `manifests.webapp.migrate_from` ([#29356](https://github.com/mdn/browser-compat-data/pull/29356))
+- `manifests.webapp.migrate_to` ([#29356](https://github.com/mdn/browser-compat-data/pull/29356))
+- `webdriver.bidi.browser.setClientWindowState.height_parameter` ([#29394](https://github.com/mdn/browser-compat-data/pull/29394))
+- `webdriver.bidi.browser.setClientWindowState.state_parameter` ([#29394](https://github.com/mdn/browser-compat-data/pull/29394))
+- `webdriver.bidi.browser.setClientWindowState.width_parameter` ([#29394](https://github.com/mdn/browser-compat-data/pull/29394))
+- `webdriver.bidi.browser.setClientWindowState.x_parameter` ([#29394](https://github.com/mdn/browser-compat-data/pull/29394))
+- `webdriver.bidi.browser.setClientWindowState.y_parameter` ([#29394](https://github.com/mdn/browser-compat-data/pull/29394))
+
+### Statistics
+
+- 11 contributors have changed 37 files with 986 additions and 282 deletions in 31 commits ([`v7.3.9...v7.3.10`](https://github.com/mdn/browser-compat-data/compare/v7.3.9...v7.3.10))
+- 19,546 total features
+- 1,239 total contributors
+- 5,628 total stargazers
+
 ## [v7.3.9](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.9)
 
 March 27, 2026
