@@ -9,6 +9,7 @@ permissions:
 
 jobs:
   close-issues-if-invalid:
+    if: ${{ !contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR", "CONTRIBUTOR"]'), github.event.issue.author_association) }}
     runs-on: ubuntu-latest
     steps:
       - uses: queengooborg/invalid-issue-closer@a76c4a636b1346d4554befcadd45eb0f23283580 # v1.6.1
