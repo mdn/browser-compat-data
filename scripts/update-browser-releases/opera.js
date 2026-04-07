@@ -25,6 +25,23 @@ import {
 } from './utils.js';
 
 /**
+ * Yields RSS items across pages until there are no more items or the page limit is reached.
+ * @param {string} baseURL the base URL of the RSS feed.
+ * @param {number} maxPages the maximum number of pages to fetch.
+ * @yields {RSSItem} the RSS items.
+ */
+async function* feedItems(baseURL, maxPages = 1) {
+  for (let page = 1; page <= maxPages; page++) {
+    const url = page === 1 ? baseURL : `${baseURL}?paged=${page}`;
+    const items = await getRSSItems(url);
+    if (!items.length) {
+      break;
+    }
+    yield* items;
+  }
+}
+
+/**
  * Builds a Release object from an RSS item.
  * @param {RSSItem} item the RSS item.
  * @param {RegExp} titleVersionPattern the pattern to match the title and extract the version.
@@ -109,37 +126,28 @@ export const updateOperaReleases = async (options) => {
       ([, r]) => r.status === 'current',
     ) ?? [];
 
-  const maxFeedPages = options.maxFeedPages ?? 1;
   const newItems = /** @type {RSSItem[]} */ ([]);
-  let foundStoppingPoint = false;
 
-  for (let page = 1; page <= maxFeedPages && !foundStoppingPoint; page++) {
-    const url =
-      page === 1
-        ? options.releaseFeedURL
-        : `${options.releaseFeedURL}?paged=${page}`;
-    const items = await getRSSItems(url);
-
-    if (!items.length) {
+  for await (const item of feedItems(
+    options.releaseFeedURL,
+    options.maxFeedPages ?? 1,
+  )) {
+    if (
+      options.releaseFilterCreator &&
+      !options.releaseFilterCreator.includes(item['dc:creator'])
+    ) {
+      continue;
+    }
+    if (!options.titleVersionPattern.test(item.title)) {
+      continue;
+    }
+    const version = /** @type {RegExpMatchArray} */ (
+      item.title.match(options.titleVersionPattern)
+    )[1];
+    if (version === currentBCDVersion) {
       break;
     }
-
-    for (const item of items.filter(
-      (item) =>
-        options.releaseFilterCreator?.includes(item['dc:creator']) ?? true,
-    )) {
-      if (!options.titleVersionPattern.test(item.title)) {
-        continue;
-      }
-      const version = /** @type {RegExpMatchArray} */ (
-        item.title.match(options.titleVersionPattern)
-      )[1];
-      if (version === currentBCDVersion) {
-        foundStoppingPoint = true;
-        break;
-      }
-      newItems.push(item);
-    }
+    newItems.push(item);
   }
 
   if (!newItems.length) {
