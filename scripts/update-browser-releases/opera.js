@@ -25,26 +25,17 @@ import {
 } from './utils.js';
 
 /**
- * Extracts the latest release from the items.
- * @param {RSSItem[]} items the RSS items.
+ * Builds a Release object from an RSS item.
+ * @param {RSSItem} item the RSS item.
  * @param {RegExp} titleVersionPattern the pattern to match the title and extract the version.
  * @param {RegExp} descriptionEngineVersionPattern the pattern to match the description and extract the engine version.
- * @returns {Promise<Release | null>} the latest release, if found, otherwise null.
+ * @returns {Promise<Release>} the release.
  */
-const findRelease = async (
-  items,
+const buildRelease = async (
+  item,
   titleVersionPattern,
   descriptionEngineVersionPattern,
 ) => {
-  const item = items.find(
-    (item) => titleVersionPattern.test(item.title) /* &&
-      descriptionEngineVersionPattern.test(item.description)*/,
-  );
-
-  if (!item) {
-    return null;
-  }
-
   const version = /** @type {RegExpMatchArray} */ (
     item.title.match(titleVersionPattern)
   )[1];
@@ -109,97 +100,132 @@ export const updateOperaReleases = async (options) => {
 
   let result = '';
 
-  const items = await getRSSItems(options.releaseFeedURL);
-
-  const release = await findRelease(
-    items.filter(
-      (item) =>
-        options.releaseFilterCreator?.includes(item['dc:creator']) ?? true,
-    ),
-    options.titleVersionPattern,
-    options.descriptionEngineVersionPattern,
-  );
-
-  if (!release) {
-    return gfmNoteblock(
-      'NOTE',
-      `**${options.browserName}**: No release announcement found among ${items.length} items in [this RSS feed](<${options.releaseFeedURL}>).`,
-    );
-  }
-
   const file = await fs.readFile(`${options.bcdFile}`, 'utf-8');
   const data = JSON.parse(file.toString());
 
-  const current = structuredClone(
-    data.browsers[browser].releases[release.version],
-  );
+  // Find the version currently tracked as "current" to use as stopping condition.
+  const [currentBCDVersion] =
+    Object.entries(data.browsers[browser].releases).find(
+      ([, r]) => r.status === 'current',
+    ) ?? [];
 
-  if (!release.engineVersion) {
-    const currentEngineVersion = current.engine_version;
-    if (!currentEngineVersion) {
-      return gfmNoteblock(
-        'CAUTION',
-        `**${options.browserName}**: No engine version found in [this blog post](<${release.releaseNote}>).`,
-      );
+  const maxFeedPages = options.maxFeedPages ?? 1;
+  const newItems = /** @type {RSSItem[]} */ ([]);
+  let foundStoppingPoint = false;
+
+  for (let page = 1; page <= maxFeedPages && !foundStoppingPoint; page++) {
+    const url =
+      page === 1
+        ? options.releaseFeedURL
+        : `${options.releaseFeedURL}?paged=${page}`;
+    const items = await getRSSItems(url);
+
+    if (!items.length) {
+      break;
     }
 
-    result += gfmNoteblock(
-      'WARNING',
-      `**${options.browserName}**: No engine version found in [this blog post](<${release.releaseNote}>). Using (previous engine version + 1) instead.`,
-    );
-    release.engineVersion = currentEngineVersion;
+    for (const item of items.filter(
+      (item) =>
+        options.releaseFilterCreator?.includes(item['dc:creator']) ?? true,
+    )) {
+      if (!options.titleVersionPattern.test(item.title)) {
+        continue;
+      }
+      const version = /** @type {RegExpMatchArray} */ (
+        item.title.match(options.titleVersionPattern)
+      )[1];
+      if (version === currentBCDVersion) {
+        foundStoppingPoint = true;
+        break;
+      }
+      newItems.push(item);
+    }
   }
 
-  if (isDesktop && !current) {
+  if (!newItems.length) {
     return gfmNoteblock(
-      'WARNING',
-      `Latest stable **${options.browserName}** release **${release.version}** not yet tracked.`,
+      'NOTE',
+      `**${options.browserName}**: No new release announcements found in [this RSS feed](<${options.releaseFeedURL}>).`,
     );
   }
 
-  result += createOrUpdateBrowserEntry(
-    data,
-    browser,
-    release.version,
-    release.channel,
-    release.engine,
-    release.engineVersion,
-    release.date,
-    release.releaseNote,
-  );
+  // Process releases from oldest to newest.
+  for (const item of newItems.reverse()) {
+    const release = await buildRelease(
+      item,
+      options.titleVersionPattern,
+      options.descriptionEngineVersionPattern,
+    );
 
-  // Set previous release to "retired".
-  const previousVersion = String(Number(release.version) - 1);
-  result += updateBrowserEntry(
-    data,
-    browser,
-    previousVersion,
-    undefined,
-    'retired',
-    undefined,
-    undefined,
-  );
+    if (!release.engineVersion) {
+      const existingEngineVersion =
+        data.browsers[browser].releases[release.version]?.engine_version;
+      if (!existingEngineVersion) {
+        result += gfmNoteblock(
+          'CAUTION',
+          `**${options.browserName}**: No engine version found in [this blog post](<${release.releaseNote}>).`,
+        );
+        continue;
+      }
+      result += gfmNoteblock(
+        'WARNING',
+        `**${options.browserName}**: No engine version found in [this blog post](<${release.releaseNote}>). Using existing engine version instead.`,
+      );
+      release.engineVersion = existingEngineVersion;
+    }
+
+    result += createOrUpdateBrowserEntry(
+      data,
+      browser,
+      release.version,
+      release.channel,
+      release.engine,
+      release.engineVersion,
+      release.date,
+      release.releaseNote,
+    );
+
+    // Set previous release to "retired".
+    result += updateBrowserEntry(
+      data,
+      browser,
+      String(Number(release.version) - 1),
+      undefined,
+      'retired',
+      undefined,
+      undefined,
+    );
+  }
 
   if (isDesktop) {
-    // 1. Set next release to "beta".
-    result += createOrUpdateBrowserEntry(
-      data,
-      browser,
-      String(Number(release.version) + 1),
-      'beta',
-      release.engine,
-      String(Number(release.engineVersion) + 1),
-    );
+    // Determine the latest processed release (last item after oldest-to-newest reversal).
+    const latestVersion = /** @type {RegExpMatchArray} */ (
+      newItems[newItems.length - 1].title.match(options.titleVersionPattern)
+    )[1];
+    const latestEngineVersion =
+      data.browsers[browser].releases[latestVersion]?.engine_version;
 
-    // 2. Add another release as "nightly".
-    result += createOrUpdateBrowserEntry(
-      data,
-      browser,
-      String(Number(release.version) + 2),
-      'nightly',
-      release.engine,
-      String(Number(release.engineVersion) + 2),
-    );
+    if (latestEngineVersion) {
+      // 1. Set next release to "beta".
+      result += createOrUpdateBrowserEntry(
+        data,
+        browser,
+        String(Number(latestVersion) + 1),
+        'beta',
+        'Blink',
+        String(Number(latestEngineVersion) + 1),
+      );
+
+      // 2. Add another release as "nightly".
+      result += createOrUpdateBrowserEntry(
+        data,
+        browser,
+        String(Number(latestVersion) + 2),
+        'nightly',
+        'Blink',
+        String(Number(latestEngineVersion) + 2),
+      );
+    }
   }
 
   await fs.writeFile(`./${options.bcdFile}`, stringify(data) + '\n');
