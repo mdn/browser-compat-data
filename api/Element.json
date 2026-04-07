@@ -413,7 +413,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "16.4"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -421,7 +421,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -4454,7 +4454,15 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "150",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.scoped-custom-element-registries.enabled",
+                  "value_to_set": "true"
+                }
+              ],
+              "impl_url": "https://bugzil.la/2018900"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -8014,10 +8022,7 @@
             ],
             "firefox_android": "mirror",
             "oculus": "mirror",
-            "opera": {
-              "version_added": "64",
-              "notes": "Before version 126, `pointerrawupdate` events were exposed to non-secure contexts."
-            },
+            "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
               "version_added": false
