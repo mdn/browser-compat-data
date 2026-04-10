@@ -1,5 +1,44 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.3.11](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.11)
+
+April 10, 2026
+
+### Additions
+
+- `api.CustomElementRegistry.define.html_name_validity` ([#29217](https://github.com/mdn/browser-compat-data/pull/29217))
+- `api.CustomElementRegistry.whenDefined.html_name_validity` ([#29217](https://github.com/mdn/browser-compat-data/pull/29217))
+- `api.Document.createAttribute.html_name_validity` ([#29217](https://github.com/mdn/browser-compat-data/pull/29217))
+- `api.Document.createAttributeNS.html_name_validity` ([#29217](https://github.com/mdn/browser-compat-data/pull/29217))
+- `api.Document.createElement.html_name_validity` ([#29217](https://github.com/mdn/browser-compat-data/pull/29217))
+- `api.Document.createElementNS.html_name_validity` ([#29217](https://github.com/mdn/browser-compat-data/pull/29217))
+- `api.Element.setAttribute.html_name_validity` ([#29217](https://github.com/mdn/browser-compat-data/pull/29217))
+- `api.Element.setAttributeNodeNS.html_name_validity` ([#29217](https://github.com/mdn/browser-compat-data/pull/29217))
+- `api.Element.toggleAttribute.html_name_validity` ([#29217](https://github.com/mdn/browser-compat-data/pull/29217))
+- `api.PaymentRequest.getSecurePaymentConfirmationCapabilities_static` ([#29434](https://github.com/mdn/browser-compat-data/pull/29434))
+- `api.WGSLLanguageFeatures.extension_subgroup_uniformity` ([#29422](https://github.com/mdn/browser-compat-data/pull/29422))
+- `browsers.chrome_android.releases.150` ([#29413](https://github.com/mdn/browser-compat-data/pull/29413))
+- `browsers.chrome.releases.150` ([#29413](https://github.com/mdn/browser-compat-data/pull/29413))
+- `browsers.opera.releases.126` ([#29414](https://github.com/mdn/browser-compat-data/pull/29414))
+- `browsers.opera.releases.127` ([#29414](https://github.com/mdn/browser-compat-data/pull/29414))
+- `browsers.opera.releases.128` ([#29414](https://github.com/mdn/browser-compat-data/pull/29414))
+- `browsers.opera.releases.129` ([#29414](https://github.com/mdn/browser-compat-data/pull/29414))
+- `browsers.opera.releases.130` ([#29414](https://github.com/mdn/browser-compat-data/pull/29414))
+- `browsers.opera.releases.131` ([#29414](https://github.com/mdn/browser-compat-data/pull/29414))
+- `browsers.opera.releases.132` ([#29444](https://github.com/mdn/browser-compat-data/pull/29444))
+- `browsers.webview_android.releases.150` ([#29413](https://github.com/mdn/browser-compat-data/pull/29413))
+- `css.at-rules.container.container-query_optional` ([#29300](https://github.com/mdn/browser-compat-data/pull/29300))
+- `css.types.url.cross-origin` ([#29440](https://github.com/mdn/browser-compat-data/pull/29440))
+- `css.types.url.referrer-policy` ([#29440](https://github.com/mdn/browser-compat-data/pull/29440))
+- `http.headers.Reporting-Endpoints.crash-reporting` ([#29399](https://github.com/mdn/browser-compat-data/pull/29399))
+
+### Statistics
+
+- 11 contributors have changed 49 files with 950 additions and 300 deletions in 28 commits ([`v7.3.10...v7.3.11`](https://github.com/mdn/browser-compat-data/compare/v7.3.10...v7.3.11))
+- 19,561 total features
+- 1,240 total contributors
+- 5,628 total stargazers
+
 ## [v7.3.10](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.10)
 
 April 3, 2026
