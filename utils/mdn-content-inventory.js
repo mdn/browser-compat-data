@@ -15,11 +15,7 @@ const slugs = (() => {
 
 // Page types that are overview/landing pages rather than specific reference pages.
 // When a BCD key appears on both one of these and a reference page, the reference page wins.
-const OVERVIEW_PAGE_TYPES = new Set([
-  'web-api-overview',
-  'guide',
-  'landing-page',
-]);
+const SKIP_PAGE_TYPES = new Set(['web-api-overview', 'guide', 'landing-page']);
 
 /**
  * Build a map from BCD path to MDN slug, preferring specific reference pages.
@@ -37,7 +33,7 @@ export const buildSlugByPath = (inventory) => {
       continue;
     }
 
-    if (OVERVIEW_PAGE_TYPES.has(item.frontmatter['page-type'])) {
+    if (SKIP_PAGE_TYPES.has(item.frontmatter['page-type'])) {
       // Skip overview/landing pages; a reference page for the same BCD key is preferred.
       continue;
     }
