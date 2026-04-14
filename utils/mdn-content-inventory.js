@@ -13,6 +13,22 @@ const slugs = (() => {
   return result;
 })();
 
+/**
+ * Returns true if the slug tail and path tail are related enough to link.
+ * Strips leading `@@` from path tail to handle well-known symbol names
+ * (e.g. `@@dispose` matches `Symbol.dispose`).
+ * @param {string} slugTail Last segment of an MDN slug
+ * @param {string | undefined} pathTail Last segment of a BCD path
+ * @returns {boolean} Whether the tails are related
+ */
+export const tailsMatch = (slugTail, pathTail) => {
+  if (!pathTail) {
+    return false;
+  }
+  const normalized = pathTail.replace(/^@@/, '');
+  return slugTail.includes(normalized) || normalized.includes(slugTail);
+};
+
 /** @type {Map<string, string>} BCD path → MDN slug (only unambiguous mappings) */
 const slugByPath = (() => {
   /** @type {Map<string, string[]>} */
@@ -31,7 +47,7 @@ const slugByPath = (() => {
       const slugTail = slug.split('/').at(-1);
       const pathTail = path.split('.').at(-1);
 
-      if (!slugTail.includes(pathTail) && !pathTail?.includes(slugTail)) {
+      if (!tailsMatch(slugTail, pathTail)) {
         // Ignore unrelated pages/features.
         continue;
       }
