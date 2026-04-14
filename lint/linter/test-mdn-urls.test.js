@@ -280,7 +280,7 @@ describe('test-mdn-urls', () => {
       );
     });
 
-    it('ignores overview and landing pages', () => {
+    it('ignores overview pages and landing pages', () => {
       const result = buildSlugByPath([
         {
           frontmatter: {
