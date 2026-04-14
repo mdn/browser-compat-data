@@ -80,13 +80,27 @@
             "support": {
               "chrome": [
                 {
+                  "version_added": "127",
+                  "partial_implementation": true,
+                  "notes": [
+                    "Some requests may still be taken from the cache unless the tab is reloaded or the page is requested in a new tab. See [bug 364634040](https://crbug.com/364634040).",
+                    "Setting this value may cause seconds-long hangs. See [bug 40233601](https://crbug.com/40233601)."
+                  ]
+                },
+                {
                   "version_added": "65",
-                  "notes": "Setting this value may increase response duration (see [bug 40233601](https://crbug.com/40233601)."
+                  "version_removed": "127",
+                  "partial_implementation": true,
+                  "notes": "Setting this value may cause seconds-long hangs. See [bug 40233601](https://crbug.com/40233601)."
                 },
                 {
                   "version_added": "61",
                   "version_removed": "63",
-                  "notes": "Setting this value may prevent a page from fully load (see [bug 41343050](https://crbug.com/41343050)."
+                  "partial_implementation": true,
+                  "notes": [
+                    "Setting this value may prevent a page from fully loading. See [bug 41343050](https://crbug.com/41343050).",
+                    "Setting this value may cause seconds-long hangs. See [bug 40233601](https://crbug.com/40233601)."
+                  ]
                 }
               ],
               "chrome_android": "mirror",
@@ -346,9 +360,22 @@
               "web-features:clear-site-data"
             ],
             "support": {
-              "chrome": {
-                "version_added": "117"
-              },
+              "chrome": [
+                {
+                  "version_added": "127",
+                  "partial_implementation": true,
+                  "notes": [
+                    "Some requests may still be taken from the cache unless the tab is reloaded or the page is requested in a new tab. See [bug 364634040](https://crbug.com/364634040).",
+                    "Setting this value may cause seconds-long hangs. See [bug 40233601](https://crbug.com/40233601)."
+                  ]
+                },
+                {
+                  "version_added": "117",
+                  "version_removed": "127",
+                  "partial_implementation": true,
+                  "notes": "Setting this value may cause seconds-long hangs. See [bug 40233601](https://crbug.com/40233601)."
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {

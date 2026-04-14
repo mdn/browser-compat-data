@@ -434,6 +434,49 @@
             }
           }
         },
+        "init_targetAddressSpace_parameter": {
+          "__compat": {
+            "description": "`init.targetAddressSpace` parameter",
+            "spec_url": "https://wicg.github.io/local-network-access/#dom-requestinit-targetaddressspace",
+            "tags": [
+              "web-features:local-network-access"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "142"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "nodejs": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": false
+              },
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "request_body_readablestream": {
           "__compat": {
             "description": "Send `ReadableStream` in request body",
@@ -1729,22 +1772,9 @@
             "web-features:local-network-access"
           ],
           "support": {
-            "chrome": [
-              {
-                "version_added": "138",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#local-network-access-check",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              },
-              {
-                "version_added": "124",
-                "version_removed": "138"
-              }
-            ],
+            "chrome": {
+              "version_added": "142"
+            },
             "chrome_android": "mirror",
             "deno": {
               "version_added": false
@@ -1765,7 +1795,9 @@
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
+            "webview_android": {
+              "version_added": false
+            },
             "webview_ios": "mirror"
           },
           "status": {

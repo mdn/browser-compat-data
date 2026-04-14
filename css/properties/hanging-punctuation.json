@@ -21,11 +21,17 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "10",
-              "partial_implementation": true,
-              "notes": "The characters `U+0027` and `U+0022` are not supported by the `first` and `last` keywords."
-            },
+            "safari": [
+              {
+                "version_added": "26.5"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "26.5",
+                "partial_implementation": true,
+                "notes": "The characters `U+0027` and `U+0022` are not supported by the `first` and `last` keywords. See [bug 309123](https://webkit.org/b/309123)."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
