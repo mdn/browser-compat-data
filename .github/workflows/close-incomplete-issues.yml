@@ -9,6 +9,8 @@ permissions:
 
 jobs:
   close-issues-if-invalid:
+    # Only check issues of new contributors (e.g. FIRST_TIMER, FIRST_TIME_CONTRIBUTOR, MANNEQUIN, NONE).
+    # Listing excluded associations is intentional to include newly introduced associations in the future.
     if: ${{ !contains(fromJSON('["OWNER", "MEMBER", "COLLABORATOR", "CONTRIBUTOR"]'), github.event.issue.author_association) }}
     runs-on: ubuntu-latest
     steps:
