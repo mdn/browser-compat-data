@@ -13,12 +13,24 @@ const slugs = (() => {
   return result;
 })();
 
-/** @type {Map<string, string>} BCD path → MDN slug (only unambiguous mappings) */
-const slugByPath = (() => {
-  /** @type {Map<string, string[]>} */
+// Page types that are overview/landing pages rather than specific reference pages.
+// When a BCD key appears on both one of these and a reference page, the reference page wins.
+const SKIP_PAGE_TYPES = new Set(['web-api-overview', 'guide', 'landing-page']);
+
+/**
+ * Build a map from BCD path to MDN slug, preferring specific reference pages.
+ * @param {typeof mdnContentInventory.inventory} inventory The MDN content inventory to process
+ * @returns {Map<string, string>} Map from BCD path to MDN slug
+ */
+export const buildSlugByPath = (inventory) => {
   const slugsByPath = new Map();
-  for (const item of mdnContentInventory.inventory) {
+  for (const item of inventory) {
     if (!('browser-compat' in item.frontmatter)) {
+      continue;
+    }
+
+    if (SKIP_PAGE_TYPES.has(item.frontmatter['page-type'])) {
+      // Skip overview/landing pages; a reference page for the same BCD key is preferred.
       continue;
     }
 
@@ -39,7 +51,7 @@ const slugByPath = (() => {
       if (!slugsByPath.has(path)) {
         slugsByPath.set(path, []);
       }
-      slugsByPath.get(path)?.push(item.frontmatter.slug);
+      slugsByPath.get(path)?.push(slug);
     }
   }
 
@@ -51,7 +63,10 @@ const slugByPath = (() => {
     }
   });
   return result;
-})();
+};
+
+/** @type {Map<string, string>} BCD path → MDN slug (only unambiguous mappings) */
+const slugByPath = buildSlugByPath(mdnContentInventory.inventory);
 
 /**
  * Mutable inventory data derived from `@ddbeck/mdn-content-inventory`.
