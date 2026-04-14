@@ -257,29 +257,6 @@ describe('test-mdn-urls', () => {
   });
 
   describe('buildSlugByPath', () => {
-    it('prefers a page whose browser-compat is a single key over a page that lists it among multiple keys', () => {
-      const result = buildSlugByPath([
-        {
-          frontmatter: {
-            slug: 'Web/API/Sanitizer/Sanitizer',
-            'page-type': 'web-api-constructor',
-            'browser-compat': 'api.Sanitizer.Sanitizer',
-          },
-        },
-        {
-          frontmatter: {
-            slug: 'Web/API/SanitizerConfig',
-            'page-type': 'web-api-interface',
-            'browser-compat': ['api.Sanitizer.get', 'api.Sanitizer.Sanitizer'],
-          },
-        },
-      ]);
-      assert.equal(
-        result.get('api.Sanitizer.Sanitizer'),
-        'Web/API/Sanitizer/Sanitizer',
-      );
-    });
-
     it('ignores overview pages and landing pages', () => {
       const result = buildSlugByPath([
         {

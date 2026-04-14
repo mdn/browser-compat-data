@@ -23,10 +23,6 @@ const SKIP_PAGE_TYPES = new Set(['web-api-overview', 'guide', 'landing-page']);
  * @returns {Map<string, string>} Map from BCD path to MDN slug
  */
 export const buildSlugByPath = (inventory) => {
-  /**
-   * @typedef {{ slug: string, isSoleKey: boolean }} SlugEntry
-   * @type {Map<string, SlugEntry[]>}
-   */
   const slugsByPath = new Map();
   for (const item of inventory) {
     if (!('browser-compat' in item.frontmatter)) {
@@ -40,7 +36,6 @@ export const buildSlugByPath = (inventory) => {
 
     const value = item.frontmatter['browser-compat'];
     const paths = Array.isArray(value) ? value : [value];
-    const isSoleKey = paths.length === 1;
 
     const slug = item.frontmatter.slug;
 
@@ -56,21 +51,15 @@ export const buildSlugByPath = (inventory) => {
       if (!slugsByPath.has(path)) {
         slugsByPath.set(path, []);
       }
-      slugsByPath.get(path)?.push({ slug, isSoleKey });
+      slugsByPath.get(path)?.push(slug);
     }
   }
 
   /** @type {Map<string, string>} */
   const result = new Map();
-  slugsByPath.forEach((entries, key) => {
-    if (entries.length === 1) {
-      result.set(key, entries[0].slug);
-    } else {
-      // When multiple pages list this key, prefer the one where it's the only key.
-      const soleKeyEntries = entries.filter((e) => e.isSoleKey);
-      if (soleKeyEntries.length === 1) {
-        result.set(key, soleKeyEntries[0].slug);
-      }
+  slugsByPath.forEach((values, key) => {
+    if (values.length === 1) {
+      result.set(key, values[0]);
     }
   });
   return result;
