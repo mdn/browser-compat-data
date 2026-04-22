@@ -679,7 +679,14 @@
                   "chrome_android": "mirror",
                   "edge": "mirror",
                   "firefox": {
-                    "version_added": false,
+                    "version_added": "150",
+                    "flags": [
+                      {
+                        "name": "dom.multiple_import_maps.enabled",
+                        "type": "preference",
+                        "value_to_set": "true"
+                      }
+                    ],
                     "impl_url": "https://bugzil.la/1916277"
                   },
                   "firefox_android": "mirror",

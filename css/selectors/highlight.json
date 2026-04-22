@@ -18,14 +18,20 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "140",
-              "partial_implementation": true,
-              "notes": [
-                "Cannot yet be used with `text-shadow`. See [bug 1845447](https://bugzil.la/1845447).",
-                "Before Firefox 146, cannot be used with `text-decoration`. See [bug 1845446](https://bugzil.la/1845446)."
-              ]
-            },
+            "firefox": [
+              {
+                "version_added": "149"
+              },
+              {
+                "version_added": "140",
+                "version_removed": "149",
+                "partial_implementation": true,
+                "notes": [
+                  "Before Firefox 149, cannot be used with `text-shadow`. See [bug 1845447](https://bugzil.la/1845447).",
+                  "Before Firefox 146, cannot be used with `text-decoration`. See [bug 1845446](https://bugzil.la/1845446)."
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
