@@ -1,5 +1,53 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.3.13](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.13)
+
+April 24, 2026
+
+### Removals
+
+- `css.properties.all.revert-rule` ([#29489](https://github.com/mdn/browser-compat-data/pull/29489))
+- `css.properties.font-family.fangsong` ([#29439](https://github.com/mdn/browser-compat-data/pull/29439))
+- `css.properties.font-family.kai` ([#29439](https://github.com/mdn/browser-compat-data/pull/29439))
+- `css.properties.font-family.khmer-mul` ([#29439](https://github.com/mdn/browser-compat-data/pull/29439))
+- `css.properties.font-family.nastaliq` ([#29439](https://github.com/mdn/browser-compat-data/pull/29439))
+
+### Additions
+
+- `api.CSSContainerRule.conditions` ([#29530](https://github.com/mdn/browser-compat-data/pull/29530))
+- `api.LanguageModel` ([#29474](https://github.com/mdn/browser-compat-data/pull/29474))
+- `api.LanguageModel.append` ([#29474](https://github.com/mdn/browser-compat-data/pull/29474))
+- `api.LanguageModel.availability_static` ([#29474](https://github.com/mdn/browser-compat-data/pull/29474))
+- `api.LanguageModel.clone` ([#29474](https://github.com/mdn/browser-compat-data/pull/29474))
+- `api.LanguageModel.contextoverflow_event` ([#29474](https://github.com/mdn/browser-compat-data/pull/29474))
+- `api.LanguageModel.contextUsage` ([#29474](https://github.com/mdn/browser-compat-data/pull/29474))
+- `api.LanguageModel.contextWindow` ([#29474](https://github.com/mdn/browser-compat-data/pull/29474))
+- `api.LanguageModel.create_static` ([#29474](https://github.com/mdn/browser-compat-data/pull/29474))
+- `api.LanguageModel.measureContextUsage` ([#29474](https://github.com/mdn/browser-compat-data/pull/29474))
+- `api.LanguageModel.prompt` ([#29474](https://github.com/mdn/browser-compat-data/pull/29474))
+- `api.LanguageModel.promptStreaming` ([#29474](https://github.com/mdn/browser-compat-data/pull/29474))
+- `browsers.bun.releases.1.3.13` ([#29518](https://github.com/mdn/browser-compat-data/pull/29518))
+- `browsers.firefox_android.releases.153` ([#29518](https://github.com/mdn/browser-compat-data/pull/29518))
+- `browsers.firefox.releases.153` ([#29518](https://github.com/mdn/browser-compat-data/pull/29518))
+- `css.properties.accent-color.currentColor` ([#29526](https://github.com/mdn/browser-compat-data/pull/29526))
+- `css.properties.color.currentColor` ([#29526](https://github.com/mdn/browser-compat-data/pull/29526))
+- `css.properties.column-rule-color.currentColor` ([#29526](https://github.com/mdn/browser-compat-data/pull/29526))
+- `css.properties.column-rule.currentColor` ([#29526](https://github.com/mdn/browser-compat-data/pull/29526))
+- `css.properties.outline-color.currentColor` ([#29526](https://github.com/mdn/browser-compat-data/pull/29526))
+- `css.properties.position-anchor.normal` ([#29483](https://github.com/mdn/browser-compat-data/pull/29483))
+- `css.properties.stop-color.currentColor` ([#29526](https://github.com/mdn/browser-compat-data/pull/29526))
+- `css.types.attr.attr-name_accepts_namespaces` ([#29482](https://github.com/mdn/browser-compat-data/pull/29482))
+- `css.types.global_keywords.revert-rule` ([#29489](https://github.com/mdn/browser-compat-data/pull/29489))
+- `http.headers.Permissions-Policy-Report-Only` ([#29506](https://github.com/mdn/browser-compat-data/pull/29506))
+- `webdriver.bidi.script.getRealms.type_parameter.window` ([#29517](https://github.com/mdn/browser-compat-data/pull/29517))
+
+### Statistics
+
+- 12 contributors have changed 83 files with 1,509 additions and 511 deletions in 32 commits ([`v7.3.12...v7.3.13`](https://github.com/mdn/browser-compat-data/compare/v7.3.12...v7.3.13))
+- 19,588 total features
+- 1,245 total contributors
+- 5,644 total stargazers
+
 ## [v7.3.12](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.12)
 
 April 17, 2026
