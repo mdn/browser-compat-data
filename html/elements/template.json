@@ -188,7 +188,7 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/template#shadowrootreferencetarget",
             "tags": [
-              "web-features:declarative-shadow-dom"
+              "web-features:referencetarget"
             ],
             "support": {
               "chrome": {
@@ -274,6 +274,47 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "shadowrootslotassignment": {
+          "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/scripting.html#attr-template-shadowrootslotassignment",
+            "tags": [
+              "web-features:declarative-shadow-dom"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "preview",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "dom.shadowdom.shadowRootSlotAssignment.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }

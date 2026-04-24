@@ -1,5 +1,31 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.3.12](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.12)
+
+April 17, 2026
+
+### Additions
+
+- `api.HTMLTemplateElement.shadowRootSlotAssignment` ([#29457](https://github.com/mdn/browser-compat-data/pull/29457))
+- `api.ReportingObserver.ReportingObserver.options_parameter.types_property.permissions-policy-violation` ([#29500](https://github.com/mdn/browser-compat-data/pull/29500))
+- `api.WGSLLanguageFeatures.extension_texture_and_sampler_let` ([#29469](https://github.com/mdn/browser-compat-data/pull/29469))
+- `browsers.bun.releases.1.3.12` ([#29463](https://github.com/mdn/browser-compat-data/pull/29463))
+- `browsers.edge.releases.150` ([#29463](https://github.com/mdn/browser-compat-data/pull/29463))
+- `browsers.opera_android.releases.97` ([#29490](https://github.com/mdn/browser-compat-data/pull/29490))
+- `css.properties.hanging-punctuation.force-end` ([#29497](https://github.com/mdn/browser-compat-data/pull/29497))
+- `css.types.color.light-dark.image_value` ([#29429](https://github.com/mdn/browser-compat-data/pull/29429))
+- `css.types.env.preferred-text-scale` ([#29453](https://github.com/mdn/browser-compat-data/pull/29453))
+- `html.elements.meta.name.text-scale` ([#29453](https://github.com/mdn/browser-compat-data/pull/29453))
+- `html.elements.template.shadowrootslotassignment` ([#29457](https://github.com/mdn/browser-compat-data/pull/29457))
+- `webdriver.bidi.script.getRealms.type_parameter.worker` ([#29499](https://github.com/mdn/browser-compat-data/pull/29499))
+
+### Statistics
+
+- 14 contributors have changed 192 files with 1,329 additions and 830 deletions in 37 commits ([`v7.3.11...v7.3.12`](https://github.com/mdn/browser-compat-data/compare/v7.3.11...v7.3.12))
+- 19,570 total features
+- 1,242 total contributors
+- 5,639 total stargazers
+
 ## [v7.3.11](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.11)
 
 April 10, 2026
