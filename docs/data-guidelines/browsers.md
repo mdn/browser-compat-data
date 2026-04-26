@@ -48,6 +48,20 @@ To add a new Node.js release:
    - ...`"esr"`, if it is the latest version within that major version
 4. Set the `status` all other versions within that major version to `"retired"`
 
+### workerd
+
+workerd uses compatibility dates as BCD versions, encoded as `YYYY.MM.DD` because BCD version values cannot use hyphenated dates. Do not use npm package versions such as `1.20260425.1` as `version_added` values unless BCD changes this policy.
+
+For workerd, `current` is the latest compatibility-date checkpoint supported by the latest published runtime package. Older checkpoints are marked `retired` for BCD tooling, but this does not mean workerd stopped accepting those compatibility dates.
+
+To update workerd release data, run:
+
+```sh
+npm run update-browser-releases -- --workerd
+```
+
+The updater reads the latest published workerd package and the corresponding source compatibility metadata. Add date checkpoints when support data references them or when a default-on compatibility flag affects a BCD-tracked feature.
+
 ## Addition of browsers
 
 BCD's [owners](../../GOVERNANCE.md) may choose to adopt a new browser or engine. To add a new browser to BCD, we require machine-readable release information, including version numbers, release dates, links to release notes or changelogs, and (if applicable) underlying engine version numbers.

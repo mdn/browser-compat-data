@@ -104,6 +104,7 @@ The following table indicates initial versions for browsers in BCD. These are th
 | iOS Safari       | 1               |                                                                                                                                                                          |
 | Samsung Internet | 1.0             |                                                                                                                                                                          |
 | WebView Android  | 1               |                                                                                                                                                                          |
+| workerd          | 2022.09.27      | Versions are compatibility-date checkpoints encoded as `YYYY.MM.DD`; `2022.09.27` maps to `compatibilityDate = "2022-09-27"`.                                            |
 
 ## Exports
 

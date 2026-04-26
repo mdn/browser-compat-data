@@ -8,6 +8,7 @@ import { updateEdgeReleases } from './edge.js';
 import { updateFirefoxReleases } from './firefox.js';
 import { updateOperaReleases } from './opera.js';
 import { updateSafariReleases } from './safari.js';
+import { updateWorkerdReleases } from './workerd.js';
 
 const argv = yargs(process.argv.slice(2))
   .usage('Usage: npm run update-browser-releases -- (flags)')
@@ -43,6 +44,11 @@ const argv = yargs(process.argv.slice(2))
   })
   .option('bun', {
     describe: 'Update Bun',
+    type: 'boolean',
+    group: 'Engine selection:',
+  })
+  .option('workerd', {
+    describe: 'Update workerd',
     type: 'boolean',
     group: 'Engine selection:',
   })
@@ -83,7 +89,8 @@ const updateAllBrowsers =
     argv['edge'] ||
     argv['opera'] ||
     argv['safari'] ||
-    argv['bun']
+    argv['bun'] ||
+    argv['workerd']
   );
 const updateChrome = argv['chrome'] || updateAllBrowsers;
 const updateWebview = argv['webview'] || updateAllBrowsers;
@@ -92,6 +99,7 @@ const updateEdge = argv['edge'] || updateAllBrowsers;
 const updateOpera = argv['opera'] || updateAllBrowsers;
 const updateSafari = argv['safari'] || updateAllBrowsers;
 const updateBun = argv['bun'] || updateAllBrowsers;
+const updateWorkerd = argv['workerd'] || updateAllBrowsers;
 const updateAllDevices =
   argv['alldevices'] || !(argv['mobile'] || argv['desktop']);
 const updateMobile = argv['mobile'] || updateAllDevices;
@@ -236,6 +244,11 @@ const options = {
     bcdFile: './browsers/bun.json',
     bcdBrowserName: 'bun',
   }),
+  workerd: /** @type {const} */ ({
+    browserName: 'workerd',
+    bcdFile: './browsers/workerd.json',
+    bcdBrowserName: 'workerd',
+  }),
 };
 
 if (!debug) {
@@ -276,6 +289,7 @@ const results = await Promise.all([
       ]
     : []),
   updateBun && updateBunReleases(options.bun),
+  updateWorkerd && updateWorkerdReleases(options.workerd),
 ]);
 
 const result = results.filter(Boolean).join('\n\n');

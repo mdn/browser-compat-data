@@ -214,6 +214,7 @@ The currently accepted browser identifiers should be declared in alphabetical or
 - `samsunginternet_android`, the Samsung Internet browser (Android version)
 - `webview_android`, WebView, the embedded browser for Android applications
 - `webview_ios`, WebKit WebView, the embedded browser for iOS applications, based on the iOS version
+- `workerd`, workerd JavaScript runtime built on Chrome's V8 JavaScript engine
 
 Desktop browser identifiers are mandatory, with the `version_added` property set to `null` if support is unknown.
 

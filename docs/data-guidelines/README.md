@@ -9,7 +9,7 @@ This file contains general guidelines that apply to all features added to BCD. F
 
 ## Choosing a version number
 
-Use version numbers to reflect which _release line_ (major or minor but not patch-level releases) first supported a feature, rather than absolute version numbers. The only exception to this is Bun (see below).
+Use version numbers to reflect which _release line_ (major or minor but not patch-level releases) first supported a feature, rather than absolute version numbers. The exceptions to this are Bun and workerd (see below).
 
 BCD does not record absolute version numbers, such as Chrome 76.0.3809.46; instead BCD records significant releases (such as Chrome 76). Use the earliest applicable release line for recording support for a given feature. For example, if a feature was not added in Chrome 76.0.3700.43, but added in Chrome 76.0.3809.46, then the supported version is 76. Likewise, if a feature was not available in Safari 10.1.1, but added in Safari 10.1.3, then the supported version is 10.1.
 
@@ -39,6 +39,10 @@ This versioning scheme came at [Apple's request, in #2006](https://github.com/md
 ### Bun versioning
 
 Since Bun upgrades the WebKit version also in patch releases, which may include new features, BCD tracks patch releases for Bun.
+
+### workerd versioning
+
+For workerd, BCD versions are compatibility-date checkpoints encoded as dotted dates, not npm package versions. For example, `2026.03.24` represents `compatibilityDate = "2026-03-24"`. A `workerd.version_added` value means the feature is available by default at that compatibility date unless the support statement includes `flags`.
 
 ### Choosing `"preview"` values
 
