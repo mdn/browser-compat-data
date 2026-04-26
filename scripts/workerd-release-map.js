@@ -16,7 +16,8 @@
  * @property {string} [gitHead] The source commit published to npm.
  * @property {string} releaseVersion The value from release-version.txt.
  * @property {string} maximumCompatibilityDate The newest compatibility date supported by the binary.
- * @property {string} bcdCheckpoint The BCD dotted-date checkpoint.
+ * @property {string} bcdCheckpoint The current usable BCD dotted-date checkpoint.
+ * @property {string} maximumBcdCheckpoint The maximum BCD dotted-date checkpoint supported by the binary.
  * @property {string} [v8Version] The pinned V8 version from build/deps/v8.MODULE.bazel.
  * @property {string} [v8Tarball] The V8 source tarball URL, if parsed.
  * @property {string[]} sourceRefs The source refs tried for this package.
@@ -33,6 +34,14 @@ const USER_AGENT =
   'MDN-Browser-Release-Update-Bot/1.0 (+https://developer.mozilla.org/)';
 
 const dashedDatePattern = /^\d{4}-\d{2}-\d{2}$/;
+
+/**
+ * Returns the earlier of two ISO dates.
+ * @param {string} first The first date.
+ * @param {string} second The second date.
+ * @returns {string} The earlier date.
+ */
+const minDate = (first, second) => (first < second ? first : second);
 
 /**
  * Converts a workerd compatibility date to a BCD version key.
@@ -154,6 +163,12 @@ const buildReleaseEntry = async (metadata) => {
     );
   }
 
+  if (!dashedDatePattern.test(releaseVersion)) {
+    throw new Error(
+      `Invalid release version date for workerd@${metadata.version}: ${releaseVersion}`,
+    );
+  }
+
   const { v8Version, v8Tarball } = parseV8Metadata(v8Source.contents);
 
   return {
@@ -161,7 +176,10 @@ const buildReleaseEntry = async (metadata) => {
     gitHead: metadata.gitHead,
     releaseVersion,
     maximumCompatibilityDate,
-    bcdCheckpoint: toDottedDate(maximumCompatibilityDate),
+    bcdCheckpoint: toDottedDate(
+      minDate(releaseVersion, maximumCompatibilityDate),
+    ),
+    maximumBcdCheckpoint: toDottedDate(maximumCompatibilityDate),
     v8Version,
     v8Tarball,
     sourceRefs: maximumCompatibilityDateSource.sourceRefs,

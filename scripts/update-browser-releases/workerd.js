@@ -51,6 +51,14 @@ const dashedDatePattern = /^\d{4}-\d{2}-\d{2}$/;
 const dottedDatePattern = /^\d{4}\.\d{2}\.\d{2}$/;
 
 /**
+ * Returns the earlier of two ISO dates.
+ * @param {string} first The first date.
+ * @param {string} second The second date.
+ * @returns {string} The earlier date.
+ */
+const minDate = (first, second) => (first < second ? first : second);
+
+/**
  * Fetches text with a consistent release updater user agent.
  * @param {string} url The URL to fetch.
  * @returns {Promise<string>} The response text.
@@ -315,6 +323,7 @@ export const updateWorkerdReleases = async (options) => {
 
   let metadata;
   let maximumCompatibilityDate;
+  let releaseVersion;
   let compatibilityDateSource;
 
   try {
@@ -323,6 +332,12 @@ export const updateWorkerdReleases = async (options) => {
       await fetchLatestSourceFile(
         metadata,
         'src/workerd/io/maximum-compatibility-date.txt',
+      )
+    ).trim();
+    releaseVersion = (
+      await fetchLatestSourceFile(
+        metadata,
+        'src/workerd/io/release-version.txt',
       )
     ).trim();
     compatibilityDateSource = await fetchLatestSourceFile(
@@ -343,7 +358,20 @@ export const updateWorkerdReleases = async (options) => {
     );
   }
 
-  const latestVersion = toDottedDate(maximumCompatibilityDate);
+  if (!dashedDatePattern.test(releaseVersion)) {
+    return gfmNoteblock(
+      'WARNING',
+      `**${options.browserName ?? 'workerd'}**: Invalid release version date: ${releaseVersion}.`,
+    );
+  }
+
+  // The maximum compatibility date can point at a future checkpoint that the
+  // runtime refuses until that calendar date arrives. Use the published release
+  // date as the current BCD checkpoint so public data never advertises a future
+  // compatibility date as currently usable.
+  const latestVersion = toDottedDate(
+    minDate(releaseVersion, maximumCompatibilityDate),
+  );
   const dates = new Set([
     toDottedDate(WORKERD_INITIAL_COMPATIBILITY_DATE),
     latestVersion,
