@@ -59,7 +59,6 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 
 - Alexis Deveria (@Fyrd), Adobe, https://caniuse.com
 - Chris David Mills (@chrisdavidmills)
-- Claas Augner (@caugner), Mozilla
 - Estelle Weyl (@estelle), Open Web Docs (Peer for CSS compat data)
 - Hamish Willee (@hamishwillee), Mozilla
 - Luca Casonato (@lucacasonato), Deno
@@ -117,6 +116,7 @@ An individual is invited to become an Owner by existing Owners. A nomination wil
 - Ruth John (@Rumyra), Mozilla
 - Vinyl Da.i'gyu (@queengooborg), Gooborg Studios
 - Daniel Beck (@ddbeck)
+- Claas Augner (@caugner), Mozilla
 
 ## Additional paths to becoming a Peer or Owner
 
