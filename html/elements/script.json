@@ -279,12 +279,13 @@
         },
         "integrity": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Attributes/integrity",
             "spec_url": [
               "https://html.spec.whatwg.org/multipage/scripting.html#attr-script-integrity",
               "https://w3c.github.io/webappsec-subresource-integrity/#the-integrity-attribute"
             ],
             "tags": [
-              "web-features:script"
+              "web-features:subresource-integrity"
             ],
             "support": {
               "chrome": {
@@ -678,7 +679,14 @@
                   "chrome_android": "mirror",
                   "edge": "mirror",
                   "firefox": {
-                    "version_added": false,
+                    "version_added": "150",
+                    "flags": [
+                      {
+                        "name": "dom.multiple_import_maps.enabled",
+                        "type": "preference",
+                        "value_to_set": "true"
+                      }
+                    ],
                     "impl_url": "https://bugzil.la/1916277"
                   },
                   "firefox_android": "mirror",

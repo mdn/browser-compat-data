@@ -5,7 +5,10 @@ import assert from 'node:assert/strict';
 
 /** @import {CompatStatement} from '../../types/types.js' */
 
-import { inventory } from '../../utils/mdn-content-inventory.js';
+import {
+  inventory,
+  buildSlugByPath,
+} from '../../utils/mdn-content-inventory.js';
 
 import { processData, urlsByPath } from './test-mdn-urls.js';
 
@@ -250,6 +253,29 @@ describe('test-mdn-urls', () => {
       const issues = processData(noUrl, 'api.Unknown');
       const matches = issues.filter((i) => i.ruleName === 'mdn_url_new_page');
       assert.equal(matches.length, 0);
+    });
+  });
+
+  describe('buildSlugByPath', () => {
+    it('ignores overview pages and landing pages', () => {
+      const result = buildSlugByPath([
+        {
+          frontmatter: {
+            slug: 'Web/API/Foo',
+            'page-type': 'web-api-overview',
+            'browser-compat': 'api.Foo',
+          },
+        },
+        {
+          frontmatter: {
+            slug: 'Web/API/Foo/bar',
+            'page-type': 'web-api-instance-method',
+            'browser-compat': 'api.Foo.bar',
+          },
+        },
+      ]);
+      assert.equal(result.get('api.Foo'), undefined);
+      assert.equal(result.get('api.Foo.bar'), 'Web/API/Foo/bar');
     });
   });
 

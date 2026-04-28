@@ -11,19 +11,29 @@
           "support": {
             "chrome": [
               {
-                "version_added": "144"
+                "version_added": "144",
+                "partial_implementation": true,
+                "notes": "The initial value is `none` instead of `normal` (see [bug 501399489](https://crbug.com/501399489))."
+              },
+              {
+                "version_added": "127",
+                "version_removed": "144",
+                "partial_implementation": true,
+                "notes": "The initial value is `auto` instead of `normal` (see [bug 460415950](https://crbug.com/460415950))."
               },
               {
                 "version_added": "125",
-                "version_removed": "144",
+                "version_removed": "127",
                 "partial_implementation": true,
-                "notes": "The initial value is `normal` instead of `none` (see [bug 460415950](https://crbug.com/460415950))."
+                "notes": "The initial value is `implicit` instead of `normal` (see [bug 340878604](https://crbug.com/340878604))."
               }
             ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "147"
+              "version_added": "147",
+              "partial_implementation": true,
+              "notes": "The initial value is `auto` instead of `normal` (see [bug 2030351](https://bugzil.la/2030351)."
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -32,7 +42,7 @@
             "safari": {
               "version_added": "26",
               "partial_implementation": true,
-              "notes": "The initial value is `normal` instead of `none` (see [bug 308981](https://webkit.org/b/308981))."
+              "notes": "The initial value is `auto` instead of `normal` (see [bug 308981](https://webkit.org/b/308981) and [bug 311941](https://webkit.org/b/311941))."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -112,6 +122,40 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "normal": {
+          "__compat": {
+            "description": "`normal` value",
+            "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-anchor-normal",
+            "support": {
+              "chrome": {
+                "version_added": false,
+                "impl_url": "https://crbug.com/501399489"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "151"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/311941"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
