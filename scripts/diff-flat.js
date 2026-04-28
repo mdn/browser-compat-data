@@ -263,6 +263,149 @@ const deepMerge = (target, source) => {
 };
 
 /**
+ * Collects URL fingerprints (spec_url and mdn_url) for each feature.
+ * @param {*} contents the merged data tree.
+ * @returns {Map<string, Set<string>>} map from feature path to its set of URL keys.
+ */
+const collectFeatureUrls = (contents) => {
+  /** @type {Map<string, Set<string>>} */
+  const features = new Map();
+  for (const { path, compat } of walk(undefined, contents)) {
+    /** @type {Set<string>} */
+    const urls = new Set();
+    if (compat.spec_url) {
+      for (const url of toArray(compat.spec_url)) {
+        urls.add(`spec:${url}`);
+      }
+    }
+    if (compat.mdn_url) {
+      urls.add(`mdn:${compat.mdn_url}`);
+    }
+    if (urls.size) {
+      features.set(path, urls);
+    }
+  }
+  return features;
+};
+
+/**
+ * Detects features that were moved (renamed) by matching shared spec_url/mdn_url
+ * between features removed in base and features added in head. When multiple
+ * candidates share a URL, prefers the candidate with the longest shared path
+ * prefix (so `api.fetch.init_X` prefers `api.fetch.options_parameter.X` over
+ * `api.Request.Request.options_parameter.X`).
+ * @param {*} baseContents the merged base data tree.
+ * @param {*} headContents the merged head data tree.
+ * @returns {Map<string, string>} map from removed path to added path.
+ */
+const detectMoves = (baseContents, headContents) => {
+  const baseFeatures = collectFeatureUrls(baseContents);
+  const headFeatures = collectFeatureUrls(headContents);
+
+  /** @type {Map<string, string[]>} */
+  const addedByUrl = new Map();
+  for (const [path, urls] of headFeatures) {
+    if (baseFeatures.has(path)) {
+      continue;
+    }
+    for (const url of urls) {
+      const list = addedByUrl.get(url) ?? [];
+      list.push(path);
+      addedByUrl.set(url, list);
+    }
+  }
+
+  /** @type {Map<string, string>} */
+  const moves = new Map();
+  for (const [removedPath, urls] of baseFeatures) {
+    if (headFeatures.has(removedPath)) {
+      continue;
+    }
+    /** @type {Set<string>} */
+    const candidates = new Set();
+    for (const url of urls) {
+      for (const candidate of addedByUrl.get(url) ?? []) {
+        candidates.add(candidate);
+      }
+    }
+    if (candidates.size === 0) {
+      continue;
+    }
+
+    const removedParts = removedPath.split('.');
+    let best = '';
+    let bestScore = -1;
+    for (const candidate of candidates) {
+      const candidateParts = candidate.split('.');
+      let score = 0;
+      while (
+        score < removedParts.length &&
+        score < candidateParts.length &&
+        removedParts[score] === candidateParts[score]
+      ) {
+        score++;
+      }
+      if (score > bestScore) {
+        best = candidate;
+        bestScore = score;
+      }
+    }
+    moves.set(removedPath, best);
+  }
+
+  return moves;
+};
+
+/**
+ * Formats a moved feature path as `prefix.{from → to}.suffix`, with the
+ * differing middle segments highlighted (from in red, to in green) and the
+ * shared head/tail segments unstyled.
+ * @param {string} from the source path.
+ * @param {string} to the destination path.
+ * @param {object} options Options
+ * @param {Format} options.format Whether to return HTML, otherwise plaintext.
+ * @returns {string} the formatted move string.
+ */
+/**
+ * Formats a moved feature path as an inline diff, with chunks added in head
+ * (green) and chunks present only in base (red) interleaved next to the
+ * shared parts. Tokenizes each path so `.`/`_` separators stay attached to
+ * the preceding word — partial-word overlaps like `er` in `parameter` and
+ * `referrer` aren't matched.
+ * @param {string} from the source path.
+ * @param {string} to the destination path.
+ * @param {object} options Options
+ * @param {Format} options.format Whether to return HTML, otherwise plaintext.
+ * @returns {string} the formatted move string.
+ */
+const formatMove = (from, to, options) => {
+  /**
+   * Tokenizes a path into words and separators (`.`/`_`) so each can be
+   * matched independently by the diff.
+   * @param {string} s the path to tokenize.
+   * @returns {string[]} interleaved word and separator tokens.
+   */
+  const tokenize = (s) => s.split(/([._])/);
+  return diffArrays(tokenize(to), tokenize(from))
+    .map((part) => {
+      // Note: removed/added is deliberately inverted here, to have additions
+      // first — matching the convention used for value diffs.
+      const value = part.value.join('');
+      if (part.removed) {
+        return options.format == 'html'
+          ? `<ins style="color: green">${value}</ins>`
+          : styleText('green', value);
+      } else if (part.added) {
+        return options.format == 'html'
+          ? `<del style="color: red">${value}</del>`
+          : styleText('red', value);
+      }
+      return value;
+    })
+    .join('');
+};
+
+/**
  * Print diffs
  * @param {string} base Base ref
  * @param {string} head Head ref
@@ -333,6 +476,8 @@ const printDiffs = (base, head, options) => {
       transformMD(feature);
     }
   }
+
+  const moves = detectMoves(baseContents, headContents);
 
   const baseData = flattenObject(baseContents);
   const headData = flattenObject(headContents);
@@ -531,6 +676,23 @@ const printDiffs = (base, head, options) => {
       );
     }
   };
+
+  if (moves.size) {
+    if (options.format === 'html') {
+      console.log('<h4>Moved features</h4>');
+      console.log('<ul>');
+      for (const [from, to] of moves) {
+        console.log(`<li>${formatMove(from, to, options)}</li>`);
+      }
+      console.log('</ul>');
+    } else {
+      console.log(styleText('bold', 'Moved features:'));
+      for (const [from, to] of moves) {
+        console.log(`  ${formatMove(from, to, options)}`);
+      }
+      console.log('');
+    }
+  }
 
   for (const entry of entries) {
     /** @type {string | null} */
