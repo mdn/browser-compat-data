@@ -70,6 +70,7 @@ It is important to recognize that being a Peer is a privilege, not a right. That
 - Rob Wu (@Rob--W), Mozilla
 - Simeon Vincent (@dotproto), Mozilla
 - Tomislav Jovanovic (@zombie), Mozilla
+- Vadim Makeev (@pepelsbey), Mozilla
 - Will Bamberg (@wbamberg), Open Web Docs
 - William Durand (@willdurand), Mozilla
 
