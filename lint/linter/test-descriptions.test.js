@@ -69,6 +69,86 @@ describe('test-descriptions', () => {
       );
     });
 
+    it('should check description for static method', () => {
+      const path = 'api.Interface.create_static';
+      /** @type {CompatStatement} */
+      const data = {
+        description: '',
+        support: {},
+      };
+
+      const errors = processData(data, 'api', path);
+      assert.equal(errors.length, 1);
+      assert.equal(
+        /** @type {DescriptionError} */ (errors[0]).ruleName,
+        'static',
+      );
+    });
+
+    it('should accept static method description', () => {
+      const path = 'api.Interface.create_static';
+      /** @type {CompatStatement} */
+      const data = {
+        description: '`create()` static method',
+        support: {},
+      };
+
+      const errors = processData(data, 'api', path);
+      assert.equal(errors.length, 0);
+    });
+
+    it('should accept static property description', () => {
+      const path = 'api.Interface.maxActions_static';
+      /** @type {CompatStatement} */
+      const data = {
+        description: '`maxActions` static property',
+        support: {},
+      };
+
+      const errors = processData(data, 'api', path);
+      assert.equal(errors.length, 0);
+    });
+
+    it('should accept static method description with trailing context', () => {
+      const path = 'api.console.exception_static';
+      /** @type {CompatStatement} */
+      const data = {
+        description: '`exception()` static method (an alias for `error()`)',
+        support: {},
+      };
+
+      const errors = processData(data, 'api', path);
+      assert.equal(errors.length, 0);
+    });
+
+    it('should reject static description with wrong name', () => {
+      const path = 'api.Interface.only_static';
+      /** @type {CompatStatement} */
+      const data = {
+        description: '`lowerBound()` static method',
+        support: {},
+      };
+
+      const errors = processData(data, 'api', path);
+      assert.equal(errors.length, 1);
+      assert.equal(
+        /** @type {DescriptionError} */ (errors[0]).ruleName,
+        'static',
+      );
+    });
+
+    it('should ignore _static_property suffix', () => {
+      const path = 'api.Interface.disabledFeatures_static_property';
+      /** @type {CompatStatement} */
+      const data = {
+        description: 'Supports `disabledFeatures` static property',
+        support: {},
+      };
+
+      const errors = processData(data, 'api', path);
+      assert.equal(errors.length, 0);
+    });
+
     it('should check description for secure context required', () => {
       const path = 'api.Interface.secure_context_required';
       /** @type {CompatStatement} */
