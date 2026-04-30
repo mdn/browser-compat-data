@@ -652,6 +652,17 @@ const printDiffs = (base, head, options) => {
   }
 
   const moves = detectMoves(baseContents, headContents);
+
+  const baseFeaturePaths = collectFeatures(baseContents);
+  const headFeaturePaths = collectFeatures(headContents);
+  const movedDests = new Set(moves.values());
+  const addedFeatures = [...headFeaturePaths.keys()]
+    .filter((p) => !baseFeaturePaths.has(p) && !movedDests.has(p))
+    .sort();
+  const removedFeatures = [...baseFeaturePaths.keys()]
+    .filter((p) => !headFeaturePaths.has(p) && !moves.has(p))
+    .sort();
+
   projectMoves(baseContents, moves);
 
   const baseData = flattenObject(baseContents);
@@ -852,6 +863,54 @@ const printDiffs = (base, head, options) => {
     }
   };
 
+  if (addedFeatures.length) {
+    if (options.format === 'html') {
+      console.log('<h4>New features</h4>');
+      console.log('<ul>');
+      for (const path of addedFeatures) {
+        const lastDot = path.lastIndexOf('.');
+        const parent = lastDot === -1 ? '' : path.slice(0, lastDot + 1);
+        const leaf = lastDot === -1 ? path : path.slice(lastDot + 1);
+        console.log(
+          `<li>${parent}<ins style="color: green">${leaf}</ins></li>`,
+        );
+      }
+      console.log('</ul>');
+    } else {
+      console.log(styleText('bold', 'New features:'));
+      for (const path of addedFeatures) {
+        const lastDot = path.lastIndexOf('.');
+        const parent = lastDot === -1 ? '' : path.slice(0, lastDot + 1);
+        const leaf = lastDot === -1 ? path : path.slice(lastDot + 1);
+        console.log(`  ${parent}${styleText('green', leaf)}`);
+      }
+      console.log('');
+    }
+  }
+
+  if (removedFeatures.length) {
+    if (options.format === 'html') {
+      console.log('<h4>Removed features</h4>');
+      console.log('<ul>');
+      for (const path of removedFeatures) {
+        const lastDot = path.lastIndexOf('.');
+        const parent = lastDot === -1 ? '' : path.slice(0, lastDot + 1);
+        const leaf = lastDot === -1 ? path : path.slice(lastDot + 1);
+        console.log(`<li>${parent}<del style="color: red">${leaf}</del></li>`);
+      }
+      console.log('</ul>');
+    } else {
+      console.log(styleText('bold', 'Removed features:'));
+      for (const path of removedFeatures) {
+        const lastDot = path.lastIndexOf('.');
+        const parent = lastDot === -1 ? '' : path.slice(0, lastDot + 1);
+        const leaf = lastDot === -1 ? path : path.slice(lastDot + 1);
+        console.log(`  ${parent}${styleText('red', leaf)}`);
+      }
+      console.log('');
+    }
+  }
+
   if (moves.size) {
     if (options.format === 'html') {
       console.log('<h4>Moved features</h4>');
@@ -867,6 +926,10 @@ const printDiffs = (base, head, options) => {
       }
       console.log('');
     }
+  }
+
+  if (addedFeatures.length || removedFeatures.length || moves.size) {
+    console.log('');
   }
 
   for (const entry of entries) {
