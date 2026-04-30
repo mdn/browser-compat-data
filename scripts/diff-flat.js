@@ -263,11 +263,13 @@ const deepMerge = (target, source) => {
 };
 
 /**
- * Collects URL fingerprints (spec_url and mdn_url) for each feature.
+ * Collects URL fingerprints (spec_url and mdn_url) for each feature, and
+ * includes features without URLs as empty entries so they're available to
+ * the token-based fallback matcher.
  * @param {*} contents the merged data tree.
- * @returns {Map<string, Set<string>>} map from feature path to its set of URL keys.
+ * @returns {Map<string, Set<string>>} map from feature path to URL set (possibly empty).
  */
-const collectFeatureUrls = (contents) => {
+const collectFeatures = (contents) => {
   /** @type {Map<string, Set<string>>} */
   const features = new Map();
   for (const { path, compat } of walk(undefined, contents)) {
@@ -281,11 +283,26 @@ const collectFeatureUrls = (contents) => {
     if (compat.mdn_url) {
       urls.add(`mdn:${compat.mdn_url}`);
     }
-    if (urls.size) {
-      features.set(path, urls);
-    }
+    features.set(path, urls);
   }
   return features;
+};
+
+/**
+ * Tokenizes a feature path's leaf segment into lowercase words, splitting on
+ * `_`, `.` and camelCase boundaries. Returns a Set so each word counts once
+ * per feature.
+ * @param {string} path the feature path.
+ * @returns {Set<string>} the leaf tokens.
+ */
+const tokenizeLeaf = (path) => {
+  const leaf = path.split('.').pop() ?? '';
+  return new Set(
+    leaf
+      .split(/[_.]+|(?=[A-Z])/)
+      .filter(Boolean)
+      .map((w) => w.toLowerCase()),
+  );
 };
 
 /**
@@ -351,18 +368,20 @@ const projectMoves = (baseContents, moves) => {
 };
 
 /**
- * Detects features that were moved (renamed) by matching shared spec_url/mdn_url
- * between features removed in base and features added in head. When multiple
- * candidates share a URL, prefers the candidate with the longest shared path
- * prefix (so `api.fetch.init_X` prefers `api.fetch.options_parameter.X` over
- * `api.Request.Request.options_parameter.X`).
+ * Detects features that were moved (renamed) in two passes:
+ *   1. Match by shared spec_url/mdn_url, with longest-shared-path-prefix as
+ *      tiebreaker when multiple candidates share a URL.
+ *   2. For features still unmatched, match by common ancestor path plus
+ *      shared non-scaffold leaf words (`keepalive`, `signal`, etc.).
+ *      Scaffold tokens — those appearing in more than half of unmatched
+ *      removed or added features (e.g. `init`, `parameter`) — are ignored.
  * @param {*} baseContents the merged base data tree.
  * @param {*} headContents the merged head data tree.
  * @returns {Map<string, string>} map from removed path to added path.
  */
 const detectMoves = (baseContents, headContents) => {
-  const baseFeatures = collectFeatureUrls(baseContents);
-  const headFeatures = collectFeatureUrls(headContents);
+  const baseFeatures = collectFeatures(baseContents);
+  const headFeatures = collectFeatures(headContents);
 
   /** @type {Map<string, string[]>} */
   const addedByUrl = new Map();
@@ -379,8 +398,10 @@ const detectMoves = (baseContents, headContents) => {
 
   /** @type {Map<string, string>} */
   const moves = new Map();
+  /** @type {Set<string>} */
+  const matchedDests = new Set();
   for (const [removedPath, urls] of baseFeatures) {
-    if (headFeatures.has(removedPath)) {
+    if (headFeatures.has(removedPath) || urls.size === 0) {
       continue;
     }
     /** @type {Set<string>} */
@@ -413,6 +434,97 @@ const detectMoves = (baseContents, headContents) => {
       }
     }
     moves.set(removedPath, best);
+    matchedDests.add(best);
+  }
+
+  // Pass 2: token + common-ancestor matching for the rest.
+  const unmatchedRemoved = [...baseFeatures.keys()].filter(
+    (p) => !headFeatures.has(p) && !moves.has(p),
+  );
+  const unmatchedAdded = [...headFeatures.keys()].filter(
+    (p) => !baseFeatures.has(p) && !matchedDests.has(p),
+  );
+  if (unmatchedRemoved.length === 0 || unmatchedAdded.length === 0) {
+    return moves;
+  }
+
+  /** @type {Map<string, Set<string>>} */
+  const removedTokens = new Map();
+  /** @type {Map<string, Set<string>>} */
+  const addedTokens = new Map();
+  /** @type {Map<string, number>} */
+  const removedFreq = new Map();
+  /** @type {Map<string, number>} */
+  const addedFreq = new Map();
+  for (const p of unmatchedRemoved) {
+    const tokens = tokenizeLeaf(p);
+    removedTokens.set(p, tokens);
+    for (const t of tokens) {
+      removedFreq.set(t, (removedFreq.get(t) ?? 0) + 1);
+    }
+  }
+  for (const p of unmatchedAdded) {
+    const tokens = tokenizeLeaf(p);
+    addedTokens.set(p, tokens);
+    for (const t of tokens) {
+      addedFreq.set(t, (addedFreq.get(t) ?? 0) + 1);
+    }
+  }
+  /**
+   * @param {string} token
+   * @returns {boolean} true if the token is too common to be distinctive.
+   */
+  const isScaffold = (token) =>
+    (removedFreq.get(token) ?? 0) > unmatchedRemoved.length / 2 ||
+    (addedFreq.get(token) ?? 0) > unmatchedAdded.length / 2;
+
+  for (const removedPath of unmatchedRemoved) {
+    const rTokens = /** @type {Set<string>} */ (removedTokens.get(removedPath));
+    const rParts = removedPath.split('.');
+    let best = '';
+    let bestScore = -1;
+
+    for (const addedPath of unmatchedAdded) {
+      if (matchedDests.has(addedPath)) {
+        continue;
+      }
+      const aTokens = /** @type {Set<string>} */ (addedTokens.get(addedPath));
+      const aParts = addedPath.split('.');
+
+      let ancestor = 0;
+      while (
+        ancestor < rParts.length - 1 &&
+        ancestor < aParts.length - 1 &&
+        rParts[ancestor] === aParts[ancestor]
+      ) {
+        ancestor++;
+      }
+      if (ancestor === 0) {
+        continue;
+      }
+
+      let tokenScore = 0;
+      for (const t of rTokens) {
+        if (aTokens.has(t) && !isScaffold(t)) {
+          const freq = (removedFreq.get(t) ?? 0) + (addedFreq.get(t) ?? 0) || 1;
+          tokenScore += 1 / freq;
+        }
+      }
+      if (tokenScore === 0) {
+        continue;
+      }
+
+      const score = ancestor * 1000 + tokenScore;
+      if (score > bestScore) {
+        best = addedPath;
+        bestScore = score;
+      }
+    }
+
+    if (best) {
+      moves.set(removedPath, best);
+      matchedDests.add(best);
+    }
   }
 
   return moves;
