@@ -289,6 +289,68 @@ const collectFeatureUrls = (contents) => {
 };
 
 /**
+ * Reads the value at a dot-separated path within a tree.
+ * @param {*} root the root object.
+ * @param {string} path dot-separated path.
+ * @returns {*} the value, or undefined if any segment is missing.
+ */
+const getAt = (root, path) => {
+  let node = root;
+  for (const part of path.split('.')) {
+    if (typeof node !== 'object' || node === null) {
+      return undefined;
+    }
+    node = node[part];
+  }
+  return node;
+};
+
+/**
+ * Writes a value at a dot-separated path within a tree, creating intermediate
+ * plain objects as needed.
+ * @param {*} root the root object.
+ * @param {string} path dot-separated path.
+ * @param {*} value the value to set.
+ * @returns {void}
+ */
+const setAt = (root, path, value) => {
+  const parts = path.split('.');
+  let node = root;
+  for (let i = 0; i < parts.length - 1; i++) {
+    if (typeof node[parts[i]] !== 'object' || node[parts[i]] === null) {
+      node[parts[i]] = {};
+    }
+    node = node[parts[i]];
+  }
+  node[parts[parts.length - 1]] = value;
+};
+
+/**
+ * Relocates each move's `__compat` block from its source path to its
+ * destination path within the base tree. After projection, the diff treats
+ * each move as if the feature had always lived at the new path with the
+ * old values, so a pure rename produces no add/remove noise.
+ * @param {*} baseContents the base data tree (mutated).
+ * @param {Map<string, string>} moves source → destination paths.
+ * @returns {void}
+ */
+const projectMoves = (baseContents, moves) => {
+  for (const [from, to] of moves) {
+    const source = getAt(baseContents, from);
+    if (!source || typeof source !== 'object' || !source.__compat) {
+      continue;
+    }
+    const dest = getAt(baseContents, to);
+    if (dest && typeof dest === 'object') {
+      dest.__compat = source.__compat;
+    } else {
+      setAt(baseContents, to, { __compat: source.__compat });
+    }
+    delete source.__compat;
+  }
+};
+
+/**
  * Detects features that were moved (renamed) by matching shared spec_url/mdn_url
  * between features removed in base and features added in head. When multiple
  * candidates share a URL, prefers the candidate with the longest shared path
@@ -478,6 +540,7 @@ const printDiffs = (base, head, options) => {
   }
 
   const moves = detectMoves(baseContents, headContents);
+  projectMoves(baseContents, moves);
 
   const baseData = flattenObject(baseContents);
   const headData = flattenObject(headContents);
