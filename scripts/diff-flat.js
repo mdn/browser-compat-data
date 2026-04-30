@@ -685,9 +685,83 @@ const printDiffs = (base, head, options) => {
   const commonName =
     options.format === 'html' ? `<h3>${prefix}</h3>` : `${prefix}`;
 
+  /**
+   * Renders a colored inline diff between two stringified field values,
+   * matching the convention used elsewhere: green for additions in head, red
+   * for removals from base. Returns an empty string when the diff would be
+   * empty (e.g. null → "mirror" / "false").
+   * @param {string} baseValue stringified base value (or `"null"`).
+   * @param {string} headValue stringified head value (or `"null"`).
+   * @returns {string} the colored diff string.
+   */
+  const formatValueDiff = (baseValue, headValue) => {
+    const splitRegexp =
+      /(?<=^")|(?<=[\],/ ])|(?=[[,/ ])|(?="$)|(?<=\d)(?=−)|(?<=−)(?=\d)|(?=#)/;
+    let headValueForDiff = headValue;
+    let baseValueForDiff = baseValue;
+
+    if (baseValue == 'null') {
+      baseValueForDiff = '';
+      if (headValue == '"mirror"' || headValue == '"false"') {
+        headValueForDiff = '';
+      }
+    } else if (headValue == 'null') {
+      headValueForDiff = '';
+    }
+
+    return diffArrays(
+      headValueForDiff.split(splitRegexp),
+      baseValueForDiff.split(splitRegexp),
+    )
+      .map((part) => {
+        // Note: removed/added is deliberately inverted here, to have
+        // additions first.
+        const value = part.value.join('');
+        if (part.removed) {
+          return options.format == 'html'
+            ? `<ins style="color: green">${value}</ins>`
+            : styleText('green', value);
+        } else if (part.added) {
+          return options.format == 'html'
+            ? `<del style="color: red">${value}</del>`
+            : styleText('red', value);
+        }
+        return value;
+      })
+      .join('');
+  };
+
+  /** @type {Set<string>} */
+  const consumedKeys = new Set();
+  for (const [, to] of moves) {
+    consumedKeys.add(`${to}.__compat.description`);
+  }
+  for (const path of [...addedFeatures, ...removedFeatures]) {
+    consumedKeys.add(`${path}.__compat.description`);
+  }
+
+  /**
+   * Returns the colored description diff at a feature path, or empty if
+   * unchanged.
+   * @param {string} path the feature path.
+   * @returns {string} the colored description diff (or empty).
+   */
+  const featureDescriptionDiff = (path) => {
+    const key = `${path}.__compat.description`;
+    const baseValue = JSON.stringify(baseData[key] ?? null);
+    const headValue = JSON.stringify(headData[key] ?? null);
+    if (baseValue === headValue) {
+      return '';
+    }
+    return formatValueDiff(baseValue, headValue);
+  };
+
   let lastKey = '';
 
   for (const key of keys) {
+    if (consumedKeys.has(key)) {
+      continue;
+    }
     const baseValue = JSON.stringify(baseData[key] ?? null);
     const headValue = JSON.stringify(headData[key] ?? null);
     if (baseValue === headValue) {
@@ -702,42 +776,7 @@ const printDiffs = (base, head, options) => {
       options,
     );
 
-    const splitRegexp =
-      /(?<=^")|(?<=[\],/ ])|(?=[[,/ ])|(?="$)|(?<=\d)(?=−)|(?<=−)(?=\d)|(?=#)/;
-    let headValueForDiff = headValue;
-    let baseValueForDiff = baseValue;
-
-    if (baseValue == 'null') {
-      baseValueForDiff = '';
-      if (headValue == '"mirror"' || headValue == '"false"') {
-        // Ignore initial "mirror"/"false" values.
-        headValueForDiff = '';
-      }
-    } else if (headValue == 'null') {
-      headValueForDiff = '';
-    }
-
-    const valueDiff = diffArrays(
-      headValueForDiff.split(splitRegexp),
-      baseValueForDiff.split(splitRegexp),
-    )
-      .map((part) => {
-        // Note: removed/added is deliberately inversed here, to have additions first.
-        const value = part.value.join('');
-        if (part.removed) {
-          return options.format == 'html'
-            ? `<ins style="color: green">${value}</ins>`
-            : styleText('green', value);
-        } else if (part.added) {
-          return options.format == 'html'
-            ? `<del style="color: red">${value}</del>`
-            : styleText('red', value);
-        }
-
-        return value;
-      })
-      .join('');
-
+    const valueDiff = formatValueDiff(baseValue, headValue);
     const value = valueDiff;
 
     if (!value.length) {
@@ -778,7 +817,12 @@ const printDiffs = (base, head, options) => {
     lastKey = key;
   }
 
-  if (groups.size === 0) {
+  if (
+    groups.size === 0 &&
+    !addedFeatures.length &&
+    !removedFeatures.length &&
+    !moves.size
+  ) {
     console.log('✔ No changes.');
     return;
   }
@@ -863,69 +907,99 @@ const printDiffs = (base, head, options) => {
     }
   };
 
-  if (addedFeatures.length) {
-    if (options.format === 'html') {
-      console.log('<h4>New features</h4>');
-      console.log('<ul>');
-      for (const path of addedFeatures) {
-        const lastDot = path.lastIndexOf('.');
-        const parent = lastDot === -1 ? '' : path.slice(0, lastDot + 1);
-        const leaf = lastDot === -1 ? path : path.slice(lastDot + 1);
-        console.log(
-          `<li>${parent}<ins style="color: green">${leaf}</ins></li>`,
-        );
-      }
-      console.log('</ul>');
-    } else {
-      console.log(styleText('bold', 'New features:'));
-      for (const path of addedFeatures) {
-        const lastDot = path.lastIndexOf('.');
-        const parent = lastDot === -1 ? '' : path.slice(0, lastDot + 1);
-        const leaf = lastDot === -1 ? path : path.slice(lastDot + 1);
-        console.log(`  ${parent}${styleText('green', leaf)}`);
-      }
-      console.log('');
-    }
+  /**
+   * @typedef {object} ListingItem
+   * @property {string} section section header.
+   * @property {string} rendered styled key (path or move).
+   * @property {number} visibleLen visible length of `rendered` (no styling).
+   * @property {string} desc styled description diff (or empty).
+   */
+
+  /** @type {ListingItem[]} */
+  const listingItems = [];
+  for (const path of addedFeatures) {
+    const lastDot = path.lastIndexOf('.');
+    const parent = lastDot === -1 ? '' : path.slice(0, lastDot + 1);
+    const leaf = lastDot === -1 ? path : path.slice(lastDot + 1);
+    const styledLeaf =
+      options.format === 'html'
+        ? `<ins style="color: green">${leaf}</ins>`
+        : styleText('green', leaf);
+    listingItems.push({
+      section: 'New features',
+      rendered: `${parent}${styledLeaf}`,
+      visibleLen: path.length,
+      desc: featureDescriptionDiff(path),
+    });
+  }
+  for (const path of removedFeatures) {
+    const lastDot = path.lastIndexOf('.');
+    const parent = lastDot === -1 ? '' : path.slice(0, lastDot + 1);
+    const leaf = lastDot === -1 ? path : path.slice(lastDot + 1);
+    const styledLeaf =
+      options.format === 'html'
+        ? `<del style="color: red">${leaf}</del>`
+        : styleText('red', leaf);
+    listingItems.push({
+      section: 'Removed features',
+      rendered: `${parent}${styledLeaf}`,
+      visibleLen: path.length,
+      desc: featureDescriptionDiff(path),
+    });
+  }
+  for (const [from, to] of moves) {
+    const rendered = formatMove(from, to, options);
+    const visibleLen =
+      options.format === 'html'
+        ? rendered.replace(/<[^>]+>/g, '').length
+        : stripAnsi(rendered).length;
+    listingItems.push({
+      section: 'Moved features',
+      rendered,
+      visibleLen,
+      desc: featureDescriptionDiff(to),
+    });
   }
 
-  if (removedFeatures.length) {
-    if (options.format === 'html') {
-      console.log('<h4>Removed features</h4>');
-      console.log('<ul>');
-      for (const path of removedFeatures) {
-        const lastDot = path.lastIndexOf('.');
-        const parent = lastDot === -1 ? '' : path.slice(0, lastDot + 1);
-        const leaf = lastDot === -1 ? path : path.slice(lastDot + 1);
-        console.log(`<li>${parent}<del style="color: red">${leaf}</del></li>`);
+  if (listingItems.length) {
+    const maxLen = Math.max(...listingItems.map((i) => i.visibleLen));
+    const hasAnyDesc = listingItems.some((i) => i.desc);
+    let lastSection = '';
+    for (const item of listingItems) {
+      if (item.section !== lastSection) {
+        if (lastSection) {
+          console.log('');
+        }
+        const title = `${item.section}:`;
+        const styledTitle =
+          options.format === 'html'
+            ? `<strong>${title}</strong>`
+            : styleText('bold', title);
+        let header = styledTitle;
+        if (hasAnyDesc) {
+          const padding = ' '.repeat(Math.max(1, maxLen + 3 - title.length));
+          const descLabel = 'description =';
+          header +=
+            padding +
+            (options.format === 'html'
+              ? `<em>${descLabel}</em>`
+              : styleText('italic', descLabel));
+        }
+        console.log(header);
+        lastSection = item.section;
       }
-      console.log('</ul>');
-    } else {
-      console.log(styleText('bold', 'Removed features:'));
-      for (const path of removedFeatures) {
-        const lastDot = path.lastIndexOf('.');
-        const parent = lastDot === -1 ? '' : path.slice(0, lastDot + 1);
-        const leaf = lastDot === -1 ? path : path.slice(lastDot + 1);
-        console.log(`  ${parent}${styleText('red', leaf)}`);
+      let line = `  ${item.rendered}`;
+      if (item.desc) {
+        const padding = ' '.repeat(1 + maxLen - item.visibleLen);
+        const styledDesc =
+          options.format === 'html'
+            ? `<em>${item.desc}</em>`
+            : styleText('italic', item.desc);
+        line += padding + styledDesc;
       }
-      console.log('');
+      console.log(line);
     }
-  }
-
-  if (moves.size) {
-    if (options.format === 'html') {
-      console.log('<h4>Moved features</h4>');
-      console.log('<ul>');
-      for (const [from, to] of moves) {
-        console.log(`<li>${formatMove(from, to, options)}</li>`);
-      }
-      console.log('</ul>');
-    } else {
-      console.log(styleText('bold', 'Moved features:'));
-      for (const [from, to] of moves) {
-        console.log(`  ${formatMove(from, to, options)}`);
-      }
-      console.log('');
-    }
+    console.log('');
   }
 
   if (addedFeatures.length || removedFeatures.length || moves.size) {
