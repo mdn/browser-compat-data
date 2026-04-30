@@ -30,7 +30,11 @@ If BCD's linter complains about the provided URL, you will need to check its sta
 
 ## Best practices
 
-In addition to the validated rules above, the following best practices have emerged:
+In addition to the validated rules above, the following best practices have emerged.
+
+### Aim to provide just one URL
+
+The `spec_url` property allows to take an array of multiple URLs, but most of the time it is best to provide just the most meaningful URL. For example, don't add multiple (historical) versions of specifications.
 
 ### Events
 
