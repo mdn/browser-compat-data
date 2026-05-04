@@ -92,7 +92,7 @@ export const validateHTML = (string) => {
  * Check the notes in the data
  * @param {string | string[]} notes The notes to test
  * @param {BrowserName} browser The browser the notes belong to
- * @param {string} feature The Internalidentifier of the feature
+ * @param {string} feature The identifier of the feature
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
@@ -118,7 +118,7 @@ const checkNotes = (notes, browser, feature, logger) => {
  * Process the data for notes errors
  * @param {InternalCompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
- * @param {string} feature The Internalidentifier of the feature
+ * @param {string} feature The identifier of the feature
  * @returns {void}
  */
 const processData = (data, logger, feature) => {

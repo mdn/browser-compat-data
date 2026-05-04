@@ -266,12 +266,12 @@ export class ConsistencyChecker {
 
   /**
    * Get all of the unsupported browsers in a feature
-   * @param {InternalCompatStatement} [InternalcompatData] The compat data to process
+   * @param {InternalCompatStatement} [compatData] The compat data to process
    * @returns {BrowserName[]} The list of browsers marked as unsupported
    */
-  extractUnsupportedBrowsers(InternalcompatData) {
+  extractUnsupportedBrowsers(compatData) {
     return this.extractBrowsers(
-      InternalcompatData,
+      compatData,
       (data) =>
         data.version_added === false ||
         typeof data.version_removed !== 'undefined',
@@ -280,12 +280,12 @@ export class ConsistencyChecker {
 
   /**
    * Get all of the browsers with a version number in a feature.
-   * @param {InternalCompatStatement} [InternalcompatData] The compat data to process
+   * @param {InternalCompatStatement} [compatData] The compat data to process
    * @returns {BrowserName[]} The list of browsers with an exact version number
    */
-  extractSupportedBrowsersWithVersion(InternalcompatData) {
+  extractSupportedBrowsersWithVersion(compatData) {
     return this.extractBrowsers(
-      InternalcompatData,
+      compatData,
       (/** @type {InternalSimpleSupportStatement} */ data) =>
         typeof data.version_added === 'string',
     );
