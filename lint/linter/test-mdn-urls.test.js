@@ -3,7 +3,7 @@
 
 import assert from 'node:assert/strict';
 
-/** @import {InternalCompatStatement} from '../../types/internal.js' */
+/** @import {InternalCompatStatement} from '../../types/index.js' */
 
 import {
   inventory,

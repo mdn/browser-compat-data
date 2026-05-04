@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 
 import { fixStatusValue } from './status.js';
 
-/** @import {InternalIdentifier} from '../../types/internal.js' */
+/** @import {InternalIdentifier} from '../../types/index.js' */
 
 const tests = [
   {
