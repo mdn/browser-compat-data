@@ -52,7 +52,12 @@ const compileTypesFromSchemas = async (sources, destination) => {
     destination instanceof URL ? destination : new URL(destination, root);
 
   await fs.writeFile(file, ts);
-  spawn('tsc', ['--ignoreConfig', fileURLToPath(file)], {
+
+  // Type-check using the tsconfig.json colocated with the destination. The
+  // root tsconfig excludes build/, so types/ and build/ each have their own
+  // tsconfig that overrides skipLibCheck for the generated declarations.
+  const projectDir = new URL('.', file);
+  spawn('tsc', ['-p', fileURLToPath(projectDir)], {
     cwd: fileURLToPath(root),
     stdio: 'inherit',
   });
