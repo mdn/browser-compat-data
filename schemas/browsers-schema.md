@@ -1,6 +1,6 @@
 # The browser JSON schema
 
-This document helps you to understand the structure of the browser (and JavaScript runtime) data in BCD, including the browser type, a display-friendly name, release data and more. Each browser is defined by a unique identifier (e.g. `firefox` or `chrome_android`). Each browser JSON file describes exactly one browser.
+This document helps you to understand the structure of the browser (and JavaScript runtime) data in BCD, including the browser type, a display-friendly name, release data and more. Each browser is defined by a unique identifier (for example `firefox` or `chrome_android`). Each browser JSON file describes exactly one browser.
 
 Note: while NodeJS and Deno are JavaScript runtimes and not browsers, data for them is placed in `browsers`, and are included whenever we use the term "browsers".
 
@@ -56,7 +56,7 @@ A required boolean indicating whether the browser supports web extensions. A `tr
 
 ### `pref_url`
 
-An optional string containing the URL of the page where feature flags can be changed (e.g. `"about:config"` for Firefox or `"chrome://flags"` for Chrome).
+An optional string containing the URL of the page where feature flags can be changed (for example `"about:config"` for Firefox or `"chrome://flags"` for Chrome).
 
 ### `preview_name`
 
@@ -78,7 +78,7 @@ The `releases` object contains data regarding the browsers' releases, using the 
 
 - An optional `release_notes` property which points to release notes. It needs to be a valid URL.
 
-- An optional `engine` property which is the name of the browser's engine. Valid values are `"Blink"`, `"EdgeHTML"`, `"Gecko"`, `"Presto"`, `"Trident"`, `"WebKit"`, and `"V8"`. This property is placed on the individual release as a browser may switch to a different engine (e.g. Microsoft Edge switched to Chrome as its base engine). If `engine` is specified, `engine_version` must also be provided.
+- An optional `engine` property which is the name of the browser's engine. Valid values are `"Blink"`, `"EdgeHTML"`, `"Gecko"`, `"Presto"`, `"Trident"`, `"WebKit"`, and `"V8"`. This property is placed on the individual release as a browser may switch to a different engine (for example Microsoft Edge switched to Chrome as its base engine). If `engine` is specified, `engine_version` must also be provided.
 
 - An optional `engine_version` property indicating the engine version used in this release. Required when `engine` is specified.
 

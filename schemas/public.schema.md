@@ -69,8 +69,8 @@ Below is a simplified example of the published data:
 
 The `__meta` object is a required property containing metadata about the published data. It has two required properties:
 
-- `version`: a string containing the package version (e.g. `"6.0.0"`).
-- `timestamp`: a string containing the ISO 8601 date-time when the data was built (e.g. `"2024-01-15T00:00:00.000Z"`).
+- `version`: a string containing the package version (for example `"6.0.0"`).
+- `timestamp`: a string containing the ISO 8601 date-time when the data was built (for example `"2024-01-15T00:00:00.000Z"`).
 
 ### `browsers`
 
@@ -110,14 +110,14 @@ The `__compat` object describes a feature's compatibility data. It consists of t
   In the published data, this property is formatted as HTML.
 
 - An optional `mdn_url` property which **points to an MDN reference page documenting the feature**.
-  It needs to be a valid URL, and should be the language-neutral URL (e.g. use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
+  It needs to be a valid URL, and should be the language-neutral URL (for example use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
 
 - An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined.
   Each URL must contain a fragment identifier.
 
 - An optional `tags` property to assign tags to the feature.
 
-- A mandatory `source_file` property containing the path to the source file that defines this feature, relative to the repository root (e.g. `"api/AbortController.json"`). This is automatically generated at build time.
+- A mandatory `source_file` property containing the path to the source file that defines this feature, relative to the repository root (for example `"api/AbortController.json"`). This is automatically generated at build time.
 
 #### The `support_statement` object
 

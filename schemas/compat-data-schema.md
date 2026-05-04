@@ -40,7 +40,7 @@ The JSON files contain [feature identifiers](#features), which are relevant for 
 
 ### Feature hierarchies
 
-Each feature is identified by a unique hierarchy of strings, e.g. the `text-align` property is identified by `css.properties.text-align`.
+Each feature is identified by a unique hierarchy of strings, for example the `text-align` property is identified by `css.properties.text-align`.
 
 In the JSON file it looks like this:
 
@@ -179,10 +179,10 @@ The `__compat` object consists of the following:
   This property may be formatted using Markdown, see the rules for `notes`.
 
 - An optional `mdn_url` property which **points to an MDN reference page documenting the feature**.
-  It needs to be a valid URL, and should be the language-neutral URL (e.g. use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
+  It needs to be a valid URL, and should be the language-neutral URL (for example use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
 
 - An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined.
-  Each URL must contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`) or match one of the regular-expression pattern given in the JSON Schema file.
+  Each URL must contain a fragment identifier (for example `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`) or match one of the regular-expression pattern given in the JSON Schema file.
   Each URL must link to a specification published by a standards body or a formal proposal that may lead to such publication.
 
 - An optional `tags` property to assign tags to the feature.
@@ -494,4 +494,4 @@ The mandatory status property contains information about stability of the featur
 
 ### Localization
 
-We are planning to localize some of this data (e.g. notes, descriptions). At this point we haven't decided how or when we are going to do that. See [issue 114](https://github.com/mdn/browser-compat-data/issues/114) for more information.
+We are planning to localize some of this data (for example notes, descriptions). At this point we haven't decided how or when we are going to do that. See [issue 114](https://github.com/mdn/browser-compat-data/issues/114) for more information.
