@@ -230,13 +230,13 @@ export const createDataBundle = async () => {
 
   applyTransforms(bcd);
 
-  /** @type {*} */
-  const result = {
+  // @ts-expect-error After applyTransforms, bcd matches the public CompatData
+  // shape (mirrors resolved, version_last added, descriptions/notes converted
+  // to HTML), but its static type is still InternalCompatData.
+  return {
     ...bcd,
     __meta: generateMeta(),
   };
-
-  return /** @type {CompatData}*/ (result);
 };
 
 /**
