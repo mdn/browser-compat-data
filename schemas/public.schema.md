@@ -209,7 +209,7 @@ Example:
 
 #### `version_last`
 
-A string indicating the last browser version that supported the feature. This property is always present when `version_removed` is present. For example, if a feature was removed in version 30, `version_last` will be `"29"`.
+A string indicating the last browser version that supported the feature. This property is always present when `version_removed` is present. For example, if a feature was removed in version 30, `version_last` will be `"29"`. Version numbers can be non-sequential, so `version_last` is not always `version_removed` minus 1.
 
 ```json
 {
