@@ -14,7 +14,7 @@ import { marked } from 'marked';
 import { compilePublicTypes } from '../generate-types.js';
 import schema from '../../schemas/public.schema.json' with { type: 'json' };
 import { createAjv } from '../lib/ajv.js';
-import { spawnAsync, walk } from '../../utils/index.js';
+import { walk } from '../../utils/index.js';
 import bcd from '../../index.js';
 
 import mirrorSupport from './mirror.js';
@@ -396,12 +396,15 @@ const writeManifest = async () => {
  */
 const main = async () => {
   // Remove previous build outputs while preserving tracked files in build/
-  // (.gitignore, .npmignore, tsconfig.json). -x is required because build
-  // outputs are gitignored.
+  // (.gitignore, .npmignore, tsconfig.json).
   await fs.mkdir(targetdir, { recursive: true });
-  await spawnAsync('git', ['clean', '-fdx', '.'], {
-    cwd: fileURLToPath(targetdir),
-  });
+  const preserved = new Set(['.gitignore', '.npmignore', 'tsconfig.json']);
+  for (const entry of await fs.readdir(targetdir)) {
+    if (preserved.has(entry)) {
+      continue;
+    }
+    await fs.rm(new URL(entry, targetdir), { recursive: true, force: true });
+  }
 
   await Promise.all([
     writeManifest(),
