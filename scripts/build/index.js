@@ -14,7 +14,7 @@ import { marked } from 'marked';
 import { compilePublicTypes } from '../generate-types.js';
 import schema from '../../schemas/public.schema.json' with { type: 'json' };
 import { createAjv } from '../lib/ajv.js';
-import { walk } from '../../utils/index.js';
+import { spawnAsync, walk } from '../../utils/index.js';
 import bcd from '../../index.js';
 
 import mirrorSupport from './mirror.js';
@@ -395,21 +395,13 @@ const writeManifest = async () => {
  * Perform a build of BCD for publishing
  */
 const main = async () => {
-  // Remove existing files, if there are any
-  await fs
-    .rm(targetdir, {
-      force: true,
-      recursive: true,
-    })
-    .catch((e) => {
-      // Missing folder is not an issue since we wanted to delete it anyway
-      if (e.code !== 'ENOENT') {
-        throw e;
-      }
-    });
-
-  // Crate a new directory
-  await fs.mkdir(targetdir);
+  // Remove previous build outputs while preserving tracked files in build/
+  // (.gitignore, .npmignore, tsconfig.json). -x is required because build
+  // outputs are gitignored.
+  await fs.mkdir(targetdir, { recursive: true });
+  await spawnAsync('git', ['clean', '-fdx', '.'], {
+    cwd: fileURLToPath(targetdir),
+  });
 
   await Promise.all([
     writeManifest(),
