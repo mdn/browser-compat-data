@@ -157,7 +157,7 @@ The `simple_support_statement` object is the core object containing the compatib
 
 #### `version_added`
 
-This is the only mandatory property and it contains a string with the version number indicating when a subfeature has been added (and is therefore supported), or `false` indicating the feature is not supported. Examples:
+This is the only mandatory property and it is `false` or contains a string with the version number when support for the subfeature was added. Examples:
 
 - Support from version 3.5 (inclusive):
 
