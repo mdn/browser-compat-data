@@ -217,7 +217,7 @@ Desktop browser identifiers are mandatory, with the `version_added` property set
 
 #### The `support_statement` object
 
-The `support_statement` object describes the support provided by a single browser type for the given subfeature. It is either a `simple_support_statement` object, an array of two or more `simple_support_statement` objects, or the string `"mirror"`.
+The `support_statement` object describes the support provided by a single browser type for the given feature. It is either a `simple_support_statement` object, an array of two or more `simple_support_statement` objects, or the string `"mirror"`.
 
 If there is an array, the `simple_support_statement` objects should be sorted with the most relevant and general entries first. In other words, sort such arrays with entries applying to the most recent browser releases first and sort entries with prefixes or flags after those without. If in doubt, reverse-chronological order with respect to the `"version_removed"` and then `"version_added"` values usually works well. For more information on sorting support statements, see [#1596](https://github.com/mdn/browser-compat-data/issues/1596).
 
@@ -269,7 +269,7 @@ The `simple_support_statement` object is the core object containing the compatib
 
 #### `version_added`
 
-This is the only mandatory property and it is `false` or contains a string with the version number when support for the subfeature was added. Examples:
+This is the only mandatory property and it is `false` or contains a string with the version number when support for the feature was added. Examples:
 
 - Support from version 3.5 (inclusive):
 
@@ -305,7 +305,7 @@ This is the only mandatory property and it is `false` or contains a string with 
 
 #### `version_removed`
 
-This optional property contains a string with the version number when the subfeature ceased to be supported. If the feature has not been removed from the browser, this property is omitted.
+This optional property contains a string with the version number when the feature ceased to be supported. If the feature has not been removed from the browser, this property is omitted.
 
 Examples:
 
@@ -334,7 +334,7 @@ Ranged versions should be used sparingly and only when it is impossible or highl
 
 #### `prefix`
 
-A prefix to add to the subfeature name (defaults to empty string).
+A prefix to add to the feature name (defaults to empty string).
 If applicable, leading and trailing `-` must be included.
 
 Examples:

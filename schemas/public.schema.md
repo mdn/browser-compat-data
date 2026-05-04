@@ -121,7 +121,7 @@ The `__compat` object describes a feature's compatibility data. It consists of t
 
 #### The `support_statement` object
 
-The `support_statement` object describes the support provided by a single browser type for the given subfeature. It is either a `simple_support_statement` object, or an array of two or more `simple_support_statement` objects.
+The `support_statement` object describes the support provided by a single browser type for the given feature. It is either a `simple_support_statement` object, or an array of two or more `simple_support_statement` objects.
 
 If there is an array, the `simple_support_statement` objects are sorted with the most relevant and general entries first. In other words, entries applying to the most recent browser releases come first and entries with prefixes or flags come after those without.
 
@@ -157,7 +157,7 @@ The `simple_support_statement` object is the core object containing the compatib
 
 #### `version_added`
 
-This is the only mandatory property and it is `false` or contains a string with the version number when support for the subfeature was added. Examples:
+This is the only mandatory property and it is `false` or contains a string with the version number when support for the feature was added. Examples:
 
 - Support from version 3.5 (inclusive):
 
@@ -193,7 +193,7 @@ This is the only mandatory property and it is `false` or contains a string with 
 
 #### `version_removed`
 
-This optional property contains a string with the version number when the subfeature ceased to be supported. If the feature has not been removed from the browser, this property is omitted.
+This optional property contains a string with the version number when the feature ceased to be supported. If the feature has not been removed from the browser, this property is omitted.
 
 Example:
 
@@ -221,7 +221,7 @@ A string indicating the last browser version that supported the feature. This pr
 
 #### `prefix`
 
-A prefix to add to the subfeature name (defaults to empty string).
+A prefix to add to the feature name (defaults to empty string).
 If applicable, leading and trailing `-` must be included.
 
 Examples:
