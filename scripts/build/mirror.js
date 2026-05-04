@@ -216,6 +216,13 @@ const copyStatement = (data) => {
  * @returns {InternalSupportStatement} The mirrored support statement
  */
 export const bumpSupport = (sourceData, sourceBrowser, destination) => {
+  if (sourceData === 'mirror') {
+    // Callers must resolve "mirror" before calling bumpSupport.
+    throw new Error(
+      `Cannot bump unresolved 'mirror' support statement (${sourceBrowser} → ${destination})`,
+    );
+  }
+
   if (Array.isArray(sourceData)) {
     // Bump the individual support statements and filter out results with a
     // falsy version_added. It's not possible for sourceData to have a falsy
@@ -244,14 +251,11 @@ export const bumpSupport = (sourceData, sourceBrowser, destination) => {
     }
   }
 
-  /** @type {InternalSimpleSupportStatement} */
-  // @ts-expect-error FIXME Handle "mirror" value.
   const newData = copyStatement(sourceData);
 
   if (
     bcd.browsers[sourceBrowser].type === 'desktop' &&
     bcd.browsers[destination].type === 'mobile' &&
-    typeof sourceData === 'object' &&
     sourceData.partial_implementation
   ) {
     const notes = Array.isArray(sourceData.notes)
@@ -278,27 +282,19 @@ export const bumpSupport = (sourceData, sourceBrowser, destination) => {
     return { version_added: false };
   }
 
-  if (
-    typeof sourceData === 'object' &&
-    typeof sourceData.version_added === 'string'
-  ) {
+  if (typeof sourceData.version_added === 'string') {
     newData.version_added = getMatchingBrowserVersion(
       destination,
       sourceData.version_added,
     );
   }
 
-  if (
-    newData.version_added === false &&
-    typeof sourceData === 'object' &&
-    sourceData.version_added !== false
-  ) {
+  if (newData.version_added === false && sourceData.version_added !== false) {
     // If the feature is added in an upstream version newer than available in the downstream browser, don't copy notes, etc.
     return { version_added: false };
   }
 
   if (
-    typeof sourceData === 'object' &&
     sourceData.version_removed &&
     typeof sourceData.version_removed === 'string'
   ) {
@@ -321,11 +317,7 @@ export const bumpSupport = (sourceData, sourceBrowser, destination) => {
   }
 
   // Only process notes if they weren't already removed (e.g., for OS-specific limitations)
-  if (
-    typeof sourceData === 'object' &&
-    sourceData.notes &&
-    newData.notes !== undefined
-  ) {
+  if (sourceData.notes && newData.notes !== undefined) {
     const sourceBrowserName =
       sourceBrowser === 'chrome'
         ? '(Google )?Chrome'
