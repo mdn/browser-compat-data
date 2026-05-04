@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {InternalCompatData} from './types/index.js' */
+/** @import {InternalCompatData, InternalCompatStatement} from './types/index.js' */
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -40,11 +40,13 @@ const load = async (...dirs) => {
         /** @type {InternalCompatData} */
         const contents = JSON.parse(rawcontents.toString('utf8'));
 
-        // Add source_file props
+        // Add source_file props. The `source_file` field is part of the public
+        // `CompatStatement` shape, not the internal one, so cast at the assignment.
         const walker = walk(undefined, contents);
         for (const { compat } of walker) {
-          // @ts-expect-error Need to better reflect transition from internal to public data.
-          compat.source_file = normalizePath(path.relative(dirname, fp));
+          /** @type {InternalCompatStatement & { source_file: string }} */ (
+            compat
+          ).source_file = normalizePath(path.relative(dirname, fp));
         }
 
         extend(result, contents);
