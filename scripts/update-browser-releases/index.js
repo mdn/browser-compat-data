@@ -190,7 +190,8 @@ const options = {
     bcdBrowserName: 'opera',
     skippedReleases: [],
     releaseFeedURL: 'https://blogs.opera.com/desktop/category/stable-2/feed/',
-    titleVersionPattern: /^Opera (\d+)$/,
+    maxFeedPages: 50,
+    titleVersionPattern: /^Opera (\d+)(?: Stable)?$/,
     descriptionEngineVersionPattern: /Chromium(?:\s[^.\d]+)?\s(\d+)(?=[.])/,
   },
   opera_android: {

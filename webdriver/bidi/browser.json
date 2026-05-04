@@ -35,6 +35,7 @@
         "close": {
           "__compat": {
             "description": "`browser.close` command",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browser/close",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browser-close",
             "support": {
               "chrome": {
@@ -69,6 +70,7 @@
         "createUserContext": {
           "__compat": {
             "description": "`browser.createUserContext` command",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browser/createUserContext",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browser-createUserContext",
             "support": {
               "chrome": {
@@ -200,6 +202,7 @@
         "getClientWindows": {
           "__compat": {
             "description": "`browser.getClientWindows` command",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browser/getClientWindows",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browser-getClientWindows",
             "support": {
               "chrome": {
@@ -235,6 +238,7 @@
         "getUserContexts": {
           "__compat": {
             "description": "`browser.getUserContexts` command",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browser/getUserContexts",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browser-getUserContexts",
             "support": {
               "chrome": {
@@ -268,6 +272,7 @@
         "removeUserContext": {
           "__compat": {
             "description": "`browser.removeUserContext` command",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browser/removeUserContext",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browser-removeUserContext",
             "support": {
               "chrome": {
@@ -343,8 +348,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1855027"
+                "version_added": "151"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -360,7 +364,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -378,7 +382,175 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
+                  "version_added": "151"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
                   "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "height_parameter": {
+            "__compat": {
+              "description": "`height` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browserclientwindowrectstate-height",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "151",
+                  "partial_implementation": true,
+                  "notes": "Doesn't support setting `width` and `height` coordinates individually."
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "state_parameter": {
+            "__compat": {
+              "description": "`state` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browserclientwindownamedstate-state",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "151"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "width_parameter": {
+            "__compat": {
+              "description": "`width` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browserclientwindowrectstate-width",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "151",
+                  "partial_implementation": true,
+                  "notes": "Doesn't support setting `width` and `height` coordinates individually."
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "x_parameter": {
+            "__compat": {
+              "description": "`x` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browserclientwindowrectstate-x",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "151",
+                  "partial_implementation": true,
+                  "notes": "Doesn't support setting `x` and `y` coordinates individually."
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "y_parameter": {
+            "__compat": {
+              "description": "`y` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browserclientwindowrectstate-y",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "151",
+                  "partial_implementation": true,
+                  "notes": "Doesn't support setting `x` and `y` coordinates individually."
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",

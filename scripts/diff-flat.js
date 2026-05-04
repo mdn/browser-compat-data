@@ -15,22 +15,14 @@ import stripAnsi from 'strip-ansi';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
+import bcd from '../index.js';
 import { spawn, walk } from '../utils/index.js';
 
 import { addVersionLast, applyMirroring, transformMD } from './build/index.js';
 import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
 import dataFolders from './lib/data-folders.js';
 
-const BROWSER_NAMES = [
-  'chrome',
-  'chrome_android',
-  'edge',
-  'firefox',
-  'firefox_android',
-  'safari',
-  'safari_ios',
-  'webview_android',
-];
+const BROWSER_NAMES = Object.keys(bcd.browsers);
 
 /** @type {Format[]} */
 const FORMATS = ['html', 'plain'];

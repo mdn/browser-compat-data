@@ -104,7 +104,7 @@
           },
           "types_property": {
             "__compat": {
-              "description": "`types_property` property",
+              "description": "`types` property",
               "tags": [
                 "web-features:reporting"
               ],
@@ -137,7 +137,7 @@
             },
             "coep": {
               "__compat": {
-                "description": "`coep` report",
+                "description": "`coep` report type",
                 "spec_url": "https://html.spec.whatwg.org/multipage/browsers.html#embedder-policy-checks",
                 "tags": [
                   "web-features:reporting"
@@ -172,7 +172,7 @@
             },
             "csp-violation": {
               "__compat": {
-                "description": "`csp-violation` report",
+                "description": "`csp-violation` report type",
                 "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSPViolationReport",
                 "spec_url": "https://w3c.github.io/webappsec-csp/#reporting",
                 "tags": [
@@ -214,7 +214,7 @@
             },
             "deprecation": {
               "__compat": {
-                "description": "`deprecation` report",
+                "description": "`deprecation` report type",
                 "mdn_url": "https://developer.mozilla.org/docs/Web/API/DeprecationReport",
                 "spec_url": "https://wicg.github.io/deprecation-reporting/#deprecation-report",
                 "tags": [
@@ -297,6 +297,41 @@
                 "support": {
                   "chrome": {
                     "version_added": "69"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
+                },
+                "status": {
+                  "experimental": true,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
+            "permissions-policy-violation": {
+              "__compat": {
+                "description": "`permissions-policy-violation` report type",
+                "spec_url": "https://w3c.github.io/webappsec-permissions-policy/#reporting",
+                "tags": [
+                  "web-features:reporting"
+                ],
+                "support": {
+                  "chrome": {
+                    "version_added": "120"
                   },
                   "chrome_android": "mirror",
                   "edge": "mirror",
