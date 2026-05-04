@@ -1,7 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {InternalCompatData, InternalSimpleSupportStatement} from '../types/index.js' */
+/** @import {InternalCompatData} from '../types/index.js' */
+/** @import {SimpleSupportStatement} from '../types/public.js' */
 
 /**
  * @typedef {'html' | 'plain'} Format
@@ -115,16 +116,17 @@ const flattenObject = (obj, parentKey = '', result = {}) => {
               .join(',');
           }
 
+          // After addVersionLast() ran, statements have version_last, so the
+          // public SimpleSupportStatement type fits.
           const {
             version_added,
-            // @ts-expect-error FIXME Handle internal-public transition.
             version_last,
             partial_implementation,
             alternative_name,
             prefix,
             flags,
             notes,
-          } = /** @type {InternalSimpleSupportStatement} */ (obj[key]);
+          } = /** @type {SimpleSupportStatement} */ (obj[key]);
 
           const parts = [
             typeof version_added === 'string'
