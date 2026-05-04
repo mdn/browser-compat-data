@@ -213,7 +213,7 @@ The currently accepted browser identifiers should be declared in alphabetical or
 - `webview_android`, WebView, the embedded browser for Android applications
 - `webview_ios`, WebKit WebView, the embedded browser for iOS applications, based on the iOS version
 
-Desktop browser identifiers are mandatory, with the `version_added` property set to `false` if the feature is not supported.
+Desktop browser identifiers are mandatory, with the `version_added` property set to `false` if the feature is not known to be supported.
 
 #### The `support_statement` object
 
