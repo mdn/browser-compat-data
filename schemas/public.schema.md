@@ -193,7 +193,7 @@ This is the only mandatory property and it is `false` or contains a string with 
 
 #### `version_removed`
 
-Contains a string with the version number the subfeature was removed in. If the feature has not been removed from the browser, this property is omitted. When `version_removed` is present, `version_last` is always present as well.
+This optional property contains a string with the version number when the subfeature ceased to be supported. If the feature has not been removed from the browser, this property is omitted.
 
 Example:
 
