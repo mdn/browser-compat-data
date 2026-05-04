@@ -8,7 +8,7 @@ import { hideBin } from 'yargs/helpers';
 import dataFolders from '../scripts/lib/data-folders.js';
 import bcd from '../index.js';
 
-/** @import {BrowserName, InternalIdentifier, InternalSimpleSupportStatement, InternalSupportBlock, InternalSupportStatement} from '../types/index.js' */
+/** @import {BrowserName, InternalIdentifier, InternalSimpleSupportStatement, InternalSupportBlock} from '../types/index.js' */
 
 /**
  * @typedef {object} StatusFilters
@@ -75,7 +75,7 @@ export function* iterateFeatures(
               continue;
             }
             for (const browser of browserNames) {
-              let browserData = comp[browser];
+              const browserData = comp[browser];
 
               if (!browserData) {
                 if (values.length == 0 || values.includes('null')) {
@@ -92,46 +92,42 @@ export function* iterateFeatures(
                 }
                 continue;
               }
-              if (!Array.isArray(browserData)) {
-                // @ts-expect-error FIXME Handle "mirror" value.
-                browserData = [browserData];
+              if (browserData === 'mirror') {
+                if (values.includes('mirror')) {
+                  yield `${identifier}${i}`;
+                }
+                continue;
               }
+              const supportArray = Array.isArray(browserData)
+                ? browserData
+                : [browserData];
 
-              // @ts-expect-error FIXME Handle "mirror" value.
-              for (const range in browserData) {
-                if (
-                  /** @type {InternalSupportStatement} */ (
-                    browserData[range]
-                  ) === 'mirror'
-                ) {
-                  if (values.includes('mirror')) {
-                    yield `${identifier}${i}`;
-                  }
-                } else if (values.includes('nonmirror')) {
+              for (const range in supportArray) {
+                if (values.includes('nonmirror')) {
                   // If checking for non-mirrored data and it's not mirrored
                   yield `${identifier}${i}`;
-                } else if (browserData[range] === undefined) {
+                } else if (supportArray[range] === undefined) {
                   if (values.length == 0 || values.includes('null')) {
                     yield `${identifier}${i}`;
                   }
                 } else if (values.includes('≤') || values.includes('ranged')) {
                   if (
-                    String(browserData[range].version_added).startsWith('≤') ||
-                    String(browserData[range].version_removed).startsWith('≤')
+                    String(supportArray[range].version_added).startsWith('≤') ||
+                    String(supportArray[range].version_removed).startsWith('≤')
                   ) {
                     yield `${identifier}${i}`;
                   }
                 } else if (
                   values.length == 0 ||
-                  values.includes(String(browserData[range].version_added)) ||
-                  values.includes(String(browserData[range].version_removed))
+                  values.includes(String(supportArray[range].version_added)) ||
+                  values.includes(String(supportArray[range].version_removed))
                 ) {
                   let f = `${identifier}${i}`;
-                  if (browserData[range].prefix) {
-                    f += ` (${browserData[range].prefix} prefix)`;
+                  if (supportArray[range].prefix) {
+                    f += ` (${supportArray[range].prefix} prefix)`;
                   }
-                  if (browserData[range].alternative_name) {
-                    f += ` (as ${browserData[range].alternative_name})`;
+                  if (supportArray[range].alternative_name) {
+                    f += ` (as ${supportArray[range].alternative_name})`;
                   }
                   yield f;
                 }
