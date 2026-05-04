@@ -182,7 +182,7 @@ The `__compat` object consists of the following:
   It needs to be a valid URL, and should be the language-neutral URL (e.g. use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
 
 - An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined.
-  Each URL must either contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`), or else must match the regular-expression pattern `^https://registry.khronos.org/webgl/extensions/[^/]+/` (e.g. `https://registry.khronos.org/webgl/extensions/ANGLE_instanced_arrays/`) or `^https://github.com/WebAssembly/.+` for WebAssembly specs.
+  Each URL must contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`) or match one of the regular-expression pattern given in the JSON Schema file.
   Each URL must link to a specification published by a standards body or a formal proposal that may lead to such publication.
 
 - An optional `tags` property to assign tags to the feature.
