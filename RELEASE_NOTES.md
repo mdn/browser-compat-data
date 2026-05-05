@@ -1,5 +1,58 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.3.14](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.14)
+
+April 30, 2026
+
+### Renamings
+
+- `api.Element.requestFullscreen.options_navigationUI_parameter` to `api.Element.requestFullscreen.options_parameter.navigationUI_option` ([#29548](https://github.com/mdn/browser-compat-data/pull/29548))
+- `api.Element.requestFullscreen.options_screen_parameter` to `api.Element.requestFullscreen.options_parameter.screen_option` ([#29548](https://github.com/mdn/browser-compat-data/pull/29548))
+- `api.fetch.body_readablestream` to `api.fetch.options_parameter.body.accepts_readablestream` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.fetch.init_attributionReporting_parameter` to `api.fetch.options_parameter.attributionReporting` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.fetch.init_browsingTopics_parameter` to `api.fetch.options_parameter.browsingTopics` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.fetch.init_duplex_parameter` to `api.fetch.options_parameter.duplex` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.fetch.init_keepalive_parameter` to `api.fetch.options_parameter.keepalive` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.fetch.init_priority_parameter` to `api.fetch.options_parameter.priority` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.fetch.init_privateToken_parameter` to `api.fetch.options_parameter.privateToken` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.fetch.init_referrerPolicy_parameter` to `api.fetch.options_parameter.referrerPolicy` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.fetch.init_signal_parameter` to `api.fetch.options_parameter.signal` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.fetch.init_targetAddressSpace_parameter` to `api.fetch.options_parameter.targetAddressSpace` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.Request.Request.init_attributionReporting_parameter` to `api.Request.Request.options_parameter.attributionReporting` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.Request.Request.init_browsingTopics_parameter` to `api.Request.Request.options_parameter.browsingTopics` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.Request.Request.init_duplex_parameter` to `api.Request.Request.options_parameter.duplex` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.Request.Request.init_keepalive_parameter` to `api.Request.Request.options_parameter.keepalive` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.Request.Request.init_priority_parameter` to `api.Request.Request.options_parameter.priority` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.Request.Request.init_privateToken_parameter` to `api.Request.Request.options_parameter.privateToken` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.Request.Request.init_referrer_parameter` to `api.Request.Request.options_parameter.referrer` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.Request.Request.init_targetAddressSpace_parameter` to `api.Request.Request.options_parameter.targetAddressSpace` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.Request.Request.request_body_readablestream` to `api.Request.Request.options_parameter.body.accepts_readablestream` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+
+### Additions
+
+- `api.Element.requestFullscreen.options_parameter` ([#29548](https://github.com/mdn/browser-compat-data/pull/29548))
+- `api.Element.requestFullscreen.options_parameter.keyboardLock_option` ([#29548](https://github.com/mdn/browser-compat-data/pull/29548))
+- `api.fetch.options_parameter` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.fetch.options_parameter.body` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.GPU.requestAdapter.options_featureLevel` ([#29551](https://github.com/mdn/browser-compat-data/pull/29551))
+- `api.Request.Request.options_parameter` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.Request.Request.options_parameter.body` ([#29451](https://github.com/mdn/browser-compat-data/pull/29451))
+- `api.SharedWorker.SharedWorker.options_extendedLifetime_parameter` ([#29562](https://github.com/mdn/browser-compat-data/pull/29562))
+- `api.XRSession.visibilitymaskchange_event` ([#29576](https://github.com/mdn/browser-compat-data/pull/29576))
+- `browsers.opera.releases.133` ([#29579](https://github.com/mdn/browser-compat-data/pull/29579))
+- `css.properties.accent-color.transparent` ([#29532](https://github.com/mdn/browser-compat-data/pull/29532))
+- `css.properties.shape-outside.rect` ([#29574](https://github.com/mdn/browser-compat-data/pull/29574))
+- `css.properties.stop-color.transparent` ([#29532](https://github.com/mdn/browser-compat-data/pull/29532))
+- `css.types.attr.fallback` ([#29573](https://github.com/mdn/browser-compat-data/pull/29573))
+- `html.elements.audio.autoplay` ([#29571](https://github.com/mdn/browser-compat-data/pull/29571))
+
+### Statistics
+
+- 11 contributors have changed 54 files with 1,555 additions and 924 deletions in 26 commits ([`v7.3.13...v7.3.14`](https://github.com/mdn/browser-compat-data/compare/v7.3.13...v7.3.14))
+- 19,602 total features
+- 1,245 total contributors
+- 5,651 total stargazers
+
 ## [v7.3.13](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.13)
 
 April 24, 2026
