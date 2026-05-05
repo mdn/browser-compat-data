@@ -8,7 +8,7 @@
  *
  * Walks through each exception and prompts for an action:
  *
- *   https://...  — Add the URL as spec_url (comma-separated for multiple)
+ *   https://...  — Add the URL as spec_url (space-separated for multiple)
  *   f / false    — Set standard_track to false (includes all subfeatures)
  *   p            — Copy the parent feature's spec_url
  *   p=https://.. — Set spec_url on both the parent and this subfeature
@@ -216,12 +216,12 @@ const fetchXrefSuggestions = async (
 
 const instructions = `
   ${styleText('bold', 'Actions:')}
-    ${styleText('cyan', 'https://...')}  Add the URL as spec_url (comma-separated for multiple)
+    ${styleText('cyan', 'https://...')}  Add the URL as spec_url (space-separated for multiple)
     ${styleText('cyan', '1-9')}          Accept a numbered suggestion
     ${styleText('cyan', 'x')}            Fetch xref suggestions for the current feature
     ${styleText('cyan', 'x <term>')}     Fetch xref suggestions for a custom search term
     ${styleText('cyan', 'p')}            Use parent feature's spec_url
-    ${styleText('cyan', 'p,https://...')} Use parent spec_url + extra URL on this subfeature
+    ${styleText('cyan', 'p https://...')} Use parent spec_url + extra URL on this subfeature
     ${styleText('cyan', 'p=https://...')} Set spec_url on parent + this subfeature
     ${styleText('cyan', 'f')}            Set standard_track to false (+ all subfeatures)
     ${styleText('cyan', 'r')}            Repeat the previous action
@@ -548,15 +548,12 @@ while (idx < exceptions.length) {
       break;
     }
 
-    if (answer.startsWith('p,https://')) {
+    if (answer.startsWith('p https://')) {
       if (!ancestor) {
         console.log(styleText('red', '  No ancestor with spec_url found.'));
         continue;
       }
-      const extra = answer
-        .slice(2)
-        .split(',')
-        .map((u) => u.trim());
+      const extra = answer.slice(2).trim().split(/\s+/);
       const specUrl = [...[ancestor.spec_url].flat(), ...extra];
       updateFeatures([featurePath], (c) => {
         c.spec_url = specUrl;
@@ -582,8 +579,7 @@ while (idx < exceptions.length) {
     }
 
     if (answer.startsWith('p=https://')) {
-      const raw = answer.slice(2);
-      const urls = raw.split(',').map((u) => u.trim());
+      const urls = answer.slice(2).trim().split(/\s+/);
       const specUrl = urls.length === 1 ? urls[0] : urls;
       const parentPath = featurePath.split('.').slice(0, -1).join('.');
       updateFeatures([parentPath], (c) => {
@@ -647,7 +643,7 @@ while (idx < exceptions.length) {
     }
 
     if (answer.startsWith('https://')) {
-      const urls = answer.split(',').map((u) => u.trim());
+      const urls = answer.split(/\s+/);
       const specUrl = urls.length === 1 ? urls[0] : urls;
       updateFeatures([featurePath], (c) => {
         c.spec_url = specUrl;
