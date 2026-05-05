@@ -6,12 +6,14 @@
  *
  * Usage: node scripts/fix-standard-track-exceptions.js
  *
- * Walks through each exception and prompts for an action:
+ * Walks through each exception and prompts for an action. Spec_url commands
+ * accept any space-separated mix of URLs and suggestion numbers (1-N):
  *
- *   https://...  — Add the URL as spec_url (space-separated for multiple)
- *   f / false    — Set standard_track to false (includes all subfeatures)
+ *   <items>      — Set spec_url to listed URLs/suggestions (e.g. `1 2 https://x`)
  *   p            — Copy the parent feature's spec_url
- *   p=https://.. — Set spec_url on both the parent and this subfeature
+ *   p <items>    — Parent spec_url + extra URLs/suggestions on this subfeature
+ *   p=<items>    — Set items on both the parent and this subfeature
+ *   f / false    — Set standard_track to false (includes all subfeatures)
  *   (empty)      — Skip this entry
  *   /foo         — Skip ahead until the next entry containing "foo"
  *   o            — Open ancestor spec_url(s) in the browser
@@ -216,13 +218,12 @@ const fetchXrefSuggestions = async (
 
 const instructions = `
   ${styleText('bold', 'Actions:')}
-    ${styleText('cyan', 'https://...')}  Add the URL as spec_url (space-separated for multiple)
-    ${styleText('cyan', '1-9')}          Accept a numbered suggestion
+    ${styleText('cyan', '<items>')}      URL(s) and/or suggestion #(s), space-separated
     ${styleText('cyan', 'x')}            Fetch xref suggestions for the current feature
     ${styleText('cyan', 'x <term>')}     Fetch xref suggestions for a custom search term
     ${styleText('cyan', 'p')}            Use parent feature's spec_url
-    ${styleText('cyan', 'p https://...')} Use parent spec_url + extra URL on this subfeature
-    ${styleText('cyan', 'p=https://...')} Set spec_url on parent + this subfeature
+    ${styleText('cyan', 'p <items>')}    Parent spec_url + extra items on this subfeature
+    ${styleText('cyan', 'p=<items>')}    Set items on parent + this subfeature
     ${styleText('cyan', 'f')}            Set standard_track to false (+ all subfeatures)
     ${styleText('cyan', 'r')}            Repeat the previous action
     ${styleText('cyan', '(Enter)')}      Skip this entry
@@ -273,7 +274,7 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-const prompt = `  ${styleText('dim', 'URL, 1-9 (suggestion), x [term] (xref), p, f, r (repeat), /skip-to, or ?')}
+const prompt = `  ${styleText('dim', 'items (URL/1-9), x [term] (xref), p [items], p=items, f, r (repeat), /skip-to, or ?')}
   > `;
 
 /** Save progress and exit */
@@ -520,150 +521,121 @@ while (idx < exceptions.length) {
       break;
     }
 
+    // Spec_url command: optional `p` / `p=` prefix followed by space-separated
+    // tokens that are either URLs or suggestion numbers (1-N).
+    let parentMode = null;
+    let remainder;
     if (answer === 'p') {
-      if (!ancestor) {
+      parentMode = 'add';
+      remainder = '';
+    } else if (answer.startsWith('p ')) {
+      parentMode = 'add';
+      remainder = answer.slice(2);
+    } else if (answer.startsWith('p=')) {
+      parentMode = 'set';
+      remainder = answer.slice(2);
+    } else {
+      remainder = answer;
+    }
+    const tokens = remainder.trim().split(/\s+/).filter(Boolean);
+    /**
+     * Whether a token looks like a spec_url command token (URL or number).
+     * @param {string} t Token to test
+     * @returns {boolean} True if token is a URL or numeric suggestion index
+     */
+    const looksLikeSpecToken = (t) =>
+      t.startsWith('https://') || /^\d+$/.test(t);
+    const isSpecCommand =
+      parentMode !== null ||
+      (tokens.length > 0 && looksLikeSpecToken(tokens[0]));
+
+    if (isSpecCommand) {
+      if (parentMode === 'add' && !ancestor) {
         console.log(styleText('red', '  No ancestor with spec_url found.'));
         continue;
       }
-      updateFeatures([featurePath], (c) => {
-        c.spec_url = ancestor.spec_url;
-        return c;
-      });
-      recordSpecUrl(featurePath, ancestor.spec_url);
-      remaining.delete(featurePath);
-      lastAction = {
-        index: i,
-        /**
-         *
-         */
-        undo: () => {
-          updateFeatures([featurePath], (c) => {
-            delete c.spec_url;
-            return c;
-          });
-          remaining.add(featurePath);
-        },
-      };
-      lastInput = answer;
-      break;
-    }
-
-    if (answer.startsWith('p https://')) {
-      if (!ancestor) {
-        console.log(styleText('red', '  No ancestor with spec_url found.'));
+      if (parentMode === 'set' && tokens.length === 0) {
+        console.log(
+          styleText('red', '  Need at least one URL or suggestion after p=.'),
+        );
         continue;
       }
-      const extra = answer.slice(2).trim().split(/\s+/);
-      const specUrl = [...[ancestor.spec_url].flat(), ...extra];
-      updateFeatures([featurePath], (c) => {
-        c.spec_url = specUrl;
-        return c;
-      });
-      recordSpecUrl(featurePath, specUrl);
-      remaining.delete(featurePath);
-      lastAction = {
-        index: i,
-        /**
-         *
-         */
-        undo: () => {
-          updateFeatures([featurePath], (c) => {
-            delete c.spec_url;
-            return c;
-          });
-          remaining.add(featurePath);
-        },
-      };
-      lastInput = answer;
-      break;
-    }
 
-    if (answer.startsWith('p=https://')) {
-      const urls = answer.slice(2).trim().split(/\s+/);
-      const specUrl = urls.length === 1 ? urls[0] : urls;
-      const parentPath = featurePath.split('.').slice(0, -1).join('.');
-      updateFeatures([parentPath], (c) => {
-        c.spec_url = specUrl;
-        return c;
-      });
-      updateFeatures([featurePath], (c) => {
-        c.spec_url = specUrl;
-        return c;
-      });
-      recordSpecUrl(featurePath, specUrl);
-      remaining.delete(featurePath);
-      lastAction = {
-        index: i,
-        /**
-         *
-         */
-        undo: () => {
-          updateFeatures([parentPath], (c) => {
-            delete c.spec_url;
-            return c;
-          });
-          updateFeatures([featurePath], (c) => {
-            delete c.spec_url;
-            return c;
-          });
-          remaining.add(featurePath);
-        },
-      };
-      lastInput = answer;
-      break;
-    }
+      // Resolve tokens to URLs
+      const resolved = [];
+      let invalid = null;
+      for (const t of tokens) {
+        if (t.startsWith('https://')) {
+          resolved.push(t);
+        } else {
+          const num = Number(t);
+          if (Number.isInteger(num) && num >= 1 && num <= suggestions.length) {
+            resolved.push(suggestions[num - 1]);
+          } else {
+            invalid = t;
+            break;
+          }
+        }
+      }
+      if (invalid !== null) {
+        console.log(
+          styleText('yellow', `  Invalid token: ${invalid}. Type ? for help.`),
+        );
+        continue;
+      }
 
-    const suggestionNum = Number(answer);
-    if (
-      Number.isInteger(suggestionNum) &&
-      suggestionNum >= 1 &&
-      suggestionNum <= suggestions.length
-    ) {
-      const specUrl = suggestions[suggestionNum - 1];
-      updateFeatures([featurePath], (c) => {
-        c.spec_url = specUrl;
-        return c;
-      });
-      remaining.delete(featurePath);
-      lastAction = {
-        index: i,
-        /**
-         *
-         */
-        undo: () => {
-          updateFeatures([featurePath], (c) => {
-            delete c.spec_url;
-            return c;
-          });
-          remaining.add(featurePath);
-        },
-      };
-      lastInput = answer;
-      break;
-    }
+      const allUrls =
+        parentMode === 'add' && ancestor
+          ? [...[ancestor.spec_url].flat(), ...resolved]
+          : resolved;
+      const specUrl = allUrls.length === 1 ? allUrls[0] : allUrls;
 
-    if (answer.startsWith('https://')) {
-      const urls = answer.split(/\s+/);
-      const specUrl = urls.length === 1 ? urls[0] : urls;
-      updateFeatures([featurePath], (c) => {
-        c.spec_url = specUrl;
-        return c;
-      });
-      recordSpecUrl(featurePath, specUrl);
-      remaining.delete(featurePath);
-      lastAction = {
-        index: i,
-        /**
-         *
-         */
-        undo: () => {
-          updateFeatures([featurePath], (c) => {
-            delete c.spec_url;
-            return c;
-          });
-          remaining.add(featurePath);
-        },
-      };
+      if (parentMode === 'set') {
+        const parentPath = featurePath.split('.').slice(0, -1).join('.');
+        updateFeatures([parentPath], (c) => {
+          c.spec_url = specUrl;
+          return c;
+        });
+        updateFeatures([featurePath], (c) => {
+          c.spec_url = specUrl;
+          return c;
+        });
+        recordSpecUrl(featurePath, specUrl);
+        remaining.delete(featurePath);
+        lastAction = {
+          index: i,
+          /** Revert spec_url on parent + this feature. */
+          undo: () => {
+            updateFeatures([parentPath], (c) => {
+              delete c.spec_url;
+              return c;
+            });
+            updateFeatures([featurePath], (c) => {
+              delete c.spec_url;
+              return c;
+            });
+            remaining.add(featurePath);
+          },
+        };
+      } else {
+        updateFeatures([featurePath], (c) => {
+          c.spec_url = specUrl;
+          return c;
+        });
+        recordSpecUrl(featurePath, specUrl);
+        remaining.delete(featurePath);
+        lastAction = {
+          index: i,
+          /** Revert spec_url on this feature. */
+          undo: () => {
+            updateFeatures([featurePath], (c) => {
+              delete c.spec_url;
+              return c;
+            });
+            remaining.add(featurePath);
+          },
+        };
+      }
       lastInput = answer;
       break;
     }
