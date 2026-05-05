@@ -88,7 +88,8 @@ const specUrlBySegment = (() => {
 })();
 
 /**
- * Record a newly assigned spec URL so it appears in future suggestions.
+ * Record an assigned spec URL so it appears in future suggestions and so that
+ * its occurrence count reflects the new usage.
  * @param {string} featurePath Dot-separated feature path that received the URL
  * @param {string | string[]} specUrl The spec URL(s) that were assigned
  */
@@ -96,12 +97,17 @@ const recordSpecUrl = (featurePath, specUrl) => {
   const segment = featurePath.split('.').pop() ?? featurePath;
   const newUrls = [specUrl].flat();
   const existing = specUrlBySegment.get(segment) ?? [];
-  const toAdd = newUrls
-    .filter((u) => !existing.some((e) => e.url === u))
-    .map((url) => ({ url, count: 1 }));
-  if (toAdd.length > 0) {
-    specUrlBySegment.set(segment, [...toAdd, ...existing]);
+  /** @type {Map<string, number>} */
+  const counts = new Map(existing.map((e) => [e.url, e.count]));
+  for (const url of newUrls) {
+    counts.set(url, (counts.get(url) ?? 0) + 1);
   }
+  specUrlBySegment.set(
+    segment,
+    [...counts.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .map(([url, count]) => ({ url, count })),
+  );
 };
 
 /**
