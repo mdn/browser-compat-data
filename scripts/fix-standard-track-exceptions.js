@@ -28,7 +28,7 @@ import { execFile } from 'node:child_process';
 import readline from 'node:readline/promises';
 import { styleText } from 'node:util';
 
-/** @import {Identifier} from '../types/types.js' */
+/** @import {CompatStatement, Identifier} from '../types/types.js' */
 
 import bcd from '../index.js';
 import query from '../utils/query.js';
@@ -238,6 +238,54 @@ const instructions = `
     ${styleText('cyan', 'u')}            Undo last change and revisit that feature
     ${styleText('cyan', '?')}            Show these instructions
 `;
+
+/**
+ * Apply a feature-tree update both to disk (via updateFeatures) and to the
+ * in-memory bcd tree, so subsequent queries (e.g. findAncestorSpecUrl) see
+ * fresh data within the same session.
+ * @param {string[]} featureIDs Feature IDs; trailing `.*` targets descendants.
+ * @param {(c: CompatStatement) => CompatStatement} updater Applied to each matched __compat block.
+ */
+const applyUpdate = (featureIDs, updater) => {
+  updateFeatures(featureIDs, updater);
+  /**
+   * Apply the updater to every __compat block under a subtree.
+   * @param {Identifier} subtree Identifier node whose descendants to visit
+   */
+  const recurse = (subtree) => {
+    for (const [k, v] of Object.entries(subtree)) {
+      if (k === '__compat' || typeof v !== 'object' || v === null) {
+        continue;
+      }
+      const child = /** @type {Identifier} */ (v);
+      if (child.__compat) {
+        child.__compat = updater(child.__compat);
+      }
+      recurse(child);
+    }
+  };
+  for (const fid of featureIDs) {
+    if (fid.endsWith('.*')) {
+      try {
+        const base = /** @type {Identifier} */ (query(fid.slice(0, -2), bcd));
+        if (base) {
+          recurse(base);
+        }
+      } catch {
+        // missing path — updateFeatures already handled disk side
+      }
+    } else {
+      try {
+        const node = /** @type {Identifier} */ (query(fid, bcd));
+        if (node?.__compat) {
+          node.__compat = updater(node.__compat);
+        }
+      } catch {
+        // missing path — updateFeatures already handled disk side
+      }
+    }
+  }
+};
 
 /**
  * Find the closest ancestor that has a spec_url.
@@ -499,8 +547,10 @@ while (idx < exceptions.length) {
       const prefix = featurePath + '.';
       const removedSubs = [...remaining].filter((e) => e.startsWith(prefix));
       // Update this feature and all subfeatures
-      updateFeatures([featurePath, featurePath + '.*'], (c) => {
-        c.status.standard_track = false;
+      applyUpdate([featurePath, featurePath + '.*'], (c) => {
+        if (c.status) {
+          c.status.standard_track = false;
+        }
         return c;
       });
       remaining.delete(featurePath);
@@ -513,8 +563,10 @@ while (idx < exceptions.length) {
          *
          */
         undo: () => {
-          updateFeatures([featurePath, featurePath + '.*'], (c) => {
-            c.status.standard_track = true;
+          applyUpdate([featurePath, featurePath + '.*'], (c) => {
+            if (c.status) {
+              c.status.standard_track = true;
+            }
             return c;
           });
           remaining.add(featurePath);
@@ -594,15 +646,18 @@ while (idx < exceptions.length) {
         parentMode === 'add' && ancestor
           ? [...[ancestor.spec_url].flat(), ...resolved]
           : resolved;
-      const specUrl = allUrls.length === 1 ? allUrls[0] : allUrls;
+      const specUrl =
+        allUrls.length === 1
+          ? allUrls[0]
+          : /** @type {[string, string, ...string[]]} */ (allUrls);
 
       if (parentMode === 'set') {
         const parentPath = featurePath.split('.').slice(0, -1).join('.');
-        updateFeatures([parentPath], (c) => {
+        applyUpdate([parentPath], (c) => {
           c.spec_url = specUrl;
           return c;
         });
-        updateFeatures([featurePath], (c) => {
+        applyUpdate([featurePath], (c) => {
           c.spec_url = specUrl;
           return c;
         });
@@ -612,11 +667,11 @@ while (idx < exceptions.length) {
           index: i,
           /** Revert spec_url on parent + this feature. */
           undo: () => {
-            updateFeatures([parentPath], (c) => {
+            applyUpdate([parentPath], (c) => {
               delete c.spec_url;
               return c;
             });
-            updateFeatures([featurePath], (c) => {
+            applyUpdate([featurePath], (c) => {
               delete c.spec_url;
               return c;
             });
@@ -624,7 +679,7 @@ while (idx < exceptions.length) {
           },
         };
       } else {
-        updateFeatures([featurePath], (c) => {
+        applyUpdate([featurePath], (c) => {
           c.spec_url = specUrl;
           return c;
         });
@@ -634,7 +689,7 @@ while (idx < exceptions.length) {
           index: i,
           /** Revert spec_url on this feature. */
           undo: () => {
-            updateFeatures([featurePath], (c) => {
+            applyUpdate([featurePath], (c) => {
               delete c.spec_url;
               return c;
             });
