@@ -24,7 +24,7 @@ If a specification is listed in browser-specs and has a [standing](https://githu
 
 If BCD's linter complains about the provided URL, you will need to check its state within browser-specs. Common scenarios include:
 
-- The specification is not yet part of browser-specs. Check whether an issue already exists; if not, open one one and ask whether the W3C would consider adding the specification.
+- The specification is not yet part of browser-specs. Check whether an issue already exists; if not, open one and ask whether the W3C would consider adding the specification.
 - The specification no longer has a "good" standing. Check if there is a new version of the specification (at a different URL), or if the specification development has been discontinued (and the features in BCD should be considered "non-standard" from this point on). If the specification cannot be added to browser-specs, but there is a reason it should be in BCD, you can add it to BCD's [specification host exception list](https://github.com/mdn/browser-compat-data/blob/main/lint/linter/test-spec-urls.js). Only do this as a last resort.
 - The specification URL doesn't contain a fragment identifier. You will have to add one. It looks like this: `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`.
 
@@ -61,6 +61,29 @@ When the interface has "entries", "forEach", "get", "has", "keys", "values", "@@
 👎  "spec_url": "https://webidl.spec.whatwg.org/#dfn-iterable",
 ```
 
-### Worker support, secure_context_required
+### WebIDL flags
 
-For BCD keys named `worker_support` and `secure_context_required`, link to the main interface specification, since these IDL flags appear alongside the interface definition (for example, `[SecureContext, Exposed=(Window,Worker)]`).
+WebIDL flags can map to certain BCD feature keys:
+
+- `[SecureContext]` uses `secure_context_required`
+- `[Exposed=Worker]` (and similar) use `worker_support`
+
+WebIDL flags belong to specific WebIDL features, like an interface or a method. The specifications offer no direct link to flag definitions, therefore the specification URL used for the feature itself should be used.
+
+For example, if the `[SecureContext]` flag appears in front of an WebIDL interface definition, the `spec_url` for the `secure_context_required` feature is the same as the interface's `spec_url`.
+
+```json
+"secure_context_required": {
+  "__compat": {
+    "description": "Secure context required",
+    "spec_url": "https://w3c.github.io/battery/#the-batterymanager-interface",
+```
+
+If the `[SecureContext]` flag appears in front of an WebIDL method definition, use the `spec_url` for the method.
+
+```json
+"secure_context_required": {
+    "__compat": {
+      "description": "Secure context required",
+      "spec_url": "https://wicg.github.io/ua-client-hints/#dom-navigatorua-useragentdata",
+```
