@@ -35,7 +35,11 @@ In addition to the validated rules above, the following best practices have emer
 
 ### Aim to provide just one URL
 
-The `spec_url` property allows to take an array of multiple URLs, but most of the time it is best to provide just the most meaningful URL. For example, don't add multiple (historical) versions of specifications.
+The `spec_url` property allows to take an array of multiple URLs, however, as a general guiding principle, provide just the single most meaningful URL. For example, don't add multiple (historical) versions of specifications.
+
+If you find yourself in a situation where your BCD (behavioral) feature points to several URLs of a specification, this could actually be a strong hint that you should split up the feature into multiple BCD feature keys.
+
+See below for cases where we actually recommend multiple URLs (events and specifications extending other specifications).
 
 ### Events
 
@@ -47,6 +51,19 @@ For events, provide two URLs: one for the `.onevent` property definition, and on
   "https://drafts.csswg.org/web-animations-1/#cancel-event"
 ],
 ```
+
+### Specifications extending other specifications
+
+When a specification extends the definition of another specification, it makes sense to list both as `spec_urls`. For example:
+
+- ECMA 262 is extended by ECMA 402
+  - https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-date.prototype.tolocaledatestring
+  - https://tc39.es/ecma402/#sup-date.prototype.tolocaledatestring
+- SVG and CSS both define a property
+  - https://drafts.csswg.org/css-inline/#baseline-shift-property
+  - https://w3c.github.io/svgwg/svg2-draft/text.html#BaselineShiftProperty
+- API interfaces which have a core definition and and extended in other specifications.
+- CSS properties which an initial definition in one level of a spec, and are completed in a subsequent diff spec.
 
 ### Maplikes, Setlikes, Iterables
 
