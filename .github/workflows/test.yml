@@ -57,14 +57,11 @@ jobs:
 
       - name: Lint
         id: lint
-        run: |
-          LINT_FAILED=false
-          npm run lint -- --fail-on-warnings || LINT_FAILED=true
-          echo "failed=$LINT_FAILED" >> "$GITHUB_OUTPUT"
+        run: npm run lint -- --fail-on-warnings
 
       - name: Fix lint issues
         id: lint-fix
-        if: steps.lint.outputs.failed == 'true'
+        if: failure() && steps.lint.conclusion == 'failure'
         run: |
           npm run lint:fix
           if [[ -n $(git diff) ]]; then
@@ -72,21 +69,17 @@ jobs:
           fi
 
       - name: Collect artifact files
-        if: steps.lint-fix.outputs.files_modified == 'true'
+        if: failure() && steps.lint-fix.outputs.files_modified == 'true'
         run: |
           mkdir -p lint-results
           git diff > lint-results/lint.diff
 
       - name: Upload artifact
-        if: steps.lint-fix.outputs.files_modified == 'true'
+        if: failure() && steps.lint-fix.outputs.files_modified == 'true'
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
           name: lint-results
           path: lint-results
-
-      - name: Fail if lint failed
-        if: steps.lint.outputs.failed == 'true'
-        run: exit 1
 
   test:
     runs-on: ubuntu-latest
