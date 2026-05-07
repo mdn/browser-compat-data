@@ -99,14 +99,19 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
           PR_NUMBER: ${{ steps.identify-pr.outputs.number }}
+          TEST_RUN_ID: ${{ github.event.workflow_run.id }}
           TEST_RUN_URL: ${{ github.event.workflow_run.html_url }}
         run: |
+          LINT_JOB_URL=$(gh api --paginate "repos/$REPO/actions/runs/$TEST_RUN_ID/jobs" \
+            --jq '.jobs[] | select(.name == "lint") | .html_url' | head -1)
+          LINT_JOB_URL=${LINT_JOB_URL:-$TEST_RUN_URL}
+
           BODY="<!-- bcd-reviewdog -->
-          The lint check found auto-fixable issues. Suggested changes have been posted as inline review comments above (attributed to \`bcd-linter\`).
+          The [lint check]($LINT_JOB_URL) found auto-fixable issues. Suggested changes have been posted as inline review comments above (attributed to \`bcd-linter\`).
 
           To apply all suggestions at once, run \`npm run lint:fix\` locally and commit the result.
 
-          For details, see [Automated lint suggestions on pull requests](https://github.com/$REPO/blob/main/docs/testing.md#automated-lint-suggestions-on-pull-requests). Originating workflow run: [Test]($TEST_RUN_URL)."
+          For details, see [Automated lint suggestions on pull requests](https://github.com/$REPO/blob/main/docs/testing.md#automated-lint-suggestions-on-pull-requests)."
 
           COMMENT_ID=$(gh api --paginate "repos/$REPO/issues/$PR_NUMBER/comments" \
             --jq '.[] | select(.body | startswith("<!-- bcd-reviewdog -->")) | .id' | head -1)
