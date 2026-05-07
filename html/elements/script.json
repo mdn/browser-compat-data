@@ -88,7 +88,6 @@
         },
         "attributionsrc": {
           "__compat": {
-            "spec_url": "https://wicg.github.io/attribution-reporting-api/#element-attrdef-script-attributionsrc",
             "tags": [
               "web-features:attribution-reporting"
             ],
@@ -115,7 +114,7 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": true,
+              "standard_track": false,
               "deprecated": true
             }
           }
@@ -285,7 +284,7 @@
               "https://w3c.github.io/webappsec-subresource-integrity/#the-integrity-attribute"
             ],
             "tags": [
-              "web-features:script"
+              "web-features:subresource-integrity"
             ],
             "support": {
               "chrome": {
@@ -423,6 +422,7 @@
           },
           "no-referrer-when-downgrade": {
             "__compat": {
+              "spec_url": "https://w3c.github.io/webappsec-referrer-policy/#dom-referrerpolicy-no-referrer-when-downgrade",
               "tags": [
                 "web-features:referrer-policy"
               ],
@@ -457,6 +457,7 @@
           },
           "origin-when-cross-origin": {
             "__compat": {
+              "spec_url": "https://w3c.github.io/webappsec-referrer-policy/#dom-referrerpolicy-origin-when-cross-origin",
               "tags": [
                 "web-features:referrer-policy"
               ],
@@ -491,6 +492,7 @@
           },
           "unsafe-url": {
             "__compat": {
+              "spec_url": "https://w3c.github.io/webappsec-referrer-policy/#dom-referrerpolicy-unsafe-url",
               "tags": [
                 "web-features:referrer-policy"
               ],
@@ -679,7 +681,14 @@
                   "chrome_android": "mirror",
                   "edge": "mirror",
                   "firefox": {
-                    "version_added": false,
+                    "version_added": "150",
+                    "flags": [
+                      {
+                        "name": "dom.multiple_import_maps.enabled",
+                        "type": "preference",
+                        "value_to_set": "true"
+                      }
+                    ],
                     "impl_url": "https://bugzil.la/1916277"
                   },
                   "firefox_android": "mirror",
@@ -705,6 +714,7 @@
           "module": {
             "__compat": {
               "description": "`type=\"module\"`",
+              "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#javascript-module-script",
               "tags": [
                 "web-features:js-modules"
               ],
