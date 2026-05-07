@@ -93,6 +93,30 @@ jobs:
             -filter-mode=diff_context \
             -reporter=github-pr-review < ../lint-results/lint.diff
 
+      - name: Post or update PR comment with context
+        if: steps.check.outputs.HAS_ARTIFACT == 'true' && hashFiles('lint-results/lint.diff') != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ steps.identify-pr.outputs.number }}
+          TEST_RUN_URL: ${{ github.event.workflow_run.html_url }}
+        run: |
+          BODY="<!-- bcd-reviewdog -->
+          The lint check found auto-fixable issues. Suggested changes have been posted as inline review comments above (attributed to \`bcd-linter\`).
+
+          To apply all suggestions at once, run \`npm run lint:fix\` locally and commit the result.
+
+          For details, see [Automated lint suggestions on pull requests](https://github.com/$REPO/blob/main/docs/testing.md#automated-lint-suggestions-on-pull-requests). Originating workflow run: [Test]($TEST_RUN_URL)."
+
+          COMMENT_ID=$(gh api --paginate "repos/$REPO/issues/$PR_NUMBER/comments" \
+            --jq '.[] | select(.body | startswith("<!-- bcd-reviewdog -->")) | .id' | head -1)
+
+          if [ -n "$COMMENT_ID" ]; then
+            gh api -X PATCH "repos/$REPO/issues/comments/$COMMENT_ID" -f body="$BODY"
+          else
+            gh api "repos/$REPO/issues/$PR_NUMBER/comments" -f body="$BODY"
+          fi
+
       - name: Mark status as success
         if: success()
         env:
