@@ -114,7 +114,7 @@ jobs:
           For details, see [Automated lint suggestions on pull requests](https://github.com/$REPO/blob/main/docs/testing.md#automated-lint-suggestions-on-pull-requests)."
 
           COMMENT_ID=$(gh api --paginate "repos/$REPO/issues/$PR_NUMBER/comments" \
-            --jq '.[] | select(.body | startswith("<!-- bcd-reviewdog -->")) | .id' | head -1)
+            --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | startswith("<!-- bcd-reviewdog -->"))) | .id' | head -1)
 
           if [ -n "$COMMENT_ID" ]; then
             gh api -X PATCH "repos/$REPO/issues/comments/$COMMENT_ID" -f body="$BODY"
