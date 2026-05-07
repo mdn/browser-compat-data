@@ -37,13 +37,15 @@
       "clipboardchange_event": {
         "__compat": {
           "description": "`clipboardchange` event",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Clipboard/clipboardchange_event",
           "spec_url": "https://w3c.github.io/clipboard-apis/#eventdef-globaleventhandlers-clipboardchange",
           "tags": [
             "web-features:clipboardchange"
           ],
           "support": {
             "chrome": {
-              "version_added": "144"
+              "version_added": "144",
+              "notes": "From version 145, firing `clipboardchange` events requires sticky activation or the `clipboard-read` permission to be granted."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -192,6 +194,7 @@
       "type_image-png": {
         "__compat": {
           "description": "Supports `image/png` MIME type",
+          "spec_url": "https://w3c.github.io/clipboard-apis/#mandatory-data-types-x",
           "tags": [
             "web-features:async-clipboard"
           ],
@@ -226,6 +229,7 @@
       "type_text-html": {
         "__compat": {
           "description": "Supports `text/html` MIME type",
+          "spec_url": "https://w3c.github.io/clipboard-apis/#mandatory-data-types-x",
           "tags": [
             "web-features:async-clipboard"
           ],
@@ -260,6 +264,7 @@
       "type_text-plain": {
         "__compat": {
           "description": "Supports `text/plain` MIME type",
+          "spec_url": "https://w3c.github.io/clipboard-apis/#mandatory-data-types-x",
           "tags": [
             "web-features:async-clipboard"
           ],

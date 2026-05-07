@@ -24,6 +24,7 @@ import fixMDNURLs from './fixer/mdn-urls.js';
 import fixStatus from './fixer/status.js';
 import fixMirror from './fixer/mirror.js';
 import fixOverlap from './fixer/overlap.js';
+import fixStandardTrackExceptions from './fixer/standard-track-exceptions.js';
 import { IS_WINDOWS } from './utils.js';
 
 /** @import {Stats} from 'node:fs' */
@@ -45,6 +46,7 @@ const FIXES = Object.freeze({
   feature_order: fixFeatureOrder,
   property_order: fixPropertyOrder,
   statement_order: fixStatementOrder,
+  standard_track_exceptions: fixStandardTrackExceptions,
 });
 
 /**
@@ -98,6 +100,17 @@ const load = async (options, ...files) => {
       const subFiles = (await readdir(file)).map((subfile) =>
         path.join(file, subfile),
       );
+
+      // Sort so files come before directories (e.g., meta.json before meta/).
+      // This ensures parent features are fixed before their sub-features.
+      subFiles.sort((a, b) => {
+        const aIsJson = a.endsWith('.json');
+        const bIsJson = b.endsWith('.json');
+        if (aIsJson !== bIsJson) {
+          return aIsJson ? -1 : 1;
+        }
+        return a.localeCompare(b);
+      });
 
       await load(options, ...subFiles);
     }

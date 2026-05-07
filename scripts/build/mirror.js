@@ -156,23 +156,43 @@ export const getMatchingBrowserVersion = (targetBrowser, sourceVersion) => {
  * @param {(string) => (string | false)} versionMapper - Receives the source browser version and returns the target browser version.
  * @returns {Notes | null} The notes with replacement performed
  */
-const updateNotes = (notes, regex, replace, versionMapper) => {
+export const updateNotes = (notes, regex, replace, versionMapper) => {
   if (!notes) {
     return null;
   }
 
   if (Array.isArray(notes)) {
-    return /** @type {Notes} */ (
-      notes.map((note) => updateNotes(note, regex, replace, versionMapper))
-    );
+    const mapped = notes
+      .map((note) => updateNotes(note, regex, replace, versionMapper))
+      .filter(Boolean);
+
+    if (mapped.length === 0) {
+      return null;
+    }
+
+    if (mapped.length === 1) {
+      return /** @type {Notes} */ (mapped[0]);
+    }
+
+    return /** @type {Notes} */ (mapped);
   }
 
-  return notes
+  let hasUnmappedVersion = false;
+  const result = notes
     .replace(regex, replace)
     .replace(
       new RegExp(`(${replace}|version)\\s(\\d+)`, 'g'),
-      (match, p1, p2) => p1 + ' ' + versionMapper(p2),
+      (match, p1, p2) => {
+        const mapped = versionMapper(p2);
+        if (mapped === false) {
+          hasUnmappedVersion = true;
+          return match;
+        }
+        return p1 + ' ' + mapped;
+      },
     );
+
+  return hasUnmappedVersion ? null : result;
 };
 
 /**
@@ -306,6 +326,8 @@ export const bumpSupport = (sourceData, sourceBrowser, destination) => {
     );
     if (newNotes) {
       newData.notes = newNotes;
+    } else {
+      delete newData.notes;
     }
   }
 

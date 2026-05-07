@@ -3,72 +3,14 @@
 
 import { styleText } from 'node:util';
 
+import { getSpecURLsExceptions } from '../common/spec-urls-exceptions.js';
+
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
 /** @import {CompatStatement} from '../../types/types.js' */
 
-/**
- * @typedef {object} ValidSpecHosts
- * @property {string} url
- * @property {string} alternateUrl
- */
-
-/*
- * Before adding an exception, open an issue with https://github.com/w3c/browser-specs to
- * see if a spec should be added there instead.
- * When adding an exception here, provide a reason and indicate how the exception can be removed.
- */
-const specsExceptions = [
-  // Remove once SVG specs are more compatible with reffy
-  // See https://github.com/mdn/browser-compat-data/pull/23958#issuecomment-3108406135
-  'https://svgwg.org/',
-  'https://www.w3.org/TR/SVG11/',
-
-  // Remove once https://github.com/w3c/fxtf-drafts/issues/599 is resolved
-  'https://drafts.fxtf.org/filter-effects/',
-
-  // Remove once https://github.com/whatwg/html/pull/6715 is resolved
-  'https://wicg.github.io/controls-list/',
-
-  // Unfortunately this doesn't produce a rendered spec, so it isn't in browser-specs
-  // Remove if it is in the main ECMA spec
-  'https://github.com/tc39/proposal-regexp-legacy-features/',
-
-  // See https://github.com/w3c/browser-specs/issues/305
-  // Features with this URL need to be checked after some time
-  // if they have been integrated into a real spec
-  'https://w3c.github.io/webrtc-extensions/',
-
-  // This is being used to develop Error.captureStackTrace() standard
-  // Need to be checked after some time to see if integrated into a real spec
-  'https://github.com/tc39/proposal-error-capturestacktrace',
-
-  // Proposals for WebAssembly
-  'https://github.com/WebAssembly/spec/blob/main/proposals',
-  'https://github.com/WebAssembly/exception-handling/blob/main/proposals',
-  'https://github.com/WebAssembly/extended-const/blob/main/proposals',
-  'https://github.com/WebAssembly/tail-call/blob/main/proposals',
-  'https://github.com/WebAssembly/threads/blob/main/proposal',
-  'https://github.com/WebAssembly/relaxed-simd/blob/main/proposals',
-  'https://github.com/WebAssembly/multi-memory/blob/main/proposals',
-  'https://github.com/WebAssembly/memory64/blob/main/proposals/memory64/Overview.md',
-  'https://github.com/WebAssembly/js-string-builtins/blob/main/proposals/js-string-builtins/Overview.md',
-  'https://github.com/WebAssembly/function-references/blob/main/proposals/function-references/Overview.md',
-  'https://github.com/WebAssembly/js-promise-integration',
-  'https://github.com/WebAssembly/branch-hinting/blob/main/proposals/branch-hinting/Overview.md',
-
-  // Media types
-  'https://developers.google.com/speed/webp/docs/riff_container',
-  'https://developers.google.com/speed/webp/docs/webp_lossless_bitstream_specification',
-  'https://jpeg.org/jpeg/',
-  'https://www.adobe.com/devnet-apps/photoshop/fileformatashtml/',
-  'https://www.iso.org/standard/89035.html',
-  'https://www.rfc-editor.org/rfc/rfc7903',
-  'https://www.w3.org/Graphics/GIF/spec-gif87.txt',
-];
-
-/** @type {ValidSpecHosts[]} */
 const validSpecHosts = [];
+const specsExceptions = await getSpecURLsExceptions();
 
 /**
  * Get valid specification URLs from webref ids
@@ -172,7 +114,7 @@ const processData = (data, logger) => {
 
       if (!hasSpec && !hasAlternateSpec) {
         logger.error(
-          chalk`Invalid specification fragment found: {bold ${specURL}}.`,
+          `Invalid specification URL found: ${styleText('bold', specURL)}.`,
         );
       }
     } else if (

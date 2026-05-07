@@ -67,6 +67,7 @@
         "worker_support": {
           "__compat": {
             "description": "Worker support",
+            "spec_url": "https://w3c.github.io/webappsec-csp/#directive-worker-src",
             "tags": [
               "web-features:csp"
             ],
@@ -138,6 +139,7 @@
         "block-all-mixed-content": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Content-Security-Policy/block-all-mixed-content",
+            "spec_url": "https://www.w3.org/TR/mixed-content/#strict-checking",
             "support": {
               "chrome": {
                 "version_added": "44",
@@ -631,6 +633,7 @@
         "meta-element-support": {
           "__compat": {
             "description": "`<meta>` element support",
+            "spec_url": "https://w3c.github.io/webappsec-csp/#meta-element",
             "tags": [
               "web-features:csp"
             ],
@@ -738,7 +741,7 @@
         "report-sample": {
           "__compat": {
             "description": "`report-sample` source value",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Content-Security-Policy",
+            "spec_url": "https://w3c.github.io/webappsec-csp/#grammardef-report-sample",
             "tags": [
               "web-features:csp"
             ],
@@ -784,14 +787,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "130",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "dom.reporting.enabled",
-                    "value_to_set": "true"
-                  }
-                ]
+                "version_added": "149"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -860,7 +856,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "preview"
+                "version_added": "148"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -1027,7 +1023,7 @@
               },
               "status": {
                 "experimental": true,
-                "standard_track": true,
+                "standard_track": false,
                 "deprecated": false
               }
             }
@@ -1042,13 +1038,12 @@
               ],
               "support": {
                 "chrome": {
-                  "version_added": false,
-                  "impl_url": "https://crbug.com/388437274"
+                  "version_added": "145"
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "preview"
+                  "version_added": "148"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1063,7 +1058,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1072,6 +1067,7 @@
           "wasm-unsafe-eval": {
             "__compat": {
               "description": "Source expression allowing WebAssembly execution",
+              "spec_url": "https://w3c.github.io/webappsec-csp/#grammardef-wasm-unsafe-eval",
               "tags": [
                 "web-features:csp"
               ],
@@ -1177,7 +1173,7 @@
         "strict-dynamic": {
           "__compat": {
             "description": "`strict-dynamic` source value",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Content-Security-Policy",
+            "spec_url": "https://w3c.github.io/webappsec-csp/#grammardef-strict-dynamic",
             "tags": [
               "web-features:csp"
             ],
@@ -1190,9 +1186,7 @@
               "firefox": {
                 "version_added": "52"
               },
-              "firefox_android": {
-                "version_added": false
-              },
+              "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -1340,14 +1334,12 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "preview"
+                "version_added": "148"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
-              "opera_android": {
-                "version_added": false
-              },
+              "opera_android": "mirror",
               "safari": {
                 "version_added": "26"
               },
@@ -1366,7 +1358,7 @@
         "unsafe-hashes": {
           "__compat": {
             "description": "`unsafe-hashes` source value",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Content-Security-Policy",
+            "spec_url": "https://w3c.github.io/webappsec-csp/#grammardef-unsafe-hashes",
             "tags": [
               "web-features:csp"
             ],

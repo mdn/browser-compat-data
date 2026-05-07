@@ -140,6 +140,7 @@
       },
       "customElementRegistry": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/customElementRegistry",
           "spec_url": "https://dom.spec.whatwg.org/#dom-documentorshadowroot-customelementregistry",
           "tags": [
             "web-features:scoped-custom-element-registries"
@@ -151,7 +152,15 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "150",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.scoped-custom-element-registries.enabled",
+                  "value_to_set": "true"
+                }
+              ],
+              "impl_url": "https://bugzil.la/2018900"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -538,7 +547,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "preview"
+                "version_added": "148"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -708,7 +717,7 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot#shadowroot.referencetarget",
           "tags": [
-            "web-features:shadow-dom"
+            "web-features:referencetarget"
           ],
           "support": {
             "chrome": {
@@ -724,7 +733,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "149",
+              "version_added": "144",
               "flags": [
                 {
                   "type": "preference",
@@ -813,7 +822,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview"
+              "version_added": "148"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -890,7 +899,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "preview"
+                "version_added": "148"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",

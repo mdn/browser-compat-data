@@ -18,7 +18,7 @@ pre-commit:
         - .vscode/*.json
         - browsers/*.json
         - schemas/*.json
-      run: npm run lint:fix {staged_files}
+      run: npm run lint:fix {staged_files} && git add lint/common/standard-track-exceptions.txt
       stage_fixed: true
 
 pre-push:
