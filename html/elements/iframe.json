@@ -192,7 +192,6 @@
           },
           "attribution-reporting": {
             "__compat": {
-              "spec_url": "https://wicg.github.io/attribution-reporting-api/#permission-policy-integration",
               "tags": [
                 "web-features:attribution-reporting"
               ],
@@ -219,7 +218,7 @@
               },
               "status": {
                 "experimental": false,
-                "standard_track": true,
+                "standard_track": false,
                 "deprecated": true
               }
             }
@@ -1166,9 +1165,11 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
+                  "version_added": "151"
+                },
+                "firefox_android": {
                   "version_added": false
                 },
-                "firefox_android": "mirror",
                 "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
@@ -1181,7 +1182,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1330,6 +1331,7 @@
           "wildcards": {
             "__compat": {
               "description": "Wildcards in `allow` attribute",
+              "spec_url": "https://w3c.github.io/webappsec-permissions-policy/#allow-list-value",
               "support": {
                 "chrome": {
                   "version_added": "108"
@@ -1996,6 +1998,7 @@
           "no-referrer-when-downgrade": {
             "__compat": {
               "description": "no-referrer-when-downgrade",
+              "spec_url": "https://w3c.github.io/webappsec-referrer-policy/#dom-referrerpolicy-no-referrer-when-downgrade",
               "tags": [
                 "web-features:referrer-policy"
               ],
@@ -2033,6 +2036,7 @@
           "origin-when-cross-origin": {
             "__compat": {
               "description": "origin-when-cross-origin",
+              "spec_url": "https://w3c.github.io/webappsec-referrer-policy/#dom-referrerpolicy-origin-when-cross-origin",
               "tags": [
                 "web-features:referrer-policy"
               ],
@@ -2070,6 +2074,7 @@
           "unsafe-url": {
             "__compat": {
               "description": "unsafe-url",
+              "spec_url": "https://w3c.github.io/webappsec-referrer-policy/#dom-referrerpolicy-unsafe-url",
               "tags": [
                 "web-features:referrer-policy"
               ],
