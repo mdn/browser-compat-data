@@ -8,7 +8,7 @@ Maintaining pointers to specifications from BCD features provides several benefi
 
 - Specifications can show compatibility data inline next to feature definitions.
 - If a `spec_url` is provided, BCD itself or other data consumers, can treat the feature as standardized. In the absence of a `spec_url`, we could say that the feature is non-standard.
-- By using deep links (fragment identifiers), BCD can more precisely identify the feature. This can be helpful when trying to understand descriptions of BCD feature keys, for example.
+- By having validated deep links (fragment identifiers), BCD can more precisely identify the feature and we can be sure it really exists in the provided specification. Fragment ids are also helpful when trying to understand descriptions of BCD behavioral features.
 - It enables statistics and coverage analysis. Which BCD features are standardized? Which standards bodies standardize? And more.
 
 ## Schema definition and validation
@@ -28,6 +28,7 @@ If BCD's linter complains about the provided URL, you will need to check its sta
 - The specification no longer has a "good" standing. Check if there is a new version of the specification (at a different URL), or if the specification development has been discontinued (and the features in BCD should be considered "non-standard" from this point on).
 - If the specification cannot be added to browser-specs, but there is a reason it should be in BCD, you can add it to BCD's [specification host exception list](https://github.com/mdn/browser-compat-data/blob/main/lint/common/spec-urls-exceptions.txt). Only do this as a last resort. The specifications hosted at https://github.com/WebAssembly and https://registry.khronos.org/webgl/extensions/ are part of the exception list by default.
 - The specification URL doesn't contain a fragment identifier. You will have to add one. It looks like this: `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`.
+- The specification URL's fragment identifier does not validate against [webref](https://github.com/w3c/webref) IDs. Try to provide a better fragment identifier. Or, only as a last resort, use text fragments (`~:text=`).
 
 ## Best practices
 
@@ -105,3 +106,7 @@ If the `[SecureContext]` flag appears in front of an WebIDL method definition, u
       "description": "Secure context required",
       "spec_url": "https://wicg.github.io/ua-client-hints/#dom-navigatorua-useragentdata",
 ```
+
+## Avoid text fragment links
+
+Specification URLs are validated against [webref](https://github.com/w3c/webref) IDs to make sure BCD only records features which are actually defined in the provided specification. Linking to text using `~:text=` fragment identifiers opts out of this validation. Use this opt-out rarely.
