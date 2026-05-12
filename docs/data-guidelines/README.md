@@ -62,6 +62,9 @@ This guideline was adopted to protect the quality of stable data in the face of 
 > This guideline was added in August 2025 and feedback is welcome.
 > If you have questions or concerns about how to apply it, [file an issue](https://github.com/mdn/browser-compat-data/issues/new/choose).
 
+The partial implementation flag often requires a judgment call.
+If you're not completely certain, ask for a second opinion.
+
 You must set `"partial_implementation": true` when all of the following conditions are met:
 
 - The browser's support does not implement mandatory specified behavior.
@@ -72,7 +75,20 @@ You must set `"partial_implementation": true` when all of the following conditio
 This list only covers cases where `"partial_implementation": true` is required.
 `"partial_implementation": true` may apply in unusual situations not covered by this guideline, such as significant changes in a single-implementation feature's behavior before standardization.
 
-Here are some example situations:
+Strong signals of negative impact include:
+
+- Bug reports filed by web developers shortly after a new implementation has shipped
+- Many bug report filed by web developers or many comments from web developers on existing bug reports
+- Several independent blog or social media posts about a bug
+- Interop proposals with upvotes
+
+Weak signals of negative impact include:
+
+- Bug reports filed long after an implementation ship has shipped
+- Automatically-generated bug reports (such as isolated WPT failures)
+- Unconfirmed bug reports in vendors' bug trackers
+
+Here are some example situations where this guideline may or may not apply:
 
 - `"partial_implementation": false`: All implementing browsers ignore part of a feature's specified behavior in the same way.
   This behavior is consistent and is a _de facto_ complete implementation.
