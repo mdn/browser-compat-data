@@ -187,7 +187,8 @@ This guideline was proposed in [#6905](https://github.com/mdn/browser-compat-dat
 
 Set `deprecated` to `true` to show that a feature has been authoritatively discouraged from use.
 
-The `deprecated` status captures the many ways standards organizations (and, for non-standard features, vendors) mark features as disfavored. This includes features that are on the path to removal or features that are discouraged from use despite their retention for backwards compatibility.
+The `deprecated` status captures the many ways specifications and vendors mark features as disfavored.
+This includes features that are on the path to removal or features that are discouraged from use despite retention for backwards compatibility.
 
 Evidence for setting `deprecated` to `true` includes:
 
@@ -195,7 +196,7 @@ Evidence for setting `deprecated` to `true` includes:
 - Removal of a feature from a specification
 - Specification text that cautions developers against new use of the feature
 - Formal discouragement statements from a relevant standards body (for example, meeting minutes that show a committee achieving consensus for removal from a specification, even if the removal has not yet taken place)
-- For non-standard features, notice from implementing browsers (for example, a console deprecation warning) or vendor documentation
+- Notice from all implementing browsers (for example, a console deprecation warning) or the vendors' documentation
 
 Do not set `deprecated` to `true` for features that are merely old or unpopular, no matter how many [_considered harmful_](https://en.wikipedia.org/wiki/Considered_harmful) blog posts they may have garnered. For example, although web developers may prefer `fetch` over `XMLHttpRequest`, `XMLHttpRequest` is not deprecated.
 
