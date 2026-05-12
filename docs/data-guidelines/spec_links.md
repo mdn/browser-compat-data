@@ -10,6 +10,7 @@ Maintaining pointers to specifications from BCD features provides several benefi
 - If a `spec_url` is provided, BCD itself or other data consumers, can treat the feature as standardized. In the absence of a `spec_url`, we could say that the feature is non-standard.
 - By having validated deep links (fragment identifiers), BCD can more precisely identify the feature and we can be sure it really exists in the provided specification. Fragment ids are also helpful when trying to understand descriptions of BCD behavioral features.
 - It enables statistics and coverage analysis. Which BCD features are standardized? Which standards bodies standardize? And more.
+- It helps developers and implementers know where to give feedback on a feature's defined behavior.
 
 ## Schema definition and validation
 
@@ -41,6 +42,11 @@ The `spec_url` property allows to take an array of multiple URLs, however, as a 
 If you find yourself in a situation where your BCD (behavioral) feature points to several URLs of a specification, this could actually be a strong hint that you should split up the feature into multiple BCD feature keys.
 
 See below for cases where we actually recommend multiple URLs (events and specifications extending other specifications).
+
+### Removed features
+
+If a feature has been removed from a specification, this is a _de facto_ deprecation (see [Setting `deprecated`](./README.md#setting-deprecated)).
+If possible, set the feature's `spec_url` to point to current specification text that acknowledges the removal (for example, a _Changes_ section).
 
 ### Events
 
