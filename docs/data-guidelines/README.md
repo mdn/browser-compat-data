@@ -78,7 +78,7 @@ This list only covers cases where `"partial_implementation": true` is required.
 Strong signals of negative impact include:
 
 - Bug reports filed by web developers shortly after a new implementation has shipped
-- Many bug report filed by web developers or many comments from web developers on existing bug reports
+- Many bug reports filed by web developers or many comments from web developers on existing bug reports
 - Several independent blog or social media posts about a bug
 - Interop proposals with upvotes
 
