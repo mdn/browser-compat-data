@@ -107,11 +107,9 @@ jobs:
           LINT_JOB_URL=${LINT_JOB_URL:-$TEST_RUN_URL}
 
           BODY="<!-- bcd-reviewdog -->
-          The [lint check]($LINT_JOB_URL) found auto-fixable issues. Suggested changes have been posted as inline review comments above (attributed to \`bcd-linter\`).
+          The [lint check]($LINT_JOB_URL) found auto-fixable issues. Apply suggested changes (attributed to \`bcd-linter\`), or to fix all at once, run \`npm run lint:fix\` locally.
 
-          To apply all suggestions at once, run \`npm run lint:fix\` locally and commit the result.
-
-          For details, see [Automated lint suggestions on pull requests](https://github.com/$REPO/blob/main/docs/testing.md#automated-lint-suggestions-on-pull-requests)."
+          See also: [Automated lint suggestions on pull requests](https://github.com/$REPO/blob/main/docs/testing.md#automated-lint-suggestions-on-pull-requests)"
 
           COMMENT_ID=$(gh api --paginate "repos/$REPO/issues/$PR_NUMBER/comments" \
             --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | startswith("<!-- bcd-reviewdog -->"))) | .id' | head -1)
