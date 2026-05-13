@@ -30,11 +30,17 @@
             ],
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "147",
-              "partial_implementation": true,
-              "notes": "The initial value is `auto` instead of `normal` (see [bug 2030351](https://bugzil.la/2030351)."
-            },
+            "firefox": [
+              {
+                "version_added": "151"
+              },
+              {
+                "version_added": "147",
+                "version_removed": "151",
+                "partial_implementation": true,
+                "notes": "The initial value is `auto` instead of `normal` (see [bug 2030351](https://bugzil.la/2030351)."
+              }
+            ],
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
