@@ -84,7 +84,7 @@ Strong signals of negative impact include:
 
 Weak signals of negative impact include:
 
-- Bug reports filed long after an implementation has shipped
+- Bug reports filed long after buggy or divergent implementations have shipped
 - Automatically-generated bug reports (such as isolated WPT failures)
 - Unconfirmed bug reports in vendors' bug trackers
 
