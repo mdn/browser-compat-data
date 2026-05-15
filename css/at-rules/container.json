@@ -361,15 +361,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "preview",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.style-queries.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "impl_url": "https://bugzil.la/1795622"
+                "version_added": "151"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -404,7 +396,23 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "preview",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.style-queries.enabled",
+                      "value_to_set": "true"
+                    },
+                    {
+                      "type": "preference",
+                      "name": "layout.css.attr.enabled",
+                      "value_to_set": "true"
+                    }
+                  ],
+                  "impl_url": [
+                    "https://bugzil.la/1986631",
+                    "https://bugzil.la/1998245"
+                  ]
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
