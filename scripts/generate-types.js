@@ -71,13 +71,16 @@ const injectExamplesIntoDescriptions = (node) => {
 /**
  * Load a JSON schema from disk and inline its `examples` into descriptions.
  * @param {string} source - Path to the schema file
+ * @param {object} [options] - Per-file overrides
+ * @param {boolean} [options.banner] - Whether to emit the file banner
  * @returns {Promise<string>} Generated TypeScript declarations
  */
-const compileSchemaFile = async (source) => {
+const compileSchemaFile = async (source, { banner = true } = {}) => {
   const schema = JSON.parse(await readFile(source, 'utf-8'));
   injectExamplesIntoDescriptions(schema);
   return compile(schema, basename(source, '.json'), {
     ...opts,
+    bannerComment: banner ? opts.bannerComment : '',
     cwd: dirname(source),
   });
 };
@@ -89,7 +92,9 @@ const compileSchemaFile = async (source) => {
  */
 const compileTypesFromSchemas = async (sources, destination) => {
   const sourceArray = Array.isArray(sources) ? sources : [sources];
-  const parts = await Promise.all(sourceArray.map(compileSchemaFile));
+  const parts = await Promise.all(
+    sourceArray.map((s, i) => compileSchemaFile(s, { banner: i === 0 })),
+  );
   const ts = transformTS(parts.join('\n\n'));
 
   const file =
