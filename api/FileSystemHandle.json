@@ -114,9 +114,13 @@
         "__compat": {
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "102",
+              "partial_implementation": true,
+              "notes": "Directory moves are not supported. The method is only expopsed on `FileSystemFileHandle`, not on `FileSystemHandle` and `FileSystemDirectoryHandle`. See [bug 40198034](https://crbug.com/40198034)."
             },
-            "chrome_android": "mirror",
+            "chrome_android": {
+              "version_added": "109"
+            },
             "edge": "mirror",
             "firefox": {
               "version_added": "111"

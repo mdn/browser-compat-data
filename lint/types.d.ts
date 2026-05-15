@@ -36,7 +36,7 @@ export interface LinterData {
   rawdata?: string;
   path: LinterPath;
 }
-
+ 
 export interface Linter {
   name: string;
   description: string;

@@ -9,20 +9,39 @@
             "web-features:overscroll-behavior"
           ],
           "support": {
-            "chrome": {
-              "version_added": "77"
-            },
+            "chrome": [
+              {
+                "version_added": "144"
+              },
+              {
+                "version_added": "77",
+                "version_removed": "144",
+                "partial_implementation": true,
+                "notes": "The property has no effect on scroll containers that have no scrollable overflow."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "73"
-            },
+            "firefox": [
+              {
+                "version_added": "150"
+              },
+              {
+                "version_added": "73",
+                "version_removed": "150",
+                "partial_implementation": true,
+                "notes": "The property has no effect on scroll containers that have no scrollable overflow."
+              }
+            ],
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "16"
+              "version_added": "16",
+              "impl_url": "https://webkit.org/b/243452",
+              "partial_implementation": true,
+              "notes": "The property has no effect on scroll containers that have no scrollable overflow."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

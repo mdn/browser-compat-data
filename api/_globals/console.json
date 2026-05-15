@@ -60,6 +60,7 @@
       "worker_support": {
         "__compat": {
           "description": "Available in workers",
+          "spec_url": "https://console.spec.whatwg.org/#console-namespace",
           "tags": [
             "web-features:console"
           ],
@@ -1123,6 +1124,7 @@
       "substitution_strings": {
         "__compat": {
           "description": "Substitution strings",
+          "spec_url": "https://console.spec.whatwg.org/#formatting-specifiers",
           "tags": [
             "web-features:console"
           ],
@@ -1413,7 +1415,11 @@
             },
             "firefox": [
               {
+                "version_added": "149"
+              },
+              {
                 "version_added": "98",
+                "version_removed": "149",
                 "impl_url": "https://bugzil.la/1387528",
                 "partial_implementation": true,
                 "notes": "The method can be called, but the marker does not show up in the performance profile."
