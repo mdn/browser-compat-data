@@ -3,11 +3,12 @@
 
 /* c8 ignore start */
 
-import fs, { rm } from 'node:fs/promises';
+import fs, { readFile, rm } from 'node:fs/promises';
+import { basename, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import esMain from 'es-main';
-import { compileFromFile } from 'json-schema-to-typescript';
+import { compile } from 'json-schema-to-typescript';
 
 import { spawn } from '../utils/index.js';
 
@@ -37,15 +38,58 @@ const transformTS = (ts) => {
 };
 
 /**
+ * Append `examples` values to `description` strings throughout a schema.
+ *
+ * `json-schema-to-typescript` emits `description` as JSDoc but ignores the
+ * sibling `examples` keyword. Inlining the examples ensures they appear in
+ * the generated TypeScript declarations.
+ * @param {*} node - Current schema node
+ */
+const injectExamplesIntoDescriptions = (node) => {
+  if (node === null || typeof node !== 'object') {
+    return;
+  }
+  if (Array.isArray(node)) {
+    node.forEach(injectExamplesIntoDescriptions);
+    return;
+  }
+  if (
+    typeof node.description === 'string' &&
+    Array.isArray(node.examples) &&
+    node.examples.length > 0
+  ) {
+    const formatted = node.examples.map((e) => JSON.stringify(e)).join(', ');
+    node.description = [node.description, `Examples: ${formatted}`].join(
+      '\n\n',
+    );
+  }
+  for (const value of Object.values(node)) {
+    injectExamplesIntoDescriptions(value);
+  }
+};
+
+/**
+ * Load a JSON schema from disk and inline its `examples` into descriptions.
+ * @param {string} source - Path to the schema file
+ * @returns {Promise<string>} Generated TypeScript declarations
+ */
+const compileSchemaFile = async (source) => {
+  const schema = JSON.parse(await readFile(source, 'utf-8'));
+  injectExamplesIntoDescriptions(schema);
+  return compile(schema, basename(source, '.json'), {
+    ...opts,
+    cwd: dirname(source),
+  });
+};
+
+/**
  * Compile TypeScript typedefs from one or more schema JSON files
  * @param {string | string[]} sources - JSON schema source(s)
  * @param {URL | string} destination - Output destination
  */
 const compileTypesFromSchemas = async (sources, destination) => {
   const sourceArray = Array.isArray(sources) ? sources : [sources];
-  const parts = await Promise.all(
-    sourceArray.map((s) => compileFromFile(s, opts)),
-  );
+  const parts = await Promise.all(sourceArray.map(compileSchemaFile));
   const ts = transformTS(parts.join('\n\n'));
 
   const file =
