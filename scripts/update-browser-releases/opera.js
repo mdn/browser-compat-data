@@ -144,7 +144,7 @@ export const updateOperaReleases = async (options) => {
     const version = /** @type {RegExpMatchArray} */ (
       item.title.match(options.titleVersionPattern)
     )[1];
-    if (version === currentBCDVersion) {
+    if (currentBCDVersion && Number(version) <= Number(currentBCDVersion)) {
       break;
     }
     newItems.push(item);
