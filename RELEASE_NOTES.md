@@ -1,5 +1,37 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.3.16](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.16)
+
+May 15, 2026
+
+### Removals
+
+- `webassembly.mutable-globals` ([#29503](https://github.com/mdn/browser-compat-data/pull/29503))
+
+### Additions
+
+- `api.AuthenticatorAttestationResponse.getPublicKey.algorithm_eddsa` ([#29637](https://github.com/mdn/browser-compat-data/pull/29637))
+- `api.AuthenticatorAttestationResponse.getPublicKey.algorithm_es256` ([#29637](https://github.com/mdn/browser-compat-data/pull/29637))
+- `api.AuthenticatorAttestationResponse.getPublicKey.algorithm_rs256` ([#29637](https://github.com/mdn/browser-compat-data/pull/29637))
+- `api.Element.attachShadow.options_slotAssignment_parameter` ([#29681](https://github.com/mdn/browser-compat-data/pull/29681))
+- `browsers.bun.releases.1.3.14` ([#29675](https://github.com/mdn/browser-compat-data/pull/29675))
+- `css.types.url.integrity` ([#29663](https://github.com/mdn/browser-compat-data/pull/29663))
+- `http.headers.Reporting-Endpoints.default` ([#29539](https://github.com/mdn/browser-compat-data/pull/29539))
+- `http.headers.Reporting-Endpoints.default.receives_crash_type` ([#29539](https://github.com/mdn/browser-compat-data/pull/29539))
+- `http.headers.Reporting-Endpoints.default.receives_deprecation_type` ([#29539](https://github.com/mdn/browser-compat-data/pull/29539))
+- `webassembly.api.Global.Global.mutable` ([#29503](https://github.com/mdn/browser-compat-data/pull/29503))
+- `webassembly.definitions.global` ([#29503](https://github.com/mdn/browser-compat-data/pull/29503))
+- `webassembly.definitions.global.mut` ([#29503](https://github.com/mdn/browser-compat-data/pull/29503))
+- `webassembly.instructions.global_get` ([#29503](https://github.com/mdn/browser-compat-data/pull/29503))
+- `webassembly.instructions.global_set` ([#29503](https://github.com/mdn/browser-compat-data/pull/29503))
+
+### Statistics
+
+- 15 contributors have changed 106 files with 1,549 additions and 386 deletions in 37 commits ([`v7.3.15...v7.3.16`](https://github.com/mdn/browser-compat-data/compare/v7.3.15...v7.3.16))
+- 19,744 total features
+- 1,249 total contributors
+- 5,663 total stargazers
+
 ## [v7.3.15](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.15)
 
 May 8, 2026
