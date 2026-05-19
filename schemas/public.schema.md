@@ -112,7 +112,7 @@ The `__compat` object describes a feature's compatibility data. It consists of t
 - An optional `mdn_url` property which **points to an MDN reference page documenting the feature**.
   It needs to be a valid URL, and should be the language-neutral URL (for example use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
 
-- An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined.
+- A `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined.
   Each URL must contain a fragment identifier.
 
 - An optional `tags` property to assign tags to the feature.
