@@ -58,10 +58,6 @@ This guideline was adopted to protect the quality of stable data in the face of 
 
 ## `"partial_implementation"` general usage guidelines
 
-> [!NOTE]
-> This guideline was added in August 2025 and feedback is welcome.
-> If you have questions or concerns about how to apply it, [file an issue](https://github.com/mdn/browser-compat-data/issues/new/choose).
-
 The partial implementation flag often requires a judgment call.
 If you're not completely certain, ask for a second opinion.
 
@@ -95,8 +91,7 @@ Here are some example situations where this guideline may or may not apply:
 
 - `"partial_implementation": false`: All implementing browsers provide a form control user interface, but the specification gives the implementer discretion over its look and feel.
   A developer complains that one browser's user interface lacks some desired quality that other browsers implement; they want it to be marked as partially implemented.
-  Use a note or non-standard behavioral subfeature instead.
-  <!-- TODO: link to behavioral subfeature guidelines, when available -->
+  Use a note or non-standard [behavioral subfeature](#behavioral-subfeatures) instead.
 
 - `"partial_implementation": false`: An implementing browser fails a web platform test against a corner case.
   No web developers have reported the bug and it's unlikely that there are real-world applications that would attempt to use the corner case.
@@ -220,10 +215,6 @@ This guideline was proposed in [#15703](https://github.com/mdn/browser-compat-da
 
 ## Behavioral subfeatures
 
-> [!NOTE]
-> This guideline was added in August 2025 and feedback is welcome.
-> If you have questions or concerns about how to apply it, [file an issue](https://github.com/mdn/browser-compat-data/issues/new/choose).
-
 A behavioral subfeature records support for some facet, nuance, or evolution of a parent feature, where the behavior doesn't have a natural identifier (like CSS properties, API methods, or HTTP headers do).
 Due to the lack of a natural identifier, a behavioral subfeature must have a `description`.
 
@@ -235,7 +226,7 @@ If a more specific guideline applies, follow that guideline instead of this one.
 
 Behavioral subfeatures are rare.
 Do not create a subfeature when the behavioral subfeature's `support` data would be the same, across all browsers, as the parent feature.
-For serious bugs affecting a single engine, consider using `partial_implementation` instead. <!-- TODO: link to partial_implementation guidelines, when available -->
+For serious bugs affecting a single engine, consider [using `partial_implementation`](#partial_implementation-general-usage-guidelines) instead.
 
 You may create a behavioral subfeature for the following types of browser behaviors:
 
