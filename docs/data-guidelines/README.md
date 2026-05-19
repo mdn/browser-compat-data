@@ -107,7 +107,7 @@ Here are some example situations where this guideline may or may not apply:
 
 - `"partial_implementation": true`: One browser exposes a constructor, `Example()`, but it always throws an error. Other browsers implement the constructor's intended behavior. This confuses feature detection because `typeof Example === "function"` returns `true`, even though the constructor does not work.
 
-This guideline was proposed and adopted in [#26780](https://github.com/mdn/browser-compat-data/pull/26780).
+This guideline was proposed and adopted in [#26780](https://github.com/mdn/browser-compat-data/pull/26780) and expanded in [#29661](https://github.com/mdn/browser-compat-data/pull/29661).
 
 ## `"partial_implementation"` requires a note
 
