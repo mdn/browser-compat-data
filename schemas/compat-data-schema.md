@@ -181,7 +181,7 @@ The `__compat` object consists of the following:
 - An optional `mdn_url` property which **points to an MDN reference page documenting the feature**.
   It needs to be a valid URL, and should be the language-neutral URL (for example use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
 
-- A `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined.
+- An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined. Mandatory when `status.standard_track` is `true`.
   Each URL must link to a specification published by a standards body or a formal proposal that may lead to such publication. It must also contain a fragment identifier (a deep link, e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`).
 
   For more guidance on how to set the `spec_url` property, see the [`spec_url` data guidelines](https://github.com/mdn/browser-compat-data/tree/main/docs/data-guidelines/spec_links.md).
