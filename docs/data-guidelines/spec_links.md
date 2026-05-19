@@ -78,7 +78,7 @@ When a specification extends the definition of another specification, it makes s
 
 When the interface has "entries", "forEach", "get", "has", "keys", "values", "@@iterator" methods and a "size" getter via "maplike", "setlike", or "iterable" IDL constructs, link to the interface containing the definition and not to the IDL standard.
 
-```json
+```text
 👍  "spec_url": "https://webaudio.github.io/web-audio-api/#audioparammap",
 
 👍  "spec_url": "https://drafts.css-houdini.org/css-typed-om/#cssnumericarray",
