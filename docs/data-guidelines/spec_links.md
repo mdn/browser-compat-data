@@ -2,6 +2,8 @@
 
 The browser-compat-data project (BCD) uses the `spec_url` property to map compatibility data to features described in specifications.
 
+The following `spec_url` guidelines give advice on how to provide good links to specifications. They are based on a discussion in [#29582](https://github.com/mdn/browser-compat-data/pull/29582/).
+
 ## Benefits
 
 Maintaining pointers to specifications from BCD features provides several benefits:
@@ -113,6 +115,6 @@ If the `[SecureContext]` flag appears in front of an WebIDL method definition, u
       "spec_url": "https://wicg.github.io/ua-client-hints/#dom-navigatorua-useragentdata",
 ```
 
-## Avoid text fragment links
+### Avoid text fragment links
 
 Specification URLs are validated against [webref](https://github.com/w3c/webref) IDs to make sure BCD only records features which are actually defined in the provided specification. Linking to text using `#:~:text=` fragment identifiers opts out of this validation. Use this opt-out rarely.
