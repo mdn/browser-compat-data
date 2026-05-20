@@ -30,23 +30,38 @@ const processData = (data, logger) => {
     : [data.spec_url];
 
   for (const specURL of featureSpecURLs) {
+    // Skip validation for spec_urls hosted at domains listed in our exception list
     if (specsExceptions.some((host) => specURL.startsWith(host))) {
       continue;
     }
+
+    // Skip validation for spec_urls containing no fragment ID (we may want to emit warnings for these in the future)
     if (!specURL.includes('#')) {
-      logger.warning(
+      /* logger.warning(
         `Specification URL without a fragment id found: ${styleText('bold', specURL)}
          Check if a deep link using a validated fragment identifier ('#') can be provided.`,
-      );
+      ); */
       continue;
     }
-    if (specURL.includes('#:~:text=')) {
-      logger.warning(
+
+    // Skip validation for spec_urls using a text fragment ID (we may want to emit warnings for these in the future)
+    if (specURL.includes(':~:text=')) {
+      /* logger.warning(
         `Text fragment specification URL found: ${styleText('bold', specURL)}
          Check if a deep link using a validated fragment identifier ('#') can be provided.`,
-      );
+      ); */
       continue;
     }
+
+    // Temporarily skip all CSS specs until we figured out dealing with spec series
+    if (
+      specURL.includes('https://drafts.csswg.org') ||
+      specURL.includes('https://drafts.css-houdini.org')
+    ) {
+      continue;
+    }
+
+    // Check if the spec_url exists in @webref/xref
     if (!xref.lookup(specURL).length) {
       logger.error(
         `Invalid specification URL found: ${styleText('bold', specURL)}. Check if:
