@@ -12,8 +12,17 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
-              "impl_url": "https://bugzil.la/1432935"
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "layout.css.fake-webkit-scrollbar.enabled",
+                  "value_to_set": "true"
+                }
+              ],
+              "impl_url": "https://bugzil.la/1432935",
+              "partial_implementation": true,
+              "notes": "The `@supports selector(::-webkit-scrollbar)` returns `true` but this pseudo-element cannot be used to style scrollbars. This behavior prevents nested scrollable content from becoming unreachable (see [bug 1977511](https://bugzil.la/1977511))"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
