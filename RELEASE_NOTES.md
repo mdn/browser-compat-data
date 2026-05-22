@@ -1,5 +1,25 @@
 # @mdn/browser-compat-data release notes
 
+## [v7.3.17](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.17)
+
+May 22, 2026
+
+### Additions
+
+- `api.Element.getAnimations.options_parameter` ([#29728](https://github.com/mdn/browser-compat-data/pull/29728))
+- `api.Element.getAnimations.options_parameter.pseudoElement_option` ([#29728](https://github.com/mdn/browser-compat-data/pull/29728))
+- `browsers.firefox_android.releases.154` ([#29712](https://github.com/mdn/browser-compat-data/pull/29712))
+- `browsers.firefox.releases.154` ([#29712](https://github.com/mdn/browser-compat-data/pull/29712))
+- `mathml.elements.a` ([#29706](https://github.com/mdn/browser-compat-data/pull/29706))
+- `mathml.elements.a.href` ([#29706](https://github.com/mdn/browser-compat-data/pull/29706))
+
+### Statistics
+
+- 9 contributors have changed 21 files with 260 additions and 73 deletions in 14 commits ([`next...v7.3.17`](https://github.com/mdn/browser-compat-data/compare/next...v7.3.17))
+- 19,752 total features
+- 1,250 total contributors
+- 5,671 total stargazers
+
 ## [v7.3.16](https://github.com/mdn/browser-compat-data/releases/tag/v7.3.16)
 
 May 15, 2026
