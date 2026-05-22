@@ -6,6 +6,8 @@ on:
       - main
       - prerelease
 
+concurrency:
+  group: ${{ github.workflow }}
 permissions:
   contents: write
 
