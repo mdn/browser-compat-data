@@ -12,8 +12,7 @@
             "version_added": "5"
           },
           "chrome_android": {
-            "version_added": false,
-            "impl_url": "https://crbug.com/40290702"
+            "version_added": "148"
           },
           "edge": "mirror",
           "firefox": {
@@ -74,7 +73,7 @@
               "version_added": "5"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "148"
             },
             "edge": "mirror",
             "firefox": {
@@ -125,6 +124,7 @@
         "ecmascript_modules": {
           "__compat": {
             "description": "Support for ECMAScript modules",
+            "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#module-worker-example",
             "tags": [
               "web-features:js-modules-shared-workers"
             ],
@@ -133,7 +133,7 @@
                 "version_added": "80"
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": "148"
               },
               "edge": "mirror",
               "firefox": {
@@ -165,6 +165,7 @@
         "enforces_trusted_types": {
           "__compat": {
             "description": "`url` parameter requires `TrustedScriptURL` instance when trusted types are enforced",
+            "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#dom-sharedworker",
             "support": {
               "chrome": {
                 "version_added": "97"
@@ -231,6 +232,41 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": false,
+              "deprecated": false
+            }
+          }
+        },
+        "options_extendedLifetime_parameter": {
+          "__compat": {
+            "description": "`options.extendedLifetime` parameter",
+            "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#dom-sharedworkeroptions-extendedlifetime",
+            "tags": [
+              "web-features:shared-workers"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "148"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
@@ -239,6 +275,7 @@
         "options_name_parameter": {
           "__compat": {
             "description": "`options.name` parameter",
+            "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#dom-workeroptions-name",
             "tags": [
               "web-features:shared-workers"
             ],
@@ -247,7 +284,7 @@
                 "version_added": "70"
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": "148"
               },
               "edge": "mirror",
               "firefox": {
@@ -284,7 +321,7 @@
                 "version_added": "125"
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": "148"
               },
               "edge": {
                 "version_added": false
@@ -314,6 +351,7 @@
         "options_type_parameter": {
           "__compat": {
             "description": "`options.type` parameter",
+            "spec_url": "https://html.spec.whatwg.org/multipage/workers.html#dom-workeroptions-type",
             "tags": [
               "web-features:js-modules-shared-workers"
             ],
@@ -322,7 +360,7 @@
                 "version_added": "80"
               },
               "chrome_android": {
-                "version_added": false
+                "version_added": "148"
               },
               "edge": "mirror",
               "firefox": {
@@ -364,7 +402,7 @@
               "version_added": "5"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "148"
             },
             "edge": "mirror",
             "firefox": {
@@ -425,7 +463,7 @@
               "version_added": "5"
             },
             "chrome_android": {
-              "version_added": false
+              "version_added": "148"
             },
             "edge": "mirror",
             "firefox": {

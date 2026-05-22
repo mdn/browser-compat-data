@@ -174,7 +174,7 @@ const compile = async (
     generateCompatDataTypes(),
   ].join('\n\n');
   await fs.writeFile(destination, ts);
-  spawn('tsc', ['--skipLibCheck', '../types/types.d.ts'], {
+  spawn('tsc', ['--skipLibCheck', '--ignoreConfig', '../types/types.d.ts'], {
     cwd: dirname,
     stdio: 'inherit',
   });

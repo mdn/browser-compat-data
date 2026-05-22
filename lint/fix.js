@@ -101,6 +101,17 @@ const load = async (options, ...files) => {
         path.join(file, subfile),
       );
 
+      // Sort so files come before directories (e.g., meta.json before meta/).
+      // This ensures parent features are fixed before their sub-features.
+      subFiles.sort((a, b) => {
+        const aIsJson = a.endsWith('.json');
+        const bIsJson = b.endsWith('.json');
+        if (aIsJson !== bIsJson) {
+          return aIsJson ? -1 : 1;
+        }
+        return a.localeCompare(b);
+      });
+
       await load(options, ...subFiles);
     }
   }
