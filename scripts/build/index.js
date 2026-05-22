@@ -21,7 +21,7 @@ import mirrorSupport from './mirror.js';
 
 /**
  * @import { BrowserName, InternalCompatData, InternalIdentifier, InternalSupportStatement, VersionValue } from '../../types/index.js'
- * @import { CompatData, MetaBlock } from '../../types/public.js'
+ * @import { CompatData, MetaBlock, ReleaseStatement } from '../../types/public.js'
  * @import { WalkOutput } from '../../utils/walk.js'
  */
 
@@ -206,14 +206,34 @@ const addIE = (feature) => {
 };
 
 /**
- * Apply build-time transforms in place: resolve `"mirror"` statements, add
- * `version_last`, convert Markdown notes/descriptions to HTML, and add
- * missing `ie` entries.
+ * Add a 0-based `index` to every release, ordered ascending by version
+ * (matching `compareVersions` order).
+ * @param {InternalCompatData} data - The data to mutate.
+ * @returns {void}
+ */
+export const addReleaseIndex = (data) => {
+  for (const browser of /** @type {BrowserName[]} */ (
+    Object.keys(data.browsers)
+  )) {
+    const { releases } = data.browsers[browser];
+    const sorted = Object.keys(releases).sort(compareVersions);
+    sorted.forEach((version, i) => {
+      /** @type {ReleaseStatement} */ (releases[version]).index = i;
+    });
+  }
+};
+
+/**
+ * Apply build-time transforms in place: add a release `index`, resolve
+ * `"mirror"` statements, add `version_last`, convert Markdown notes and
+ * descriptions to HTML, and add missing `ie` entries.
  * @param {InternalCompatData} data - The data to apply transforms to.
  * @returns {asserts data is Omit<CompatData, '__meta'>} Narrows `data` to the
  *   public `CompatData` shape (without `__meta`).
  */
 export const applyTransforms = (data) => {
+  addReleaseIndex(data);
+
   const walker = walk(undefined, data);
 
   for (const feature of walker) {
