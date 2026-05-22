@@ -146,7 +146,10 @@ if (esMain(import.meta)) {
   const { files = dataFolders, only } = argv;
 
   await main(files, { only });
-  process.exit((await lint(files)) ? 1 : 0);
+  if (argv.files) {
+    // Fails pre-commit hook for lint failures unknown to the fixer.
+    process.exit((await lint(argv.files)) ? 1 : 0);
+  }
 }
 
 export default load;
