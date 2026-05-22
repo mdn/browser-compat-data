@@ -11,24 +11,24 @@ import {
 } from './walkingUtils.js';
 import query from './query.js';
 
-/** @import {InternalCompatStatement, BrowserStatement, ReleaseStatement, InternalIdentifier} from '../types/index.js' */
+/** @import {InternalCompatStatement, InternalBrowserStatement, InternalReleaseStatement, InternalIdentifier} from '../types/index.js' */
 /** @import {InternalDataType} from '../types/index.js' */
 
 /**
  * @typedef {object} BrowserReleaseWalkOutput
  * @property {string} path
  * @property {InternalDataType} data
- * @property {BrowserStatement} browser
- * @property {ReleaseStatement} browserRelease
+ * @property {InternalBrowserStatement} browser
+ * @property {InternalReleaseStatement} browserRelease
  */
 
 /**
  * @typedef {object} LowLevelWalkOutput
  * @property {string} path
  * @property {InternalDataType} data
- * @property {BrowserStatement} [browser]
+ * @property {InternalBrowserStatement} [browser]
  * @property {InternalCompatStatement} [compat]
- * @property {ReleaseStatement} [browserRelease]
+ * @property {InternalReleaseStatement} [browserRelease]
  */
 
 /**
@@ -40,7 +40,7 @@ import query from './query.js';
 
 /**
  * Walk through the browser releases
- * @param {BrowserStatement} data The data to iterate
+ * @param {InternalBrowserStatement} data The data to iterate
  * @param {string} [path] The current path
  * @yields {BrowserReleaseWalkOutput} The release info
  * @returns {IterableIterator<BrowserReleaseWalkOutput>}
@@ -51,7 +51,7 @@ export function* browserReleaseWalk(data, path) {
       path: joinPath(path, 'releases', release),
       data,
       browser: data,
-      browserRelease: /** @type {ReleaseStatement} */ (releaseData),
+      browserRelease: /** @type {InternalReleaseStatement} */ (releaseData),
     };
   }
 }
