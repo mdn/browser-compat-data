@@ -3,7 +3,7 @@
 
 import { compareVersions } from 'compare-versions';
 
-/** @import {InternalCompatStatement, InternalSimpleSupportStatement, InternalStatusBlock, BrowserStatement, ReleaseStatement} from '../../types/index.js' */
+/** @import {InternalCompatStatement, InternalSimpleSupportStatement, InternalStatusBlock, InternalBrowserStatement, InternalReleaseStatement} from '../../types/index.js' */
 
 const propOrder = {
   browsers: {
@@ -74,7 +74,7 @@ const doOrder = (value, order) => {
  * prefix and suffix added, which will be removed after performing JSON
  * stringification. This is important because JavaScript wants to move object
  * entries with a floating point as the key to the very end of the list.
- * @param {Record<string, ReleaseStatement>} releases The release data
+ * @param {Record<string, InternalReleaseStatement>} releases The release data
  * @returns {string} The stringified releases
  */
 export const stringifyReleases = (releases) => {
@@ -153,13 +153,15 @@ export const orderProperties = (key, value) => {
       const browser = Object.keys(value.browsers)[0];
 
       value.browsers[browser] = doOrder(
-        /** @type {BrowserStatement} */ (value.browsers[browser]),
+        /** @type {InternalBrowserStatement} */ (value.browsers[browser]),
         propOrder.browsers.browser,
       );
 
       for (const r of Object.keys(value.browsers[browser].releases)) {
         value.browsers[browser].releases[r] = doOrder(
-          /** @type {ReleaseStatement} */ (value.browsers[browser].releases[r]),
+          /** @type {InternalReleaseStatement} */ (
+            value.browsers[browser].releases[r]
+          ),
           propOrder.browsers.release,
         );
       }

@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {BrowserName, Browsers, BrowserStatus, InternalCompatData} from '../../types/index.js' */
+/** @import {BrowserName, InternalBrowsers, BrowserStatus, InternalCompatData} from '../../types/index.js' */
 
 /**
  * @typedef {object} RSSItem
@@ -168,9 +168,8 @@ export const createOrUpdateBrowserEntry = (
  * @returns {string} Text describing what has been updated
  */
 export const setBrowserReleaseStatus = (json, browser, version, status) => {
-  const release = /** @type {Browsers} */ (json.browsers)[browser].releases[
-    version
-  ];
+  const release = /** @type {InternalBrowsers} */ (json.browsers)[browser]
+    .releases[version];
 
   if (release.status === status) {
     return '';

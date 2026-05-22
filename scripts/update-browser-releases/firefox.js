@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {ReleaseStatement} from '../../types/index.js' */
+/** @import {InternalReleaseStatement} from '../../types/index.js' */
 
 import * as fs from 'node:fs';
 
@@ -129,7 +129,7 @@ export const updateFirefoxReleases = async (options) => {
 
   // Replace all old entries with 'retired' or 'esr'
   Object.entries(
-    /** @type {Record<string, ReleaseStatement>} */ (
+    /** @type {Record<string, InternalReleaseStatement>} */ (
       firefoxBCD.browsers[options.bcdBrowserName].releases
     ),
   ).forEach(([key, entry]) => {
@@ -164,7 +164,7 @@ export const updateFirefoxReleases = async (options) => {
   // Avoid duplicate Nightly release.
   //
   const nightlyReleases = Object.entries(
-    /** @type {Record<string, ReleaseStatement>} */ (
+    /** @type {Record<string, InternalReleaseStatement>} */ (
       firefoxBCD.browsers[options.bcdBrowserName].releases
     ),
   )
@@ -173,7 +173,9 @@ export const updateFirefoxReleases = async (options) => {
 
   if (nightlyReleases.length > 1) {
     const [nightlyVersion, nightlyRelease] =
-      /** @type {[string, ReleaseStatement]} */ (nightlyReleases.shift());
+      /** @type {[string, InternalReleaseStatement]} */ (
+        nightlyReleases.shift()
+      );
     data[options.nightlyBranch].version = nightlyVersion;
     data[options.nightlyBranch].releaseDate = nightlyRelease.release_date;
 
