@@ -8,6 +8,8 @@ May 22, 2026
 
 This release introduces **two breaking changes** that may require you to take action.
 
+**Summary**: The published TypeScript definitions (`types.d.ts`) now reflect the public schema (describing the published `data.json`), which is separate from the internal schema (describing source files in the [mdn/browser-compat-data](https://github.com/mdn/browser-compat-data) repository).
+
 #### 1. `source_file` is now required on `CompatStatement` ([#29041](https://github.com/mdn/browser-compat-data/pull/29041))
 
 Previously, the `CompatStatement.source_file` property was optional in the TypeScript definitions, even though it is always present in published `data.json` releases (it is generated at build time).
