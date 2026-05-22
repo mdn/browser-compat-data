@@ -14,7 +14,7 @@ Previously, the `CompatStatement.source_file` property was optional in the TypeS
 
 Now, `source_file` is typed as required, matching the actual shape of the data.
 
-**Impact**: Consumers that guarded against a missing `source_file` (e.g. `if (compat.source_file)`) can drop those checks. No data changes are required.
+**Impact**: You may need to remove checks for a missing `source_file` (e.g. `if (compat.source_file)`).
 
 #### 2. `BrowserStatement.upstream` is narrowed to `UpstreamBrowserName` ([#29041](https://github.com/mdn/browser-compat-data/pull/29041))
 
@@ -22,7 +22,7 @@ Previously, the `BrowserStatement.upstream` property was typed as `BrowserName`,
 
 Now, `upstream` is typed as the new `UpstreamBrowserName`, a subset of `BrowserName` containing only the browsers that other browsers actually derive from: `"chrome" | "chrome_android" | "firefox" | "safari" | "safari_ios"`.
 
-**Impact**: Consumers that pass `upstream` into functions expecting a full `BrowserName` may need to widen the type, or switch on the narrower set.
+**Impact**: You may need to widen the type when passing `upstream` into functions expecting a full `BrowserName`, or switch on the narrower set.
 
 ### Statistics
 
