@@ -22,6 +22,7 @@ Below is a simplified example of the published data:
       "accepts_webextensions": true,
       "releases": {
         "1.5": {
+          "index": 0,
           "release_date": "2005-11-29",
           "release_notes": "https://developer.mozilla.org/Firefox/Releases/1.5",
           "status": "retired",
@@ -357,6 +358,7 @@ The published data differs from the [source data](./compat-data-schema.md) in th
 - All `"mirror"` support statements are resolved to concrete support objects with real version numbers. The string `"mirror"` never appears in published data.
 - A `source_file` property is added to every `__compat` object.
 - A `version_last` property is added to every support statement that has a `version_removed`.
+- A 0-based `index` property is added to every release object, ordered ascending by version. Consumers can use it to construct an ordered array of releases without parsing version strings.
 - Markdown formatting in `description` and `notes` fields is converted to HTML.
 
 ## Exports
