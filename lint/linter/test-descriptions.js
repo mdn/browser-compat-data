@@ -7,7 +7,7 @@ import { validateHTML } from './test-notes.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement} from '../../types/index.js' */
 
 /**
  * @typedef {object} DescriptionError
@@ -21,7 +21,7 @@ import { validateHTML } from './test-notes.js';
  * Check for errors in the description of a specified statement's description and return whether there's an error and log as such
  * @param {string} ruleName The name of the error
  * @param {string} path The feature path
- * @param {CompatStatement} compat The compat data to test
+ * @param {InternalCompatStatement} compat The compat data to test
  * @param {string} expected Expected description
  * @param {(DescriptionError | string)[]} errors The array of errors to push to
  * @returns {void}
@@ -40,7 +40,7 @@ const checkDescription = (ruleName, path, compat, expected, errors) => {
 
 /**
  * Process API data and check for any incorrect descriptions in said data, logging any errors
- * @param {CompatStatement} data The data to test
+ * @param {InternalCompatStatement} data The data to test
  * @param {string} path The path of the feature
  * @param {(DescriptionError | string)[]} errors The array of errors to push to
  * @returns {void}
@@ -94,7 +94,7 @@ const processApiData = (data, path, errors) => {
 
 /**
  * Process data and check for any incorrect descriptions in said data, logging any errors
- * @param {CompatStatement} data The data to test
+ * @param {InternalCompatStatement} data The data to test
  * @param {string} category The feature category
  * @param {string} path The path of the feature
  * @returns {(DescriptionError | string)[]} The errors caught in the file
@@ -135,7 +135,7 @@ export default {
    */
   check: (logger, { data, path: { full, category } }) => {
     const errors = processData(
-      /** @type {CompatStatement} */ (data),
+      /** @type {InternalCompatStatement} */ (data),
       category,
       full,
     );

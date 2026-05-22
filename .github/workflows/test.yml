@@ -133,8 +133,8 @@ jobs:
       - name: Format
         run: |
           # sed command prefixes each line of output with [base] or [pr]
-          cd base/build && npx prettier --write . | sed "s/^/[base] /" &
-          cd pr/build && npx prettier --write . | sed "s/^/[pr] /" &
+          cd base/build && npx prettier --ignore-path /dev/null --write . | sed "s/^/[base] /" &
+          cd pr/build && npx prettier --ignore-path /dev/null --write . | sed "s/^/[pr] /" &
           wait
 
       - name: Diff
