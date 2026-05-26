@@ -11,8 +11,8 @@ permissions:
   contents: write
 
 env:
-  package: "@mdn/browser-compat-data"
-  tag: "next"
+  PACKAGE: "@mdn/browser-compat-data"
+  TAG: "next"
 
 jobs:
   publish:
@@ -46,9 +46,9 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if ! gh release view "$tag" >/dev/null 2>&1; then
-            gh release create "$tag" \
-              --title "$package@$tag" \
+          if ! gh release view "$TAG" >/dev/null 2>&1; then
+            gh release create "$TAG" \
+              --title "$PACKAGE@$TAG" \
               --notes "Bootstrapping next pre-release." \
               --prerelease
           fi
@@ -56,14 +56,14 @@ jobs:
       - name: Draft existing release while we move the tag
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release edit --draft "$tag"
+        run: gh release edit --draft "$TAG"
 
       - name: Move the `next` tag
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git tag --force "$tag"
-          git push --force origin "$tag"
+          git tag --force "$TAG"
+          git push --force origin "$TAG"
 
       - name: Publish the pre-release
         env:
@@ -73,9 +73,9 @@ jobs:
         run: |
           gh release edit \
             --verify-tag \
-            --title "$package@$tag" \
+            --title "$PACKAGE@$TAG" \
             --notes "$NOTES" \
             --prerelease \
             --draft=false \
-            "$tag"
-          gh release upload --clobber "$tag" build/data.json
+            "$TAG"
+          gh release upload --clobber "$TAG" build/data.json
