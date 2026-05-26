@@ -7,7 +7,7 @@ import { compare } from 'compare-versions';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {CompatStatement, BrowserName, SupportStatement, SimpleSupportStatement, FlagStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement, BrowserName, InternalSupportStatement, InternalSimpleSupportStatement, FlagStatement} from '../../types/index.js' */
 
 /**
  * @typedef {object} FlagError
@@ -17,8 +17,8 @@ import { compare } from 'compare-versions';
 
 /**
  * Get the support statement with basic, non-aliased and non-flagged support
- * @param {SimpleSupportStatement[]} supportData The statements to check
- * @returns {SimpleSupportStatement | undefined} The support statement with basic, non-aliased and non-flagged support
+ * @param {InternalSimpleSupportStatement[]} supportData The statements to check
+ * @returns {InternalSimpleSupportStatement | undefined} The support statement with basic, non-aliased and non-flagged support
  */
 export const getBasicSupportStatement = (supportData) =>
   supportData.find((statement) => {
@@ -33,8 +33,8 @@ export const getBasicSupportStatement = (supportData) =>
 
 /**
  * Determines if a support statement is for irrelevant flag data
- * @param {SimpleSupportStatement} statement The statement to check
- * @param {SimpleSupportStatement | undefined} basicSupport The support statement for the same browser that has no alt. name, prefix or flag
+ * @param {InternalSimpleSupportStatement} statement The statement to check
+ * @param {InternalSimpleSupportStatement | undefined} basicSupport The support statement for the same browser that has no alt. name, prefix or flag
  * @returns {boolean} Whether the support statement is irrelevant
  */
 export const isIrrelevantFlagData = (statement, basicSupport) => {
@@ -83,7 +83,7 @@ export const isIrrelevantFlagData = (statement, basicSupport) => {
 };
 /**
  * Process data and check for any irrelevant flag data
- * @param {CompatStatement} data The data to test
+ * @param {InternalCompatStatement} data The data to test
  * @returns {FlagError[]} The errors found
  */
 export const processData = (data) => {
@@ -93,7 +93,7 @@ export const processData = (data) => {
   for (const [
     browser,
     supportData,
-  ] of /** @type {[BrowserName, SupportStatement][]} */ (
+  ] of /** @type {[BrowserName, InternalSupportStatement][]} */ (
     Object.entries(data.support)
   )) {
     if (typeof supportData === 'string') {
@@ -130,7 +130,7 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data }) => {
-    const errors = processData(/** @type {CompatStatement} */ (data));
+    const errors = processData(/** @type {InternalCompatStatement} */ (data));
 
     for (const error of errors) {
       logger.error(

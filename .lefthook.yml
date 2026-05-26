@@ -16,8 +16,10 @@ pre-commit:
       glob: "**/*.json"
       exclude:
         - .vscode/*.json
+        - build/*.json
         - browsers/*.json
         - schemas/*.json
+        - types/*.json
       run: npm run lint:fix {staged_files} && git add lint/common/standard-track-exceptions.txt
       stage_fixed: true
 

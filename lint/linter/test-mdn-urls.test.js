@@ -3,7 +3,7 @@
 
 import assert from 'node:assert/strict';
 
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement} from '../../types/index.js' */
 
 import {
   inventory,
@@ -12,8 +12,8 @@ import {
 
 import { processData, urlsByPath } from './test-mdn-urls.js';
 
-/** @type {CompatStatement} */
-const noUrl = /** @type {CompatStatement} */ ({});
+/** @type {InternalCompatStatement} */
+const noUrl = /** @type {InternalCompatStatement} */ ({});
 
 // Save originals for restore after mocking.
 const originalSlugs = inventory.slugs;

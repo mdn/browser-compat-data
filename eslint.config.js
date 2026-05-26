@@ -34,7 +34,8 @@ export default [
       'CODE_OF_CONDUCT.md',
       'build/',
       '**/coverage/',
-      '**/types.d.ts',
+      'types/internal.d.ts',
+      'types/public.d.ts',
     ],
   },
   ...fixupConfigRules(
@@ -83,9 +84,7 @@ export default [
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-floating-promises': 'error',
       '@typescript-eslint/no-unused-expressions': 'error',
-      '@typescript-eslint/no-unused-vars': 'off',
-
-      'no-unused-vars': [
+      '@typescript-eslint/no-unused-vars': [
         'error',
         {
           argsIgnorePattern: '^_',
@@ -172,6 +171,7 @@ export default [
       'no-return-assign': 'error',
       'no-self-compare': 'error',
       'no-unused-expressions': 'error',
+      'no-unused-vars': 'off', // Using @typescript-eslint/no-unused-vars instead.
       'no-useless-call': 'error',
 
       'prefer-arrow-functions/prefer-arrow-functions': [

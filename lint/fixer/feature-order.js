@@ -3,7 +3,7 @@
 
 import compareFeatures from '../../scripts/lib/compare-features.js';
 
-/** @import {Identifier} from '../../types/types.js' */
+/** @import {InternalIdentifier} from '../../types/index.js' */
 
 /**
  * Check whether an object contains compat data anywhere in its subtree.
@@ -27,12 +27,12 @@ const hasCompatData = (obj) => {
  * property ordering, which is insertion order for non-integer keys
  * (which is our case).
  * @param {string} _ The key in the object
- * @param {Identifier} value The value of the key
- * @returns {Identifier} The new value
+ * @param {InternalIdentifier} value The value of the key
+ * @returns {InternalIdentifier} The new value
  */
 export const orderFeatures = (_, value) => {
   if (value instanceof Object && hasCompatData(value)) {
-    value = /** @type {Identifier} */ (
+    value = /** @type {InternalIdentifier} */ (
       Object.fromEntries(
         Object.entries(value).sort(([a], [b]) => compareFeatures(a, b)),
       )

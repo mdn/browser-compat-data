@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {ReleaseStatement} from '../../types/types.js' */
+/** @import {ReleaseStatement} from '../../types/index.js' */
 
 import * as fs from 'node:fs';
 

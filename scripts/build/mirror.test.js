@@ -2,7 +2,7 @@
  * See LICENSE file for more information. */
 
 /**
- * @import { BrowserName } from '../../types/types.js'
+ * @import { BrowserName } from '../../types/index.js'
  * @import { InternalSupportBlock } from '../../types/index.js'
  */
 
