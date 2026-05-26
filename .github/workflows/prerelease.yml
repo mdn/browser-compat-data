@@ -45,9 +45,13 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Get short hash
+      - name: Get commit hashes
         id: hash
-        run: echo "SHORT_HASH=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+        run: |
+          {
+            echo "SHORT_HASH=$(git rev-parse --short HEAD)"
+            echo "FULL_HASH=$(git rev-parse HEAD)"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Ensure `next` pre-release exists
         env:
@@ -76,7 +80,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           SHORT_HASH: ${{ steps.hash.outputs.SHORT_HASH }}
-          NOTES: "Experimental nightly prerelease generated from `${{ env.REF }}` (currently at ${{ steps.hash.outputs.SHORT_HASH }})."
+          NOTES: "Experimental nightly prerelease generated from the [`${{ env.REF }}`](${{ github.server_url }}/${{ github.repository }}/tree/${{ env.REF }}) branch (currently at [`${{ steps.hash.outputs.SHORT_HASH }}`](${{ github.server_url }}/${{ github.repository }}/commit/${{ steps.hash.outputs.FULL_HASH }}))."
         run: |
           gh release edit \
             --verify-tag \
