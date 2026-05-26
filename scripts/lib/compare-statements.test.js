@@ -1,13 +1,13 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {Identifier, CompatStatement} from '../../types/types.js' */
+/** @import {InternalIdentifier, InternalCompatStatement} from '../../types/index.js' */
 
 import assert from 'node:assert/strict';
 
 import compareStatements from './compare-statements.js';
 
-/** @type {{ input: Identifier; output: Identifier }[]} */
+/** @type {{ input: InternalIdentifier; output: InternalIdentifier }[]} */
 const tests = /** @type {*} */ ([
   {
     input: {
@@ -130,8 +130,8 @@ const tests = /** @type {*} */ ([
 /**
  * Update the order of the statements
  * @param {string} key The key of the object (make sure it's '__compat')
- * @param {CompatStatement} value The compat statement to update
- * @returns {CompatStatement} The updated compat statement
+ * @param {InternalCompatStatement} value The compat statement to update
+ * @returns {InternalCompatStatement} The updated compat statement
  */
 const orderStatements = (key, value) => {
   if (key === '__compat') {

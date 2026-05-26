@@ -11,9 +11,8 @@ import stringify from 'fast-json-stable-stringify';
 import { compareVersions } from 'compare-versions';
 import { marked } from 'marked';
 
-import compileTS from '../generate-types.js';
-import compatDataSchema from '../../schemas/compat-data.schema.json' with { type: 'json' };
-import browserDataSchema from '../../schemas/browsers.schema.json' with { type: 'json' };
+import { compilePublicTypes } from '../generate-types.js';
+import schema from '../../schemas/public.schema.json' with { type: 'json' };
 import { createAjv } from '../lib/ajv.js';
 import { walk } from '../../utils/index.js';
 import bcd from '../../index.js';
@@ -21,8 +20,8 @@ import bcd from '../../index.js';
 import mirrorSupport from './mirror.js';
 
 /**
- * @import { InternalSupportStatement } from '../../types/index.js'
- * @import { BrowserName, CompatData, Identifier, VersionValue } from '../../types/types.js'
+ * @import { BrowserName, InternalCompatData, InternalIdentifier, InternalSupportStatement, VersionValue } from '../../types/index.js'
+ * @import { CompatData, MetaBlock } from '../../types/public.js'
  * @import { WalkOutput } from '../../utils/walk.js'
  */
 
@@ -52,11 +51,11 @@ const logWrite = (url, description = '') => {
 
 /**
  * Generate metadata to embed into BCD builds
- * @returns {*} Metadata to embed into BCD
+ * @returns {MetaBlock} Metadata to embed into BCD
  */
 export const generateMeta = () => ({
   version: packageJson.version,
-  timestamp: new Date(),
+  timestamp: new Date().toISOString(),
 });
 
 /**
@@ -150,7 +149,7 @@ export const addVersionLast = (feature) => {
  * @returns {void}
  */
 export const transformMD = (feature) => {
-  const featureData = /** @type {Identifier} */ (feature.data);
+  const featureData = /** @type {InternalIdentifier} */ (feature.data);
   if (
     featureData.__compat &&
     'description' in featureData.__compat &&
@@ -196,7 +195,7 @@ export const transformMD = (feature) => {
 const addIE = (feature) => {
   if (
     feature.path.startsWith('webextensions.') &&
-    !bcd.browsers.ie.accepts_webextensions
+    !bcd.browsers['ie'].accepts_webextensions
   ) {
     return;
   }
@@ -207,9 +206,12 @@ const addIE = (feature) => {
 };
 
 /**
- * Applies transforms to the given data.
- * @param {*} data - The data to apply transforms to.
- * @returns {void}
+ * Apply build-time transforms in place: resolve `"mirror"` statements, add
+ * `version_last`, convert Markdown notes/descriptions to HTML, and add
+ * missing `ie` entries.
+ * @param {InternalCompatData} data - The data to apply transforms to.
+ * @returns {asserts data is Omit<CompatData, '__meta'>} Narrows `data` to the
+ *   public `CompatData` shape (without `__meta`).
  */
 export const applyTransforms = (data) => {
   const walker = walk(undefined, data);
@@ -244,25 +246,16 @@ export const createDataBundle = async () => {
 const validate = (data) => {
   const ajv = createAjv();
 
-  for (const [key, value] of Object.entries(data)) {
-    if (key === '__meta') {
-      // Not covered by the schema.
-      continue;
+  if (!ajv.validate(schema, data)) {
+    const errors = ajv.errors || [];
+    if (!errors.length) {
+      console.error('Public data failed validation with unknown errors!');
     }
-
-    const schema = key === 'browsers' ? browserDataSchema : compatDataSchema;
-    const data = { [key]: value };
-    if (!ajv.validate(schema, data)) {
-      const errors = ajv.errors || [];
-      if (!errors.length) {
-        console.error(`${key} data failed validation with unknown errors!`);
-      }
-      // Output messages by one since better-ajv-errors wrongly joins messages
-      // (see https://github.com/atlassian/better-ajv-errors/pull/21)
-      errors.forEach((e) => {
-        console.error(betterAjvErrors(schema, data, [e], { indent: 2 }));
-      });
-    }
+    // Output messages by one since better-ajv-errors wrongly joins messages
+    // (see https://github.com/atlassian/better-ajv-errors/pull/21)
+    errors.forEach((e) => {
+      console.error(betterAjvErrors(schema, data, [e], { indent: 2 }));
+    });
   }
 };
 
@@ -315,7 +308,7 @@ export * from "./types.js";`;
   await fs.writeFile(destImport, content);
   logWrite(destImport, 'ESM types');
 
-  await compileTS(destTypes);
+  await compilePublicTypes('schemas/public.schema.json', destTypes);
   logWrite(destTypes, 'data types');
 };
 
@@ -402,21 +395,16 @@ const writeManifest = async () => {
  * Perform a build of BCD for publishing
  */
 const main = async () => {
-  // Remove existing files, if there are any
-  await fs
-    .rm(targetdir, {
-      force: true,
-      recursive: true,
-    })
-    .catch((e) => {
-      // Missing folder is not an issue since we wanted to delete it anyway
-      if (e.code !== 'ENOENT') {
-        throw e;
-      }
-    });
-
-  // Crate a new directory
-  await fs.mkdir(targetdir);
+  // Remove previous build outputs while preserving tracked files in build/
+  // (.gitignore, .npmignore, tsconfig.json).
+  await fs.mkdir(targetdir, { recursive: true });
+  const preserved = new Set(['.gitignore', '.npmignore', 'tsconfig.json']);
+  for (const entry of await fs.readdir(targetdir)) {
+    if (preserved.has(entry)) {
+      continue;
+    }
+    await fs.rm(new URL(entry, targetdir), { recursive: true, force: true });
+  }
 
   await Promise.all([
     writeManifest(),

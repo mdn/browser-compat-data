@@ -9,7 +9,7 @@ import { getSpecURLsExceptions } from '../common/spec-urls-exceptions.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement} from '../../types/index.js' */
 
 const allowedSpecURLs = [
   .../** @type {string[]} */ (
@@ -29,7 +29,7 @@ const allowedSpecURLs = [
 
 /**
  * Process the data for spec URL errors
- * @param {CompatStatement} data The data to test
+ * @param {InternalCompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
@@ -66,6 +66,6 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data }) => {
-    processData(/** @type {CompatStatement} */ (data), logger);
+    processData(/** @type {InternalCompatStatement} */ (data), logger);
   },
 };
