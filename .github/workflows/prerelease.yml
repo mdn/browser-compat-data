@@ -1,6 +1,9 @@
 name: Publish @mdn/browser-compat-data@next
 
 on:
+  push:
+    branches:
+      - prerelease
   schedule:
     - cron: "0 0 * * *"
   release:
