@@ -69,7 +69,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           SHORT_HASH: ${{ steps.hash.outputs.SHORT_HASH }}
-          NOTES: "This is a continuously-updated prerelease generated from `main` (currently at ${{ steps.hash.outputs.SHORT_HASH }})."
+          NOTES: "Experimental nightly prerelease generated from `main` (currently at ${{ steps.hash.outputs.SHORT_HASH }})."
         run: |
           gh release edit \
             --verify-tag \
