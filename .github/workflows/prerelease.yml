@@ -19,7 +19,7 @@ permissions:
 env:
   PACKAGE: "@mdn/browser-compat-data"
   TAG: "next"
-  REF: ${{ case(github.event_name == 'release', 'main', 'release') }}
+  REF: ${{ case(github.event_name == 'release', github.event.release.tag_name, 'release') }}
 
 jobs:
   publish:
