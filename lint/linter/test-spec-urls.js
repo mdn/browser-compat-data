@@ -53,16 +53,8 @@ const processData = (data, logger) => {
       continue;
     }
 
-    // Temporarily skip all CSS specs until we figured out dealing with spec series
-    if (
-      specURL.includes('https://drafts.csswg.org') ||
-      specURL.includes('https://drafts.css-houdini.org')
-    ) {
-      continue;
-    }
-
     // Check if the spec_url exists in @webref/xref
-    if (!xref.lookup(specURL).length) {
+    if (!xref.lookup(specURL, { series: true, standing: 'good' }).length) {
       logger.error(
         `Invalid specification URL found: ${styleText('bold', specURL)}. Check if:
          - there is a more current specification URL
