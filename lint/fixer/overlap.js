@@ -3,14 +3,14 @@
 
 import { checkOverlap as checkOverlap } from '../common/overlap.js';
 
-/** @import {BrowserName, CompatStatement} from '../../types/types.js' */
+/** @import {BrowserName, InternalCompatStatement} from '../../types/index.js' */
 
 /**
  * Return a new "support_block" object whose support statements have
  * been updated to avoid overlapping version ranges.
  * @param {string} key The key in the object
- * @param {CompatStatement} value The value of the key
- * @returns {CompatStatement} The new value
+ * @param {InternalCompatStatement} value The value of the key
+ * @returns {InternalCompatStatement} The new value
  */
 export const processStatement = (key, value) => {
   if (key === '__compat') {

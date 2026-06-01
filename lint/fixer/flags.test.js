@@ -1,13 +1,13 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {SupportStatement} from '../../types/types.js' */
+/** @import {InternalSupportStatement} from '../../types/index.js' */
 
 import assert from 'node:assert/strict';
 
 import { removeIrrelevantFlags } from './flags.js';
 
-/** @type {{ input: SupportStatement; output: SupportStatement }[]} */
+/** @type {{ input: InternalSupportStatement; output: InternalSupportStatement }[]} */
 const tests = [
   {
     input: [

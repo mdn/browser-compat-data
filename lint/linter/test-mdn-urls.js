@@ -8,7 +8,7 @@ import { inventory } from '../../utils/mdn-content-inventory.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {CompatData, CompatStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement} from '../../types/index.js' */
 
 /**
  * @typedef {object} MDNURLError
@@ -23,7 +23,7 @@ export const urlsByPath = new Map();
 
 /**
  * Process the data for MDN URL issues
- * @param {CompatStatement} data The data to test
+ * @param {InternalCompatStatement} data The data to test
  * @param {string} path The path of the feature
  * @returns {MDNURLError[]} The issues caught in the file
  */
@@ -172,8 +172,11 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data }) => {
-    for (const feature of walk(undefined, /** @type {CompatData} */ (data))) {
-      const issues = processData(feature.compat, feature.path);
+    for (const feature of walk(undefined, data)) {
+      const issues = processData(
+        /** @type {InternalCompatStatement} */ (feature.compat),
+        feature.path,
+      );
       logIssues(issues, logger);
     }
   },
