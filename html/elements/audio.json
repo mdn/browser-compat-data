@@ -267,11 +267,17 @@
               "web-features:loading-lazy-media"
             ],
             "support": {
-              "chrome": {
-                "version_added": "148",
-                "partial_implementation": true,
-                "notes": "Not supported for `<source>`. See [bug 514611050](https://crbug.com/514611050)."
-              },
+              "chrome": [
+                {
+                  "version_added": "150"
+                },
+                {
+                  "version_added": "148",
+                  "version_removed": "150",
+                  "partial_implementation": true,
+                  "notes": "Not supported for `<source>`. See [bug 514611050](https://crbug.com/514611050)."
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
