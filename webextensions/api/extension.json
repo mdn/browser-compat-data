@@ -280,10 +280,18 @@
                 "version_added": "12"
               },
               "edge": "mirror",
-              "firefox": {
-                "version_added": "48",
-                "notes": "From Firefox 153, the value returned reflects the \"Access local files on your computer\" option in the extension's permissions settings."
-              },
+              "firefox": [
+                {
+                  "version_added": "153",
+                  "notes": "The value returned reflects the \"Access local files on your computer\" option in the extension's permissions settings."
+                },
+                {
+                  "version_added": "48",
+                  "version_removed": "153",
+                  "partial_implementation": true,
+                  "notes": "Always returns `false`."
+                }
+              ],
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
