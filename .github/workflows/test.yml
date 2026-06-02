@@ -55,7 +55,31 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run lint -- --fail-on-warnings
+      - name: Lint
+        id: lint
+        run: npm run lint -- --fail-on-warnings
+
+      - name: Fix lint issues
+        id: lint-fix
+        if: failure() && steps.lint.conclusion == 'failure'
+        run: |
+          npm run lint:fix
+          if [[ -n $(git diff) ]]; then
+            echo "files_modified=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Collect artifact files
+        if: failure() && steps.lint-fix.outputs.files_modified == 'true'
+        run: |
+          mkdir -p lint-results
+          git diff > lint-results/lint.diff
+
+      - name: Upload artifact
+        if: failure() && steps.lint-fix.outputs.files_modified == 'true'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: lint-results
+          path: lint-results
 
   test:
     runs-on: ubuntu-latest
