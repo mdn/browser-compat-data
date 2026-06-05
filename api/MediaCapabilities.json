@@ -81,6 +81,42 @@
             "deprecated": false
           }
         },
+        "configuration_keySystemConfiguration_parameter": {
+          "__compat": {
+            "description": "`configuration.keySystemConfiguration` parameter",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaCapabilities/decodingInfo#keysystemconfiguration",
+            "spec_url": "https://w3c.github.io/media-capabilities/#dom-mediadecodingconfiguration-keysystemconfiguration",
+            "tags": [
+              "web-features:encrypted-media-extensions"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "80"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "129"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "configuration_parameter": {
           "__compat": {
             "description": "`configuration` parameter",
@@ -113,118 +149,82 @@
               "standard_track": true,
               "deprecated": false
             }
-          },
-          "keySystemConfiguration": {
-            "__compat": {
-              "description": "`keySystemConfiguration` property",
-              "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaCapabilities/decodingInfo#keysystemconfiguration",
-              "spec_url": "https://w3c.github.io/media-capabilities/#dom-mediadecodingconfiguration-keysystemconfiguration",
-              "tags": [
-                "web-features:encrypted-media-extensions"
-              ],
-              "support": {
-                "chrome": {
-                  "version_added": "80"
-                },
-                "chrome_android": "mirror",
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": "129"
-                },
-                "firefox_android": "mirror",
-                "oculus": "mirror",
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": false
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror",
-                "webview_ios": "mirror"
+          }
+        },
+        "configuration_type_parameter": {
+          "__compat": {
+            "description": "`configuration.type` parameter",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaCapabilities/decodingInfo#type",
+            "spec_url": "https://w3c.github.io/media-capabilities/#dom-mediadecodingconfiguration-type",
+            "support": {
+              "chrome": {
+                "version_added": "66"
               },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
-            }
-          },
-          "type": {
-            "__compat": {
-              "description": "`type` property",
-              "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaCapabilities/decodingInfo#type",
-              "spec_url": "https://w3c.github.io/media-capabilities/#dom-mediadecodingconfiguration-type",
-              "support": {
-                "chrome": {
-                  "version_added": "66"
-                },
-                "chrome_android": "mirror",
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": "63"
-                },
-                "firefox_android": "mirror",
-                "oculus": "mirror",
-                "opera": "mirror",
-                "opera_android": {
-                  "version_added": "48"
-                },
-                "safari": {
-                  "version_added": "13"
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror",
-                "webview_ios": "mirror"
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "63"
               },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": {
+                "version_added": "48"
+              },
+              "safari": {
+                "version_added": "13"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
-            "webrtc_option": {
-              "__compat": {
-                "description": "`configuration.type.webrtc` option",
-                "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaCapabilities/decodingInfo#webrtc",
-                "spec_url": "https://w3c.github.io/media-capabilities/#dom-mediadecodingtype-webrtc",
-                "support": {
-                  "chrome": {
-                    "version_added": "66"
-                  },
-                  "chrome_android": "mirror",
-                  "edge": "mirror",
-                  "firefox": {
-                    "version_added": "152",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "media.mediacapabilities.webrtc.enabled",
-                        "value_to_set": "true"
-                      }
-                    ]
-                  },
-                  "firefox_android": "mirror",
-                  "oculus": "mirror",
-                  "opera": "mirror",
-                  "opera_android": {
-                    "version_added": "48"
-                  },
-                  "safari": {
-                    "version_added": "13"
-                  },
-                  "safari_ios": "mirror",
-                  "samsunginternet_android": "mirror",
-                  "webview_android": "mirror",
-                  "webview_ios": "mirror"
-                },
-                "status": {
-                  "experimental": false,
-                  "standard_track": true,
-                  "deprecated": false
-                }
-              }
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "configuration_type_parameter_webrtc": {
+          "__compat": {
+            "description": "`configuration.type` parameter supports `\"webrtc\"`",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaCapabilities/decodingInfo#webrtc",
+            "spec_url": "https://w3c.github.io/media-capabilities/#dom-mediadecodingtype-webrtc",
+            "support": {
+              "chrome": {
+                "version_added": "66"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "152",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.mediacapabilities.webrtc.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": {
+                "version_added": "48"
+              },
+              "safari": {
+                "version_added": "13"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
             }
           }
         }
@@ -296,121 +296,121 @@
               "standard_track": true,
               "deprecated": false
             }
-          },
-          "type": {
-            "__compat": {
-              "description": "`type` property",
-              "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaCapabilities/encodingInfo#type",
-              "spec_url": "https://w3c.github.io/media-capabilities/#dom-mediaencodingconfiguration-type",
-              "tags": [
-                "web-features:media-capabilities"
-              ],
-              "support": {
-                "chrome": {
-                  "version_added": "101"
-                },
-                "chrome_android": "mirror",
-                "edge": "mirror",
-                "firefox": {
-                  "version_added": "63"
-                },
-                "firefox_android": "mirror",
-                "oculus": "mirror",
-                "opera": "mirror",
-                "opera_android": "mirror",
-                "safari": {
-                  "version_added": "15.4"
-                },
-                "safari_ios": "mirror",
-                "samsunginternet_android": "mirror",
-                "webview_android": "mirror",
-                "webview_ios": "mirror"
+          }
+        },
+        "configuration_type_parameter": {
+          "__compat": {
+            "description": "`configuration.type` parameter",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaCapabilities/encodingInfo#type",
+            "spec_url": "https://w3c.github.io/media-capabilities/#dom-mediaencodingconfiguration-type",
+            "tags": [
+              "web-features:media-capabilities"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "101"
               },
-              "status": {
-                "experimental": false,
-                "standard_track": true,
-                "deprecated": false
-              }
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "63"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "15.4"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
-            "transmission_option": {
-              "__compat": {
-                "description": "`configuration.type.transmission` option",
-                "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaCapabilities/encodingInfo#transmission",
-                "tags": [
-                  "web-features:media-capabilities"
-                ],
-                "support": {
-                  "chrome": {
-                    "version_added": "101"
-                  },
-                  "chrome_android": "mirror",
-                  "edge": "mirror",
-                  "firefox": {
-                    "version_added": "63",
-                    "partial_implementation": true,
-                    "notes": "The spec name for this option is `webrtc`."
-                  },
-                  "firefox_android": "mirror",
-                  "oculus": "mirror",
-                  "opera": "mirror",
-                  "opera_android": "mirror",
-                  "safari": {
-                    "version_added": "15.4"
-                  },
-                  "safari_ios": "mirror",
-                  "samsunginternet_android": "mirror",
-                  "webview_android": "mirror",
-                  "webview_ios": "mirror"
-                },
-                "status": {
-                  "experimental": false,
-                  "standard_track": false,
-                  "deprecated": true
-                }
-              }
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "configuration_type_parameter_transmission": {
+          "__compat": {
+            "description": "`configuration.type` parameter supports `\"transmission\"`",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaCapabilities/encodingInfo#transmission",
+            "tags": [
+              "web-features:media-capabilities"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "101"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "63",
+                "partial_implementation": true,
+                "notes": "The spec name for this option is `webrtc`."
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "15.4"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
             },
-            "webrtc_option": {
-              "__compat": {
-                "description": "`configuration.type.webrtc` option",
-                "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaCapabilities/encodingInfo#webrtc",
-                "spec_url": "https://w3c.github.io/media-capabilities/#dom-mediaencodingtype-webrtc",
-                "tags": [
-                  "web-features:media-capabilities"
-                ],
-                "support": {
-                  "chrome": {
-                    "version_added": "101"
-                  },
-                  "chrome_android": "mirror",
-                  "edge": "mirror",
-                  "firefox": {
-                    "version_added": "152",
-                    "flags": [
-                      {
-                        "type": "preference",
-                        "name": "media.mediacapabilities.webrtc.enabled",
-                        "value_to_set": "true"
-                      }
-                    ]
-                  },
-                  "firefox_android": "mirror",
-                  "oculus": "mirror",
-                  "opera": "mirror",
-                  "opera_android": "mirror",
-                  "safari": {
-                    "version_added": "15.4"
-                  },
-                  "safari_ios": "mirror",
-                  "samsunginternet_android": "mirror",
-                  "webview_android": "mirror",
-                  "webview_ios": "mirror"
-                },
-                "status": {
-                  "experimental": false,
-                  "standard_track": true,
-                  "deprecated": false
-                }
-              }
+            "status": {
+              "experimental": false,
+              "standard_track": false,
+              "deprecated": true
+            }
+          }
+        },
+        "configuration_type_parameter_webrtc": {
+          "__compat": {
+            "description": "`configuration.type` parameter supports `\"webrtc\"`",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/API/MediaCapabilities/encodingInfo#webrtc",
+            "spec_url": "https://w3c.github.io/media-capabilities/#dom-mediaencodingtype-webrtc",
+            "tags": [
+              "web-features:media-capabilities"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "101"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "152",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "media.mediacapabilities.webrtc.enabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "15.4"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
             }
           }
         }
