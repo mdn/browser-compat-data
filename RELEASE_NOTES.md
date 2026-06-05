@@ -1,5 +1,57 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.0.2](https://github.com/mdn/browser-compat-data/releases/tag/v8.0.2)
+
+June 5, 2026
+
+### Additions
+
+- `api.Request.isReloadNavigation` ([#29799](https://github.com/mdn/browser-compat-data/pull/29799))
+- `browsers.edge.releases.152` ([#29803](https://github.com/mdn/browser-compat-data/pull/29803))
+- `css.properties.background.border-area` ([#29799](https://github.com/mdn/browser-compat-data/pull/29799))
+- `css.properties.column-rule-inset-cap-end.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.column-rule-inset-cap-start.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.column-rule-inset-cap.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.column-rule-inset-end.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.column-rule-inset-junction-end.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.column-rule-inset-junction-start.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.column-rule-inset-junction.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.column-rule-inset-start.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.column-rule-inset.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.flex-flow.balance` ([#29799](https://github.com/mdn/browser-compat-data/pull/29799))
+- `css.properties.flex-line-count` ([#29799](https://github.com/mdn/browser-compat-data/pull/29799))
+- `css.properties.flex-wrap.balance` ([#29799](https://github.com/mdn/browser-compat-data/pull/29799))
+- `css.properties.overscroll-behavior-block.chain` ([#29799](https://github.com/mdn/browser-compat-data/pull/29799))
+- `css.properties.overscroll-behavior-inline.chain` ([#29799](https://github.com/mdn/browser-compat-data/pull/29799))
+- `css.properties.overscroll-behavior-x.chain` ([#29799](https://github.com/mdn/browser-compat-data/pull/29799))
+- `css.properties.overscroll-behavior-y.chain` ([#29799](https://github.com/mdn/browser-compat-data/pull/29799))
+- `css.properties.overscroll-behavior.chain` ([#29799](https://github.com/mdn/browser-compat-data/pull/29799))
+- `css.properties.row-rule-inset-cap-end.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.row-rule-inset-cap-start.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.row-rule-inset-cap.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.row-rule-inset-end.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.row-rule-inset-junction-end.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.row-rule-inset-junction-start.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.row-rule-inset-junction.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.row-rule-inset-start.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.row-rule-inset.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.rule-inset-cap.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.rule-inset-end.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.rule-inset-junction.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.rule-inset-start.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.rule-inset.overlap-join` ([#29795](https://github.com/mdn/browser-compat-data/pull/29795))
+- `css.properties.text-fit` ([#29799](https://github.com/mdn/browser-compat-data/pull/29799))
+- `css.properties.text-fit.grow` ([#29799](https://github.com/mdn/browser-compat-data/pull/29799))
+- `css.properties.text-fit.none` ([#29799](https://github.com/mdn/browser-compat-data/pull/29799))
+- `css.properties.text-fit.shrink` ([#29799](https://github.com/mdn/browser-compat-data/pull/29799))
+
+### Statistics
+
+- 3 contributors have changed 39 files with 1,176 additions and 27 deletions in 4 commits ([`next...v8.0.2`](https://github.com/mdn/browser-compat-data/compare/next...v8.0.2))
+- 19,806 total features
+- 1,254 total contributors
+- 5,681 total stargazers
+
 ## [v8.0.1](https://github.com/mdn/browser-compat-data/releases/tag/v8.0.1)
 
 May 29, 2026
