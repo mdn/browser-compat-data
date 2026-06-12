@@ -118,50 +118,6 @@
           }
         }
       },
-      "incomingHighWaterMark": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransportDatagramDuplexStream/incomingHighWaterMark",
-          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportdatagramduplexstream-incominghighwatermark",
-          "tags": [
-            "web-features:webtransport"
-          ],
-          "support": {
-            "chrome": {
-              "version_added": "97"
-            },
-            "chrome_android": "mirror",
-            "deno": {
-              "version_added": "2.2",
-              "flags": [
-                {
-                  "type": "runtime_flag",
-                  "name": "--unstable-net"
-                }
-              ]
-            },
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "114"
-            },
-            "firefox_android": "mirror",
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": "26.4"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "incomingMaxAge": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransportDatagramDuplexStream/incomingMaxAge",
@@ -206,15 +162,15 @@
           }
         }
       },
-      "maxDatagramSize": {
+      "incomingMaxBufferedDatagrams": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransportDatagramDuplexStream/maxDatagramSize",
-          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportdatagramduplexstream-maxdatagramsize",
+          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportdatagramduplexstream-incomingmaxbuffereddatagrams",
           "tags": [
             "web-features:webtransport"
           ],
           "support": {
             "chrome": {
+              "alternative_name": "incomingHighWaterMark",
               "version_added": "97"
             },
             "chrome_android": "mirror",
@@ -229,6 +185,7 @@
             },
             "edge": "mirror",
             "firefox": {
+              "alternative_name": "incomingHighWaterMark",
               "version_added": "114"
             },
             "firefox_android": "mirror",
@@ -236,6 +193,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
+              "alternative_name": "incomingHighWaterMark",
               "version_added": "26.4"
             },
             "safari_ios": "mirror",
@@ -250,10 +208,10 @@
           }
         }
       },
-      "outgoingHighWaterMark": {
+      "maxDatagramSize": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransportDatagramDuplexStream/outgoingHighWaterMark",
-          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportdatagramduplexstream-outgoinghighwatermark",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/WebTransportDatagramDuplexStream/maxDatagramSize",
+          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportdatagramduplexstream-maxdatagramsize",
           "tags": [
             "web-features:webtransport"
           ],
@@ -324,6 +282,52 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
+              "version_added": "26.4"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "outgoingMaxBufferedDatagrams": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportdatagramduplexstream-outgoingmaxbuffereddatagrams",
+          "tags": [
+            "web-features:webtransport"
+          ],
+          "support": {
+            "chrome": {
+              "alternative_name": "outgoingHighWaterMark",
+              "version_added": "97"
+            },
+            "chrome_android": "mirror",
+            "deno": {
+              "version_added": "2.2",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--unstable-net"
+                }
+              ]
+            },
+            "edge": "mirror",
+            "firefox": {
+              "alternative_name": "outgoingHighWaterMark",
+              "version_added": "114"
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "alternative_name": "outgoingHighWaterMark",
               "version_added": "26.4"
             },
             "safari_ios": "mirror",
