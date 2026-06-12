@@ -32,6 +32,14 @@ export const IS_WINDOWS = platform() === 'win32';
 export const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
 
 /**
+ * Replace <code> tags with backtick-quoted Markdown.
+ * @param {string} str The string to process
+ * @returns {string} The string with <code> tags replaced by backticks
+ */
+export const replaceCodeTagsWithBackticks = (str) =>
+  str.replace(/<code>([^<]*)<\/code>/g, '`$1`');
+
+/**
  * Escapes common invisible characters.
  * @param {string} str The string to escape invisibles for
  * @returns {string} The string with invisibles escaped

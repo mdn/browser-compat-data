@@ -3,7 +3,11 @@
 
 import { styleText } from 'node:util';
 
+import { replaceCodeTagsWithBackticks } from '../utils.js';
+
 import { validateHTML } from './test-notes.js';
+
+export { replaceCodeTagsWithBackticks };
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
@@ -117,6 +121,16 @@ export const processData = (data, category, path) => {
   }
 
   if (data.description) {
+    const converted = replaceCodeTagsWithBackticks(data.description);
+    if (converted !== data.description) {
+      errors.push({
+        ruleName: 'no_code_tag_in_description',
+        path,
+        actual: data.description,
+        expected: converted,
+      });
+    }
+
     errors.push(...validateHTML(data.description));
   }
 

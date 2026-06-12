@@ -6,7 +6,7 @@ import { styleText } from 'node:util';
 import HTMLParser from '@desertnet/html-parser';
 import { marked } from 'marked';
 
-import { VALID_ELEMENTS } from '../utils.js';
+import { replaceCodeTagsWithBackticks, VALID_ELEMENTS } from '../utils.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
@@ -110,6 +110,21 @@ const checkNotes = (notes, browser, feature, logger) => {
   if (errors) {
     for (const error of errors) {
       logger.error(`Notes for ${styleText('bold', browser)} → ${error}`);
+    }
+  }
+
+  for (const note of Array.isArray(notes) ? notes : [notes]) {
+    const converted = replaceCodeTagsWithBackticks(note);
+    if (converted !== note) {
+      logger.error(
+        styleText(
+          'red',
+          `Notes for ${styleText('bold', browser)} use HTML code tags instead of backtick-quoted Markdown code
+      Actual: ${styleText('yellow', `"${note}"`)}
+      Expected: ${styleText('green', `"${converted}"`)}`,
+        ),
+        { fixable: true },
+      );
     }
   }
 };
