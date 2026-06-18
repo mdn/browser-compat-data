@@ -260,6 +260,7 @@ Here are some projects using the data, as an [npm module](https://www.npmjs.com/
 - [caniuse-lite](https://github.com/browserslist/caniuse-lite) - NPM package that republishes BCD data in the caniuse format.
 - [CanIUse Embed](https://caniuse.bitsofco.de/) - Service that allows embedding caniuse (including BCD data) into any website.
 - [CanIWebView](https://caniwebview.com/) - Website that shows support tables based on BCD data for WebViews and mobile browsers for comparison.
+- [canipls](https://github.com/taylorplewe/canipls) - Language server that uses BCD data to show support info in text editors.
 - [css-declaration-sorter](https://www.npmjs.com/package/css-declaration-sorter) - NPM package that sorts CSS properties alphabetically.
 - [csstype](https://www.npmjs.com/package/csstype) - NPM package that publishes strict TypeScript/Flow types for CSS.
 - [Compat Report](https://addons.mozilla.org/en-US/firefox/addon/compat-report/) - Firefox Add-on that shows BCD data for the current site in the developer tools.
