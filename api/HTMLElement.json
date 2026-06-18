@@ -326,7 +326,7 @@
       "autofocus": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/autofocus",
-          "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-fe-autofocus",
+          "spec_url": "https://html.spec.whatwg.org/multipage/dom.html#dom-fe-autofocus",
           "tags": [
             "web-features:autofocus"
           ],
@@ -456,7 +456,6 @@
         "dialog_elements": {
           "__compat": {
             "description": "`beforetoggle` event fires at dialog elements",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/beforetoggle_event",
             "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-beforetoggle",
             "tags": [
               "web-features:dialog"
@@ -492,7 +491,6 @@
         "popover_elements": {
           "__compat": {
             "description": "`beforetoggle` event fires at popover elements",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/beforetoggle_event",
             "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-beforetoggle",
             "tags": [
               "web-features:popover"
@@ -759,6 +757,7 @@
         "plaintext-only": {
           "__compat": {
             "description": "`plaintext-only` as a value",
+            "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#attr-contenteditable-plaintextonly",
             "tags": [
               "web-features:contenteditable-plaintextonly"
             ],
@@ -905,7 +904,8 @@
               "version_added": "12"
             },
             "firefox": {
-              "version_added": "9"
+              "version_added": "9",
+              "notes": "The `drag` event handler receives a `DragEvent` whose coordinate properties (`clientX`/`clientY`, `pageX`/`pageY`, `screenX`/`screenY`) are always `0`. See [bug 505521](https://bugzil.la/505521)."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -1388,6 +1388,9 @@
             "https://w3c.github.io/uievents/#event-type-error",
             "https://html.spec.whatwg.org/multipage/indices.html#event-error"
           ],
+          "tags": [
+            "web-features:dom"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"
@@ -1474,6 +1477,7 @@
         "options_focusVisible_parameter": {
           "__compat": {
             "description": "`options.focusVisible` parameter",
+            "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-focusoptions-focusvisible",
             "tags": [
               "web-features:focus-events"
             ],
@@ -1508,6 +1512,7 @@
         "options_preventScroll_parameter": {
           "__compat": {
             "description": "`options.preventScroll` parameter",
+            "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-focusoptions-preventscroll",
             "tags": [
               "web-features:focus-events"
             ],
@@ -1634,7 +1639,7 @@
       "inert": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/inert",
-          "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-inert",
+          "spec_url": "https://html.spec.whatwg.org/multipage/dom.html#dom-inert",
           "tags": [
             "web-features:inert"
           ],
@@ -1668,8 +1673,7 @@
         "ignores_find_in_page": {
           "__compat": {
             "description": "Element is ignored for the purposes of find-in-page.",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/inert",
-            "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-inert",
+            "spec_url": "https://html.spec.whatwg.org/multipage/dom.html#dom-inert",
             "tags": [
               "web-features:inert"
             ],
@@ -1790,6 +1794,9 @@
         "__compat": {
           "description": "`interest` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/interest_event",
+          "tags": [
+            "web-features:interest-invokers"
+          ],
           "support": {
             "chrome": {
               "version_added": "142"
@@ -1963,6 +1970,9 @@
         "__compat": {
           "description": "`loseinterest` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/loseinterest_event",
+          "tags": [
+            "web-features:interest-invokers"
+          ],
           "support": {
             "chrome": {
               "version_added": "142"
@@ -2368,8 +2378,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1867743"
+                "version_added": "149"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -2384,7 +2393,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -2486,7 +2495,10 @@
           "implicit_anchor_reference": {
             "__compat": {
               "description": "Implicit anchor reference via `source`",
-              "spec_url": "https://html.spec.whatwg.org/multipage/popover.html#:~:text=Set%20element's%20implicit%20anchor%20element%20to%20invoker.",
+              "spec_url": [
+                "https://drafts.csswg.org/css-anchor-position/#implicit-anchor-element",
+                "https://html.spec.whatwg.org/multipage/popover.html#:~:text=implicit%20anchor%20element"
+              ],
               "tags": [
                 "web-features:anchor-positioning"
               ],
@@ -2497,14 +2509,14 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "141"
+                  "version_added": "147"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "26"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
@@ -2784,7 +2796,6 @@
         "details_elements": {
           "__compat": {
             "description": "`toggle` event fires at details elements",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/toggle_event",
             "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-toggle",
             "tags": [
               "web-features:details"
@@ -2820,7 +2831,6 @@
         "dialog_elements": {
           "__compat": {
             "description": "`toggle` event fires at dialog elements",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/toggle_event",
             "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-toggle",
             "tags": [
               "web-features:dialog"
@@ -2856,7 +2866,6 @@
         "popover_elements": {
           "__compat": {
             "description": "`toggle` event fires at popover elements",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/toggle_event",
             "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-toggle",
             "tags": [
               "web-features:popover"
@@ -3055,7 +3064,10 @@
           "implicit_anchor_reference": {
             "__compat": {
               "description": "Implicit anchor reference via `source`",
-              "spec_url": "https://html.spec.whatwg.org/multipage/popover.html#:~:text=Set%20element's%20implicit%20anchor%20element%20to%20invoker.",
+              "spec_url": [
+                "https://drafts.csswg.org/css-anchor-position/#implicit-anchor-element",
+                "https://html.spec.whatwg.org/multipage/popover.html#:~:text=implicit%20anchor%20element"
+              ],
               "tags": [
                 "web-features:anchor-positioning"
               ],
@@ -3066,8 +3078,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "preview",
-                  "impl_url": "https://bugzil.la/1838746"
+                  "version_added": "147"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -3092,6 +3103,7 @@
         "returns_boolean": {
           "__compat": {
             "description": "Returns `true` or `false`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/popover.html#dom-togglepopover",
             "tags": [
               "web-features:popover"
             ],

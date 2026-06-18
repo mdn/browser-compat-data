@@ -2,13 +2,17 @@
   "api": {
     "ProtectedAudience": {
       "__compat": {
-        "spec_url": "https://wicg.github.io/turtledove/#protectedaudience",
+        "tags": [
+          "web-features:protected-audience"
+        ],
         "support": {
           "chrome": {
             "version_added": "127"
           },
           "chrome_android": "mirror",
-          "edge": "mirror",
+          "edge": {
+            "version_added": false
+          },
           "firefox": {
             "version_added": false
           },
@@ -25,20 +29,24 @@
           "webview_ios": "mirror"
         },
         "status": {
-          "experimental": true,
-          "standard_track": true,
-          "deprecated": false
+          "experimental": false,
+          "standard_track": false,
+          "deprecated": true
         }
       },
       "queryFeatureSupport": {
         "__compat": {
-          "spec_url": "https://wicg.github.io/turtledove/#dom-protectedaudience-queryfeaturesupport",
+          "tags": [
+            "web-features:protected-audience"
+          ],
           "support": {
             "chrome": {
               "version_added": "127"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -55,9 +63,9 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
-            "standard_track": true,
-            "deprecated": false
+            "experimental": false,
+            "standard_track": false,
+            "deprecated": true
           }
         }
       }

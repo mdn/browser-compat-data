@@ -57,7 +57,7 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "153"
                 },
                 "firefox_android": "mirror",
                 "opera": "mirror",
@@ -360,7 +360,8 @@
             "__compat": {
               "support": {
                 "chrome": {
-                  "version_added": "≤58"
+                  "version_added": "28",
+                  "notes": "This attribute is deprecated and is being removed from Google Chrome, following removal of Google Native Client."
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -381,7 +382,8 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/PlatformNaclArch",
             "support": {
               "chrome": {
-                "version_added": "≤58"
+                "version_added": "28",
+                "notes": "This enum is deprecated and is being removed from Google Chrome, following removal of Google Native Client."
               },
               "edge": "mirror",
               "firefox": {
@@ -600,6 +602,44 @@
               },
               "safari_ios": "mirror"
             }
+          },
+          "documentId": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "116"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "153"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          }
+        },
+        "getDocumentId": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "153"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": "27"
+              },
+              "safari_ios": "mirror"
+            }
           }
         },
         "getFrameId": {
@@ -712,6 +752,27 @@
               "safari_ios": {
                 "version_added": "15"
               }
+            }
+          }
+        },
+        "getVersion": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getVersion",
+            "support": {
+              "chrome": {
+                "version_added": "143"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1992418"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": "26.2"
+              },
+              "safari_ios": "mirror"
             }
           }
         },

@@ -97,18 +97,18 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/concat",
             "spec_url": "https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-iterator.concat",
             "tags": [
-              "web-features:iterator-methods"
+              "web-features:iterator-concat"
             ],
             "support": {
               "bun": {
                 "version_added": false
               },
               "chrome": {
-                "version_added": false
+                "version_added": "146"
               },
               "chrome_android": "mirror",
               "deno": {
-                "version_added": false
+                "version_added": "2.7.2"
               },
               "edge": "mirror",
               "firefox": {
@@ -116,13 +116,13 @@
               },
               "firefox_android": "mirror",
               "nodejs": {
-                "version_added": false
+                "version_added": "26.0.0"
               },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "26.4"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -486,6 +486,54 @@
             }
           }
         },
+        "includes": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/includes",
+            "spec_url": "https://tc39.es/proposal-iterator-includes/#sec-iterator.prototype.includes",
+            "support": {
+              "bun": {
+                "version_added": false
+              },
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "152",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "javascript.options.experimental.iterator_includes",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "nodejs": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "map": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/map",
@@ -736,8 +784,101 @@
             }
           }
         },
+        "zip": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/zip",
+            "spec_url": "https://tc39.es/proposal-joint-iteration/#sec-IteratorZip",
+            "tags": [
+              "web-features:iterator-methods"
+            ],
+            "support": {
+              "bun": {
+                "version_added": false
+              },
+              "chrome": {
+                "version_added": false,
+                "impl_url": "https://crbug.com/465357675"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "148"
+              },
+              "firefox_android": "mirror",
+              "nodejs": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/303246"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "zipKeyed": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/zipKeyed",
+            "spec_url": "https://tc39.es/proposal-joint-iteration/#sec-iterator.zipkeyed",
+            "tags": [
+              "web-features:iterator-methods"
+            ],
+            "support": {
+              "bun": {
+                "version_added": false
+              },
+              "chrome": {
+                "version_added": false,
+                "impl_url": "https://crbug.com/465357675"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "148"
+              },
+              "firefox_android": "mirror",
+              "nodejs": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/303246"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "@@dispose": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Iterator/Symbol.dispose",
             "spec_url": "https://tc39.es/proposal-async-explicit-resource-management/#sec-%iteratorprototype%-@@dispose",
             "tags": [
               "web-features:explicit-resource-management"
@@ -751,7 +892,7 @@
               },
               "chrome_android": "mirror",
               "deno": {
-                "version_added": false
+                "version_added": "2.2.10"
               },
               "edge": "mirror",
               "firefox": {

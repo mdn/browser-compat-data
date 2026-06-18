@@ -45,6 +45,7 @@
         },
         "HttpOnly": {
           "__compat": {
+            "spec_url": "https://httpwg.org/specs/rfc6265.html#httponly-attribute",
             "tags": [
               "web-features:cookies"
             ],
@@ -87,6 +88,7 @@
         },
         "Max-Age": {
           "__compat": {
+            "spec_url": "https://httpwg.org/specs/rfc6265.html#max-age-attribute",
             "tags": [
               "web-features:cookies"
             ],
@@ -125,7 +127,6 @@
         },
         "Partitioned": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/Privacy/Guides/Privacy_sandbox/Partitioned_cookies",
             "spec_url": "https://www.ietf.org/archive/id/draft-cutler-httpbis-partitioned-cookies-01.html#section-2.1",
             "tags": [
               "web-features:partitioned-cookies"
@@ -155,9 +156,7 @@
               ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
-              "webview_android": {
-                "version_added": false
-              },
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -169,7 +168,6 @@
         },
         "SameSite": {
           "__compat": {
-            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Set-Cookie",
             "spec_url": [
               "https://httpwg.org/specs/rfc6265.html#sane-set-cookie",
               "https://httpwg.org/http-extensions/draft-ietf-httpbis-rfc6265bis.html#name-the-samesite-attribute"
@@ -233,6 +231,7 @@
           "Lax": {
             "__compat": {
               "description": "`SameSite=Lax`",
+              "spec_url": "https://httpwg.org/http-extensions/draft-ietf-httpbis-rfc6265bis.html#name-the-samesite-attribute",
               "tags": [
                 "web-features:cookies"
               ],
@@ -276,6 +275,7 @@
           "Lax_default": {
             "__compat": {
               "description": "Defaults to `Lax`",
+              "spec_url": "https://httpwg.org/http-extensions/draft-ietf-httpbis-rfc6265bis.html#name-the-samesite-attribute",
               "tags": [
                 "web-features:cookies"
               ],
@@ -323,6 +323,7 @@
           "None": {
             "__compat": {
               "description": "`SameSite=None`",
+              "spec_url": "https://httpwg.org/http-extensions/draft-ietf-httpbis-rfc6265bis.html#name-the-samesite-attribute",
               "tags": [
                 "web-features:cookies"
               ],
@@ -393,6 +394,7 @@
           "Strict": {
             "__compat": {
               "description": "`SameSite=Strict`",
+              "spec_url": "https://httpwg.org/http-extensions/draft-ietf-httpbis-rfc6265bis.html#name-the-samesite-attribute",
               "tags": [
                 "web-features:cookies"
               ],
@@ -436,6 +438,7 @@
           "none_requires_secure": {
             "__compat": {
               "description": "Secure attribute required if `SameSite=None`",
+              "spec_url": "https://httpwg.org/http-extensions/draft-ietf-httpbis-rfc6265bis.html#section-5.7-3.19",
               "tags": [
                 "web-features:cookies"
               ],
@@ -478,6 +481,7 @@
           "schemeful": {
             "__compat": {
               "description": "URL scheme-aware (\"schemeful\")",
+              "spec_url": "https://httpwg.org/http-extensions/draft-ietf-httpbis-rfc6265bis.html#name-same-site-and-cross-site-re",
               "tags": [
                 "web-features:cookies"
               ],
@@ -520,6 +524,10 @@
         "host_secure_prefixes": {
           "__compat": {
             "description": "Cookie prefixes: `__Host-` and `__Secure-`",
+            "spec_url": [
+              "https://httpwg.org/http-extensions/draft-ietf-httpbis-rfc6265bis.html#name-the-__host-prefix",
+              "https://httpwg.org/http-extensions/draft-ietf-httpbis-rfc6265bis.html#name-the-__secure-prefix"
+            ],
             "tags": [
               "web-features:cookies"
             ],
@@ -554,6 +562,10 @@
         "http_host-http_prefixes": {
           "__compat": {
             "description": "Cookie prefixes: `__Http-` and `__Host-Http-`",
+            "spec_url": [
+              "https://httpwg.org/http-extensions/draft-ietf-httpbis-layered-cookies.html#name-the-__http-prefix",
+              "https://httpwg.org/http-extensions/draft-ietf-httpbis-layered-cookies.html#name-the-__host-http-prefix"
+            ],
             "tags": [
               "web-features:cookies"
             ],

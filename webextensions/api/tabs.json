@@ -579,6 +579,26 @@
             }
           }
         },
+        "SPLIT_VIEW_ID_NONE": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/SPLIT_VIEW_ID_NONE",
+            "support": {
+              "chrome": {
+                "version_added": "140"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "149"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "Tab": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/tabs/Tab",
@@ -1125,6 +1145,28 @@
               }
             }
           },
+          "splitViewId": {
+            "__compat": {
+              "support": {
+                "chrome": {
+                  "version_added": "140"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "149"
+                },
+                "firefox_android": {
+                  "version_added": "149",
+                  "notes": "Always -1 as split views are not supported in Firefox for Android"
+                },
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
           "status": {
             "__compat": {
               "support": {
@@ -1604,8 +1646,7 @@
                   },
                   "edge": "mirror",
                   "firefox": {
-                    "version_added": false,
-                    "impl_url": "https://bugzil.la/1891478"
+                    "version_added": "153"
                   },
                   "firefox_android": "mirror",
                   "opera": "mirror",
@@ -3149,6 +3190,27 @@
                 }
               }
             },
+            "splitViewId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "140"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "149"
+                  },
+                  "firefox_android": {
+                    "version_added": false
+                  },
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            },
             "status": {
               "__compat": {
                 "support": {
@@ -3329,6 +3391,27 @@
                         "version_removed": "71"
                       }
                     ],
+                    "firefox_android": {
+                      "version_added": false
+                    },
+                    "opera": "mirror",
+                    "safari": {
+                      "version_added": false
+                    },
+                    "safari_ios": "mirror"
+                  }
+                }
+              },
+              "splitViewId": {
+                "__compat": {
+                  "support": {
+                    "chrome": {
+                      "version_added": false
+                    },
+                    "edge": "mirror",
+                    "firefox": {
+                      "version_added": "149"
+                    },
                     "firefox_android": {
                       "version_added": false
                     },
@@ -3868,6 +3951,25 @@
                 }
               }
             },
+            "splitViewId": {
+              "__compat": {
+                "support": {
+                  "chrome": {
+                    "version_added": "140"
+                  },
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "149"
+                  },
+                  "firefox_android": "mirror",
+                  "opera": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror"
+                }
+              }
+            },
             "status": {
               "__compat": {
                 "support": {
@@ -4200,8 +4302,7 @@
                   },
                   "edge": "mirror",
                   "firefox": {
-                    "version_added": false,
-                    "impl_url": "https://bugzil.la/1891478"
+                    "version_added": "153"
                   },
                   "firefox_android": "mirror",
                   "opera": "mirror",

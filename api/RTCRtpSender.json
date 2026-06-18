@@ -64,7 +64,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -381,7 +381,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "110"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -504,7 +504,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": true
           }
         }
@@ -627,6 +627,38 @@
               "standard_track": true,
               "deprecated": false
             }
+          },
+          "maintain-framerate-and-resolution_value": {
+            "__compat": {
+              "description": "`maintain-framerate-and-resolution` value",
+              "spec_url": "https://w3c.github.io/mst-content-hint/#dom-rtcdegradationpreference-maintain-framerate-and-resolution",
+              "support": {
+                "chrome": {
+                  "version_added": "144"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "parameters_encodings_parameter": {
@@ -667,6 +699,7 @@
           "active": {
             "__compat": {
               "description": "`parameters.encodings.active` parameter",
+              "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcrtpsendparameters-encodings",
               "tags": [
                 "web-features:webrtc"
               ],
@@ -701,6 +734,7 @@
           "codec": {
             "__compat": {
               "description": "`parameters.encodings.codec` parameter",
+              "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcrtpencodingparameters-codec",
               "tags": [
                 "web-features:webrtc"
               ],
@@ -871,6 +905,7 @@
           "rid": {
             "__compat": {
               "description": "`parameters.encodings.rid` parameter",
+              "spec_url": "https://w3c.github.io/webrtc-pc/#dom-rtcrtpcodingparameters-rid",
               "tags": [
                 "web-features:webrtc"
               ],
@@ -1029,7 +1064,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "110"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",

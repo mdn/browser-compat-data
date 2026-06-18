@@ -103,6 +103,7 @@
           "iterable_allowed": {
             "__compat": {
               "description": "`new WeakMap(iterable)`",
+              "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakmap-constructor",
               "tags": [
                 "web-features:snapshot:ecmascript-2015",
                 "web-features:weakmap"
@@ -149,6 +150,7 @@
           "null_allowed": {
             "__compat": {
               "description": "`new WeakMap(null)`",
+              "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakmap-constructor",
               "tags": [
                 "web-features:snapshot:ecmascript-2015",
                 "web-features:weakmap"
@@ -301,7 +303,10 @@
         "getOrInsert": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/getOrInsert",
-            "spec_url": "https://tc39.es/proposal-upsert/#sec-weakmap.prototype.getOrInsert",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakmap.prototype.getorinsert",
+            "tags": [
+              "web-features:getorinsert"
+            ],
             "support": {
               "bun": {
                 "version_added": "1.2.20"
@@ -310,11 +315,17 @@
                 "version_added": "145"
               },
               "chrome_android": "mirror",
+              "deno": {
+                "version_added": "2.6.7"
+              },
               "edge": "mirror",
               "firefox": {
                 "version_added": "144"
               },
               "firefox_android": "mirror",
+              "nodejs": {
+                "version_added": "26.0.0"
+              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -336,7 +347,10 @@
         "getOrInsertComputed": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/WeakMap/getOrInsertComputed",
-            "spec_url": "https://tc39.es/proposal-upsert/#sec-weakmap.prototype.getOrInsertComputed",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakmap.prototype.getorinsertcomputed",
+            "tags": [
+              "web-features:getorinsert"
+            ],
             "support": {
               "bun": {
                 "version_added": "1.2.20"
@@ -345,11 +359,17 @@
                 "version_added": "145"
               },
               "chrome_android": "mirror",
+              "deno": {
+                "version_added": "2.6.7"
+              },
               "edge": "mirror",
               "firefox": {
                 "version_added": "144"
               },
               "firefox_android": "mirror",
+              "nodejs": {
+                "version_added": "26.0.0"
+              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -475,6 +495,7 @@
         "symbol_as_keys": {
           "__compat": {
             "description": "Non-registered symbols as keys",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakmap-objects",
             "tags": [
               "web-features:snapshot:ecmascript-2023",
               "web-features:weakmap"

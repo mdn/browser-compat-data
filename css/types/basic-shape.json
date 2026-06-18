@@ -39,7 +39,6 @@
         "animation": {
           "__compat": {
             "description": "Animation",
-            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Values/basic-shape",
             "tags": [
               "web-features:shapes"
             ],
@@ -66,7 +65,7 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": true,
+              "standard_track": false,
               "deprecated": false
             }
           }
@@ -285,7 +284,7 @@
             "__compat": {
               "description": "In `d` as CSS property",
               "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Reference/Attribute/d",
-              "spec_url": "https://svgwg.org/svg2-draft/paths.html#DProperty",
+              "spec_url": "https://w3c.github.io/svgwg/svg2-draft/paths.html#DProperty",
               "tags": [
                 "web-features:path-shape"
               ],
@@ -436,7 +435,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Values/basic-shape/rect",
             "spec_url": "https://drafts.csswg.org/css-shapes-1/#funcdef-basic-shape-rect",
             "tags": [
-              "web-features:shapes"
+              "web-features:rect-xywh"
             ],
             "support": {
               "chrome": [
@@ -480,7 +479,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Values/basic-shape/shape",
             "spec_url": "https://drafts.csswg.org/css-shapes-2/#shape-function",
             "tags": [
-              "web-features:shapes"
+              "web-features:shape-function"
             ],
             "support": {
               "chrome": {
@@ -488,21 +487,9 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "preview"
-                },
-                {
-                  "version_added": "126",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "layout.css.basic-shape-shape.enabled",
-                      "value_to_set": "true"
-                    }
-                  ]
-                }
-              ],
+              "firefox": {
+                "version_added": "148"
+              },
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
@@ -528,7 +515,7 @@
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Values/basic-shape/xywh",
             "spec_url": "https://drafts.csswg.org/css-shapes-1/#funcdef-basic-shape-xywh",
             "tags": [
-              "web-features:shapes"
+              "web-features:rect-xywh"
             ],
             "support": {
               "chrome": [

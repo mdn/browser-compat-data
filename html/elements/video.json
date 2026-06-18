@@ -47,6 +47,7 @@
         "aspect_ratio_computed_from_attributes": {
           "__compat": {
             "description": "Aspect ratio computed from `width` and `height` attributes",
+            "spec_url": "https://html.spec.whatwg.org/multipage/embedded-content-other.html#dimension-attributes",
             "tags": [
               "web-features:aspect-ratio"
             ],
@@ -412,6 +413,50 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "loading": {
+          "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/media.html#attr-media-loading",
+            "tags": [
+              "web-features:loading-lazy-media"
+            ],
+            "support": {
+              "chrome": [
+                {
+                  "version_added": "150"
+                },
+                {
+                  "version_added": "148",
+                  "version_removed": "150",
+                  "partial_implementation": true,
+                  "notes": "Not supported for `<source>`. See [bug 514611050](https://crbug.com/514611050)."
+                }
+              ],
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "impl_url": "https://bugzil.la/2005072"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/303995"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }

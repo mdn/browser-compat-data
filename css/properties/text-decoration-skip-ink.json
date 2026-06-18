@@ -6,7 +6,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-decoration-skip-ink",
           "spec_url": "https://drafts.csswg.org/css-text-decor-4/#text-decoration-skip-ink-property",
           "tags": [
-            "web-features:text-decoration"
+            "web-features:text-decoration-skip-ink"
           ],
           "support": {
             "chrome": {
@@ -43,12 +43,11 @@
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-text-decor-4/#valdef-text-decoration-skip-ink-all",
             "tags": [
-              "web-features:text-decoration"
+              "web-features:text-decoration-skip-ink-all"
             ],
             "support": {
               "chrome": {
-                "version_added": false,
-                "impl_url": "https://crbug.com/40675832"
+                "version_added": "148"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -60,7 +59,8 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "15.4"
+                "version_added": "15.4",
+                "notes": "If the `unicode-range` descriptor applies to the font, then some text decoration may not be skipped (see [bug 255159](https://webkit.org/b/255159))."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -78,7 +78,7 @@
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-text-decor-4/#valdef-text-decoration-skip-ink-auto",
             "tags": [
-              "web-features:text-decoration"
+              "web-features:text-decoration-skip-ink"
             ],
             "support": {
               "chrome": {
@@ -94,7 +94,8 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "15.4"
+                "version_added": "15.4",
+                "notes": "If the `unicode-range` descriptor applies to the font, then some text decoration may not be skipped (see [bug 255159](https://webkit.org/b/255159))."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -112,7 +113,7 @@
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-text-decor-4/#valdef-text-decoration-skip-ink-none",
             "tags": [
-              "web-features:text-decoration"
+              "web-features:text-decoration-skip-ink"
             ],
             "support": {
               "chrome": {

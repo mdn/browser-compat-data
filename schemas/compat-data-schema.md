@@ -40,7 +40,7 @@ The JSON files contain [feature identifiers](#features), which are relevant for 
 
 ### Feature hierarchies
 
-Each feature is identified by a unique hierarchy of strings, e.g. the `text-align` property is identified by `css.properties.text-align`.
+Each feature is identified by a unique hierarchy of strings, for example the `text-align` property is identified by `css.properties.text-align`.
 
 In the JSON file it looks like this:
 
@@ -72,9 +72,9 @@ A feature is described by an identifier containing the `__compat` property. In o
 
 When an identifier has a `__compat` block, it represents its basic support, indicating that a minimal implementation of a functionality is included. What it represents exactly depends on the evolution of the feature over time, both in terms of specifications and of browser support.
 
-#### Sub-features
+#### Subfeatures
 
-To add a sub-feature, a new identifier is added below the main feature at the level of a `__compat` object (see the sub-features "start" and "end" above). The same could be done for sub-sub-features. There is no depth limit.
+To add a subfeature, a new identifier is added below the main feature at the level of a `__compat` object (see the subfeatures "start" and "end" above). The same could be done for sub-subfeatures. There is no depth limit.
 
 See [Data guidelines](../docs/data-guidelines/README.md) for more information about feature naming conventions and other best practices.
 
@@ -178,16 +178,15 @@ The `__compat` object consists of the following:
   It is intended to be used as a caption or title and should be kept short.
   This property may be formatted using Markdown, see the rules for `notes`.
 
-- An automated `source_file` property containing the path to the source file containing the feature. This is used to create links to the repository source (in the form of `https://github.com/mdn/browser-compat-data/blob/main/<source_file>`). For example, `api.History.forward` will contain a `source_file` property of `api/History.json` since the feature is defined in that file.
-
 - An optional `mdn_url` property which **points to an MDN reference page documenting the feature**.
-  It needs to be a valid URL, and should be the language-neutral URL (e.g. use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
+  It needs to be a valid URL, and should be the language-neutral URL (for example use `https://developer.mozilla.org/docs/Web/CSS/text-align` instead of `https://developer.mozilla.org/en-US/docs/Web/CSS/text-align`).
 
-- An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined.
-  Each URL must either contain a fragment identifier (e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`), or else must match the regular-expression pattern `^https://registry.khronos.org/webgl/extensions/[^/]+/` (e.g. `https://registry.khronos.org/webgl/extensions/ANGLE_instanced_arrays/`).
-  Each URL must link to a specification published by a standards body or a formal proposal that may lead to such publication.
+- An optional `spec_url` property as a URL or an array of URLs, each of which is for a specific part of a specification in which this feature is defined. Mandatory when `status.standard_track` is `true`.
+  Each URL must link to a specification published by a standards body or a formal proposal that may lead to such publication. It must also contain a fragment identifier (a deep link, e.g. `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`).
 
-- An optional `tags` property which is an array of strings allowing to assign tags to the feature.
+  For more guidance on how to set the `spec_url` property, see the [`spec_url` data guidelines](https://github.com/mdn/browser-compat-data/tree/main/docs/data-guidelines/spec_links.md).
+
+- An optional `tags` property to assign tags to the feature.
   Each tag in the array must be namespaced. The currently allowed namespaces are:
   - `web-features`: A namespace to tag features belonging to a web platform feature group as defined by [web-platform-dx/web-features](https://github.com/web-platform-dx/web-features/blob/main/features/README.md).
 
@@ -215,11 +214,11 @@ The currently accepted browser identifiers should be declared in alphabetical or
 - `webview_android`, WebView, the embedded browser for Android applications
 - `webview_ios`, WebKit WebView, the embedded browser for iOS applications, based on the iOS version
 
-Desktop browser identifiers are mandatory, with the `version_added` property set to `null` if support is unknown.
+Desktop browser identifiers are mandatory, with the `version_added` property set to `false` if the feature is not known to be supported.
 
 #### The `support_statement` object
 
-The `support_statement` object describes the support provided by a single browser type for the given subfeature. It is either a `simple_support_statement` object, an array of two or more `simple_support_statement` objects, or the string `"mirror"`.
+The `support_statement` object describes the support provided by a single browser type for the given feature. It is either a `simple_support_statement` object, an array of two or more `simple_support_statement` objects, or the string `"mirror"`.
 
 If there is an array, the `simple_support_statement` objects should be sorted with the most relevant and general entries first. In other words, sort such arrays with entries applying to the most recent browser releases first and sort entries with prefixes or flags after those without. If in doubt, reverse-chronological order with respect to the `"version_removed"` and then `"version_added"` values usually works well. For more information on sorting support statements, see [#1596](https://github.com/mdn/browser-compat-data/issues/1596).
 
@@ -244,7 +243,7 @@ Example of a `support` compat object (with 1 entry, array omitted):
 
 ```json
 "support": {
-  "ie": { "version_added": "6.0" }
+  "ie": { "version_added": "6" }
 }
 ```
 
@@ -271,7 +270,7 @@ The `simple_support_statement` object is the core object containing the compatib
 
 #### `version_added`
 
-This is the only mandatory property and it contains a string with the version number indicating when a sub-feature has been added (and is therefore supported). The Boolean values indicate that a sub-feature is supported (`true`, with the additional meaning that it is unknown in which version support was added) or not supported (`false`). A value of `null` indicates that support information is entirely unknown. Examples:
+This is the only mandatory property and it is `false` or contains a string with the version number when support for the feature was added. Examples:
 
 - Support from version 3.5 (inclusive):
 
@@ -307,7 +306,7 @@ This is the only mandatory property and it contains a string with the version nu
 
 #### `version_removed`
 
-Contains a string with the version number the sub-feature was removed in. It may also be `true`, meaning that it is unknown in which version support was removed. If the feature has not been removed from the browser, this property is omitted, rather than being set to `false`.
+This optional property contains a string with the version number when the feature ceased to be supported. If the feature has not been removed from the browser, this property is omitted.
 
 Examples:
 
@@ -317,21 +316,6 @@ Examples:
 {
   "version_added": "4",
   "version_removed": "10"
-}
-```
-
-#### `version_last`
-
-> [!NOTE]
-> This property is automatically generated at build time.
-
-If `version_removed` is present, a `version_last` is automatically generated during build time, which will be set to the version number of the last browser version that supported the feature. For example, assuming the browser version only incremented in whole numbers, if a feature was added in version 20 and supported until 29, then was no longer supported in 30, `version_removed` would be `30` and `version_last` will be `29`:
-
-```json
-{
-  "version_added": "20",
-  "version_removed": "30",
-  "version_last": "29"
 }
 ```
 
@@ -351,7 +335,7 @@ Ranged versions should be used sparingly and only when it is impossible or highl
 
 #### `prefix`
 
-A prefix to add to the sub-feature name (defaults to empty string).
+A prefix to add to the feature name (defaults to empty string).
 If applicable, leading and trailing `-` must be included.
 
 Examples:
@@ -392,13 +376,13 @@ Note that you can’t have both `prefix` and `alternative_name`.
 
 #### `flags`
 
-An optional array of objects describing flags that must be configured for this browser to support this feature. Usually this array will have one item, but there are cases where two or more flags can be required to activate a feature. An object in the `flags` array consists of three properties:
+An array of objects describing feature flags that must be configured for this browser to support this feature. Usually this array will have one item, but there are cases where two or more flags can be required to activate a feature. An object in the `flags` array consists of three properties:
 
-- `type` (mandatory): an enum that indicates the flag type:
+- `type` (mandatory): the flag type:
   - `preference` a flag the user can set (like in `about:config` in Firefox).
   - `runtime_flag` a flag to be set before starting the browser.
-- `name` (mandatory): a string giving the value which the specified flag must be set to for this feature to work.
-- `value_to_set` (optional): representing the actual value to set the flag to. It is a string, that may be converted to the right type (that is `true` or `false` for Boolean value, or `4` for an integer value). It doesn't need to be enclosed in backticks.
+- `name` (mandatory): the name of the flag or preference to configure.
+- `value_to_set` (optional): the value to set the flag to. It is a string, that may be converted to the right type (that is `true` or `false` for Boolean value, or `4` for an integer value).
 
 Example for one flag required:
 
@@ -437,13 +421,11 @@ Example for two flags required:
 
 #### `impl_url`
 
-An optional changeset/commit URL for the revision which implemented the feature in the source code, or the URL to the bug tracking the implementation, for the associated browser. The presence of an `impl_url` value indicates that the associated browser has implemented the feature or intends to implement the feature.
-
-For changeset/commit URLs, this is typically a https://trac.webkit.org/changeset/, https://hg.mozilla.org/mozilla-central/rev/, or https://crrev.com/ URL for a changeset with a subject line that will typically be something of the form _"Implement [feature]"_, _"Support [feature]"_, or _"Enable [feature]"_. For bug URLs, this is typically a https://webkit.org/b/, https://bugzil.la/, or https://crbug.com/ URL indicating an intent to implement and ship the feature.
+A URL or array of URLs linking to the bug or issue that tracks the implementation of this feature.
 
 #### `notes`
 
-A string or `array` of strings containing additional information. If there is only one entry, the value of `notes` must simply be a string instead of an array.
+A string or `array` of strings containing additional information about the feature's support. If there is only one entry, the value of `notes` must simply be a string instead of an array.
 
 Example:
 
@@ -463,7 +445,7 @@ Notes may be formatted in Markdown. Only links, bold, italics, codeblocks, and `
 
 #### `partial_implementation`
 
-A `boolean` value indicating whether or not the implementation of the sub-feature deviates from the specification in a way that may cause significant compatibility problems. It defaults to `false` (no interoperability problems expected). If set to `true`, it is [required](../docs/data-guidelines/README.md#partial_implementation-requires-a-note) that you add a note explaining how it diverges from the standard (such as that it implements an old version of the standard).
+Set to `true` if the browser's support does not implement mandatory specified behavior, is inconsistent with other browsers, causes confusing feature detection results, and has a demonstrable negative impact on web developers. It defaults to `false`. If set to `true`, it is [required](../docs/data-guidelines/README.md#partial_implementation-requires-a-note) that you add a note explaining how it diverges from the standard.
 
 ```json
 {
@@ -477,11 +459,21 @@ A `boolean` value indicating whether or not the implementation of the sub-featur
 
 The mandatory status property contains information about stability of the feature. It is an object named `status` and has three mandatory properties:
 
-- `experimental`: a `boolean` value.
+- `experimental` (DEPRECATED): a `boolean` value.
 
-  If `experimental` is `true`, it means the feature was implemented in only one browser engine and was implemented recently. It also means that Web developers _should not_ rely on the feature's continued existence in its current (or potentially any) form in future browser releases.
+  **Warning**: The `experimental` property is deprecated.
+  Prefer using a more well-defined stability calculations, such as Baseline, instead.
 
-  If `experimental` is `false`, it means the feature was implemented in multiple browser engines, or the feature had been implemented over two years ago in any one browser engine.
+  If `experimental` is `true`, then it usually means that the feature is implemented in only one browser engine.
+
+  If `experimental` is `false`, then it usually means that the feature is implemented in two or more browser engines.
+  Sometimes a `false` value means that a single-implementer feature is not expected to change.
+
+  The `experimental` field does not have a precise definition.
+  It was created to support the migration of data to BCD from MDN wiki pages.
+  The meaning of `experimental` has evolved, reflecting MDN and BCD's conventions over time.
+
+  See the [_Setting `experimental`_ data guideline](/docs/data-guidelines/README.md#setting-experimental) for more information on how BCD's maintainers set this value today.
 
 - `standard_track`: a `boolean` value.
 
@@ -489,7 +481,7 @@ The mandatory status property contains information about stability of the featur
 
 - `deprecated`: a `boolean` value.
 
-  If `deprecated` is `true`, then the feature is no longer recommended. It might be removed in the future or might only be kept for compatibility purposes. Avoid using this functionality.
+  If `deprecated` is `true`, then the feature is no longer recommended. It might be removed in the future or kept only for compatibility purposes.
 
 ```json
 "__compat": {
@@ -503,4 +495,4 @@ The mandatory status property contains information about stability of the featur
 
 ### Localization
 
-We are planning to localize some of this data (e.g. notes, descriptions). At this point we haven't decided how or when we are going to do that. See [issue 114](https://github.com/mdn/browser-compat-data/issues/114) for more information.
+We are planning to localize some of this data (for example notes, descriptions). At this point we haven't decided how or when we are going to do that. See [issue 114](https://github.com/mdn/browser-compat-data/issues/114) for more information.

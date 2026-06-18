@@ -39,33 +39,32 @@
             "deprecated": false
           }
         },
-        "ALLOW-FROM": {
+        "DENY": {
           "__compat": {
-            "description": "ALLOW-FROM",
+            "description": "`DENY` value",
+            "spec_url": "https://html.spec.whatwg.org/multipage/document-lifecycle.html#the-x-frame-options-header",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "4"
               },
               "chrome_android": "mirror",
               "edge": {
-                "version_added": "12",
-                "version_removed": "79"
+                "version_added": "12"
               },
               "firefox": {
-                "version_added": "18",
-                "version_removed": "70"
+                "version_added": "4"
               },
-              "firefox_android": {
-                "version_added": "18"
-              },
+              "firefox_android": "mirror",
               "ie": {
                 "version_added": "8"
               },
               "oculus": "mirror",
-              "opera": "mirror",
+              "opera": {
+                "version_added": "10.5"
+              },
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "4"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -74,14 +73,15 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": false,
-              "deprecated": true
+              "standard_track": true,
+              "deprecated": false
             }
           }
         },
         "SAMEORIGIN": {
           "__compat": {
-            "description": "SAMEORIGIN",
+            "description": "`SAMEORIGIN` value",
+            "spec_url": "https://html.spec.whatwg.org/multipage/document-lifecycle.html#the-x-frame-options-header",
             "support": {
               "chrome": {
                 "version_added": "4",

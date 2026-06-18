@@ -1,0 +1,306 @@
+/* This file is a part of @mdn/browser-compat-data
+ * See LICENSE file for more information. */
+
+/** @import {InternalCompatStatement} from '../../types/index.js' */
+
+import assert from 'node:assert/strict';
+
+import { Logger } from '../utils.js';
+
+import test, {
+  checkExperimental,
+  standardTrackExceptions,
+} from './test-status.js';
+
+describe('checkExperimental', () => {
+  it('should return true when data is not experimental', () => {
+    /** @type {InternalCompatStatement} */
+    const data = {
+      status: {
+        experimental: false,
+        standard_track: true,
+        deprecated: false,
+      },
+      support: {},
+    };
+
+    assert.equal(checkExperimental(data), true);
+  });
+
+  it('should return true when data is experimental but supported by only one engine', () => {
+    /** @type {InternalCompatStatement} */
+    const data = {
+      status: {
+        experimental: true,
+        standard_track: true,
+        deprecated: false,
+      },
+      support: {
+        firefox: {
+          version_added: '1',
+        },
+        chrome: {
+          version_added: 'preview',
+        },
+      },
+    };
+
+    assert.equal(checkExperimental(data), true);
+  });
+
+  it('should return false when data is experimental and supported by more than one engine', () => {
+    /** @type {InternalCompatStatement} */
+    const data = {
+      status: {
+        experimental: true,
+        standard_track: true,
+        deprecated: false,
+      },
+      support: {
+        firefox: {
+          version_added: '1',
+        },
+        chrome: {
+          version_added: '1',
+        },
+      },
+    };
+
+    assert.equal(checkExperimental(data), false);
+  });
+
+  it('should ignore non-relevant browsers when determining experimental status', () => {
+    /** @type {InternalCompatStatement} */
+    const data = {
+      status: {
+        experimental: true,
+        standard_track: true,
+        deprecated: false,
+      },
+      support: {
+        // Bun and Deno are not part of the Core browser set.
+        firefox: {
+          version_added: '1',
+        },
+        bun: {
+          version_added: '1.0',
+        },
+        deno: {
+          version_added: '1.0',
+        },
+      },
+    };
+
+    assert.equal(checkExperimental(data), true);
+  });
+});
+
+describe('checkStatus', () => {
+  /** @type {Logger} */
+  let logger;
+
+  beforeEach(() => {
+    logger = new Logger('test', 'test');
+  });
+
+  it('should not log error when status is not defined', async () => {
+    /** @type {InternalCompatStatement} */
+    const data = {
+      status: undefined,
+      support: {},
+    };
+
+    await test.check(logger, {
+      data,
+      path: { full: 'api.Test', category: 'api' },
+    });
+
+    assert.equal(logger.messages.length, 0);
+  });
+
+  it('should log error when category is webextensions and status is defined', async () => {
+    /** @type {InternalCompatStatement} */
+    const data = {
+      status: {
+        experimental: false,
+        standard_track: false,
+        deprecated: false,
+      },
+      support: {},
+    };
+
+    await test.check(logger, {
+      data,
+      path: { full: 'webextensions.Test', category: 'webextensions' },
+    });
+
+    assert.equal(logger.messages.length, 1);
+    assert.ok(logger.messages[0].message.includes('not allowed'));
+  });
+
+  it('should log error when status is both experimental and deprecated', async () => {
+    /** @type {InternalCompatStatement} */
+    const data = {
+      status: {
+        experimental: true,
+        standard_track: false,
+        deprecated: true,
+      },
+      support: {},
+    };
+
+    await test.check(logger, {
+      data,
+      path: { full: 'api.Test', category: 'api' },
+    });
+
+    assert.equal(logger.messages.length, 1);
+    assert.ok(logger.messages[0].message.includes('Unexpected simultaneous'));
+  });
+
+  it('should log error when status is non-standard but has a spec_url', async () => {
+    /** @type {InternalCompatStatement} */
+    const data = {
+      status: {
+        experimental: false,
+        standard_track: false,
+        deprecated: false,
+      },
+      spec_url: 'https://example.com',
+      support: {},
+    };
+
+    await test.check(logger, {
+      data,
+      path: { full: 'api.Test', category: 'api' },
+    });
+
+    assert.equal(logger.messages.length, 1);
+    assert.ok(logger.messages[0].message.includes('but has a'));
+  });
+
+  it('should log error when status is standard_track but missing spec_url', async () => {
+    /** @type {InternalCompatStatement} */
+    const data = {
+      status: {
+        experimental: false,
+        standard_track: true,
+        deprecated: false,
+      },
+      support: {},
+    };
+
+    await test.check(logger, {
+      data,
+      path: { category: 'api', full: 'api.NewFeature' },
+    });
+
+    assert.equal(logger.messages.length, 1);
+    assert.ok(logger.messages[0].message.includes('missing required'));
+  });
+
+  it('should log error when status is experimental and supported by more than one engine', async () => {
+    /** @type {InternalCompatStatement} */
+    const data = {
+      status: {
+        experimental: true,
+        standard_track: false,
+        deprecated: false,
+      },
+      support: {
+        firefox: {
+          version_added: '1',
+        },
+        chrome: {
+          version_added: '1',
+        },
+      },
+    };
+
+    await test.check(logger, {
+      data,
+      path: { full: 'api.Test', category: 'api' },
+    });
+
+    assert.equal(logger.messages.length, 1);
+    assert.ok(logger.messages[0].message.includes('should be set to'));
+  });
+
+  describe('standard-track-exceptions', () => {
+    beforeEach(() => {
+      standardTrackExceptions.add('api.Foo');
+    });
+
+    afterEach(() => {
+      standardTrackExceptions.delete('api.Foo');
+    });
+
+    it('should not log error for features in exception list missing spec_url', async () => {
+      /** @type {InternalCompatStatement} */
+      const data = {
+        status: {
+          experimental: false,
+          standard_track: true,
+          deprecated: false,
+        },
+        support: {},
+      };
+
+      await test.check(logger, {
+        data,
+        path: { category: 'api', full: 'api.Foo' },
+      });
+
+      // Feature is in the exception list.
+
+      assert.equal(logger.messages.length, 0);
+    });
+
+    it('should log warning when exception no longer applies (has spec_url)', async () => {
+      /** @type {InternalCompatStatement} */
+      const data = {
+        status: {
+          experimental: false,
+          standard_track: true,
+          deprecated: false,
+        },
+        spec_url: 'https://example.com/spec',
+        support: {},
+      };
+
+      await test.check(logger, {
+        data,
+        path: { category: 'api', full: 'api.Foo' },
+      });
+
+      // Feature is in the exception list but now has `spec_url`.
+
+      assert.equal(logger.messages.length, 1);
+      assert.equal(logger.messages[0].level, 'warning');
+      assert.ok(logger.messages[0].message.includes('exception list'));
+    });
+
+    it('should log warning when exception no longer applies (standard_track false)', async () => {
+      /** @type {InternalCompatStatement} */
+      const data = {
+        status: {
+          experimental: false,
+          standard_track: false,
+          deprecated: false,
+        },
+        support: {},
+      };
+
+      await test.check(logger, {
+        data,
+        path: { category: 'api', full: 'api.Foo' },
+      });
+
+      // Feature is in the exception list but `standard_track` is now false.
+
+      assert.equal(logger.messages.length, 1);
+      assert.equal(logger.messages[0].level, 'warning');
+      assert.ok(logger.messages[0].message.includes('exception list'));
+    });
+  });
+});

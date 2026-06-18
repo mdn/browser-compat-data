@@ -103,6 +103,7 @@
           "iterable_allowed": {
             "__compat": {
               "description": "`new Map(iterable)`",
+              "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map-constructor",
               "tags": [
                 "web-features:map",
                 "web-features:snapshot:ecmascript-2015"
@@ -149,6 +150,7 @@
           "null_allowed": {
             "__compat": {
               "description": "`new Map(null)`",
+              "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map-constructor",
               "tags": [
                 "web-features:map",
                 "web-features:snapshot:ecmascript-2015"
@@ -446,7 +448,10 @@
         "getOrInsert": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/getOrInsert",
-            "spec_url": "https://tc39.es/proposal-upsert/#sec-map.prototype.getOrInsert",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prototype.getorinsert",
+            "tags": [
+              "web-features:getorinsert"
+            ],
             "support": {
               "bun": {
                 "version_added": "1.2.20"
@@ -455,11 +460,17 @@
                 "version_added": "145"
               },
               "chrome_android": "mirror",
+              "deno": {
+                "version_added": "2.6.7"
+              },
               "edge": "mirror",
               "firefox": {
                 "version_added": "144"
               },
               "firefox_android": "mirror",
+              "nodejs": {
+                "version_added": "26.0.0"
+              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -481,7 +492,10 @@
         "getOrInsertComputed": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Map/getOrInsertComputed",
-            "spec_url": "https://tc39.es/proposal-upsert/#sec-map.prototype.getOrInsertComputed",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map.prototype.getorinsertcomputed",
+            "tags": [
+              "web-features:getorinsert"
+            ],
             "support": {
               "bun": {
                 "version_added": "1.2.20"
@@ -490,11 +504,17 @@
                 "version_added": "145"
               },
               "chrome_android": "mirror",
+              "deno": {
+                "version_added": "2.6.7"
+              },
               "edge": "mirror",
               "firefox": {
                 "version_added": "144"
               },
               "firefox_android": "mirror",
+              "nodejs": {
+                "version_added": "26.0.0"
+              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -617,6 +637,7 @@
         "key_equality_for_zeros": {
           "__compat": {
             "description": "Key equality for -0 and 0",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-map-objects",
             "tags": [
               "web-features:map",
               "web-features:snapshot:ecmascript-2015"

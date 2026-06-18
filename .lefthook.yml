@@ -8,7 +8,7 @@ pre-commit:
       stage_fixed: true
 
     - name: eslint
-      glob: "*.{js,jsx,tsx}"
+      glob: "*.js"
       run: npx eslint --fix --cache {staged_files}
       stage_fixed: true
 
@@ -16,9 +16,11 @@ pre-commit:
       glob: "**/*.json"
       exclude:
         - .vscode/*.json
+        - build/*.json
         - browsers/*.json
         - schemas/*.json
-      run: npm run lint:fix {staged_files}
+        - types/*.json
+      run: npm run lint:fix {staged_files} && git add lint/common/standard-track-exceptions.txt
       stage_fixed: true
 
 pre-push:
