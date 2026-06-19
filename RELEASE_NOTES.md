@@ -1,5 +1,91 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.0.4](https://github.com/mdn/browser-compat-data/releases/tag/v8.0.4)
+
+June 19, 2026
+
+### Removals
+
+- `api.MediaCapabilities.decodingInfo.configuration_keySystemConfiguration_parameter` ([#29739](https://github.com/mdn/browser-compat-data/pull/29739))
+
+### Additions
+
+- `api.Element.scroll.returns_promise` ([#29875](https://github.com/mdn/browser-compat-data/pull/29875))
+- `api.Element.scrollBy.returns_promise` ([#29875](https://github.com/mdn/browser-compat-data/pull/29875))
+- `api.Element.scrollIntoView.returns_promise` ([#29875](https://github.com/mdn/browser-compat-data/pull/29875))
+- `api.Element.scrollTo.returns_promise` ([#29875](https://github.com/mdn/browser-compat-data/pull/29875))
+- `api.MediaCapabilities.decodingInfo.configuration_parameter` ([#29739](https://github.com/mdn/browser-compat-data/pull/29739))
+- `api.MediaCapabilities.decodingInfo.configuration_parameter.keySystemConfiguration` ([#29739](https://github.com/mdn/browser-compat-data/pull/29739))
+- `api.MediaCapabilities.decodingInfo.configuration_parameter.type` ([#29739](https://github.com/mdn/browser-compat-data/pull/29739))
+- `api.MediaCapabilities.decodingInfo.configuration_parameter.type.webrtc_option` ([#29739](https://github.com/mdn/browser-compat-data/pull/29739))
+- `api.MediaCapabilities.encodingInfo.configuration_parameter` ([#29739](https://github.com/mdn/browser-compat-data/pull/29739))
+- `api.MediaCapabilities.encodingInfo.configuration_parameter.type` ([#29739](https://github.com/mdn/browser-compat-data/pull/29739))
+- `api.MediaCapabilities.encodingInfo.configuration_parameter.type.transmission_option` ([#29739](https://github.com/mdn/browser-compat-data/pull/29739))
+- `api.MediaCapabilities.encodingInfo.configuration_parameter.type.webrtc_option` ([#29739](https://github.com/mdn/browser-compat-data/pull/29739))
+- `api.MediaSession.setActionHandler.callback` ([#29868](https://github.com/mdn/browser-compat-data/pull/29868))
+- `api.MediaSession.setActionHandler.callback.enterPictureInPictureReason` ([#29868](https://github.com/mdn/browser-compat-data/pull/29868))
+- `api.MediaSession.setActionHandler.enterpictureinpicture_type` ([#29868](https://github.com/mdn/browser-compat-data/pull/29868))
+- `api.WebSocket.local_network_access` ([#29864](https://github.com/mdn/browser-compat-data/pull/29864))
+- `api.WebTransport.local_network_access` ([#29864](https://github.com/mdn/browser-compat-data/pull/29864))
+- `api.Window.scroll.returns_promise` ([#29875](https://github.com/mdn/browser-compat-data/pull/29875))
+- `api.Window.scrollBy.returns_promise` ([#29875](https://github.com/mdn/browser-compat-data/pull/29875))
+- `api.Window.scrollTo.returns_promise` ([#29875](https://github.com/mdn/browser-compat-data/pull/29875))
+- `api.WindowClient.navigate.local_network_access` ([#29864](https://github.com/mdn/browser-compat-data/pull/29864))
+- `webassembly.api.promising_static` ([#29783](https://github.com/mdn/browser-compat-data/pull/29783))
+- `webassembly.api.Suspending` ([#29783](https://github.com/mdn/browser-compat-data/pull/29783))
+- `webassembly.api.Suspending.Suspending` ([#29783](https://github.com/mdn/browser-compat-data/pull/29783))
+- `webdriver.bidi.browsingContext.domContentLoaded_event.userContext_parameter` ([#29882](https://github.com/mdn/browser-compat-data/pull/29882))
+- `webdriver.bidi.browsingContext.downloadEnd_event.userContext_parameter` ([#29882](https://github.com/mdn/browser-compat-data/pull/29882))
+- `webdriver.bidi.browsingContext.downloadWillBegin_event.userContext_parameter` ([#29882](https://github.com/mdn/browser-compat-data/pull/29882))
+- `webdriver.bidi.browsingContext.fragmentNavigated_event.userContext_parameter` ([#29882](https://github.com/mdn/browser-compat-data/pull/29882))
+- `webdriver.bidi.browsingContext.historyUpdated_event.userContext_parameter` ([#29882](https://github.com/mdn/browser-compat-data/pull/29882))
+- `webdriver.bidi.browsingContext.load_event.userContext_parameter` ([#29882](https://github.com/mdn/browser-compat-data/pull/29882))
+- `webdriver.bidi.browsingContext.navigationCommitted_event.userContext_parameter` ([#29882](https://github.com/mdn/browser-compat-data/pull/29882))
+- `webdriver.bidi.browsingContext.navigationFailed_event.userContext_parameter` ([#29882](https://github.com/mdn/browser-compat-data/pull/29882))
+- `webdriver.bidi.browsingContext.navigationStarted_event.userContext_parameter` ([#29882](https://github.com/mdn/browser-compat-data/pull/29882))
+- `webdriver.bidi.browsingContext.userPromptClosed_event.userContext_parameter` ([#29882](https://github.com/mdn/browser-compat-data/pull/29882))
+- `webdriver.bidi.browsingContext.userPromptOpened_event.userContext_parameter` ([#29882](https://github.com/mdn/browser-compat-data/pull/29882))
+- `webdriver.bidi.input.fileDialogOpened_event.userContext_parameter` ([#29882](https://github.com/mdn/browser-compat-data/pull/29882))
+- `webdriver.bidi.network.authRequired_event.userContext_parameter` ([#29882](https://github.com/mdn/browser-compat-data/pull/29882))
+- `webdriver.bidi.network.beforeRequestSent_event.userContext_parameter` ([#29882](https://github.com/mdn/browser-compat-data/pull/29882))
+- `webdriver.bidi.network.fetchError_event.userContext_parameter` ([#29882](https://github.com/mdn/browser-compat-data/pull/29882))
+- `webdriver.bidi.network.responseCompleted_event.userContext_parameter` ([#29882](https://github.com/mdn/browser-compat-data/pull/29882))
+- `webdriver.bidi.network.responseStarted_event.userContext_parameter` ([#29882](https://github.com/mdn/browser-compat-data/pull/29882))
+- `webdriver.bidi.script.realmCreated_event.userContext_parameter` ([#29882](https://github.com/mdn/browser-compat-data/pull/29882))
+- `webextensions.api.proxy.onRequest.documentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.proxy.onRequest.parentDocumentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.runtime.getContexts.documentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.runtime.getDocumentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.scripting.executeScript.InjectionResult.documentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.scripting.InjectionTarget.documentIds` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.tabs.connect.connectInfo.documentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.tabs.sendMessage.options.documentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.webRequest.onAuthRequired.details.documentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.webRequest.onAuthRequired.details.parentDocumentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.webRequest.onBeforeRedirect.details.documentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.webRequest.onBeforeRedirect.details.parentDocumentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.webRequest.onBeforeRequest.details.documentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.webRequest.onBeforeRequest.details.parentDocumentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.webRequest.onBeforeSendHeaders.details.documentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.webRequest.onBeforeSendHeaders.details.parentDocumentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.webRequest.onCompleted.details.documentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.webRequest.onCompleted.details.parentDocumentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.webRequest.onErrorOccurred.details.documentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.webRequest.onErrorOccurred.details.parentDocumentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.webRequest.onHeadersReceived.details.documentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.webRequest.onHeadersReceived.details.parentDocumentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.webRequest.onResponseStarted.details.documentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.webRequest.onResponseStarted.details.parentDocumentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.webRequest.onSendHeaders.details.documentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+- `webextensions.api.webRequest.onSendHeaders.details.parentDocumentId` ([#29853](https://github.com/mdn/browser-compat-data/pull/29853))
+
+### Statistics
+
+- 9 contributors have changed 20 files with 1,472 additions and 46 deletions in 15 commits ([`next...v8.0.4`](https://github.com/mdn/browser-compat-data/compare/next...v8.0.4))
+- 19,870 total features
+- 1,255 total contributors
+- 5,690 total stargazers
+
 ## [v8.0.3](https://github.com/mdn/browser-compat-data/releases/tag/v8.0.3)
 
 June 12, 2026
