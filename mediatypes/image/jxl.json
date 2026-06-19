@@ -9,11 +9,21 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false,
-              "notes": "Implemented behind a flag in Chrome 91, but removed in Chrome 110. See [bug 40168998](https://crbug.com/40168998#comment85)."
+              "version_added": "145",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-jxl-image-format",
+                  "value_to_set": "Enabled"
+                }
+              ],
+              "notes": "Earlier flag support was added in Chrome 91 and removed in Chrome 110. See [bug 40168998](https://crbug.com/40168998#comment85)."
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false,
+              "notes": "Earlier flag support was added in Edge 91 and removed in Edge 110."
+            },
             "firefox": {
               "version_added": "152",
               "flags": [
@@ -25,7 +35,10 @@
               ]
             },
             "firefox_android": "mirror",
-            "opera": "mirror",
+            "opera": {
+              "version_added": false,
+              "notes": "Earlier flag support was added in Opera 77 and removed in Opera 96."
+            },
             "opera_android": "mirror",
             "safari": {
               "version_added": "17",
