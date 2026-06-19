@@ -1,5 +1,20 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.0.3](https://github.com/mdn/browser-compat-data/releases/tag/v8.0.3)
+
+June 12, 2026
+
+### Additions
+
+- `browsers.opera_android.releases.99` ([#29839](https://github.com/mdn/browser-compat-data/pull/29839))
+
+### Statistics
+
+- 3 contributors have changed 6 files with 40 additions and 60 deletions in 3 commits ([`next...v8.0.3`](https://github.com/mdn/browser-compat-data/compare/next...v8.0.3))
+- 19,803 total features
+- 1,254 total contributors
+- 5,684 total stargazers
+
 ## [v8.0.2](https://github.com/mdn/browser-compat-data/releases/tag/v8.0.2)
 
 June 5, 2026

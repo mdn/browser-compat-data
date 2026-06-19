@@ -154,8 +154,15 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false,
-                "impl_url": "https://bugzil.la/1676779"
+                "version_added": "152",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.scroll-driven-animations.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "impl_url": "https://bugzil.la/1824875"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
