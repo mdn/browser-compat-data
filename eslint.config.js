@@ -168,6 +168,10 @@ export default [
       'no-lone-blocks': 'error',
       'no-return-assign': 'error',
       'no-self-compare': 'error',
+      // Disabled: flags intentional dead stores that document intent (e.g.
+      // `previousKey` resets in `scripts/diff-flat.js`); enabling it would
+      // require behavioral changes out of scope here.
+      'no-useless-assignment': 'off',
       'no-unused-expressions': 'error',
       'no-unused-vars': 'off', // Using @typescript-eslint/no-unused-vars instead.
       'no-useless-call': 'error',
