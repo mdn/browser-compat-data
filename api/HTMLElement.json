@@ -2373,13 +2373,21 @@
             ],
             "support": {
               "chrome": {
-                "version_added": "133"
+                "version_added": "133",
+                "notes": "Implements an older version of the specification with inconsistent behaviors. See [bug 499019927](https://crbug.com/499019927)."
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "149"
-              },
+              "firefox": [
+                {
+                  "version_added": "153"
+                },
+                {
+                  "version_added": "149",
+                  "version_removed": "153",
+                  "notes": "Implements an older version of the specification with inconsistent behaviors. See [bug 2029974](https://bugzil.la/2029974)."
+                }
+              ],
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
