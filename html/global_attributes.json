@@ -1006,10 +1006,16 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "149",
-                "notes": "Implements an older version of the specification with inconsistent behaviors. See [bug 2029974](https://bugzil.la/2029974)."
-              },
+              "firefox": [
+                {
+                  "version_added": "153"
+                },
+                {
+                  "version_added": "149",
+                  "version_removed": "153",
+                  "notes": "Implements an older version of the specification with inconsistent behaviors. See [bug 2029974](https://bugzil.la/2029974)."
+                }
+              ],
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
