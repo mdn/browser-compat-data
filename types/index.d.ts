@@ -12,10 +12,7 @@ import type { CompatData, CompatStatement, Identifier } from './public.js';
 export type * from './internal.js';
 
 export type DataType =
-  | CompatData
-  | BrowserStatement
-  | CompatStatement
-  | Identifier;
+  CompatData | BrowserStatement | CompatStatement | Identifier;
 
 export type InternalDataType =
   | InternalCompatData
