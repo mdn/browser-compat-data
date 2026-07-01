@@ -282,12 +282,10 @@ const printDiffs = (base, head, options) => {
   const headContents = /** @type {*} */ ({});
 
   for (const status of getGitDiffStatuses(base, head)) {
-    if (
-      !(
-        status.headPath.endsWith('.json') &&
-        dataFolders.some((folder) => status.headPath.startsWith(`${folder}/`))
-      )
-    ) {
+    if (!(
+      status.headPath.endsWith('.json') &&
+      dataFolders.some((folder) => status.headPath.startsWith(`${folder}/`))
+    )) {
       continue;
     }
 
