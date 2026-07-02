@@ -79,6 +79,19 @@ const processApiData = (data, path, errors) => {
       `\`${featureName.replace('_permission', '')}\` permission`,
       errors,
     );
+  } else if (featureName.endsWith('_static')) {
+    const memberName = featureName.slice(0, -'_static'.length);
+    const methodForm = `\`${memberName}()\` static method`;
+    const propertyForm = `\`${memberName}\` static property`;
+    const actual = data.description || '';
+    if (!actual.startsWith(methodForm) && !actual.startsWith(propertyForm)) {
+      errors.push({
+        ruleName: 'static',
+        path,
+        actual,
+        expected: methodForm,
+      });
+    }
   } else if (featureName == 'secure_context_required') {
     checkDescription(
       'secure context required',
