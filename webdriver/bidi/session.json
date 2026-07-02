@@ -78,12 +78,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "92",
-                "partial_implementation": true,
-                "notes": [
-                  "Before Firefox 116, capability matching was not supported.",
-                  "Multiple session creation is not supported ([bug 1862018](https://bugzil.la/1862018))."
-                ]
+                "version_added": "92"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -165,6 +160,40 @@
                   "standard_track": true,
                   "deprecated": false
                 }
+              }
+            }
+          },
+          "multiple_sessions": {
+            "__compat": {
+              "description": "Support for multiple concurrent sessions in a single browser instance.",
+              "spec_url": "https://w3c.github.io/webdriver/#sessions",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/1862018"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false,
+                  "impl_url": "https://webkit.org/b/281722"
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
               }
             }
           }
