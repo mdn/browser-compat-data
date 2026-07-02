@@ -1147,7 +1147,7 @@
       "deviceMemory": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/deviceMemory",
-          "spec_url": "https://www.w3.org/TR/device-memory/#sec-device-memory-js-api",
+          "spec_url": "https://www.w3.org/TR/device-memory/#dom-navigatordevicememory-devicememory",
           "tags": [
             "web-features:device-memory"
           ],
@@ -2308,6 +2308,9 @@
               "version_added": "69"
             },
             "chrome_android": "mirror",
+            "deno": {
+              "version_added": "2.9"
+            },
             "edge": "mirror",
             "firefox": {
               "version_added": "96"
@@ -3106,7 +3109,14 @@
           "spec_url": "https://drafts.csswg.org/mediaqueries-5/#preferences-attribute",
           "support": {
             "chrome": {
-              "version_added": "preview"
+              "version_added": "120",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -5617,6 +5627,9 @@
               "version_added": "90"
             },
             "chrome_android": "mirror",
+            "deno": {
+              "version_added": "2.9"
+            },
             "edge": "mirror",
             "firefox": {
               "version_added": false
@@ -5657,6 +5670,9 @@
                 "version_added": "90"
               },
               "chrome_android": "mirror",
+              "deno": {
+                "version_added": "2.9"
+              },
               "edge": "mirror",
               "firefox": {
                 "version_added": false
