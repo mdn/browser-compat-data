@@ -113,4 +113,41 @@ describe('test-descriptions', () => {
       assert.equal(errors.length, 1);
     });
   });
+
+  describe('HTML in descriptions', () => {
+    it('flags <code> tags as no_code_tag_in_description', () => {
+      /** @type {CompatStatement} */
+      const data = {
+        description: '<code>transient_attachment</code> usage',
+        support: {},
+      };
+      const errors = processData(data, 'api', 'api.Foo.bar');
+      const err = /** @type {DescriptionError} */ (
+        errors.find(
+          (e) =>
+            typeof e !== 'string' &&
+            e.ruleName === 'no_code_tag_in_description',
+        )
+      );
+      assert.ok(err);
+      assert.equal(err.actual, '<code>transient_attachment</code> usage');
+      assert.equal(err.expected, '`transient_attachment` usage');
+    });
+
+    it('does not flag descriptions without HTML', () => {
+      /** @type {CompatStatement} */
+      const data = {
+        description: '`transient_attachment` usage',
+        support: {},
+      };
+      const errors = processData(data, 'api', 'api.Foo.bar');
+      assert.ok(
+        !errors.some(
+          (e) =>
+            typeof e !== 'string' &&
+            e.ruleName === 'no_code_tag_in_description',
+        ),
+      );
+    });
+  });
 });
