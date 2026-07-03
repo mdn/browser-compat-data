@@ -1,5 +1,44 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.0.5](https://github.com/mdn/browser-compat-data/releases/tag/v8.0.5)
+
+July 3, 2026
+
+### Additions
+
+- `api.HTMLElement.headingOffset` ([#29931](https://github.com/mdn/browser-compat-data/pull/29931))
+- `api.HTMLElement.headingReset` ([#29931](https://github.com/mdn/browser-compat-data/pull/29931))
+- `api.HTMLModelElement` ([#29823](https://github.com/mdn/browser-compat-data/pull/29823))
+- `api.HTMLModelElement.boundingBoxCenter` ([#29823](https://github.com/mdn/browser-compat-data/pull/29823))
+- `api.HTMLModelElement.boundingBoxExtents` ([#29823](https://github.com/mdn/browser-compat-data/pull/29823))
+- `api.HTMLModelElement.entityTransform` ([#29823](https://github.com/mdn/browser-compat-data/pull/29823))
+- `api.HTMLModelElement.environmentMap` ([#29823](https://github.com/mdn/browser-compat-data/pull/29823))
+- `api.HTMLModelElement.environmentMapReady` ([#29823](https://github.com/mdn/browser-compat-data/pull/29823))
+- `api.HTMLModelElement.ready` ([#29823](https://github.com/mdn/browser-compat-data/pull/29823))
+- `api.HTMLModelElement.stageMode` ([#29823](https://github.com/mdn/browser-compat-data/pull/29823))
+- `api.PerformanceResourceTiming.workerFinalRouterSource` ([#29823](https://github.com/mdn/browser-compat-data/pull/29823))
+- `api.PerformanceResourceTiming.workerMatchedRouterSource` ([#29823](https://github.com/mdn/browser-compat-data/pull/29823))
+- `browsers.edge.releases.153` ([#29973](https://github.com/mdn/browser-compat-data/pull/29973))
+- `css.properties.position-visibility.anchor-valid` ([#29823](https://github.com/mdn/browser-compat-data/pull/29823))
+- `css.properties.position-visibility.anchor-visible` ([#29823](https://github.com/mdn/browser-compat-data/pull/29823))
+- `html.elements.model` ([#29823](https://github.com/mdn/browser-compat-data/pull/29823))
+- `html.elements.model.autoplay` ([#29823](https://github.com/mdn/browser-compat-data/pull/29823))
+- `html.elements.model.height` ([#29823](https://github.com/mdn/browser-compat-data/pull/29823))
+- `html.elements.model.loop` ([#29823](https://github.com/mdn/browser-compat-data/pull/29823))
+- `html.elements.model.src` ([#29823](https://github.com/mdn/browser-compat-data/pull/29823))
+- `html.elements.model.stagemode` ([#29823](https://github.com/mdn/browser-compat-data/pull/29823))
+- `html.elements.model.width` ([#29823](https://github.com/mdn/browser-compat-data/pull/29823))
+- `html.global_attributes.headingoffset` ([#29931](https://github.com/mdn/browser-compat-data/pull/29931))
+- `html.global_attributes.headingreset` ([#29931](https://github.com/mdn/browser-compat-data/pull/29931))
+- `webextensions.manifest.theme.properties.additional_backgrounds_size` ([#29910](https://github.com/mdn/browser-compat-data/pull/29910))
+
+### Statistics
+
+- 5 contributors have changed 51 files with 943 additions and 129 deletions in 6 commits ([`next...v8.0.5`](https://github.com/mdn/browser-compat-data/compare/next...v8.0.5))
+- 19,959 total features
+- 1,256 total contributors
+- 5,702 total stargazers
+
 ## [v8.0.4](https://github.com/mdn/browser-compat-data/releases/tag/v8.0.4)
 
 June 19, 2026
