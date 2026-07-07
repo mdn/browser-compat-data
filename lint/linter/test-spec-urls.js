@@ -18,9 +18,16 @@ xref.setup();
  * Process the data for spec URL errors
  * @param {InternalCompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
+ * @param {object} [deps] Injectable dependencies (for testing)
+ * @param {typeof xref.lookup} [deps.lookup] The xref lookup function
+ * @param {string[]} [deps.exceptions] The spec URL host exceptions
  * @returns {void}
  */
-const processData = (data, logger) => {
+export const processData = (
+  data,
+  logger,
+  { lookup = xref.lookup, exceptions = specsExceptions } = {},
+) => {
   if (!data.spec_url) {
     return;
   }
@@ -31,7 +38,7 @@ const processData = (data, logger) => {
 
   for (let specURL of featureSpecURLs) {
     // Skip validation for spec_urls hosted at domains listed in our exception list
-    if (specsExceptions.some((host) => specURL.startsWith(host))) {
+    if (exceptions.some((host) => specURL.startsWith(host))) {
       continue;
     }
 
@@ -62,7 +69,7 @@ const processData = (data, logger) => {
     }
 
     // Check if the spec_url exists in @webref/xref
-    if (!xref.lookup(specURL, { series: true, standing: 'good' }).length) {
+    if (!lookup(specURL, { series: true, standing: 'good' }).length) {
       logger.error(
         `Invalid specification URL found: ${styleText('bold', specURL)}. Check if:
          - there is a more current specification URL
