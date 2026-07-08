@@ -7,8 +7,6 @@ import { replaceCodeTagsWithBackticks } from '../utils.js';
 
 import { validateHTML } from './test-notes.js';
 
-export { replaceCodeTagsWithBackticks };
-
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
 /** @import {InternalCompatStatement} from '../../types/index.js' */
