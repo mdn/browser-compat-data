@@ -14,7 +14,7 @@ import bcd from '../../index.js';
 /** @import {BrowserName, InternalCompatData, InternalCompatStatement, InternalIdentifier, InternalSimpleSupportStatement, InternalSupportBlock, InternalSupportStatement, VersionValue} from '../../types/index.js' */
 
 /**
- * @typedef {'unsupported' | 'subfeature_earlier_implementation'} ErrorType
+ * @typedef {'unsupported' | 'subfeature_earlier_implementation' | 'subfeature_outside_parent_range'} ErrorType
  */
 
 /**
@@ -136,6 +136,120 @@ export class ConsistencyChecker {
   }
 
   /**
+   * Whether a support statement represents unprefixed support under the
+   * feature's canonical name (no `prefix`, no `alternative_name`).
+   * @param {InternalSimpleSupportStatement} statement The support statement
+   * @returns {boolean} Whether the statement is for the canonical name
+   */
+  #isCanonicalName(statement) {
+    return !statement.prefix && !statement.alternative_name;
+  }
+
+  /**
+   * Whether a support statement represents ongoing (not removed), unflagged
+   * support under the canonical name — i.e. the feature is currently usable,
+   * including `"preview"` builds.
+   * @param {InternalSimpleSupportStatement} statement The support statement
+   * @returns {boolean} Whether the statement is currently supported
+   */
+  #isCurrentlySupported(statement) {
+    return (
+      this.#isCanonicalName(statement) &&
+      !statement.flags &&
+      Boolean(statement.version_added) &&
+      statement.version_removed === undefined
+    );
+  }
+
+  /**
+   * Resolve a browser's support statement to an array of simple statements,
+   * resolving `"mirror"` if necessary.
+   * @param {InternalSupportBlock | undefined} supportBlock The support block
+   * @param {BrowserName} browser The browser to resolve
+   * @returns {InternalSimpleSupportStatement[]} The simple support statements
+   */
+  #resolveStatements(supportBlock, browser) {
+    if (!supportBlock) {
+      return [];
+    }
+    let support = supportBlock[browser];
+    if (support === undefined) {
+      return [];
+    }
+    if (support === 'mirror') {
+      support = this.#resolveMirror(browser, supportBlock);
+    }
+    return Array.isArray(support)
+      ? support
+      : [/** @type {InternalSimpleSupportStatement} */ (support)];
+  }
+
+  /**
+   * Format a support statement as a human-readable version range.
+   * @param {InternalSimpleSupportStatement} statement The statement to format
+   * @returns {string} The formatted range
+   */
+  #formatSupport(statement) {
+    /** @type {string[]} */
+    const parts = [`added: ${statement.version_added}`];
+    if (statement.version_removed) {
+      parts.push(`removed: ${statement.version_removed}`);
+    }
+    if (statement.flags) {
+      parts.push('behind a flag');
+    }
+    return `{ ${parts.join(', ')} }`;
+  }
+
+  /**
+   * Check whether a child's supported version range extends beyond its parent's
+   * for a given browser. This complements the scalar `version_added` checks by
+   * flagging a child that is currently (or in `"preview"`) supported under the
+   * canonical name while the parent's canonical-name support exists but is no
+   * longer current (entirely `version_removed` or only available behind a flag).
+   * Prefixed and alternative-name statements are intentionally ignored, since
+   * BCD does not consistently propagate those to sub-features.
+   * @param {InternalCompatStatement} parentCompat The parent compat data
+   * @param {InternalCompatStatement} childCompat The child compat data
+   * @param {BrowserName} browser The browser to check
+   * @returns {InternalSimpleSupportStatement | null} The violating child
+   *   statement, or `null` if the child range is contained
+   */
+  checkParentRangeContainment(parentCompat, childCompat, browser) {
+    const childStatements = this.#resolveStatements(
+      childCompat?.support,
+      browser,
+    );
+    const violatingChild = childStatements.find((statement) =>
+      this.#isCurrentlySupported(statement),
+    );
+    if (!violatingChild) {
+      return null;
+    }
+
+    const parentStatements = this.#resolveStatements(
+      parentCompat?.support,
+      browser,
+    );
+    const parentHasCanonicalSupport = parentStatements.some((statement) =>
+      this.#isCanonicalName(statement),
+    );
+    const parentCurrentlySupported = parentStatements.some((statement) =>
+      this.#isCurrentlySupported(statement),
+    );
+
+    // Only flag when the parent actually records canonical-name support that is
+    // no longer current. If the parent lacks canonical support altogether
+    // (unsupported, or only prefixed/alternative-name), that is either handled
+    // by the `unsupported` check or is an intentional modelling choice.
+    if (parentHasCanonicalSupport && !parentCurrentlySupported) {
+      return violatingChild;
+    }
+
+    return null;
+  }
+
+  /**
    * Checks a specific feature for errors
    * @param {InternalIdentifier} data The data to test
    * @returns {FeatureError[]} Any errors found within the data
@@ -247,6 +361,57 @@ export class ConsistencyChecker {
             data?.__compat?.support,
             /** @type {BrowserName} */ (browser),
           ),
+          subfeatures,
+        });
+      }
+    });
+
+    // Test whether sub-features are supported in a version range that is not
+    // contained within the parent's supported version range.
+    inconsistentSubfeaturesByBrowser = {};
+
+    for (const subfeature of subfeatures) {
+      const subfeatureData = /** @type {InternalIdentifier} */ (
+        query(subfeature, data)
+      );
+      for (const browser of /** @type {BrowserName[]} */ (
+        Object.keys(bcd.browsers)
+      )) {
+        if (!data.__compat || !subfeatureData.__compat) {
+          continue;
+        }
+        const violation = this.checkParentRangeContainment(
+          data.__compat,
+          subfeatureData.__compat,
+          browser,
+        );
+        if (violation) {
+          inconsistentSubfeaturesByBrowser[browser] =
+            inconsistentSubfeaturesByBrowser[browser] || [];
+          inconsistentSubfeaturesByBrowser[browser]?.push([
+            subfeature,
+            this.#formatSupport(violation),
+          ]);
+        }
+      }
+    }
+
+    // Add errors
+    Object.keys(inconsistentSubfeaturesByBrowser).forEach((browser) => {
+      const subfeatures =
+        inconsistentSubfeaturesByBrowser[/** @type {BrowserName} */ (browser)];
+      if (subfeatures) {
+        const parentCanonical = this.#resolveStatements(
+          data.__compat?.support,
+          /** @type {BrowserName} */ (browser),
+        )
+          .filter((statement) => this.#isCanonicalName(statement))
+          .map((statement) => this.#formatSupport(statement))
+          .join(', ');
+        errors.push({
+          type: 'subfeature_outside_parent_range',
+          browser: /** @type {BrowserName} */ (browser),
+          parentValue: parentCanonical,
           subfeatures,
         });
       }
@@ -455,6 +620,8 @@ export default {
           errorMessage += `No support in ${styleText('bold', browser)}, but support is declared in the following sub-feature(s):`;
         } else if (type == 'subfeature_earlier_implementation') {
           errorMessage += `Basic support in ${styleText('bold', browser)} was declared implemented in a later version (${styleText('bold', String(parentValue))}) than the following sub-feature(s):`;
+        } else if (type == 'subfeature_outside_parent_range') {
+          errorMessage += `Support range in ${styleText('bold', browser)} is not contained within the parent's support range (${styleText('bold', String(parentValue))}) for the following sub-feature(s):`;
         }
 
         for (const subfeature of subfeatures) {
