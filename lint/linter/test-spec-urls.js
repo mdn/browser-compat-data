@@ -3,7 +3,7 @@
 
 import { styleText } from 'node:util';
 
-import specData from 'web-specs' with { type: 'json' };
+import * as xref from '@webref/xref';
 
 import { getSpecURLsExceptions } from '../common/spec-urls-exceptions.js';
 
@@ -11,29 +11,23 @@ import { getSpecURLsExceptions } from '../common/spec-urls-exceptions.js';
 /** @import {Logger} from '../utils.js' */
 /** @import {InternalCompatStatement} from '../../types/index.js' */
 
-const allowedSpecURLs = [
-  .../** @type {string[]} */ (
-    specData
-      .filter((spec) => spec.standing == 'good')
-      .map((spec) => [
-        spec.url,
-        spec.nightly?.url,
-        ...(spec.nightly ? spec.nightly.alternateUrls : []),
-        spec.series.nightlyUrl,
-      ])
-      .flat()
-      .filter((url) => !!url)
-  ),
-  ...(await getSpecURLsExceptions()),
-];
+const specsExceptions = await getSpecURLsExceptions();
+xref.setup();
 
 /**
  * Process the data for spec URL errors
  * @param {InternalCompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
+ * @param {object} [deps] Injectable dependencies (for testing)
+ * @param {typeof xref.lookup} [deps.lookup] The xref lookup function
+ * @param {string[]} [deps.exceptions] The spec URL host exceptions
  * @returns {void}
  */
-const processData = (data, logger) => {
+export const processData = (
+  data,
+  logger,
+  { lookup = xref.lookup, exceptions = specsExceptions } = {},
+) => {
   if (!data.spec_url) {
     return;
   }
@@ -42,14 +36,48 @@ const processData = (data, logger) => {
     ? data.spec_url
     : [data.spec_url];
 
-  for (const specURL of featureSpecURLs) {
-    if (!allowedSpecURLs.some((prefix) => specURL.startsWith(prefix))) {
+  for (let specURL of featureSpecURLs) {
+    // Skip validation for spec_urls hosted at domains listed in our exception list
+    if (exceptions.some((host) => specURL.startsWith(host))) {
+      continue;
+    }
+
+    // Skip validation for spec_urls containing no fragment ID (we may want to emit warnings for these in the future)
+    if (!specURL.includes('#')) {
+      /* logger.warning(
+        `Specification URL without a fragment id found: ${styleText('bold', specURL)}
+         Check if a deep link using a validated fragment identifier ('#') can be provided.`,
+      ); */
+      continue;
+    }
+
+    // Check that there is a valid section ID before text fragments
+    if (specURL.includes(':~:text=')) {
+      const trimmedSpecURL = specURL.split(':~:text=')[0];
+      if (/#.+/.test(trimmedSpecURL)) {
+        specURL = trimmedSpecURL;
+      } else {
+        // We only have '#:~:text=' without any section ID
+        // Skip validation entirely in this case
+        continue;
+        // We may want to emit warnings for this case in the future:
+        /* logger.warning(
+          `Text fragment specification URL with section ID found: ${styleText('bold', specURL)}
+           Check if a deep link using a validated fragment identifier ('#') can be provided.`,
+        ); */
+      }
+    }
+
+    // Check if the spec_url exists in @webref/xref
+    if (!lookup(specURL, { series: true, standing: 'good' }).length) {
       logger.error(
         `Invalid specification URL found: ${styleText('bold', specURL)}. Check if:
          - there is a more current specification URL
          - the specification is listed in https://github.com/w3c/browser-specs
-         - the specification has a "good" standing`,
+         - the specification has a "good" standing
+         - the fragment id (#) is valid according to @webref/xref.`,
       );
+      continue;
     }
   }
 };
