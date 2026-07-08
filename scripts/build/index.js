@@ -212,10 +212,7 @@ const addIE = (feature) => {
  * @returns {void}
  */
 export const addReleaseIndex = (data) => {
-  for (const browser of /** @type {BrowserName[]} */ (
-    Object.keys(data.browsers)
-  )) {
-    const { releases } = data.browsers[browser];
+  for (const { releases } of Object.values(data.browsers)) {
     const sorted = Object.keys(releases).sort(compareVersions);
     sorted.forEach((version, i) => {
       /** @type {ReleaseStatement} */ (releases[version]).index = i;
