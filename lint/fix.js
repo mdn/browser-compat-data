@@ -26,6 +26,7 @@ import fixStatus from './fixer/status.js';
 import fixMirror from './fixer/mirror.js';
 import fixOverlap from './fixer/overlap.js';
 import fixStandardTrackExceptions from './fixer/standard-track-exceptions.js';
+import lint from './lint.js';
 import { IS_WINDOWS } from './utils.js';
 
 /** @import {Stats} from 'node:fs' */
@@ -147,6 +148,10 @@ if (esMain(import.meta)) {
   const { files = dataFolders, only } = argv;
 
   await main(files, { only });
+  if (argv.files) {
+    // Fails pre-commit hook for lint failures unknown to the fixer.
+    process.exit((await lint(argv.files)) ? 1 : 0);
+  }
 }
 
 export default load;

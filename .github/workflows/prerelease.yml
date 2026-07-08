@@ -1,0 +1,89 @@
+name: Release next
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  release:
+    types:
+      - published
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}
+permissions:
+  contents: write
+
+env:
+  PACKAGE: "@mdn/browser-compat-data"
+  TAG: "next"
+  REF: "main"
+
+jobs:
+  publish:
+    if: github.repository == 'mdn/browser-compat-data'
+    name: Publish next pre-release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          ref: ${{ env.REF }}
+
+      - name: Setup Node
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          package-manager-cache: true
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Get commit hashes
+        id: hash
+        run: |
+          {
+            echo "SHORT_HASH=$(git rev-parse --short HEAD)"
+            echo "FULL_HASH=$(git rev-parse HEAD)"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Ensure `next` pre-release exists
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if ! gh release view "$TAG" >/dev/null 2>&1; then
+            gh release create "$TAG" \
+              --title "$PACKAGE@$TAG" \
+              --notes "Bootstrapping next pre-release." \
+              --prerelease
+          fi
+
+      - name: Draft existing release while we move the tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release edit --draft "$TAG"
+
+      - name: Move the `next` tag
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag --force "$TAG"
+          git push --force origin "$TAG"
+
+      - name: Publish the pre-release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHORT_HASH: ${{ steps.hash.outputs.SHORT_HASH }}
+          NOTES: "Experimental nightly prerelease generated from the [`${{ env.REF }}`](${{ github.server_url }}/${{ github.repository }}/tree/${{ env.REF }}) branch (currently at [`${{ steps.hash.outputs.SHORT_HASH }}`](${{ github.server_url }}/${{ github.repository }}/commit/${{ steps.hash.outputs.FULL_HASH }}))."
+        run: |
+          gh release edit \
+            --verify-tag \
+            --title "$PACKAGE@$TAG" \
+            --notes "$NOTES" \
+            --prerelease \
+            --draft=false \
+            "$TAG"
+          gh release upload --clobber "$TAG" build/data.json

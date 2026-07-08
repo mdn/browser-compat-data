@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           persist-credentials: false
 
@@ -42,7 +42,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           persist-credentials: false
 
@@ -55,14 +55,38 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run lint -- --fail-on-warnings
+      - name: Lint
+        id: lint
+        run: npm run lint -- --fail-on-warnings
+
+      - name: Fix lint issues
+        id: lint-fix
+        if: failure() && steps.lint.conclusion == 'failure'
+        run: |
+          npm run lint:fix
+          if [[ -n $(git diff) ]]; then
+            echo "files_modified=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Collect artifact files
+        if: failure() && steps.lint-fix.outputs.files_modified == 'true'
+        run: |
+          mkdir -p lint-results
+          git diff > lint-results/lint.diff
+
+      - name: Upload artifact
+        if: failure() && steps.lint-fix.outputs.files_modified == 'true'
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: lint-results
+          path: lint-results
 
   test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           persist-credentials: false
 
@@ -101,14 +125,14 @@ jobs:
       # Base
 
       - name: Checkout (base)
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           ref: ${{ steps.base.outputs.ref }}
           path: base
           persist-credentials: false
 
       - name: Checkout (PR)
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           path: pr
           persist-credentials: false
@@ -133,8 +157,8 @@ jobs:
       - name: Format
         run: |
           # sed command prefixes each line of output with [base] or [pr]
-          cd base/build && npx prettier --write . | sed "s/^/[base] /" &
-          cd pr/build && npx prettier --write . | sed "s/^/[pr] /" &
+          cd base/build && npx prettier --ignore-path /dev/null --write . | sed "s/^/[base] /" &
+          cd pr/build && npx prettier --ignore-path /dev/null --write . | sed "s/^/[pr] /" &
           wait
 
       - name: Diff

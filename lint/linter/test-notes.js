@@ -10,7 +10,7 @@ import { replaceCodeTagsWithBackticks, VALID_ELEMENTS } from '../utils.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {BrowserName, CompatStatement, SupportStatement} from '../../types/types.js' */
+/** @import {BrowserName, InternalCompatStatement, InternalSupportStatement} from '../../types/index.js' */
 
 const parser = new HTMLParser();
 
@@ -131,7 +131,7 @@ const checkNotes = (notes, browser, feature, logger) => {
 
 /**
  * Process the data for notes errors
- * @param {CompatStatement} data The data to test
+ * @param {InternalCompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
  * @param {string} feature The identifier of the feature
  * @returns {void}
@@ -140,7 +140,7 @@ const processData = (data, logger, feature) => {
   for (const [
     browser,
     support,
-  ] of /** @type {[BrowserName, SupportStatement][]} */ (
+  ] of /** @type {[BrowserName, InternalSupportStatement][]} */ (
     Object.entries(data.support)
   )) {
     if (Array.isArray(support)) {
@@ -150,7 +150,7 @@ const processData = (data, logger, feature) => {
         }
       }
     } else {
-      if (support.notes) {
+      if (typeof support === 'object' && support.notes) {
         checkNotes(support.notes, browser, feature, logger);
       }
     }
@@ -168,6 +168,6 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data, path: { full } }) => {
-    processData(/** @type {CompatStatement} */ (data), logger, full);
+    processData(/** @type {InternalCompatStatement} */ (data), logger, full);
   },
 };

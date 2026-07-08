@@ -505,12 +505,17 @@
       },
       "canLoadAdAuctionFencedFrame": {
         "__compat": {
+          "tags": [
+            "web-features:protected-audience"
+          ],
           "support": {
             "chrome": {
               "version_added": "128"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -760,12 +765,17 @@
       },
       "clearOriginJoinedAdInterestGroups": {
         "__compat": {
+          "tags": [
+            "web-features:protected-audience"
+          ],
           "support": {
             "chrome": {
               "version_added": "128"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -988,12 +998,17 @@
       },
       "createAuctionNonce": {
         "__compat": {
+          "tags": [
+            "web-features:protected-audience"
+          ],
           "support": {
             "chrome": {
               "version_added": "128"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -1096,12 +1111,17 @@
       },
       "deprecatedRunAdAuctionEnforcesKAnonymity": {
         "__compat": {
+          "tags": [
+            "web-features:protected-audience"
+          ],
           "support": {
             "chrome": {
               "version_added": "128"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -1127,7 +1147,7 @@
       "deviceMemory": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/deviceMemory",
-          "spec_url": "https://www.w3.org/TR/device-memory/#sec-device-memory-js-api",
+          "spec_url": "https://www.w3.org/TR/device-memory/#dom-navigatordevicememory-devicememory",
           "tags": [
             "web-features:device-memory"
           ],
@@ -1510,46 +1530,6 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "secure_context_required": {
-          "__compat": {
-            "description": "Secure context required",
-            "tags": [
-              "web-features:gamepad"
-            ],
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "91",
-                "version_removed": "125"
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror",
-              "webview_ios": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": false,
-              "deprecated": true
-            }
-          }
         }
       },
       "getInstalledRelatedApps": {
@@ -1616,12 +1596,17 @@
       },
       "getInterestGroupAdAuctionData": {
         "__compat": {
+          "tags": [
+            "web-features:protected-audience"
+          ],
           "support": {
             "chrome": {
               "version_added": "132"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -2093,12 +2078,17 @@
       },
       "joinAdInterestGroup": {
         "__compat": {
+          "tags": [
+            "web-features:protected-audience"
+          ],
           "support": {
             "chrome": {
               "version_added": "128"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -2273,12 +2263,17 @@
       },
       "leaveAdInterestGroup": {
         "__compat": {
+          "tags": [
+            "web-features:protected-audience"
+          ],
           "support": {
             "chrome": {
               "version_added": "128"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -2313,6 +2308,9 @@
               "version_added": "69"
             },
             "chrome_android": "mirror",
+            "deno": {
+              "version_added": "2.9"
+            },
             "edge": "mirror",
             "firefox": {
               "version_added": "96"
@@ -3111,7 +3109,14 @@
           "spec_url": "https://drafts.csswg.org/mediaqueries-5/#preferences-attribute",
           "support": {
             "chrome": {
-              "version_added": "preview"
+              "version_added": "120",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -3267,12 +3272,17 @@
       },
       "protectedAudience": {
         "__compat": {
+          "tags": [
+            "web-features:protected-audience"
+          ],
           "support": {
             "chrome": {
               "version_added": "128"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -4826,12 +4836,17 @@
       },
       "runAdAuction": {
         "__compat": {
+          "tags": [
+            "web-features:protected-audience"
+          ],
           "support": {
             "chrome": {
               "version_added": "128"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -5435,12 +5450,17 @@
       },
       "updateAdInterestGroups": {
         "__compat": {
+          "tags": [
+            "web-features:protected-audience"
+          ],
           "support": {
             "chrome": {
               "version_added": "128"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -5607,6 +5627,9 @@
               "version_added": "90"
             },
             "chrome_android": "mirror",
+            "deno": {
+              "version_added": "2.9"
+            },
             "edge": "mirror",
             "firefox": {
               "version_added": false
@@ -5647,6 +5670,9 @@
                 "version_added": "90"
               },
               "chrome_android": "mirror",
+              "deno": {
+                "version_added": "2.9"
+              },
               "edge": "mirror",
               "firefox": {
                 "version_added": false
@@ -5723,6 +5749,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/vendorSub",
           "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-vendorsub-dev",
+          "tags": [
+            "web-features:user-agent-sniffing"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"

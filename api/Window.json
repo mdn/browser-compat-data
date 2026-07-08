@@ -768,8 +768,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false,
-              "impl_url": "https://webkit.org/b/164193"
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "requestIdleCallback",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1065,6 +1071,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/crashReport",
           "spec_url": "https://wicg.github.io/crash-reporting/#dom-window-crashreport",
+          "tags": [
+            "web-features:reporting-crashes-storage"
+          ],
           "support": {
             "chrome": {
               "version_added": "145"
@@ -1436,7 +1445,9 @@
             "firefox": {
               "version_added": "151"
             },
-            "firefox_android": "mirror",
+            "firefox_android": {
+              "version_added": false
+            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -4088,7 +4099,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -5112,8 +5123,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false,
-              "impl_url": "https://webkit.org/b/285049"
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "requestIdleCallback",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -5122,6 +5139,43 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "requestResize": {
+        "__compat": {
+          "spec_url": "https://drafts.csswg.org/css-sizing-4/#dom-window-requestresize",
+          "support": {
+            "chrome": {
+              "version_added": "149",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features"
+                }
+              ]
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -5878,6 +5932,38 @@
               "deprecated": false
             }
           }
+        },
+        "returns_promise": {
+          "__compat": {
+            "description": "Returns a `Promise`",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-scroll",
+            "support": {
+              "chrome": {
+                "version_added": "150"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "scrollbars": {
@@ -6082,6 +6168,38 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "returns_promise": {
+          "__compat": {
+            "description": "Returns a `Promise`",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-scrollby",
+            "support": {
+              "chrome": {
+                "version_added": "150"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
@@ -6464,6 +6582,38 @@
               "deprecated": false
             }
           }
+        },
+        "returns_promise": {
+          "__compat": {
+            "description": "Returns a `Promise`",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-scrollto",
+            "support": {
+              "chrome": {
+                "version_added": "150"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "scrollX": {
@@ -6819,7 +6969,13 @@
             },
             "chrome_android": "mirror",
             "deno": {
-              "version_added": false
+              "version_added": "2.1",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--unstable-node-globals"
+                }
+              ]
             },
             "edge": {
               "version_added": "12",

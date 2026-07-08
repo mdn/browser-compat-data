@@ -45,6 +45,39 @@
             "deprecated": false
           }
         },
+        "alpha": {
+          "__compat": {
+            "description": "`alpha()`",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Values/color_value/alpha",
+            "spec_url": "https://drafts.csswg.org/css-color-5/#relative-alpha",
+            "support": {
+              "chrome": {
+                "version_added": "151"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "preview"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "27"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "color": {
           "__compat": {
             "description": "`color()` (Profiled color values)",
@@ -242,7 +275,7 @@
               "description": "`color-mix()` with one or more color arguments",
               "spec_url": "https://drafts.csswg.org/css-color-5/#color-mix",
               "tags": [
-                "web-features:color"
+                "web-features:color-mix-variadic"
               ],
               "support": {
                 "chrome": {
@@ -259,8 +292,8 @@
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
-                  "version_added": false,
-                  "impl_url": "https://webkit.org/b/304704"
+                  "version_added": "preview",
+                  "impl_url": "https://webkit.org/b/315936"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
@@ -944,15 +977,7 @@
               ],
               "support": {
                 "chrome": {
-                  "version_added": "148",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "#enable-experimental-web-platform-features",
-                      "value_to_set": "Enabled"
-                    }
-                  ],
-                  "impl_url": "https://crbug.com/491829958"
+                  "version_added": "150"
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
@@ -964,7 +989,7 @@
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
-                  "version_added": false,
+                  "version_added": "27",
                   "impl_url": "https://webkit.org/b/309689"
                 },
                 "safari_ios": "mirror",
@@ -973,7 +998,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }

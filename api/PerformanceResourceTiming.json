@@ -8,6 +8,9 @@
           "web-features:resource-timing"
         ],
         "support": {
+          "bun": {
+            "version_added": "1.1.37"
+          },
           "chrome": {
             "version_added": "29"
           },
@@ -413,7 +416,13 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "26.4",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "SpeculationRules prefetch"
+                  }
+                ]
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -647,8 +656,7 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
-              "impl_url": "https://bugzil.la/1811291"
+              "version_added": "152"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -686,8 +694,7 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
-              "impl_url": "https://bugzil.la/1811291"
+              "version_added": "152"
             },
             "firefox_android": "mirror",
             "nodejs": {
@@ -1207,7 +1214,7 @@
       "serverTiming": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PerformanceResourceTiming/serverTiming",
-          "spec_url": "https://w3c.github.io/server-timing/#servertiming-attribute",
+          "spec_url": "https://w3c.github.io/server-timing/#dom-performanceresourcetiming-servertiming",
           "tags": [
             "web-features:server-timing"
           ],
@@ -1253,6 +1260,9 @@
             "web-features:resource-timing"
           ],
           "support": {
+            "bun": {
+              "version_added": "1.1.37"
+            },
             "chrome": {
               "version_added": "45"
             },
@@ -1360,7 +1370,69 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
+              "version_added": "27"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "workerFinalRouterSource": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/resource-timing/#dom-performanceresourcetiming-workerfinalroutersource",
+          "support": {
+            "chrome": {
               "version_added": false
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "27"
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "workerMatchedRouterSource": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/resource-timing/#dom-performanceresourcetiming-workermatchedroutersource",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "27"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1391,7 +1463,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "27"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1399,7 +1471,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }

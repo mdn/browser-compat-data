@@ -1,7 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatData, SimpleSupportStatement} from '../types/types.js' */
+/** @import {InternalCompatData} from '../types/index.js' */
+/** @import {SimpleSupportStatement} from '../types/public.js' */
 
 /**
  * @typedef {'html' | 'plain'} Format
@@ -115,6 +116,8 @@ const flattenObject = (obj, parentKey = '', result = {}) => {
               .join(',');
           }
 
+          // After addVersionLast() ran, statements have version_last, so the
+          // public SimpleSupportStatement type fits.
           const {
             version_added,
             version_last,
@@ -273,27 +276,25 @@ const printDiffs = (base, head, options) => {
   /** @type {Map<string, Set<string>>} */
   const groups = new Map();
 
-  /** @type {CompatData} */
+  /** @type {InternalCompatData} */
   const baseContents = /** @type {*} */ ({});
-  /** @type {CompatData} */
+  /** @type {InternalCompatData} */
   const headContents = /** @type {*} */ ({});
 
   for (const status of getGitDiffStatuses(base, head)) {
-    if (
-      !(
-        status.headPath.endsWith('.json') &&
-        dataFolders.some((folder) => status.headPath.startsWith(`${folder}/`))
-      )
-    ) {
+    if (!(
+      status.headPath.endsWith('.json') &&
+      dataFolders.some((folder) => status.headPath.startsWith(`${folder}/`))
+    )) {
       continue;
     }
 
-    const baseFileContents = /** @type {CompatData} */ (
+    const baseFileContents = /** @type {InternalCompatData} */ (
       status.value !== 'A'
         ? JSON.parse(getFileContent(base, status.basePath))
         : {}
     );
-    const headFileContents = /** @type {CompatData} */ (
+    const headFileContents = /** @type {InternalCompatData} */ (
       status.value !== 'D'
         ? JSON.parse(getFileContent(head, status.headPath))
         : {}

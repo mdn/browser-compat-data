@@ -25,11 +25,17 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "15.4",
-              "partial_implementation": true,
-              "notes": "Safari does not maintain minimum contrast for legibility of the control. See [bug 244233](https://webkit.org/b/244233)."
-            },
+            "safari": [
+              {
+                "version_added": "26.2"
+              },
+              {
+                "version_added": "15.4",
+                "version_removed": "26.2",
+                "partial_implementation": true,
+                "notes": "Safari does not maintain minimum contrast for legibility of the control. See [bug 244233](https://webkit.org/b/244233)."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -78,6 +84,9 @@
         "currentColor": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-color-4/#valdef-color-currentcolor",
+            "tags": [
+              "web-features:accent-color"
+            ],
             "support": {
               "chrome": {
                 "version_added": "93"
