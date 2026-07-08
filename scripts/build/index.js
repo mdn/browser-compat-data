@@ -208,7 +208,7 @@ const addIE = (feature) => {
 /**
  * Add a 0-based `index` to every release, ordered ascending by version
  * (matching `compareVersions` order).
- * @param {InternalCompatData} data - The data to mutate.
+ * @param {InternalCompatData} data - BCD data whose release objects will receive an `index` property.
  * @returns {void}
  */
 export const addReleaseIndex = (data) => {
