@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement} from '../../types/index.js' */
 /** @import {LinterMessage} from '../types.js' */
 
 import assert from 'node:assert/strict';
@@ -12,7 +12,7 @@ import testNotes from './test-notes.js';
 
 /**
  * Run the notes linter check and return logged messages.
- * @param {CompatStatement} data
+ * @param {InternalCompatStatement} data
  * @returns {Promise<LinterMessage[]>}
  */
 const check = async (data) => {
@@ -27,7 +27,7 @@ const check = async (data) => {
 describe('test-notes', () => {
   describe('code tag in notes', () => {
     it('flags a note with a <code> tag', async () => {
-      /** @type {CompatStatement} */
+      /** @type {InternalCompatStatement} */
       const data = {
         support: {
           chrome: {
@@ -41,7 +41,7 @@ describe('test-notes', () => {
     });
 
     it('flags each note in an array with a <code> tag', async () => {
-      /** @type {CompatStatement} */
+      /** @type {InternalCompatStatement} */
       const data = {
         support: {
           chrome: {
@@ -58,7 +58,7 @@ describe('test-notes', () => {
     });
 
     it('does not flag a note using backtick Markdown', async () => {
-      /** @type {CompatStatement} */
+      /** @type {InternalCompatStatement} */
       const data = {
         support: {
           chrome: {
@@ -72,7 +72,7 @@ describe('test-notes', () => {
     });
 
     it('does not flag a <code> tag inside backticks', async () => {
-      /** @type {CompatStatement} */
+      /** @type {InternalCompatStatement} */
       const data = {
         support: {
           chrome: {

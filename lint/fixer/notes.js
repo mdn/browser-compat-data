@@ -32,7 +32,7 @@ const fixNotesFixer = (filename, actual) => {
   for (const feature of walker) {
     for (const support of Object.values(feature.compat.support)) {
       for (const statement of Array.isArray(support) ? support : [support]) {
-        if (statement.notes) {
+        if (statement !== 'mirror' && statement.notes) {
           statement.notes =
             /** @type {string | [string, string, ...string[]]} */ (
               fixNotes(statement.notes)

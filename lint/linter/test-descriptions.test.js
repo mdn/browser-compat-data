@@ -116,7 +116,7 @@ describe('test-descriptions', () => {
 
   describe('HTML in descriptions', () => {
     it('flags <code> tags as no_code_tag_in_description', () => {
-      /** @type {CompatStatement} */
+      /** @type {InternalCompatStatement} */
       const data = {
         description: '<code>transient_attachment</code> usage',
         support: {},
@@ -135,7 +135,7 @@ describe('test-descriptions', () => {
     });
 
     it('does not flag descriptions without HTML', () => {
-      /** @type {CompatStatement} */
+      /** @type {InternalCompatStatement} */
       const data = {
         description: '`transient_attachment` usage',
         support: {},
