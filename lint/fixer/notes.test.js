@@ -3,7 +3,7 @@
 
 import assert from 'node:assert/strict';
 
-import { fixNotes } from './notes.js';
+import fixNotesFixer, { fixNotes } from './notes.js';
 
 describe('fix -> notes', () => {
   it('replaces <code> tags with backticks in a string note', () => {
@@ -32,5 +32,78 @@ describe('fix -> notes', () => {
       fixNotes('The `<code>` element is not supported.'),
       'The `<code>` element is not supported.',
     );
+  });
+
+  describe('fixer', () => {
+    /**
+     * Run the default fixer over a walkable data object.
+     * @param {string} filename
+     * @param {object} data
+     * @returns {object}
+     */
+    const run = (filename, data) =>
+      JSON.parse(fixNotesFixer(filename, JSON.stringify(data)));
+
+    it('fixes a string note in a support statement', () => {
+      const out = run('api/Foo.json', {
+        Foo: {
+          __compat: {
+            support: {
+              chrome: {
+                version_added: '80',
+                notes: 'Use <code>foo</code> instead.',
+              },
+            },
+          },
+        },
+      });
+      assert.equal(out.Foo.__compat.support.chrome.notes, 'Use `foo` instead.');
+    });
+
+    it('fixes each note in an array-valued statement', () => {
+      const out = run('api/Foo.json', {
+        Foo: {
+          __compat: {
+            support: {
+              chrome: {
+                version_added: '80',
+                notes: [
+                  'Use <code>foo</code> instead.',
+                  'And <code>bar</code> too.',
+                ],
+              },
+            },
+          },
+        },
+      });
+      assert.deepEqual(out.Foo.__compat.support.chrome.notes, [
+        'Use `foo` instead.',
+        'And `bar` too.',
+      ]);
+    });
+
+    it('fixes notes across an array of support statements', () => {
+      const out = run('api/Foo.json', {
+        Foo: {
+          __compat: {
+            support: {
+              chrome: [
+                { version_added: '80', notes: 'Use <code>foo</code>.' },
+                { version_added: '10', notes: 'Old <code>bar</code>.' },
+              ],
+            },
+          },
+        },
+      });
+      assert.equal(out.Foo.__compat.support.chrome[0].notes, 'Use `foo`.');
+      assert.equal(out.Foo.__compat.support.chrome[1].notes, 'Old `bar`.');
+    });
+
+    it('leaves browser data untouched', () => {
+      const input = JSON.stringify({
+        browsers: { chrome: { notes: 'Use <code>foo</code>.' } },
+      });
+      assert.equal(fixNotesFixer('/browsers/chrome.json', input), input);
+    });
   });
 });
