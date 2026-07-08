@@ -269,7 +269,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "16.4"
+              "version_added": "16.4",
+              "notes": "In Safari, the `keydown` and `input` events for the key that completes an IME composition session are dispatched after the `compositionend` event, so their `isComposing` value is incorrectly `false` instead of `true`. Events fired earlier in the session are unaffected. See [bug 165004](https://webkit.org/b/165004)."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
