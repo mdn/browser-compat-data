@@ -80,12 +80,10 @@ export function* iterateFeatures(
               if (!browserData) {
                 if (values.length == 0 || values.includes('null')) {
                   // Web extensions only allows specific browsers
-                  if (
-                    !(
-                      identifier.startsWith('webextensions.') &&
-                      bcd.browsers[browser].accepts_webextensions
-                    )
-                  ) {
+                  if (!(
+                    identifier.startsWith('webextensions.') &&
+                    bcd.browsers[browser].accepts_webextensions
+                  )) {
                     continue;
                   }
                   yield `${identifier}${i}`;

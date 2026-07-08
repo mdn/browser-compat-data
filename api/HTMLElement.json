@@ -48,7 +48,7 @@
       "accessKey": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLElement/accessKey",
-          "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-accesskey",
+          "spec_url": "https://html.spec.whatwg.org/multipage/dom.html#dom-accesskey",
           "tags": [
             "web-features:accesskey"
           ],
@@ -213,7 +213,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
+              "version_added": "preview",
               "impl_url": "https://bugzil.la/1278697"
             },
             "firefox_android": "mirror",
@@ -1552,6 +1552,102 @@
               "standard_track": true,
               "deprecated": false
             }
+          }
+        }
+      },
+      "headingOffset": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/dom.html#dom-headingoffset",
+          "support": {
+            "chrome": {
+              "version_added": "151",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ],
+              "impl_url": "https://crbug.com/333628468",
+              "notes": "Implemented on the `Element` interface instead of the `HTMLElement` interface."
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.headingoffset.enabled",
+                  "value_to_set": "true"
+                }
+              ],
+              "impl_url": "https://bugzil.la/1974383"
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "headingReset": {
+        "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/dom.html#dom-headingreset",
+          "support": {
+            "chrome": {
+              "version_added": "151",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ],
+              "impl_url": "https://crbug.com/333628468",
+              "notes": "Implemented on the `Element` interface instead of the `HTMLElement` interface."
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.headingoffset.enabled",
+                  "value_to_set": "true"
+                }
+              ],
+              "impl_url": "https://bugzil.la/1974383"
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
