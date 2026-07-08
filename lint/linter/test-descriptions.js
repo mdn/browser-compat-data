@@ -107,6 +107,21 @@ export const processData = (data, category, path) => {
   /** @type {(DescriptionError | string)[]} */
   const errors = [];
 
+  if (data.description) {
+    // Push this before the canonical-description rules below so that, when a
+    // description triggers both, the canonical expectation wins in a single
+    // fix pass (the fixer applies errors in order, last write wins).
+    const converted = replaceCodeTagsWithBackticks(data.description);
+    if (converted !== data.description) {
+      errors.push({
+        ruleName: 'no_code_tag_in_description',
+        path,
+        actual: data.description,
+        expected: converted,
+      });
+    }
+  }
+
   if (category === 'api') {
     processApiData(data, path, errors);
   }
@@ -121,16 +136,6 @@ export const processData = (data, category, path) => {
   }
 
   if (data.description) {
-    const converted = replaceCodeTagsWithBackticks(data.description);
-    if (converted !== data.description) {
-      errors.push({
-        ruleName: 'no_code_tag_in_description',
-        path,
-        actual: data.description,
-        expected: converted,
-      });
-    }
-
     errors.push(...validateHTML(data.description));
   }
 
