@@ -33,6 +33,10 @@ export const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
 
 /**
  * Replace <code> tags with backtick-quoted Markdown.
+ *
+ * Matches the canonical lowercase, attribute-less `<code>` form only; tags
+ * with attributes or different casing are left untouched (and would already be
+ * caught elsewhere as invalid HTML).
  * @param {string} str The string to process
  * @returns {string} The string with <code> tags replaced by backticks
  */
@@ -42,7 +46,10 @@ export const replaceCodeTagsWithBackticks = (str) =>
 /**
  * Replace <a href> tags with Markdown links.
  *
- * Only anchors whose text contains no further markup are converted, so run
+ * Matches the canonical lowercase `<a href="…">` form with a single `href`
+ * attribute only; other casing or extra attributes are left untouched (and
+ * would already be caught elsewhere as invalid HTML). Only anchors whose text
+ * contains no further markup are converted, so run
  * {@link replaceCodeTagsWithBackticks} first to unwrap any nested <code> tags.
  * @param {string} str The string to process
  * @returns {string} The string with <a href> tags replaced by Markdown links
