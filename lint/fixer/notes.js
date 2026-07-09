@@ -29,6 +29,12 @@ export const fixNotes = (notes) => {
 
 /**
  * Fixes HTML in notes that should use Markdown syntax instead.
+ *
+ * Unlike the descriptions fixer, this re-walks the data and applies
+ * {@link fixNotes} directly rather than reusing the notes linter: the notes
+ * linter logs errors instead of returning structured `{expected}` values, so
+ * there is nothing to consume. The shared `replace*` helpers keep the linter's
+ * detection and this fixer's transformation in sync.
  * @param {string} filename The filename containing compatibility info
  * @param {string} actual The current content of the file
  * @returns {string} expected content of the file
