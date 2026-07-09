@@ -105,7 +105,7 @@ const checkNotes = (notes, browser, feature, logger) => {
   let errors = [];
   if (Array.isArray(notes)) {
     for (const note of notes) {
-      errors = validateHTML(note);
+      errors.push(...validateHTML(note));
     }
   } else {
     errors = validateHTML(notes);
