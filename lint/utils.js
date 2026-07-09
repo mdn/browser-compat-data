@@ -40,6 +40,17 @@ export const replaceCodeTagsWithBackticks = (str) =>
   str.replace(/<code>([^<]*)<\/code>/g, '`$1`');
 
 /**
+ * Replace <a href> tags with Markdown links.
+ *
+ * Only anchors whose text contains no further markup are converted, so run
+ * {@link replaceCodeTagsWithBackticks} first to unwrap any nested <code> tags.
+ * @param {string} str The string to process
+ * @returns {string} The string with <a href> tags replaced by Markdown links
+ */
+export const replaceLinkTagsWithMarkdown = (str) =>
+  str.replace(/<a href=(['"])([^'"]*)\1>([^<]*)<\/a>/g, '[$3]($2)');
+
+/**
  * Escapes common invisible characters.
  * @param {string} str The string to escape invisibles for
  * @returns {string} The string with invisibles escaped

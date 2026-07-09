@@ -85,4 +85,34 @@ describe('test-notes', () => {
       assert.ok(!messages.some((m) => m.fixable));
     });
   });
+
+  describe('link tag in notes', () => {
+    it('flags a note with an <a> tag', async () => {
+      /** @type {InternalCompatStatement} */
+      const data = {
+        support: {
+          chrome: {
+            version_added: '80',
+            notes: "See <a href='https://bugzil.la/1'>bug 1</a>.",
+          },
+        },
+      };
+      const messages = await check(data);
+      assert.ok(messages.some((m) => m.fixable));
+    });
+
+    it('does not flag a note using a Markdown link', async () => {
+      /** @type {InternalCompatStatement} */
+      const data = {
+        support: {
+          chrome: {
+            version_added: '80',
+            notes: 'See [bug 1](https://bugzil.la/1).',
+          },
+        },
+      };
+      const messages = await check(data);
+      assert.ok(!messages.some((m) => m.fixable));
+    });
+  });
 });

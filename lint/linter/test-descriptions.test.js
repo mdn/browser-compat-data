@@ -134,6 +134,46 @@ describe('test-descriptions', () => {
       assert.equal(err.expected, '`transient_attachment` usage');
     });
 
+    it('flags <a> tags as no_link_tag_in_description', () => {
+      /** @type {InternalCompatStatement} */
+      const data = {
+        description: "See <a href='https://example.com'>the docs</a>",
+        support: {},
+      };
+      const errors = processData(data, 'api', 'api.Foo.bar');
+      const err = /** @type {DescriptionError} */ (
+        errors.find(
+          (e) =>
+            typeof e !== 'string' &&
+            e.ruleName === 'no_link_tag_in_description',
+        )
+      );
+      assert.ok(err);
+      assert.equal(
+        err.actual,
+        "See <a href='https://example.com'>the docs</a>",
+      );
+      assert.equal(err.expected, 'See [the docs](https://example.com)');
+    });
+
+    it('converts nested <code> before the link in a single expectation', () => {
+      /** @type {InternalCompatStatement} */
+      const data = {
+        description: "See <a href='https://example.com'><code>foo()</code></a>",
+        support: {},
+      };
+      const errors = processData(data, 'api', 'api.Foo.bar');
+      const err = /** @type {DescriptionError} */ (
+        errors.find(
+          (e) =>
+            typeof e !== 'string' &&
+            e.ruleName === 'no_link_tag_in_description',
+        )
+      );
+      assert.ok(err);
+      assert.equal(err.expected, 'See [`foo()`](https://example.com)');
+    });
+
     it('does not flag descriptions without HTML', () => {
       /** @type {InternalCompatStatement} */
       const data = {
@@ -145,7 +185,8 @@ describe('test-descriptions', () => {
         !errors.some(
           (e) =>
             typeof e !== 'string' &&
-            e.ruleName === 'no_code_tag_in_description',
+            (e.ruleName === 'no_code_tag_in_description' ||
+              e.ruleName === 'no_link_tag_in_description'),
         ),
       );
     });

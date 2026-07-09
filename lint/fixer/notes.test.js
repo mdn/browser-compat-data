@@ -34,6 +34,20 @@ describe('fix -> notes', () => {
     );
   });
 
+  it('replaces <a> tags with Markdown links', () => {
+    assert.equal(
+      fixNotes("See <a href='https://bugzil.la/1'>bug 1</a>."),
+      'See [bug 1](https://bugzil.la/1).',
+    );
+  });
+
+  it('unwraps a nested <code> tag before converting the link', () => {
+    assert.equal(
+      fixNotes("Use <a href='https://example.com'><code>foo()</code></a>."),
+      'Use [`foo()`](https://example.com).',
+    );
+  });
+
   describe('fixer', () => {
     /**
      * Run the default fixer over a walkable data object.
@@ -58,6 +72,26 @@ describe('fix -> notes', () => {
         },
       });
       assert.equal(out.Foo.__compat.support.chrome.notes, 'Use `foo` instead.');
+    });
+
+    it('converts an HTML link and its nested <code> to Markdown', () => {
+      const out = run('api/Foo.json', {
+        Foo: {
+          __compat: {
+            support: {
+              chrome: {
+                version_added: '80',
+                notes:
+                  "See <a href='https://developer.mozilla.org/docs/Web/API/Foo'><code>Foo</code></a>.",
+              },
+            },
+          },
+        },
+      });
+      assert.equal(
+        out.Foo.__compat.support.chrome.notes,
+        'See [`Foo`](https://developer.mozilla.org/docs/Web/API/Foo).',
+      );
     });
 
     it('fixes each note in an array-valued statement', () => {

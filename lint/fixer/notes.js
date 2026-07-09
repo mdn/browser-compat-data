@@ -1,8 +1,20 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import { replaceCodeTagsWithBackticks } from '../utils.js';
+import {
+  replaceCodeTagsWithBackticks,
+  replaceLinkTagsWithMarkdown,
+} from '../utils.js';
 import walk from '../../utils/walk.js';
+
+/**
+ * Replace HTML in a single note with Markdown syntax. Code tags are unwrapped
+ * before links, since a link's text may contain a <code> tag.
+ * @param {string} note
+ * @returns {string}
+ */
+const fixNote = (note) =>
+  replaceLinkTagsWithMarkdown(replaceCodeTagsWithBackticks(note));
 
 /**
  * @param {string | string[]} notes
@@ -10,9 +22,9 @@ import walk from '../../utils/walk.js';
  */
 export const fixNotes = (notes) => {
   if (Array.isArray(notes)) {
-    return notes.map(replaceCodeTagsWithBackticks);
+    return notes.map(fixNote);
   }
-  return replaceCodeTagsWithBackticks(notes);
+  return fixNote(notes);
 };
 
 /**
