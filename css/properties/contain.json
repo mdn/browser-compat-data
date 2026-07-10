@@ -293,10 +293,16 @@
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
-              "safari": {
-                "version_added": "15.4",
-                "notes": "Style containment does not affect quotes, see [bug 232083](https://webkit.org/b/232083)."
-              },
+              "safari": [
+                {
+                  "version_added": "27"
+                },
+                {
+                  "version_added": "15.4",
+                  "version_removed": "27",
+                  "notes": "Style containment does not affect quotes, see [bug 232083](https://webkit.org/b/232083)."
+                }
+              ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror",

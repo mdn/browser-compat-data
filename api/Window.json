@@ -768,8 +768,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false,
-              "impl_url": "https://webkit.org/b/164193"
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "requestIdleCallback",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -4093,7 +4099,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -5117,8 +5123,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false,
-              "impl_url": "https://webkit.org/b/285049"
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "requestIdleCallback",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -5127,6 +5139,43 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "requestResize": {
+        "__compat": {
+          "spec_url": "https://drafts.csswg.org/css-sizing-4/#dom-window-requestresize",
+          "support": {
+            "chrome": {
+              "version_added": "149",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features"
+                }
+              ]
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -6920,7 +6969,13 @@
             },
             "chrome_android": "mirror",
             "deno": {
-              "version_added": false
+              "version_added": "2.1",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--unstable-node-globals"
+                }
+              ]
             },
             "edge": {
               "version_added": "12",
