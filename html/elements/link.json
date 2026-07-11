@@ -766,7 +766,14 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false,
+                  "version_added": "145",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "network.http.dictionaries.enable",
+                      "value_to_set": "true"
+                    }
+                  ],
                   "impl_url": "https://bugzil.la/1918013"
                 },
                 "firefox_android": "mirror",
