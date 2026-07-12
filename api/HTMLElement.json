@@ -2468,10 +2468,16 @@
               "web-features:popover-hint"
             ],
             "support": {
-              "chrome": {
-                "version_added": "133",
-                "notes": "Implements an older version of the specification with inconsistent behaviors. See [bug 499019927](https://crbug.com/499019927)."
-              },
+              "chrome": [
+                {
+                  "version_added": "150"
+                },
+                {
+                  "version_added": "133",
+                  "version_removed": "150",
+                  "notes": "Implements an older version of the specification with inconsistent behaviors. See [bug 499019927](https://crbug.com/499019927)."
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": [
