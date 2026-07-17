@@ -4,11 +4,11 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { styleText } from 'node:util';
 
 import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import chalk from 'chalk-template';
 
 import dataFolders from '../scripts/lib/data-folders.js';
 import extend from '../scripts/lib/extend.js';
@@ -19,7 +19,7 @@ import * as linterModules from './linter/index.js';
 import { Linters } from './utils.js';
 
 /** @import {Stats} from 'node:fs' */
-/** @import {BrowserName, CompatData} from '../types/types.js' */
+/** @import {BrowserName, InternalCompatData} from '../types/index.js' */
 /** @import {LinterMessage, LinterMessageLevel, LinterPath} from './types.js' */
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
@@ -51,7 +51,7 @@ const normalizeAndCategorizeFilePath = (file) => {
 /**
  * Recursively load
  * @param {...string} files The files to test
- * @returns {Promise<CompatData>} The data from the loaded files
+ * @returns {Promise<InternalCompatData>} The data from the loaded files
  */
 const loadAndCheckFiles = async (...files) => {
   const data = {};
@@ -67,7 +67,9 @@ const loadAndCheckFiles = async (...files) => {
     try {
       fsStats = await fs.stat(file);
     } catch {
-      console.warn(chalk`{yellow File {bold ${file}} doesn't exist!}`);
+      console.warn(
+        styleText('yellow', `File ${styleText('bold', file)} doesn't exist!`),
+      );
       continue;
     }
 
@@ -103,7 +105,7 @@ const loadAndCheckFiles = async (...files) => {
     }
   }
 
-  return /** @type {CompatData} */ (data);
+  return /** @type {InternalCompatData} */ (data);
 };
 
 /**
@@ -118,10 +120,10 @@ const main = async (files = dataFolders, options = {}) => {
 
   let hasErrors = false;
 
-  console.log(chalk`{cyan Loading and checking files...}`);
+  console.log(styleText('cyan', 'Loading and checking files...'));
   const data = await loadAndCheckFiles(...files);
 
-  console.log(chalk`{cyan Testing browser data...}`);
+  console.log(styleText('cyan', 'Testing browser data...'));
   for (const browser in data?.browsers) {
     await linters.runScope('browser', {
       data: data.browsers[browser],
@@ -134,7 +136,7 @@ const main = async (files = dataFolders, options = {}) => {
     });
   }
 
-  console.log(chalk`{cyan Testing feature data...}`);
+  console.log(styleText('cyan', 'Testing feature data...'));
   const walker = walk(undefined, data);
   for (const feature of walker) {
     await linters.runScope('feature', {
@@ -147,7 +149,7 @@ const main = async (files = dataFolders, options = {}) => {
     });
   }
 
-  console.log(chalk`{cyan Testing all features together...}`);
+  console.log(styleText('cyan', 'Testing all features together...'));
   await linters.runScope('tree', {
     data,
     rawdata: '',
@@ -186,30 +188,35 @@ const main = async (files = dataFolders, options = {}) => {
       .join(', ');
 
     console.error(
-      chalk`{${
-        messagesByLevel.error.length ? 'red' : 'yellow'
-      } ${linter} - {bold ${pluralize(
-        'problem',
-        messages.length,
-        true,
-      )}} (${errorCounts}):}`,
+      styleText(
+        messagesByLevel.error.length ? 'red' : 'yellow',
+        `${linter} - ${styleText('bold', pluralize('problem', messages.length, true))} (${errorCounts}):`,
+      ),
     );
 
     for (const message of messages) {
+      const levelColor =
+        message.level === 'error'
+          ? 'red'
+          : message.level === 'warning'
+            ? 'yellow'
+            : 'blue';
       console.error(
-        chalk`{${message.level === 'error' ? 'red' : message.level === 'warning' ? 'yellow' : 'blue'}  ✖ ${
-          message.path
-        } - ${message.level[0].toUpperCase() + message.level.substring(1)} → ${
-          message.message
-        }}`,
+        styleText(
+          levelColor,
+          `  ✖ ${message.path} - ${message.level[0].toUpperCase() + message.level.substring(1)} → ${message.message}`,
+        ),
       );
       if (message.fixable) {
         console.error(
-          chalk`{blue    ◆ Tip: Run {bold npm run fix} to fix this problem automatically}`,
+          styleText(
+            'blue',
+            `    ◆ Tip: Run ${styleText('bold', 'npm run fix')} to fix this problem automatically`,
+          ),
         );
       }
       if (message.tip) {
-        console.error(chalk`{blue    ◆ Tip: ${message.tip}}`);
+        console.error(styleText('blue', `    ◆ Tip: ${message.tip}`));
       }
     }
   }
@@ -222,7 +229,10 @@ const main = async (files = dataFolders, options = {}) => {
         if (missingExceptions[exception]) {
           hasErrors = true;
           console.error(
-            chalk`{red  ✖ ${linter.name} - Unnecessary exception → ${exception}}`,
+            styleText(
+              'red',
+              `  ✖ ${linter.name} - Unnecessary exception → ${exception}`,
+            ),
           );
         }
       }
@@ -230,22 +240,26 @@ const main = async (files = dataFolders, options = {}) => {
   }
 
   if (!hasErrors) {
-    console.log(chalk`{green All data {bold passed} linting!}`);
+    console.log(
+      styleText('green', `All data ${styleText('bold', 'passed')} linting!`),
+    );
     if (linters.linters.some((linter) => linter.exceptions)) {
       console.log(
-        chalk`{yellow Linters have some exceptions, please help us remove them!}`,
+        styleText(
+          'yellow',
+          'Linters have some exceptions, please help us remove them!',
+        ),
       );
       for (const linter of linters.linters) {
         if (linter.exceptions) {
           console.log(
-            chalk`{yellow  ${linter.name} has ${pluralize(
-              'exception',
-              linter.exceptions.length,
-              true,
-            )}}`,
+            styleText(
+              'yellow',
+              `  ${linter.name} has ${pluralize('exception', linter.exceptions.length, true)}`,
+            ),
           );
           for (const exception of linter.exceptions) {
-            console.log(chalk`{yellow   - ${exception}}`);
+            console.log(styleText('yellow', `   - ${exception}`));
           }
         }
       }

@@ -1,7 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
+
 import esMain from 'es-main';
 import { markdownTable } from 'markdown-table';
 import yargs from 'yargs';
@@ -11,7 +12,7 @@ import bcdData from '../index.js';
 
 import { getRefDate } from './release/utils.js';
 
-/** @import {BrowserName, CompatStatement, SupportStatement, Identifier} from '../types/types.js' */
+/** @import {BrowserName, InternalCompatStatement, InternalSupportStatement, InternalIdentifier} from '../types/index.js' */
 
 /**
  * @typedef {object} VersionStatsEntry
@@ -37,7 +38,7 @@ const webextensionsBrowsers = [
 
 /**
  * Check whether a support statement is a specified type
- * @param {SupportStatement | undefined} supportData The support statement to check
+ * @param {InternalSupportStatement | undefined} supportData The support statement to check
  * @param {string | boolean | null} type What type of support (true, null, ranged)
  * @returns {boolean} If the support statement has the type
  */
@@ -50,20 +51,23 @@ const checkSupport = (supportData, type) => {
   }
   if (type == '≤') {
     return (
-      (typeof supportData.version_added == 'string' &&
+      (typeof supportData === 'object' &&
+        typeof supportData.version_added == 'string' &&
         supportData.version_added.startsWith('≤')) ||
-      (typeof supportData.version_removed == 'string' &&
+      (typeof supportData === 'object' &&
+        typeof supportData.version_removed == 'string' &&
         supportData.version_removed.startsWith('≤'))
     );
   }
   return (
-    supportData.version_added === type || supportData.version_removed === type
+    typeof supportData === 'object' &&
+    (supportData.version_added === type || supportData.version_removed === type)
   );
 };
 
 /**
  * Iterate through all of the browsers and count the number of exact ranged values for each browser
- * @param {CompatStatement} data The data to process and count stats for
+ * @param {InternalCompatStatement} data The data to process and count stats for
  * @param {BrowserName[]} browsers The browsers to test
  * @param {VersionStats} stats The stats object to update
  * @returns {void}
@@ -86,7 +90,7 @@ const processData = (data, browsers, stats) => {
 
 /**
  * Iterate through all of the data and process statistics
- * @param {Identifier} data The compat data to iterate
+ * @param {InternalIdentifier} data The compat data to iterate
  * @param {BrowserName[]} browsers The browsers to test
  * @param {VersionStats} stats The stats object to update
  * @returns {void}
@@ -94,8 +98,12 @@ const processData = (data, browsers, stats) => {
 const iterateData = (data, browsers, stats) => {
   for (const key in data) {
     if (key === '__compat') {
-      // "as CompatStatement" needed because TypeScript doesn't realize key is in data
-      processData(/** @type {CompatStatement} */ (data[key]), browsers, stats);
+      // "as InternalCompatStatement" needed because TypeScript doesn't realize key is in data
+      processData(
+        /** @type {InternalCompatStatement} */ (data[key]),
+        browsers,
+        stats,
+      );
     } else {
       iterateData(data[key], browsers, stats);
     }
@@ -140,7 +148,9 @@ const getStats = (folder, allBrowsers, bcd = bcdData) => {
       iterateData(bcd[folder], browsers, stats);
     } else {
       if (process.env.NODE_ENV !== 'test') {
-        console.error(chalk`{red.bold Folder "${folder}/" doesn't exist!}`);
+        console.error(
+          styleText(['red', 'bold'], `Folder "${folder}/" doesn't exist!`),
+        );
       }
       return null;
     }
@@ -190,11 +200,10 @@ const printStats = (stats, folder, counts) => {
   );
 
   console.log(
-    chalk`{bold Status as of version ${
-      process.env.npm_package_version
-    } (released on ${releaseDate}) for ${
-      folder ? `the \`${folder}/\` directory` : 'web platform features'
-    }}: \n`,
+    styleText(
+      'bold',
+      `Status as of version ${process.env.npm_package_version} (released on ${releaseDate}) for ${folder ? `the \`${folder}/\` directory` : 'web platform features'}:`,
+    ) + ' \n',
   );
 
   const header = ['browser', 'exact', 'ranged'];

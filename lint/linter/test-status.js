@@ -1,14 +1,17 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
 
 import bcd from '../../index.js';
-const { browsers } = bcd;
+import { getStandardTrackExceptions } from '../common/standard-track-exceptions.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {BrowserName, CompatStatement} from '../../types/types.js' */
+/** @import {BrowserName, InternalCompatStatement} from '../../types/index.js' */
+export const standardTrackExceptions = new Set(
+  await getStandardTrackExceptions(),
+);
 
 // See: https://github.com/web-platform-dx/web-features/blob/main/docs/baseline.md#core-browser-set
 const CORE_BROWSER_SET = new Set([
@@ -23,7 +26,7 @@ const CORE_BROWSER_SET = new Set([
 
 /**
  * Check if experimental should be true or false
- * @param {CompatStatement} data The data to check
+ * @param {InternalCompatStatement} data The data to check
  * @returns {boolean} The expected experimental status
  */
 export const checkExperimental = (data) => {
@@ -40,7 +43,12 @@ export const checkExperimental = (data) => {
       // Consider only the first part of an array statement.
       const statement = Array.isArray(support) ? support[0] : support;
       // Ignore anything behind flag, prefix or alternative name
-      if (statement.flags || statement.prefix || statement.alternative_name) {
+      if (
+        typeof statement !== 'object' ||
+        statement.flags ||
+        statement.prefix ||
+        statement.alternative_name
+      ) {
         continue;
       }
       if (statement.version_added && !statement.version_removed) {
@@ -55,7 +63,7 @@ export const checkExperimental = (data) => {
     const engineSupport = new Set();
 
     for (const browser of browserSupport) {
-      const currentRelease = Object.values(browsers[browser].releases).find(
+      const currentRelease = Object.values(bcd.browsers[browser].releases).find(
         (r) => r.status === 'current',
       );
       const engine = currentRelease?.engine;
@@ -81,38 +89,80 @@ export const checkExperimental = (data) => {
 
 /**
  * Check the status blocks of the compat date
- * @param {CompatStatement} data The data to test
+ * @param {InternalCompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
  * @param {string} category The feature category
+ * @param {string} featurePath The full path to the feature (e.g., "api.Animation.remove_filling_animation")
  * @returns {void}
  */
-const checkStatus = (data, logger, category) => {
+const checkStatus = (data, logger, category, featurePath) => {
   const status = data.status;
 
   if (!status) {
     return;
   } else if (category === 'webextensions') {
     logger.error(
-      chalk`{red Has a {bold status object}, which is {bold not allowed} for web extensions.}`,
+      styleText(
+        'red',
+        `Has a ${styleText('bold', 'status object')}, which is ${styleText('bold', 'not allowed')} for web extensions.`,
+      ),
     );
   }
 
   if (status.experimental && status.deprecated) {
     logger.error(
-      chalk`{red Unexpected simultaneous {bold experimental} and {bold deprecated} status}`,
+      styleText(
+        'red',
+        `Unexpected simultaneous ${styleText('bold', 'experimental')} and ${styleText('bold', 'deprecated')} status`,
+      ),
       { fixable: true },
     );
   }
 
   if (data.spec_url && status.standard_track === false) {
     logger.error(
-      chalk`{red Marked as {bold non-standard}, but has a {bold spec_url}}`,
+      styleText(
+        'red',
+        `Marked as ${styleText('bold', 'non-standard')}, but has a ${styleText('bold', 'spec_url')}`,
+      ),
+    );
+  }
+
+  // Check for standard_track without spec_url
+  const isInExceptionList = standardTrackExceptions.has(featurePath);
+  const missingSpecUrl = !data.spec_url && status.standard_track === true;
+
+  if (missingSpecUrl && !isInExceptionList) {
+    // New violation - not in exception list
+    logger.error(
+      styleText(
+        'red',
+        `Marked as ${styleText('bold', 'standard_track')}, but missing required ${styleText('bold', 'spec_url')}`,
+      ),
+    );
+  }
+
+  // Warn if exception no longer applies
+  if (isInExceptionList && !missingSpecUrl) {
+    const reason =
+      status.standard_track === false
+        ? 'standard_track is false'
+        : 'spec_url was added';
+    logger.warning(
+      styleText(
+        'yellow',
+        `Feature is in the exception list but no longer needs to be (${reason}).`,
+      ),
+      { fixable: true },
     );
   }
 
   if (!checkExperimental(data)) {
     logger.error(
-      chalk`{red {bold Experimental} should be set to {bold false} as the feature is {bold supported} in {bold multiple browser} engines.}`,
+      styleText(
+        'red',
+        `${styleText('bold', 'Experimental')} should be set to ${styleText('bold', 'false')} as the feature is ${styleText('bold', 'supported')} in ${styleText('bold', 'multiple browser')} engines.`,
+      ),
       { fixable: true },
     );
   }
@@ -128,7 +178,12 @@ export default {
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */
-  check: (logger, { data, path: { category } }) => {
-    checkStatus(/** @type {CompatStatement} */ (data), logger, category);
+  check: (logger, { data, path: { category, full } }) => {
+    checkStatus(
+      /** @type {InternalCompatStatement} */ (data),
+      logger,
+      category,
+      full,
+    );
   },
 };

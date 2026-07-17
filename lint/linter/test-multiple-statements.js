@@ -1,18 +1,18 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
 
 import { createStatementGroupKey } from '../utils.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {BrowserName, CompatStatement, SupportStatement} from '../../types/types.js' */
+/** @import {BrowserName, InternalCompatStatement, InternalSupportStatement} from '../../types/index.js' */
 
 /**
  * Process data and check to make sure there aren't multiple support statements without
  * `partial_implementation` or `prefix`/`alternative_name`
- * @param {SupportStatement} data The data to test
+ * @param {InternalSupportStatement} data The data to test
  * @param {BrowserName} browser The name of the browser
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
@@ -36,7 +36,7 @@ const processData = (data, browser, logger) => {
 
     if (statements.includes(statementKey)) {
       logger.error(
-        chalk`{bold ${browser}} has multiple statements for {bold ${statementKey}} exist without partial implementation! Please {bold merge} these statements and {bold combine} their notes, or set {bold partial_implementation} to {bold true} on applicable statements.`,
+        `${styleText('bold', browser)} has multiple statements for ${styleText('bold', statementKey)} exist without partial implementation! Please ${styleText('bold', 'merge')} these statements and ${styleText('bold', 'combine')} their notes, or set ${styleText('bold', 'partial_implementation')} to ${styleText('bold', 'true')} on applicable statements.`,
       );
     }
     statements.push(statementKey);
@@ -56,10 +56,10 @@ export default {
    */
   check: (logger, { data }) => {
     for (const [browser, support] of Object.entries(
-      /** @type {CompatStatement} */ (data).support,
+      /** @type {InternalCompatStatement} */ (data).support,
     )) {
       processData(
-        /** @type {SupportStatement} */ (support),
+        /** @type {InternalSupportStatement} */ (support),
         /** @type {BrowserName} */ (browser),
         logger,
       );

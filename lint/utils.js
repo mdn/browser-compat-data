@@ -2,10 +2,9 @@
  * See LICENSE file for more information. */
 
 import { platform } from 'node:os';
+import { styleText } from 'node:util';
 
-import chalk from 'chalk-template';
-
-/** @import {SimpleSupportStatement} from '../types/types.js' */
+/** @import {InternalSimpleSupportStatement} from '../types/index.js' */
 /** @import {Linter, LinterData, LinterMessage, LinterScope} from './types.js' */
 
 /** @type {Readonly<Record<string, string>>} */
@@ -106,16 +105,22 @@ export const jsonDiff = (actual, expected) => {
   const expectedLines = expected.split(/\n/);
 
   if (actualLines.length !== expectedLines.length) {
-    return chalk`{bold different number of lines:
-    {yellow → Actual:   {bold ${actualLines.length}}}
-    {green → Expected: {bold ${expectedLines.length}}}}`;
+    return styleText(
+      'bold',
+      `different number of lines:
+    ${styleText('yellow', `→ Actual:   ${styleText('bold', String(actualLines.length))}`)}
+    ${styleText('green', `→ Expected: ${styleText('bold', String(expectedLines.length))}`)}`,
+    );
   }
 
   for (let i = 0; i < actualLines.length; i++) {
     if (actualLines[i] !== expectedLines[i]) {
-      return chalk`{bold line #${i + 1}}:
-      {yellow → Actual:   {bold ${escapeInvisibles(actualLines[i])}}}
-      {green → Expected: {bold ${escapeInvisibles(expectedLines[i])}}}`;
+      return styleText(
+        'bold',
+        `line #${i + 1}:
+      ${styleText('yellow', `→ Actual:   ${styleText('bold', escapeInvisibles(actualLines[i]))}`)}
+      ${styleText('green', `→ Expected: ${styleText('bold', escapeInvisibles(expectedLines[i]))}`)}`,
+      );
     }
   }
 
@@ -259,7 +264,7 @@ export class Linters {
 
 /**
  * Returns the key for the group that this statement belongs to.
- * @param {SimpleSupportStatement} support The support statement.
+ * @param {InternalSimpleSupportStatement} support The support statement.
  * @returns {string} The key of the support statement group.
  */
 export const createStatementGroupKey = (support) => {

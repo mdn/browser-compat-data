@@ -16,7 +16,7 @@ describe('test-prefix', () => {
     logger = new Logger('test', 'test');
   });
 
-  it('should log error when both prefix and alternative name are defined', () => {
+  it('should log error when both prefix and alternative name are defined', async () => {
     const data = {
       support: {
         firefox: {
@@ -27,7 +27,10 @@ describe('test-prefix', () => {
       },
     };
 
-    test.check(logger, { data, path: { category: 'api', full: 'feature' } });
+    await test.check(logger, {
+      data,
+      path: { category: 'api', full: 'feature' },
+    });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(
@@ -37,7 +40,7 @@ describe('test-prefix', () => {
     );
   });
 
-  it('should log error when prefix is invalid for category', () => {
+  it('should log error when prefix is invalid for category', async () => {
     const data = {
       support: {
         firefox: {
@@ -47,13 +50,16 @@ describe('test-prefix', () => {
       },
     };
 
-    test.check(logger, { data, path: { category: 'api', full: 'feature' } });
+    await test.check(logger, {
+      data,
+      path: { category: 'api', full: 'feature' },
+    });
 
     assert.equal(logger.messages.length, 1);
     assert.ok(logger.messages[0].message.includes('which is invalid for'));
   });
 
-  it('should log error when alternative name should be replaced with prefix', () => {
+  it('should log error when alternative name should be replaced with prefix', async () => {
     const data = {
       support: {
         firefox: {
@@ -67,14 +73,17 @@ describe('test-prefix', () => {
       },
     };
 
-    test.check(logger, { data, path: { category: 'api', full: 'feature' } });
+    await test.check(logger, {
+      data,
+      path: { category: 'api', full: 'feature' },
+    });
 
     assert.equal(logger.messages.length, 2);
     assert.ok(logger.messages[0].message.includes('instead of'));
     assert.ok(logger.messages[1].message.includes('instead of'));
   });
 
-  it('should not log error when data is valid', () => {
+  it('should not log error when data is valid', async () => {
     const data = {
       support: {
         firefox: {
@@ -84,7 +93,10 @@ describe('test-prefix', () => {
       },
     };
 
-    test.check(logger, { data, path: { category: 'api', full: 'feature' } });
+    await test.check(logger, {
+      data,
+      path: { category: 'api', full: 'feature' },
+    });
 
     assert.equal(logger.messages.length, 0);
   });

@@ -1,15 +1,15 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { styleText } from 'node:util';
+
 import { compare, validate } from 'compare-versions';
-import chalk from 'chalk-template';
 
 import bcd from '../../index.js';
-const { browsers } = bcd;
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {BrowserName, CompatStatement, SimpleSupportStatement, VersionValue} from '../../types/types.js' */
+/** @import {BrowserName, InternalCompatStatement, InternalSimpleSupportStatement, VersionValue} from '../../types/index.js' */
 /** @import {InternalSupportBlock, InternalSupportStatement} from '../../types/index.js' */
 
 /* The latest date a range's release can correspond to */
@@ -35,9 +35,12 @@ const browserTips = {
 const isValidVersion = (browser, category, version) => {
   if (typeof version === 'string') {
     if (version === 'preview') {
-      return !!browsers[browser].preview_name;
+      return !!bcd.browsers[browser].preview_name;
     }
-    return Object.hasOwn(browsers[browser].releases, version.replace('≤', ''));
+    return Object.hasOwn(
+      bcd.browsers[browser].releases,
+      version.replace('≤', ''),
+    );
   }
   return true;
 };
@@ -46,7 +49,7 @@ const isValidVersion = (browser, category, version) => {
  * Checks if the version number of version_removed is greater than or equal to
  * that of version_added, assuming they are both version strings. If either one
  * is not a valid version string, return null.
- * @param {SimpleSupportStatement} statement The statement to test
+ * @param {InternalSimpleSupportStatement} statement The statement to test
  * @returns {boolean | null} Whether the version added was earlier than the version removed
  */
 const addedBeforeRemoved = (statement) => {
@@ -90,8 +93,10 @@ const addedBeforeRemoved = (statement) => {
  */
 const checkVersions = (supportData, category, logger) => {
   const browsersToCheck = /** @type {BrowserName[]} */ (
-    Object.keys(browsers).filter((b) =>
-      category === 'webextensions' ? browsers[b].accepts_webextensions : !!b,
+    Object.keys(bcd.browsers).filter((b) =>
+      category === 'webextensions'
+        ? bcd.browsers[b].accepts_webextensions
+        : !!b,
     )
   );
 
@@ -108,9 +113,9 @@ const checkVersions = (supportData, category, logger) => {
       : [supportStatement]) {
       if (statement === 'mirror') {
         // If the data is to be mirrored, make sure it is mirrorable
-        if (!browsers[browser].upstream) {
+        if (!bcd.browsers[browser].upstream) {
           logger.error(
-            chalk`{bold ${browser}} is set to mirror, however {bold ${browser}} does not have an upstream browser.`,
+            `${styleText('bold', browser)} is set to mirror, however ${styleText('bold', browser)} does not have an upstream browser.`,
           );
         }
         continue;
@@ -124,23 +129,21 @@ const checkVersions = (supportData, category, logger) => {
         }
         if (!isValidVersion(browser, category, version)) {
           logger.error(
-            chalk`{bold ${property}: "${version}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Valid {bold ${browser}} versions are: ${Object.keys(
-              browsers[browser].releases,
-            ).join(', ')}, false`,
+            `${styleText('bold', `${property}: "${version}"`)} is ${styleText('bold', 'NOT')} a valid version number for ${styleText('bold', browser)}\n    Valid ${styleText('bold', browser)} versions are: ${Object.keys(bcd.browsers[browser].releases).join(', ')}, false`,
             { tip: browserTips[browser] },
           );
         }
 
         if (typeof version === 'string' && version.startsWith('≤')) {
           const releaseData =
-            browsers[browser].releases[version.replace('≤', '')];
+            bcd.browsers[browser].releases[version.replace('≤', '')];
           if (
             !releaseData ||
             !releaseData.release_date ||
             releaseData.release_date > rangeCutoffDate
           ) {
             logger.error(
-              chalk`{bold ${property}: "${version}"} is {bold NOT} a valid version number for {bold ${browser}}\n    Ranged values are only allowed for browser versions released on or before ${rangeCutoffDate}. (Ranged values are also not allowed for browser versions without a known release date.)`,
+              `${styleText('bold', `${property}: "${version}"`)} is ${styleText('bold', 'NOT')} a valid version number for ${styleText('bold', browser)}\n    Ranged values are only allowed for browser versions released on or before ${rangeCutoffDate}. (Ranged values are also not allowed for browser versions without a known release date.)`,
             );
           }
         }
@@ -153,14 +156,14 @@ const checkVersions = (supportData, category, logger) => {
           addedBeforeRemoved(statement) === false
         ) {
           logger.error(
-            chalk`{bold version_removed: "${statement.version_removed}"} must be greater than {bold version_added: "${statement.version_added}"}`,
+            `${styleText('bold', `version_removed: "${statement.version_removed}"`)} must be greater than ${styleText('bold', `version_added: "${statement.version_added}"`)}`,
           );
         }
       }
 
-      if ('flags' in statement && !browsers[browser].accepts_flags) {
+      if ('flags' in statement && !bcd.browsers[browser].accepts_flags) {
         logger.error(
-          chalk`This browser ({bold ${browser}}) does not support flags, so support cannot be behind a flag for this feature.`,
+          `This browser (${styleText('bold', browser)}) does not support flags, so support cannot be behind a flag for this feature.`,
         );
       }
 
@@ -171,7 +174,7 @@ const checkVersions = (supportData, category, logger) => {
           )
         ) {
           logger.error(
-            chalk`The data for ({bold ${browser}}) says no support, but contains additional properties that suggest support.`,
+            `The data for (${styleText('bold', browser)}) says no support, but contains additional properties that suggest support.`,
           );
         }
       }
@@ -181,13 +184,13 @@ const checkVersions = (supportData, category, logger) => {
         statement.version_added === false
       ) {
         logger.error(
-          chalk`{bold ${browser}} cannot have a {bold version_added: false} in an array of statements.`,
+          `${styleText('bold', browser)} cannot have a ${styleText('bold', 'version_added: false')} in an array of statements.`,
         );
       }
 
       if ('version_last' in statement) {
         logger.error(
-          chalk`{bold version_last} is automatically generated and should not be defined manually.`,
+          `${styleText('bold', 'version_last')} is automatically generated and should not be defined manually.`,
         );
       }
     }
@@ -206,7 +209,7 @@ export default {
    */
   check: (logger, { data, path: { category } }) => {
     checkVersions(
-      /** @type {CompatStatement} */ (data).support,
+      /** @type {InternalCompatStatement} */ (data).support,
       category,
       logger,
     );

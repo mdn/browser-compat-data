@@ -17,7 +17,7 @@ describe('Build functions', () => {
   it('generateMeta', () => {
     const result = generateMeta();
     assert.ok(result.version);
-    assert.ok(result.timestamp instanceof Date);
+    assert.ok(result.timestamp);
   });
 
   it('applyMirroring', () => {

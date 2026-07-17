@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatData} from '../../types/types.js' */
+/** @import {Browsers, InternalCompatData} from '../../types/index.js' */
 
 /**
  * @typedef {object} BunVersionsResponse
@@ -19,8 +19,8 @@
  */
 
 import fs from 'node:fs/promises';
+import { styleText } from 'node:util';
 
-import chalk from 'chalk-template';
 import { compareVersions } from 'compare-versions';
 
 import stringify from '../lib/stringify-and-order-properties.js';
@@ -95,7 +95,10 @@ const fetchWebKitVersion = async (commitHash) => {
       }
 
       console.log(
-        chalk`{yellow Rate limited for commit ${commitHash}. Waiting ${waitTime} seconds...}`,
+        styleText(
+          'yellow',
+          `Rate limited for commit ${commitHash}. Waiting ${waitTime} seconds...`,
+        ),
       );
 
       await new Promise((resolve) => setTimeout(resolve, waitTime * 1000));
@@ -104,7 +107,10 @@ const fetchWebKitVersion = async (commitHash) => {
 
       if (!retryRes.ok) {
         console.warn(
-          chalk`{yellow Warning: Failed to fetch WebKit Version.xcconfig for commit ${commitHash} after retry: HTTP ${retryRes.status}}`,
+          styleText(
+            'yellow',
+            `Warning: Failed to fetch WebKit Version.xcconfig for commit ${commitHash} after retry: HTTP ${retryRes.status}`,
+          ),
         );
         return undefined;
       }
@@ -122,7 +128,10 @@ const fetchWebKitVersion = async (commitHash) => {
       }
 
       console.warn(
-        chalk`{yellow Warning: Could not parse version numbers from Version.xcconfig for commit ${commitHash}}`,
+        styleText(
+          'yellow',
+          `Warning: Could not parse version numbers from Version.xcconfig for commit ${commitHash}`,
+        ),
       );
       webkitVersionCache.set(commitHash, undefined);
       return undefined;
@@ -130,7 +139,10 @@ const fetchWebKitVersion = async (commitHash) => {
 
     if (!res.ok) {
       console.warn(
-        chalk`{yellow Warning: Failed to fetch WebKit Version.xcconfig for commit ${commitHash}: HTTP ${res.status}}`,
+        styleText(
+          'yellow',
+          `Warning: Failed to fetch WebKit Version.xcconfig for commit ${commitHash}: HTTP ${res.status}`,
+        ),
       );
       return undefined;
     }
@@ -148,13 +160,19 @@ const fetchWebKitVersion = async (commitHash) => {
     }
 
     console.warn(
-      chalk`{yellow Warning: Could not parse version numbers from Version.xcconfig for commit ${commitHash}}`,
+      styleText(
+        'yellow',
+        `Warning: Could not parse version numbers from Version.xcconfig for commit ${commitHash}`,
+      ),
     );
     webkitVersionCache.set(commitHash, undefined);
     return undefined;
   } catch (error) {
     console.warn(
-      chalk`{yellow Warning: Error fetching WebKit version for commit ${commitHash}: ${error}}`,
+      styleText(
+        'yellow',
+        `Warning: Error fetching WebKit version for commit ${commitHash}: ${error}`,
+      ),
     );
     webkitVersionCache.set(commitHash, undefined);
     return undefined;
@@ -201,7 +219,7 @@ export const updateBunReleases = async (options) => {
     );
   }
 
-  /** @type {CompatData} */
+  /** @type {InternalCompatData} */
   const data = JSON.parse(fileText);
 
   let result = '';
@@ -269,7 +287,9 @@ export const updateBunReleases = async (options) => {
       rel.release_notes,
     );
 
-    const entry = data.browsers[browser].releases[rel.version];
+    const entry = /** @type {Browsers} */ (data.browsers)[browser].releases[
+      rel.version
+    ];
 
     if (entry) {
       const { webkitRev } = await getBunInfoFromVersionData(rel);

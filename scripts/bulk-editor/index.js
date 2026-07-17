@@ -6,4 +6,8 @@ import { hideBin } from 'yargs/helpers';
 
 import tags from './tags/index.js';
 
-yargs(hideBin(process.argv)).command([tags]).demandCommand().help().parse();
+await yargs(hideBin(process.argv))
+  .command([tags])
+  .demandCommand()
+  .help()
+  .parse();

@@ -8,14 +8,18 @@
           "web-features:webgpu"
         ],
         "support": {
-          "chrome": {
-            "version_added": "113",
-            "partial_implementation": true,
-            "notes": [
-              "Supported on ChromeOS, macOS, and Windows.",
-              "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
-            ]
-          },
+          "chrome": [
+            {
+              "version_added": "144",
+              "notes": "Supported on ChromeOS, macOS, Windows, and Linux (Intel Gen12+ GPUs only)."
+            },
+            {
+              "version_added": "113",
+              "version_removed": "144",
+              "partial_implementation": true,
+              "notes": "Supported on ChromeOS, macOS, and Windows."
+            }
+          ],
           "chrome_android": {
             "version_added": "121"
           },
@@ -75,14 +79,18 @@
             "web-features:webgpu"
           ],
           "support": {
-            "chrome": {
-              "version_added": "113",
-              "partial_implementation": true,
-              "notes": [
-                "Supported on ChromeOS, macOS, and Windows.",
-                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "144",
+                "notes": "Supported on ChromeOS, macOS, Windows, and Linux (Intel Gen12+ GPUs only)."
+              },
+              {
+                "version_added": "113",
+                "version_removed": "144",
+                "partial_implementation": true,
+                "notes": "Supported on ChromeOS, macOS, and Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": "121"
             },
@@ -142,14 +150,18 @@
               "web-features:webgpu"
             ],
             "support": {
-              "chrome": {
-                "version_added": "119",
-                "partial_implementation": true,
-                "notes": [
-                  "Supported on ChromeOS, macOS, and Windows.",
-                  "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
-                ]
-              },
+              "chrome": [
+                {
+                  "version_added": "144",
+                  "notes": "Supported on ChromeOS, macOS, Windows, and Linux (Intel Gen12+ GPUs only)."
+                },
+                {
+                  "version_added": "119",
+                  "version_removed": "144",
+                  "partial_implementation": true,
+                  "notes": "Supported on ChromeOS, macOS, and Windows."
+                }
+              ],
               "chrome_android": {
                 "version_added": "121"
               },
@@ -187,14 +199,18 @@
               "web-features:webgpu"
             ],
             "support": {
-              "chrome": {
-                "version_added": "143",
-                "partial_implementation": true,
-                "notes": [
-                  "Supported on ChromeOS, macOS, and Windows.",
-                  "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
-                ]
-              },
+              "chrome": [
+                {
+                  "version_added": "144",
+                  "notes": "Supported on ChromeOS, macOS, Windows, and Linux (Intel Gen12+ GPUs only)."
+                },
+                {
+                  "version_added": "143",
+                  "version_removed": "144",
+                  "partial_implementation": true,
+                  "notes": "Supported on ChromeOS, macOS, and Windows."
+                }
+              ],
               "chrome_android": "mirror",
               "deno": {
                 "version_added": false
@@ -230,14 +246,18 @@
               "web-features:webgpu"
             ],
             "support": {
-              "chrome": {
-                "version_added": "132",
-                "partial_implementation": true,
-                "notes": [
-                  "Supported on ChromeOS, macOS, and Windows.",
-                  "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
-                ]
-              },
+              "chrome": [
+                {
+                  "version_added": "144",
+                  "notes": "Supported on ChromeOS, macOS, Windows, and Linux (Intel Gen12+ GPUs only)."
+                },
+                {
+                  "version_added": "132",
+                  "version_removed": "144",
+                  "partial_implementation": true,
+                  "notes": "Supported on ChromeOS, macOS, and Windows."
+                }
+              ],
               "chrome_android": "mirror",
               "deno": {
                 "version_added": false
@@ -263,6 +283,45 @@
               "standard_track": true,
               "deprecated": false
             }
+          },
+          "transient_attachment": {
+            "__compat": {
+              "description": "`TRANSIENT_ATTACHMENT` value",
+              "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gputextureusage-transient_attachment",
+              "tags": [
+                "web-features:webgpu"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "146",
+                  "notes": "Supported on ChromeOS, macOS, Windows, and Linux (Intel Gen12+ GPUs only)."
+                },
+                "chrome_android": "mirror",
+                "deno": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         }
       },
@@ -274,14 +333,18 @@
             "web-features:webgpu"
           ],
           "support": {
-            "chrome": {
-              "version_added": "113",
-              "partial_implementation": true,
-              "notes": [
-                "Supported on ChromeOS, macOS, and Windows.",
-                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "144",
+                "notes": "Supported on ChromeOS, macOS, Windows, and Linux (Intel Gen12+ GPUs only)."
+              },
+              {
+                "version_added": "113",
+                "version_removed": "144",
+                "partial_implementation": true,
+                "notes": "Supported on ChromeOS, macOS, and Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": "121"
             },
@@ -342,14 +405,18 @@
             "web-features:webgpu"
           ],
           "support": {
-            "chrome": {
-              "version_added": "113",
-              "partial_implementation": true,
-              "notes": [
-                "Supported on ChromeOS, macOS, and Windows.",
-                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "144",
+                "notes": "Supported on ChromeOS, macOS, Windows, and Linux (Intel Gen12+ GPUs only)."
+              },
+              {
+                "version_added": "113",
+                "version_removed": "144",
+                "partial_implementation": true,
+                "notes": "Supported on ChromeOS, macOS, and Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": "121"
             },
@@ -410,14 +477,18 @@
             "web-features:webgpu"
           ],
           "support": {
-            "chrome": {
-              "version_added": "113",
-              "partial_implementation": true,
-              "notes": [
-                "Supported on ChromeOS, macOS, and Windows.",
-                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "144",
+                "notes": "Supported on ChromeOS, macOS, Windows, and Linux (Intel Gen12+ GPUs only)."
+              },
+              {
+                "version_added": "113",
+                "version_removed": "144",
+                "partial_implementation": true,
+                "notes": "Supported on ChromeOS, macOS, and Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": "121"
             },
@@ -478,14 +549,18 @@
             "web-features:webgpu"
           ],
           "support": {
-            "chrome": {
-              "version_added": "113",
-              "partial_implementation": true,
-              "notes": [
-                "Supported on ChromeOS, macOS, and Windows.",
-                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "144",
+                "notes": "Supported on ChromeOS, macOS, Windows, and Linux (Intel Gen12+ GPUs only)."
+              },
+              {
+                "version_added": "113",
+                "version_removed": "144",
+                "partial_implementation": true,
+                "notes": "Supported on ChromeOS, macOS, and Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": "121"
             },
@@ -545,14 +620,18 @@
               "web-features:webgpu"
             ],
             "support": {
-              "chrome": {
-                "version_added": "119",
-                "partial_implementation": true,
-                "notes": [
-                  "Supported on ChromeOS, macOS, and Windows.",
-                  "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
-                ]
-              },
+              "chrome": [
+                {
+                  "version_added": "144",
+                  "notes": "Supported on ChromeOS, macOS, Windows, and Linux (Intel Gen12+ GPUs only)."
+                },
+                {
+                  "version_added": "119",
+                  "version_removed": "144",
+                  "partial_implementation": true,
+                  "notes": "Supported on ChromeOS, macOS, and Windows."
+                }
+              ],
               "chrome_android": {
                 "version_added": "121"
               },
@@ -591,14 +670,18 @@
             "web-features:webgpu"
           ],
           "support": {
-            "chrome": {
-              "version_added": "113",
-              "partial_implementation": true,
-              "notes": [
-                "Supported on ChromeOS, macOS, and Windows.",
-                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "144",
+                "notes": "Supported on ChromeOS, macOS, Windows, and Linux (Intel Gen12+ GPUs only)."
+              },
+              {
+                "version_added": "113",
+                "version_removed": "144",
+                "partial_implementation": true,
+                "notes": "Supported on ChromeOS, macOS, and Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": "121"
             },
@@ -659,14 +742,18 @@
             "web-features:webgpu"
           ],
           "support": {
-            "chrome": {
-              "version_added": "113",
-              "partial_implementation": true,
-              "notes": [
-                "Supported on ChromeOS, macOS, and Windows.",
-                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "144",
+                "notes": "Supported on ChromeOS, macOS, Windows, and Linux (Intel Gen12+ GPUs only)."
+              },
+              {
+                "version_added": "113",
+                "version_removed": "144",
+                "partial_implementation": true,
+                "notes": "Supported on ChromeOS, macOS, and Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": "121"
             },
@@ -727,14 +814,18 @@
             "web-features:webgpu"
           ],
           "support": {
-            "chrome": {
-              "version_added": "113",
-              "partial_implementation": true,
-              "notes": [
-                "Supported on ChromeOS, macOS, and Windows.",
-                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "144",
+                "notes": "Supported on ChromeOS, macOS, Windows, and Linux (Intel Gen12+ GPUs only)."
+              },
+              {
+                "version_added": "113",
+                "version_removed": "144",
+                "partial_implementation": true,
+                "notes": "Supported on ChromeOS, macOS, and Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": "121"
             },
@@ -795,14 +886,18 @@
             "web-features:webgpu"
           ],
           "support": {
-            "chrome": {
-              "version_added": "113",
-              "partial_implementation": true,
-              "notes": [
-                "Supported on ChromeOS, macOS, and Windows.",
-                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "144",
+                "notes": "Supported on ChromeOS, macOS, Windows, and Linux (Intel Gen12+ GPUs only)."
+              },
+              {
+                "version_added": "113",
+                "version_removed": "144",
+                "partial_implementation": true,
+                "notes": "Supported on ChromeOS, macOS, and Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": "121"
             },
@@ -850,6 +945,37 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "textureBindingViewDimension": {
+        "__compat": {
+          "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gputexture-texturebindingviewdimension",
+          "support": {
+            "chrome": {
+              "version_added": "146"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -863,14 +989,18 @@
             "web-features:webgpu"
           ],
           "support": {
-            "chrome": {
-              "version_added": "113",
-              "partial_implementation": true,
-              "notes": [
-                "Supported on ChromeOS, macOS, and Windows.",
-                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "144",
+                "notes": "Supported on ChromeOS, macOS, Windows, and Linux (Intel Gen12+ GPUs only)."
+              },
+              {
+                "version_added": "113",
+                "version_removed": "144",
+                "partial_implementation": true,
+                "notes": "Supported on ChromeOS, macOS, and Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": "121"
             },
@@ -921,6 +1051,45 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "transient_attachment": {
+          "__compat": {
+            "description": "`TRANSIENT_ATTACHMENT` value",
+            "spec_url": "https://gpuweb.github.io/gpuweb/#dom-gputextureusage-transient_attachment",
+            "tags": [
+              "web-features:webgpu"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "146",
+                "notes": "Supported on ChromeOS, macOS, Windows, and Linux (Intel Gen12+ GPUs only)."
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
         }
       },
       "width": {
@@ -931,14 +1100,18 @@
             "web-features:webgpu"
           ],
           "support": {
-            "chrome": {
-              "version_added": "113",
-              "partial_implementation": true,
-              "notes": [
-                "Supported on ChromeOS, macOS, and Windows.",
-                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "144",
+                "notes": "Supported on ChromeOS, macOS, Windows, and Linux (Intel Gen12+ GPUs only)."
+              },
+              {
+                "version_added": "113",
+                "version_removed": "144",
+                "partial_implementation": true,
+                "notes": "Supported on ChromeOS, macOS, and Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": "121"
             },

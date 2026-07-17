@@ -2,8 +2,7 @@
  * See LICENSE file for more information. */
 
 import * as fs from 'node:fs';
-
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
 
 import stringify from '../lib/stringify-and-order-properties.js';
 
@@ -32,7 +31,10 @@ const extractReleaseData = (str) => {
     );
   if (!result) {
     console.warn(
-      chalk`{yellow A release string for Safari is not parsable (${str}'). Skipped.}`,
+      styleText(
+        'yellow',
+        `A release string for Safari is not parsable (${str}'). Skipped.`,
+      ),
     );
     return null;
   }
@@ -65,7 +67,10 @@ export const updateSafariReleases = async (options) => {
   const releaseNoteFile = await fetch(`${options.releaseNoteJSON}`);
   if (releaseNoteFile.status !== 200) {
     console.error(
-      chalk`{red \nRelease note file not found at Apple (${options.releaseNoteJSON}).}`,
+      styleText(
+        'red',
+        `\nRelease note file not found at Apple (${options.releaseNoteJSON}).`,
+      ),
     );
     return '';
   }
@@ -89,7 +94,10 @@ export const updateSafariReleases = async (options) => {
 
     if (!releaseDataEntry) {
       console.warn(
-        chalk`{yellow Release string from Apple not understandable (${releases[id].abstract[0].text})}`,
+        styleText(
+          'yellow',
+          `Release string from Apple not understandable (${releases[id].abstract[0].text})`,
+        ),
       );
       continue;
     } else if (/^\d+\.\d+\.\d+$/.test(releaseDataEntry.version)) {

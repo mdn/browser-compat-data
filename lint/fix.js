@@ -4,11 +4,11 @@
 import { readdir, readFile, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { styleText } from 'node:util';
 
 import esMain from 'es-main';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import chalk from 'chalk-template';
 
 import dataFolders from '../scripts/lib/data-folders.js';
 
@@ -24,6 +24,8 @@ import fixMDNURLs from './fixer/mdn-urls.js';
 import fixStatus from './fixer/status.js';
 import fixMirror from './fixer/mirror.js';
 import fixOverlap from './fixer/overlap.js';
+import fixStandardTrackExceptions from './fixer/standard-track-exceptions.js';
+import lint from './lint.js';
 import { IS_WINDOWS } from './utils.js';
 
 /** @import {Stats} from 'node:fs' */
@@ -45,6 +47,7 @@ const FIXES = Object.freeze({
   feature_order: fixFeatureOrder,
   property_order: fixPropertyOrder,
   statement_order: fixStatementOrder,
+  standard_track_exceptions: fixStandardTrackExceptions,
 });
 
 /**
@@ -69,7 +72,9 @@ const load = async (options, ...files) => {
     try {
       fsStats = await stat(file);
     } catch {
-      console.warn(chalk`{yellow File {bold ${file}} doesn't exist!}`);
+      console.warn(
+        styleText('yellow', `File ${styleText('bold', file)} doesn't exist!`),
+      );
       continue;
     }
 
@@ -96,6 +101,17 @@ const load = async (options, ...files) => {
       const subFiles = (await readdir(file)).map((subfile) =>
         path.join(file, subfile),
       );
+
+      // Sort so files come before directories (e.g., meta.json before meta/).
+      // This ensures parent features are fixed before their sub-features.
+      subFiles.sort((a, b) => {
+        const aIsJson = a.endsWith('.json');
+        const bIsJson = b.endsWith('.json');
+        if (aIsJson !== bIsJson) {
+          return aIsJson ? -1 : 1;
+        }
+        return a.localeCompare(b);
+      });
 
       await load(options, ...subFiles);
     }
@@ -130,6 +146,10 @@ if (esMain(import.meta)) {
   const { files = dataFolders, only } = argv;
 
   await main(files, { only });
+  if (argv.files) {
+    // Fails pre-commit hook for lint failures unknown to the fixer.
+    process.exit((await lint(argv.files)) ? 1 : 0);
+  }
 }
 
 export default load;

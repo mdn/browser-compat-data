@@ -56,7 +56,7 @@
           "__compat": {
             "description": "`any-hover` media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/At-rules/@media/any-hover",
-            "spec_url": "https://drafts.csswg.org/mediaqueries/#any-input",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#descdef-media-any-hover",
             "tags": [
               "web-features:interaction"
             ],
@@ -96,7 +96,7 @@
           "__compat": {
             "description": "`any-pointer` media feature",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/At-rules/@media/any-pointer",
-            "spec_url": "https://drafts.csswg.org/mediaqueries/#any-input",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#descdef-media-any-pointer",
             "tags": [
               "web-features:interaction"
             ],
@@ -179,7 +179,7 @@
           "__compat": {
             "description": "`calc()` expressions",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Values/calc",
-            "spec_url": "https://drafts.csswg.org/css-values/#calc-notation",
+            "spec_url": "https://drafts.csswg.org/css-values/#calc-func",
             "tags": [
               "web-features:media-queries"
             ],
@@ -298,6 +298,9 @@
               "description": "`p3` value",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/At-rules/@media/color-gamut#p3",
               "spec_url": "https://drafts.csswg.org/mediaqueries/#valdef-media-color-gamut-p3",
+              "tags": [
+                "web-features:color-gamut"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "58"
@@ -332,6 +335,9 @@
               "description": "`rec2020` value",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/At-rules/@media/color-gamut#rec2020",
               "spec_url": "https://drafts.csswg.org/mediaqueries/#valdef-media-color-gamut-rec2020",
+              "tags": [
+                "web-features:color-gamut"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "58"
@@ -366,6 +372,9 @@
               "description": "`srgb` value",
               "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/At-rules/@media/color-gamut#srgb",
               "spec_url": "https://drafts.csswg.org/mediaqueries/#valdef-media-color-gamut-srgb",
+              "tags": [
+                "web-features:color-gamut"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "58"
@@ -652,6 +661,9 @@
             "__compat": {
               "description": "`browser` value",
               "spec_url": "https://drafts.csswg.org/mediaqueries-5/#valdef-media-display-mode-browser",
+              "tags": [
+                "web-features:display-mode"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "42"
@@ -698,6 +710,9 @@
             "__compat": {
               "description": "`fullscreen` value",
               "spec_url": "https://drafts.csswg.org/mediaqueries-5/#valdef-media-display-mode-fullscreen",
+              "tags": [
+                "web-features:display-mode"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "47"
@@ -748,6 +763,9 @@
             "__compat": {
               "description": "`minimal-ui` value",
               "spec_url": "https://drafts.csswg.org/mediaqueries-5/#valdef-media-display-mode-minimal-ui",
+              "tags": [
+                "web-features:display-mode"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "42"
@@ -800,8 +818,7 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "preview",
-                  "impl_url": "https://bugzil.la/1858562"
+                  "version_added": "151"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -816,7 +833,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -826,6 +843,9 @@
             "__compat": {
               "description": "`standalone` value",
               "spec_url": "https://drafts.csswg.org/mediaqueries-5/#valdef-media-display-mode-standalone",
+              "tags": [
+                "web-features:display-mode"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "42"
@@ -1192,6 +1212,10 @@
         "media_features": {
           "__compat": {
             "description": "Media feature expressions",
+            "spec_url": [
+              "https://drafts.csswg.org/mediaqueries/#media-descriptor-table",
+              "https://drafts.csswg.org/css-conditional-3/#at-media"
+            ],
             "tags": [
               "web-features:media-queries"
             ],
@@ -1237,6 +1261,10 @@
         "media_query_values": {
           "__compat": {
             "description": "Media query value support",
+            "spec_url": [
+              "https://drafts.csswg.org/mediaqueries/#media-descriptor-table",
+              "https://drafts.csswg.org/css-conditional-3/#at-media"
+            ],
             "tags": [
               "web-features:media-queries"
             ],
@@ -1313,6 +1341,7 @@
         "nested-queries": {
           "__compat": {
             "description": "Nested media queries",
+            "spec_url": "https://drafts.csswg.org/css-conditional-3/#processing",
             "tags": [
               "web-features:media-queries"
             ],
@@ -1354,6 +1383,7 @@
           "__compat": {
             "description": "`or` syntax from Media Queries Level 4",
             "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Guides/Media_queries/Using",
+            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#typedef-media-or",
             "tags": [
               "web-features:media-queries"
             ],
@@ -1848,6 +1878,7 @@
         "range_syntax": {
           "__compat": {
             "description": "Range syntax from Media Queries Level 4",
+            "spec_url": "https://drafts.csswg.org/mediaqueries-5/#typedef-mf-range",
             "tags": [
               "web-features:media-query-range-syntax"
             ],
@@ -1939,6 +1970,42 @@
               ],
               "safari": {
                 "version_added": "16"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "scan": {
+          "__compat": {
+            "description": "`scan` media feature",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/At-rules/@media/scan",
+            "spec_url": "https://drafts.csswg.org/mediaqueries/#scan",
+            "tags": [
+              "web-features:media-queries"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "104"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "63"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "16.4"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",

@@ -1,14 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
-
 import bcd from '../../index.js';
-const { browsers } = bcd;
 
 /** @import {Linter, LinterData, LinterMessageLevel} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {BrowserName, CompatStatement} from '../../types/types.js' */
+/** @import {BrowserName, InternalCompatStatement} from '../../types/index.js' */
 /** @import {InternalSupportBlock, InternalSupportStatement} from '../../types/index.js' */
 
 // Once a category has been stripped of unsupported features, remove it from this list
@@ -75,7 +72,7 @@ export const implementedAndRemoved = (support) => {
       }
 
       const releaseDateData =
-        browsers[browser].releases[d.version_removed.replace('≤', '')]
+        bcd.browsers[browser].releases[d.version_removed.replace('≤', '')]
           .release_date;
 
       // No browser release date
@@ -101,14 +98,14 @@ export const implementedAndRemoved = (support) => {
 /**
  * Process and test the data
  * @param {Logger} logger The logger to output errors to
- * @param {CompatStatement} data The data to test
+ * @param {InternalCompatStatement} data The data to test
  * @returns {void}
  */
 export const processData = (logger, data) => {
   if (data && data.support) {
     const rule1Fail = neverImplemented(data.support);
     if (rule1Fail) {
-      logger.error(chalk`feature was never implemented.`);
+      logger.error('feature was never implemented.');
 
       // No need to perform the next check if the first one fails
       return;
@@ -118,7 +115,7 @@ export const processData = (logger, data) => {
     const rule2Fail = implementedAndRemoved(data.support);
     if (rule2Fail) {
       logger[rule2Fail](
-        chalk`feature was implemented and has since been removed from all browsers dating back two or more years ago.`,
+        'feature was implemented and has since been removed from all browsers dating back two or more years ago.',
       );
     }
   }
@@ -136,7 +133,7 @@ export default {
    */
   check: (logger, { data, path: { category } }) => {
     if (!ignoredCategories.includes(category)) {
-      processData(logger, /** @type {CompatStatement} */ (data));
+      processData(logger, /** @type {InternalCompatStatement} */ (data));
     }
   },
   exceptions: ['html.elements.track.kind.descriptions'],

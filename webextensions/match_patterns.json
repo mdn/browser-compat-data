@@ -24,9 +24,29 @@
         }
       },
       "scheme": {
-        "wildcard": {
+        "data": {
           "__compat": {
-            "description": "Wildcard `*` scheme",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "48",
+                "partial_implementation": true,
+                "notes": "Doesn't support injection of content scripts or stylesheets."
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
+        "file": {
+          "__compat": {
             "support": {
               "chrome": {
                 "version_added": "≤65"
@@ -40,24 +60,23 @@
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
-                "version_added": "14"
+                "version_added": false
               },
-              "safari_ios": {
-                "version_added": "15"
-              }
+              "safari_ios": "mirror"
             }
           }
         },
-        "wildcard_websocket": {
+        "ftp": {
           "__compat": {
-            "description": "`*` matches `ws` and `wss`",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "≤65"
               },
-              "edge": "mirror",
+              "edge": {
+                "version_added": "14"
+              },
               "firefox": {
-                "version_added": "55"
+                "version_added": "48"
               },
               "firefox_android": "mirror",
               "opera": "mirror",
@@ -114,6 +133,50 @@
             }
           }
         },
+        "wildcard": {
+          "__compat": {
+            "description": "Wildcard `*` scheme",
+            "support": {
+              "chrome": {
+                "version_added": "≤65"
+              },
+              "edge": {
+                "version_added": "14"
+              },
+              "firefox": {
+                "version_added": "48"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": "14"
+              },
+              "safari_ios": {
+                "version_added": "15"
+              }
+            }
+          }
+        },
+        "wildcard_websocket": {
+          "__compat": {
+            "description": "`*` matches `ws` and `wss`",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "55"
+              },
+              "firefox_android": "mirror",
+              "opera": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror"
+            }
+          }
+        },
         "ws": {
           "__compat": {
             "support": {
@@ -142,69 +205,6 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": "55"
-              },
-              "firefox_android": "mirror",
-              "opera": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror"
-            }
-          }
-        },
-        "ftp": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "≤65"
-              },
-              "edge": {
-                "version_added": "14"
-              },
-              "firefox": {
-                "version_added": "48"
-              },
-              "firefox_android": "mirror",
-              "opera": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror"
-            }
-          }
-        },
-        "file": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": "≤65"
-              },
-              "edge": {
-                "version_added": "14"
-              },
-              "firefox": {
-                "version_added": "48"
-              },
-              "firefox_android": "mirror",
-              "opera": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror"
-            }
-          }
-        },
-        "data": {
-          "__compat": {
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "48",
-                "partial_implementation": true,
-                "notes": "Doesn't support injection of content scripts or stylesheets."
               },
               "firefox_android": "mirror",
               "opera": "mirror",

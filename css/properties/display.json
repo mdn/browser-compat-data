@@ -6,7 +6,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/display",
           "spec_url": [
             "https://drafts.csswg.org/css-display/#the-display-properties",
-            "https://svgwg.org/svg2-draft/render.html#VisibilityControl"
+            "https://w3c.github.io/svgwg/svg2-draft/render.html#VisibilityControl"
           ],
           "tags": [
             "web-features:display"
@@ -161,6 +161,7 @@
           "focusable_elements": {
             "__compat": {
               "description": "Elements with `display: contents` are focusable",
+              "spec_url": "https://drafts.csswg.org/css-display/#valdef-display-contents",
               "tags": [
                 "web-features:display-contents"
               ],
@@ -201,6 +202,7 @@
         },
         "flex": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display/#valdef-display-flex",
             "tags": [
               "web-features:flexbox"
             ],
@@ -286,6 +288,7 @@
         },
         "flow-root": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display/#valdef-display-flow-root",
             "tags": [
               "web-features:display-flow-root"
             ],
@@ -319,6 +322,7 @@
         },
         "grid": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display/#valdef-display-grid",
             "tags": [
               "web-features:grid"
             ],
@@ -362,6 +366,37 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "grid-lanes": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-grid-3/#valdef-display-grid-lanes",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26.4"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
@@ -412,6 +447,7 @@
         },
         "inline-block": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display/#valdef-display-inline-block",
             "tags": [
               "web-features:display"
             ],
@@ -460,6 +496,7 @@
         },
         "inline-flex": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display/#valdef-display-inline-flex",
             "tags": [
               "web-features:flexbox"
             ],
@@ -517,6 +554,7 @@
         },
         "inline-grid": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display/#valdef-display-inline-grid",
             "tags": [
               "web-features:grid"
             ],
@@ -565,8 +603,40 @@
             }
           }
         },
+        "inline-grid-lanes": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-grid-3/#valdef-display-inline-grid-lanes",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26.4"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "inline-table": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display/#valdef-display-inline-table",
             "tags": [
               "web-features:display-table"
             ],
@@ -747,7 +817,7 @@
               },
               "status": {
                 "experimental": false,
-                "standard_track": true,
+                "standard_track": false,
                 "deprecated": false
               }
             }
@@ -755,6 +825,7 @@
         },
         "math": {
           "__compat": {
+            "spec_url": "https://w3c.github.io/mathml-core/#dfn-display",
             "tags": [
               "web-features:mathml"
             ],
@@ -789,6 +860,7 @@
         "multi-keyword_values": {
           "__compat": {
             "description": "Multi-keyword values",
+            "spec_url": "https://drafts.csswg.org/css-display/#the-display-properties:~:text=a%20pair%20of%20keywords%20representing%20the%20inner%20and%20outer%20display%20types",
             "tags": [
               "web-features:two-value-display"
             ],
@@ -905,6 +977,7 @@
         },
         "ruby": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display-4/#valdef-display-ruby",
             "tags": [
               "web-features:display-ruby"
             ],
@@ -944,6 +1017,7 @@
         },
         "ruby-base": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display-4/#valdef-display-ruby-base",
             "tags": [
               "web-features:display-ruby"
             ],
@@ -983,6 +1057,7 @@
         },
         "ruby-base-container": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display-4/#valdef-display-ruby-base-container",
             "tags": [
               "web-features:display-ruby"
             ],
@@ -1022,6 +1097,7 @@
         },
         "ruby-text": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display-4/#valdef-display-ruby-text",
             "tags": [
               "web-features:display-ruby"
             ],
@@ -1061,6 +1137,7 @@
         },
         "ruby-text-container": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display-4/#valdef-display-ruby-text-container",
             "tags": [
               "web-features:display-ruby"
             ],
@@ -1100,6 +1177,7 @@
         },
         "table": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display-4/#valdef-display-table",
             "tags": [
               "web-features:display-table"
             ],
@@ -1140,6 +1218,7 @@
         },
         "table-caption": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display-4/#valdef-display-table-caption",
             "tags": [
               "web-features:display-table"
             ],
@@ -1149,7 +1228,7 @@
               },
               "chrome_android": "mirror",
               "edge": {
-                "version_added": "≤15"
+                "version_added": "12"
               },
               "firefox": {
                 "version_added": "1"
@@ -1175,6 +1254,7 @@
         },
         "table-cell": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display-4/#valdef-display-table-cell",
             "tags": [
               "web-features:display-table"
             ],
@@ -1215,6 +1295,7 @@
         },
         "table-column": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display-4/#valdef-display-table-column",
             "tags": [
               "web-features:display-table"
             ],
@@ -1255,6 +1336,7 @@
         },
         "table-column-group": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display-4/#valdef-display-table-column-group",
             "tags": [
               "web-features:display-table"
             ],
@@ -1295,6 +1377,7 @@
         },
         "table-footer-group": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display-4/#valdef-display-table-footer-group",
             "tags": [
               "web-features:display-table"
             ],
@@ -1335,6 +1418,7 @@
         },
         "table-header-group": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display-4/#valdef-display-table-header-group",
             "tags": [
               "web-features:display-table"
             ],
@@ -1375,6 +1459,7 @@
         },
         "table-row": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display-4/#valdef-display-table-row",
             "tags": [
               "web-features:display-table"
             ],
@@ -1415,6 +1500,7 @@
         },
         "table-row-group": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-display-4/#valdef-display-table-row-group",
             "tags": [
               "web-features:display-table"
             ],

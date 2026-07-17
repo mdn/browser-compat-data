@@ -58,9 +58,8 @@ This guideline was adopted to protect the quality of stable data in the face of 
 
 ## `"partial_implementation"` general usage guidelines
 
-> [!NOTE]
-> This guideline was added in August 2025 and feedback is welcome.
-> If you have questions or concerns about how to apply it, [file an issue](https://github.com/mdn/browser-compat-data/issues/new/choose).
+The partial implementation flag often requires a judgment call.
+If you're not completely certain, ask for a second opinion.
 
 You must set `"partial_implementation": true` when all of the following conditions are met:
 
@@ -72,15 +71,27 @@ You must set `"partial_implementation": true` when all of the following conditio
 This list only covers cases where `"partial_implementation": true` is required.
 `"partial_implementation": true` may apply in unusual situations not covered by this guideline, such as significant changes in a single-implementation feature's behavior before standardization.
 
-Here are some example situations:
+Strong signals of negative impact include:
+
+- Bug reports filed by web developers shortly after a new implementation has shipped
+- Bugs reproduced or rereported by multiple web developers
+- Several independent blog or social media posts about a bug
+- Interop proposals with upvotes
+
+Weak signals of negative impact include:
+
+- Bug reports filed long after buggy or divergent implementations have shipped
+- Automatically-generated bug reports (such as isolated WPT failures)
+- Unconfirmed bug reports in vendors' bug trackers
+
+Here are some example situations where this guideline may or may not apply:
 
 - `"partial_implementation": false`: All implementing browsers ignore part of a feature's specified behavior in the same way.
   This behavior is consistent and is a _de facto_ complete implementation.
 
 - `"partial_implementation": false`: All implementing browsers provide a form control user interface, but the specification gives the implementer discretion over its look and feel.
   A developer complains that one browser's user interface lacks some desired quality that other browsers implement; they want it to be marked as partially implemented.
-  Use a note or non-standard behavioral subfeature instead.
-  <!-- TODO: link to behavioral subfeature guidelines, when available -->
+  Use a note or non-standard [behavioral subfeature](#behavioral-subfeatures) instead.
 
 - `"partial_implementation": false`: An implementing browser fails a web platform test against a corner case.
   No web developers have reported the bug and it's unlikely that there are real-world applications that would attempt to use the corner case.
@@ -91,7 +102,7 @@ Here are some example situations:
 
 - `"partial_implementation": true`: One browser exposes a constructor, `Example()`, but it always throws an error. Other browsers implement the constructor's intended behavior. This confuses feature detection because `typeof Example === "function"` returns `true`, even though the constructor does not work.
 
-This guideline was proposed and adopted in [#26780](https://github.com/mdn/browser-compat-data/pull/26780).
+This guideline was proposed and adopted in [#26780](https://github.com/mdn/browser-compat-data/pull/26780) and expanded in [#29661](https://github.com/mdn/browser-compat-data/pull/29661).
 
 ## `"partial_implementation"` requires a note
 
@@ -187,7 +198,8 @@ This guideline was proposed in [#6905](https://github.com/mdn/browser-compat-dat
 
 Set `deprecated` to `true` to show that a feature has been authoritatively discouraged from use.
 
-The `deprecated` status captures the many ways standards organizations (and, for non-standard features, vendors) mark features as disfavored. This includes features that are on the path to removal or features that are discouraged from use despite their retention for backwards compatibility.
+The `deprecated` status captures the many ways specifications and vendors mark features as disfavored.
+This includes features that are on the path to removal or features that are discouraged from use despite retention for backwards compatibility.
 
 Evidence for setting `deprecated` to `true` includes:
 
@@ -195,17 +207,13 @@ Evidence for setting `deprecated` to `true` includes:
 - Removal of a feature from a specification
 - Specification text that cautions developers against new use of the feature
 - Formal discouragement statements from a relevant standards body (for example, meeting minutes that show a committee achieving consensus for removal from a specification, even if the removal has not yet taken place)
-- For non-standard features, notice from implementing browsers (for example, a console deprecation warning) or vendor documentation
+- Notice from all implementing browsers (for example, a console deprecation warning) or the vendors' documentation
 
 Do not set `deprecated` to `true` for features that are merely old or unpopular, no matter how many [_considered harmful_](https://en.wikipedia.org/wiki/Considered_harmful) blog posts they may have garnered. For example, although web developers may prefer `fetch` over `XMLHttpRequest`, `XMLHttpRequest` is not deprecated.
 
 This guideline was proposed in [#15703](https://github.com/mdn/browser-compat-data/pull/15703). See [mdn/content#5549](https://github.com/mdn/content/discussions/5549) and [#10490](https://github.com/mdn/browser-compat-data/issues/10490) for further discussion on the use of "deprecated."
 
 ## Behavioral subfeatures
-
-> [!NOTE]
-> This guideline was added in August 2025 and feedback is welcome.
-> If you have questions or concerns about how to apply it, [file an issue](https://github.com/mdn/browser-compat-data/issues/new/choose).
 
 A behavioral subfeature records support for some facet, nuance, or evolution of a parent feature, where the behavior doesn't have a natural identifier (like CSS properties, API methods, or HTTP headers do).
 Due to the lack of a natural identifier, a behavioral subfeature must have a `description`.
@@ -218,7 +226,7 @@ If a more specific guideline applies, follow that guideline instead of this one.
 
 Behavioral subfeatures are rare.
 Do not create a subfeature when the behavioral subfeature's `support` data would be the same, across all browsers, as the parent feature.
-For serious bugs affecting a single engine, consider using `partial_implementation` instead. <!-- TODO: link to partial_implementation guidelines, when available -->
+For serious bugs affecting a single engine, consider [using `partial_implementation`](#partial_implementation-general-usage-guidelines) instead.
 
 You may create a behavioral subfeature for the following types of browser behaviors:
 

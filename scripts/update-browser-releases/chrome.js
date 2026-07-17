@@ -2,8 +2,7 @@
  * See LICENSE file for more information. */
 
 import * as fs from 'node:fs';
-
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
 
 import stringify from '../lib/stringify-and-order-properties.js';
 
@@ -48,7 +47,7 @@ const getReleaseNotesURL = async (version, date, core, status) => {
     releaseNote = await fetch(url);
 
     if (releaseNote.status !== 200) {
-      throw chalk`{red \nRelease note not found for ${version}}.`;
+      throw styleText('red', `\nRelease note not found for ${version}.`);
     }
   }
 
@@ -65,7 +64,7 @@ const getReleaseNotesURL = async (version, date, core, status) => {
   const releaseNote = await fetch(url);
 
   if (releaseNote.status !== 200) {
-    throw chalk`{red \nRelease note not found for ${version}}.`;
+    throw styleText('red', `\nRelease note not found for ${version}.`);
   }
 
   return url;
@@ -193,7 +192,10 @@ export const updateChromiumReleases = async (options) => {
       } else {
         // There is a retired version missing. Chromestatus doesn't list them.
         // There is an oddity: the version is not skipped but not in chromestatus
-        result += chalk`{red \nChrome ${i} not found in Chromestatus! Add it manually or add an exception.}`;
+        result += styleText(
+          'red',
+          `\nChrome ${i} not found in Chromestatus! Add it manually or add an exception.`,
+        );
       }
     }
   }

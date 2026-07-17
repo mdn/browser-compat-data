@@ -1,9 +1,10 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {SupportStatement, Identifier, BrowserName} from '../types/types.js' */
+/** @import {InternalSupportStatement, InternalIdentifier, BrowserName} from '../types/index.js' */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
+
 import deepDiff from 'deep-diff';
 import esMain from 'es-main';
 import yargs from 'yargs';
@@ -53,11 +54,11 @@ const stringifyChange = (lhs, rhs) =>
 /**
  * Perform mirroring on specified diff statement
  * @param {object} diff - The diff to perform mirroring on
- * @param {SupportStatement} diff.base
- * @param {SupportStatement} diff.head
+ * @param {InternalSupportStatement} diff.base
+ * @param {InternalSupportStatement} diff.head
  * @param {object} contents - The contents to mirror from
- * @param {Identifier} contents.base
- * @param {Identifier} contents.head
+ * @param {InternalIdentifier} contents.base
+ * @param {InternalIdentifier} contents.head
  * @param {string[]} path - The feature path to mirror
  * @param {'base' | 'head'} direction - Whether to mirror 'base' or 'head'
  */
@@ -65,7 +66,7 @@ const doMirror = (diff, contents, path, direction) => {
   const browser = /** @type {BrowserName} */ (path[path.length - 1]);
   const dataPath = path.slice(0, path.length - 3).join('.');
   const data = contents[direction];
-  const queried = /** @type {Identifier} */ (query(dataPath, data));
+  const queried = /** @type {InternalIdentifier} */ (query(dataPath, data));
 
   if (queried.__compat?.support) {
     diff[direction] = mirror(browser, queried.__compat.support);
@@ -218,7 +219,7 @@ if (esMain(import.meta)) {
 
   const { base, head } = argv;
   for (const [key, values] of getDiffs(getMergeBase(base, head), head)) {
-    console.log(chalk`{bold ${key}}:`);
+    console.log(`${styleText('bold', key)}:`);
     for (const value of values) {
       console.log(` → ${value}`);
     }

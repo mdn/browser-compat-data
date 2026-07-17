@@ -1,15 +1,15 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement} from '../../types/index.js' */
 
 /**
  * Process the data for prefix errors
- * @param {CompatStatement} data The data to test
+ * @param {InternalCompatStatement} data The data to test
  * @param {string} category The category the data belongs to
  * @param {string} feature The full feature path
  * @param {Logger} logger The logger to output errors to
@@ -51,12 +51,12 @@ const processData = (data, category, feature, logger) => {
     const supportStatements = Array.isArray(support) ? support : [support];
 
     for (const statement of supportStatements) {
-      if (!statement) {
+      if (typeof statement !== 'object') {
         continue;
       }
       if (statement.prefix && statement.alternative_name) {
         logger.error(
-          chalk`Both prefix and alternative name are defined, which is not allowed.`,
+          'Both prefix and alternative name are defined, which is not allowed.',
         );
       }
       if (
@@ -64,7 +64,7 @@ const processData = (data, category, feature, logger) => {
         !prefixes.some((p) => statement.prefix?.startsWith(p))
       ) {
         logger.error(
-          chalk`Prefix is set to {bold ${statement.prefix}}, which is invalid for ${category}`,
+          `Prefix is set to ${styleText('bold', statement.prefix)}, which is invalid for ${category}`,
         );
       }
       if (statement.alternative_name) {
@@ -79,7 +79,7 @@ const processData = (data, category, feature, logger) => {
         });
         if (altNameMatchesPrefix) {
           logger.error(
-            chalk`Use {bold "prefix": "${altNameMatchesPrefix}"} instead of {bold "alternative_name": "${statement.alternative_name}"}`,
+            `Use ${styleText('bold', `"prefix": "${altNameMatchesPrefix}"`)} instead of ${styleText('bold', `"alternative_name": "${statement.alternative_name}"`)}`,
           );
         }
       }
@@ -98,6 +98,11 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data, path: { category, full } }) => {
-    processData(/** @type {CompatStatement} */ (data), category, full, logger);
+    processData(
+      /** @type {InternalCompatStatement} */ (data),
+      category,
+      full,
+      logger,
+    );
   },
 };

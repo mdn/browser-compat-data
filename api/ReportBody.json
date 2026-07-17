@@ -2,7 +2,7 @@
   "api": {
     "ReportBody": {
       "__compat": {
-        "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReportBody",
+        "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReportingObserver",
         "spec_url": "https://w3c.github.io/reporting/#reportbody",
         "tags": [
           "web-features:reporting"
@@ -14,14 +14,7 @@
           "chrome_android": "mirror",
           "edge": "mirror",
           "firefox": {
-            "version_added": "65",
-            "flags": [
-              {
-                "type": "preference",
-                "name": "dom.reporting.enabled",
-                "value_to_set": "true"
-              }
-            ]
+            "version_added": "149"
           },
           "firefox_android": "mirror",
           "oculus": "mirror",
@@ -38,12 +31,11 @@
         "status": {
           "experimental": false,
           "standard_track": true,
-          "deprecated": false
+          "deprecated": true
         }
       },
       "toJSON": {
         "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ReportBody/toJSON",
           "tags": [
             "web-features:reporting"
           ],
@@ -54,14 +46,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "77",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.reporting.enabled",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "149"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -77,7 +62,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": true
           }
         }

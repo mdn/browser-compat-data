@@ -98,6 +98,7 @@
         "brotli": {
           "__compat": {
             "description": "\"brotli\" compression",
+            "spec_url": "https://compression.spec.whatwg.org/#dom-compressionformat-brotli",
             "tags": [
               "web-features:compression-streams"
             ],
@@ -106,11 +107,12 @@
                 "version_added": "1.3.3"
               },
               "chrome": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://crbug.com/463397980"
               },
               "chrome_android": "mirror",
               "deno": {
-                "version_added": false
+                "version_added": "2.7"
               },
               "edge": "mirror",
               "firefox": {
@@ -138,7 +140,7 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": false,
+              "standard_track": true,
               "deprecated": false
             }
           }
@@ -146,7 +148,7 @@
         "deflate": {
           "__compat": {
             "description": "\"deflate\" compression",
-            "spec_url": "https://compression.spec.whatwg.org/#supported-formats",
+            "spec_url": "https://compression.spec.whatwg.org/#dom-compressionformat-deflate",
             "tags": [
               "web-features:compression-streams"
             ],
@@ -189,7 +191,7 @@
         "deflate-raw": {
           "__compat": {
             "description": "\"deflate-raw\" compression",
-            "spec_url": "https://compression.spec.whatwg.org/#supported-formats",
+            "spec_url": "https://compression.spec.whatwg.org/#dom-compressionformat-deflate-raw",
             "tags": [
               "web-features:compression-streams"
             ],
@@ -238,7 +240,7 @@
         "gzip": {
           "__compat": {
             "description": "\"gzip\" compression",
-            "spec_url": "https://compression.spec.whatwg.org/#supported-formats",
+            "spec_url": "https://compression.spec.whatwg.org/#dom-compressionformat-gzip",
             "tags": [
               "web-features:compression-streams"
             ],

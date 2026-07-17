@@ -1,88 +1,33 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
-import specData from 'web-specs' with { type: 'json' };
+import { styleText } from 'node:util';
+
+import * as xref from '@webref/xref';
+
+import { getSpecURLsExceptions } from '../common/spec-urls-exceptions.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement} from '../../types/index.js' */
 
-/*
- * Before adding an exception, open an issue with https://github.com/w3c/browser-specs to
- * see if a spec should be added there instead.
- * When adding an exception here, provide a reason and indicate how the exception can be removed.
- */
-const specsExceptions = [
-  // Remove once https://github.com/whatwg/html/pull/6715 is resolved
-  'https://wicg.github.io/controls-list/',
-
-  // Exception for April Fools' joke for "418 I'm a teapot"
-  'https://www.rfc-editor.org/rfc/rfc2324',
-
-  // Unfortunately this doesn't produce a rendered spec, so it isn't in browser-specs
-  // Remove if it is in the main ECMA spec
-  'https://github.com/tc39/proposal-regexp-legacy-features/',
-
-  // Remove once tc39/ecma262#3221 is merged
-  'https://github.com/tc39/proposal-regexp-modifiers',
-
-  // See https://github.com/w3c/browser-specs/issues/305
-  // Features with this URL need to be checked after some time
-  // if they have been integrated into a real spec
-  'https://w3c.github.io/webrtc-extensions/',
-
-  // This is being used to develop Error.captureStackTrace() standard
-  // Need to be checked after some time to see if integrated into a real spec
-  'https://github.com/tc39/proposal-error-capturestacktrace',
-
-  // Proposals for WebAssembly
-  'https://github.com/WebAssembly/spec/blob/main/proposals',
-  'https://github.com/WebAssembly/exception-handling/blob/main/proposals',
-  'https://github.com/WebAssembly/extended-const/blob/main/proposals',
-  'https://github.com/WebAssembly/tail-call/blob/main/proposals',
-  'https://github.com/WebAssembly/threads/blob/main/proposal',
-  'https://github.com/WebAssembly/relaxed-simd/blob/main/proposals',
-  'https://github.com/WebAssembly/multi-memory/blob/main/proposals',
-  'https://github.com/WebAssembly/memory64/blob/main/proposals/memory64/Overview.md',
-  'https://github.com/WebAssembly/js-string-builtins/blob/main/proposals/js-string-builtins/Overview.md',
-  'https://github.com/WebAssembly/function-references/blob/main/proposals/function-references/Overview.md',
-  'https://github.com/WebAssembly/js-promise-integration',
-  'https://github.com/WebAssembly/branch-hinting/blob/main/proposals/branch-hinting/Overview.md',
-
-  // Media types
-  'https://developers.google.com/speed/webp/docs/riff_container',
-  'https://developers.google.com/speed/webp/docs/webp_lossless_bitstream_specification',
-  'https://jpeg.org/jpeg/',
-  'https://www.adobe.com/devnet-apps/photoshop/fileformatashtml/',
-  'https://www.iso.org/standard/89035.html',
-  'https://www.rfc-editor.org/rfc/rfc7903',
-  'https://www.w3.org/Graphics/GIF/spec-gif87.txt',
-];
-
-const allowedSpecURLs = [
-  .../** @type {string[]} */ (
-    specData
-      .filter((spec) => spec.standing == 'good')
-      .map((spec) => [
-        spec.url,
-        spec.nightly?.url,
-        ...(spec.nightly ? spec.nightly.alternateUrls : []),
-        spec.series.nightlyUrl,
-      ])
-      .flat()
-      .filter((url) => !!url)
-  ),
-  ...specsExceptions,
-];
+const specsExceptions = await getSpecURLsExceptions();
+xref.setup();
 
 /**
  * Process the data for spec URL errors
- * @param {CompatStatement} data The data to test
+ * @param {InternalCompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
+ * @param {object} [deps] Injectable dependencies (for testing)
+ * @param {typeof xref.lookup} [deps.lookup] The xref lookup function
+ * @param {string[]} [deps.exceptions] The spec URL host exceptions
  * @returns {void}
  */
-const processData = (data, logger) => {
+export const processData = (
+  data,
+  logger,
+  { lookup = xref.lookup, exceptions = specsExceptions } = {},
+) => {
   if (!data.spec_url) {
     return;
   }
@@ -91,14 +36,48 @@ const processData = (data, logger) => {
     ? data.spec_url
     : [data.spec_url];
 
-  for (const specURL of featureSpecURLs) {
-    if (!allowedSpecURLs.some((prefix) => specURL.startsWith(prefix))) {
+  for (let specURL of featureSpecURLs) {
+    // Skip validation for spec_urls hosted at domains listed in our exception list
+    if (exceptions.some((host) => specURL.startsWith(host))) {
+      continue;
+    }
+
+    // Skip validation for spec_urls containing no fragment ID (we may want to emit warnings for these in the future)
+    if (!specURL.includes('#')) {
+      /* logger.warning(
+        `Specification URL without a fragment id found: ${styleText('bold', specURL)}
+         Check if a deep link using a validated fragment identifier ('#') can be provided.`,
+      ); */
+      continue;
+    }
+
+    // Check that there is a valid section ID before text fragments
+    if (specURL.includes(':~:text=')) {
+      const trimmedSpecURL = specURL.split(':~:text=')[0];
+      if (/#.+/.test(trimmedSpecURL)) {
+        specURL = trimmedSpecURL;
+      } else {
+        // We only have '#:~:text=' without any section ID
+        // Skip validation entirely in this case
+        continue;
+        // We may want to emit warnings for this case in the future:
+        /* logger.warning(
+          `Text fragment specification URL with section ID found: ${styleText('bold', specURL)}
+           Check if a deep link using a validated fragment identifier ('#') can be provided.`,
+        ); */
+      }
+    }
+
+    // Check if the spec_url exists in @webref/xref
+    if (!lookup(specURL, { series: true, standing: 'good' }).length) {
       logger.error(
-        chalk`Invalid specification URL found: {bold ${specURL}}. Check if:
+        `Invalid specification URL found: ${styleText('bold', specURL)}. Check if:
          - there is a more current specification URL
          - the specification is listed in https://github.com/w3c/browser-specs
-         - the specification has a "good" standing`,
+         - the specification has a "good" standing
+         - the fragment id (#) is valid according to @webref/xref.`,
       );
+      continue;
     }
   }
 };
@@ -115,6 +94,6 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data }) => {
-    processData(/** @type {CompatStatement} */ (data), logger);
+    processData(/** @type {InternalCompatStatement} */ (data), logger);
   },
 };

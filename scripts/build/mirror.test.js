@@ -2,7 +2,7 @@
  * See LICENSE file for more information. */
 
 /**
- * @import { BrowserName } from '../../types/types.js'
+ * @import { BrowserName } from '../../types/index.js'
  * @import { InternalSupportBlock } from '../../types/index.js'
  */
 
@@ -11,7 +11,7 @@ import assert from 'node:assert/strict';
 
 import bcd from '../../index.js';
 
-import mirrorSupport, { isOSLimitation } from './mirror.js';
+import mirrorSupport, { isOSLimitation, updateNotes } from './mirror.js';
 
 describe('mirror', () => {
   describe('isOSLimitation', () => {
@@ -171,6 +171,75 @@ describe('mirror', () => {
           }
         });
       }
+    });
+
+    describe('updateNotes', () => {
+      /** @type {(string) => (string | false)} */
+      const versionMapper = (v) => (v === '99' ? false : String(Number(v) + 1));
+      const regex = /\bChrome\b/g;
+
+      it('notes with unmapped versions are filtered out', () => {
+        assert.equal(
+          updateNotes(
+            'Supported since Chrome 99.',
+            regex,
+            'Opera',
+            versionMapper,
+          ),
+          null,
+        );
+      });
+
+      it('notes without version references are kept unchanged', () => {
+        assert.equal(
+          updateNotes(
+            'Supported on ChromeOS, macOS, and Windows.',
+            regex,
+            'Opera',
+            versionMapper,
+          ),
+          'Supported on ChromeOS, macOS, and Windows.',
+        );
+      });
+
+      it('notes with mapped versions are updated', () => {
+        assert.equal(
+          updateNotes(
+            'Supported since Chrome 70.',
+            regex,
+            'Opera',
+            versionMapper,
+          ),
+          'Supported since Opera 71.',
+        );
+      });
+
+      it('in an array, only notes with unmapped versions are filtered out', () => {
+        assert.deepEqual(
+          updateNotes(
+            [
+              'Supported on ChromeOS, macOS, and Windows.',
+              'Supported since Chrome 99.',
+            ],
+            regex,
+            'Opera',
+            versionMapper,
+          ),
+          'Supported on ChromeOS, macOS, and Windows.',
+        );
+      });
+
+      it('returns null when all array notes are filtered out', () => {
+        assert.equal(
+          updateNotes(
+            ['Supported since Chrome 99.', 'Available since Chrome 99.'],
+            regex,
+            'Opera',
+            versionMapper,
+          ),
+          null,
+        );
+      });
     });
 
     describe('Notes', () => {

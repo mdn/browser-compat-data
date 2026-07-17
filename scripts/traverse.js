@@ -8,8 +8,7 @@ import { hideBin } from 'yargs/helpers';
 import dataFolders from '../scripts/lib/data-folders.js';
 import bcd from '../index.js';
 
-/** @import {BrowserName, Identifier, SimpleSupportStatement} from '../types/types.js' */
-/** @import {InternalSupportStatement} from '../types/index.js' */
+/** @import {BrowserName, InternalIdentifier, InternalSimpleSupportStatement, InternalSupportBlock} from '../types/index.js' */
 
 /**
  * @typedef {object} StatusFilters
@@ -20,8 +19,8 @@ import bcd from '../index.js';
 
 /**
  * Traverse all of the features within a specified object and find all features that have one of the specified values
- * @param {Identifier} obj The compat data to traverse through
- * @param {BrowserName[]} browsers The browsers to test for
+ * @param {InternalIdentifier} obj The compat data to traverse through
+ * @param {BrowserName[]} browserNames The browsers to test for
  * @param {string[]} values The values to test for
  * @param {number} depth The depth to traverse
  * @param {string} tag The tag to filter results with
@@ -32,7 +31,7 @@ import bcd from '../index.js';
  */
 export function* iterateFeatures(
   obj,
-  browsers,
+  browserNames,
   values,
   depth,
   tag,
@@ -62,71 +61,71 @@ export function* iterateFeatures(
           }
           if (tag) {
             const tags = obj[i].__compat?.tags;
-            if ((tags && tags.includes(tag)) || (!tags && tag == 'false')) {
+            if (
+              (Array.isArray(tags) && tags.includes(tag)) ||
+              (!tags && tag == 'false')
+            ) {
               yield `${identifier}${i}`;
             }
           } else {
-            const comp = obj[i].__compat?.support;
+            const comp = /** @type {InternalSupportBlock} */ (
+              obj[i].__compat?.support
+            );
             if (!comp) {
               continue;
             }
-            for (const browser of browsers) {
-              /** @type {SimpleSupportStatement | SimpleSupportStatement[] | undefined} */
-              let browserData = comp[browser];
+            for (const browser of browserNames) {
+              const browserData = comp[browser];
 
               if (!browserData) {
                 if (values.length == 0 || values.includes('null')) {
                   // Web extensions only allows specific browsers
-                  if (
-                    !(
-                      identifier.startsWith('webextensions.') &&
-                      bcd.browsers[browser].accepts_webextensions
-                    )
-                  ) {
+                  if (!(
+                    identifier.startsWith('webextensions.') &&
+                    bcd.browsers[browser].accepts_webextensions
+                  )) {
                     continue;
                   }
                   yield `${identifier}${i}`;
                 }
                 continue;
               }
-              if (!Array.isArray(browserData)) {
-                browserData = [browserData];
+              if (browserData === 'mirror') {
+                if (values.includes('mirror')) {
+                  yield `${identifier}${i}`;
+                }
+                continue;
               }
+              const supportArray = Array.isArray(browserData)
+                ? browserData
+                : [browserData];
 
-              for (const range in browserData) {
-                if (
-                  /** @type {InternalSupportStatement} */ (
-                    browserData[range]
-                  ) === 'mirror'
-                ) {
-                  if (values.includes('mirror')) {
-                    yield `${identifier}${i}`;
-                  }
-                } else if (values.includes('nonmirror')) {
+              for (const range in supportArray) {
+                if (values.includes('nonmirror')) {
                   // If checking for non-mirrored data and it's not mirrored
                   yield `${identifier}${i}`;
-                } else if (browserData[range] === undefined) {
+                } else if (supportArray[range] === undefined) {
                   if (values.length == 0 || values.includes('null')) {
                     yield `${identifier}${i}`;
                   }
                 } else if (values.includes('≤') || values.includes('ranged')) {
                   if (
-                    String(browserData[range].version_added).startsWith('≤') ||
-                    String(browserData[range].version_removed).startsWith('≤')
+                    String(supportArray[range].version_added).startsWith('≤') ||
+                    String(supportArray[range].version_removed).startsWith('≤')
                   ) {
                     yield `${identifier}${i}`;
                   }
                 } else if (
                   values.length == 0 ||
-                  values.includes(String(browserData[range].version_added)) ||
-                  values.includes(String(browserData[range].version_removed))
+                  values.includes(String(supportArray[range].version_added)) ||
+                  values.includes(String(supportArray[range].version_removed))
                 ) {
                   let f = `${identifier}${i}`;
-                  if (browserData[range].prefix) {
-                    f += ` (${browserData[range].prefix} prefix)`;
+                  if (supportArray[range].prefix) {
+                    f += ` (${supportArray[range].prefix} prefix)`;
                   }
-                  if (browserData[range].alternative_name) {
-                    f += ` (as ${browserData[range].alternative_name})`;
+                  if (supportArray[range].alternative_name) {
+                    f += ` (as ${supportArray[range].alternative_name})`;
                   }
                   yield f;
                 }
@@ -136,7 +135,7 @@ export function* iterateFeatures(
         }
         yield* iterateFeatures(
           obj[i],
-          browsers,
+          browserNames,
           values,
           depth,
           tag,
@@ -150,8 +149,8 @@ export function* iterateFeatures(
 
 /**
  * Traverse all of the features within a specified object and find all features that have one of the specified values
- * @param {Identifier} obj The compat data to traverse through
- * @param {BrowserName[]} browsers The browsers to traverse for
+ * @param {InternalIdentifier} obj The compat data to traverse through
+ * @param {BrowserName[]} browserNames The browsers to traverse for
  * @param {string[]} values The version values to traverse for
  * @param {number} depth The depth to traverse
  * @param {string} tag The tag to filter results with
@@ -161,7 +160,7 @@ export function* iterateFeatures(
  */
 const traverseFeatures = (
   obj,
-  browsers,
+  browserNames,
   values,
   depth,
   tag,
@@ -169,7 +168,7 @@ const traverseFeatures = (
   status,
 ) => {
   const features = Array.from(
-    iterateFeatures(obj, browsers, values, depth, tag, identifier, status),
+    iterateFeatures(obj, browserNames, values, depth, tag, identifier, status),
   );
 
   return features.filter((item, pos) => features.indexOf(item) == pos);
@@ -178,7 +177,7 @@ const traverseFeatures = (
 /**
  * Traverse the features within BCD
  * @param {string[]} [folders] The folders to traverse
- * @param {BrowserName[]} [browsers] The browsers to traverse for
+ * @param {BrowserName[]} [browserNames] The browsers to traverse for
  * @param {string[]} [values] The version values to traverse for
  * @param {number} [depth] The depth to traverse
  * @param {string} [tag] The tag to filter results with
@@ -187,8 +186,8 @@ const traverseFeatures = (
  */
 const main = (
   folders = dataFolders.concat('webextensions'),
-  browsers = /** @type {BrowserName[]} */ (
-    Object.keys(bcd.browsers).filter((b) => bcd.browsers[b].type !== 'server')
+  browserNames = Object.entries(bcd.browsers).flatMap(([name, browser]) =>
+    browser.type !== 'server' ? [/** @type {BrowserName} */ (name)] : [],
   ),
   values = [],
   depth = 100,
@@ -202,7 +201,7 @@ const main = (
     features.push(
       ...traverseFeatures(
         bcd[folders[folder]],
-        browsers,
+        browserNames,
         values,
         depth,
         tag,

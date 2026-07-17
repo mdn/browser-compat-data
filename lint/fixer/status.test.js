@@ -1,18 +1,13 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatStatement, Identifier} from '../../types/types.js' */
-
-/**
- * @typedef {Record<string, Identifier | CompatStatement>} TestValue
- */
-
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
 import { fixStatusValue } from './status.js';
 
-/** @type {{ name: string; input: TestValue; output: TestValue }[]} */
+/** @import {InternalIdentifier} from '../../types/index.js' */
+
 const tests = [
   {
     name: 'should unset experimental when feature is deprecated',
@@ -110,7 +105,7 @@ const tests = [
           deprecated: true,
         },
       },
-      subfeature: /** @type {Identifier} */ ({
+      subfeature: {
         __compat: {
           support: {},
           status: {
@@ -119,7 +114,7 @@ const tests = [
             deprecated: false,
           },
         },
-      }),
+      },
     },
     output: {
       __compat: {
@@ -130,7 +125,7 @@ const tests = [
           deprecated: true,
         },
       },
-      subfeature: /** @type {Identifier} */ ({
+      subfeature: {
         __compat: {
           support: {},
           status: {
@@ -139,7 +134,7 @@ const tests = [
             deprecated: true,
           },
         },
-      }),
+      },
     },
   },
 ];
@@ -147,7 +142,9 @@ const tests = [
 describe('fixStatus', () => {
   for (const test of tests) {
     it(test.name, () => {
-      const result = fixStatusValue(/** @type {Identifier} */ (test.input));
+      const result = fixStatusValue(
+        /** @type {InternalIdentifier} */ (test.input),
+      );
 
       assert.deepStrictEqual(result, test.output);
     });

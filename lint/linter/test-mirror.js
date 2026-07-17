@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
 
 import bcd from '../../index.js';
 const { browsers } = bcd;
@@ -9,7 +9,7 @@ import { isMirrorEquivalent, isMirrorRequired } from '../fixer/mirror.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {BrowserName, CompatStatement} from '../../types/types.js' */
+/** @import {BrowserName, InternalCompatStatement} from '../../types/index.js' */
 /** @import {InternalSupportBlock} from '../../types/index.js' */
 
 /**
@@ -34,7 +34,7 @@ const checkMirroring = (supportData, category, logger) => {
       isMirrorEquivalent(supportData, browser)
     ) {
       logger.error(
-        chalk`Data for {bold ${browser}} can be automatically mirrored, use {bold "${browser}": "mirror"} instead`,
+        `Data for ${styleText('bold', browser)} can be automatically mirrored, use ${styleText('bold', `"${browser}": "mirror"`)} instead`,
         { fixable: true },
       );
     }
@@ -53,7 +53,7 @@ export default {
    */
   check: (logger, { data, path: { category } }) => {
     checkMirroring(
-      /** @type {CompatStatement} */ (data).support,
+      /** @type {InternalCompatStatement} */ (data).support,
       category,
       logger,
     );

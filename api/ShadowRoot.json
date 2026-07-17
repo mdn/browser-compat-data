@@ -140,18 +140,27 @@
       },
       "customElementRegistry": {
         "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/customElementRegistry",
           "spec_url": "https://dom.spec.whatwg.org/#dom-documentorshadowroot-customelementregistry",
           "tags": [
             "web-features:scoped-custom-element-registries"
           ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "146"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "150",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "dom.scoped-custom-element-registries.enabled",
+                  "value_to_set": "true"
+                }
+              ],
+              "impl_url": "https://bugzil.la/2018900"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -166,7 +175,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -538,7 +547,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "preview"
+                "version_added": "148"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -642,10 +651,11 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
-              "impl_url": "https://bugzil.la/1463402"
+              "version_added": "153"
             },
-            "firefox_android": "mirror",
+            "firefox_android": {
+              "version_added": false
+            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -708,7 +718,7 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot#shadowroot.referencetarget",
           "tags": [
-            "web-features:shadow-dom"
+            "web-features:referencetarget"
           ],
           "support": {
             "chrome": {
@@ -724,7 +734,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "149",
+              "version_added": "144",
               "flags": [
                 {
                   "type": "preference",
@@ -802,7 +812,7 @@
       "setHTML": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/ShadowRoot/setHTML",
-          "spec_url": "https://wicg.github.io/sanitizer-api/#dom-shadowroot-sethtml",
+          "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-shadowroot-sethtml",
           "tags": [
             "web-features:sanitizer"
           ],
@@ -813,7 +823,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview"
+              "version_added": "148"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -890,7 +900,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "preview"
+                "version_added": "148"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -914,7 +924,7 @@
         "options_sanitizer_parameter": {
           "__compat": {
             "description": "`options.sanitizer` parameter",
-            "spec_url": "https://wicg.github.io/sanitizer-api/#dom-shadowroot-sethtmlunsafe",
+            "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-sethtmlunsafeoptions-sanitizer",
             "support": {
               "chrome": {
                 "version_added": false

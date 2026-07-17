@@ -1,35 +1,29 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatData, SimpleSupportStatement} from '../types/types.js' */
+/** @import {InternalCompatData} from '../types/index.js' */
+/** @import {SimpleSupportStatement} from '../types/public.js' */
 
 /**
  * @typedef {'html' | 'plain'} Format
  */
 
-import chalk from 'chalk-template';
+import { styleText } from 'node:util';
+
 import { diffArrays } from 'diff';
 import esMain from 'es-main';
 import stripAnsi from 'strip-ansi';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
+import bcd from '../index.js';
 import { spawn, walk } from '../utils/index.js';
 
 import { addVersionLast, applyMirroring, transformMD } from './build/index.js';
 import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
 import dataFolders from './lib/data-folders.js';
 
-const BROWSER_NAMES = [
-  'chrome',
-  'chrome_android',
-  'edge',
-  'firefox',
-  'firefox_android',
-  'safari',
-  'safari_ios',
-  'webview_android',
-];
+const BROWSER_NAMES = Object.keys(bcd.browsers);
 
 /** @type {Format[]} */
 const FORMATS = ['html', 'plain'];
@@ -122,6 +116,8 @@ const flattenObject = (obj, parentKey = '', result = {}) => {
               .join(',');
           }
 
+          // After addVersionLast() ran, statements have version_last, so the
+          // public SimpleSupportStatement type fits.
           const {
             version_added,
             version_last,
@@ -217,7 +213,7 @@ const diffKeys = (key, lastKey, options) => {
         return (
           (options.format === 'html'
             ? `<strong>${key}</strong>`
-            : chalk`{blue ${key}}`) + space
+            : styleText('blue', key)) + space
         );
       }
 
@@ -280,27 +276,25 @@ const printDiffs = (base, head, options) => {
   /** @type {Map<string, Set<string>>} */
   const groups = new Map();
 
-  /** @type {CompatData} */
+  /** @type {InternalCompatData} */
   const baseContents = /** @type {*} */ ({});
-  /** @type {CompatData} */
+  /** @type {InternalCompatData} */
   const headContents = /** @type {*} */ ({});
 
   for (const status of getGitDiffStatuses(base, head)) {
-    if (
-      !(
-        status.headPath.endsWith('.json') &&
-        dataFolders.some((folder) => status.headPath.startsWith(`${folder}/`))
-      )
-    ) {
+    if (!(
+      status.headPath.endsWith('.json') &&
+      dataFolders.some((folder) => status.headPath.startsWith(`${folder}/`))
+    )) {
       continue;
     }
 
-    const baseFileContents = /** @type {CompatData} */ (
+    const baseFileContents = /** @type {InternalCompatData} */ (
       status.value !== 'A'
         ? JSON.parse(getFileContent(base, status.basePath))
         : {}
     );
-    const headFileContents = /** @type {CompatData} */ (
+    const headFileContents = /** @type {InternalCompatData} */ (
       status.value !== 'D'
         ? JSON.parse(getFileContent(head, status.headPath))
         : {}
@@ -395,11 +389,11 @@ const printDiffs = (base, head, options) => {
         if (part.removed) {
           return options.format == 'html'
             ? `<ins style="color: green">${value}</ins>`
-            : chalk`{green ${value}}`;
+            : styleText('green', value);
         } else if (part.added) {
           return options.format == 'html'
             ? `<del style="color: red">${value}</del>`
-            : chalk`{red ${value}}`;
+            : styleText('red', value);
         }
 
         return value;
@@ -419,7 +413,7 @@ const printDiffs = (base, head, options) => {
         BROWSER_NAMES.includes(part),
       );
       const field = reverseKeyParts.find((part) => !/^\d+$/.test(part));
-      const groupKey = `${!browser ? '' : options.format == 'html' ? `<strong>${browser}</strong>.` : chalk`{cyan ${browser}}.`}${field} = ${value}`;
+      const groupKey = `${!browser ? '' : options.format == 'html' ? `<strong>${browser}</strong>.` : `${styleText('cyan', browser)}.`}${field} = ${value}`;
       const groupValue = key
         .split('.')
         .map((part) => (part !== browser && part !== field ? part : '{}'))
@@ -431,17 +425,14 @@ const printDiffs = (base, head, options) => {
             ? value
             : options.format == 'html'
               ? '<small>{}</small>'
-              : chalk`{dim \{\}}`,
+              : styleText('dim', '{}'),
         )
         .join('.');
       const group = groups.get(groupKey) ?? new Set();
       group.add(groupValue);
       groups.set(groupKey, group);
     } else {
-      const change =
-        options.format == 'html'
-          ? `${keyDiff} = ${value}`
-          : chalk`${keyDiff} = ${value}`;
+      const change = `${keyDiff} = ${value}`;
       const group = groups.get(commonName) ?? new Set();
       group.add(change);
       groups.set(commonName, group);
@@ -528,7 +519,7 @@ const printDiffs = (base, head, options) => {
         console.log(
           options.format == 'html'
             ? `<em>${line}</em>`
-            : chalk`{italic ${line}}`,
+            : styleText('italic', line),
         ),
       );
     }
