@@ -56,7 +56,6 @@ export default [
 
     languageOptions: {
       globals: {
-        ...globals.mocha,
         ...globals.node,
         Atomics: 'readonly',
         SharedArrayBuffer: 'readonly',
@@ -194,6 +193,14 @@ export default [
       ],
 
       'unicorn/prefer-node-protocol': 'error',
+    },
+  },
+  {
+    // node:test's describe()/it() return promises that the test runner awaits
+    // internally, so calling them without awaiting is intentional.
+    files: ['**/*.test.js'],
+    rules: {
+      '@typescript-eslint/no-floating-promises': 'off',
     },
   },
 ];
