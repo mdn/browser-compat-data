@@ -21,8 +21,8 @@ export const orderSupportBlock = (key, value) => {
       .sort()
       .reduce(
         /**
-         * @param {InternalSupportBlock} result
-         * @param {BrowserName} key
+         * @param {InternalSupportBlock} result The accumulated support block
+         * @param {BrowserName} key The browser name to add
          * @returns {InternalSupportBlock}
          */
         (result, key) => {

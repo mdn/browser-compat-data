@@ -21,7 +21,7 @@ export const getStandardTrackExceptions = async () =>
 
 /**
  *
- * @param {Iterable<string>} features
+ * @param {Iterable<string>} features The features to set as exceptions
  */
 export const setStandardTrackExceptions = async (features) => {
   const lines = (await readFile(exceptionListPath, 'utf-8'))

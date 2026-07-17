@@ -617,7 +617,7 @@ if (esMain(import.meta)) {
       default: DEFAULT_FORMAT,
       choices: /** @type {Readonly<Format[]>} */ (FORMATS),
       /**
-       * @param {string} value
+       * @param {string} value The raw option value
        * @returns {Format}
        */
       coerce: (value) => FORMATS.find((f) => f === value) ?? DEFAULT_FORMAT,
