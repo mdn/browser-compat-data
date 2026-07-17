@@ -618,7 +618,7 @@ if (esMain(import.meta)) {
       choices: /** @type {Readonly<Format[]>} */ (FORMATS),
       /**
        * @param {string} value The raw option value
-       * @returns {Format}
+       * @returns {Format} The coerced format
        */
       coerce: (value) => FORMATS.find((f) => f === value) ?? DEFAULT_FORMAT,
     })

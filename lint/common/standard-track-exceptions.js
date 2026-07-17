@@ -11,7 +11,7 @@ export const exceptionListPath = join(
 );
 
 /**
- * @returns {Promise<string[]>}
+ * @returns {Promise<string[]>} The list of standard track exceptions
  */
 export const getStandardTrackExceptions = async () =>
   (await readFile(exceptionListPath, 'utf-8'))
