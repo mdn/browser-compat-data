@@ -63,7 +63,7 @@ const getFutureReleaseDate = async (release, releaseScheduleURL) => {
  * @param {string} status The status of the release
  * @param {string | number} version The major version of the release
  * @returns {Promise<string>} The URL of the release notes or the empty string if not found
- * @throws a string in case of error
+ * @throws {string} A string in case of error
  */
 const getReleaseNotesURL = async (status, version) => {
   const url = `https://learn.microsoft.com/en-us/microsoft-edge/web-platform/release-notes/${version}`;
