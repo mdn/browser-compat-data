@@ -322,7 +322,7 @@ export const updateEdgeReleases = async (options) => {
 /**
  * Parses a release date from the Edge release table.
  * @param {string} dateText - Release date in the original format.
- * @returns string
+ * @returns {Date} The parsed release date
  */
 export const parseReleaseDate = (dateText) => {
   const months = [
