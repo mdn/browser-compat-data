@@ -37,7 +37,7 @@ pre-push:
             run: npx prettier --check .
 
           - name: tsc
-            run: npx tsc --noEmit
+            run: npx --package=typescript tsc --noEmit
 
 post-merge:
   only:

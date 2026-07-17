@@ -552,6 +552,9 @@
       "headingoffset": {
         "__compat": {
           "spec_url": "https://html.spec.whatwg.org/multipage/sections.html#heading-levels-&-offsets",
+          "tags": [
+            "web-features:heading-offset"
+          ],
           "support": {
             "chrome": {
               "version_added": "151",
@@ -599,6 +602,9 @@
       "headingreset": {
         "__compat": {
           "spec_url": "https://html.spec.whatwg.org/multipage/sections.html#heading-levels-&-offsets",
+          "tags": [
+            "web-features:heading-offset"
+          ],
           "support": {
             "chrome": {
               "version_added": "151",
@@ -1094,16 +1100,30 @@
               "web-features:popover-hint"
             ],
             "support": {
-              "chrome": {
-                "version_added": "133",
-                "notes": "Implements an older version of the specification with inconsistent behaviors. See [bug 499019927](https://crbug.com/499019927)."
-              },
+              "chrome": [
+                {
+                  "version_added": "150"
+                },
+                {
+                  "version_added": "133",
+                  "version_removed": "150",
+                  "partial_implementation": true,
+                  "notes": "Implements an older version of the specification with inconsistent behaviors. See [bug 499019927](https://crbug.com/499019927)."
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "149",
-                "notes": "Implements an older version of the specification with inconsistent behaviors. See [bug 2029974](https://bugzil.la/2029974)."
-              },
+              "firefox": [
+                {
+                  "version_added": "153"
+                },
+                {
+                  "version_added": "149",
+                  "version_removed": "153",
+                  "partial_implementation": true,
+                  "notes": "Implements an older version of the specification with inconsistent behaviors. See [bug 2029974](https://bugzil.la/2029974)."
+                }
+              ],
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",

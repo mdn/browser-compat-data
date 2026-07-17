@@ -84,6 +84,7 @@ const getDiff = async (pull) => {
   } catch (e) {
     throw new Error(
       `${styleText('red', String(e))}\n ${styleText('yellow', `(Failed to diff features for #${pull.number}, skipping)`)}`,
+      { cause: e },
     );
   }
 
