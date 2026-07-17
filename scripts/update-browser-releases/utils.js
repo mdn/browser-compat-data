@@ -5,10 +5,10 @@
 
 /**
  * @typedef {object} RSSItem
- * @property {string} title
- * @property {string} pubDate
- * @property {string} description
- * @property {string} link
+ * @property {string} title The title of the RSS item
+ * @property {string} pubDate The publication date of the RSS item
+ * @property {string} description The description of the RSS item
+ * @property {string} link The link of the RSS item
  */
 
 import { styleText } from 'node:util';

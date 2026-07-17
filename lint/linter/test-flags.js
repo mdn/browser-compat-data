@@ -11,8 +11,8 @@ import { compare } from 'compare-versions';
 
 /**
  * @typedef {object} FlagError
- * @property {FlagStatement[]} flagData
- * @property {BrowserName} browser
+ * @property {FlagStatement[]} flagData The irrelevant flag statements found
+ * @property {BrowserName} browser The browser the flag data applies to
  */
 
 /**

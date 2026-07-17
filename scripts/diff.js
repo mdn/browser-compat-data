@@ -17,14 +17,14 @@ import mirror from './build/mirror.js';
 
 /**
  * @typedef {object} Contents
- * @property {string} base
- * @property {string} head
+ * @property {string} base The file contents at the base commit
+ * @property {string} head The file contents at the head commit
  */
 
 /**
  * @typedef {object} DiffItem
- * @property {string} name
- * @property {string} description
+ * @property {string} name The name of the changed feature
+ * @property {string} description The description of the change
  */
 
 /**

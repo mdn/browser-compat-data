@@ -16,26 +16,26 @@ import query from './query.js';
 
 /**
  * @typedef {object} BrowserReleaseWalkOutput
- * @property {string} path
- * @property {InternalDataType} data
- * @property {BrowserStatement} browser
- * @property {ReleaseStatement} browserRelease
+ * @property {string} path The path of the current node
+ * @property {InternalDataType} data The data of the current node
+ * @property {BrowserStatement} browser The browser statement of the current node
+ * @property {ReleaseStatement} browserRelease The release statement of the current node
  */
 
 /**
  * @typedef {object} LowLevelWalkOutput
- * @property {string} path
- * @property {InternalDataType} data
- * @property {BrowserStatement} [browser]
- * @property {InternalCompatStatement} [compat]
- * @property {ReleaseStatement} [browserRelease]
+ * @property {string} path The path of the current node
+ * @property {InternalDataType} data The data of the current node
+ * @property {BrowserStatement} [browser] The browser statement of the current node
+ * @property {InternalCompatStatement} [compat] The compat statement of the current node
+ * @property {ReleaseStatement} [browserRelease] The release statement of the current node
  */
 
 /**
  * @typedef {object} WalkOutput
- * @property {string} path
- * @property {InternalDataType} data
- * @property {InternalCompatStatement} compat
+ * @property {string} path The path of the current node
+ * @property {InternalDataType} data The data of the current node
+ * @property {InternalCompatStatement} compat The compat statement of the current node
  */
 
 /**
