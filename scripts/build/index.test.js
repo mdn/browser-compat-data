@@ -115,6 +115,13 @@ describe('Build functions', () => {
             2: { status: 'retired' },
           },
         },
+        firefox: {
+          releases: {
+            2: { status: 'retired' },
+            1: { status: 'retired' },
+            1.5: { status: 'retired' },
+          },
+        },
       },
     };
 
@@ -124,6 +131,15 @@ describe('Build functions', () => {
     assert.equal(data.browsers.example.releases['2'].index, 1);
     assert.equal(data.browsers.example.releases['2.5'].index, 2);
     assert.equal(data.browsers.example.releases['10'].index, 3);
+
+    // Each browser is indexed independently, starting from 0.
+    assert.equal(data.browsers.firefox.releases['1'].index, 0);
+    assert.equal(data.browsers.firefox.releases['1.5'].index, 1);
+    assert.equal(data.browsers.firefox.releases['2'].index, 2);
+
+    // Existing release properties are preserved.
+    assert.equal(data.browsers.example.releases['1'].status, 'retired');
+    assert.equal(data.browsers.example.releases['10'].status, 'current');
   });
 
   it('createManifest', () => {
