@@ -617,6 +617,7 @@ if (esMain(import.meta)) {
       default: DEFAULT_FORMAT,
       choices: /** @type {Readonly<Format[]>} */ (FORMATS),
       /**
+       * Coerce the format option value
        * @param {string} value The raw option value
        * @returns {Format} The coerced format
        */

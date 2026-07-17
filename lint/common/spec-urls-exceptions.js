@@ -8,6 +8,7 @@ const __dirname = dirname(__filename);
 export const exceptionListPath = join(__dirname, './spec-urls-exceptions.txt');
 
 /**
+ * Get the list of spec URL exceptions
  * @returns {Promise<string[]>} The list of spec URL exceptions
  */
 export const getSpecURLsExceptions = async () =>

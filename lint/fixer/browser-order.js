@@ -21,6 +21,7 @@ export const orderSupportBlock = (key, value) => {
       .sort()
       .reduce(
         /**
+         * Add a browser's support to the ordered support block
          * @param {InternalSupportBlock} result The accumulated support block
          * @param {BrowserName} key The browser name to add
          * @returns {InternalSupportBlock} The support block with the browser added

@@ -11,6 +11,7 @@ export const exceptionListPath = join(
 );
 
 /**
+ * Get the list of standard track exceptions
  * @returns {Promise<string[]>} The list of standard track exceptions
  */
 export const getStandardTrackExceptions = async () =>
@@ -20,7 +21,7 @@ export const getStandardTrackExceptions = async () =>
     .filter((line) => line.length > 0 && !line.startsWith('#'));
 
 /**
- *
+ * Set the list of standard track exceptions
  * @param {Iterable<string>} features The features to set as exceptions
  */
 export const setStandardTrackExceptions = async (features) => {

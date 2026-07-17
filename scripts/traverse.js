@@ -235,7 +235,7 @@ if (esMain(import.meta)) {
         (b) => bcd.browsers[b].type !== 'server',
       ),
       /**
-       *
+       * Coerce the browsers option value
        * @param value The raw option value
        * @returns {BrowserName[]} The coerced browser names
        */
