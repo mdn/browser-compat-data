@@ -236,7 +236,7 @@ if (esMain(import.meta)) {
       ),
       /**
        * Coerce the browsers option value
-       * @param value The raw option value
+       * @param {string | string[]} value The raw option value
        * @returns {BrowserName[]} The coerced browser names
        */
       coerce: (value) =>
