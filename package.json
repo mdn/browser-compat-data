@@ -103,7 +103,7 @@
     "prepare": "npm run gentypes && npm run build",
     "diff": "node scripts/diff.js",
     "diff:flat": "node scripts/diff-flat.js",
-    "unittest": "NODE_ENV=test FORCE_COLOR=1 c8 node --test --test-reporter=spec '**/*.test.js'",
+    "unittest": "NODE_ENV=test FORCE_COLOR=1 c8 node --test --test-reporter=spec --test-isolation=none '**/*.test.js'",
     "coverage": "c8 report -r lcov && open-cli coverage/lcov-report/index.html",
     "format": "eslint --cache . && prettier --check --cache . && tsc --noEmit",
     "format:fix": "eslint --quiet --fix --cache . && prettier --write --cache .",
