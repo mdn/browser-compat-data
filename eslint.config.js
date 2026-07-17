@@ -2,7 +2,6 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { fixupConfigRules, fixupPluginRules } from '@eslint/compat';
-import _import from 'eslint-plugin-import';
 // import jsdoc from 'eslint-plugin-jsdoc';
 import preferArrowFunctions from 'eslint-plugin-prefer-arrow-functions';
 import unicorn from 'eslint-plugin-unicorn';
@@ -43,14 +42,13 @@ export default [
       'eslint:recommended',
       'plugin:@typescript-eslint/strict',
       'plugin:@typescript-eslint/stylistic',
-      'plugin:import/recommended',
+      'plugin:import-x/recommended',
       'plugin:jsdoc/recommended-typescript-flavor',
     ),
   ),
   {
     plugins: {
       '@typescript-eslint': fixupPluginRules(ts.plugin),
-      import: fixupPluginRules(_import),
       // jsdoc: fixupPluginRules(jsdoc), // Plugin already defined
       'prefer-arrow-functions': preferArrowFunctions,
       unicorn,
@@ -58,7 +56,6 @@ export default [
 
     languageOptions: {
       globals: {
-        ...globals.mocha,
         ...globals.node,
         Atomics: 'readonly',
         SharedArrayBuffer: 'readonly',
@@ -75,7 +72,7 @@ export default [
     },
 
     settings: {
-      'import/resolver': {
+      'import-x/resolver': {
         node: true,
       },
     },
@@ -97,7 +94,7 @@ export default [
       'default-case': 'off',
       'default-case-last': 'error',
 
-      'import/order': [
+      'import-x/order': [
         'error',
         {
           'newlines-between': 'always',
@@ -105,8 +102,8 @@ export default [
         },
       ],
 
-      'import/no-named-as-default-member': 'off',
-      'import/no-unresolved': [
+      'import-x/no-named-as-default-member': 'off',
+      'import-x/no-unresolved': [
         'error',
         {
           ignore: [
@@ -170,6 +167,10 @@ export default [
       'no-lone-blocks': 'error',
       'no-return-assign': 'error',
       'no-self-compare': 'error',
+      // Disabled: flags intentional dead stores that document intent (e.g.
+      // `previousKey` resets in `scripts/diff-flat.js`); enabling it would
+      // require behavioral changes out of scope here.
+      'no-useless-assignment': 'off',
       'no-unused-expressions': 'error',
       'no-unused-vars': 'off', // Using @typescript-eslint/no-unused-vars instead.
       'no-useless-call': 'error',
@@ -192,6 +193,14 @@ export default [
       ],
 
       'unicorn/prefer-node-protocol': 'error',
+    },
+  },
+  {
+    // node:test's describe()/it() return promises that the test runner awaits
+    // internally, so calling them without awaiting is intentional.
+    files: ['**/*.test.js'],
+    rules: {
+      '@typescript-eslint/no-floating-promises': 'off',
     },
   },
 ];

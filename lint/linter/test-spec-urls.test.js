@@ -4,6 +4,7 @@
 /** @import {InternalCompatStatement} from '../../types/index.js' */
 /** @import {LinterMessage} from '../types.js' */
 
+import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
 import { Logger } from '../utils.js';
