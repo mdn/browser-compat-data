@@ -3,6 +3,7 @@
 
 /** @import {InternalSupportBlock} from '../../types/index.js' */
 
+import { describe, it, beforeEach } from 'node:test';
 import assert from 'node:assert/strict';
 
 import { Logger } from '../utils.js';

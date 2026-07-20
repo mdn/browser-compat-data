@@ -1,5 +1,51 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.0.7](https://github.com/mdn/browser-compat-data/releases/tag/v8.0.7)
+
+July 17, 2026
+
+### Additions
+
+- `api.PermissionsPolicy` ([#30043](https://github.com/mdn/browser-compat-data/pull/30043))
+- `api.PermissionsPolicy.allowedFeatures` ([#30043](https://github.com/mdn/browser-compat-data/pull/30043))
+- `api.PermissionsPolicy.allowsFeature` ([#30043](https://github.com/mdn/browser-compat-data/pull/30043))
+- `api.PermissionsPolicy.features` ([#30043](https://github.com/mdn/browser-compat-data/pull/30043))
+- `api.PermissionsPolicy.getAllowlistForFeature` ([#30043](https://github.com/mdn/browser-compat-data/pull/30043))
+- `css.properties.window-drag` ([#30043](https://github.com/mdn/browser-compat-data/pull/30043))
+- `css.properties.window-drag.move` ([#30043](https://github.com/mdn/browser-compat-data/pull/30043))
+- `css.properties.window-drag.none` ([#30043](https://github.com/mdn/browser-compat-data/pull/30043))
+- `javascript.statements.import.import_source` ([#30034](https://github.com/mdn/browser-compat-data/pull/30034))
+- `webassembly.api.SuspendError` ([#30057](https://github.com/mdn/browser-compat-data/pull/30057))
+- `webassembly.api.SuspendError.SuspendError` ([#30057](https://github.com/mdn/browser-compat-data/pull/30057))
+- `webassembly.instructions.block` ([#30065](https://github.com/mdn/browser-compat-data/pull/30065))
+- `webassembly.instructions.br` ([#30065](https://github.com/mdn/browser-compat-data/pull/30065))
+- `webassembly.instructions.br_if` ([#30065](https://github.com/mdn/browser-compat-data/pull/30065))
+- `webassembly.instructions.br_table` ([#30065](https://github.com/mdn/browser-compat-data/pull/30065))
+- `webassembly.instructions.call` ([#30065](https://github.com/mdn/browser-compat-data/pull/30065))
+- `webassembly.instructions.drop` ([#30065](https://github.com/mdn/browser-compat-data/pull/30065))
+- `webassembly.instructions.end` ([#30065](https://github.com/mdn/browser-compat-data/pull/30065))
+- `webassembly.instructions.if_else` ([#30065](https://github.com/mdn/browser-compat-data/pull/30065))
+- `webassembly.instructions.loop` ([#30065](https://github.com/mdn/browser-compat-data/pull/30065))
+- `webassembly.instructions.nop` ([#30065](https://github.com/mdn/browser-compat-data/pull/30065))
+- `webassembly.instructions.return` ([#30065](https://github.com/mdn/browser-compat-data/pull/30065))
+- `webassembly.instructions.select` ([#30065](https://github.com/mdn/browser-compat-data/pull/30065))
+- `webassembly.instructions.unreachable` ([#30065](https://github.com/mdn/browser-compat-data/pull/30065))
+- `webassembly.types.exnref` ([#30058](https://github.com/mdn/browser-compat-data/pull/30058))
+- `webassembly.types.externref` ([#30058](https://github.com/mdn/browser-compat-data/pull/30058))
+- `webassembly.types.f32` ([#30058](https://github.com/mdn/browser-compat-data/pull/30058))
+- `webassembly.types.f64` ([#30058](https://github.com/mdn/browser-compat-data/pull/30058))
+- `webassembly.types.funcref` ([#30058](https://github.com/mdn/browser-compat-data/pull/30058))
+- `webassembly.types.i32` ([#30058](https://github.com/mdn/browser-compat-data/pull/30058))
+- `webassembly.types.i64` ([#30058](https://github.com/mdn/browser-compat-data/pull/30058))
+- `webassembly.types.v128` ([#30058](https://github.com/mdn/browser-compat-data/pull/30058))
+
+### Statistics
+
+- 7 contributors have changed 99 files with 1,658 additions and 999 deletions in 17 commits ([`next...v8.0.7`](https://github.com/mdn/browser-compat-data/compare/next...v8.0.7))
+- 20,015 total features
+- 1,258 total contributors
+- 5,700 total stargazers
+
 ## [v8.0.6](https://github.com/mdn/browser-compat-data/releases/tag/v8.0.6)
 
 July 10, 2026

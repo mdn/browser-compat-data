@@ -3,6 +3,7 @@
 
 /** @import {InternalIdentifier, InternalCompatStatement} from '../../types/index.js' */
 
+import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
 import compareStatements from './compare-statements.js';
