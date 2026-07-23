@@ -20,6 +20,8 @@ import bcd from '../index.js';
 import { spawn, walk } from '../utils/index.js';
 
 import { addVersionLast, applyMirroring, transformMD } from './build/index.js';
+import { deepMerge } from './lib/deep-merge.js';
+import { collectFeatures, detectMoves, getAt } from './lib/detect-moves.js';
 import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
 import dataFolders from './lib/data-folders.js';
 
@@ -223,38 +225,97 @@ const diffKeys = (key, lastKey, options) => {
 };
 
 /**
- * Deeply merges a source object into a target object.
- * @param {*} target The target object to merge into.
- * @param {*} source The source object to merge.
- * @returns {*} the target object with source merged.
+ * Writes a value at a dot-separated path within a tree, creating intermediate
+ * plain objects as needed.
+ * @param {*} root the root object.
+ * @param {string} path dot-separated path.
+ * @param {*} value the value to set.
+ * @returns {void}
  */
-const deepMerge = (target, source) => {
-  if (typeof target !== 'object' || target === null) {
-    return source;
-  }
-  if (typeof source !== 'object' || source === null) {
-    return source;
-  }
-
-  for (const key of Object.keys(source)) {
-    const sourceValue = source[key];
-    const targetValue = target[key];
-
-    if (Array.isArray(sourceValue) && Array.isArray(targetValue)) {
-      target[key] = targetValue.concat(sourceValue);
-    } else if (
-      typeof sourceValue === 'object' &&
-      typeof targetValue === 'object' &&
-      sourceValue !== null &&
-      targetValue !== null
-    ) {
-      target[key] = deepMerge({ ...targetValue }, sourceValue);
-    } else {
-      target[key] = sourceValue;
+const setAt = (root, path, value) => {
+  const parts = path.split('.');
+  let node = root;
+  for (let i = 0; i < parts.length - 1; i++) {
+    if (typeof node[parts[i]] !== 'object' || node[parts[i]] === null) {
+      node[parts[i]] = {};
     }
+    node = node[parts[i]];
   }
+  node[parts[parts.length - 1]] = value;
+};
 
-  return target;
+/**
+ * Relocates each move's `__compat` block from its source path to its
+ * destination path within the base tree. After projection, the diff treats
+ * each move as if the feature had always lived at the new path with the
+ * old values, so a pure rename produces no add/remove noise.
+ * @param {*} baseContents the base data tree (mutated).
+ * @param {Map<string, string>} moves source → destination paths.
+ * @returns {void}
+ */
+const projectMoves = (baseContents, moves) => {
+  for (const [from, to] of moves) {
+    const source = getAt(baseContents, from);
+    if (!source || typeof source !== 'object' || !source.__compat) {
+      continue;
+    }
+    const dest = getAt(baseContents, to);
+    if (dest && typeof dest === 'object') {
+      dest.__compat = source.__compat;
+    } else {
+      setAt(baseContents, to, { __compat: source.__compat });
+    }
+    delete source.__compat;
+  }
+};
+
+/**
+ * Formats a moved feature path as `prefix.{from → to}.suffix`, with the
+ * differing middle segments highlighted (from in red, to in green) and the
+ * shared head/tail segments unstyled.
+ * @param {string} from the source path.
+ * @param {string} to the destination path.
+ * @param {object} options Options
+ * @param {Format} options.format Whether to return HTML, otherwise plaintext.
+ * @returns {string} the formatted move string.
+ */
+/**
+ * Formats a moved feature path as an inline diff, with chunks added in head
+ * (green) and chunks present only in base (red) interleaved next to the
+ * shared parts. Tokenizes each path so `.`/`_` separators stay attached to
+ * the preceding word — partial-word overlaps like `er` in `parameter` and
+ * `referrer` aren't matched.
+ * @param {string} from the source path.
+ * @param {string} to the destination path.
+ * @param {object} options Options
+ * @param {Format} options.format Whether to return HTML, otherwise plaintext.
+ * @returns {string} the formatted move string.
+ */
+const formatMove = (from, to, options) => {
+  /**
+   * Tokenizes a path into words and separators (`.`/`_`) so each can be
+   * matched independently by the diff.
+   * @param {string} s the path to tokenize.
+   * @returns {string[]} interleaved word and separator tokens.
+   */
+  const tokenize = (s) => s.split(/([._])/);
+  return diffArrays(tokenize(to), tokenize(from))
+    .map((part) => {
+      // Note: removed/added is deliberately inverted here, to have additions
+      // first — matching the convention used for value diffs.
+      const value = part.value.join('');
+      if (part.removed) {
+        return options.format == 'html'
+          ? `<ins style="color: green">${value}</ins>`
+          : styleText('green', value);
+      } else if (part.added) {
+        return options.format == 'html'
+          ? `<del style="color: red">${value}</del>`
+          : styleText('red', value);
+      }
+      return value;
+    })
+    .join('');
 };
 
 /**
@@ -327,6 +388,20 @@ const printDiffs = (base, head, options) => {
     }
   }
 
+  const moves = detectMoves(baseContents, headContents);
+
+  const baseFeaturePaths = collectFeatures(baseContents);
+  const headFeaturePaths = collectFeatures(headContents);
+  const movedDests = new Set(moves.values());
+  const addedFeatures = [...headFeaturePaths.keys()]
+    .filter((p) => !baseFeaturePaths.has(p) && !movedDests.has(p))
+    .sort();
+  const removedFeatures = [...baseFeaturePaths.keys()]
+    .filter((p) => !headFeaturePaths.has(p) && !moves.has(p))
+    .sort();
+
+  projectMoves(baseContents, moves);
+
   const baseData = flattenObject(baseContents);
   const headData = flattenObject(headContents);
 
@@ -347,9 +422,83 @@ const printDiffs = (base, head, options) => {
   const commonName =
     options.format === 'html' ? `<h3>${prefix}</h3>` : `${prefix}`;
 
+  /**
+   * Renders a colored inline diff between two stringified field values,
+   * matching the convention used elsewhere: green for additions in head, red
+   * for removals from base. Returns an empty string when the diff would be
+   * empty (e.g. null → "mirror" / "false").
+   * @param {string} baseValue stringified base value (or `"null"`).
+   * @param {string} headValue stringified head value (or `"null"`).
+   * @returns {string} the colored diff string.
+   */
+  const formatValueDiff = (baseValue, headValue) => {
+    const splitRegexp =
+      /(?<=^")|(?<=[\],/ ])|(?=[[,/ ])|(?="$)|(?<=\d)(?=−)|(?<=−)(?=\d)|(?=#)/;
+    let headValueForDiff = headValue;
+    let baseValueForDiff = baseValue;
+
+    if (baseValue == 'null') {
+      baseValueForDiff = '';
+      if (headValue == '"mirror"' || headValue == '"false"') {
+        headValueForDiff = '';
+      }
+    } else if (headValue == 'null') {
+      headValueForDiff = '';
+    }
+
+    return diffArrays(
+      headValueForDiff.split(splitRegexp),
+      baseValueForDiff.split(splitRegexp),
+    )
+      .map((part) => {
+        // Note: removed/added is deliberately inverted here, to have
+        // additions first.
+        const value = part.value.join('');
+        if (part.removed) {
+          return options.format == 'html'
+            ? `<ins style="color: green">${value}</ins>`
+            : styleText('green', value);
+        } else if (part.added) {
+          return options.format == 'html'
+            ? `<del style="color: red">${value}</del>`
+            : styleText('red', value);
+        }
+        return value;
+      })
+      .join('');
+  };
+
+  /** @type {Set<string>} */
+  const consumedKeys = new Set();
+  for (const [, to] of moves) {
+    consumedKeys.add(`${to}.__compat.description`);
+  }
+  for (const path of [...addedFeatures, ...removedFeatures]) {
+    consumedKeys.add(`${path}.__compat.description`);
+  }
+
+  /**
+   * Returns the colored description diff at a feature path, or empty if
+   * unchanged.
+   * @param {string} path the feature path.
+   * @returns {string} the colored description diff (or empty).
+   */
+  const featureDescriptionDiff = (path) => {
+    const key = `${path}.__compat.description`;
+    const baseValue = JSON.stringify(baseData[key] ?? null);
+    const headValue = JSON.stringify(headData[key] ?? null);
+    if (baseValue === headValue) {
+      return '';
+    }
+    return formatValueDiff(baseValue, headValue);
+  };
+
   let lastKey = '';
 
   for (const key of keys) {
+    if (consumedKeys.has(key)) {
+      continue;
+    }
     const baseValue = JSON.stringify(baseData[key] ?? null);
     const headValue = JSON.stringify(headData[key] ?? null);
     if (baseValue === headValue) {
@@ -364,42 +513,7 @@ const printDiffs = (base, head, options) => {
       options,
     );
 
-    const splitRegexp =
-      /(?<=^")|(?<=[\],/ ])|(?=[[,/ ])|(?="$)|(?<=\d)(?=−)|(?<=−)(?=\d)|(?=#)/;
-    let headValueForDiff = headValue;
-    let baseValueForDiff = baseValue;
-
-    if (baseValue == 'null') {
-      baseValueForDiff = '';
-      if (headValue == '"mirror"' || headValue == '"false"') {
-        // Ignore initial "mirror"/"false" values.
-        headValueForDiff = '';
-      }
-    } else if (headValue == 'null') {
-      headValueForDiff = '';
-    }
-
-    const valueDiff = diffArrays(
-      headValueForDiff.split(splitRegexp),
-      baseValueForDiff.split(splitRegexp),
-    )
-      .map((part) => {
-        // Note: removed/added is deliberately inversed here, to have additions first.
-        const value = part.value.join('');
-        if (part.removed) {
-          return options.format == 'html'
-            ? `<ins style="color: green">${value}</ins>`
-            : styleText('green', value);
-        } else if (part.added) {
-          return options.format == 'html'
-            ? `<del style="color: red">${value}</del>`
-            : styleText('red', value);
-        }
-
-        return value;
-      })
-      .join('');
-
+    const valueDiff = formatValueDiff(baseValue, headValue);
     const value = valueDiff;
 
     if (!value.length) {
@@ -440,7 +554,12 @@ const printDiffs = (base, head, options) => {
     lastKey = key;
   }
 
-  if (groups.size === 0) {
+  if (
+    groups.size === 0 &&
+    !addedFeatures.length &&
+    !removedFeatures.length &&
+    !moves.size
+  ) {
     console.log('✔ No changes.');
     return;
   }
@@ -524,6 +643,105 @@ const printDiffs = (base, head, options) => {
       );
     }
   };
+
+  /**
+   * @typedef {object} ListingItem
+   * @property {string} section section header.
+   * @property {string} rendered styled key (path or move).
+   * @property {number} visibleLen visible length of `rendered` (no styling).
+   * @property {string} desc styled description diff (or empty).
+   */
+
+  /** @type {ListingItem[]} */
+  const listingItems = [];
+  for (const path of addedFeatures) {
+    const lastDot = path.lastIndexOf('.');
+    const parent = lastDot === -1 ? '' : path.slice(0, lastDot + 1);
+    const leaf = lastDot === -1 ? path : path.slice(lastDot + 1);
+    const styledLeaf =
+      options.format === 'html'
+        ? `<ins style="color: green">${leaf}</ins>`
+        : styleText('green', leaf);
+    listingItems.push({
+      section: 'New features',
+      rendered: `${parent}${styledLeaf}`,
+      visibleLen: path.length,
+      desc: featureDescriptionDiff(path),
+    });
+  }
+  for (const path of removedFeatures) {
+    const lastDot = path.lastIndexOf('.');
+    const parent = lastDot === -1 ? '' : path.slice(0, lastDot + 1);
+    const leaf = lastDot === -1 ? path : path.slice(lastDot + 1);
+    const styledLeaf =
+      options.format === 'html'
+        ? `<del style="color: red">${leaf}</del>`
+        : styleText('red', leaf);
+    listingItems.push({
+      section: 'Removed features',
+      rendered: `${parent}${styledLeaf}`,
+      visibleLen: path.length,
+      desc: featureDescriptionDiff(path),
+    });
+  }
+  for (const [from, to] of moves) {
+    const rendered = formatMove(from, to, options);
+    const visibleLen =
+      options.format === 'html'
+        ? rendered.replace(/<[^>]+>/g, '').length
+        : stripAnsi(rendered).length;
+    listingItems.push({
+      section: 'Moved features',
+      rendered,
+      visibleLen,
+      desc: featureDescriptionDiff(to),
+    });
+  }
+
+  if (listingItems.length) {
+    const maxLen = Math.max(...listingItems.map((i) => i.visibleLen));
+    const hasAnyDesc = listingItems.some((i) => i.desc);
+    let lastSection = '';
+    for (const item of listingItems) {
+      if (item.section !== lastSection) {
+        if (lastSection) {
+          console.log('');
+        }
+        const title = `${item.section}:`;
+        const styledTitle =
+          options.format === 'html'
+            ? `<strong>${title}</strong>`
+            : styleText('bold', title);
+        let header = styledTitle;
+        if (hasAnyDesc) {
+          const padding = ' '.repeat(Math.max(1, maxLen + 3 - title.length));
+          const descLabel = 'description =';
+          header +=
+            padding +
+            (options.format === 'html'
+              ? `<em>${descLabel}</em>`
+              : styleText('italic', descLabel));
+        }
+        console.log(header);
+        lastSection = item.section;
+      }
+      let line = `  ${item.rendered}`;
+      if (item.desc) {
+        const padding = ' '.repeat(1 + maxLen - item.visibleLen);
+        const styledDesc =
+          options.format === 'html'
+            ? `<em>${item.desc}</em>`
+            : styleText('italic', item.desc);
+        line += padding + styledDesc;
+      }
+      console.log(line);
+    }
+    console.log('');
+  }
+
+  if (addedFeatures.length || removedFeatures.length || moves.size) {
+    console.log('');
+  }
 
   for (const entry of entries) {
     /** @type {string | null} */
