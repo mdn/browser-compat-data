@@ -9,6 +9,7 @@ import { walk } from '../../utils/index.js';
 import {
   generateMeta,
   applyMirroring,
+  addReleaseIndex,
   addVersionLast,
   createManifest,
 } from './index.js';
@@ -102,6 +103,29 @@ describe('Build functions', () => {
     assert.equal(data.feature.__compat.support.safari.version_last, 'preview');
     assert.equal(data.feature.__compat.support.edge.version_last, true);
   });
+  it('addReleaseIndex', () => {
+    /** @type {*} */
+    const data = {
+      browsers: {
+        example: {
+          releases: {
+            10: { status: 'current' },
+            1: { status: 'retired' },
+            2.5: { status: 'retired' },
+            2: { status: 'retired' },
+          },
+        },
+      },
+    };
+
+    addReleaseIndex(data);
+
+    assert.equal(data.browsers.example.releases['1'].index, 0);
+    assert.equal(data.browsers.example.releases['2'].index, 1);
+    assert.equal(data.browsers.example.releases['2.5'].index, 2);
+    assert.equal(data.browsers.example.releases['10'].index, 3);
+  });
+
   it('createManifest', () => {
     const manifest = createManifest();
     assert.ok(manifest.main);

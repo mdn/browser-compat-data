@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {BrowserStatement} from '../../types/index.js' */
+/** @import {InternalBrowserStatement} from '../../types/index.js' */
 
 import { describe, it, beforeEach } from 'node:test';
 import assert from 'node:assert/strict';
@@ -22,7 +22,7 @@ describe('test-browsers-data', () => {
 
   it('should log an error if a browser has multiple current releases', async () => {
     const browser = 'nodejs';
-    /** @type {BrowserStatement} */
+    /** @type {InternalBrowserStatement} */
     const data = {
       name: 'Node.js',
       type: 'server',
@@ -49,7 +49,7 @@ describe('test-browsers-data', () => {
 
   it('should log an error if a browser has multiple nightly releases', async () => {
     const browser = 'firefox';
-    /** @type {BrowserStatement} */
+    /** @type {InternalBrowserStatement} */
     const data = {
       name: 'Firefox',
       type: 'desktop',
@@ -69,7 +69,7 @@ describe('test-browsers-data', () => {
 
   it('should not log an error if a server engine has multiple nightly releases', async () => {
     const browser = 'nodejs';
-    /** @type {BrowserStatement} */
+    /** @type {InternalBrowserStatement} */
     const data = {
       name: 'Node.js',
       type: 'server',
@@ -89,7 +89,7 @@ describe('test-browsers-data', () => {
 
   it('should log an error if the upstream for a browser is set to itself', async () => {
     const browser = 'safari_ios';
-    /** @type {BrowserStatement} */
+    /** @type {InternalBrowserStatement} */
     const data = {
       name: 'Safari iOS',
       type: 'mobile',
@@ -108,7 +108,7 @@ describe('test-browsers-data', () => {
 
   it('should log an error if the upstream for a browser is an unknown browser', async () => {
     const browser = 'safari_ios';
-    /** @type {BrowserStatement} */
+    /** @type {InternalBrowserStatement} */
     const data = {
       name: 'Safari iOS',
       type: 'mobile',
@@ -127,7 +127,7 @@ describe('test-browsers-data', () => {
 
   it('should log an error if a retired or current release has no release date', async () => {
     const browser = 'opera';
-    /** @type {BrowserStatement} */
+    /** @type {InternalBrowserStatement} */
     const data = {
       name: 'Opera',
       type: 'desktop',
