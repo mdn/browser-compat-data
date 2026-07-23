@@ -16,26 +16,26 @@ import query from './query.js';
 
 /**
  * @typedef {object} BrowserReleaseWalkOutput
- * @property {string} path
- * @property {InternalDataType} data
- * @property {BrowserStatement} browser
- * @property {ReleaseStatement} browserRelease
+ * @property {string} path The path of the current node
+ * @property {InternalDataType} data The data of the current node
+ * @property {BrowserStatement} browser The browser statement of the current node
+ * @property {ReleaseStatement} browserRelease The release statement of the current node
  */
 
 /**
  * @typedef {object} LowLevelWalkOutput
- * @property {string} path
- * @property {InternalDataType} data
- * @property {BrowserStatement} [browser]
- * @property {InternalCompatStatement} [compat]
- * @property {ReleaseStatement} [browserRelease]
+ * @property {string} path The path of the current node
+ * @property {InternalDataType} data The data of the current node
+ * @property {BrowserStatement} [browser] The browser statement of the current node
+ * @property {InternalCompatStatement} [compat] The compat statement of the current node
+ * @property {ReleaseStatement} [browserRelease] The release statement of the current node
  */
 
 /**
  * @typedef {object} WalkOutput
- * @property {string} path
- * @property {InternalDataType} data
- * @property {InternalCompatStatement} compat
+ * @property {string} path The path of the current node
+ * @property {InternalDataType} data The data of the current node
+ * @property {InternalCompatStatement} compat The compat statement of the current node
  */
 
 /**
@@ -43,7 +43,7 @@ import query from './query.js';
  * @param {BrowserStatement} data The data to iterate
  * @param {string} [path] The current path
  * @yields {BrowserReleaseWalkOutput} The release info
- * @returns {IterableIterator<BrowserReleaseWalkOutput>}
+ * @returns {IterableIterator<BrowserReleaseWalkOutput>} The browser release walk output
  */
 export function* browserReleaseWalk(data, path) {
   for (const [release, releaseData] of Object.entries(data.releases)) {
@@ -62,7 +62,7 @@ export function* browserReleaseWalk(data, path) {
  * @param {string} [path] The current path
  * @param {number} [depth] The maximum depth to iterate
  * @yields {LowLevelWalkOutput} The feature info
- * @returns {IterableIterator<LowLevelWalkOutput>}
+ * @returns {IterableIterator<LowLevelWalkOutput>} The low-level walk output
  */
 export function* lowLevelWalk(data = bcd, path, depth = Infinity) {
   if (path !== undefined && path !== '__meta') {
@@ -96,7 +96,7 @@ export function* lowLevelWalk(data = bcd, path, depth = Infinity) {
  * @param {string | string[]} [entryPoints] Entry points to iterate
  * @param {InternalDataType} [data] The data to iterate
  * @yields {WalkOutput} The feature info
- * @returns {IterableIterator<WalkOutput>}
+ * @returns {IterableIterator<WalkOutput>} The walk output
  */
 export default function* walk(entryPoints, data = bcd) {
   /** @type {IterableIterator<LowLevelWalkOutput>[]} */

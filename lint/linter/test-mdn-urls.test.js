@@ -23,10 +23,10 @@ const originalRedirects = inventory.redirects;
 
 /**
  * Replace inventory with mock data, restoring originals in afterEach.
- * @param {object} [overrides]
- * @param {Map<string, string>} [overrides.slugs]
- * @param {Map<string, string>} [overrides.slugByPath]
- * @param {Record<string, string>} [overrides.redirects]
+ * @param {object} [overrides] The inventory values to override
+ * @param {Map<string, string>} [overrides.slugs] The mock slugs
+ * @param {Map<string, string>} [overrides.slugByPath] The mock slugs by path
+ * @param {Record<string, string>} [overrides.redirects] The mock redirects
  */
 const mockInventory = (overrides = {}) => {
   inventory.slugs = overrides.slugs ?? new Map();

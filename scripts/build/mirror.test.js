@@ -174,7 +174,10 @@ describe('mirror', () => {
     });
 
     describe('updateNotes', () => {
-      /** @type {(string) => (string | false)} */
+      /**
+       * Map a version to the next version, or false for the sentinel version
+       * @type {(string) => (string | false)}
+       */
       const versionMapper = (v) => (v === '99' ? false : String(Number(v) + 1));
       const regex = /\bChrome\b/g;
 

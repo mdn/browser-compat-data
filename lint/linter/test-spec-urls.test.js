@@ -14,7 +14,7 @@ import specURLsLinter, { processData } from './test-spec-urls.js';
 /**
  * Build a fake xref lookup that reports the given URLs as valid.
  * @param {string[]} [validURLs] URLs the lookup should treat as existing
- * @returns {(url: string) => object[]}
+ * @returns {(url: string) => object[]} The mock xref lookup function
  */
 const mockLookup =
   (validURLs = []) =>
@@ -27,7 +27,7 @@ const mockLookup =
  * @param {object} [deps] Injected dependencies
  * @param {(url: string) => object[]} [deps.lookup] The mock xref lookup
  * @param {string[]} [deps.exceptions] The host exceptions
- * @returns {LinterMessage[]}
+ * @returns {LinterMessage[]} The logged messages
  */
 const run = (data, { lookup = mockLookup(), exceptions = [] } = {}) => {
   const logger = new Logger('Spec URLs', 'test.feature');

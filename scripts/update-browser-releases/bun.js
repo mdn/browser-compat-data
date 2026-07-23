@@ -5,17 +5,17 @@
 
 /**
  * @typedef {object} BunVersionsResponse
- * @property {string} $note
- * @property {Record<string, BunReleaseInfo>} releases
+ * @property {string} $note A note about the response
+ * @property {Record<string, BunReleaseInfo>} releases The releases keyed by version
  */
 
 /**
  * @typedef {object} BunReleaseInfo
- * @property {'current' | 'retired'} status
- * @property {string} release_date
- * @property {string} release_notes
- * @property {Record<string, string>} [versions]
- * @property {string} [revision]
+ * @property {'current' | 'retired'} status The status of the release
+ * @property {string} release_date The release date
+ * @property {string} release_notes The URL of the release notes
+ * @property {Record<string, string>} [versions] The bundled dependency versions
+ * @property {string} [revision] The revision of the release
  */
 
 import fs from 'node:fs/promises';

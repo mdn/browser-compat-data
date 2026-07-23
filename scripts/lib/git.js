@@ -5,9 +5,9 @@ import { spawn } from '../../utils/index.js';
 
 /**
  * @typedef {object} Fields
- * @property {string} value
- * @property {string} headPath
- * @property {string} basePath
+ * @property {string} value The status value of the change
+ * @property {string} headPath The file path at the head commit
+ * @property {string} basePath The file path at the base commit
  */
 
 /**

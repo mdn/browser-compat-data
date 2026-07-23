@@ -8,7 +8,7 @@ import compareFeatures from '../../scripts/lib/compare-features.js';
 /**
  * Check whether an object contains compat data anywhere in its subtree.
  * @param {object} obj - The object to check
- * @returns {boolean}
+ * @returns {boolean} Whether the object contains compat data
  */
 const hasCompatData = (obj) => {
   if (!obj || typeof obj !== 'object') {

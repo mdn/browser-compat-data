@@ -12,10 +12,10 @@ import { inventory } from '../../utils/mdn-content-inventory.js';
 
 /**
  * @typedef {object} MDNURLError
- * @property {string} path
- * @property {string} ruleName
- * @property {string} actual
- * @property {string} expected
+ * @property {string} path The feature path where the error was found
+ * @property {string} ruleName The name of the rule that was violated
+ * @property {string} actual The actual MDN URL
+ * @property {string} expected The expected MDN URL
  */
 
 /** @type {Map<string, string>} path → mdn_url, persisted across calls */

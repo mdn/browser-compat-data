@@ -10,11 +10,11 @@ import { newBrowserEntry, updateBrowserEntry } from './utils.js';
 
 /**
  * @typedef {object} Release
- * @property {string} version
- * @property {string} engineVersion
- * @property {'current' | 'beta' | 'retired'} channel
- * @property {string} date
- * @property {string} releaseNote
+ * @property {string} version The version number of the release
+ * @property {string} engineVersion The version of the engine
+ * @property {'current' | 'beta' | 'retired'} channel The release channel
+ * @property {string} date The release date
+ * @property {string} releaseNote The URL of the release notes
  */
 
 /**

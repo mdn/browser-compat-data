@@ -12,9 +12,9 @@ import bcd from '../index.js';
 
 /**
  * @typedef {object} StatusFilters
- * @property {boolean | undefined} deprecated
- * @property {boolean | undefined} standard_track
- * @property {boolean | undefined} experimental
+ * @property {boolean | undefined} deprecated Whether to filter by the deprecated status
+ * @property {boolean | undefined} standard_track Whether to filter by the standard track status
+ * @property {boolean | undefined} experimental Whether to filter by the experimental status
  */
 
 /**
@@ -27,7 +27,7 @@ import bcd from '../index.js';
  * @param {string} identifier The identifier of the current object
  * @param {StatusFilters | null} [status] Whether to filter by status flags
  * @yields {string} The feature identifier
- * @returns {IterableIterator<string>}
+ * @returns {IterableIterator<string>} The matching feature identifiers
  */
 export function* iterateFeatures(
   obj,
@@ -235,9 +235,9 @@ if (esMain(import.meta)) {
         (b) => bcd.browsers[b].type !== 'server',
       ),
       /**
-       *
-       * @param value
-       * @returns {BrowserName[]}
+       * Coerce the browsers option value
+       * @param {string | string[]} value The raw option value
+       * @returns {BrowserName[]} The coerced browser names
        */
       coerce: (value) =>
         /** @type {BrowserName[]} */ (

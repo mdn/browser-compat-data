@@ -17,14 +17,14 @@ import mirror from './build/mirror.js';
 
 /**
  * @typedef {object} Contents
- * @property {string} base
- * @property {string} head
+ * @property {string} base The file contents at the base commit
+ * @property {string} head The file contents at the head commit
  */
 
 /**
  * @typedef {object} DiffItem
- * @property {string} name
- * @property {string} description
+ * @property {string} name The name of the changed feature
+ * @property {string} description The description of the change
  */
 
 /**
@@ -54,11 +54,11 @@ const stringifyChange = (lhs, rhs) =>
 /**
  * Perform mirroring on specified diff statement
  * @param {object} diff - The diff to perform mirroring on
- * @param {InternalSupportStatement} diff.base
- * @param {InternalSupportStatement} diff.head
+ * @param {InternalSupportStatement} diff.base - The support statement of the base side
+ * @param {InternalSupportStatement} diff.head - The support statement of the head side
  * @param {object} contents - The contents to mirror from
- * @param {InternalIdentifier} contents.base
- * @param {InternalIdentifier} contents.head
+ * @param {InternalIdentifier} contents.base - The identifier of the base side
+ * @param {InternalIdentifier} contents.head - The identifier of the head side
  * @param {string[]} path - The feature path to mirror
  * @param {'base' | 'head'} direction - Whether to mirror 'base' or 'head'
  */
