@@ -815,9 +815,17 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "10.1"
-            },
+            "safari": [
+              {
+                "version_added": "27"
+              },
+              {
+                "version_added": "10.1",
+                "version_removed": "27",
+                "partial_implementation": true,
+                "notes": "The events for the keystroke that completes an IME composition session fire out of order, causing confusing `isComposing` values. The `keydown` and `input` events dispatch after the `compositionend` event fires instead of before. Consequently, the `isComposing` value is unexpectedly `false` instead of `true`. Events fired earlier in the session are unaffected. See [bug 165004](https://webkit.org/b/165004)."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
