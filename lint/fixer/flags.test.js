@@ -3,6 +3,7 @@
 
 /** @import {InternalSupportStatement} from '../../types/index.js' */
 
+import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
 import { removeIrrelevantFlags } from './flags.js';

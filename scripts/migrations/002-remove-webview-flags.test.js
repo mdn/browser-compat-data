@@ -3,6 +3,7 @@
 
 /** @import {InternalIdentifier} from '../../types/index.js' */
 
+import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
 import { removeWebViewFlags } from './002-remove-webview-flags.js';

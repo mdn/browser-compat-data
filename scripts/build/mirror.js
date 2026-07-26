@@ -69,7 +69,7 @@ const matchingSafariVersions = new Map([
  * @param {BrowserName} targetBrowser The browser to mirror to
  * @param {string} sourceVersion The version from the source browser
  * @returns {string | false} The matching browser version, or `false` if no match is found
- * @throws An error when the downstream browser has no upstream
+ * @throws {Error} An error when the downstream browser has no upstream
  */
 export const getMatchingBrowserVersion = (targetBrowser, sourceVersion) => {
   const browserData = bcd.browsers[targetBrowser];

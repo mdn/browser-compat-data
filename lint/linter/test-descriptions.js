@@ -11,10 +11,10 @@ import { validateHTML } from './test-notes.js';
 
 /**
  * @typedef {object} DescriptionError
- * @property {string} path
- * @property {string} ruleName
- * @property {string} actual
- * @property {string} expected
+ * @property {string} path The feature path where the error was found
+ * @property {string} ruleName The name of the rule that was violated
+ * @property {string} actual The actual description
+ * @property {string} expected The expected description
  */
 
 /**

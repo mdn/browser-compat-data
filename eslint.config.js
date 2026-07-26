@@ -56,7 +56,6 @@ export default [
 
     languageOptions: {
       globals: {
-        ...globals.mocha,
         ...globals.node,
         Atomics: 'readonly',
         SharedArrayBuffer: 'readonly',
@@ -115,7 +114,15 @@ export default [
       ],
       'jsdoc/check-param-names': 'error',
       'jsdoc/prefer-import-tag': 'error',
-      'jsdoc/require-description': 'warn',
+      // Kept as a warning until the remaining `@param {*}`/`{any}` types are replaced.
+      'jsdoc/reject-any-type': 'warn',
+      'jsdoc/require-description': 'error',
+      'jsdoc/require-param-description': 'error',
+      'jsdoc/require-param-type': 'error',
+      'jsdoc/require-property-description': 'error',
+      'jsdoc/require-returns-description': 'error',
+      'jsdoc/require-returns-type': 'error',
+      'jsdoc/require-throws-type': 'error',
 
       'jsdoc/require-jsdoc': [
         'warn',
@@ -194,6 +201,14 @@ export default [
       ],
 
       'unicorn/prefer-node-protocol': 'error',
+    },
+  },
+  {
+    // node:test's describe()/it() return promises that the test runner awaits
+    // internally, so calling them without awaiting is intentional.
+    files: ['**/*.test.js'],
+    rules: {
+      '@typescript-eslint/no-floating-promises': 'off',
     },
   },
 ];
