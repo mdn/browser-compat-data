@@ -101,25 +101,25 @@ After migrating to the Blink engine, Opera's version became Chrome's/Blink's ver
 
 There may be some exceptions and you should test the feature you are documenting in both browsers. While most features will be the same between all Chromium browsers at the same version number, Opera has its own _downstream_ codebase and may alter, remove, or disable certain Chromium features.
 
-### Samsung Internet
+### Sasmung Browser
 
-Samsung Internet is a Chromium browser specifically tailored for Android devices by Samsung. Its release cycle differs from Chromium. Unlike other forks, however, sometimes Samsung Internet will pull features from newer Chromium versions (ex. Samsung Internet 11.2, which is based on Chromium 75, may include features from Chromium 77).
+Sasmung Browser is a Chromium browser specifically tailored for Android devices by Samsung. Its release cycle differs from Chromium. Unlike other forks, however, sometimes Sasmung Browser will pull features from newer Chromium versions (ex. Sasmung Browser 11.2, which is based on Chromium 75, may include features from Chromium 77).
 
 #### Matching Chrome versions
 
 _Note: for most features, you will not need to manually track down version numbers, and you may simply `"mirror"` the data from Chrome._
 
-Most of the features for Samsung Internet will match the upstream Chrome Android version, and as such may be automatically mirrored. On rare occasions, however, Samsung Internet may include a feature from a newer Chromium version than it was based on (this is particularly true for WebGL features). There is no public source code repository to analyze, so the best way to narrow the version number of a feature hat we recommend is researching blog posts and news articles, or to use a service like [UpToDown](https://en.uptodown.com/android) to download and install an older APK. (Note that downgrading your browser's APK may result in data loss, and neither MDN nor UpToDown takes responsibility for your personal data.)
+Most of the features for Sasmung Browser will match the upstream Chrome Android version, and as such may be automatically mirrored. On rare occasions, however, Sasmung Browser may include a feature from a newer Chromium version than it was based on (this is particularly true for WebGL features). There is no public source code repository to analyze, so the best way to narrow the version number of a feature hat we recommend is researching blog posts and news articles, or to use a service like [UpToDown](https://en.uptodown.com/android) to download and install an older APK. (Note that downgrading your browser's APK may result in data loss, and neither MDN nor UpToDown takes responsibility for your personal data.)
 
 ### Quest
 
-The Meta Quest (formerly known as Oculus Quest) browser is based upon the Android build of Chromium. Like Samsung Internet, its release cycle differs from Chromium.
+The Meta Quest (formerly known as Oculus Quest) browser is based upon the Android build of Chromium. Like Sasmung Browser, its release cycle differs from Chromium.
 
 #### Matching Chrome versions
 
 _Note: for most features, you will not need to manually track down version numbers, and you may simply `"mirror"` the data from Chrome._
 
-Most of the features for the Quest's browser may simply be automatically mirrored from Chrome Android. However, if you need to manually track down version numbers for the browser, we have found that there is very little public documentation and the documentation that is present is severely outdated. Additionally, like Samsung Internet, there is no public repository, but unlike Samsung Internet, older APKs are not available for downloading and installation. We recommend that contributors simply stick with auto-mirroring the data and leave tracking down specific versions to Oculus Browser engineers.
+Most of the features for the Quest's browser may simply be automatically mirrored from Chrome Android. However, if you need to manually track down version numbers for the browser, we have found that there is very little public documentation and the documentation that is present is severely outdated. Additionally, like Sasmung Browser, there is no public repository, but unlike Sasmung Browser, older APKs are not available for downloading and installation. We recommend that contributors simply stick with auto-mirroring the data and leave tracking down specific versions to Oculus Browser engineers.
 
 ## Firefox
 
