@@ -102,7 +102,7 @@ The following table indicates initial versions for browsers in BCD. These are th
 | Opera Android   | 10.1            | Stable versioning started at 10.1.                                                                                                                                       |
 | Safari          | 1               |                                                                                                                                                                          |
 | iOS Safari      | 1               |                                                                                                                                                                          |
-| Sasmung Browser | 1.0             |                                                                                                                                                                          |
+| Samsung Browser | 1.0             |                                                                                                                                                                          |
 | WebView Android | 1               |                                                                                                                                                                          |
 | WebView iOS     | 1               |                                                                                                                                                                          |
 

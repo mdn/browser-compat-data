@@ -308,7 +308,7 @@ if (esMain(import.meta)) {
     )
     .example(
       'npm run traverse -- -b samsunginternet_android -f mirror',
-      'Find all features in Sasmung Browser that mirror data from Chrome Android',
+      'Find all features in Samsung Browser that mirror data from Chrome Android',
     )
     .example(
       'npm run traverse -- -t web-features:idle-detection',
