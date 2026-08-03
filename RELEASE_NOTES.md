@@ -1,5 +1,24 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.0.9](https://github.com/mdn/browser-compat-data/releases/tag/v8.0.9)
+
+August 3, 2026
+
+### Additions
+
+- `api.Navigator.cpuPerformance` ([#30158](https://github.com/mdn/browser-compat-data/pull/30158))
+- `browsers.edge.releases.154` ([#30156](https://github.com/mdn/browser-compat-data/pull/30156))
+- `css.types.param` ([#30088](https://github.com/mdn/browser-compat-data/pull/30088))
+- `css.types.param.url` ([#30088](https://github.com/mdn/browser-compat-data/pull/30088))
+- `css.types.param.url_fragments` ([#30088](https://github.com/mdn/browser-compat-data/pull/30088))
+
+### Statistics
+
+- 5 contributors have changed 20 files with 173 additions and 49 deletions in 5 commits ([`next...v8.0.9`](https://github.com/mdn/browser-compat-data/compare/next...v8.0.9))
+- 20,253 total features
+- 1,260 total contributors
+- 5,714 total stargazers
+
 ## [v8.0.8](https://github.com/mdn/browser-compat-data/releases/tag/v8.0.8)
 
 July 24, 2026
