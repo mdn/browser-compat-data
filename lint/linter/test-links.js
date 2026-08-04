@@ -10,11 +10,11 @@ import { IS_WINDOWS, indexToPos, indexToPosRaw } from '../utils.js';
 
 /**
  * @typedef {object} LinkError
- * @property {string} issue
- * @property {[number, number] | [null, null]} pos
- * @property {string} posString
- * @property {string} actual
- * @property {string} [expected]
+ * @property {string} issue The description of the issue
+ * @property {[number, number] | [null, null]} pos The line and column of the issue
+ * @property {string} posString The formatted position of the issue
+ * @property {string} actual The actual link
+ * @property {string} [expected] The expected link
  */
 
 /**
