@@ -210,7 +210,7 @@ The currently accepted browser identifiers should be declared in alphabetical or
 - `opera_android`, the Opera browser (Android version)
 - `safari`, Safari on macOS
 - `safari_ios`, Safari on iOS, based on the iOS version
-- `samsunginternet_android`, the Samsung Internet browser (Android version)
+- `samsunginternet_android`, Samsung Browser (Android version)
 - `webview_android`, WebView, the embedded browser for Android applications
 - `webview_ios`, WebKit WebView, the embedded browser for iOS applications, based on the iOS version
 
@@ -249,7 +249,7 @@ Example of a `support` compat object (with 1 entry, array omitted):
 
 #### Mirroring data
 
-Most of the browsers are derivatives of other browsers, such as mobile counterparts (Firefox -> Firefox Android) or other forks (Chrome -> Edge, Opera, Samsung Internet). Usually in such cases, the support for a feature is the exact same across the derivatives, or will be when a matching version is released. To make maintenance easier, contributors may specify a simple string, `"mirror"`, as the support statement for the browser, and the version data will be mirrored from its upstream counterpart (as defined in `browsers/<browser>.json`).
+Most of the browsers are derivatives of other browsers, such as mobile counterparts (Firefox -> Firefox Android) or other forks (Chrome -> Edge, Opera, Samsung Browser). Usually in such cases, the support for a feature is the exact same across the derivatives, or will be when a matching version is released. To make maintenance easier, contributors may specify a simple string, `"mirror"`, as the support statement for the browser, and the version data will be mirrored from its upstream counterpart (as defined in `browsers/<browser>.json`).
 
 An example of this would be the following:
 
@@ -262,7 +262,7 @@ An example of this would be the following:
 }
 ```
 
-This also helps with maintaining derivatives with a different release schedule than their upstream counterpart. For example, let's say that a new feature was introduced in Chrome 100, but the latest Samsung Internet release is based on Chrome 96. Rather than setting Samsung Internet to `{version_added: false}` and then following up to update the data when a new version is released, we can set it to `"mirror"` instead, which will automatically change to the version number of the new, matching release.
+This also helps with maintaining derivatives with a different release schedule than their upstream counterpart. For example, let's say that a new feature was introduced in Chrome 100, but the latest Samsung Browser release is based on Chrome 96. Rather than setting Samsung Browser to `{version_added: false}` and then following up to update the data when a new version is released, we can set it to `"mirror"` instead, which will automatically change to the version number of the new, matching release.
 
 ### Compat data in support statements
 
