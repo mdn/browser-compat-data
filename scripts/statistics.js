@@ -16,9 +16,9 @@ import { getRefDate } from './release/utils.js';
 
 /**
  * @typedef {object} VersionStatsEntry
- * @property {number} all
- * @property {number} exact
- * @property {number} range
+ * @property {number} all The total number of version values
+ * @property {number} exact The number of exact version values
+ * @property {number} range The number of ranged version values
  */
 
 /**

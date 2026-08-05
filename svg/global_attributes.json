@@ -2717,7 +2717,7 @@
             "safari_ios": "mirror",
             "samsunginternet_android": {
               "version_added": "1.0",
-              "notes": "This property is only supported on Windows and Linux. Samsung Internet is not on Windows or Linux."
+              "notes": "This property is only supported on Windows and Linux. Samsung Browser is not on Windows or Linux."
             },
             "webview_android": {
               "version_added": "3",
@@ -2923,11 +2923,17 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "≤13.1",
-              "partial_implementation": true,
-              "notes": "Does not work with `transform` SVG presentation attribute. Only works with `transform` CSS property. See [bug 201854](https://webkit.org/b/201854)."
-            },
+            "safari": [
+              {
+                "version_added": "15.4"
+              },
+              {
+                "version_added": "≤13.1",
+                "version_removed": "15.4",
+                "partial_implementation": true,
+                "notes": "Does not work with `transform` SVG presentation attribute. Only works with `transform` CSS property. See [bug 201854](https://webkit.org/b/201854)."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",

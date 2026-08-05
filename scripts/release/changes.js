@@ -3,16 +3,16 @@
 
 /**
  * @typedef {object} FeatureChange
- * @property {string} [mergeCommit]
- * @property {number} number
- * @property {string} url
- * @property {string} feature
+ * @property {string} [mergeCommit] The hash of the merge commit
+ * @property {number} number The pull request number
+ * @property {string} url The pull request URL
+ * @property {string} feature The feature that changed
  */
 
 /**
  * @typedef {object} Changes
- * @property {FeatureChange[]} added
- * @property {FeatureChange[]} removed
+ * @property {FeatureChange[]} added The features that were added
+ * @property {FeatureChange[]} removed The features that were removed
  */
 
 import { styleText } from 'node:util';

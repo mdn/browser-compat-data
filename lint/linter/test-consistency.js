@@ -19,16 +19,16 @@ import bcd from '../../index.js';
 
 /**
  * @typedef {object} ConsistencyError
- * @property {string[]} path
- * @property {FeatureError[]} errors
+ * @property {string[]} path The path to the feature with the inconsistency
+ * @property {FeatureError[]} errors The consistency errors found for the feature
  */
 
 /**
  * @typedef {object} FeatureError
- * @property {ErrorType} type
- * @property {BrowserName} browser
- * @property {VersionValue} parentValue
- * @property {[string, VersionValue][]} subfeatures
+ * @property {ErrorType} type The type of inconsistency
+ * @property {BrowserName} browser The browser the inconsistency applies to
+ * @property {VersionValue} parentValue The support value of the parent feature
+ * @property {[string, VersionValue][]} subfeatures The subfeatures and their support values that are inconsistent with the parent
  */
 
 /**
