@@ -1,5 +1,20 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.0.10](https://github.com/mdn/browser-compat-data/releases/tag/v8.0.10)
+
+August 6, 2026
+
+### Additions
+
+- `css.properties.block-ellipsis.no-ellipsis` ([#30174](https://github.com/mdn/browser-compat-data/pull/30174))
+
+### Statistics
+
+- 6 contributors have changed 20 files with 91 additions and 33 deletions in 10 commits ([`next...v8.0.10`](https://github.com/mdn/browser-compat-data/compare/next...v8.0.10))
+- 20,268 total features
+- 1,265 total contributors
+- 5,713 total stargazers
+
 ## [v8.0.9](https://github.com/mdn/browser-compat-data/releases/tag/v8.0.9)
 
 August 3, 2026
