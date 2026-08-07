@@ -1,5 +1,20 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.0.11](https://github.com/mdn/browser-compat-data/releases/tag/v8.0.11)
+
+August 7, 2026
+
+### Additions
+
+- `browsers.opera.releases.136` ([#30188](https://github.com/mdn/browser-compat-data/pull/30188))
+
+### Statistics
+
+- 5 contributors have changed 6 files with 102 additions and 86 deletions in 7 commits ([`next...v8.0.11`](https://github.com/mdn/browser-compat-data/compare/next...v8.0.11))
+- 20,268 total features
+- 1,265 total contributors
+- 5,715 total stargazers
+
 ## [v8.0.10](https://github.com/mdn/browser-compat-data/releases/tag/v8.0.10)
 
 August 6, 2026
