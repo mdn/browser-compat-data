@@ -317,12 +317,14 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "146"
+              "version_added": "146",
+              "notes": "Before version 153, the `<base>` element was not removed from a configuration's allowlist, which could manipulate a document's relative URLs. See [whatwg/html#12664](https://github.com/whatwg/html/pull/12664)."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "148"
+              "version_added": "148",
+              "notes": "The `<base>` element is not removed from a configuration's allowlist, potentially allowing manipulation of a document's relative URLs. See [whatwg/html#12664](https://github.com/whatwg/html/pull/12664)."
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -340,41 +342,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        },
-        "removes_base_element": {
-          "__compat": {
-            "description": "`<base>` element removed.",
-            "spec_url": "https://html.spec.whatwg.org/multipage/semantics.html#the-base-element",
-            "tags": [
-              "web-features:sanitizer"
-            ],
-            "support": {
-              "chrome": {
-                "version_added": "152"
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": false
-              },
-              "firefox_android": "mirror",
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror",
-              "webview_ios": "mirror"
-            },
-            "status": {
-              "experimental": true,
-              "standard_track": true,
-              "deprecated": false
-            }
           }
         }
       },
