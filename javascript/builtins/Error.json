@@ -399,7 +399,9 @@
             ],
             "support": {
               "bun": {
-                "version_added": "1.1.39"
+                "version_added": "1.1.39",
+                "partial_implementation": true,
+                "notes": "Returns `false` for `DOMException` instances. See [issue 15821](https://github.com/oven-sh/bun/issues/15821)."
               },
               "chrome": {
                 "version_added": "134"
@@ -430,7 +432,7 @@
               "safari": {
                 "version_added": "18.4",
                 "partial_implementation": true,
-                "notes": "Returns `false` for `DOMException` instances."
+                "notes": "Returns `false` for `DOMException` instances. See [bug 292727](https://webkit.org/b/292727)."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
