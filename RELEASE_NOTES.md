@@ -1,5 +1,25 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.0.11](https://github.com/mdn/browser-compat-data/releases/tag/v8.0.11)
+
+August 13, 2026
+
+### Additions
+
+- `api.VideoFrame.copyTo.format_property` ([#30217](https://github.com/mdn/browser-compat-data/pull/30217))
+- `css.properties.text-box-trim.inline_elements` ([#30221](https://github.com/mdn/browser-compat-data/pull/30221))
+- `css.properties.text-box.inline_elements` ([#30221](https://github.com/mdn/browser-compat-data/pull/30221))
+- `css.selectors.active.top-layer_ancestor_matching_boundary` ([#30216](https://github.com/mdn/browser-compat-data/pull/30216))
+- `css.selectors.focus-within.top-layer_ancestor_matching_boundary` ([#30216](https://github.com/mdn/browser-compat-data/pull/30216))
+- `css.selectors.hover.top-layer_ancestor_matching_boundary` ([#30216](https://github.com/mdn/browser-compat-data/pull/30216))
+
+### Statistics
+
+- 6 contributors have changed 10 files with 139 additions and 36 deletions in 9 commits ([`next...v8.0.11`](https://github.com/mdn/browser-compat-data/compare/next...v8.0.11))
+- 20,276 total features
+- 1,267 total contributors
+- 5,717 total stargazers
+
 ## [v8.0.10](https://github.com/mdn/browser-compat-data/releases/tag/v8.0.10)
 
 August 6, 2026
