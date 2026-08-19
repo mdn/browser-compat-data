@@ -481,7 +481,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "preview"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -516,7 +516,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "preview"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -10835,12 +10835,16 @@
           "support": {
             "chrome": {
               "version_added": "146",
-              "notes": "Chrome 105 to Chrome 118 (inclusive) supported this method with a significantly different specification."
+              "notes": [
+                "Chrome 105 to Chrome 118 (inclusive) supported this method with a significantly different specification.",
+                "Before version 153, the `<base>` element was not removed from a configuration's allowlist, which could manipulate a document's relative URLs. See [whatwg/html#12664](https://github.com/whatwg/html/pull/12664)."
+              ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "148"
+              "version_added": "148",
+              "notes": "The `<base>` element is not removed from a configuration's allowlist, potentially allowing manipulation of a document's relative URLs. See [whatwg/html#12664](https://github.com/whatwg/html/pull/12664)."
             },
             "firefox_android": "mirror",
             "oculus": "mirror",

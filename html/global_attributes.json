@@ -100,11 +100,20 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/180821"
             },
-            "safari_ios": {
-              "version_added": "5"
-            },
+            "safari_ios": [
+              {
+                "version_added": "10.3"
+              },
+              {
+                "version_added": "5",
+                "version_removed": "10.3",
+                "partial_implementation": true,
+                "notes": "No effect on `contenteditable` elements. See [bug 164538](https://webkit.org/b/164538)."
+              }
+            ],
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
             "webview_ios": "mirror"
@@ -125,7 +134,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "152"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -1102,11 +1111,11 @@
             "support": {
               "chrome": [
                 {
-                  "version_added": "150"
+                  "version_added": "151"
                 },
                 {
                   "version_added": "133",
-                  "version_removed": "150",
+                  "version_removed": "151",
                   "partial_implementation": true,
                   "notes": "Implements an older version of the specification with inconsistent behaviors. See [bug 499019927](https://crbug.com/499019927)."
                 }

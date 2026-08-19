@@ -349,8 +349,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
-              "impl_url": "https://bugzil.la/1921506"
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "nodejs": {
@@ -996,6 +995,37 @@
           }
         }
       },
+      "cpuPerformance": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/cpu-performance/#dom-navigator-cpuperformance",
+          "support": {
+            "chrome": {
+              "version_added": "152"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "createAuctionNonce": {
         "__compat": {
           "tags": [
@@ -1248,7 +1278,8 @@
               "version_added": "9",
               "notes": [
                 "In Firefox, `navigator.doNotTrack` returns `\"unspecified\"` instead of `null`.",
-                "Before Firefox 32, `navigator.doNotTrack` would report values of `\"yes\"` and `\"no\"` rather than `\"1\"` and `\"0\"`."
+                "Before Firefox 32, `navigator.doNotTrack` would report values of `\"yes\"` and `\"no\"` rather than `\"1\"` and `\"0\"`.",
+                "Starting with Firefox 135, `navigator.doNotTrack` always reports value of `\"unspecified\"`."
               ]
             },
             "firefox_android": "mirror",
@@ -2886,7 +2917,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "99"
+              "version_added": "99",
+              "notes": "Returns `true` even if Firefox is configured to open PDFs in external applications. See [bug 1821747](https://bugzil.la/1821747)."
             },
             "firefox_android": "mirror",
             "nodejs": {
@@ -5024,7 +5056,7 @@
             },
             "firefox": {
               "version_added": "44",
-              "notes": "In Firefox private windows, the `serviceWorker` object is `undefined`. See [bug 1320796](https://bugzil.la/1320796)."
+              "notes": "Before Firefox 139, the `serviceWorker` object is `undefined` in private windows. See [bug 1320796](https://bugzil.la/1320796)."
             },
             "firefox_android": "mirror",
             "nodejs": {
