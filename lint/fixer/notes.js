@@ -10,15 +10,16 @@ import walk from '../../utils/walk.js';
 /**
  * Replace HTML in a single note with Markdown syntax. Code tags are unwrapped
  * before links, since a link's text may contain a <code> tag.
- * @param {string} note
- * @returns {string}
+ * @param {string} note The note to fix
+ * @returns {string} The note with Markdown syntax
  */
 const fixNote = (note) =>
   replaceLinkTagsWithMarkdown(replaceCodeTagsWithBackticks(note));
 
 /**
- * @param {string | string[]} notes
- * @returns {string | string[]}
+ * Replace HTML in one or more notes with Markdown syntax.
+ * @param {string | string[]} notes The note(s) to fix
+ * @returns {string | string[]} The note(s) with Markdown syntax
  */
 export const fixNotes = (notes) => {
   if (Array.isArray(notes)) {
