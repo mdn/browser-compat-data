@@ -170,7 +170,8 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "3"
+              "version_added": "3",
+              "notes": "The `dropEffect` value was not correctly set during drag events until Chrome 148. See [ChromeStatus](https://chromestatus.com/feature/6325617459068928)."
             },
             "chrome_android": "mirror",
             "edge": {
@@ -192,7 +193,7 @@
             },
             "safari": {
               "version_added": "4",
-              "notes": "The `effectAllowed` value is not correctly honored during drag events, which can prevent `dropEffect` from being set to the expected value."
+              "notes": "The `effectAllowed` value is not correctly honored during drag events, which can prevent `dropEffect` from being set to the expected value. See [bug 101853](https://webkit.org/b/101853), [bug 108021](https://webkit.org/b/108021), and [bug 37012](https://webkit.org/b/37012)."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
