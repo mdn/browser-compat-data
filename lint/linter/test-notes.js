@@ -6,7 +6,11 @@ import { styleText } from 'node:util';
 import HTMLParser from '@desertnet/html-parser';
 import { marked } from 'marked';
 
-import { VALID_ELEMENTS } from '../utils.js';
+import {
+  replaceCodeTagsWithBackticks,
+  replaceLinkTagsWithMarkdown,
+  VALID_ELEMENTS,
+} from '../utils.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
@@ -101,7 +105,7 @@ const checkNotes = (notes, browser, feature, logger) => {
   let errors = [];
   if (Array.isArray(notes)) {
     for (const note of notes) {
-      errors = validateHTML(note);
+      errors.push(...validateHTML(note));
     }
   } else {
     errors = validateHTML(notes);
@@ -110,6 +114,36 @@ const checkNotes = (notes, browser, feature, logger) => {
   if (errors) {
     for (const error of errors) {
       logger.error(`Notes for ${styleText('bold', browser)} → ${error}`);
+    }
+  }
+
+  for (const note of Array.isArray(notes) ? notes : [notes]) {
+    const codeConverted = replaceCodeTagsWithBackticks(note);
+    if (codeConverted !== note) {
+      logger.error(
+        styleText(
+          'red',
+          `Notes for ${styleText('bold', browser)} use HTML code tags instead of backtick-quoted Markdown code
+      Actual: ${styleText('yellow', `"${note}"`)}
+      Expected: ${styleText('green', `"${codeConverted}"`)}`,
+        ),
+        { fixable: true },
+      );
+    }
+
+    // Detect links on the code-converted note so anchors wrapping a <code>
+    // tag are recognized after the code tags are unwrapped.
+    const linkConverted = replaceLinkTagsWithMarkdown(codeConverted);
+    if (linkConverted !== codeConverted) {
+      logger.error(
+        styleText(
+          'red',
+          `Notes for ${styleText('bold', browser)} use HTML links instead of Markdown links
+      Actual: ${styleText('yellow', `"${note}"`)}
+      Expected: ${styleText('green', `"${linkConverted}"`)}`,
+        ),
+        { fixable: true },
+      );
     }
   }
 };
