@@ -5,6 +5,11 @@ updates:
     schedule:
       interval: daily
       time: "11:00"
+    cooldown:
+      exclude:
+        - "@webref/xref"
+        - "@ddbeck/mdn-content-inventory"
+        - "web-features"
     groups:
       npm:
         update-types:
