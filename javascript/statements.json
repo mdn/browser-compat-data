@@ -124,7 +124,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1848,6 +1848,9 @@
               "description": "`with {type: 'text'}`",
               "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import/with#text_modules_type_text",
               "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#text-module-script",
+              "tags": [
+                "web-features:text-modules"
+              ],
               "support": {
                 "bun": {
                   "version_added": "1.1.5"
@@ -1924,6 +1927,55 @@
               "experimental": true,
               "standard_track": true,
               "deprecated": false
+            }
+          },
+          "import_wasm_modules": {
+            "__compat": {
+              "description": "Source phase import of WASM modules",
+              "spec_url": "https://webassembly.github.io/esm-integration/js-api/#esm-integration",
+              "support": {
+                "bun": {
+                  "version_added": false
+                },
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "deno": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "preview",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "javascript.options.experimental.wasm_esm_integration",
+                      "value_to_set": "true"
+                    }
+                  ],
+                  "impl_url": "https://bugzil.la/1997621"
+                },
+                "firefox_android": "mirror",
+                "nodejs": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
             }
           }
         },
@@ -2444,7 +2496,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
