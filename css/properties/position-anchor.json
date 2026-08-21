@@ -45,11 +45,17 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "26",
-              "partial_implementation": true,
-              "notes": "The initial value is `auto` instead of `normal` (see [bug 308981](https://webkit.org/b/308981) and [bug 311941](https://webkit.org/b/311941))."
-            },
+            "safari": [
+              {
+                "version_added": "27"
+              },
+              {
+                "version_added": "26",
+                "version_removed": "27",
+                "partial_implementation": true,
+                "notes": "The initial value is `auto` instead of `normal` (see [bug 308981](https://webkit.org/b/308981) and [bug 311941](https://webkit.org/b/311941))."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
