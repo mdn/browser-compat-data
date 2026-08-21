@@ -75,7 +75,7 @@ export const fetchMain = () => {
  * @returns {string} The latest Git tag
  */
 export const getLatestTag = () =>
-  spawn('git', ['describe', '--abbrev=0', '--tags']);
+  spawn('git', ['describe', '--abbrev=0', '--tags', '--exclude=next']);
 
 /**
  * Get the date of a specified ref
