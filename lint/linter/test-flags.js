@@ -123,7 +123,7 @@ export default {
   name: 'Flag data',
   description: 'Test the flag data for any irrelevant flags',
   scope: 'feature',
-  exceptions: ['api.Notification.requireInteraction', 'api.Window.dump'],
+  exceptions: ['api.Window.dump'],
   /**
    * Test the data
    * @param {Logger} logger The logger to output errors to
