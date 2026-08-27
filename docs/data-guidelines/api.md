@@ -93,6 +93,10 @@ For example, the `ImageData` constructor, `ImageData()`, is represented as `api.
 }
 ```
 
+### HTML element constructors
+
+HTML element constructors get no feature key. In IDL, you can recognize them using the [`[HTMLConstructor]`](https://html.spec.whatwg.org/multipage/dom.html#html-element-constructors) extended attribute.
+
 ## DOM events (`eventname_event`)
 
 Add DOM events as features of their target interfaces, using the name _eventname_\_event with the description text set to `` `eventname` event ``. If an event can be sent to multiple interfaces, add the event as a feature of each interface that can receive it.
