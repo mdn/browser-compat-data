@@ -1,5 +1,84 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.0.13](https://github.com/mdn/browser-compat-data/releases/tag/v8.0.13)
+
+August 27, 2026
+
+### Additions
+
+- `api.HTMLBodyElement.orientationchange_event` ([#30189](https://github.com/mdn/browser-compat-data/pull/30189))
+- `api.HTMLElement.containerTiming` ([#30336](https://github.com/mdn/browser-compat-data/pull/30336))
+- `api.HTMLElement.containerTimingIgnore` ([#30336](https://github.com/mdn/browser-compat-data/pull/30336))
+- `api.HTMLTemplateElement.htmlFor` ([#30292](https://github.com/mdn/browser-compat-data/pull/30292))
+- `api.InteractionContentfulPaint` ([#30195](https://github.com/mdn/browser-compat-data/pull/30195))
+- `api.InteractionContentfulPaint.interactionId` ([#30195](https://github.com/mdn/browser-compat-data/pull/30195))
+- `api.InteractionContentfulPaint.largestContentfulPaint` ([#30195](https://github.com/mdn/browser-compat-data/pull/30195))
+- `api.InteractionContentfulPaint.paintTime` ([#30195](https://github.com/mdn/browser-compat-data/pull/30195))
+- `api.InteractionContentfulPaint.presentationTime` ([#30195](https://github.com/mdn/browser-compat-data/pull/30195))
+- `api.MathMLAnchorElement` ([#30314](https://github.com/mdn/browser-compat-data/pull/30314))
+- `api.MathMLAnchorElement.hash` ([#30314](https://github.com/mdn/browser-compat-data/pull/30314))
+- `api.MathMLAnchorElement.host` ([#30314](https://github.com/mdn/browser-compat-data/pull/30314))
+- `api.MathMLAnchorElement.hostname` ([#30314](https://github.com/mdn/browser-compat-data/pull/30314))
+- `api.MathMLAnchorElement.href` ([#30314](https://github.com/mdn/browser-compat-data/pull/30314))
+- `api.MathMLAnchorElement.hreflang` ([#30314](https://github.com/mdn/browser-compat-data/pull/30314))
+- `api.MathMLAnchorElement.origin` ([#30314](https://github.com/mdn/browser-compat-data/pull/30314))
+- `api.MathMLAnchorElement.password` ([#30314](https://github.com/mdn/browser-compat-data/pull/30314))
+- `api.MathMLAnchorElement.pathname` ([#30314](https://github.com/mdn/browser-compat-data/pull/30314))
+- `api.MathMLAnchorElement.port` ([#30314](https://github.com/mdn/browser-compat-data/pull/30314))
+- `api.MathMLAnchorElement.protocol` ([#30314](https://github.com/mdn/browser-compat-data/pull/30314))
+- `api.MathMLAnchorElement.search` ([#30314](https://github.com/mdn/browser-compat-data/pull/30314))
+- `api.MathMLAnchorElement.target` ([#30314](https://github.com/mdn/browser-compat-data/pull/30314))
+- `api.MathMLAnchorElement.type` ([#30314](https://github.com/mdn/browser-compat-data/pull/30314))
+- `api.MathMLAnchorElement.username` ([#30314](https://github.com/mdn/browser-compat-data/pull/30314))
+- `api.MediaStreamTrack.configurationchange_event` ([#30333](https://github.com/mdn/browser-compat-data/pull/30333))
+- `api.PerformanceContainerTiming` ([#30336](https://github.com/mdn/browser-compat-data/pull/30336))
+- `api.PerformanceContainerTiming.firstRenderTime` ([#30336](https://github.com/mdn/browser-compat-data/pull/30336))
+- `api.PerformanceContainerTiming.identifier` ([#30336](https://github.com/mdn/browser-compat-data/pull/30336))
+- `api.PerformanceContainerTiming.intersectionRect` ([#30336](https://github.com/mdn/browser-compat-data/pull/30336))
+- `api.PerformanceContainerTiming.lastPaintedElement` ([#30336](https://github.com/mdn/browser-compat-data/pull/30336))
+- `api.PerformanceContainerTiming.paintTime` ([#30336](https://github.com/mdn/browser-compat-data/pull/30336))
+- `api.PerformanceContainerTiming.presentationTime` ([#30336](https://github.com/mdn/browser-compat-data/pull/30336))
+- `api.PerformanceContainerTiming.rootElement` ([#30336](https://github.com/mdn/browser-compat-data/pull/30336))
+- `api.PerformanceContainerTiming.size` ([#30336](https://github.com/mdn/browser-compat-data/pull/30336))
+- `api.PerformanceSoftNavigation` ([#30195](https://github.com/mdn/browser-compat-data/pull/30195))
+- `api.PerformanceSoftNavigation.getLargestInteractionContentfulPaint` ([#30195](https://github.com/mdn/browser-compat-data/pull/30195))
+- `api.PerformanceSoftNavigation.interactionId` ([#30195](https://github.com/mdn/browser-compat-data/pull/30195))
+- `api.PerformanceSoftNavigation.navigationType` ([#30195](https://github.com/mdn/browser-compat-data/pull/30195))
+- `api.PerformanceSoftNavigation.paintTime` ([#30195](https://github.com/mdn/browser-compat-data/pull/30195))
+- `api.PerformanceSoftNavigation.presentationTime` ([#30195](https://github.com/mdn/browser-compat-data/pull/30195))
+- `api.ReportingObserver.ReportingObserver.options_parameter.types_property.connection-allowlist` ([#30345](https://github.com/mdn/browser-compat-data/pull/30345))
+- `browsers.bun.releases.1.4.0` ([#30307](https://github.com/mdn/browser-compat-data/pull/30307))
+- `browsers.chrome_android.releases.155` ([#30322](https://github.com/mdn/browser-compat-data/pull/30322))
+- `browsers.chrome.releases.155` ([#30322](https://github.com/mdn/browser-compat-data/pull/30322))
+- `browsers.opera_android.releases.101` ([#30341](https://github.com/mdn/browser-compat-data/pull/30341))
+- `browsers.opera.releases.137` ([#30294](https://github.com/mdn/browser-compat-data/pull/30294))
+- `browsers.webview_android.releases.155` ([#30322](https://github.com/mdn/browser-compat-data/pull/30322))
+- `css.types.anchor-size.is_transitionable` ([#30339](https://github.com/mdn/browser-compat-data/pull/30339))
+- `css.types.anchor.is_transitionable` ([#30339](https://github.com/mdn/browser-compat-data/pull/30339))
+- `html.elements.template.for` ([#30292](https://github.com/mdn/browser-compat-data/pull/30292))
+- `html.global_attributes.containertiming` ([#30336](https://github.com/mdn/browser-compat-data/pull/30336))
+- `html.global_attributes.containertimingignore` ([#30336](https://github.com/mdn/browser-compat-data/pull/30336))
+- `html.global_attributes.elementtiming` ([#30336](https://github.com/mdn/browser-compat-data/pull/30336))
+- `http.headers.Connection-Allowlist` ([#30345](https://github.com/mdn/browser-compat-data/pull/30345))
+- `http.headers.Connection-Allowlist-Report-Only` ([#30345](https://github.com/mdn/browser-compat-data/pull/30345))
+- `javascript.builtins.Promise.allKeyed` ([#30265](https://github.com/mdn/browser-compat-data/pull/30265))
+- `javascript.builtins.Promise.allSettledKeyed` ([#30265](https://github.com/mdn/browser-compat-data/pull/30265))
+- `javascript.regular_expressions.buffer_boundary_assertion` ([#30295](https://github.com/mdn/browser-compat-data/pull/30295))
+- `webassembly.definitions.import` ([#30318](https://github.com/mdn/browser-compat-data/pull/30318))
+- `webassembly.definitions.import.compact_imports` ([#30318](https://github.com/mdn/browser-compat-data/pull/30318))
+- `webassembly.instructions.add128` ([#30327](https://github.com/mdn/browser-compat-data/pull/30327))
+- `webassembly.instructions.mul_wide_s` ([#30327](https://github.com/mdn/browser-compat-data/pull/30327))
+- `webassembly.instructions.mul_wide_u` ([#30327](https://github.com/mdn/browser-compat-data/pull/30327))
+- `webassembly.instructions.sub128` ([#30327](https://github.com/mdn/browser-compat-data/pull/30327))
+- `webdriver.bidi.script.getRealms.type_parameter.worklet` ([#30293](https://github.com/mdn/browser-compat-data/pull/30293))
+
+### Statistics
+
+- 11 contributors have changed 75 files with 3,252 additions and 406 deletions in 38 commits ([`v8.0.12...v8.0.13`](https://github.com/mdn/browser-compat-data/compare/v8.0.12...v8.0.13))
+- 20,359 total features
+- 1,268 total contributors
+- 5,729 total stargazers
+
 ## [v8.0.12](https://github.com/mdn/browser-compat-data/releases/tag/v8.0.12)
 
 August 20, 2026
