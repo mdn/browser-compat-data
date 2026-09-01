@@ -95,7 +95,9 @@ For example, the `ImageData` constructor, `ImageData()`, is represented as `api.
 
 ### HTML element constructors
 
-HTML element constructors get no feature key. In IDL, you can recognize them using the [`[HTMLConstructor]`](https://html.spec.whatwg.org/multipage/dom.html#html-element-constructors) extended attribute.
+Do not create keys for HTML element constructors. In IDL, you can recognize them using the [`[HTMLConstructor]`](https://html.spec.whatwg.org/multipage/dom.html#html-element-constructors) extended attribute.
+
+This guideline was proposed in [#30349](https://github.com/mdn/browser-compat-data/pull/30349/).
 
 ## DOM events (`eventname_event`)
 
