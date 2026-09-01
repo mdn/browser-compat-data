@@ -69,10 +69,89 @@ const getBranchName = () => spawn('git', ['rev-parse', '--abbrev-ref', 'HEAD']);
  */
 const getHashOfHEAD = () => spawn('git', ['rev-parse', 'HEAD']);
 
+/**
+ * Get the name of the git remote that points at the upstream repository
+ * @returns {string} The remote name, or "origin" if there is no such remote
+ */
+const getUpstreamRemote = () =>
+  spawn('git', ['remote', '-v'])
+    .split('\n')
+    .find((line) => line.includes('mdn/browser-compat-data'))
+    ?.split(/\s+/, 2)
+    .at(0) ?? 'origin';
+
+/**
+ * Fetch a git reference and resolve it to a commit hash
+ * @param {string} ref The reference to fetch and resolve
+ * @returns {string} The commit hash corresponding to the reference
+ */
+const fetchAndResolveRef = (ref) => {
+  const remote = getUpstreamRemote();
+
+  /**
+   * Runs `git fetch` for a reference.
+   * @param {string} ref - the reference to fetch.
+   * @returns {string} Combined standard output/error of the command.
+   */
+  const gitFetch = (ref) => spawn('git', ['fetch', remote, ref]);
+
+  /**
+   * Runs `git rev-parse` for a reference.
+   * @param {string} ref - the reference to parse.
+   * @returns {string} Standard output of the command.
+   */
+  const gitRevParse = (ref) => spawn('git', ['rev-parse', ref]);
+
+  if (ref.startsWith('origin/')) {
+    const remoteRef = ref.slice('origin/'.length);
+    gitFetch(remoteRef);
+    return gitRevParse(ref);
+  } else if (ref.startsWith(`${remote}/`)) {
+    const remoteRef = ref.slice(`${remote}/`.length);
+    gitFetch(remoteRef);
+    return gitRevParse(ref);
+  } else if (ref.startsWith('pull/')) {
+    gitFetch(ref);
+    return gitRevParse('FETCH_HEAD');
+  } else if (ref.includes(':')) {
+    const remoteRef = `gh pr view ${ref} --json headRefOid -q '.headRefOid'`;
+    gitFetch(remoteRef);
+    return remoteRef;
+  } else if (/^[0-9a-f]{40}$/.test(ref)) {
+    try {
+      gitRevParse(ref);
+    } catch {
+      gitFetch(ref);
+    }
+    return ref;
+  }
+
+  return gitRevParse(ref);
+};
+
+/**
+ * Resolve the base and head references of a diff, expanding a pull request
+ * number given as base into the pull request's merge commit
+ * @param {string} base The base reference, or a pull request number
+ * @param {string} head The head reference
+ * @returns {{ base: string; head: string }} The resolved commit hashes
+ */
+const resolveDiffRefs = (base, head) => {
+  if (/^\d+$/.test(base)) {
+    head = `pull/${base}/merge`;
+    base = 'origin/main';
+  }
+
+  return { base: fetchAndResolveRef(base), head: fetchAndResolveRef(head) };
+};
+
 export {
   getMergeBase,
   getGitDiffStatuses,
   getFileContent,
+  getUpstreamRemote,
+  fetchAndResolveRef,
+  resolveDiffRefs,
   getBranchName,
   getHashOfHEAD,
 };
