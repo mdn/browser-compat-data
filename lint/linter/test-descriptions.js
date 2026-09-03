@@ -3,6 +3,11 @@
 
 import { styleText } from 'node:util';
 
+import {
+  replaceCodeTagsWithBackticks,
+  replaceLinkTagsWithMarkdown,
+} from '../utils.js';
+
 import { validateHTML } from './test-notes.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
@@ -11,10 +16,10 @@ import { validateHTML } from './test-notes.js';
 
 /**
  * @typedef {object} DescriptionError
- * @property {string} path
- * @property {string} ruleName
- * @property {string} actual
- * @property {string} expected
+ * @property {string} path The feature path where the error was found
+ * @property {string} ruleName The name of the rule that was violated
+ * @property {string} actual The actual description
+ * @property {string} expected The expected description
  */
 
 /**
@@ -102,6 +107,32 @@ const processApiData = (data, path, errors) => {
 export const processData = (data, category, path) => {
   /** @type {(DescriptionError | string)[]} */
   const errors = [];
+
+  if (data.description) {
+    // Push these before the canonical-description rules below so that, when a
+    // description triggers both, the canonical expectation wins in a single
+    // fix pass (the fixer applies errors in order, last write wins). Convert
+    // code tags before links, since a link's text may contain a <code> tag.
+    const codeConverted = replaceCodeTagsWithBackticks(data.description);
+    if (codeConverted !== data.description) {
+      errors.push({
+        ruleName: 'no_code_tag_in_description',
+        path,
+        actual: data.description,
+        expected: codeConverted,
+      });
+    }
+
+    const linkConverted = replaceLinkTagsWithMarkdown(codeConverted);
+    if (linkConverted !== codeConverted) {
+      errors.push({
+        ruleName: 'no_link_tag_in_description',
+        path,
+        actual: data.description,
+        expected: linkConverted,
+      });
+    }
+  }
 
   if (category === 'api') {
     processApiData(data, path, errors);

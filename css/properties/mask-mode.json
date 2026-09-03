@@ -22,7 +22,9 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "15.4"
+              "version_added": "15.4",
+              "partial_implementation": true,
+              "notes": "When the mask source is an SVG &lt;mask&gt; element, Safari incorrectly uses an alpha mask instead of a luminance mask. This causes `mask-mode: match-source` to behave incorrectly. See https://webkit.org/b/282530."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -89,7 +91,9 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "15.4"
+                "version_added": "15.4",
+                "partial_implementation": true,
+                "notes": "`mask-mode: luminance` does not always have the expected effect. See https://webkit.org/b/282530."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
