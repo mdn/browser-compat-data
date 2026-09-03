@@ -88,12 +88,14 @@
             "deprecated": false
           }
         },
-        "adds_multiple_ranges": {
+        "multiple_ranges": {
           "__compat": {
             "description": "Can add multiple ranges to the selection",
+            "spec_url": "https://w3c.github.io/selection-api/#dom-selection-addrange",
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://crbug.com/429814738"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -105,7 +107,8 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://webkit.org/b/44082"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -114,7 +117,7 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": false,
+              "standard_track": true,
               "deprecated": false
             }
           }
