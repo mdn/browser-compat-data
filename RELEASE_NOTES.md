@@ -635,9 +635,39 @@ July 17, 2026
 
 July 10, 2026
 
+### Removals
+
+- `css.properties.position-visibility.anchors-valid` ([#29979](https://github.com/mdn/browser-compat-data/pull/29979))
+- `css.properties.position-visibility.anchors-visible` ([#29979](https://github.com/mdn/browser-compat-data/pull/29979))
+
+### Additions
+
+- `api.GPUComputePassEncoder.setImmediates` ([#29987](https://github.com/mdn/browser-compat-data/pull/29987))
+- `api.GPURenderBundleEncoder.setImmediates` ([#29987](https://github.com/mdn/browser-compat-data/pull/29987))
+- `api.GPURenderPassEncoder.setImmediates` ([#29987](https://github.com/mdn/browser-compat-data/pull/29987))
+- `api.GPUSupportedLimits.maxImmediateSize` ([#29987](https://github.com/mdn/browser-compat-data/pull/29987))
+- `api.MediaStreamTrackProcessor.discardedFrames` ([#29981](https://github.com/mdn/browser-compat-data/pull/29981))
+- `api.MediaStreamTrackProcessor.totalFrames` ([#29981](https://github.com/mdn/browser-compat-data/pull/29981))
+- `api.PerformanceEntry.navigationId` ([#29988](https://github.com/mdn/browser-compat-data/pull/29988))
+- `api.ProcessingInstruction.getAttribute` ([#29987](https://github.com/mdn/browser-compat-data/pull/29987))
+- `api.ProcessingInstruction.getAttributeNames` ([#29987](https://github.com/mdn/browser-compat-data/pull/29987))
+- `api.ProcessingInstruction.hasAttribute` ([#29987](https://github.com/mdn/browser-compat-data/pull/29987))
+- `api.ProcessingInstruction.hasAttributes` ([#29987](https://github.com/mdn/browser-compat-data/pull/29987))
+- `api.ProcessingInstruction.removeAttribute` ([#29987](https://github.com/mdn/browser-compat-data/pull/29987))
+- `api.ProcessingInstruction.setAttribute` ([#29987](https://github.com/mdn/browser-compat-data/pull/29987))
+- `api.ProcessingInstruction.toggleAttribute` ([#29987](https://github.com/mdn/browser-compat-data/pull/29987))
+- `api.WheelEvent.momentum` ([#29988](https://github.com/mdn/browser-compat-data/pull/29988))
+- `css.properties.ruby-overhang.spaces` ([#29988](https://github.com/mdn/browser-compat-data/pull/29988))
+- `css.properties.text-box-edge.alphabetic` ([#29996](https://github.com/mdn/browser-compat-data/pull/29996))
+- `css.properties.text-box.alphabetic` ([#29996](https://github.com/mdn/browser-compat-data/pull/29996))
+- `css.types.color.alpha` ([#29997](https://github.com/mdn/browser-compat-data/pull/29997))
+- `javascript.builtins.Iterator.chunks` ([#29996](https://github.com/mdn/browser-compat-data/pull/29996))
+- `javascript.builtins.Iterator.join` ([#29996](https://github.com/mdn/browser-compat-data/pull/29996))
+- `javascript.builtins.Iterator.windows` ([#29996](https://github.com/mdn/browser-compat-data/pull/29996))
+
 ### Statistics
 
-- 4 contributors have changed 48 files with 4,770 additions and 4,768 deletions in 5 commits ([`next...v8.0.6`](https://github.com/mdn/browser-compat-data/compare/next...v8.0.6))
+- 9 contributors have changed 131 files with 6,281 additions and 5,571 deletions in 31 commits ([`v8.0.5...v8.0.6`](https://github.com/mdn/browser-compat-data/compare/v8.0.5...v8.0.6))
 - 19,979 total features
 - 1,257 total contributors
 - 5,698 total stargazers
