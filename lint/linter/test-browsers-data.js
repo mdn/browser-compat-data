@@ -8,12 +8,12 @@ const { browsers } = bcd;
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {BrowserStatement, BrowserName} from '../../types/index.js' */
+/** @import {InternalBrowserStatement, BrowserName} from '../../types/index.js' */
 
 /**
  * Process and test the data
  * @param {BrowserName} browser The name of the browser
- * @param {BrowserStatement} data The browser statement
+ * @param {InternalBrowserStatement} data The browser statement
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
  */
@@ -91,7 +91,7 @@ export default {
   check: (logger, { data, path: { browser } }) => {
     processData(
       /** @type {BrowserName} */ (browser),
-      /** @type {BrowserStatement} */ (data),
+      /** @type {InternalBrowserStatement} */ (data),
       logger,
     );
   },

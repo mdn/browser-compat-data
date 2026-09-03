@@ -142,6 +142,11 @@
     "release_statement": {
       "type": "object",
       "properties": {
+        "index": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "0-based position of this release in version-sorted order (ascending)."
+        },
         "release_date": {
           "type": "string",
           "format": "date",
@@ -164,7 +169,7 @@
           "description": "Engine version used in this release."
         }
       },
-      "required": ["status"],
+      "required": ["index", "status"],
       "dependencies": {
         "engine": ["engine_version"]
       },
