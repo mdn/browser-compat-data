@@ -369,17 +369,9 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "143"
-                },
-                {
-                  "version_added": "99",
-                  "version_removed": "143",
-                  "partial_implementation": true,
-                  "notes": "Before Firefox 143, subscribing to this event does not emit events for all already open browsing contexts."
-                }
-              ],
+              "firefox": {
+                "version_added": "99"
+              },
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
@@ -483,6 +475,38 @@
                 "edge": "mirror",
                 "firefox": {
                   "version_added": "99"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "emit_for_existing_contexts": {
+            "__compat": {
+              "description": "Supports emitting the event for all existing contexts when subscribing to the event.",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-contextCreated:~:text=The%20remote%20end%20subscribe%20steps%2C%20with%20subscribe%20priority%201%2C%20given%20session%2C%20navigables%20and%20include%20global%20are",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "143"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
