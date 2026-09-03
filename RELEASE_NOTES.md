@@ -1,5 +1,34 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.1.0](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.0)
+
+September 3, 2026
+
+### Notable changes
+
+This release includes _one notable change_.
+
+#### 1. Add `index` to published browser release objects ([#30008](https://github.com/mdn/browser-compat-data/pull/30008))
+
+Previously, reconstructing the release order of a browser meant relying on JavaScript object key enumeration order or parsing and comparing version strings yourself.
+
+Now, every release object in the published `data.json` carries a 0-based `index` property, ordered ascending by version, which you can sort on directly:
+
+```js
+const releases = Object.entries(bcd.browsers.chrome.releases);
+releases.sort(([, a], [, b]) => a.index - b.index);
+// [["1", {…}], ["2", {…}], …, ["151", {…}]]
+```
+
+For details, see the [Build-time transformations section](https://github.com/mdn/browser-compat-data/blob/main/schemas/public.schema.md#build-time-transformations) of the published data JSON schema documentation.
+
+### Statistics
+
+- 3 contributors have changed 15 files with 127 additions and 54 deletions in 2 commits ([`v8.0.14...v8.1.0`](https://github.com/mdn/browser-compat-data/compare/v8.0.14...v8.1.0))
+- 20,510 total features
+- 1,270 total contributors
+- 5,736 total stargazers
+
 ## [v8.0.14](https://github.com/mdn/browser-compat-data/releases/tag/v8.0.14)
 
 September 3, 2026
