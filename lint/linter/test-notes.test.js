@@ -40,7 +40,7 @@ const withNotes = (notes) => ({
 });
 
 describe('test-notes', () => {
-  /** @type {{group: string, cases: {name: string, notes: string | string[], expectedFixable: number}[]}[]} */
+  /** @type {{group: string, cases: {name: string, notes: string | string[], expectedFixable: number, expectedWarnings?: number}[]}[]} */
   const groups = [
     {
       group: 'code tag in notes',
@@ -85,16 +85,59 @@ describe('test-notes', () => {
         },
       ],
     },
+    {
+      // HTML the conversion cannot express in Markdown must be reported as a
+      // warning for a human, never as a fixable error.
+      group: 'HTML that cannot be converted automatically',
+      cases: [
+        {
+          name: 'warns about a <code> tag containing a backtick',
+          notes: 'Use <code>a`b</code> instead.',
+          expectedFixable: 0,
+          expectedWarnings: 1,
+        },
+        {
+          name: 'warns about adjacent <code> tags',
+          notes: 'Use <code>a</code><code>b</code> instead.',
+          expectedFixable: 0,
+          expectedWarnings: 1,
+        },
+        {
+          name: 'warns about link text containing a closing bracket',
+          notes: 'See <a href="https://example.com">a]b</a>.',
+          expectedFixable: 0,
+          expectedWarnings: 1,
+        },
+        {
+          name: 'still flags the convertible notes in the same array',
+          notes: [
+            'Use <code>foo</code> instead.',
+            'Use <code>a`b</code> instead.',
+          ],
+          expectedFixable: 1,
+          expectedWarnings: 1,
+        },
+      ],
+    },
   ];
 
   for (const { group, cases } of groups) {
     describe(group, () => {
-      for (const { name, notes, expectedFixable } of cases) {
+      for (const {
+        name,
+        notes,
+        expectedFixable,
+        expectedWarnings = 0,
+      } of cases) {
         it(name, async () => {
           const messages = await check(withNotes(notes));
           assert.equal(
             messages.filter((m) => m.fixable).length,
             expectedFixable,
+          );
+          assert.equal(
+            messages.filter((m) => m.level === 'warning').length,
+            expectedWarnings,
           );
         });
       }

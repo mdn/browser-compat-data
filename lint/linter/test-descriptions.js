@@ -3,7 +3,10 @@
 
 import { styleText } from 'node:util';
 
+import mdToHtml from '../../scripts/build/md-to-html.js';
 import {
+  convertHtmlToMarkdown,
+  preservesRenderedHtml,
   replaceCodeTagsWithBackticks,
   replaceLinkTagsWithMarkdown,
 } from '../utils.js';
@@ -20,6 +23,7 @@ import { validateHTML } from './test-notes.js';
  * @property {string} ruleName The name of the rule that was violated
  * @property {string} actual The actual description
  * @property {string} expected The expected description
+ * @property {false} [fixable] Set when the fixer must not apply `expected`
  */
 
 /**
@@ -109,28 +113,45 @@ export const processData = (data, category, path) => {
   const errors = [];
 
   if (data.description) {
-    // Push these before the canonical-description rules below so that, when a
-    // description triggers both, the canonical expectation wins in a single
-    // fix pass (the fixer applies errors in order, last write wins). Convert
-    // code tags before links, since a link's text may contain a <code> tag.
-    const codeConverted = replaceCodeTagsWithBackticks(data.description);
-    if (codeConverted !== data.description) {
-      errors.push({
-        ruleName: 'no_code_tag_in_description',
-        path,
-        actual: data.description,
-        expected: codeConverted,
-      });
-    }
+    const converted = convertHtmlToMarkdown(data.description);
 
-    const linkConverted = replaceLinkTagsWithMarkdown(codeConverted);
-    if (linkConverted !== codeConverted) {
+    if (
+      converted !== data.description &&
+      !preservesRenderedHtml(data.description, converted)
+    ) {
+      // The conversion would change the rendered output, so it needs a human.
+      // Report it as unfixable rather than as an error the fixer declines.
       errors.push({
-        ruleName: 'no_link_tag_in_description',
+        ruleName: 'unconvertible_html_in_description',
         path,
         actual: data.description,
-        expected: linkConverted,
+        expected: converted,
+        fixable: false,
       });
+    } else {
+      // Push these before the canonical-description rules below so that, when a
+      // description triggers both, the canonical expectation wins in a single
+      // fix pass (the fixer applies errors in order, last write wins). Convert
+      // code tags before links, since a link's text may contain a <code> tag.
+      const codeConverted = replaceCodeTagsWithBackticks(data.description);
+      if (codeConverted !== data.description) {
+        errors.push({
+          ruleName: 'no_code_tag_in_description',
+          path,
+          actual: data.description,
+          expected: codeConverted,
+        });
+      }
+
+      const linkConverted = replaceLinkTagsWithMarkdown(codeConverted);
+      if (linkConverted !== codeConverted) {
+        errors.push({
+          ruleName: 'no_link_tag_in_description',
+          path,
+          actual: data.description,
+          expected: linkConverted,
+        });
+      }
     }
   }
 
@@ -174,6 +195,16 @@ export default {
     for (const error of errors) {
       if (typeof error === 'string') {
         logger.error(styleText('red', error));
+      } else if (error.fixable === false) {
+        logger.warning(
+          styleText(
+            'yellow',
+            `The description for ${styleText('bold', error.path)} contains HTML that cannot be converted to Markdown automatically, because the conversion would change the rendered output. Please rewrite it by hand.
+      Actual: ${styleText('yellow', `"${error.actual}"`)}
+      Renders as: ${styleText('yellow', `"${mdToHtml(error.actual)}"`)}
+      Converting would render as: ${styleText('red', `"${mdToHtml(error.expected)}"`)}`,
+          ),
+        );
       } else {
         logger.error(
           styleText(
