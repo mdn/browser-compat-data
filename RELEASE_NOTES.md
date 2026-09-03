@@ -6,7 +6,21 @@ September 3, 2026
 
 ### Notable changes
 
-<!-- TODO: Fill me out with the appropriate information about breaking changes or new backwards-compatible additions! -->
+This release includes _one notable change_.
+
+#### 1. Add `index` to published browser release objects ([#30008](https://github.com/mdn/browser-compat-data/pull/30008))
+
+Previously, reconstructing the release order of a browser meant relying on JavaScript object key enumeration order or parsing and comparing version strings yourself.
+
+Now, every release object in the published `data.json` carries a 0-based `index` property, ordered ascending by version, which you can sort on directly:
+
+```js
+const releases = Object.entries(bcd.browsers.chrome.releases);
+releases.sort(([, a], [, b]) => a.index - b.index);
+// [["1", {…}], ["2", {…}], …, ["151", {…}]]
+```
+
+For details, see the [Build-time transformations section](https://github.com/mdn/browser-compat-data/blob/main/schemas/public.schema.md#build-time-transformations) of the published data JSON schema documentation.
 
 ### Statistics
 
