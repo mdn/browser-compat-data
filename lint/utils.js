@@ -4,6 +4,8 @@
 import { platform } from 'node:os';
 import { styleText } from 'node:util';
 
+import mdToHtml from '../scripts/build/md-to-html.js';
+
 /** @import {InternalSimpleSupportStatement} from '../types/index.js' */
 /** @import {Linter, LinterData, LinterMessage, LinterScope} from './types.js' */
 
@@ -56,6 +58,60 @@ export const replaceCodeTagsWithBackticks = (str) =>
  */
 export const replaceLinkTagsWithMarkdown = (str) =>
   str.replace(/<a href=(['"])([^'"]*)\1>([^<]*)<\/a>/g, '[$3]($2)');
+
+/**
+ * Replace the HTML that Markdown can express with Markdown syntax.
+ *
+ * Code tags are unwrapped before links, since a link's text may contain a
+ * <code> tag. The result is only safe to write back to the data if
+ * {@link preservesRenderedHtml} confirms it renders identically.
+ * @param {string} str The string to process
+ * @returns {string} The string with HTML replaced by Markdown syntax
+ */
+export const convertHtmlToMarkdown = (str) =>
+  replaceLinkTagsWithMarkdown(replaceCodeTagsWithBackticks(str));
+
+/**
+ * Canonicalize attribute quoting in HTML.
+ *
+ * Markdown links render with double-quoted attributes, while raw HTML in the
+ * data may use single quotes, so the two render identically without comparing
+ * equal. Only `href` is canonicalized (the only attribute {@link
+ * VALID_ELEMENTS} permits), and only when the value contains no double quote
+ * of its own: a value that would need re-escaping is left alone, so that the
+ * comparison fails and the conversion is rejected rather than guessed at.
+ * @param {string} html The HTML to canonicalize
+ * @returns {string} The HTML with single-quoted href attributes canonicalized
+ */
+const canonicalizeAttributeQuotes = (html) =>
+  html.replace(/ href='([^'"]*)'/g, ' href="$1"');
+
+/**
+ * Check that replacing HTML with Markdown leaves the built output unchanged.
+ *
+ * {@link convertHtmlToMarkdown} is plain regular expressions, so there are
+ * inputs it matches but cannot express in Markdown: a backtick inside `<code>`,
+ * two adjacent `<code>` tags, a `]` in link text, or whitespace in an `href`.
+ * A raw `<code>` tag also does not suppress Markdown the way a code span does,
+ * so `<code>a*b*c</code>` currently renders with an `<em>` that the converted
+ * form would not have. Those convert to Markdown that renders differently, and
+ * must never be written to the data. Rendering both sides with the build's own
+ * converter and comparing them is what makes the conversion safe, independently
+ * of which inputs the regular expressions happen to match.
+ *
+ * The comparison is deliberately strict: apart from attribute quoting, the two
+ * renderings must be identical. Differences that are merely cosmetic (a raw `&`
+ * that Markdown escapes to `&amp;`, say) are rejected as well, which leaves the
+ * HTML in the data for a human to convert. That is the safe direction to fail
+ * in: a rejected conversion is a missed cleanup, an accepted bad one is a
+ * silent data change.
+ * @param {string} before The string before conversion
+ * @param {string} after The string after conversion
+ * @returns {boolean} Whether both strings produce the same HTML
+ */
+export const preservesRenderedHtml = (before, after) =>
+  canonicalizeAttributeQuotes(mdToHtml(before)) ===
+  canonicalizeAttributeQuotes(mdToHtml(after));
 
 /**
  * Escapes common invisible characters.

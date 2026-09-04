@@ -35,6 +35,12 @@ const fixDescriptions = (filename, actual) => {
         continue;
       }
 
+      if (error.fixable === false) {
+        // Applying this would change the rendered output; the linter warns
+        // about it instead so that a human can rewrite the description.
+        continue;
+      }
+
       if (error.expected) {
         feature.compat.description = error.expected;
       } else if (error.expected === '') {

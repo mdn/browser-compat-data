@@ -127,7 +127,7 @@ describe('test-descriptions', () => {
         errors.find((e) => typeof e !== 'string' && e.ruleName === ruleName)
       );
 
-    /** @type {{name: string, description: string, ruleName: string, actual?: string, expected: string}[]} */
+    /** @type {{name: string, description: string, ruleName: string, actual?: string, expected: string, fixable?: false}[]} */
     const cases = [
       {
         name: 'flags <code> tags as no_code_tag_in_description',
@@ -149,9 +149,39 @@ describe('test-descriptions', () => {
         ruleName: 'no_link_tag_in_description',
         expected: 'See [`foo()`](https://example.com)',
       },
+      // HTML the conversion cannot express in Markdown is reported as
+      // unfixable, so that the fixer leaves it for a human to rewrite.
+      {
+        name: 'reports a <code> tag containing a backtick as unfixable',
+        description: 'A <code>a`b</code> usage',
+        ruleName: 'unconvertible_html_in_description',
+        expected: 'A `a`b` usage',
+        fixable: false,
+      },
+      {
+        name: 'reports adjacent <code> tags as unfixable',
+        description: 'A <code>a</code><code>b</code> usage',
+        ruleName: 'unconvertible_html_in_description',
+        expected: 'A `a``b` usage',
+        fixable: false,
+      },
+      {
+        name: 'reports link text with a closing bracket as unfixable',
+        description: "See <a href='https://example.com'>a]b</a>",
+        ruleName: 'unconvertible_html_in_description',
+        expected: 'See [a]b](https://example.com)',
+        fixable: false,
+      },
     ];
 
-    for (const { name, description, ruleName, actual, expected } of cases) {
+    for (const {
+      name,
+      description,
+      ruleName,
+      actual,
+      expected,
+      fixable,
+    } of cases) {
       it(name, () => {
         /** @type {InternalCompatStatement} */
         const data = { description, support: {} };
@@ -162,6 +192,7 @@ describe('test-descriptions', () => {
           assert.equal(err.actual, actual);
         }
         assert.equal(err.expected, expected);
+        assert.equal(err.fixable, fixable);
       });
     }
 
