@@ -1,5 +1,21 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.1.1](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.1)
+
+September 4, 2026
+
+### Additions
+
+- `api.Selection.addRange.multiple_ranges` ([#30230](https://github.com/mdn/browser-compat-data/pull/30230))
+- `javascript.statements.import.defer` ([#30425](https://github.com/mdn/browser-compat-data/pull/30425))
+
+### Statistics
+
+- 6 contributors have changed 7 files with 373 additions and 37 deletions in 7 commits ([`v8.1.0...v8.1.1`](https://github.com/mdn/browser-compat-data/compare/v8.1.0...v8.1.1))
+- 20,512 total features
+- 1,270 total contributors
+- 5,737 total stargazers
+
 ## [v8.1.0](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.0)
 
 September 3, 2026
