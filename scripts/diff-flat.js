@@ -17,10 +17,15 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
 import bcd from '../index.js';
-import { spawn, walk } from '../utils/index.js';
+import { walk } from '../utils/index.js';
 
 import { addVersionLast, applyMirroring, transformMD } from './build/index.js';
-import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
+import {
+  getMergeBase,
+  getFileContent,
+  getGitDiffStatuses,
+  resolveDiffRefs,
+} from './lib/git.js';
 import dataFolders from './lib/data-folders.js';
 
 const BROWSER_NAMES = Object.keys(bcd.browsers);
@@ -637,71 +642,8 @@ if (esMain(import.meta)) {
     })
     .parseSync();
 
-  const options = argv;
-
-  if (/^\d+$/.test(options.base)) {
-    options.head = `pull/${options.base}/merge`;
-    options.base = 'origin/main';
-  }
-
-  const remote =
-    spawn('git', ['remote', '-v'])
-      .split('\n')
-      .find((line) => line.includes('mdn/browser-compat-data'))
-      ?.split(/\s+/, 2)
-      .at(0) ?? 'origin';
-
-  /**
-   * Runs `git fetch` for a reference.
-   * @param {string} ref - the reference to fetch.
-   * @returns {string} Combined standard output/error of the command.
-   */
-  const gitFetch = (ref) => spawn('git', ['fetch', remote, ref]);
-
-  /**
-   * Runs `git rev-parse` for a reference.
-   * @param {string} ref - the reference to parse.
-   * @returns {string} Standard output of the command.
-   */
-  const gitRevParse = (ref) => spawn('git', ['rev-parse', ref]);
-
-  /**
-   * Resolves and fetches the reference.
-   * @param {string} ref - the reference to fetch and resolve.
-   * @returns {string} Commit hash corresponding to the reference.
-   */
-  const fetchAndResolve = (ref) => {
-    if (ref.startsWith('origin/')) {
-      const remoteRef = ref.slice('origin/'.length);
-      gitFetch(remoteRef);
-      return gitRevParse(ref);
-    } else if (ref.startsWith(`${remote}/`)) {
-      const remoteRef = ref.slice(`${remote}/`.length);
-      gitFetch(remoteRef);
-      return gitRevParse(ref);
-    } else if (ref.startsWith('pull/')) {
-      gitFetch(ref);
-      return gitRevParse('FETCH_HEAD');
-    } else if (ref.includes(':')) {
-      const remoteRef = `gh pr view ${ref} --json headRefOid -q '.headRefOid'`;
-      gitFetch(remoteRef);
-      return remoteRef;
-    } else if (/^[0-9a-f]{40}$/.test(ref)) {
-      try {
-        gitRevParse(ref);
-      } catch {
-        gitFetch(ref);
-      }
-      return ref;
-    }
-
-    return gitRevParse(ref);
-  };
-
-  options.base = fetchAndResolve(options.base);
-  options.head = fetchAndResolve(options.head);
-
-  const { base, head, group, format, mirror, transform } = options;
+  const { base, head } = resolveDiffRefs(argv.base, argv.head);
+  const { group, format, mirror, transform } = argv;
 
   printDiffs(getMergeBase(base, head), head, {
     group,
