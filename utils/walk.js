@@ -11,24 +11,24 @@ import {
 } from './walkingUtils.js';
 import query from './query.js';
 
-/** @import {InternalCompatStatement, BrowserStatement, ReleaseStatement, InternalIdentifier} from '../types/index.js' */
+/** @import {InternalCompatStatement, InternalBrowserStatement, InternalReleaseStatement, InternalIdentifier} from '../types/index.js' */
 /** @import {InternalDataType} from '../types/index.js' */
 
 /**
  * @typedef {object} BrowserReleaseWalkOutput
  * @property {string} path The path of the current node
  * @property {InternalDataType} data The data of the current node
- * @property {BrowserStatement} browser The browser statement of the current node
- * @property {ReleaseStatement} browserRelease The release statement of the current node
+ * @property {InternalBrowserStatement} browser The browser statement of the current node
+ * @property {InternalReleaseStatement} browserRelease The release statement of the current node
  */
 
 /**
  * @typedef {object} LowLevelWalkOutput
  * @property {string} path The path of the current node
  * @property {InternalDataType} data The data of the current node
- * @property {BrowserStatement} [browser] The browser statement of the current node
+ * @property {InternalBrowserStatement} [browser] The browser statement of the current node
  * @property {InternalCompatStatement} [compat] The compat statement of the current node
- * @property {ReleaseStatement} [browserRelease] The release statement of the current node
+ * @property {InternalReleaseStatement} [browserRelease] The release statement of the current node
  */
 
 /**
@@ -40,7 +40,7 @@ import query from './query.js';
 
 /**
  * Walk through the browser releases
- * @param {BrowserStatement} data The data to iterate
+ * @param {InternalBrowserStatement} data The data to iterate
  * @param {string} [path] The current path
  * @yields {BrowserReleaseWalkOutput} The release info
  * @returns {IterableIterator<BrowserReleaseWalkOutput>} The browser release walk output
@@ -51,7 +51,7 @@ export function* browserReleaseWalk(data, path) {
       path: joinPath(path, 'releases', release),
       data,
       browser: data,
-      browserRelease: /** @type {ReleaseStatement} */ (releaseData),
+      browserRelease: /** @type {InternalReleaseStatement} */ (releaseData),
     };
   }
 }
