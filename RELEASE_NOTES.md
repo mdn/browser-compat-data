@@ -1,5 +1,43 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.1.1](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.1)
+
+September 10, 2026
+
+### Removals
+
+- `api.HTMLMediaElement.seekToNextFrame` ([#30414](https://github.com/mdn/browser-compat-data/pull/30414))
+- `api.TrustedParserOptions` ([#30463](https://github.com/mdn/browser-compat-data/pull/30463))
+- `api.TrustedParserOptions.runScripts` ([#30463](https://github.com/mdn/browser-compat-data/pull/30463))
+- `api.TrustedParserOptions.sanitizer` ([#30463](https://github.com/mdn/browser-compat-data/pull/30463))
+
+### Additions
+
+- `api.PerformanceContainerTiming.toJSON` ([#30451](https://github.com/mdn/browser-compat-data/pull/30451))
+- `api.Selection.addRange.multiple_ranges` ([#30230](https://github.com/mdn/browser-compat-data/pull/30230))
+- `api.TrustedHTMLParserOptions` ([#30463](https://github.com/mdn/browser-compat-data/pull/30463))
+- `api.TrustedHTMLParserOptions.runScripts` ([#30463](https://github.com/mdn/browser-compat-data/pull/30463))
+- `api.TrustedHTMLParserOptions.sanitizer` ([#30463](https://github.com/mdn/browser-compat-data/pull/30463))
+- `browsers.bun.releases.1.4.1` ([#30445](https://github.com/mdn/browser-compat-data/pull/30445))
+- `browsers.bun.releases.1.4.2` ([#30445](https://github.com/mdn/browser-compat-data/pull/30445))
+- `browsers.chrome_android.releases.156` ([#30445](https://github.com/mdn/browser-compat-data/pull/30445))
+- `browsers.chrome.releases.156` ([#30445](https://github.com/mdn/browser-compat-data/pull/30445))
+- `browsers.samsunginternet_android.releases.30.0` ([#30436](https://github.com/mdn/browser-compat-data/pull/30436))
+- `browsers.webview_android.releases.156` ([#30445](https://github.com/mdn/browser-compat-data/pull/30445))
+- `css.properties.line-clamp.height-based_clamping` ([#30418](https://github.com/mdn/browser-compat-data/pull/30418))
+- `css.properties.zoom.is_animatable` ([#30358](https://github.com/mdn/browser-compat-data/pull/30358))
+- `javascript.statements.import.defer` ([#30425](https://github.com/mdn/browser-compat-data/pull/30425))
+- `mathml.elements.a.hreflang` ([#30454](https://github.com/mdn/browser-compat-data/pull/30454))
+- `mathml.elements.a.target` ([#30454](https://github.com/mdn/browser-compat-data/pull/30454))
+- `mathml.elements.a.type` ([#30454](https://github.com/mdn/browser-compat-data/pull/30454))
+
+### Statistics
+
+- 12 contributors have changed 48 files with 833 additions and 209 deletions in 35 commits ([`v8.1.0...v8.1.1`](https://github.com/mdn/browser-compat-data/compare/v8.1.0...v8.1.1))
+- 20,517 total features
+- 1,270 total contributors
+- 5,743 total stargazers
+
 ## [v8.1.0](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.0)
 
 September 3, 2026
