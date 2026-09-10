@@ -8,6 +8,6 @@ Use the key name `is_animatable` to capture data describing when a feature was m
 
 Such features should have the `description` field set to "`@keyframe` animatable and transitionable".
 
-The `description` also has an optional suffix: `when x`, where `x` is a particular condition under which the feature is animatable and/or transitionable. For example — "`@keyframe` animatable and transitionable when setting `inset` properties".
+The `description` also has an optional parenthetical suffix: `(x)`, where `x` is a particular condition under which the feature is animatable and/or transitionable. For example — "`@keyframe` animatable and transitionable (when setting `inset` properties)".
 
 This guideline was proposed in [#30417](https://github.com/mdn/browser-compat-data/pull/30417/).
