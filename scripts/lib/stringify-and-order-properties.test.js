@@ -34,7 +34,7 @@ describe('Order Properties', () => {
     };
 
     const expected =
-      '{\n  "__compat": {\n    "support": {\n      "firefox": {\n        "version_added": "1.5"\n      },\n      "chrome": {\n        "version_added": "1"\n      },\n      "safari": {\n        "version_added": "preview",\n        "flags": [\n          {\n            "name": "useTemporal",\n            "type": "runtime_flag",\n            "value_to_set": "1"\n          }\n        ]\n      }\n    },\n    "status": {\n      "experimental": false,\n      "standard_track": true,\n      "deprecated": false\n    }\n  }\n}';
+      '{\n  "__compat": {\n    "support": {\n      "firefox": {\n        "version_added": "1.5"\n      },\n      "chrome": {\n        "version_added": "1"\n      },\n      "safari": {\n        "version_added": "preview",\n        "flags": [\n          {\n            "type": "runtime_flag",\n            "name": "useTemporal",\n            "value_to_set": "1"\n          }\n        ]\n      }\n    },\n    "status": {\n      "experimental": false,\n      "standard_track": true,\n      "deprecated": false\n    }\n  }\n}';
 
     const result = stringifyAndOrderProperties(input);
     assert.deepEqual(result, expected);

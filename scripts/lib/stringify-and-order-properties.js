@@ -44,7 +44,7 @@ const propOrder = {
       'partial_implementation',
       'notes',
     ],
-    flags: ['name', 'type', 'value_to_set'],
+    flags: ['type', 'name', 'value_to_set'],
     status: ['experimental', 'standard_track', 'deprecated'],
   },
 };
