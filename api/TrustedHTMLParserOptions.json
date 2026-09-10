@@ -3,9 +3,23 @@
     "TrustedHTMLParserOptions": {
       "__compat": {
         "support": {
-          "chrome": {
-            "version_added": "155"
-          },
+          "chrome": [
+            {
+              "version_added": "148",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ]
+            },
+            {
+              "alternative_name": "TrustedParserOptions",
+              "version_added": "148",
+              "version_removed": "154"
+            }
+          ],
           "chrome_android": "mirror",
           "edge": "mirror",
           "firefox": {
@@ -33,7 +47,14 @@
         "__compat": {
           "support": {
             "chrome": {
-              "version_added": "155"
+              "version_added": "148",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -63,7 +84,14 @@
         "__compat": {
           "support": {
             "chrome": {
-              "version_added": "155"
+              "version_added": "148",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
