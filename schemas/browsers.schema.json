@@ -55,13 +55,13 @@
       "enum": ["retired", "current", "beta", "nightly", "esr", "planned"]
     },
 
-    "browsers": {
+    "internal_browsers": {
       "type": "object",
       "propertyNames": {
         "$ref": "#/definitions/browser_name"
       },
       "additionalProperties": {
-        "$ref": "#/definitions/browser_statement"
+        "$ref": "#/definitions/internal_browser_statement"
       },
       "minProperties": 1,
       "maxProperties": 1,
@@ -69,10 +69,10 @@
         "minProperties": "A browser must be described within the file.",
         "maxProperties": "Each browser JSON file may only describe one browser."
       },
-      "tsType": "Record<BrowserName, BrowserStatement>"
+      "tsType": "Record<BrowserName, InternalBrowserStatement>"
     },
 
-    "browser_statement": {
+    "internal_browser_statement": {
       "type": "object",
       "properties": {
         "name": {
@@ -110,9 +110,11 @@
         },
         "releases": {
           "type": "object",
-          "additionalProperties": { "$ref": "#/definitions/release_statement" },
+          "additionalProperties": {
+            "$ref": "#/definitions/internal_release_statement"
+          },
           "description": "Releases of this browser.",
-          "tsType": "{ [version: string]: ReleaseStatement };"
+          "tsType": "{ [version: string]: InternalReleaseStatement };"
         }
       },
       "required": [
@@ -125,7 +127,7 @@
       "additionalProperties": false
     },
 
-    "release_statement": {
+    "internal_release_statement": {
       "type": "object",
       "properties": {
         "release_date": {
@@ -165,7 +167,7 @@
   "title": "BrowserDataFile",
   "type": "object",
   "properties": {
-    "browsers": { "$ref": "#/definitions/browsers" }
+    "browsers": { "$ref": "#/definitions/internal_browsers" }
   },
   "additionalProperties": false
 }

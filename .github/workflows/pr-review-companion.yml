@@ -69,7 +69,7 @@ jobs:
 
           ${COMMENT}"
 
-          COMMENT_ID=$(gh pr view "$PR_NUMBER" --repo "${{ github.repository }}" --comments --json comments \
+          COMMENT_ID=$(gh pr view "$PR_NUMBER" --repo "${{ github.repository }}" --json comments \
             --jq ".comments | sort_by(.createdAt) | map(select(.author.login == \"$AUTHOR\" and (.body | contains(\"$MARKER\")))) | .[0].id")
           if [ -n "$COMMENT_ID" ]; then
             gh api graphql -f query='

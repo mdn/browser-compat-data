@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {InternalIdentifier, BrowserStatement} from '../types/index.js' */
+/** @import {InternalIdentifier, InternalBrowserStatement} from '../types/index.js' */
 
 /**
  * Join a path array together
@@ -20,7 +20,7 @@ export const isFeature = (obj) => '__compat' in obj;
 /**
  * Check if an object is a browser statement
  * @param {*} obj The object to check
- * @returns {obj is BrowserStatement} Whether the object is a browser statement
+ * @returns {obj is InternalBrowserStatement} Whether the object is a browser statement
  */
 export const isBrowser = (obj) => 'name' in obj && 'releases' in obj;
 
