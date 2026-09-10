@@ -2,12 +2,17 @@
  * See LICENSE file for more information. */
 
 import type {
-  BrowserStatement,
+  InternalBrowserStatement,
   InternalCompatStatement,
   InternalIdentifier,
-  Browsers,
+  InternalBrowsers,
 } from './internal.js';
-import type { CompatData, CompatStatement, Identifier } from './public.js';
+import type {
+  BrowserStatement,
+  CompatData,
+  CompatStatement,
+  Identifier,
+} from './public.js';
 
 export type * from './internal.js';
 
@@ -16,13 +21,13 @@ export type DataType =
 
 export type InternalDataType =
   | InternalCompatData
-  | BrowserStatement
+  | InternalBrowserStatement
   | InternalCompatStatement
   | InternalIdentifier;
 
 export interface InternalCompatData {
   api: InternalIdentifier;
-  browsers: Browsers;
+  browsers: InternalBrowsers;
   css: InternalIdentifier;
   html: InternalIdentifier;
   http: InternalIdentifier;
