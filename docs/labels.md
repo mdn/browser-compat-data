@@ -76,3 +76,15 @@ Do not set this label on a pull request when it:
 - Only performs a migration that does not break backwards compatibility
 
 Remove this label upon committing a release note to a release note pull request (see [_Publishing a new version of `@mdn/browser-compat-data`_](./publishing.md#publishing-a-new-version-of-mdnbrowser-compat-data)).
+
+## sets partial
+
+| Pulls | Issues | Blocker |
+| ----- | ------ | ------- |
+| Yes   | No     | No      |
+
+This label indicates that a pull request adds a `partial_implementation` flag to at least one support statement.
+
+The [Partial Implementation Labeler](../.github/workflows/pr-partial-labeler.yml) workflow sets and removes this label automatically, so don't set or remove it manually: the label is synchronized again whenever the pull request is updated.
+
+Because partial implementations often need discussion, [open pull requests with this label](https://github.com/mdn/browser-compat-data/pulls?q=is%3Apr+is%3Aopen+label%3A%22sets+partial%22) are reviewed in the weekly BCD call.

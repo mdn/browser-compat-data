@@ -1,0 +1,82 @@
+# Labels pull requests that add a partial implementation, so that they can be
+# picked up for discussion in the weekly BCD call.
+name: Partial Implementation Labeler
+
+on:
+  pull_request_target:
+  # Allows labeling all open pull requests, e.g. after changing this workflow.
+  workflow_dispatch:
+
+permissions:
+  contents: read # to determine the added partial implementations
+  pull-requests: write # to label pull requests
+
+concurrency:
+  group: pr-partial-labeler-${{ github.event.pull_request.number || 'all' }}
+  cancel-in-progress: true
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+      LABEL: sets partial
+      REPO: ${{ github.repository }}
+
+    steps:
+      # Note: This deliberately checks out the base branch, rather than the code
+      # of the pull request, which must not be run with a writable token.
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: ".nvmrc"
+          package-manager-cache: false
+
+      - name: Install
+        run: npm ci
+
+      - name: Determine pull requests
+        id: prs
+        shell: bash
+        run: |
+          if [ -n "$PR_NUMBER" ]; then
+            numbers="$PR_NUMBER"
+          else
+            numbers=$(gh pr list --repo "$REPO" --state open --limit 500 --json number --jq 'map(.number) | join(" ")')
+          fi
+          echo "numbers=$numbers" >> "$GITHUB_OUTPUT"
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+
+      - name: Label pull requests that add partial implementations
+        shell: bash
+        run: |
+          for pr in $NUMBERS; do
+            if ! added=$(node scripts/diff-partials.js "$pr" --json | jq -r '.added[]'); then
+              echo "::warning::Could not diff #$pr, skipping. Does it have merge conflicts?"
+              continue
+            fi
+
+            if gh pr view "$pr" --repo "$REPO" --json labels --jq '.labels[].name' | grep -Fxq "$LABEL"; then
+              labeled=true
+            else
+              labeled=false
+            fi
+
+            if [ -n "$added" ] && [ "$labeled" = "false" ]; then
+              echo "Labeling #$pr, which adds a partial implementation for:"
+              echo "$added" | sed 's/^/  /'
+              gh pr edit "$pr" --repo "$REPO" --add-label "$LABEL"
+            elif [ -z "$added" ] && [ "$labeled" = "true" ]; then
+              echo "Unlabeling #$pr, which no longer adds a partial implementation."
+              gh pr edit "$pr" --repo "$REPO" --remove-label "$LABEL"
+            fi
+          done
+        env:
+          NUMBERS: ${{ steps.prs.outputs.numbers }}

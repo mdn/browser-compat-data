@@ -48,3 +48,13 @@ The `-b` or `--browser` argument may be any browser in the [`browsers/` folder](
 The `-f` or `--filter` argument may be any value accepted by `version_added` or `version_removed`. This argument may be repeated to test multiple values. By default, the script will traverse all features regardless of their value.
 
 Examples: to search for all Safari entries that are not supported, run `npm run traverse -- -b safari -f false`. To search for all WebView entries that are mirroring from upstream in `api` and `javascript`, run `npm run traverse api,javascript -- -b webview_android -f mirror`. To search for all Firefox entries supported since `10` across all folders, run `npm run traverse -- -b firefox -f 10`.
+
+## Diff partial implementations
+
+To see which partial implementations a change adds or removes, you can run `npm run diff:partials -- [base] [head]`. The script prints one `<feature>.<browser>` path per line, prefixed with `+` for added and `-` for removed partial implementations.
+
+Pass a pull request number as the only argument to diff that pull request against `main`, for example `npm run diff:partials -- 30261`. Pass `--json` to print the diff as JSON instead.
+
+Unresolved `"mirror"` values are ignored, so a partial implementation mirrored from an upstream browser is only reported for the upstream browser itself.
+
+The [Partial Implementation Labeler](../.github/workflows/pr-partial-labeler.yml) workflow uses this script to label pull requests that add a partial implementation (see [_Label usage_](./labels.md#sets-partial)).
