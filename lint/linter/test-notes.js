@@ -6,7 +6,10 @@ import { styleText } from 'node:util';
 import HTMLParser from '@desertnet/html-parser';
 import { marked } from 'marked';
 
+import mdToHtml from '../../scripts/build/md-to-html.js';
 import {
+  convertHtmlToMarkdown,
+  preservesRenderedHtml,
   replaceCodeTagsWithBackticks,
   replaceLinkTagsWithMarkdown,
   VALID_ELEMENTS,
@@ -118,6 +121,24 @@ const checkNotes = (notes, browser, feature, logger) => {
   }
 
   for (const note of Array.isArray(notes) ? notes : [notes]) {
+    const converted = convertHtmlToMarkdown(note);
+
+    // Only report HTML that the fixer can convert without changing the
+    // rendered output. Anything else needs a human, so warn instead of
+    // reporting a fixable error the fixer would decline to apply.
+    if (converted !== note && !preservesRenderedHtml(note, converted)) {
+      logger.warning(
+        styleText(
+          'yellow',
+          `Notes for ${styleText('bold', browser)} contain HTML that cannot be converted to Markdown automatically, because the conversion would change the rendered output. Please rewrite the note by hand.
+      Actual: ${styleText('yellow', `"${note}"`)}
+      Renders as: ${styleText('yellow', `"${mdToHtml(note)}"`)}
+      Converting would render as: ${styleText('red', `"${mdToHtml(converted)}"`)}`,
+        ),
+      );
+      continue;
+    }
+
     const codeConverted = replaceCodeTagsWithBackticks(note);
     if (codeConverted !== note) {
       logger.error(

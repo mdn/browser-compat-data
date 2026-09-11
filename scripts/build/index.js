@@ -9,7 +9,6 @@ import betterAjvErrors from 'better-ajv-errors';
 import esMain from 'es-main';
 import stringify from 'fast-json-stable-stringify';
 import { compareVersions } from 'compare-versions';
-import { marked } from 'marked';
 
 import { compilePublicTypes } from '../generate-types.js';
 import schema from '../../schemas/public.schema.json' with { type: 'json' };
@@ -17,6 +16,7 @@ import { createAjv } from '../lib/ajv.js';
 import { walk } from '../../utils/index.js';
 import bcd from '../../index.js';
 
+import mdToHtml from './md-to-html.js';
 import mirrorSupport from './mirror.js';
 
 /**
@@ -57,18 +57,6 @@ export const generateMeta = () => ({
   version: packageJson.version,
   timestamp: new Date().toISOString(),
 });
-
-/**
- * Converts Markdown to HTML and sanitizes output
- * @param {string} markdown The Markdown to convert
- * @returns {string} The HTML output
- */
-const mdToHtml = (markdown) =>
-  marked
-    .parseInline(markdown, { async: false })
-    .replace(/&#39;/g, "'")
-    .replace(/&quot;/g, '"')
-    .replace(/&amp;([\w#]+);/g, '&$1;');
 
 /**
  * Apply mirroring to a feature
