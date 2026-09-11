@@ -1,5 +1,29 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.1.2](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.2)
+
+September 11, 2026
+
+### Additions
+
+- `api.SubtleCrypto.decapsulateBits` ([#30433](https://github.com/mdn/browser-compat-data/pull/30433))
+- `api.SubtleCrypto.decapsulateKey` ([#30433](https://github.com/mdn/browser-compat-data/pull/30433))
+- `api.SubtleCrypto.encapsulateBits` ([#30433](https://github.com/mdn/browser-compat-data/pull/30433))
+- `api.SubtleCrypto.encapsulateKey` ([#30433](https://github.com/mdn/browser-compat-data/pull/30433))
+- `browsers.edge.releases.156` ([#30476](https://github.com/mdn/browser-compat-data/pull/30476))
+- `css.properties.text-decoration-skip-spaces` ([#30479](https://github.com/mdn/browser-compat-data/pull/30479))
+- `css.properties.text-decoration-skip-spaces.all` ([#30479](https://github.com/mdn/browser-compat-data/pull/30479))
+- `css.properties.text-decoration-skip-spaces.end` ([#30479](https://github.com/mdn/browser-compat-data/pull/30479))
+- `css.properties.text-decoration-skip-spaces.none` ([#30479](https://github.com/mdn/browser-compat-data/pull/30479))
+- `css.properties.text-decoration-skip-spaces.start` ([#30479](https://github.com/mdn/browser-compat-data/pull/30479))
+
+### Statistics
+
+- 4 contributors have changed 30 files with 510 additions and 219 deletions in 8 commits ([`v8.1.1...v8.1.2`](https://github.com/mdn/browser-compat-data/compare/v8.1.1...v8.1.2))
+- 20,526 total features
+- 1,270 total contributors
+- 5,743 total stargazers
+
 ## [v8.1.1](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.1)
 
 September 10, 2026
