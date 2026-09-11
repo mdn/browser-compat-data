@@ -44,6 +44,7 @@ const propOrder = {
       'partial_implementation',
       'notes',
     ],
+    flags: ['type', 'name', 'value_to_set'],
     status: ['experimental', 'standard_track', 'deprecated'],
   },
 };
@@ -128,6 +129,12 @@ export const orderProperties = (key, value) => {
         }
 
         for (const statement of data) {
+          const flags = statement.flags;
+          if (flags) {
+            flags.forEach((flag, index, array) => {
+              array[index] = doOrder(array[index], propOrder.data.flags);
+            });
+          }
           result.push(
             doOrder(
               /** @type {InternalSimpleSupportStatement} */ (statement),
