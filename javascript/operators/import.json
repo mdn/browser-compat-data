@@ -106,59 +106,6 @@
             }
           }
         },
-        "options_parameter": {
-          "__compat": {
-            "description": "The `options` parameter",
-            "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-expressions.html#sec-import-calls",
-            "support": {
-              "bun": {
-                "version_added": "1.1.5"
-              },
-              "chrome": {
-                "version_added": "91"
-              },
-              "chrome_android": "mirror",
-              "deno": {
-                "version_added": "1.17"
-              },
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "138"
-              },
-              "firefox_android": "mirror",
-              "nodejs": [
-                {
-                  "version_added": "17.5.0"
-                },
-                {
-                  "version_added": "16.15.0",
-                  "version_removed": "17.0.0"
-                },
-                {
-                  "version_added": "16.14.0",
-                  "version_removed": "16.15.0",
-                  "partial_implementation": true,
-                  "notes": "The second parameter no longer throws a parser error, but the `--experimental-json-modules` flag is still needed to load JSON modules."
-                }
-              ],
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": "15"
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror",
-              "webview_ios": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": true,
-              "deprecated": false
-            }
-          }
-        },
         "defer": {
           "__compat": {
             "description": "`import.defer()`",
@@ -227,6 +174,59 @@
             },
             "status": {
               "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "options_parameter": {
+          "__compat": {
+            "description": "The `options` parameter",
+            "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-expressions.html#sec-import-calls",
+            "support": {
+              "bun": {
+                "version_added": "1.1.5"
+              },
+              "chrome": {
+                "version_added": "91"
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "1.17"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "138"
+              },
+              "firefox_android": "mirror",
+              "nodejs": [
+                {
+                  "version_added": "17.5.0"
+                },
+                {
+                  "version_added": "16.15.0",
+                  "version_removed": "17.0.0"
+                },
+                {
+                  "version_added": "16.14.0",
+                  "version_removed": "16.15.0",
+                  "partial_implementation": true,
+                  "notes": "The second parameter no longer throws a parser error, but the `--experimental-json-modules` flag is still needed to load JSON modules."
+                }
+              ],
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "15"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
