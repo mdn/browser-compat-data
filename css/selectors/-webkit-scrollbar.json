@@ -15,7 +15,7 @@
               "version_added": "153",
               "version_removed": "155",
               "partial_implementation": true,
-              "notes": "The `@supports selector(::-webkit-scrollbar)` returns `true` but this pseudo-element cannot be used to style scrollbars. This behavior prevents nested scrollable content from becoming unreachable (see [bug 1977511](https://bugzil.la/1977511))"
+              "notes": "The `@supports selector(::-webkit-scrollbar)` check returns `true`, but only `display: none` (hides the scrollbar) and a non-zero `width` or `height` (turns off overlay scrollbars) have any effect. This behavior prevents nested scrollable content from becoming unreachable (see [bug 1977511](https://bugzil.la/1977511))"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
