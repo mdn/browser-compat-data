@@ -1,8 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement} from '../../types/index.js' */
 
+import { describe, it, beforeEach } from 'node:test';
 import assert from 'node:assert/strict';
 
 import { Logger } from '../utils.js';
@@ -20,7 +21,7 @@ describe('overlap', () => {
   });
 
   it('should skip processing when data is not an array', async () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       support: {
         chrome: {
@@ -36,7 +37,7 @@ describe('overlap', () => {
   });
 
   it('should log error when statements overlap', async () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       support: {
         firefox: [
@@ -53,7 +54,7 @@ describe('overlap', () => {
   });
 
   it('should log error when overlapping statements are not sorted', async () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       support: {
         firefox: [
@@ -70,7 +71,7 @@ describe('overlap', () => {
   });
 
   it('should log error when statements with same prefix overlap', async () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       support: {
         firefox: [
@@ -87,7 +88,7 @@ describe('overlap', () => {
   });
 
   it('should log error when statements with same alternative name overlap', async () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       support: {
         firefox: [
@@ -108,7 +109,7 @@ describe('overlap', () => {
   });
 
   it('should log error when there are two statements without version_added', async () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       support: {
         firefox: [
@@ -129,7 +130,7 @@ describe('overlap', () => {
   });
 
   it('should log error when there are two statements without version_added incl. preview', async () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       support: {
         firefox: [
@@ -150,7 +151,7 @@ describe('overlap', () => {
   });
 
   it('should ignore when partial support in stable and full support in preview overlap', async () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       support: {
         firefox: [
@@ -171,7 +172,7 @@ describe('overlap', () => {
   });
 
   it('should ignore preview version without overlap', async () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       support: {
         firefox: [

@@ -267,16 +267,17 @@
               "web-features:loading-lazy-media"
             ],
             "support": {
-              "chrome": {
-                "version_added": "147",
-                "flags": [
-                  {
-                    "type": "runtime_flag",
-                    "name": "--enable-features=LazyLoadVideoAndAudio"
-                  }
-                ],
-                "impl_url": "https://crbug.com/469111735"
-              },
+              "chrome": [
+                {
+                  "version_added": "150"
+                },
+                {
+                  "version_added": "148",
+                  "version_removed": "150",
+                  "partial_implementation": true,
+                  "notes": "Not supported for `<source>`. See [bug 514611050](https://crbug.com/514611050)."
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {

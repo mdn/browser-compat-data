@@ -11,7 +11,11 @@
           "support": {
             "chrome": [
               {
+                "version_added": "151"
+              },
+              {
                 "version_added": "144",
+                "version_removed": "151",
                 "partial_implementation": true,
                 "notes": "The initial value is `none` instead of `normal` (see [bug 501399489](https://crbug.com/501399489))."
               },
@@ -30,20 +34,32 @@
             ],
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "147",
-              "partial_implementation": true,
-              "notes": "The initial value is `auto` instead of `normal` (see [bug 2030351](https://bugzil.la/2030351)."
-            },
+            "firefox": [
+              {
+                "version_added": "151"
+              },
+              {
+                "version_added": "147",
+                "version_removed": "151",
+                "partial_implementation": true,
+                "notes": "The initial value is `auto` instead of `normal` (see [bug 2030351](https://bugzil.la/2030351)."
+              }
+            ],
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "26",
-              "partial_implementation": true,
-              "notes": "The initial value is `auto` instead of `normal` (see [bug 308981](https://webkit.org/b/308981) and [bug 311941](https://webkit.org/b/311941))."
-            },
+            "safari": [
+              {
+                "version_added": "27"
+              },
+              {
+                "version_added": "26",
+                "version_removed": "27",
+                "partial_implementation": true,
+                "notes": "The initial value is `auto` instead of `normal` (see [bug 308981](https://webkit.org/b/308981) and [bug 311941](https://webkit.org/b/311941))."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -63,11 +79,17 @@
               "web-features:anchor-positioning"
             ],
             "support": {
-              "chrome": {
-                "version_added": "125",
-                "partial_implementation": true,
-                "notes": "The generic `auto` value exists, but it does not yet have the effect described in the spec."
-              },
+              "chrome": [
+                {
+                  "version_added": "127"
+                },
+                {
+                  "version_added": "125",
+                  "version_removed": "127",
+                  "partial_implementation": true,
+                  "notes": "The generic `auto` value exists, but it does not yet have the effect described in the spec."
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
@@ -113,7 +135,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false
+                "version_added": "27"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -131,10 +153,12 @@
           "__compat": {
             "description": "`normal` value",
             "spec_url": "https://drafts.csswg.org/css-anchor-position-1/#valdef-position-anchor-normal",
+            "tags": [
+              "web-features:anchor-positioning"
+            ],
             "support": {
               "chrome": {
-                "version_added": false,
-                "impl_url": "https://crbug.com/501399489"
+                "version_added": "151"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -146,8 +170,7 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": false,
-                "impl_url": "https://webkit.org/b/311941"
+                "version_added": "27"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -155,7 +178,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }

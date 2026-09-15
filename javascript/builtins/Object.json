@@ -1570,6 +1570,7 @@
           "ES2015_behavior": {
             "__compat": {
               "description": "ES2015 behavior for non-object argument",
+              "spec_url": "https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-object.preventextensions",
               "tags": [
                 "web-features:snapshot:ecmascript-2015",
                 "web-features:object-object"
@@ -1692,9 +1693,26 @@
                 "version_added": "1"
               },
               "chrome_android": "mirror",
-              "deno": {
-                "version_added": false
-              },
+              "deno": [
+                {
+                  "version_added": "2.9",
+                  "flags": [
+                    {
+                      "type": "runtime_flag",
+                      "name": "--unsafe-proto"
+                    }
+                  ]
+                },
+                {
+                  "version_added": "1.39",
+                  "flags": [
+                    {
+                      "type": "runtime_flag",
+                      "name": "--unstable-unsafe-proto"
+                    }
+                  ]
+                }
+              ],
               "edge": {
                 "version_added": "12"
               },

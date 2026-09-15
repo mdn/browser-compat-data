@@ -35,6 +35,7 @@
         "activate": {
           "__compat": {
             "description": "`browsingContext.activate` command",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/activate",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-activate",
             "support": {
               "chrome": {
@@ -100,6 +101,7 @@
         "captureScreenshot": {
           "__compat": {
             "description": "`browsingContext.captureScreenshot` command",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/captureScreenshot",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-captureScreenshot",
             "support": {
               "chrome": {
@@ -261,6 +263,7 @@
         "close": {
           "__compat": {
             "description": "`browsingContext.close` command",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/close",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-close",
             "support": {
               "chrome": {
@@ -358,6 +361,7 @@
         "contextCreated_event": {
           "__compat": {
             "description": "`browsingContext.contextCreated` event",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/contextCreated",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-contextCreated",
             "support": {
               "chrome": {
@@ -365,17 +369,9 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "143"
-                },
-                {
-                  "version_added": "99",
-                  "version_removed": "143",
-                  "partial_implementation": true,
-                  "notes": "Before Firefox 143, subscribing to this event does not emit events for all already open browsing contexts."
-                }
-              ],
+              "firefox": {
+                "version_added": "99"
+              },
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
@@ -479,6 +475,38 @@
                 "edge": "mirror",
                 "firefox": {
                   "version_added": "99"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "emit_for_existing_contexts": {
+            "__compat": {
+              "description": "Supports emitting the event for all existing contexts when subscribing to the event.",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-contextCreated:~:text=The%20remote%20end%20subscribe%20steps%2C%20with%20subscribe%20priority%201%2C%20given%20session%2C%20navigables%20and%20include%20global%20are",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "143"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -633,6 +661,7 @@
         "contextDestroyed_event": {
           "__compat": {
             "description": "`browsingContext.contextDestroyed` event",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/contextDestroyed",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-contextDestroyed",
             "support": {
               "chrome": {
@@ -902,6 +931,7 @@
         "create": {
           "__compat": {
             "description": "`browsingContext.create` command",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/create",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-create",
             "support": {
               "chrome": {
@@ -1063,6 +1093,7 @@
         "domContentLoaded_event": {
           "__compat": {
             "description": "`browsingContext.domContentLoaded` event",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/domContentLoaded",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-domContentLoaded",
             "support": {
               "chrome": {
@@ -1219,6 +1250,38 @@
                 "deprecated": false
               }
             }
+          },
+          "userContext_parameter": {
+            "__compat": {
+              "description": "`userContext` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browsingcontextbasenavigationinfo-usercontext",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "154"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "downloadEnd_event": {
@@ -1280,6 +1343,38 @@
               },
               "status": {
                 "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "download_parameter": {
+            "__compat": {
+              "description": "`download` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browsingcontextdownloadcompleteparams-download",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "154"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1444,12 +1539,44 @@
                 "deprecated": false
               }
             }
+          },
+          "userContext_parameter": {
+            "__compat": {
+              "description": "`userContext` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browsingcontextbasenavigationinfo-usercontext",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "154"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "downloadWillBegin_event": {
           "__compat": {
             "description": "`browsingContext.downloadWillBegin` event",
-            "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-downoadWillBegin",
+            "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-downloadWillBegin",
             "support": {
               "chrome": {
                 "version_added": "136"
@@ -1507,6 +1634,38 @@
               },
               "status": {
                 "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "download_parameter": {
+            "__compat": {
+              "description": "`download` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browsingcontextdownloadwillbeginparams-download",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "154"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1639,11 +1798,44 @@
                 "deprecated": false
               }
             }
+          },
+          "userContext_parameter": {
+            "__compat": {
+              "description": "`userContext` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browsingcontextbasenavigationinfo-usercontext",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "154"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "fragmentNavigated_event": {
           "__compat": {
             "description": "`browsingContext.fragmentNavigated` event",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/fragmentNavigated",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-fragmentNavigated",
             "support": {
               "chrome": {
@@ -1800,11 +1992,44 @@
                 "deprecated": false
               }
             }
+          },
+          "userContext_parameter": {
+            "__compat": {
+              "description": "`userContext` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browsingcontextbasenavigationinfo-usercontext",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "154"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "getTree": {
           "__compat": {
             "description": "`browsingContext.getTree` command",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/getTree",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-getTree",
             "support": {
               "chrome": {
@@ -1910,6 +2135,7 @@
         "handleUserPrompt": {
           "__compat": {
             "description": "`browsingContext.handleUserPrompt` command",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/handleUserPrompt",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-handleUserPrompt",
             "support": {
               "chrome": {
@@ -2047,6 +2273,7 @@
         "historyUpdated_event": {
           "__compat": {
             "description": "`browsingContext.historyUpdated` event",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/historyUpdated",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-historyUpdated",
             "support": {
               "chrome": {
@@ -2175,11 +2402,44 @@
                 "deprecated": false
               }
             }
+          },
+          "userContext_parameter": {
+            "__compat": {
+              "description": "`userContext` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browsingcontexthistoryupdatedparameters-usercontext",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "154"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "load_event": {
           "__compat": {
             "description": "`browsingContext.load` event",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/load",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-load",
             "support": {
               "chrome": {
@@ -2220,7 +2480,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "106"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -2235,7 +2495,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -2316,7 +2576,39 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
+                  "version_added": "106"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
                   "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "userContext_parameter": {
+            "__compat": {
+              "description": "`userContext` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browsingcontextbasenavigationinfo-usercontext",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "154"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -2341,6 +2633,7 @@
         "locateNodes": {
           "__compat": {
             "description": "`browsingContext.locateNodes` command",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/locateNodes",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-locateNodes",
             "support": {
               "chrome": {
@@ -2536,6 +2829,7 @@
         "navigate": {
           "__compat": {
             "description": "`browsingContext.navigate` command",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/navigate",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-navigate",
             "support": {
               "chrome": {
@@ -2666,6 +2960,7 @@
         "navigationCommitted_event": {
           "__compat": {
             "description": "`browsingContext.navigationCommitted` event",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/navigationCommitted",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-navigationCommitted",
             "support": {
               "chrome": {
@@ -2822,11 +3117,44 @@
                 "deprecated": false
               }
             }
+          },
+          "userContext_parameter": {
+            "__compat": {
+              "description": "`userContext` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browsingcontextbasenavigationinfo-usercontext",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "154"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "navigationFailed_event": {
           "__compat": {
             "description": "`browsingContext.navigationFailed` event",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/navigationFailed",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-navigationFailed",
             "support": {
               "chrome": {
@@ -2985,11 +3313,44 @@
                 "deprecated": false
               }
             }
+          },
+          "userContext_parameter": {
+            "__compat": {
+              "description": "`userContext` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browsingcontextbasenavigationinfo-usercontext",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "154"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "navigationStarted_event": {
           "__compat": {
             "description": "`browsingContext.navigationStarted` event",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/navigationStarted",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#event-browsingContext-navigationStarted",
             "support": {
               "chrome": {
@@ -3146,11 +3507,44 @@
                 "deprecated": false
               }
             }
+          },
+          "userContext_parameter": {
+            "__compat": {
+              "description": "`userContext` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browsingcontextbasenavigationinfo-usercontext",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "154"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "print": {
           "__compat": {
             "description": "`browsingContext.print` command",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/print",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-print",
             "support": {
               "chrome": {
@@ -3446,6 +3840,7 @@
         "reload": {
           "__compat": {
             "description": "`browsingContext.reload` command",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/reload",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-reload",
             "support": {
               "chrome": {
@@ -3575,6 +3970,7 @@
         "setViewport": {
           "__compat": {
             "description": "`browsingContext.setViewport` command",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/setViewport",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-setViewport",
             "support": {
               "chrome": {
@@ -3734,9 +4130,202 @@
             }
           }
         },
+        "startScreencast": {
+          "__compat": {
+            "description": "`browsingContext.startScreencast` command",
+            "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-startScreencast",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "154"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "context_parameter": {
+            "__compat": {
+              "description": "`context` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browsingcontextstartscreencastparameters-context",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "154"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "mimeType_parameter": {
+            "__compat": {
+              "description": "`mimeType` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browsingcontextstartscreencastparameters-mimetype",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "154"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "video_parameter": {
+            "__compat": {
+              "description": "`video` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browsingcontextstartscreencastparameters-video",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "154"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        },
+        "stopScreencast": {
+          "__compat": {
+            "description": "`browsingContext.stopScreencast` command",
+            "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-stopScreencast",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "154"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "screencast_parameter": {
+            "__compat": {
+              "description": "`screencast` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browsingcontextstopscreencastparameters-screencast",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "154"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        },
         "traverseHistory": {
           "__compat": {
             "description": "`browsingContext.traverseHistory` command",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/traverseHistory",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-browsingContext-traverseHistory",
             "support": {
               "chrome": {
@@ -3961,7 +4550,7 @@
             "alert": {
               "__compat": {
                 "description": "`\"alert\"`",
-                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-type-browsingcontextuserprompttype-alert",
+                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-value-browsingcontextuserprompttype-alert",
                 "support": {
                   "chrome": {
                     "version_added": false
@@ -3993,7 +4582,7 @@
             "beforeunload": {
               "__compat": {
                 "description": "`\"beforeunload\"`",
-                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-type-browsingcontextuserprompttype-beforeunload",
+                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-value-browsingcontextuserprompttype-beforeunload",
                 "support": {
                   "chrome": {
                     "version_added": false
@@ -4027,7 +4616,7 @@
             "confirm": {
               "__compat": {
                 "description": "`\"confirm\"`",
-                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-type-browsingcontextuserprompttype-confirm",
+                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-value-browsingcontextuserprompttype-confirm",
                 "support": {
                   "chrome": {
                     "version_added": false
@@ -4059,7 +4648,7 @@
             "prompt": {
               "__compat": {
                 "description": "`\"prompt\"`",
-                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-type-browsingcontextuserprompttype-prompt",
+                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-value-browsingcontextuserprompttype-prompt",
                 "support": {
                   "chrome": {
                     "version_added": false
@@ -4086,6 +4675,38 @@
                   "standard_track": true,
                   "deprecated": false
                 }
+              }
+            }
+          },
+          "userContext_parameter": {
+            "__compat": {
+              "description": "`userContext` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browsingcontextuserpromptclosedparameters-usercontext",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "154"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
               }
             }
           },
@@ -4316,7 +4937,7 @@
             "alert": {
               "__compat": {
                 "description": "`\"alert\"`",
-                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-type-browsingcontextuserprompttype-alert",
+                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-value-browsingcontextuserprompttype-alert",
                 "support": {
                   "chrome": {
                     "version_added": false
@@ -4348,7 +4969,7 @@
             "beforeunload": {
               "__compat": {
                 "description": "`\"beforeunload\"`",
-                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-type-browsingcontextuserprompttype-beforeunload",
+                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-value-browsingcontextuserprompttype-beforeunload",
                 "support": {
                   "chrome": {
                     "version_added": false
@@ -4382,7 +5003,7 @@
             "confirm": {
               "__compat": {
                 "description": "`\"confirm\"`",
-                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-type-browsingcontextuserprompttype-confirm",
+                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-value-browsingcontextuserprompttype-confirm",
                 "support": {
                   "chrome": {
                     "version_added": false
@@ -4414,7 +5035,7 @@
             "prompt": {
               "__compat": {
                 "description": "`\"prompt\"`",
-                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-type-browsingcontextuserprompttype-prompt",
+                "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-value-browsingcontextuserprompttype-prompt",
                 "support": {
                   "chrome": {
                     "version_added": false
@@ -4441,6 +5062,38 @@
                   "standard_track": true,
                   "deprecated": false
                 }
+              }
+            }
+          },
+          "userContext_parameter": {
+            "__compat": {
+              "description": "`userContext` parameter",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-browsingcontextuserpromptopenedparameters-usercontext",
+              "support": {
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "154"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
               }
             }
           }

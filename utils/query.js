@@ -3,13 +3,13 @@
 
 import bcd from '../index.js';
 
-/** @import {DataType} from '../types/index.js' */
+/** @import {InternalDataType} from '../types/index.js' */
 
 /**
  * Get a subtree of compat data.
  * @param {string} path Dotted path to a given feature (e.g., `css.properties.background`)
- * @param {DataType} [data] A tree to query. All of BCD, by default.
- * @returns {DataType} A BCD subtree
+ * @param {InternalDataType} [data] A tree to query. All of BCD, by default.
+ * @returns {InternalDataType} A BCD subtree
  * @throws {ReferenceError} For invalid identifiers
  */
 export default (path, data = bcd) => {

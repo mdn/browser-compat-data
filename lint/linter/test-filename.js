@@ -1,13 +1,13 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {Identifier} from '../../types/types.js' */
+/** @import {InternalIdentifier} from '../../types/index.js' */
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
 
 /**
  * Test the filename based on the identifier
- * @param {Identifier} data The identifier
+ * @param {InternalIdentifier} data The identifier
  * @param {string[]} pathParts Parts of the path
  * @param {string} currentPath The current path traversed
  * @returns {string | false} A string with the error message if the lint failed, or false if it passed
@@ -33,7 +33,7 @@ const testFilename = (data, pathParts, currentPath) => {
 
 /**
  * Process the data to make sure it defines the features appropriate to the file's name
- * @param {Identifier} data The raw contents of the file to test
+ * @param {InternalIdentifier} data The raw contents of the file to test
  * @param {string} filepath The file path
  * @param {Logger} logger The logger to output errors to
  * @returns {void}
@@ -64,6 +64,6 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data, path: { full } }) => {
-    processData(/** @type {Identifier} */ (data), full, logger);
+    processData(/** @type {InternalIdentifier} */ (data), full, logger);
   },
 };

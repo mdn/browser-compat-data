@@ -5,12 +5,12 @@
 
 /**
  * @typedef {object} Release
- * @property {string} version
- * @property {string} date
- * @property {string} releaseNote
- * @property {'current'} channel
- * @property {'Blink'} engine
- * @property {string} engineVersion
+ * @property {string} version The version number of the release
+ * @property {string} date The release date
+ * @property {string} releaseNote The URL of the release notes
+ * @property {'current'} channel The release channel
+ * @property {'Blink'} engine The name of the engine
+ * @property {string} engineVersion The version of the engine
  */
 
 import fs from 'node:fs/promises';
@@ -144,7 +144,7 @@ export const updateOperaReleases = async (options) => {
     const version = /** @type {RegExpMatchArray} */ (
       item.title.match(options.titleVersionPattern)
     )[1];
-    if (version === currentBCDVersion) {
+    if (currentBCDVersion && Number(version) <= Number(currentBCDVersion)) {
       break;
     }
     newItems.push(item);

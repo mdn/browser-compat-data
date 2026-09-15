@@ -66,6 +66,7 @@
       "secure_context_required": {
         "__compat": {
           "description": "Secure context required",
+          "spec_url": "https://w3c.github.io/webcrypto/#subtlecrypto-interface",
           "tags": [
             "web-features:web-cryptography"
           ],
@@ -109,6 +110,7 @@
       "worker_support": {
         "__compat": {
           "description": "Available in workers",
+          "spec_url": "https://w3c.github.io/webcrypto/#subtlecrypto-interface",
           "tags": [
             "web-features:web-cryptography"
           ],
@@ -144,6 +146,72 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "decapsulateBits": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/webcrypto-modern-algos/#SubtleCrypto-method-decapsulateBits",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "preview"
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "decapsulateKey": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/webcrypto-modern-algos/#SubtleCrypto-method-decapsulateKey",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "preview"
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -677,6 +745,72 @@
           }
         }
       },
+      "encapsulateBits": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/webcrypto-modern-algos/#SubtleCrypto-method-encapsulateBits",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "preview"
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "encapsulateKey": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/webcrypto-modern-algos/#SubtleCrypto-method-encapsulateKey",
+          "support": {
+            "chrome": {
+              "version_added": false
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "preview"
+            },
+            "firefox_android": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "encrypt": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SubtleCrypto/encrypt",
@@ -985,7 +1119,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "7"
+              "version_added": "7",
+              "notes": "Throws an `OperationError` for RSA-OAEP keys greater than 4096 bits long."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1157,7 +1292,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "7"
+              "version_added": "7",
+              "notes": "Throws an `OperationError` for RSA-OAEP keys greater than 4096 bits long."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1511,7 +1647,7 @@
               "opera_android": "mirror",
               "safari": {
                 "version_added": "17",
-                "notes": "Generates randomized signatures as per [draft-irtf-cfrg-det-sigs-with-noise](https://datatracker.ietf.org/doc/draft-irtf-cfrg-det-sigs-with-noise/), instead of deterministic signatures as per [RFC 8032](https://www.rfc-editor.org/rfc/rfc8032)."
+                "notes": "Generates randomized signatures as per [draft-irtf-cfrg-det-sigs-with-noise](https://datatracker.ietf.org/doc/draft-irtf-cfrg-det-sigs-with-noise/), instead of deterministic signatures as per [RFC 8032](https://www.rfc-editor.org/info/rfc8032/)."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",

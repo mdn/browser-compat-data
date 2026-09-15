@@ -349,8 +349,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
-              "impl_url": "https://bugzil.la/1921506"
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "nodejs": {
@@ -381,8 +380,8 @@
               "version_added": "67",
               "flags": [
                 {
-                  "name": "WebAuth",
-                  "type": "preference"
+                  "type": "preference",
+                  "name": "WebAuth"
                 }
               ]
             },
@@ -408,7 +407,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -505,12 +504,17 @@
       },
       "canLoadAdAuctionFencedFrame": {
         "__compat": {
+          "tags": [
+            "web-features:protected-audience"
+          ],
           "support": {
             "chrome": {
               "version_added": "128"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -760,12 +764,17 @@
       },
       "clearOriginJoinedAdInterestGroups": {
         "__compat": {
+          "tags": [
+            "web-features:protected-audience"
+          ],
           "support": {
             "chrome": {
               "version_added": "128"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -908,8 +917,8 @@
               "version_added": "14.5",
               "flags": [
                 {
-                  "name": "Contact Picker API",
-                  "type": "preference"
+                  "type": "preference",
+                  "name": "Contact Picker API"
                 }
               ]
             },
@@ -986,14 +995,50 @@
           }
         }
       },
+      "cpuPerformance": {
+        "__compat": {
+          "spec_url": "https://wicg.github.io/cpu-performance/#dom-navigator-cpuperformance",
+          "support": {
+            "chrome": {
+              "version_added": "152"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "createAuctionNonce": {
         "__compat": {
+          "tags": [
+            "web-features:protected-audience"
+          ],
           "support": {
             "chrome": {
               "version_added": "128"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -1096,12 +1141,17 @@
       },
       "deprecatedRunAdAuctionEnforcesKAnonymity": {
         "__compat": {
+          "tags": [
+            "web-features:protected-audience"
+          ],
           "support": {
             "chrome": {
               "version_added": "128"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -1127,7 +1177,7 @@
       "deviceMemory": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/deviceMemory",
-          "spec_url": "https://www.w3.org/TR/device-memory/#sec-device-memory-js-api",
+          "spec_url": "https://www.w3.org/TR/device-memory/#dom-navigatordevicememory-devicememory",
           "tags": [
             "web-features:device-memory"
           ],
@@ -1228,7 +1278,8 @@
               "version_added": "9",
               "notes": [
                 "In Firefox, `navigator.doNotTrack` returns `\"unspecified\"` instead of `null`.",
-                "Before Firefox 32, `navigator.doNotTrack` would report values of `\"yes\"` and `\"no\"` rather than `\"1\"` and `\"0\"`."
+                "Before Firefox 32, `navigator.doNotTrack` would report values of `\"yes\"` and `\"no\"` rather than `\"1\"` and `\"0\"`.",
+                "Starting with Firefox 135, `navigator.doNotTrack` always reports value of `\"unspecified\"`."
               ]
             },
             "firefox_android": "mirror",
@@ -1344,7 +1395,7 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": true,
+              "standard_track": false,
               "deprecated": false
             }
           }
@@ -1426,6 +1477,7 @@
         "secure_context_required": {
           "__compat": {
             "description": "Secure context required",
+            "spec_url": "https://w3c.github.io/battery/#dom-navigator-getbattery",
             "tags": [
               "web-features:battery"
             ],
@@ -1509,46 +1561,6 @@
             "standard_track": true,
             "deprecated": false
           }
-        },
-        "secure_context_required": {
-          "__compat": {
-            "description": "Secure context required",
-            "tags": [
-              "web-features:gamepad"
-            ],
-            "support": {
-              "chrome": {
-                "version_added": false
-              },
-              "chrome_android": "mirror",
-              "edge": "mirror",
-              "firefox": {
-                "version_added": "91",
-                "version_removed": "125"
-              },
-              "firefox_android": {
-                "version_added": false
-              },
-              "nodejs": {
-                "version_added": false
-              },
-              "oculus": "mirror",
-              "opera": "mirror",
-              "opera_android": "mirror",
-              "safari": {
-                "version_added": false
-              },
-              "safari_ios": "mirror",
-              "samsunginternet_android": "mirror",
-              "webview_android": "mirror",
-              "webview_ios": "mirror"
-            },
-            "status": {
-              "experimental": false,
-              "standard_track": false,
-              "deprecated": true
-            }
-          }
         }
       },
       "getInstalledRelatedApps": {
@@ -1615,12 +1627,17 @@
       },
       "getInterestGroupAdAuctionData": {
         "__compat": {
+          "tags": [
+            "web-features:protected-audience"
+          ],
           "support": {
             "chrome": {
               "version_added": "132"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -1850,14 +1867,18 @@
             "web-features:webgpu"
           ],
           "support": {
-            "chrome": {
-              "version_added": "113",
-              "partial_implementation": true,
-              "notes": [
-                "Supported on ChromeOS, macOS, and Windows.",
-                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "144",
+                "notes": "Supported on ChromeOS, macOS, Windows, and Linux (Intel Gen12+ GPUs only)."
+              },
+              {
+                "version_added": "113",
+                "version_removed": "144",
+                "partial_implementation": true,
+                "notes": "Supported on ChromeOS, macOS, and Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": "121"
             },
@@ -2043,6 +2064,48 @@
           }
         }
       },
+      "install": {
+        "__compat": {
+          "description": "`install()` method",
+          "support": {
+            "chrome": {
+              "version_added": "154",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#web-app-installation-api",
+                  "value_to_set": "Enabled"
+                }
+              ],
+              "notes": "Requires absolute URLs for `manifest` and `manifestId`."
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "nodejs": {
+              "version_added": false
+            },
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
       "javaEnabled": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/javaEnabled",
@@ -2092,12 +2155,17 @@
       },
       "joinAdInterestGroup": {
         "__compat": {
+          "tags": [
+            "web-features:protected-audience"
+          ],
           "support": {
             "chrome": {
               "version_added": "128"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -2272,12 +2340,17 @@
       },
       "leaveAdInterestGroup": {
         "__compat": {
+          "tags": [
+            "web-features:protected-audience"
+          ],
           "support": {
             "chrome": {
               "version_added": "128"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -2312,6 +2385,9 @@
               "version_added": "69"
             },
             "chrome_android": "mirror",
+            "deno": {
+              "version_added": "2.9"
+            },
             "edge": "mirror",
             "firefox": {
               "version_added": "96"
@@ -2544,6 +2620,7 @@
         "secure_context_required": {
           "__compat": {
             "description": "Secure context required",
+            "spec_url": "https://w3c.github.io/mediacapture-main/#mediadevices",
             "tags": [
               "web-features:media-capture"
             ],
@@ -2882,7 +2959,8 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "99"
+              "version_added": "99",
+              "notes": "Returns `true` even if Firefox is configured to open PDFs in external applications. See [bug 1821747](https://bugzil.la/1821747)."
             },
             "firefox_android": "mirror",
             "nodejs": {
@@ -3109,7 +3187,14 @@
           "spec_url": "https://drafts.csswg.org/mediaqueries-5/#preferences-attribute",
           "support": {
             "chrome": {
-              "version_added": "preview"
+              "version_added": "120",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -3265,12 +3350,17 @@
       },
       "protectedAudience": {
         "__compat": {
+          "tags": [
+            "web-features:protected-audience"
+          ],
           "support": {
             "chrome": {
               "version_added": "128"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -3341,6 +3431,7 @@
         "secure_context_required": {
           "__compat": {
             "description": "Secure context required",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#custom-handlers",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -3384,6 +3475,7 @@
         "scheme_parameter_bitcoin": {
           "__compat": {
             "description": "`scheme` parameter supports `bitcoin`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -3603,6 +3695,7 @@
         "scheme_parameter_ftp": {
           "__compat": {
             "description": "`scheme` parameter supports `ftp`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -3640,6 +3733,7 @@
         "scheme_parameter_ftps": {
           "__compat": {
             "description": "`scheme` parameter supports `ftps`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -3677,6 +3771,7 @@
         "scheme_parameter_geo": {
           "__compat": {
             "description": "`scheme` parameter supports `geo`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -3752,6 +3847,7 @@
         "scheme_parameter_im": {
           "__compat": {
             "description": "`scheme` parameter supports `im`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -3863,6 +3959,7 @@
         "scheme_parameter_irc": {
           "__compat": {
             "description": "`scheme` parameter supports `irc`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -3904,6 +4001,7 @@
         "scheme_parameter_ircs": {
           "__compat": {
             "description": "`scheme` parameter supports `ircs`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -3943,6 +4041,7 @@
         "scheme_parameter_magnet": {
           "__compat": {
             "description": "`scheme` parameter supports `magnet`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -3982,6 +4081,7 @@
         "scheme_parameter_mailto": {
           "__compat": {
             "description": "`scheme` parameter supports `mailto`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -4023,6 +4123,7 @@
         "scheme_parameter_matrix": {
           "__compat": {
             "description": "`scheme` parameter supports `matrix`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -4062,6 +4163,7 @@
         "scheme_parameter_mms": {
           "__compat": {
             "description": "`scheme` parameter supports `mms`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -4103,6 +4205,7 @@
         "scheme_parameter_news": {
           "__compat": {
             "description": "`scheme` parameter supports `news`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -4144,6 +4247,7 @@
         "scheme_parameter_nntp": {
           "__compat": {
             "description": "`scheme` parameter supports `nntp`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -4185,6 +4289,7 @@
         "scheme_parameter_openpgp4fpr": {
           "__compat": {
             "description": "`scheme` parameter supports `openpgp4fpr`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -4224,6 +4329,7 @@
         "scheme_parameter_sftp": {
           "__compat": {
             "description": "`scheme` parameter supports `sftp`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -4261,6 +4367,7 @@
         "scheme_parameter_sip": {
           "__compat": {
             "description": "`scheme` parameter supports `sip`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -4300,6 +4407,7 @@
         "scheme_parameter_sms": {
           "__compat": {
             "description": "`scheme` parameter supports `sms`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -4341,6 +4449,7 @@
         "scheme_parameter_smsto": {
           "__compat": {
             "description": "`scheme` parameter supports `smsto`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -4416,6 +4525,7 @@
         "scheme_parameter_ssh": {
           "__compat": {
             "description": "`scheme` parameter supports `ssh`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -4455,6 +4565,7 @@
         "scheme_parameter_tel": {
           "__compat": {
             "description": "`scheme` parameter supports `tel`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -4496,6 +4607,7 @@
         "scheme_parameter_urn": {
           "__compat": {
             "description": "`scheme` parameter supports `urn`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -4537,6 +4649,7 @@
         "scheme_parameter_webcal": {
           "__compat": {
             "description": "`scheme` parameter supports `webcal`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -4578,6 +4691,7 @@
         "scheme_parameter_wtai": {
           "__compat": {
             "description": "`scheme` parameter supports `wtai`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -4617,6 +4731,7 @@
         "scheme_parameter_xmpp": {
           "__compat": {
             "description": "`scheme` parameter supports `xmpp`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme",
             "tags": [
               "web-features:registerprotocolhandler"
             ],
@@ -4759,6 +4874,7 @@
         "secure_context_required": {
           "__compat": {
             "description": "Secure context required",
+            "spec_url": "https://webaudio.github.io/web-midi-api/#dom-navigator-requestmidiaccess",
             "tags": [
               "web-features:web-midi"
             ],
@@ -4798,12 +4914,17 @@
       },
       "runAdAuction": {
         "__compat": {
+          "tags": [
+            "web-features:protected-audience"
+          ],
           "support": {
             "chrome": {
               "version_added": "128"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -4977,7 +5098,7 @@
             },
             "firefox": {
               "version_added": "44",
-              "notes": "In Firefox private windows, the `serviceWorker` object is `undefined`. See [bug 1320796](https://bugzil.la/1320796)."
+              "notes": "Before Firefox 139, the `serviceWorker` object is `undefined` in private windows. See [bug 1320796](https://bugzil.la/1320796)."
             },
             "firefox_android": "mirror",
             "nodejs": {
@@ -5407,12 +5528,17 @@
       },
       "updateAdInterestGroups": {
         "__compat": {
+          "tags": [
+            "web-features:protected-audience"
+          ],
           "support": {
             "chrome": {
               "version_added": "128"
             },
             "chrome_android": "mirror",
-            "edge": "mirror",
+            "edge": {
+              "version_added": false
+            },
             "firefox": {
               "version_added": false
             },
@@ -5579,6 +5705,9 @@
               "version_added": "90"
             },
             "chrome_android": "mirror",
+            "deno": {
+              "version_added": "2.9"
+            },
             "edge": "mirror",
             "firefox": {
               "version_added": false
@@ -5610,6 +5739,7 @@
         "secure_context_required": {
           "__compat": {
             "description": "Secure context required",
+            "spec_url": "https://wicg.github.io/ua-client-hints/#dom-navigatorua-useragentdata",
             "tags": [
               "web-features:ua-client-hints"
             ],
@@ -5618,6 +5748,9 @@
                 "version_added": "90"
               },
               "chrome_android": "mirror",
+              "deno": {
+                "version_added": "2.9"
+              },
               "edge": "mirror",
               "firefox": {
                 "version_added": false
@@ -5694,6 +5827,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/vendorSub",
           "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-vendorsub-dev",
+          "tags": [
+            "web-features:user-agent-sniffing"
+          ],
           "support": {
             "chrome": {
               "version_added": "1"

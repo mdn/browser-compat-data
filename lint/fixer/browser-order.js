@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {BrowserName, CompatStatement, SupportBlock} from '../../types/types.js' */
+/** @import {BrowserName, InternalCompatStatement, InternalSupportBlock} from '../../types/index.js' */
 
 /**
  * Return a new "support_block" object whose first-level properties
@@ -10,8 +10,8 @@
  * guaranteed "own" property ordering, which is insertion order for
  * non-integer keys (which is our case).
  * @param {string} key The key of the object
- * @param {CompatStatement} value The value of the key
- * @returns {CompatStatement} Value with sorting applied
+ * @param {InternalCompatStatement} value The value of the key
+ * @returns {InternalCompatStatement} Value with sorting applied
  */
 export const orderSupportBlock = (key, value) => {
   if (key === '__compat') {
@@ -21,15 +21,16 @@ export const orderSupportBlock = (key, value) => {
       .sort()
       .reduce(
         /**
-         * @param {SupportBlock} result
-         * @param {BrowserName} key
-         * @returns {SupportBlock}
+         * Add a browser's support to the ordered support block
+         * @param {InternalSupportBlock} result The accumulated support block
+         * @param {BrowserName} key The browser name to add
+         * @returns {InternalSupportBlock} The support block with the browser added
          */
         (result, key) => {
           result[key] = value.support[key];
           return result;
         },
-        /** @type {SupportBlock} */ ({}),
+        /** @type {InternalSupportBlock} */ ({}),
       );
   }
   return value;

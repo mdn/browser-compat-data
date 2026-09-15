@@ -18,10 +18,16 @@
               "edge": {
                 "version_added": "12"
               },
-              "firefox": {
-                "version_added": "93",
-                "notes": "Only displays a date picker without a time picker, see [bug 1726107](https://bugzil.la/1726107) and [bug 1726108](https://bugzil.la/1726108)."
-              },
+              "firefox": [
+                {
+                  "version_added": "154"
+                },
+                {
+                  "version_added": "93",
+                  "version_removed": "154",
+                  "notes": "Only displays a date picker without a time picker, see [bug 1726107](https://bugzil.la/1726107) and [bug 1726108](https://bugzil.la/1726108)."
+                }
+              ],
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": {
@@ -32,7 +38,7 @@
               },
               "safari": {
                 "version_added": "14.1",
-                "notes": "Safari only displays a date picker and does not display a time picker."
+                "notes": "Safari displays a date picker but not a time picker; entering time manually is an intentional design decision. See [bug 261744](https://webkit.org/b/261744)."
               },
               "safari_ios": {
                 "version_added": "5"

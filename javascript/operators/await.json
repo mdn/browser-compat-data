@@ -77,11 +77,17 @@
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
-              "safari": {
-                "version_added": "15",
-                "partial_implementation": true,
-                "notes": "Doesn't support multiple modules simultaneously importing a module containing a top-level await (see [bug 242740](https://webkit.org/b/242740))."
-              },
+              "safari": [
+                {
+                  "version_added": "27"
+                },
+                {
+                  "version_added": "15",
+                  "version_removed": "27",
+                  "partial_implementation": true,
+                  "notes": "Doesn't support multiple modules simultaneously importing a module containing a top-level await (see [bug 242740](https://webkit.org/b/242740))."
+                }
+              ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror",

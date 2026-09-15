@@ -6,11 +6,15 @@ import { styleText } from 'node:util';
 import HTMLParser from '@desertnet/html-parser';
 import { marked } from 'marked';
 
-import { VALID_ELEMENTS } from '../utils.js';
+import {
+  replaceCodeTagsWithBackticks,
+  replaceLinkTagsWithMarkdown,
+  VALID_ELEMENTS,
+} from '../utils.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {BrowserName, CompatStatement, SupportStatement} from '../../types/types.js' */
+/** @import {BrowserName, InternalCompatStatement, InternalSupportStatement} from '../../types/index.js' */
 
 const parser = new HTMLParser();
 
@@ -101,7 +105,7 @@ const checkNotes = (notes, browser, feature, logger) => {
   let errors = [];
   if (Array.isArray(notes)) {
     for (const note of notes) {
-      errors = validateHTML(note);
+      errors.push(...validateHTML(note));
     }
   } else {
     errors = validateHTML(notes);
@@ -112,11 +116,41 @@ const checkNotes = (notes, browser, feature, logger) => {
       logger.error(`Notes for ${styleText('bold', browser)} → ${error}`);
     }
   }
+
+  for (const note of Array.isArray(notes) ? notes : [notes]) {
+    const codeConverted = replaceCodeTagsWithBackticks(note);
+    if (codeConverted !== note) {
+      logger.error(
+        styleText(
+          'red',
+          `Notes for ${styleText('bold', browser)} use HTML code tags instead of backtick-quoted Markdown code
+      Actual: ${styleText('yellow', `"${note}"`)}
+      Expected: ${styleText('green', `"${codeConverted}"`)}`,
+        ),
+        { fixable: true },
+      );
+    }
+
+    // Detect links on the code-converted note so anchors wrapping a <code>
+    // tag are recognized after the code tags are unwrapped.
+    const linkConverted = replaceLinkTagsWithMarkdown(codeConverted);
+    if (linkConverted !== codeConverted) {
+      logger.error(
+        styleText(
+          'red',
+          `Notes for ${styleText('bold', browser)} use HTML links instead of Markdown links
+      Actual: ${styleText('yellow', `"${note}"`)}
+      Expected: ${styleText('green', `"${linkConverted}"`)}`,
+        ),
+        { fixable: true },
+      );
+    }
+  }
 };
 
 /**
  * Process the data for notes errors
- * @param {CompatStatement} data The data to test
+ * @param {InternalCompatStatement} data The data to test
  * @param {Logger} logger The logger to output errors to
  * @param {string} feature The identifier of the feature
  * @returns {void}
@@ -125,7 +159,7 @@ const processData = (data, logger, feature) => {
   for (const [
     browser,
     support,
-  ] of /** @type {[BrowserName, SupportStatement][]} */ (
+  ] of /** @type {[BrowserName, InternalSupportStatement][]} */ (
     Object.entries(data.support)
   )) {
     if (Array.isArray(support)) {
@@ -135,7 +169,7 @@ const processData = (data, logger, feature) => {
         }
       }
     } else {
-      if (support.notes) {
+      if (typeof support === 'object' && support.notes) {
         checkNotes(support.notes, browser, feature, logger);
       }
     }
@@ -153,6 +187,6 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data, path: { full } }) => {
-    processData(/** @type {CompatStatement} */ (data), logger, full);
+    processData(/** @type {InternalCompatStatement} */ (data), logger, full);
   },
 };

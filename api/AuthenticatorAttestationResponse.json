@@ -165,9 +165,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "16",
-              "partial_implementation": true,
-              "notes": "Supports only algorithm -7 (ES256). Does not support algorithms -8 (Ed25519) and -257 (RS256). See [bug 312081](https://webkit.org/b/312081)."
+              "version_added": "16"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -180,6 +178,119 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "algorithm_eddsa": {
+          "__compat": {
+            "description": "`-8` (EdDSA) algorithm keys",
+            "spec_url": "https://w3c.github.io/webauthn/#sctn-public-key-easy:~:text=%2D8%20%28EdDSA%29%2C",
+            "tags": [
+              "web-features:webauthn-public-key-easy"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "85"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "119"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false,
+                "notes": "Returns `null`. See [bug 312081](https://webkit.org/b/312081)."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": false
+              },
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "algorithm_es256": {
+          "__compat": {
+            "description": "`-7` (ECDSA w/ SHA-256) algorithm keys",
+            "spec_url": "https://w3c.github.io/webauthn/#sctn-public-key-easy:~:text=%2D7%20%28ES256%29%2C",
+            "tags": [
+              "web-features:webauthn-public-key-easy"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "85"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "119"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "16"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": false
+              },
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "algorithm_rs256": {
+          "__compat": {
+            "description": "`-257` (RSASSA-PKCS1-v1_5 using SHA-256) algorithm keys",
+            "spec_url": "https://w3c.github.io/webauthn/#sctn-public-key-easy:~:text=257%20%28RS256%29%2E",
+            "tags": [
+              "web-features:webauthn-public-key-easy"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "85"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "119"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false,
+                "notes": "Returns `null`. See [bug 312081](https://webkit.org/b/312081)."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": false
+              },
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },

@@ -2,35 +2,43 @@
  * See LICENSE file for more information. */
 
 import type {
-  BrowserName,
+  InternalBrowserStatement,
+  InternalCompatStatement,
+  InternalIdentifier,
+  InternalBrowsers,
+} from './internal.js';
+import type {
   BrowserStatement,
   CompatData,
   CompatStatement,
   Identifier,
-  SupportStatement,
-} from '../build/types.js';
+} from './public.js';
 
-export type InternalSupportStatement = SupportStatement | 'mirror';
-
-export type InternalSupportBlock = Partial<
-  Record<BrowserName, InternalSupportStatement>
->;
-
-export interface InternalCompatStatement extends Omit<
-  CompatStatement,
-  'support'
-> {
-  support: InternalSupportBlock;
-}
+export type * from './internal.js';
 
 export type DataType =
-  | CompatData
-  | BrowserStatement
-  | CompatStatement
-  | Identifier;
+  CompatData | BrowserStatement | CompatStatement | Identifier;
 
 export type InternalDataType =
-  | CompatData
-  | BrowserStatement
+  | InternalCompatData
+  | InternalBrowserStatement
   | InternalCompatStatement
-  | Identifier;
+  | InternalIdentifier;
+
+export interface InternalCompatData {
+  api: InternalIdentifier;
+  browsers: InternalBrowsers;
+  css: InternalIdentifier;
+  html: InternalIdentifier;
+  http: InternalIdentifier;
+  javascript: InternalIdentifier;
+  manifests: InternalIdentifier;
+  mathml: InternalIdentifier;
+  mediatypes: InternalIdentifier;
+  svg: InternalIdentifier;
+  webassembly: InternalIdentifier;
+  webdriver: InternalIdentifier;
+  webextensions: InternalIdentifier;
+}
+
+export type VersionValue = string | false;

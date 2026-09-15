@@ -46,9 +46,45 @@
             "deprecated": false
           }
         },
+        "at-rule": {
+          "__compat": {
+            "description": "`at-rule()`",
+            "spec_url": "https://drafts.csswg.org/css-conditional-5/#typedef-supports-at-rule-fn",
+            "tags": [
+              "web-features:supports-at-rule"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "148"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "157"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "preview"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "font-format": {
           "__compat": {
             "description": "`font-format()`",
+            "spec_url": "https://drafts.csswg.org/css-conditional-5/#typedef-supports-font-format-fn",
             "tags": [
               "web-features:supports"
             ],
@@ -83,6 +119,7 @@
         "font-tech": {
           "__compat": {
             "description": "`font-tech()`",
+            "spec_url": "https://drafts.csswg.org/css-conditional-5/#typedef-supports-font-tech-fn",
             "tags": [
               "web-features:supports"
             ],
@@ -114,9 +151,122 @@
             }
           }
         },
+        "named-feature": {
+          "__compat": {
+            "description": "`named-feature()`",
+            "spec_url": "https://drafts.csswg.org/css-conditional-5/#typedef-supports-named-feature-fn",
+            "support": {
+              "chrome": {
+                "version_added": "150"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "preview",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.anchor-positioning.follows-transforms.enabled",
+                    "value_to_set": "true"
+                  }
+                ],
+                "impl_url": "https://bugzil.la/2042977"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "anchor-position-follows-transforms": {
+            "__compat": {
+              "description": "`named-feature(anchor-position-follows-transforms)`",
+              "spec_url": "https://drafts.csswg.org/css-conditional-5/#anchor-position-follows-transforms",
+              "support": {
+                "chrome": {
+                  "version_added": "150"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "preview",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "layout.css.anchor-positioning.follows-transforms.enabled",
+                      "value_to_set": "true"
+                    }
+                  ],
+                  "impl_url": "https://bugzil.la/2055354"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "single-axis-scroll-container": {
+            "__compat": {
+              "description": "`named-feature(single-axis-scroll-container)`",
+              "spec_url": "https://drafts.csswg.org/css-conditional-5/#single-axis-scroll-container",
+              "support": {
+                "chrome": {
+                  "version_added": "154"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        },
         "selector": {
           "__compat": {
             "description": "`selector()`",
+            "spec_url": "https://drafts.csswg.org/css-conditional-4/#typedef-supports-selector-fn",
             "tags": [
               "web-features:supports"
             ],

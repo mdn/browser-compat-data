@@ -22,6 +22,12 @@ For more information on the schema for feature data, see [`compat-data-schema.md
 
 For more information on the schema for browser data, see [`browsers-schema.md`](../schemas/browsers-schema.md) and [`browsers.schema.json`](../schemas/browsers.schema.json).
 
+## Automated lint suggestions on pull requests
+
+When the lint check fails on a pull request, CI runs `npm run lint:fix` and posts the auto-fixable changes as inline review suggestions, attributed to `bcd-linter`. You can accept individual suggestions through GitHub's review UI, or apply all of them at once by running `npm run lint:fix` locally and committing the result.
+
+If a suggestion looks wrong (for example, the linter is reporting a false positive), reply on the suggestion explaining why — a maintainer can help.
+
 ## Generate statistics
 
 To see how changes will affect the statistics of exact (formerly "real") and ranged values, you can run `npm run stats [folder]`. This generates a Markdown-formatted table of the percentages of exact and ranged values for the eight primary browsers that browser-compat-data is focusing on. The script also takes an optional argument regarding a specific folder (such as `api` or `javascript`), which will print statistics result for only that folder. Additionally, you can run the script with `--all` to get statistics for all browsers tracked in BCD, not just the primary eight.

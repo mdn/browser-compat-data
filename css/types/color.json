@@ -45,6 +45,42 @@
             "deprecated": false
           }
         },
+        "alpha": {
+          "__compat": {
+            "description": "`alpha()`",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/CSS/Reference/Values/color_value/alpha",
+            "spec_url": "https://drafts.csswg.org/css-color-5/#relative-alpha",
+            "tags": [
+              "web-features:alpha"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "151"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "155"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "27"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "color": {
           "__compat": {
             "description": "`color()` (Profiled color values)",
@@ -126,6 +162,7 @@
           "mixed_type_parameters": {
             "__compat": {
               "description": "Mix `<percentage>` and `<number>` in parameters",
+              "spec_url": "https://drafts.csswg.org/css-values/#combine-mixed",
               "tags": [
                 "web-features:color-function"
               ],
@@ -241,7 +278,7 @@
               "description": "`color-mix()` with one or more color arguments",
               "spec_url": "https://drafts.csswg.org/css-color-5/#color-mix",
               "tags": [
-                "web-features:color"
+                "web-features:color-mix-variadic"
               ],
               "support": {
                 "chrome": {
@@ -258,8 +295,8 @@
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
-                  "version_added": false,
-                  "impl_url": "https://webkit.org/b/304704"
+                  "version_added": "preview",
+                  "impl_url": "https://webkit.org/b/315936"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
@@ -354,6 +391,41 @@
             }
           }
         },
+        "from_currentcolor": {
+          "__compat": {
+            "description": "`from currentColor` relative color syntax",
+            "spec_url": "https://drafts.csswg.org/css-color-5/#relative-colors",
+            "tags": [
+              "web-features:relative-color"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "131"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "133"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "18"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "hsl": {
           "__compat": {
             "description": "`hsl()` (HSL color model)",
@@ -401,6 +473,7 @@
           "alpha_parameter": {
             "__compat": {
               "description": "Alpha parameter",
+              "spec_url": "https://drafts.csswg.org/css-color/#typedef-color-alpha-value",
               "tags": [
                 "web-features:hsl"
               ],
@@ -435,6 +508,7 @@
           "mixed_type_parameters": {
             "__compat": {
               "description": "Mix `<percentage>` and `<number>` in parameters",
+              "spec_url": "https://drafts.csswg.org/css-values/#combine-mixed",
               "tags": [
                 "web-features:hsl"
               ],
@@ -520,6 +594,7 @@
           "space_separated_parameters": {
             "__compat": {
               "description": "Space-separated parameters",
+              "spec_url": "https://drafts.csswg.org/css-color/#typedef-modern-hsl-syntax",
               "tags": [
                 "web-features:hsl"
               ],
@@ -590,6 +665,7 @@
           "mixed_type_parameters": {
             "__compat": {
               "description": "Mix `<percentage>` and `<number>` in parameters",
+              "spec_url": "https://drafts.csswg.org/css-values/#combine-mixed",
               "tags": [
                 "web-features:hwb"
               ],
@@ -711,6 +787,7 @@
           "mixed_type_parameters": {
             "__compat": {
               "description": "Mix `<percentage>` and `<number>` in parameters",
+              "spec_url": "https://drafts.csswg.org/css-values/#combine-mixed",
               "tags": [
                 "web-features:lab"
               ],
@@ -816,6 +893,7 @@
           "mixed_type_parameters": {
             "__compat": {
               "description": "Mix `<percentage>` and `<number>` in parameters",
+              "spec_url": "https://drafts.csswg.org/css-values/#combine-mixed",
               "tags": [
                 "web-features:lab"
               ],
@@ -937,15 +1015,7 @@
               ],
               "support": {
                 "chrome": {
-                  "version_added": "148",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "#enable-experimental-web-platform-features",
-                      "value_to_set": "Enabled"
-                    }
-                  ],
-                  "impl_url": "https://crbug.com/491829958"
+                  "version_added": "150"
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
@@ -957,7 +1027,7 @@
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
-                  "version_added": false,
+                  "version_added": "27",
                   "impl_url": "https://webkit.org/b/309689"
                 },
                 "safari_ios": "mirror",
@@ -966,7 +1036,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -1020,6 +1090,7 @@
           },
           "rebeccapurple": {
             "__compat": {
+              "spec_url": "https://drafts.csswg.org/css-color/#valdef-color-rebeccapurple",
               "tags": [
                 "web-features:named-color"
               ],
@@ -1142,6 +1213,7 @@
           "mixed_type_parameters": {
             "__compat": {
               "description": "Mix `<percentage>` and `<number>` in parameters",
+              "spec_url": "https://drafts.csswg.org/css-values/#combine-mixed",
               "tags": [
                 "web-features:oklab"
               ],
@@ -1255,6 +1327,7 @@
           "mixed_type_parameters": {
             "__compat": {
               "description": "Mix `<percentage>` and `<number>` in parameters",
+              "spec_url": "https://drafts.csswg.org/css-values/#combine-mixed",
               "tags": [
                 "web-features:oklab"
               ],
@@ -1385,6 +1458,7 @@
           "alpha_parameter": {
             "__compat": {
               "description": "Alpha parameter",
+              "spec_url": "https://drafts.csswg.org/css-color/#typedef-color-alpha-value",
               "tags": [
                 "web-features:rgb"
               ],
@@ -1419,6 +1493,7 @@
           "float_values": {
             "__compat": {
               "description": "Float values in parameters",
+              "spec_url": "https://drafts.csswg.org/css-values-4/#number-value",
               "tags": [
                 "web-features:rgb"
               ],
@@ -1453,6 +1528,7 @@
           "mixed_type_parameters": {
             "__compat": {
               "description": "Mix `<percentage>` and `<number>` in parameters",
+              "spec_url": "https://drafts.csswg.org/css-values/#combine-mixed",
               "tags": [
                 "web-features:rgb"
               ],
@@ -1538,6 +1614,7 @@
           "space_separated_parameters": {
             "__compat": {
               "description": "Space-separated rgb() parameters",
+              "spec_url": "https://drafts.csswg.org/css-color/#typedef-modern-rgb-syntax",
               "tags": [
                 "web-features:rgb"
               ],
@@ -1617,6 +1694,7 @@
           "alpha_hexadecimal_notation": {
             "__compat": {
               "description": "RGBA hexadecimal notation (`#RRGGBBAA`, `#RGBA`)",
+              "spec_url": "https://drafts.csswg.org/css-color/#typedef-hex-color",
               "tags": [
                 "web-features:rgb"
               ],
@@ -1709,16 +1787,12 @@
               ],
               "support": {
                 "chrome": {
-                  "version_added": "115",
-                  "flags": [
-                    {
-                      "type": "preference",
-                      "name": "#enable-experimental-web-platform-features",
-                      "value_to_set": "true"
-                    }
-                  ]
+                  "version_added": "150",
+                  "notes": "To mitigate fingerprinting risks, a fixed value is returned for `AccentColor` and `AccentColorText` unless used within installed web apps on a user's initial profile."
                 },
-                "chrome_android": "mirror",
+                "chrome_android": {
+                  "version_added": "150"
+                },
                 "edge": "mirror",
                 "firefox": {
                   "version_added": "103"
@@ -1851,6 +1925,7 @@
         },
         "transparent": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-color-4/#valdef-color-transparent",
             "tags": [
               "web-features:color"
             ],

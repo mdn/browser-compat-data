@@ -53,54 +53,6 @@
           "deprecated": false
         }
       },
-      "DOMContentLoaded_event": {
-        "__compat": {
-          "description": "`DOMContentLoaded` event",
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Document/DOMContentLoaded_event",
-          "spec_url": "https://html.spec.whatwg.org/multipage/indices.html#event-domcontentloaded",
-          "tags": [
-            "web-features:window"
-          ],
-          "support": {
-            "chrome": {
-              "version_added": "1"
-            },
-            "chrome_android": "mirror",
-            "deno": {
-              "version_added": false
-            },
-            "edge": {
-              "version_added": "12"
-            },
-            "firefox": {
-              "version_added": "1"
-            },
-            "firefox_android": "mirror",
-            "ie": {
-              "version_added": "9"
-            },
-            "oculus": "mirror",
-            "opera": {
-              "version_added": "9"
-            },
-            "opera_android": {
-              "version_added": "10.1"
-            },
-            "safari": {
-              "version_added": "3.1"
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": true,
-            "deprecated": false
-          }
-        }
-      },
       "afterprint_event": {
         "__compat": {
           "description": "`afterprint` event",
@@ -405,6 +357,7 @@
         "event_returnvalue_activation": {
           "__compat": {
             "description": "Activation by setting `event.returnValue` to any truthy value",
+            "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-beforeunloadevent-returnvalue",
             "support": {
               "chrome": [
                 {
@@ -485,7 +438,7 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": true,
+              "standard_track": false,
               "deprecated": true
             }
           }
@@ -493,6 +446,7 @@
         "preventdefault_activation": {
           "__compat": {
             "description": "Activation using `event.preventDefault()`",
+            "spec_url": "https://dom.spec.whatwg.org/#dom-event-preventdefault",
             "tags": [
               "web-features:beforeunload"
             ],
@@ -580,7 +534,7 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": true,
+              "standard_track": false,
               "deprecated": true
             }
           }
@@ -766,8 +720,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false,
-              "impl_url": "https://webkit.org/b/164193"
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "requestIdleCallback",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1063,6 +1023,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/crashReport",
           "spec_url": "https://wicg.github.io/crash-reporting/#dom-window-crashreport",
+          "tags": [
+            "web-features:reporting-crashes-storage"
+          ],
           "support": {
             "chrome": {
               "version_added": "145"
@@ -1434,7 +1397,9 @@
             "firefox": {
               "version_added": "151"
             },
-            "firefox_android": "mirror",
+            "firefox_android": {
+              "version_added": false
+            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -1680,9 +1645,9 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
-            "deprecated": false
+            "deprecated": true
           }
         }
       },
@@ -2235,6 +2200,7 @@
         "pseudo_element_support": {
           "__compat": {
             "description": "Pseudo-element support",
+            "spec_url": "https://drafts.csswg.org/cssom/#dom-window-getcomputedstyle-elt-pseudoelt-pseudoelt",
             "tags": [
               "web-features:get-computed-style"
             ],
@@ -3329,6 +3295,7 @@
         "relative-multi-screen": {
           "__compat": {
             "description": "Moved relative to the [Multi-screen origin](https://developer.mozilla.org/docs/Web/API/Window_Management_API/Multi-screen_origin)",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-moveto",
             "tags": [
               "web-features:window-management"
             ],
@@ -3791,7 +3758,7 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": true,
+              "standard_track": false,
               "deprecated": true
             }
           }
@@ -3799,6 +3766,7 @@
         "features_parameter_popup": {
           "__compat": {
             "description": "`features` parameter accepts `\"popup\"` value",
+            "spec_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#popup-window-is-requested",
             "tags": [
               "web-features:window"
             ],
@@ -3878,7 +3846,7 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": true,
+              "standard_track": false,
               "deprecated": false
             }
           }
@@ -3886,6 +3854,10 @@
         "relative-multi-screen": {
           "__compat": {
             "description": "Opened relative to the [Multi-screen origin](https://developer.mozilla.org/docs/Web/API/Window_Management_API/Multi-screen_origin)",
+            "spec_url": [
+              "https://html.spec.whatwg.org/multipage/nav-history-apis.html#dom-open-dev",
+              "https://drafts.csswg.org/cssom-view/#the-features-argument-to-the-open()-method"
+            ],
             "tags": [
               "web-features:window-management"
             ],
@@ -4079,7 +4051,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -4595,7 +4567,7 @@
             },
             "status": {
               "experimental": true,
-              "standard_track": true,
+              "standard_track": false,
               "deprecated": false
             }
           }
@@ -4640,6 +4612,7 @@
         "transfer_parameter": {
           "__compat": {
             "description": "`transfer` parameter",
+            "spec_url": "https://html.spec.whatwg.org/multipage/web-messaging.html#dom-structuredserializeoptions-transfer",
             "support": {
               "chrome": {
                 "version_added": "4"
@@ -5102,8 +5075,14 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false,
-              "impl_url": "https://webkit.org/b/285049"
+              "version_added": "preview",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "requestIdleCallback",
+                  "value_to_set": "true"
+                }
+              ]
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -5112,6 +5091,41 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "requestResize": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/requestResize",
+          "spec_url": "https://drafts.csswg.org/css-sizing-4/#dom-window-requestresize",
+          "tags": [
+            "web-features:frame-sizing"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "154"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -5407,6 +5421,7 @@
         "relative-multi-screen": {
           "__compat": {
             "description": "Relative to the [Multi-screen origin](https://developer.mozilla.org/docs/Web/API/Window_Management_API/Multi-screen_origin)",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-screenleft",
             "tags": [
               "web-features:window-management"
             ],
@@ -5493,6 +5508,7 @@
         "relative-multi-screen": {
           "__compat": {
             "description": "Relative to the [Multi-screen origin](https://developer.mozilla.org/docs/Web/API/Window_Management_API/Multi-screen_origin)",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-screentop",
             "tags": [
               "web-features:window-management"
             ],
@@ -5580,6 +5596,7 @@
         "relative-multi-screen": {
           "__compat": {
             "description": "Relative to the [Multi-screen origin](https://developer.mozilla.org/docs/Web/API/Window_Management_API/Multi-screen_origin)",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-screenx",
             "tags": [
               "web-features:window-management"
             ],
@@ -5667,6 +5684,7 @@
         "relative-multi-screen": {
           "__compat": {
             "description": "Relative to the [Multi-screen origin](https://developer.mozilla.org/docs/Web/API/Window_Management_API/Multi-screen_origin)",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-screeny",
             "tags": [
               "web-features:window-management"
             ],
@@ -5753,6 +5771,7 @@
         "options_behavior_parameter": {
           "__compat": {
             "description": "`options.behavior` parameter",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-scrolloptions-behavior",
             "tags": [
               "web-features:scroll-elements"
             ],
@@ -5791,6 +5810,7 @@
         "options_left_parameter": {
           "__compat": {
             "description": "`options.left` parameter",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-scrolltooptions-left",
             "tags": [
               "web-features:scroll-elements"
             ],
@@ -5828,6 +5848,7 @@
         "options_top_parameter": {
           "__compat": {
             "description": "`options.top` parameter",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-scrolltooptions-top",
             "tags": [
               "web-features:scroll-elements"
             ],
@@ -5857,6 +5878,41 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "returns_promise": {
+          "__compat": {
+            "description": "Returns a `Promise`",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-scroll",
+            "tags": [
+              "web-features:scroll-promises"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "150"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
@@ -5958,6 +6014,7 @@
         "options_behavior_parameter": {
           "__compat": {
             "description": "`options.behavior` parameter",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-scrolloptions-behavior",
             "tags": [
               "web-features:scroll-elements"
             ],
@@ -5996,6 +6053,7 @@
         "options_left_parameter": {
           "__compat": {
             "description": "`options.left` parameter",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-scrolltooptions-left",
             "tags": [
               "web-features:scroll-elements"
             ],
@@ -6033,6 +6091,7 @@
         "options_top_parameter": {
           "__compat": {
             "description": "`options.top` parameter",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-scrolltooptions-top",
             "tags": [
               "web-features:scroll-elements"
             ],
@@ -6062,6 +6121,41 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "returns_promise": {
+          "__compat": {
+            "description": "Returns a `Promise`",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-scrollby",
+            "tags": [
+              "web-features:scroll-promises"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "150"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
@@ -6333,6 +6427,7 @@
         "options_behavior_parameter": {
           "__compat": {
             "description": "`options.behavior` parameter",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-scrolloptions-behavior",
             "tags": [
               "web-features:scroll-elements"
             ],
@@ -6371,6 +6466,7 @@
         "options_left_parameter": {
           "__compat": {
             "description": "`options.left` parameter",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-scrolltooptions-left",
             "tags": [
               "web-features:scroll-elements"
             ],
@@ -6408,6 +6504,7 @@
         "options_top_parameter": {
           "__compat": {
             "description": "`options.top` parameter",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-scrolltooptions-top",
             "tags": [
               "web-features:scroll-elements"
             ],
@@ -6437,6 +6534,41 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "returns_promise": {
+          "__compat": {
+            "description": "Returns a `Promise`",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-scrollto",
+            "tags": [
+              "web-features:scroll-promises"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "150"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
@@ -6529,6 +6661,7 @@
         "subpixel_precision": {
           "__compat": {
             "description": "Subpixel precision",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-scrollx",
             "tags": [
               "web-features:scroll-elements"
             ],
@@ -6652,6 +6785,7 @@
         "subpixel_precision": {
           "__compat": {
             "description": "Subpixel precision",
+            "spec_url": "https://drafts.csswg.org/cssom-view/#dom-window-scrolly",
             "tags": [
               "web-features:scroll-elements"
             ],
@@ -6794,7 +6928,13 @@
             },
             "chrome_android": "mirror",
             "deno": {
-              "version_added": false
+              "version_added": "2.1",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--unstable-node-globals"
+                }
+              ]
             },
             "edge": {
               "version_added": "12",
@@ -7701,7 +7841,7 @@
             "samsunginternet_android": {
               "version_added": "6.0",
               "version_removed": "13.0",
-              "notes": "Supported on Samsung Internet for GearVR."
+              "notes": "Supported on Samsung Browser for GearVR."
             },
             "webview_android": "mirror",
             "webview_ios": "mirror"
@@ -7840,7 +7980,7 @@
             "samsunginternet_android": {
               "version_added": "6.0",
               "version_removed": "13.0",
-              "notes": "Supported on Samsung Internet for GearVR."
+              "notes": "Supported on Samsung Browser for GearVR."
             },
             "webview_android": {
               "version_added": false
@@ -7918,7 +8058,7 @@
             "samsunginternet_android": {
               "version_added": "6.0",
               "version_removed": "13.0",
-              "notes": "Supported on Samsung Internet for GearVR."
+              "notes": "Supported on Samsung Browser for GearVR."
             },
             "webview_android": {
               "version_added": false

@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {SupportStatement, Identifier, BrowserName} from '../types/types.js' */
+/** @import {InternalSupportStatement, InternalIdentifier, BrowserName} from '../types/index.js' */
 
 import { styleText } from 'node:util';
 
@@ -17,14 +17,14 @@ import mirror from './build/mirror.js';
 
 /**
  * @typedef {object} Contents
- * @property {string} base
- * @property {string} head
+ * @property {string} base The file contents at the base commit
+ * @property {string} head The file contents at the head commit
  */
 
 /**
  * @typedef {object} DiffItem
- * @property {string} name
- * @property {string} description
+ * @property {string} name The name of the changed feature
+ * @property {string} description The description of the change
  */
 
 /**
@@ -54,11 +54,11 @@ const stringifyChange = (lhs, rhs) =>
 /**
  * Perform mirroring on specified diff statement
  * @param {object} diff - The diff to perform mirroring on
- * @param {SupportStatement} diff.base
- * @param {SupportStatement} diff.head
+ * @param {InternalSupportStatement} diff.base - The support statement of the base side
+ * @param {InternalSupportStatement} diff.head - The support statement of the head side
  * @param {object} contents - The contents to mirror from
- * @param {Identifier} contents.base
- * @param {Identifier} contents.head
+ * @param {InternalIdentifier} contents.base - The identifier of the base side
+ * @param {InternalIdentifier} contents.head - The identifier of the head side
  * @param {string[]} path - The feature path to mirror
  * @param {'base' | 'head'} direction - Whether to mirror 'base' or 'head'
  */
@@ -66,7 +66,7 @@ const doMirror = (diff, contents, path, direction) => {
   const browser = /** @type {BrowserName} */ (path[path.length - 1]);
   const dataPath = path.slice(0, path.length - 3).join('.');
   const data = contents[direction];
-  const queried = /** @type {Identifier} */ (query(dataPath, data));
+  const queried = /** @type {InternalIdentifier} */ (query(dataPath, data));
 
   if (queried.__compat?.support) {
     diff[direction] = mirror(browser, queried.__compat.support);

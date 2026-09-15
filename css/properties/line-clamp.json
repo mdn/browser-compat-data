@@ -9,25 +9,47 @@
             "web-features:line-clamp"
           ],
           "support": {
-            "chrome": {
-              "prefix": "-webkit-",
-              "version_added": "6",
-              "impl_url": "https://crbug.com/40336192"
-            },
+            "chrome": [
+              {
+                "prefix": "-webkit-",
+                "version_added": "6"
+              },
+              {
+                "version_added": "preview",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              }
+            ],
             "chrome_android": "mirror",
-            "edge": {
-              "prefix": "-webkit-",
-              "version_added": "17"
-            },
-            "firefox": {
-              "prefix": "-webkit-",
-              "version_added": "68"
-            },
+            "edge": "mirror",
+            "firefox": [
+              {
+                "prefix": "-webkit-",
+                "version_added": "68"
+              },
+              {
+                "version_added": "preview",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.line-clamp.enabled"
+                  }
+                ]
+              }
+            ],
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": [
+              {
+                "version_added": "preview"
+              },
               {
                 "prefix": "-webkit-",
                 "version_added": "5"
@@ -49,14 +71,145 @@
             "deprecated": false
           }
         },
-        "none": {
+        "auto": {
           "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-overflow-4/#valdef-continue-auto",
+            "support": {
+              "chrome": {
+                "version_added": "preview",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "preview",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "layout.css.line-clamp.enabled"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "preview"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "height-based_clamping": {
+          "__compat": {
+            "description": "Content clamped by the height of a container",
             "tags": [
               "web-features:line-clamp"
             ],
             "support": {
               "chrome": {
+                "version_added": "preview",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
                 "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": false,
+              "deprecated": false
+            }
+          }
+        },
+        "no-ellipsis": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-overflow-4/#valdef-block-ellipsis-no-ellipsis",
+            "support": {
+              "chrome": {
+                "version_added": "preview",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "preview"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "none": {
+          "__compat": {
+            "spec_url": "https://drafts.csswg.org/css-overflow-4/#valdef-line-clamp-none",
+            "tags": [
+              "web-features:line-clamp"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "preview",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-experimental-web-platform-features",
+                    "value_to_set": "Enabled"
+                  }
+                ]
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -68,7 +221,42 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "18.2"
+                "version_added": "preview"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "string": {
+          "__compat": {
+            "description": "`<string>`",
+            "spec_url": "https://drafts.csswg.org/css-values-4/#string-value",
+            "tags": [
+              "web-features:line-clamp"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "preview"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",

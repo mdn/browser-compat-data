@@ -326,6 +326,7 @@
         "key_parameter_alt": {
           "__compat": {
             "description": "`\"Alt\"` as `key` parameter",
+            "spec_url": "https://www.w3.org/TR/uievents-key/#keys-modifier",
             "tags": [
               "web-features:keyboard-events"
             ],
@@ -365,6 +366,7 @@
         "key_parameter_altgraph": {
           "__compat": {
             "description": "`\"AltGraph\"` as `key` parameter",
+            "spec_url": "https://www.w3.org/TR/uievents-key/#keys-modifier",
             "tags": [
               "web-features:keyboard-events"
             ],
@@ -399,6 +401,7 @@
         "key_parameter_capslock": {
           "__compat": {
             "description": "`\"CapsLock\"` as `key` parameter",
+            "spec_url": "https://www.w3.org/TR/uievents-key/#keys-modifier",
             "tags": [
               "web-features:keyboard-events"
             ],
@@ -438,6 +441,7 @@
         "key_parameter_control": {
           "__compat": {
             "description": "`\"Control\"` as `key` parameter",
+            "spec_url": "https://www.w3.org/TR/uievents-key/#keys-modifier",
             "tags": [
               "web-features:keyboard-events"
             ],
@@ -477,6 +481,7 @@
         "key_parameter_fn": {
           "__compat": {
             "description": "`\"Fn\"` as `key` parameter",
+            "spec_url": "https://www.w3.org/TR/uievents-key/#keys-modifier",
             "tags": [
               "web-features:keyboard-events"
             ],
@@ -511,6 +516,7 @@
         "key_parameter_meta": {
           "__compat": {
             "description": "`\"Meta\"` as `key` parameter",
+            "spec_url": "https://www.w3.org/TR/uievents-key/#keys-modifier",
             "tags": [
               "web-features:keyboard-events"
             ],
@@ -545,6 +551,7 @@
         "key_parameter_numlock": {
           "__compat": {
             "description": "`\"NumLock\"` as `key` parameter",
+            "spec_url": "https://www.w3.org/TR/uievents-key/#keys-modifier",
             "tags": [
               "web-features:keyboard-events"
             ],
@@ -626,6 +633,7 @@
         "key_parameter_scrolllock": {
           "__compat": {
             "description": "`\"ScrollLock\"` as `key` parameter",
+            "spec_url": "https://www.w3.org/TR/uievents-key/#keys-modifier",
             "tags": [
               "web-features:keyboard-events"
             ],
@@ -673,6 +681,7 @@
         "key_parameter_shift": {
           "__compat": {
             "description": "`\"Shift\"` as `key` parameter",
+            "spec_url": "https://www.w3.org/TR/uievents-key/#keys-modifier",
             "tags": [
               "web-features:keyboard-events"
             ],
@@ -712,6 +721,7 @@
         "key_parameter_symbol": {
           "__compat": {
             "description": "`\"Symbol\"` as `key` parameter",
+            "spec_url": "https://www.w3.org/TR/uievents-key/#keys-modifier",
             "tags": [
               "web-features:keyboard-events"
             ],
@@ -805,9 +815,17 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "10.1"
-            },
+            "safari": [
+              {
+                "version_added": "27"
+              },
+              {
+                "version_added": "10.1",
+                "version_removed": "27",
+                "partial_implementation": true,
+                "notes": "The events for the keystroke that completes an IME composition session fire out of order, causing confusing `isComposing` values. The `keydown` and `input` events dispatch after the `compositionend` event fires instead of before. Consequently, the `isComposing` value is unexpectedly `false` instead of `true`. Events fired earlier in the session are unaffected. See [bug 165004](https://webkit.org/b/165004)."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -864,6 +882,7 @@
         "dead_key": {
           "__compat": {
             "description": "Dead key",
+            "spec_url": "https://www.w3.org/TR/uievents/#dead-key",
             "tags": [
               "web-features:keyboard-events"
             ],
@@ -898,6 +917,7 @@
         "non_printable_keys": {
           "__compat": {
             "description": "Non-printable keys",
+            "spec_url": "https://w3c.github.io/uievents/#dom-keyboardevent-key",
             "tags": [
               "web-features:keyboard-events"
             ],
@@ -938,6 +958,7 @@
         "printable_key": {
           "__compat": {
             "description": "Printable keys",
+            "spec_url": "https://w3c.github.io/uievents/#dom-keyboardevent-key",
             "tags": [
               "web-features:keyboard-events"
             ],

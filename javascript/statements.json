@@ -97,7 +97,7 @@
         "__compat": {
           "description": "`await using` declaration",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/await_using",
-          "spec_url": "https://tc39.es/proposal-async-explicit-resource-management/#prod-AwaitUsingDeclaration",
+          "spec_url": "https://tc39.es/proposal-async-explicit-resource-management/#sec-let-and-const-declarations",
           "tags": [
             "web-features:explicit-resource-management"
           ],
@@ -110,7 +110,7 @@
             },
             "chrome_android": "mirror",
             "deno": {
-              "version_added": false
+              "version_added": "2.2.10"
             },
             "edge": "mirror",
             "firefox": {
@@ -124,7 +124,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -624,6 +624,7 @@
         "arbitrary_module_namespace_identifier_names": {
           "__compat": {
             "description": "Arbitrary module namespace identifier names",
+            "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-scripts-and-modules.html#prod-ModuleExportName",
             "tags": [
               "web-features:js-modules"
             ],
@@ -963,6 +964,7 @@
         "async_iterators": {
           "__compat": {
             "description": "async iterators",
+            "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-for-in-and-for-of-statements",
             "tags": [
               "web-features:snapshot:ecmascript-2018",
               "web-features:async-iterators"
@@ -1009,6 +1011,7 @@
         "closing_iterators": {
           "__compat": {
             "description": "Closing iterators",
+            "spec_url": "https://tc39.es/ecma262/multipage/abstract-operations.html#sec-iteratorclose",
             "tags": [
               "web-features:iterators"
             ],
@@ -1109,6 +1112,7 @@
         "trailing_comma_in_parameters": {
           "__compat": {
             "description": "Trailing comma in parameters",
+            "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#prod-FormalParameters",
             "tags": [
               "web-features:functions"
             ],
@@ -1202,6 +1206,7 @@
         "IteratorResult_object": {
           "__compat": {
             "description": "`IteratorResult` object instead of throwing",
+            "spec_url": "https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-generatorresume",
             "tags": [
               "web-features:snapshot:ecmascript-2016",
               "web-features:generators"
@@ -1248,6 +1253,7 @@
         "not_constructable_with_new": {
           "__compat": {
             "description": "Not constructable with `new` (ES2016)",
+            "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#sec-generator-function-definitions",
             "tags": [
               "web-features:snapshot:ecmascript-2016",
               "web-features:generators"
@@ -1294,6 +1300,7 @@
         "trailing_comma_in_parameters": {
           "__compat": {
             "description": "Trailing comma in parameters",
+            "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-functions-and-classes.html#prod-FormalParameters",
             "tags": [
               "web-features:generators"
             ],
@@ -1448,6 +1455,10 @@
         "worker_support": {
           "__compat": {
             "description": "Available in workers",
+            "spec_url": [
+              "https://tc39.es/ecma262/multipage/ecmascript-language-scripts-and-modules.html#sec-imports",
+              "https://html.spec.whatwg.org/multipage/webappapis.html#fetch-a-module-worker-script-tree"
+            ],
             "tags": [
               "web-features:js-modules-workers"
             ],
@@ -1491,6 +1502,7 @@
         "arbitrary_module_namespace_identifier_names": {
           "__compat": {
             "description": "Arbitrary module namespace identifier names",
+            "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-scripts-and-modules.html#prod-ModuleExportName",
             "tags": [
               "web-features:js-modules"
             ],
@@ -1526,6 +1538,38 @@
             },
             "status": {
               "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "defer": {
+          "__compat": {
+            "description": "`import defer`",
+            "spec_url": "https://tc39.es/proposal-defer-import-eval/#sec-left-hand-side-expressions",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "preview"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
               "standard_track": true,
               "deprecated": false
             }
@@ -1737,6 +1781,8 @@
           "type_css": {
             "__compat": {
               "description": "`with {type: 'css'}`",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import/with#css_modules_type_css",
+              "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#css-module-script",
               "tags": [
                 "web-features:css-modules"
               ],
@@ -1749,7 +1795,7 @@
                 },
                 "chrome_android": "mirror",
                 "deno": {
-                  "version_added": false
+                  "version_added": "2.9"
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -1781,6 +1827,8 @@
           "type_json": {
             "__compat": {
               "description": "`with {type: 'json'}`",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import/with#json_modules_type_json",
+              "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#json-module-script",
               "tags": [
                 "web-features:json-modules"
               ],
@@ -1826,11 +1874,151 @@
                 "deprecated": false
               }
             }
+          },
+          "type_text": {
+            "__compat": {
+              "description": "`with {type: 'text'}`",
+              "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import/with#text_modules_type_text",
+              "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#text-module-script",
+              "tags": [
+                "web-features:text-modules"
+              ],
+              "support": {
+                "bun": {
+                  "version_added": "1.1.5"
+                },
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "deno": {
+                  "version_added": "2.8"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "153"
+                },
+                "firefox_android": "mirror",
+                "nodejs": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        },
+        "import_source": {
+          "__compat": {
+            "description": "Source phase imports (`import source` syntax)",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import/source",
+            "spec_url": "https://tc39.es/proposal-source-phase-imports/#sec-import-calls",
+            "support": {
+              "bun": {
+                "version_added": false
+              },
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "153"
+              },
+              "firefox_android": "mirror",
+              "nodejs": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "import_wasm_modules": {
+            "__compat": {
+              "description": "Source phase import of WASM modules",
+              "spec_url": "https://webassembly.github.io/esm-integration/js-api/#esm-integration",
+              "support": {
+                "bun": {
+                  "version_added": false
+                },
+                "chrome": {
+                  "version_added": false
+                },
+                "chrome_android": "mirror",
+                "deno": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "preview",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "javascript.options.experimental.wasm_esm_integration",
+                      "value_to_set": "true"
+                    }
+                  ],
+                  "impl_url": "https://bugzil.la/1997621"
+                },
+                "firefox_android": "mirror",
+                "nodejs": {
+                  "version_added": false
+                },
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         },
         "service_worker_support": {
           "__compat": {
             "description": "Available in service workers",
+            "spec_url": [
+              "https://tc39.es/ecma262/multipage/ecmascript-language-scripts-and-modules.html#sec-imports",
+              "https://w3c.github.io/ServiceWorker/#dom-registrationoptions-type"
+            ],
             "tags": [
               "web-features:js-modules-service-workers"
             ],
@@ -1874,6 +2062,10 @@
         "worklet_support": {
           "__compat": {
             "description": "Available in worklets",
+            "spec_url": [
+              "https://tc39.es/ecma262/multipage/ecmascript-language-scripts-and-modules.html#sec-imports",
+              "https://html.spec.whatwg.org/multipage/worklets.html#dom-worklet-addmodule"
+            ],
             "tags": [
               "web-features:js-modules"
             ],
@@ -2264,6 +2456,7 @@
         "optional_catch_binding": {
           "__compat": {
             "description": "Optional catch binding",
+            "spec_url": "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-try-statement",
             "tags": [
               "web-features:optional-catch-binding"
             ],
@@ -2309,7 +2502,7 @@
         "__compat": {
           "description": "`using` declaration",
           "mdn_url": "https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/using",
-          "spec_url": "https://tc39.es/proposal-async-explicit-resource-management/#prod-UsingDeclaration",
+          "spec_url": "https://tc39.es/proposal-async-explicit-resource-management/#sec-let-and-const-declarations",
           "tags": [
             "web-features:explicit-resource-management"
           ],
@@ -2336,7 +2529,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "preview"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

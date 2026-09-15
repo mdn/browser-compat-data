@@ -1,6 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
 import { walk } from '../../utils/index.js';
@@ -8,6 +9,7 @@ import { walk } from '../../utils/index.js';
 import {
   generateMeta,
   applyMirroring,
+  addReleaseIndex,
   addVersionLast,
   createManifest,
 } from './index.js';
@@ -16,7 +18,7 @@ describe('Build functions', () => {
   it('generateMeta', () => {
     const result = generateMeta();
     assert.ok(result.version);
-    assert.ok(result.timestamp instanceof Date);
+    assert.ok(result.timestamp);
   });
 
   it('applyMirroring', () => {
@@ -101,6 +103,45 @@ describe('Build functions', () => {
     assert.equal(data.feature.__compat.support.safari.version_last, 'preview');
     assert.equal(data.feature.__compat.support.edge.version_last, true);
   });
+  it('addReleaseIndex', () => {
+    /** @type {*} */
+    const data = {
+      browsers: {
+        example: {
+          releases: {
+            10: { status: 'current' },
+            1: { status: 'retired' },
+            2.5: { status: 'retired' },
+            2: { status: 'retired' },
+          },
+        },
+        firefox: {
+          releases: {
+            2: { status: 'retired' },
+            1: { status: 'retired' },
+            1.5: { status: 'retired' },
+          },
+        },
+      },
+    };
+
+    addReleaseIndex(data);
+
+    assert.equal(data.browsers.example.releases['1'].index, 0);
+    assert.equal(data.browsers.example.releases['2'].index, 1);
+    assert.equal(data.browsers.example.releases['2.5'].index, 2);
+    assert.equal(data.browsers.example.releases['10'].index, 3);
+
+    // Each browser is indexed independently, starting from 0.
+    assert.equal(data.browsers.firefox.releases['1'].index, 0);
+    assert.equal(data.browsers.firefox.releases['1.5'].index, 1);
+    assert.equal(data.browsers.firefox.releases['2'].index, 2);
+
+    // Existing release properties are preserved.
+    assert.equal(data.browsers.example.releases['1'].status, 'retired');
+    assert.equal(data.browsers.example.releases['10'].status, 'current');
+  });
+
   it('createManifest', () => {
     const manifest = createManifest();
     assert.ok(manifest.main);

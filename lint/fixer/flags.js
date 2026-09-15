@@ -7,12 +7,12 @@ import testFlags, {
 } from '../linter/test-flags.js';
 import walk from '../../utils/walk.js';
 
-/** @import {BrowserName, CompatStatement, SupportStatement, SimpleSupportStatement, Identifier} from '../../types/types.js' */
+/** @import {BrowserName, InternalCompatStatement, InternalSupportStatement, InternalSimpleSupportStatement, InternalIdentifier} from '../../types/index.js' */
 
 /**
  * Removes irrelevant flags from the compatibility data
- * @param {SupportStatement} supportData The compatibility statement to test
- * @returns {SupportStatement} The compatibility statement with all of the flags removed
+ * @param {InternalSupportStatement} supportData The compatibility statement to test
+ * @returns {InternalSupportStatement} The compatibility statement with all of the flags removed
  */
 export const removeIrrelevantFlags = (supportData) => {
   if (typeof supportData === 'string') {
@@ -27,7 +27,7 @@ export const removeIrrelevantFlags = (supportData) => {
     return supportData;
   }
 
-  /** @type {SimpleSupportStatement[]} */
+  /** @type {InternalSimpleSupportStatement[]} */
   const result = [];
   const basicSupport = getBasicSupportStatement(supportData);
 
@@ -43,7 +43,7 @@ export const removeIrrelevantFlags = (supportData) => {
   if (result.length == 1) {
     return result[0];
   }
-  return /** @type {[SimpleSupportStatement, SimpleSupportStatement, ...SimpleSupportStatement[]]} */ (
+  return /** @type {[InternalSimpleSupportStatement, InternalSimpleSupportStatement, ...InternalSimpleSupportStatement[]]} */ (
     result
   );
 };
@@ -68,12 +68,14 @@ const fixFlags = (filename, actual) => {
     }
 
     const featureData =
-      /** @type {Identifier & {__compat: CompatStatement}} */ (feature.data);
+      /** @type {InternalIdentifier & {__compat: InternalCompatStatement}} */ (
+        feature.data
+      );
 
     for (const [
       browser,
       supportData,
-    ] of /** @type {[BrowserName, SupportStatement][]} */ (
+    ] of /** @type {[BrowserName, InternalSupportStatement][]} */ (
       Object.entries(feature.compat.support)
     )) {
       featureData.__compat.support[browser] =

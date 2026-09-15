@@ -1509,9 +1509,17 @@
             "web-features:loading-lazy-media"
           ],
           "support": {
-            "chrome": {
-              "version_added": "148"
-            },
+            "chrome": [
+              {
+                "version_added": "150"
+              },
+              {
+                "version_added": "148",
+                "version_removed": "150",
+                "partial_implementation": true,
+                "notes": "Not supported for `<source>`. See [bug 514611050](https://crbug.com/514611050)."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -2109,6 +2117,7 @@
         "returns_promise": {
           "__compat": {
             "description": "Returns a `Promise`",
+            "spec_url": "https://html.spec.whatwg.org/multipage/media.html#dom-media-play",
             "tags": [
               "web-features:video"
             ],
@@ -2844,38 +2853,6 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
-          }
-        }
-      },
-      "seekToNextFrame": {
-        "__compat": {
-          "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLMediaElement/seekToNextFrame",
-          "support": {
-            "chrome": {
-              "version_added": false
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": "56",
-              "version_removed": "128"
-            },
-            "firefox_android": "mirror",
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": false,
-            "standard_track": false,
-            "deprecated": true
           }
         }
       },

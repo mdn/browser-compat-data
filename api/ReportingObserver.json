@@ -72,6 +72,7 @@
         "options_parameter": {
           "__compat": {
             "description": "`options` parameter",
+            "spec_url": "https://w3c.github.io/reporting/#dom-reportingobserver-reportingobserver-callback-options-options",
             "tags": [
               "web-features:reporting"
             ],
@@ -105,6 +106,7 @@
           "types_property": {
             "__compat": {
               "description": "`types` property",
+              "spec_url": "https://w3c.github.io/reporting/#dom-reportingobserveroptions-types",
               "tags": [
                 "web-features:reporting"
               ],
@@ -140,7 +142,7 @@
                 "description": "`coep` report type",
                 "spec_url": "https://html.spec.whatwg.org/multipage/browsers.html#embedder-policy-checks",
                 "tags": [
-                  "web-features:reporting"
+                  "web-features:reporting-coep-violations"
                 ],
                 "support": {
                   "chrome": {
@@ -170,13 +172,48 @@
                 }
               }
             },
+            "connection-allowlist": {
+              "__compat": {
+                "description": "`connection-allowlist` report type",
+                "spec_url": "https://wicg.github.io/connection-allowlists/#reporting",
+                "tags": [
+                  "web-features:connection-allowlists"
+                ],
+                "support": {
+                  "chrome": {
+                    "version_added": "152"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
+                },
+                "status": {
+                  "experimental": true,
+                  "standard_track": true,
+                  "deprecated": false
+                }
+              }
+            },
             "csp-violation": {
               "__compat": {
                 "description": "`csp-violation` report type",
                 "mdn_url": "https://developer.mozilla.org/docs/Web/API/CSPViolationReport",
                 "spec_url": "https://w3c.github.io/webappsec-csp/#reporting",
                 "tags": [
-                  "web-features:reporting"
+                  "web-features:reporting-csp-violations"
                 ],
                 "support": {
                   "chrome": {
@@ -218,7 +255,7 @@
                 "mdn_url": "https://developer.mozilla.org/docs/Web/API/DeprecationReport",
                 "spec_url": "https://wicg.github.io/deprecation-reporting/#deprecation-report",
                 "tags": [
-                  "web-features:reporting"
+                  "web-features:reporting-deprecation"
                 ],
                 "support": {
                   "chrome": {
@@ -256,7 +293,7 @@
                 "mdn_url": "https://developer.mozilla.org/docs/Web/API/IntegrityViolationReport",
                 "spec_url": "https://w3c.github.io/webappsec-subresource-integrity/#report-violations",
                 "tags": [
-                  "web-features:reporting"
+                  "web-features:reporting-integrity-violations"
                 ],
                 "support": {
                   "chrome": {
@@ -292,7 +329,7 @@
                 "mdn_url": "https://developer.mozilla.org/docs/Web/API/InterventionReport",
                 "spec_url": "https://wicg.github.io/intervention-reporting/#intervention-report",
                 "tags": [
-                  "web-features:reporting"
+                  "web-features:reporting-interventions"
                 ],
                 "support": {
                   "chrome": {
@@ -327,7 +364,7 @@
                 "description": "`permissions-policy-violation` report type",
                 "spec_url": "https://w3c.github.io/webappsec-permissions-policy/#reporting",
                 "tags": [
-                  "web-features:reporting"
+                  "web-features:reporting-permissions-policy-violations"
                 ],
                 "support": {
                   "chrome": {
@@ -363,6 +400,7 @@
       "worker_support": {
         "__compat": {
           "description": "Available in workers",
+          "spec_url": "https://w3c.github.io/reporting/#interface-reporting-observer",
           "tags": [
             "web-features:reporting"
           ],
