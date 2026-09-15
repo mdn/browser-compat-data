@@ -270,7 +270,7 @@
               "notes": "Returns `CryptoOperation` instead of `Promise`"
             },
             "nodejs": {
-              "version_added": "15.0.0"
+              "version_added": "19.0.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -334,13 +334,21 @@
               "version_added": "34"
             },
             "firefox_android": "mirror",
-            "nodejs": {
-              "version_added": "15.0.0",
-              "notes": [
-                "Supports: NODE-DH",
-                "Supports: NODE-SCRYPT"
-              ]
-            },
+            "nodejs": [
+              {
+                "version_added": "19.0.0",
+                "notes": [
+                  "Supports: NODE-DH",
+                  "Supports: NODE-SCRYPT"
+                ]
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "19.0.0",
+                "partial_implementation": true,
+                "notes": "Available as a part of the `crypto` module."
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -436,13 +444,21 @@
               "version_added": "34"
             },
             "firefox_android": "mirror",
-            "nodejs": {
-              "version_added": "15.0.0",
-              "notes": [
-                "Supports: NODE-DH",
-                "Supports: NODE-SCRYPT"
-              ]
-            },
+            "nodejs": [
+              {
+                "version_added": "19.0.0",
+                "notes": [
+                  "Supports: NODE-DH",
+                  "Supports: NODE-SCRYPT"
+                ]
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "19.0.0",
+                "partial_implementation": true,
+                "notes": "Available as a part of the `crypto` module."
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -484,7 +500,7 @@
               },
               "firefox_android": "mirror",
               "nodejs": {
-                "version_added": "15.0.0"
+                "version_added": "19.0.0"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -528,7 +544,7 @@
               },
               "firefox_android": "mirror",
               "nodejs": {
-                "version_added": "15.0.0"
+                "version_added": "19.0.0"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -572,7 +588,7 @@
               },
               "firefox_android": "mirror",
               "nodejs": {
-                "version_added": "15.0.0"
+                "version_added": "19.0.0"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -616,7 +632,7 @@
               },
               "firefox_android": "mirror",
               "nodejs": {
-                "version_added": "15.0.0"
+                "version_added": "19.0.0"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -725,7 +741,7 @@
               "notes": "Returns `CryptoOperation` instead of `Promise`"
             },
             "nodejs": {
-              "version_added": "15.0.0"
+              "version_added": "19.0.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -864,7 +880,7 @@
               "notes": "Returns `CryptoOperation` instead of `Promise`"
             },
             "nodejs": {
-              "version_added": "15.0.0"
+              "version_added": "19.0.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -939,14 +955,22 @@
               "partial_implementation": true,
               "notes": "Returns `KeyOperation` instead of `Promise`"
             },
-            "nodejs": {
-              "version_added": "15.0.0",
-              "notes": [
-                "Supports: NODE-DSA",
-                "Supports: NODE-DH",
-                "Supports: NODE-SCRYPT"
-              ]
-            },
+            "nodejs": [
+              {
+                "version_added": "19.0.0",
+                "notes": [
+                  "Supports: NODE-DSA",
+                  "Supports: NODE-DH",
+                  "Supports: NODE-SCRYPT"
+                ]
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "19.0.0",
+                "partial_implementation": true,
+                "notes": "Available as a part of the `crypto` module."
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -1108,13 +1132,21 @@
               "partial_implementation": true,
               "notes": "Returns `KeyOperation` instead of `Promise`"
             },
-            "nodejs": {
-              "version_added": "15.0.0",
-              "notes": [
-                "Supports: NODE-DSA",
-                "Supports: NODE-DH"
-              ]
-            },
+            "nodejs": [
+              {
+                "version_added": "19.0.0",
+                "notes": [
+                  "Supports: NODE-DSA",
+                  "Supports: NODE-DH"
+                ]
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "19.0.0",
+                "partial_implementation": true,
+                "notes": "Available as a part of the `crypto` module."
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -1280,14 +1312,22 @@
               "partial_implementation": true,
               "notes": "Returns `KeyOperation` instead of `Promise`"
             },
-            "nodejs": {
-              "version_added": "15.0.0",
-              "notes": [
-                "Supports: NODE-DSA",
-                "Supports: NODE-DH",
-                "Supports: NODE-SCRYPT"
-              ]
-            },
+            "nodejs": [
+              {
+                "version_added": "19.0.0",
+                "notes": [
+                  "Supports: NODE-DSA",
+                  "Supports: NODE-DH",
+                  "Supports: NODE-SCRYPT"
+                ]
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "19.0.0",
+                "partial_implementation": true,
+                "notes": "Available as a part of the `crypto` module."
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -1595,10 +1635,18 @@
               "partial_implementation": true,
               "notes": "Returns `CryptoOperation` instead of `Promise`"
             },
-            "nodejs": {
-              "version_added": "15.0.0",
-              "notes": "Supports: NODE-DSA"
-            },
+            "nodejs": [
+              {
+                "version_added": "19.0.0",
+                "notes": "Supports: NODE-DSA"
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "19.0.0",
+                "partial_implementation": true,
+                "notes": "Available as a part of the `crypto` module."
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -1701,7 +1749,7 @@
               "notes": "Returns `KeyOperation` instead of `Promise`"
             },
             "nodejs": {
-              "version_added": "15.0.0",
+              "version_added": "19.0.0",
               "notes": [
                 "Supports: NODE-DSA",
                 "Supports: NODE-DH"
@@ -1771,10 +1819,18 @@
               "partial_implementation": true,
               "notes": "Returns `CryptoOperation` instead of `Promise`"
             },
-            "nodejs": {
-              "version_added": "15.0.0",
-              "notes": "Supports: NODE-DSA"
-            },
+            "nodejs": [
+              {
+                "version_added": "19.0.0",
+                "notes": "Supports: NODE-DSA"
+              },
+              {
+                "version_added": "16.17.0",
+                "version_removed": "19.0.0",
+                "partial_implementation": true,
+                "notes": "Available as a part of the `crypto` module."
+              }
+            ],
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -1876,7 +1932,7 @@
               "notes": "Returns `KeyOperation` instead of `Promise`"
             },
             "nodejs": {
-              "version_added": "15.0.0"
+              "version_added": "19.0.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
