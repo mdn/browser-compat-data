@@ -61,9 +61,17 @@
                 "notes": "Overriding the initial value of the implicit `list-item` counter has _no_ effect when the default marker string for list items (`::marker`) is generated; see [bug 338233131](https://crbug.com/338233131)."
               },
               "chrome_android": "mirror",
-              "edge": {
-                "version_added": "12"
-              },
+              "edge": [
+                {
+                  "version_added": "79",
+                  "partial_implementation": true,
+                  "notes": "Overriding the initial value of the implicit `list-item` counter has _no_ effect when the default marker string for list items (`::marker`) is generated; see [bug 338233131](https://crbug.com/338233131)."
+                },
+                {
+                  "version_added": "12",
+                  "version_removed": "79"
+                }
+              ],
               "firefox": {
                 "version_added": "1"
               },
