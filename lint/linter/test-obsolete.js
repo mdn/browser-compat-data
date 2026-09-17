@@ -131,5 +131,8 @@ export default {
   check: (logger, { data }) => {
     processData(logger, /** @type {InternalCompatStatement} */ (data));
   },
-  exceptions: ['html.elements.track.kind.descriptions'],
+  exceptions: [
+    'css.properties.display.contents.focusable_elements',
+    'html.elements.track.kind.descriptions',
+  ],
 };
