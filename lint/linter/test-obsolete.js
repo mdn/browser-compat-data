@@ -8,9 +8,6 @@ import bcd from '../../index.js';
 /** @import {BrowserName, InternalCompatStatement} from '../../types/index.js' */
 /** @import {InternalSupportBlock, InternalSupportStatement} from '../../types/index.js' */
 
-// Once a category has been stripped of unsupported features, remove it from this list
-const ignoredCategories = ['css'];
-
 /**
  * Check if feature has never been implemented
  * @param {InternalSupportBlock} support The support statement
@@ -131,10 +128,8 @@ export default {
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */
-  check: (logger, { data, path: { category } }) => {
-    if (!ignoredCategories.includes(category)) {
-      processData(logger, /** @type {InternalCompatStatement} */ (data));
-    }
+  check: (logger, { data }) => {
+    processData(logger, /** @type {InternalCompatStatement} */ (data));
   },
   exceptions: ['html.elements.track.kind.descriptions'],
 };
