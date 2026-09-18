@@ -415,7 +415,7 @@
       "bluetooth": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/bluetooth",
-          "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#dom-navigator-bluetooth",
+          "spec_url": "https://bluetooth.spec.whatwg.org/#dom-navigator-bluetooth",
           "tags": [
             "web-features:web-bluetooth"
           ],
@@ -1983,7 +1983,7 @@
       "hid": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/hid",
-          "spec_url": "https://wicg.github.io/webhid/#dom-navigator-hid",
+          "spec_url": "https://hid.spec.whatwg.org/#dom-navigator-hid",
           "tags": [
             "web-features:webhid"
           ],
@@ -5037,7 +5037,7 @@
       "serial": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/serial",
-          "spec_url": "https://wicg.github.io/serial/#extensions-to-the-navigator-interface",
+          "spec_url": "https://serial.spec.whatwg.org/#extensions-to-the-navigator-interface",
           "tags": [
             "web-features:serial"
           ],
@@ -5045,11 +5045,17 @@
             "chrome": {
               "version_added": "89"
             },
-            "chrome_android": {
-              "version_added": "138",
-              "partial_implementation": true,
-              "notes": "Serial ports are only available if they're provided by Bluetooth RFCOMM serial port emulation."
-            },
+            "chrome_android": [
+              {
+                "version_added": "148"
+              },
+              {
+                "version_added": "138",
+                "version_removed": "147",
+                "partial_implementation": true,
+                "notes": "Serial ports are only available if they're provided by Bluetooth RFCOMM serial port emulation."
+              }
+            ],
             "edge": "mirror",
             "firefox": {
               "version_added": "151"
@@ -5564,7 +5570,7 @@
       "usb": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/usb",
-          "spec_url": "https://wicg.github.io/webusb/#dom-navigator-usb",
+          "spec_url": "https://usb.spec.whatwg.org/#dom-navigator-usb",
           "tags": [
             "web-features:webusb"
           ],
