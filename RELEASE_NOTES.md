@@ -1,5 +1,26 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.1.3](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.3)
+
+September 18, 2026
+
+### Removals
+
+- `api.HTMLInstallElement.initialPermissionStatus` ([#30573](https://github.com/mdn/browser-compat-data/pull/30573))
+- `api.HTMLInstallElement.permissionStatus` ([#30573](https://github.com/mdn/browser-compat-data/pull/30573))
+
+### Additions
+
+- `browsers.opera.releases.138` ([#30567](https://github.com/mdn/browser-compat-data/pull/30567))
+- `css.properties.display.contents.focusable_elements` ([#30564](https://github.com/mdn/browser-compat-data/pull/30564))
+
+### Statistics
+
+- 5 contributors have changed 41 files with 351 additions and 362 deletions in 8 commits ([`v8.1.2...v8.1.3`](https://github.com/mdn/browser-compat-data/compare/v8.1.2...v8.1.3))
+- 20,542 total features
+- 1,274 total contributors
+- 5,751 total stargazers
+
 ## [v8.1.2](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.2)
 
 September 17, 2026
