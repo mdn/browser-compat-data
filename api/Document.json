@@ -772,10 +772,9 @@
           "support": {
             "chrome": {
               "version_added": "141",
-              "partial_implementation": true,
               "notes": [
-                "Fully supported on Windows and Linux, no support on ChromeOS.",
-                "Method exposed on macOS, but notifications are not reliably spoken."
+                "On macOS, an announcement may not be spoken if another accessibility event fires at the same time; VoiceOver announces the competing event instead. This is a VoiceOver limitation and affects other browsers on macOS in the same way.",
+                "On ChromeOS, the method is exposed but announcements are never spoken."
               ]
             },
             "chrome_android": "mirror",
