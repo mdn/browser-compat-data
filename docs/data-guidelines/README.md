@@ -126,6 +126,18 @@ However, this guideline does not apply to features where the browser's expected 
 
 This guideline was proposed in [#6906](https://github.com/mdn/browser-compat-data/issues/6906).
 
+## Randomized trials imply the support status of least surprise
+
+If a feature's support is subject to randomized selection into experimental and control groups (as in A/B testing), then assume that browser behaviors are stable with respect to their past behavior.
+
+For new features gradually rolled out, update data with the expectation that the browser will _not_ be enrolled into the feature-enabled group until the very last cohort.
+In other words, such features remain `{ "version_added": false }` until the roll out is complete.
+
+For deprecated features being gradually removed, update data with the expectation that the browser will _not_ be enrolled into the feature-removed group until the very last cohort.
+In other words, such features remain `{ "version_added": "…" }` until the removal is complete.
+
+This guideline was proposed in [#30486](https://github.com/mdn/browser-compat-data/pull/30486) and inspired by [#30433](https://github.com/mdn/browser-compat-data/pull/30433).
+
 ## Removal of irrelevant features
 
 Features can be removed from BCD if it is considered irrelevant. A feature can be considered irrelevant if any of these conditions are met:
