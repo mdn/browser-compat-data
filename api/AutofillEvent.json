@@ -1,26 +1,20 @@
 {
   "api": {
-    "MLOperand": {
+    "AutofillEvent": {
       "__compat": {
-        "spec_url": "https://www.w3.org/TR/webnn/#api-mloperand",
-        "tags": [
-          "web-features:webnn"
-        ],
+        "spec_url": "https://wicg.github.io/autofill-event/#autofillevent",
         "support": {
           "chrome": {
-            "version_added": "112",
+            "version_added": "146",
             "flags": [
               {
                 "type": "preference",
-                "name": "#web-machine-learning-neural-network",
+                "name": "#enable-experimental-web-platform-features",
                 "value_to_set": "Enabled"
               }
             ]
           },
           "chrome_android": "mirror",
-          "deno": {
-            "version_added": false
-          },
           "edge": "mirror",
           "firefox": {
             "version_added": false
@@ -43,27 +37,21 @@
           "deprecated": false
         }
       },
-      "dataType": {
+      "autofillValues": {
         "__compat": {
-          "spec_url": "https://www.w3.org/TR/webnn/#dom-mloperanddescriptor-datatype",
-          "tags": [
-            "web-features:webnn"
-          ],
+          "spec_url": "https://wicg.github.io/autofill-event/#dom-autofillevent-autofillvalues",
           "support": {
             "chrome": {
-              "version_added": "126",
+              "version_added": "146",
               "flags": [
                 {
                   "type": "preference",
-                  "name": "#web-machine-learning-neural-network",
+                  "name": "#enable-experimental-web-platform-features",
                   "value_to_set": "Enabled"
                 }
               ]
             },
             "chrome_android": "mirror",
-            "deno": {
-              "version_added": false
-            },
             "edge": "mirror",
             "firefox": {
               "version_added": false
@@ -87,27 +75,21 @@
           }
         }
       },
-      "shape": {
+      "refill": {
         "__compat": {
-          "spec_url": "https://www.w3.org/TR/webnn/#dom-mloperanddescriptor-shape",
-          "tags": [
-            "web-features:webnn"
-          ],
+          "spec_url": "https://wicg.github.io/autofill-event/#dom-autofillevent-refill",
           "support": {
             "chrome": {
-              "version_added": "126",
+              "version_added": "146",
               "flags": [
                 {
                   "type": "preference",
-                  "name": "#web-machine-learning-neural-network",
+                  "name": "#enable-experimental-web-platform-features",
                   "value_to_set": "Enabled"
                 }
               ]
             },
             "chrome_android": "mirror",
-            "deno": {
-              "version_added": false
-            },
             "edge": "mirror",
             "firefox": {
               "version_added": false

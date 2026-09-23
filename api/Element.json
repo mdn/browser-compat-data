@@ -224,6 +224,9 @@
       },
       "afterHTML": {
         "__compat": {
+          "tags": [
+            "web-features:html-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",
@@ -261,6 +264,9 @@
       },
       "afterHTMLUnsafe": {
         "__compat": {
+          "tags": [
+            "web-features:html-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",
@@ -961,6 +967,9 @@
       },
       "appendHTML": {
         "__compat": {
+          "tags": [
+            "web-features:html-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",
@@ -998,6 +1007,9 @@
       },
       "appendHTMLUnsafe": {
         "__compat": {
+          "tags": [
+            "web-features:html-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",
@@ -2129,23 +2141,24 @@
           "support": {
             "chrome": {
               "version_added": "141",
-              "partial_implementation": true,
               "notes": [
-                "Fully supported on Windows and Linux, no support on ChromeOS.",
-                "Method exposed on macOS, but notifications are not reliably spoken."
+                "On macOS, an announcement may not be spoken if another accessibility event fires at the same time; VoiceOver announces the competing event instead. This is a VoiceOver limitation and affects other browsers on macOS in the same way. See [mdn/browser-compat-data#29610](https://github.com/mdn/browser-compat-data/issues/29610).",
+                "On ChromeOS, the method is exposed but announcements are never spoken."
               ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "150"
+              "version_added": "150",
+              "notes": "On macOS, an announcement may not be spoken if another accessibility event fires at the same time; VoiceOver announces the competing event instead. This is a VoiceOver limitation and affects other browsers on macOS in the same way. See [mdn/browser-compat-data#29610](https://github.com/mdn/browser-compat-data/issues/29610)."
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "27"
+              "version_added": "27",
+              "notes": "On macOS, an announcement may not be spoken if another accessibility event fires at the same time; VoiceOver announces the competing event instead. This is a VoiceOver limitation and affects other browsers on macOS in the same way. See [mdn/browser-compat-data#29610](https://github.com/mdn/browser-compat-data/issues/29610)."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -3293,6 +3306,9 @@
       },
       "beforeHTML": {
         "__compat": {
+          "tags": [
+            "web-features:html-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",
@@ -3330,6 +3346,9 @@
       },
       "beforeHTMLUnsafe": {
         "__compat": {
+          "tags": [
+            "web-features:html-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",
@@ -4991,20 +5010,14 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "1",
-              "partial_implementation": true,
-              "notes": "The `onfocusin` event handler property is not supported. To listen to this event, use `element.addEventListener('focusin', function() {});`."
+              "version_added": "1"
             },
             "chrome_android": "mirror",
             "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": "The `onfocusin` event handler property is not supported. To listen to this event, use `element.addEventListener('focusin', function() {});`."
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "52",
-              "partial_implementation": true,
-              "notes": "The `onfocusin` event handler property is not supported. To listen to this event, use `element.addEventListener('focusin', function() {});`."
+              "version_added": "52"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -5042,20 +5055,14 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "1",
-              "partial_implementation": true,
-              "notes": "The `onfocusout` event handler property is not supported. To listen to this event, use `element.addEventListener('focusout', function() {});`."
+              "version_added": "1"
             },
             "chrome_android": "mirror",
             "edge": {
-              "version_added": "12",
-              "partial_implementation": true,
-              "notes": "The `onfocusout` event handler property is not supported. To listen to this event, use `element.addEventListener('focusout', function() {});`."
+              "version_added": "12"
             },
             "firefox": {
-              "version_added": "52",
-              "partial_implementation": true,
-              "notes": "The `onfocusout` event handler property is not supported. To listen to this event, use `element.addEventListener('focusout', function() {});`."
+              "version_added": "52"
             },
             "firefox_android": "mirror",
             "ie": {
@@ -8511,6 +8518,9 @@
       },
       "prependHTML": {
         "__compat": {
+          "tags": [
+            "web-features:html-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",
@@ -8548,6 +8558,9 @@
       },
       "prependHTMLUnsafe": {
         "__compat": {
+          "tags": [
+            "web-features:html-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",
@@ -9018,80 +9031,6 @@
           }
         }
       },
-      "replaceHTML": {
-        "__compat": {
-          "support": {
-            "chrome": {
-              "version_added": "148",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
-      "replaceHTMLUnsafe": {
-        "__compat": {
-          "support": {
-            "chrome": {
-              "version_added": "148",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
       "replaceWith": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/replaceWith",
@@ -9133,6 +9072,9 @@
       },
       "replaceWithHTML": {
         "__compat": {
+          "tags": [
+            "web-features:html-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",
@@ -9170,6 +9112,9 @@
       },
       "replaceWithHTMLUnsafe": {
         "__compat": {
+          "tags": [
+            "web-features:html-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",
@@ -11296,7 +11241,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/303808"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -11315,7 +11261,7 @@
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/setHTMLUnsafe",
           "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-element-sethtmlunsafe",
           "tags": [
-            "web-features:parse-html-unsafe"
+            "web-features:html-setters"
           ],
           "support": {
             "chrome": {
@@ -11391,6 +11337,9 @@
           "__compat": {
             "description": "`options.runScripts` parameter",
             "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-sethtmlunsafeoptions-runscripts",
+            "tags": [
+              "web-features:html-setters"
+            ],
             "support": {
               "chrome": {
                 "version_added": "148",
@@ -11616,6 +11565,9 @@
       },
       "streamAfterHTML": {
         "__compat": {
+          "tags": [
+            "web-features:html-streaming-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",
@@ -11653,6 +11605,9 @@
       },
       "streamAfterHTMLUnsafe": {
         "__compat": {
+          "tags": [
+            "web-features:html-streaming-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",
@@ -11690,6 +11645,9 @@
       },
       "streamAppendHTML": {
         "__compat": {
+          "tags": [
+            "web-features:html-streaming-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",
@@ -11727,6 +11685,9 @@
       },
       "streamAppendHTMLUnsafe": {
         "__compat": {
+          "tags": [
+            "web-features:html-streaming-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",
@@ -11764,6 +11725,9 @@
       },
       "streamBeforeHTML": {
         "__compat": {
+          "tags": [
+            "web-features:html-streaming-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",
@@ -11801,6 +11765,9 @@
       },
       "streamBeforeHTMLUnsafe": {
         "__compat": {
+          "tags": [
+            "web-features:html-streaming-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",
@@ -11838,6 +11805,9 @@
       },
       "streamHTML": {
         "__compat": {
+          "tags": [
+            "web-features:html-streaming-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",
@@ -11875,6 +11845,9 @@
       },
       "streamHTMLUnsafe": {
         "__compat": {
+          "tags": [
+            "web-features:html-streaming-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",
@@ -11912,6 +11885,9 @@
       },
       "streamPrependHTML": {
         "__compat": {
+          "tags": [
+            "web-features:html-streaming-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",
@@ -11949,80 +11925,9 @@
       },
       "streamPrependHTMLUnsafe": {
         "__compat": {
-          "support": {
-            "chrome": {
-              "version_added": "148",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
-      "streamReplaceHTML": {
-        "__compat": {
-          "support": {
-            "chrome": {
-              "version_added": "148",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "Enabled"
-                }
-              ]
-            },
-            "chrome_android": "mirror",
-            "edge": "mirror",
-            "firefox": {
-              "version_added": false
-            },
-            "firefox_android": "mirror",
-            "oculus": "mirror",
-            "opera": "mirror",
-            "opera_android": "mirror",
-            "safari": {
-              "version_added": false
-            },
-            "safari_ios": "mirror",
-            "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
-          },
-          "status": {
-            "experimental": true,
-            "standard_track": false,
-            "deprecated": false
-          }
-        }
-      },
-      "streamReplaceHTMLUnsafe": {
-        "__compat": {
+          "tags": [
+            "web-features:html-streaming-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",
@@ -12060,6 +11965,9 @@
       },
       "streamReplaceWithHTML": {
         "__compat": {
+          "tags": [
+            "web-features:html-streaming-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",
@@ -12097,6 +12005,9 @@
       },
       "streamReplaceWithHTMLUnsafe": {
         "__compat": {
+          "tags": [
+            "web-features:html-streaming-setters"
+          ],
           "support": {
             "chrome": {
               "version_added": "148",

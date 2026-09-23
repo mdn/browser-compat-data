@@ -1,5 +1,134 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.1.2](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.2)
+
+September 17, 2026
+
+### Removals
+
+- `css.properties.-moz-user-focus` ([#30478](https://github.com/mdn/browser-compat-data/pull/30478))
+- `css.properties.-webkit-mask-repeat-x` ([#30478](https://github.com/mdn/browser-compat-data/pull/30478))
+- `css.properties.-webkit-mask-repeat-y` ([#30478](https://github.com/mdn/browser-compat-data/pull/30478))
+- `css.properties.background-image.image-rect` ([#30478](https://github.com/mdn/browser-compat-data/pull/30478))
+- `css.properties.caption-side.left` ([#30478](https://github.com/mdn/browser-compat-data/pull/30478))
+- `css.properties.caption-side.right` ([#30478](https://github.com/mdn/browser-compat-data/pull/30478))
+- `css.properties.display.contents.focusable_elements` ([#30478](https://github.com/mdn/browser-compat-data/pull/30478))
+- `css.properties.font-variant.greek_accented_characters` ([#30478](https://github.com/mdn/browser-compat-data/pull/30478))
+- `css.properties.font-variant.uppercase_eszett` ([#30478](https://github.com/mdn/browser-compat-data/pull/30478))
+- `css.properties.text-autospace.punctuation` ([#30478](https://github.com/mdn/browser-compat-data/pull/30478))
+- `css.properties.text-autospace.replace` ([#30478](https://github.com/mdn/browser-compat-data/pull/30478))
+- `css.selectors.-moz-broken` ([#30478](https://github.com/mdn/browser-compat-data/pull/30478))
+- `css.selectors.closed` ([#30478](https://github.com/mdn/browser-compat-data/pull/30478))
+- `css.selectors.empty.matches_whitespace` ([#30478](https://github.com/mdn/browser-compat-data/pull/30478))
+- `css.selectors.scroll-button.next` ([#30478](https://github.com/mdn/browser-compat-data/pull/30478))
+- `css.selectors.scroll-button.prev` ([#30478](https://github.com/mdn/browser-compat-data/pull/30478))
+- `css.types.attr.type_function.url` ([#30478](https://github.com/mdn/browser-compat-data/pull/30478))
+- `css.types.basic-shape.path.shape-outside` ([#30478](https://github.com/mdn/browser-compat-data/pull/30478))
+- `css.types.image.paint.additional_parameters` ([#30478](https://github.com/mdn/browser-compat-data/pull/30478))
+- `css.types.param.url` ([#30478](https://github.com/mdn/browser-compat-data/pull/30478))
+- `css.types.param.url_fragments` ([#30478](https://github.com/mdn/browser-compat-data/pull/30478))
+
+### Additions
+
+- `api.CSSMediaRule.matches` ([#30488](https://github.com/mdn/browser-compat-data/pull/30488))
+- `api.CSSSupportsRule.matches` ([#30488](https://github.com/mdn/browser-compat-data/pull/30488))
+- `api.IntersectionObserver.IntersectionObserver.options_trackVisibility_parameter` ([#30466](https://github.com/mdn/browser-compat-data/pull/30466))
+- `api.NotRestoredReasonDetails.reason.unload-listener` ([#30473](https://github.com/mdn/browser-compat-data/pull/30473))
+- `api.NotRestoredReasonDetails.reason.websocket` ([#30473](https://github.com/mdn/browser-compat-data/pull/30473))
+- `api.SubtleCrypto.decapsulateBits` ([#30433](https://github.com/mdn/browser-compat-data/pull/30433))
+- `api.SubtleCrypto.decapsulateKey` ([#30433](https://github.com/mdn/browser-compat-data/pull/30433))
+- `api.SubtleCrypto.encapsulateBits` ([#30433](https://github.com/mdn/browser-compat-data/pull/30433))
+- `api.SubtleCrypto.encapsulateKey` ([#30433](https://github.com/mdn/browser-compat-data/pull/30433))
+- `api.SVGGraphicsElement.getBBox.options_parameter` ([#30457](https://github.com/mdn/browser-compat-data/pull/30457))
+- `api.SVGGraphicsElement.getBBox.options_parameter.options_clipped_parameter` ([#30457](https://github.com/mdn/browser-compat-data/pull/30457))
+- `api.SVGGraphicsElement.getBBox.options_parameter.options_fill_parameter` ([#30457](https://github.com/mdn/browser-compat-data/pull/30457))
+- `api.SVGGraphicsElement.getBBox.options_parameter.options_markers_parameter` ([#30457](https://github.com/mdn/browser-compat-data/pull/30457))
+- `api.SVGGraphicsElement.getBBox.options_parameter.options_stroke_parameter` ([#30457](https://github.com/mdn/browser-compat-data/pull/30457))
+- `browsers.edge.releases.156` ([#30476](https://github.com/mdn/browser-compat-data/pull/30476))
+- `browsers.firefox_android.releases.159` ([#30525](https://github.com/mdn/browser-compat-data/pull/30525))
+- `browsers.firefox.releases.159` ([#30525](https://github.com/mdn/browser-compat-data/pull/30525))
+- `browsers.nodejs.releases.18.15.0` ([#30545](https://github.com/mdn/browser-compat-data/pull/30545))
+- `browsers.nodejs.releases.18.3.0` ([#30545](https://github.com/mdn/browser-compat-data/pull/30545))
+- `browsers.nodejs.releases.18.4.0` ([#30545](https://github.com/mdn/browser-compat-data/pull/30545))
+- `css.at-rules.supports.named-feature.anchor-position-follows-transforms` ([#30464](https://github.com/mdn/browser-compat-data/pull/30464))
+- `css.at-rules.supports.named-feature.single-axis-scroll-container` ([#30464](https://github.com/mdn/browser-compat-data/pull/30464))
+- `css.properties.background-blend-mode.color` ([#30438](https://github.com/mdn/browser-compat-data/pull/30438))
+- `css.properties.background-blend-mode.color-burn` ([#30438](https://github.com/mdn/browser-compat-data/pull/30438))
+- `css.properties.background-blend-mode.color-dodge` ([#30438](https://github.com/mdn/browser-compat-data/pull/30438))
+- `css.properties.background-blend-mode.darken` ([#30438](https://github.com/mdn/browser-compat-data/pull/30438))
+- `css.properties.background-blend-mode.difference` ([#30438](https://github.com/mdn/browser-compat-data/pull/30438))
+- `css.properties.background-blend-mode.exclusion` ([#30438](https://github.com/mdn/browser-compat-data/pull/30438))
+- `css.properties.background-blend-mode.hard-light` ([#30438](https://github.com/mdn/browser-compat-data/pull/30438))
+- `css.properties.background-blend-mode.hue` ([#30438](https://github.com/mdn/browser-compat-data/pull/30438))
+- `css.properties.background-blend-mode.lighten` ([#30438](https://github.com/mdn/browser-compat-data/pull/30438))
+- `css.properties.background-blend-mode.luminosity` ([#30438](https://github.com/mdn/browser-compat-data/pull/30438))
+- `css.properties.background-blend-mode.multiply` ([#30438](https://github.com/mdn/browser-compat-data/pull/30438))
+- `css.properties.background-blend-mode.normal` ([#30438](https://github.com/mdn/browser-compat-data/pull/30438))
+- `css.properties.background-blend-mode.overlay` ([#30438](https://github.com/mdn/browser-compat-data/pull/30438))
+- `css.properties.background-blend-mode.saturation` ([#30438](https://github.com/mdn/browser-compat-data/pull/30438))
+- `css.properties.background-blend-mode.screen` ([#30438](https://github.com/mdn/browser-compat-data/pull/30438))
+- `css.properties.background-blend-mode.soft-light` ([#30438](https://github.com/mdn/browser-compat-data/pull/30438))
+- `css.properties.text-decoration-skip-spaces` ([#30479](https://github.com/mdn/browser-compat-data/pull/30479))
+- `css.properties.text-decoration-skip-spaces.all` ([#30479](https://github.com/mdn/browser-compat-data/pull/30479))
+- `css.properties.text-decoration-skip-spaces.end` ([#30479](https://github.com/mdn/browser-compat-data/pull/30479))
+- `css.properties.text-decoration-skip-spaces.none` ([#30479](https://github.com/mdn/browser-compat-data/pull/30479))
+- `css.properties.text-decoration-skip-spaces.start` ([#30479](https://github.com/mdn/browser-compat-data/pull/30479))
+- `css.properties.white-space.discard-after` ([#30435](https://github.com/mdn/browser-compat-data/pull/30435))
+- `css.properties.white-space.discard-before` ([#30435](https://github.com/mdn/browser-compat-data/pull/30435))
+- `css.properties.white-space.discard-inner` ([#30435](https://github.com/mdn/browser-compat-data/pull/30435))
+- `css.properties.white-space.none` ([#30435](https://github.com/mdn/browser-compat-data/pull/30435))
+- `http.headers.Permissions-Policy.unload` ([#30522](https://github.com/mdn/browser-compat-data/pull/30522))
+- `javascript.builtins.String.trimLeft` ([#30520](https://github.com/mdn/browser-compat-data/pull/30520))
+- `javascript.builtins.String.trimRight` ([#30520](https://github.com/mdn/browser-compat-data/pull/30520))
+- `javascript.operators.import.defer` ([#30514](https://github.com/mdn/browser-compat-data/pull/30514))
+- `javascript.operators.import.import_source` ([#30514](https://github.com/mdn/browser-compat-data/pull/30514))
+- `webdriver.bidi.browsingContext.captureScreenshot.imageSize_parameter` ([#30558](https://github.com/mdn/browser-compat-data/pull/30558))
+
+### Statistics
+
+- 19 contributors have changed 134 files with 2,337 additions and 1,336 deletions in 57 commits ([`v8.1.1...v8.1.2`](https://github.com/mdn/browser-compat-data/compare/v8.1.1...v8.1.2))
+- 20,543 total features
+- 1,274 total contributors
+- 5,751 total stargazers
+
+## [v8.1.1](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.1)
+
+September 10, 2026
+
+### Removals
+
+- `api.HTMLMediaElement.seekToNextFrame` ([#30414](https://github.com/mdn/browser-compat-data/pull/30414))
+- `api.TrustedParserOptions` ([#30463](https://github.com/mdn/browser-compat-data/pull/30463))
+- `api.TrustedParserOptions.runScripts` ([#30463](https://github.com/mdn/browser-compat-data/pull/30463))
+- `api.TrustedParserOptions.sanitizer` ([#30463](https://github.com/mdn/browser-compat-data/pull/30463))
+
+### Additions
+
+- `api.PerformanceContainerTiming.toJSON` ([#30451](https://github.com/mdn/browser-compat-data/pull/30451))
+- `api.Selection.addRange.multiple_ranges` ([#30230](https://github.com/mdn/browser-compat-data/pull/30230))
+- `api.TrustedHTMLParserOptions` ([#30463](https://github.com/mdn/browser-compat-data/pull/30463))
+- `api.TrustedHTMLParserOptions.runScripts` ([#30463](https://github.com/mdn/browser-compat-data/pull/30463))
+- `api.TrustedHTMLParserOptions.sanitizer` ([#30463](https://github.com/mdn/browser-compat-data/pull/30463))
+- `browsers.bun.releases.1.4.1` ([#30445](https://github.com/mdn/browser-compat-data/pull/30445))
+- `browsers.bun.releases.1.4.2` ([#30445](https://github.com/mdn/browser-compat-data/pull/30445))
+- `browsers.chrome_android.releases.156` ([#30445](https://github.com/mdn/browser-compat-data/pull/30445))
+- `browsers.chrome.releases.156` ([#30445](https://github.com/mdn/browser-compat-data/pull/30445))
+- `browsers.samsunginternet_android.releases.30.0` ([#30436](https://github.com/mdn/browser-compat-data/pull/30436))
+- `browsers.webview_android.releases.156` ([#30445](https://github.com/mdn/browser-compat-data/pull/30445))
+- `css.properties.line-clamp.height-based_clamping` ([#30418](https://github.com/mdn/browser-compat-data/pull/30418))
+- `css.properties.zoom.is_animatable` ([#30358](https://github.com/mdn/browser-compat-data/pull/30358))
+- `javascript.statements.import.defer` ([#30425](https://github.com/mdn/browser-compat-data/pull/30425))
+- `mathml.elements.a.hreflang` ([#30454](https://github.com/mdn/browser-compat-data/pull/30454))
+- `mathml.elements.a.target` ([#30454](https://github.com/mdn/browser-compat-data/pull/30454))
+- `mathml.elements.a.type` ([#30454](https://github.com/mdn/browser-compat-data/pull/30454))
+
+### Statistics
+
+- 12 contributors have changed 48 files with 833 additions and 209 deletions in 35 commits ([`v8.1.0...v8.1.1`](https://github.com/mdn/browser-compat-data/compare/v8.1.0...v8.1.1))
+- 20,517 total features
+- 1,270 total contributors
+- 5,743 total stargazers
+
 ## [v8.1.0](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.0)
 
 September 3, 2026

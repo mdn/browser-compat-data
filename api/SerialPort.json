@@ -3,7 +3,7 @@
     "SerialPort": {
       "__compat": {
         "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort",
-        "spec_url": "https://wicg.github.io/serial/#dom-serialport",
+        "spec_url": "https://serial.spec.whatwg.org/#dom-serialport",
         "tags": [
           "web-features:serial"
         ],
@@ -11,11 +11,17 @@
           "chrome": {
             "version_added": "89"
           },
-          "chrome_android": {
-            "version_added": "138",
-            "partial_implementation": true,
-            "notes": "Serial ports are only available if they're provided by Bluetooth RFCOMM serial port emulation."
-          },
+          "chrome_android": [
+            {
+              "version_added": "148"
+            },
+            {
+              "version_added": "138",
+              "version_removed": "147",
+              "partial_implementation": true,
+              "notes": "Serial ports are only available if they're provided by Bluetooth RFCOMM serial port emulation."
+            }
+          ],
           "edge": "mirror",
           "firefox": {
             "version_added": "151"
@@ -46,7 +52,7 @@
       "close": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/close",
-          "spec_url": "https://wicg.github.io/serial/#dom-serialport-close",
+          "spec_url": "https://serial.spec.whatwg.org/#dom-serialport-close",
           "tags": [
             "web-features:serial"
           ],
@@ -90,8 +96,8 @@
           "description": "`connect` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/connect_event",
           "spec_url": [
-            "https://wicg.github.io/serial/#dfn-connect",
-            "https://wicg.github.io/serial/#dom-serialport-onconnect"
+            "https://serial.spec.whatwg.org/#dfn-connect",
+            "https://serial.spec.whatwg.org/#dom-serialport-onconnect"
           ],
           "tags": [
             "web-features:serial"
@@ -134,8 +140,8 @@
           "__compat": {
             "description": "Bluetooth RFCOMM serial ports dispatch `connect` events",
             "spec_url": [
-              "https://wicg.github.io/serial/#dfn-connect",
-              "https://wicg.github.io/serial/#dom-serialport-onconnect"
+              "https://serial.spec.whatwg.org/#dfn-connect",
+              "https://serial.spec.whatwg.org/#dom-serialport-onconnect"
             ],
             "tags": [
               "web-features:serial"
@@ -177,7 +183,7 @@
       "connected": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/connected",
-          "spec_url": "https://wicg.github.io/serial/#dom-serialport-connected",
+          "spec_url": "https://serial.spec.whatwg.org/#dom-serialport-connected",
           "tags": [
             "web-features:serial"
           ],
@@ -221,8 +227,8 @@
           "description": "`disconnect` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/disconnect_event",
           "spec_url": [
-            "https://wicg.github.io/serial/#dfn-disconnect",
-            "https://wicg.github.io/serial/#dom-serialport-ondisconnect"
+            "https://serial.spec.whatwg.org/#dfn-disconnect",
+            "https://serial.spec.whatwg.org/#dom-serialport-ondisconnect"
           ],
           "tags": [
             "web-features:serial"
@@ -265,8 +271,8 @@
           "__compat": {
             "description": "Bluetooth RFCOMM serial ports dispatch `disconnect` events",
             "spec_url": [
-              "https://wicg.github.io/serial/#dfn-disconnect",
-              "https://wicg.github.io/serial/#dom-serialport-ondisconnect"
+              "https://serial.spec.whatwg.org/#dfn-disconnect",
+              "https://serial.spec.whatwg.org/#dom-serialport-ondisconnect"
             ],
             "tags": [
               "web-features:serial"
@@ -308,7 +314,7 @@
       "forget": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/forget",
-          "spec_url": "https://wicg.github.io/serial/#dom-serialport-forget",
+          "spec_url": "https://serial.spec.whatwg.org/#dom-serialport-forget",
           "tags": [
             "web-features:serial"
           ],
@@ -350,7 +356,7 @@
       "getInfo": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/getInfo",
-          "spec_url": "https://wicg.github.io/serial/#dom-serialport-getinfo",
+          "spec_url": "https://serial.spec.whatwg.org/#dom-serialport-getinfo",
           "tags": [
             "web-features:serial"
           ],
@@ -391,7 +397,7 @@
         "bluetoothServiceClassId": {
           "__compat": {
             "description": "`bluetoothServiceClassId` return value property",
-            "spec_url": "https://wicg.github.io/serial/#dom-serialportinfo-bluetoothserviceclassid",
+            "spec_url": "https://serial.spec.whatwg.org/#dom-serialportinfo-bluetoothserviceclassid",
             "tags": [
               "web-features:serial"
             ],
@@ -432,7 +438,7 @@
       "getSignals": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/getSignals",
-          "spec_url": "https://wicg.github.io/serial/#dom-serialport-getsignals",
+          "spec_url": "https://serial.spec.whatwg.org/#dom-serialport-getsignals",
           "tags": [
             "web-features:serial"
           ],
@@ -474,7 +480,7 @@
       "open": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/open",
-          "spec_url": "https://wicg.github.io/serial/#dom-serialport-open",
+          "spec_url": "https://serial.spec.whatwg.org/#dom-serialport-open",
           "tags": [
             "web-features:serial"
           ],
@@ -516,7 +522,7 @@
       "readable": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/readable",
-          "spec_url": "https://wicg.github.io/serial/#dom-serialport-readable",
+          "spec_url": "https://serial.spec.whatwg.org/#dom-serialport-readable",
           "tags": [
             "web-features:serial"
           ],
@@ -558,7 +564,7 @@
       "setSignals": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/setSignals",
-          "spec_url": "https://wicg.github.io/serial/#dom-serialport-setsignals",
+          "spec_url": "https://serial.spec.whatwg.org/#dom-serialport-setsignals",
           "tags": [
             "web-features:serial"
           ],
@@ -600,7 +606,7 @@
       "writable": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SerialPort/writable",
-          "spec_url": "https://wicg.github.io/serial/#dom-serialport-writable",
+          "spec_url": "https://serial.spec.whatwg.org/#dom-serialport-writable",
           "tags": [
             "web-features:serial"
           ],
