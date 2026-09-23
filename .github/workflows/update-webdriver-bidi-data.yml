@@ -44,6 +44,7 @@ jobs:
           rm -rf webdriver/bidi
           curl -L -o webdriver/bidi.json "${{ secrets.WEBDRIVER_BIDI_UPDATE_URL }}"
           npm run split -- webdriver/bidi.json
+          npm run tag-web-features
           git add webdriver/bidi
           npx lefthook run pre-commit
 
