@@ -81,7 +81,11 @@
               },
               "safari_ios": {
                 "version_added": "1",
-                "notes": "Does not support `audio/*` MIME type. See [bug 242110](https://webkit.org/b/242110)."
+                "partial_implementation": true,
+                "notes": [
+                  "Does not support `audio/*` MIME type. See [bug 242110](https://webkit.org/b/242110).",
+                  "Ignores extensions that aren't supported by iOS (see [bug 279606](https://webkit.org/b/279606)). If no extension is supported, no file can be selected."
+                ]
               },
               "samsunginternet_android": "mirror",
               "webview_android": "mirror",
