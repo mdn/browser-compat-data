@@ -42,11 +42,7 @@ jobs:
         run: npm ci
 
       - name: Update tags
-        id: update
-        run: |
-          echo "RESULT<<EOF" >> "$GITHUB_OUTPUT"
-          npm run tag-web-features .. >> "$GITHUB_OUTPUT"
-          echo "EOF" >> "$GITHUB_OUTPUT"
+        run: npm run lint:fix -- --only=web_features
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
@@ -61,6 +57,5 @@ jobs:
           add-paths: "*.json"
           title: "Update web-features tags"
           body: |
-            The output of the `tag-web-features` script is:
-            ${{ steps.update.outputs.RESULT }}
+            Update BCD tags to match the installed `web-features` package.
           draft: false
