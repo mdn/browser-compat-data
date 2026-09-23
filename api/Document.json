@@ -772,23 +772,24 @@
           "support": {
             "chrome": {
               "version_added": "141",
-              "partial_implementation": true,
               "notes": [
-                "Fully supported on Windows and Linux, no support on ChromeOS.",
-                "Method exposed on macOS, but notifications are not reliably spoken."
+                "On macOS, an announcement may not be spoken if another accessibility event fires at the same time; VoiceOver announces the competing event instead. This is a VoiceOver limitation and affects other browsers on macOS in the same way. See [mdn/browser-compat-data#29610](https://github.com/mdn/browser-compat-data/issues/29610).",
+                "On ChromeOS, the method is exposed but announcements are never spoken."
               ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "150"
+              "version_added": "150",
+              "notes": "On macOS, an announcement may not be spoken if another accessibility event fires at the same time; VoiceOver announces the competing event instead. This is a VoiceOver limitation and affects other browsers on macOS in the same way. See [mdn/browser-compat-data#29610](https://github.com/mdn/browser-compat-data/issues/29610)."
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "27",
+              "notes": "On macOS, an announcement may not be spoken if another accessibility event fires at the same time; VoiceOver announces the competing event instead. This is a VoiceOver limitation and affects other browsers on macOS in the same way. See [mdn/browser-compat-data#29610](https://github.com/mdn/browser-compat-data/issues/29610)."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -979,7 +980,8 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "126"
+              "version_added": "126",
+              "version_removed": "153"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -2174,7 +2176,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "preview"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -2354,7 +2356,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "preview"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -2939,15 +2941,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "150",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "dom.scoped-custom-element-registries.enabled",
-                  "value_to_set": "true"
-                }
-              ],
-              "impl_url": "https://bugzil.la/2018900"
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -6299,7 +6293,8 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://webkit.org/b/303808"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

@@ -105,7 +105,10 @@
             "firefox": [
               {
                 "version_added": "116",
-                "notes": "`enumerateDevices()` enumerates both input and output devices. Previously only input devices were returned."
+                "notes": [
+                  "`enumerateDevices()` enumerates both input and output devices. Previously only input devices were returned.",
+                  "The promise returned by `enumerateDevices()` only resolves when the document has focus. See [bug 1818588](https://bugzil.la/1818588)."
+                ]
               },
               {
                 "version_added": "39",
