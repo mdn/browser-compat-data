@@ -139,25 +139,25 @@
         },
         "alpha": {
           "__compat": {
-            "spec_url": "https://drafts.csswg.org/css-masking/#valdef-mask-type-alpha",
+            "spec_url": "https://drafts.csswg.org/css-masking/#valdef-mask-mode-alpha",
             "tags": [
-              "web-features:mask-type"
+              "web-features:masks"
             ],
             "support": {
               "chrome": {
-                "version_added": "24"
+                "version_added": "120"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "35"
+                "version_added": "53"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "7"
+                "version_added": "15.4"
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -448,25 +448,27 @@
         },
         "luminance": {
           "__compat": {
-            "spec_url": "https://drafts.csswg.org/css-masking/#valdef-mask-type-luminance",
+            "spec_url": "https://drafts.csswg.org/css-masking/#valdef-mask-mode-luminance",
             "tags": [
-              "web-features:mask-type"
+              "web-features:masks"
             ],
             "support": {
               "chrome": {
-                "version_added": "24"
+                "version_added": "120"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "35"
+                "version_added": "53"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "7"
+                "version_added": "15.4",
+                "partial_implementation": true,
+                "notes": "`mask-mode: luminance` does not always have the expected effect. See https://webkit.org/b/282530."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
