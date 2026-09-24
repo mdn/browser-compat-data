@@ -23,10 +23,20 @@ const fixLinks = async (filename, actual) => {
     expected = expected.replace(/\r/g, '');
   }
 
-  for (const error of errors) {
-    if (error.expected) {
-      expected = expected.replace(error.actual, error.expected);
+  const replacements = errors.flatMap((error) => {
+    if (!error.expected) {
+      return [];
     }
+
+    return [{ start: error.errorIndex, ...error }];
+  });
+
+  replacements.sort((a, b) => b.start - a.start);
+  for (const replacement of replacements) {
+    expected =
+      expected.slice(0, replacement.start) +
+      replacement.expected +
+      expected.slice(replacement.start + replacement.actual.length);
   }
 
   return expected;
