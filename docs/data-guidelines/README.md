@@ -126,6 +126,29 @@ However, this guideline does not apply to features where the browser's expected 
 
 This guideline was proposed in [#6906](https://github.com/mdn/browser-compat-data/issues/6906).
 
+## Randomized trials imply status quo ante support values
+
+> [!NOTE]
+> This guideline was added in September 2026 and feedback is welcome.
+> If you have questions or concerns about how to apply it, [file an issue](https://github.com/mdn/browser-compat-data/issues/new/choose).
+
+If a feature's support is subject to randomized selection into experimental and control groups (as in A/B testing), then assume a browser's behavior is _not_ enrolled in an experiment.
+When in doubt, assume the behavior of the previous release continues to apply.
+
+If possible, opt out of experiments when testing a feature.
+For example, turn off [Nimbus](https://experimenter.info/) rollouts in Firefox.
+
+For new features gradually rolled out, update data with the expectation that the browser will _not_ be enrolled into the feature-enabled group until the very last cohort.
+For example, if an API is only exposed to a fraction of users of version 123, then exposed to all users in version 124, set `{ "version_added": "124" }` to show when the rollout applied to all users.
+
+For deprecated features being gradually removed, update data with the expectation that the browser will _not_ be enrolled into the feature-removed group until the very last cohort.
+For example, if an API is exposed normally except to a fraction of users, don't set a `version_removed` until the release where the removal is complete.
+
+This guideline covers exceptional situations where a feature is subject to a fractional experiment, rollout, or rollback.
+This guideline does not cover situations where the availability of a feature is limited by region or hardware or when a feature is immediately enabled or disabled for all users of a given release.
+
+This guideline was proposed in [#30486](https://github.com/mdn/browser-compat-data/pull/30486) and inspired by [#30433](https://github.com/mdn/browser-compat-data/pull/30433).
+
 ## Removal of irrelevant features
 
 Features can be removed from BCD if it is considered irrelevant. A feature can be considered irrelevant if any of these conditions are met:
