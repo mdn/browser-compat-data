@@ -13,6 +13,7 @@ import { compile } from 'json-schema-to-typescript';
 import { spawn } from '../utils/index.js';
 
 const root = new URL('..', import.meta.url);
+const typesDir = new URL('types/', root);
 
 const opts = {
   bannerComment:
@@ -127,7 +128,7 @@ export const typeCheck = (directory) => {
  */
 export const compilePublicTypes = (
   source = 'schemas/public.schema.json',
-  destination = 'types/public.d.ts',
+  destination = new URL('public.d.ts', typesDir),
 ) => compileTypesFromSchemas(source, destination);
 
 /**
@@ -135,7 +136,9 @@ export const compilePublicTypes = (
  * @param {URL | string} [destination] - Output destination
  * @returns {Promise<void>}
  */
-export const compileInternalTypes = (destination = 'types/internal.d.ts') =>
+export const compileInternalTypes = (
+  destination = new URL('internal.d.ts', typesDir),
+) =>
   compileTypesFromSchemas(
     ['schemas/browsers.schema.json', 'schemas/compat-data.schema.json'],
     destination,
@@ -160,7 +163,7 @@ if (esMain(import.meta)) {
     cleanupObsolete(),
   ]);
   // types/index.d.ts imports both declarations, so check only once all exist.
-  typeCheck('types/');
+  typeCheck(typesDir);
 }
 
 /* c8 ignore stop */
