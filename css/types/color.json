@@ -1774,23 +1774,17 @@
               "deprecated": false
             }
           },
-          "accentcolor_accentcolortext": {
+          "accentcolor": {
             "__compat": {
-              "description": "`AccentColor` and `AccentColorText`",
-              "spec_url": [
-                "https://drafts.csswg.org/css-color/#valdef-color-accentcolor",
-                "https://drafts.csswg.org/css-color/#valdef-color-accentcolortext"
-              ],
-              "tags": [
-                "web-features:system-color"
-              ],
+              "description": "`AccentColor`",
+              "spec_url": "https://drafts.csswg.org/css-color/#valdef-color-accentcolor",
               "support": {
                 "chrome": {
-                  "version_added": "150",
-                  "notes": "To mitigate fingerprinting risks, a fixed value is returned for `AccentColor` and `AccentColorText` unless used within installed web apps on a user's initial profile."
+                  "version_added": "149",
+                  "notes": "`AccentColor` is a fixed value (blue) unless used within installed web apps on a user's initial profile. See [bug 40229450](https://crbug.com/40229450)."
                 },
                 "chrome_android": {
-                  "version_added": "150"
+                  "version_added": false
                 },
                 "edge": "mirror",
                 "firefox": {
@@ -1802,7 +1796,43 @@
                 "opera_android": "mirror",
                 "safari": {
                   "version_added": "16.5",
-                  "notes": "Only supports a fallback: The native color when accent colour (in macOS' appearance panel) is set to 'multicolour'. On iOS falls back to the blue accent colour"
+                  "notes": "`AccentColor` is a fixed value (blue)."
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": false,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "accentcolortext": {
+            "__compat": {
+              "description": "`AccentColorText`",
+              "spec_url": "https://drafts.csswg.org/css-color/#valdef-color-accentcolortext",
+              "support": {
+                "chrome": {
+                  "version_added": "149",
+                  "notes": "`AccentColorText` is a fixed value (white), unless used within installed web apps on a user's initial profile. See [bug 40229450](https://crbug.com/40229450)."
+                },
+                "chrome_android": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "103"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": "16.5",
+                  "notes": "`AccentColorText` is a fixed value (black)."
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
