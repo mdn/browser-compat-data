@@ -1,18 +1,19 @@
 name: Update web-features tags
 
 on:
-  workflow_dispatch:
-
-  schedule:
-    - cron: "30 4 * * 1-5"
+  pull_request_target:
+    branches:
+      - main
+    paths:
+      - "package-lock.json"
 
 permissions:
   contents: write
-  pull-requests: write
+  pull-requests: read
 
 jobs:
   update-web-features:
-    if: github.repository == 'mdn/browser-compat-data'
+    if: github.repository == 'mdn/browser-compat-data' && github.event.pull_request.user.login == 'dependabot[bot]' && startsWith(github.head_ref, 'dependabot/npm_and_yarn/web-features-')
     name: Update web-features-tags
     runs-on: ubuntu-latest
 
@@ -22,7 +23,8 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.GH_TOKEN }}
-          persist-credentials: false
+          persist-credentials: true
+          allow-unsafe-pr-checkout: true
 
       - name: Setup Node.js
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
@@ -30,7 +32,7 @@ jobs:
           node-version-file: ".nvmrc"
           package-manager-cache: false
 
-      - name: "Setup git"
+      - name: Setup git
         run: |
           git config user.email 108879845+mdn-bot@users.noreply.github.com
           git config user.name mdn-bot
@@ -42,20 +44,14 @@ jobs:
         run: npm ci
 
       - name: Update tags
-        run: npm run lint:fix -- --only=web_features
-
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
-        with:
-          token: ${{ secrets.GH_TOKEN }} # need the rights to create and edit PRs
-          commit-message: Update web-features tags
-          author: mdn-bot <108879845+mdn-bot@users.noreply.github.com>
-          committer: mdn-bot <108879845+mdn-bot@users.noreply.github.com>
-          signoff: false
-          branch: web-features-tags
-          delete-branch: true
-          add-paths: "*.json"
-          title: "Update web-features tags"
-          body: |
-            Update BCD tags to match the installed `web-features` package.
-          draft: false
+        env:
+          REF: ${{ github.head_ref }}
+        run: |
+          npm run lint:fix -- --only=web_features
+          npm run lint -- --only=web_features --fail-on-warnings
+          if git diff --exit-code; then
+            echo "No changes."
+          else
+            git commit -m 'chore: update web-features tags' .
+            git push origin "$REF"
+          fi
