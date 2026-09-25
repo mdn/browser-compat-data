@@ -1,5 +1,30 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.1.4](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.4)
+
+September 25, 2026
+
+### Additions
+
+- `api.USB.requestDevice.options_exclusionFilters_parameter` ([#30667](https://github.com/mdn/browser-compat-data/pull/30667))
+- `browsers.edge.releases.157` ([#30669](https://github.com/mdn/browser-compat-data/pull/30669))
+- `css.properties.continue.-webkit-legacy` ([#30658](https://github.com/mdn/browser-compat-data/pull/30658))
+- `css.properties.hyphenate-limit-lines` ([#30658](https://github.com/mdn/browser-compat-data/pull/30658))
+- `css.properties.hyphenate-limit-lines.no-limit` ([#30658](https://github.com/mdn/browser-compat-data/pull/30658))
+- `css.properties.size` ([#30658](https://github.com/mdn/browser-compat-data/pull/30658))
+- `css.properties.size.auto` ([#30658](https://github.com/mdn/browser-compat-data/pull/30658))
+- `css.properties.size.fit-content` ([#30658](https://github.com/mdn/browser-compat-data/pull/30658))
+- `css.properties.size.max-content` ([#30658](https://github.com/mdn/browser-compat-data/pull/30658))
+- `css.properties.size.min-content` ([#30658](https://github.com/mdn/browser-compat-data/pull/30658))
+- `css.properties.size.stretch` ([#30658](https://github.com/mdn/browser-compat-data/pull/30658))
+
+### Statistics
+
+- 7 contributors have changed 22 files with 423 additions and 32 deletions in 10 commits ([`v8.1.3...v8.1.4`](https://github.com/mdn/browser-compat-data/compare/v8.1.3...v8.1.4))
+- 20,657 total features
+- 1,274 total contributors
+- 5,755 total stargazers
+
 ## [v8.1.3](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.3)
 
 September 24, 2026
