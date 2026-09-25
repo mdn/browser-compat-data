@@ -3,6 +3,7 @@
 
 /* c8 ignore start */
 
+import { randomUUID } from 'node:crypto';
 import fs, { readFile, rm } from 'node:fs/promises';
 import { basename, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -100,7 +101,17 @@ const compileTypesFromSchemas = async (sources, destination) => {
   const file =
     destination instanceof URL ? destination : new URL(destination, root);
 
-  await fs.writeFile(file, ts);
+  // Publish complete declarations atomically for concurrent type checks.
+  const temporaryFile = new URL(
+    `.${basename(file.pathname)}.${randomUUID()}.tmp`,
+    file,
+  );
+  try {
+    await fs.writeFile(temporaryFile, ts, { flag: 'wx' });
+    await fs.rename(temporaryFile, file);
+  } finally {
+    await rm(temporaryFile, { force: true });
+  }
 
   // Type-check using the tsconfig.json colocated with the destination. The
   // root tsconfig excludes build/, so types/ and build/ each have their own
