@@ -3,7 +3,6 @@
 
 /* c8 ignore start */
 
-import { randomUUID } from 'node:crypto';
 import fs, { readFile, rm } from 'node:fs/promises';
 import { basename, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -101,22 +100,19 @@ const compileTypesFromSchemas = async (sources, destination) => {
   const file =
     destination instanceof URL ? destination : new URL(destination, root);
 
-  // Publish complete declarations atomically for concurrent type checks.
-  const temporaryFile = new URL(
-    `.${basename(file.pathname)}.${randomUUID()}.tmp`,
-    file,
-  );
-  try {
-    await fs.writeFile(temporaryFile, ts, { flag: 'wx' });
-    await fs.rename(temporaryFile, file);
-  } finally {
-    await rm(temporaryFile, { force: true });
-  }
+  await fs.writeFile(file, ts);
+};
 
-  // Type-check using the tsconfig.json colocated with the destination. The
-  // root tsconfig excludes build/, so types/ and build/ each have their own
-  // tsconfig that overrides skipLibCheck for the generated declarations.
-  const projectDir = new URL('.', file);
+/**
+ * Type-check generated declarations using the tsconfig.json in a directory
+ *
+ * The root tsconfig excludes build/, so types/ and build/ each have their own
+ * tsconfig that overrides skipLibCheck for the generated declarations.
+ * @param {URL | string} directory - Directory containing the declarations
+ */
+export const typeCheck = (directory) => {
+  const projectDir =
+    directory instanceof URL ? directory : new URL(directory, root);
   spawn('tsc', ['-p', fileURLToPath(projectDir)], {
     cwd: fileURLToPath(root),
     stdio: 'inherit',
@@ -163,6 +159,8 @@ if (esMain(import.meta)) {
     compilePublicTypes(),
     cleanupObsolete(),
   ]);
+  // types/index.d.ts imports both declarations, so check only once all exist.
+  typeCheck('types/');
 }
 
 /* c8 ignore stop */
