@@ -307,6 +307,7 @@
             "chrome": {
               "version_added": "76",
               "notes": [
+                "Only accepts a single `ClipboardItem`. Passing an array with more than one `ClipboardItem` rejects with `NotAllowedError`.",
                 "From version 107, this method must be called within user gesture event handlers, or the user must grant the `clipboard-write` permission.",
                 "Before version 107, the user must grant the `clipboard-write` permission."
               ]
@@ -319,7 +320,8 @@
               "version_added": "127",
               "notes": [
                 "This method must be called within user gesture event handlers.",
-                "Web extensions with the `clipboardWrite` permission in their manifest can write data without a user gesture."
+                "Web extensions with the `clipboardWrite` permission in their manifest can write data without a user gesture.",
+                "Only accepts a single `ClipboardItem`. Passing an array with more than one `ClipboardItem` rejects with `NotAllowedError`."
               ]
             },
             "firefox_android": "mirror",
