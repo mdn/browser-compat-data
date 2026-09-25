@@ -45,6 +45,31 @@ describe('fix -> notes', () => {
       input: "Use <a href='https://example.com'><code>foo()</code></a>.",
       expected: 'Use [`foo()`](https://example.com).',
     },
+    {
+      name: 'leaves a <code> tag containing a backtick alone',
+      input: 'Use <code>a`b</code> instead.',
+      expected: 'Use <code>a`b</code> instead.',
+    },
+    {
+      name: 'leaves adjacent <code> tags alone',
+      input: 'Use <code>a</code><code>b</code> instead.',
+      expected: 'Use <code>a</code><code>b</code> instead.',
+    },
+    {
+      name: 'leaves link text containing a closing bracket alone',
+      input: 'See <a href="https://example.com">a]b</a>.',
+      expected: 'See <a href="https://example.com">a]b</a>.',
+    },
+    {
+      name: 'leaves an href containing whitespace alone',
+      input: 'See <a href="https://example.com/a b">x</a>.',
+      expected: 'See <a href="https://example.com/a b">x</a>.',
+    },
+    {
+      name: 'fixes the convertible notes in an array and leaves the rest',
+      input: ['Use <code>foo</code> instead.', 'Use <code>a`b</code> instead.'],
+      expected: ['Use `foo` instead.', 'Use <code>a`b</code> instead.'],
+    },
   ];
 
   for (const { name, input, expected } of cases) {
@@ -124,6 +149,17 @@ describe('fix -> notes', () => {
         filename: '/browsers/chrome.json',
         data: { browsers: { chrome: { notes: 'Use <code>foo</code>.' } } },
         expected: { browsers: { chrome: { notes: 'Use <code>foo</code>.' } } },
+      },
+      {
+        name: 'leaves a note the conversion would change the rendering of',
+        data: withSupportStatements({
+          version_added: '80',
+          notes: 'Use <code>a`b</code> instead.',
+        }),
+        expected: withSupportStatements({
+          version_added: '80',
+          notes: 'Use <code>a`b</code> instead.',
+        }),
       },
     ];
 
