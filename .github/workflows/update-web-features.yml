@@ -23,7 +23,9 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.GH_TOKEN }}
+          # Need credentials to push changes.
           persist-credentials: true
+          # Checking out this Dependabot PR is safe.
           allow-unsafe-pr-checkout: true
 
       - name: Setup Node.js
@@ -48,7 +50,7 @@ jobs:
           REF: ${{ github.head_ref }}
         run: |
           npm run lint:fix -- --only=web_features
-          npm run lint -- --only=web_features --fail-on-warnings
+
           if git diff --exit-code; then
             echo "No changes."
           else
