@@ -13,6 +13,7 @@ import { compile } from 'json-schema-to-typescript';
 import { spawn } from '../utils/index.js';
 
 const root = new URL('..', import.meta.url);
+const typesDir = new URL('types/', root);
 
 const opts = {
   bannerComment:
@@ -101,11 +102,18 @@ const compileTypesFromSchemas = async (sources, destination) => {
     destination instanceof URL ? destination : new URL(destination, root);
 
   await fs.writeFile(file, ts);
+};
 
-  // Type-check using the tsconfig.json colocated with the destination. The
-  // root tsconfig excludes build/, so types/ and build/ each have their own
-  // tsconfig that overrides skipLibCheck for the generated declarations.
-  const projectDir = new URL('.', file);
+/**
+ * Type-check generated declarations using the tsconfig.json in a directory
+ *
+ * The root tsconfig excludes build/, so types/ and build/ each have their own
+ * tsconfig that overrides skipLibCheck for the generated declarations.
+ * @param {URL | string} directory - Directory containing the declarations
+ */
+export const typeCheck = (directory) => {
+  const projectDir =
+    directory instanceof URL ? directory : new URL(directory, root);
   spawn('tsc', ['-p', fileURLToPath(projectDir)], {
     cwd: fileURLToPath(root),
     stdio: 'inherit',
@@ -120,7 +128,7 @@ const compileTypesFromSchemas = async (sources, destination) => {
  */
 export const compilePublicTypes = (
   source = 'schemas/public.schema.json',
-  destination = 'types/public.d.ts',
+  destination = new URL('public.d.ts', typesDir),
 ) => compileTypesFromSchemas(source, destination);
 
 /**
@@ -128,7 +136,9 @@ export const compilePublicTypes = (
  * @param {URL | string} [destination] - Output destination
  * @returns {Promise<void>}
  */
-export const compileInternalTypes = (destination = 'types/internal.d.ts') =>
+export const compileInternalTypes = (
+  destination = new URL('internal.d.ts', typesDir),
+) =>
   compileTypesFromSchemas(
     ['schemas/browsers.schema.json', 'schemas/compat-data.schema.json'],
     destination,
@@ -152,6 +162,8 @@ if (esMain(import.meta)) {
     compilePublicTypes(),
     cleanupObsolete(),
   ]);
+  // types/index.d.ts imports both declarations, so check only once all exist.
+  typeCheck(typesDir);
 }
 
 /* c8 ignore stop */
