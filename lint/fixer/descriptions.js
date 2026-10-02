@@ -35,6 +35,10 @@ const fixDescriptions = (filename, actual) => {
         continue;
       }
 
+      if (error.fixable === false) {
+        continue;
+      }
+
       if (error.expected) {
         feature.compat.description = error.expected;
       } else if (error.expected === '') {
