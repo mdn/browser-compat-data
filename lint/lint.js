@@ -20,11 +20,19 @@ import { Linters } from './utils.js';
 
 /** @import {Stats} from 'node:fs' */
 /** @import {BrowserName, InternalCompatData} from '../types/index.js' */
-/** @import {LinterMessage, LinterMessageLevel, LinterPath} from './types.js' */
+/** @import {Linter, LinterMessage, LinterMessageLevel, LinterPath} from './types.js' */
 
 const dirname = fileURLToPath(new URL('.', import.meta.url));
 
-const linters = new Linters(Object.values(linterModules));
+const availableLinters = Object.values(linterModules);
+/**
+ * Convert a linter name to a CLI option.
+ * @param {Linter} linter The linter
+ * @returns {string} The option name
+ */
+const linterOption = (linter) =>
+  linter.name.toLowerCase().replace(/[^a-z0-9]+/g, '_');
+let linters = new Linters(availableLinters);
 
 /**
  * Normalize and categorize file path
@@ -113,10 +121,16 @@ const loadAndCheckFiles = async (...files) => {
  * @param {string[]} [files] The file(s) and/or folder(s) to test. Leave undefined for everything.
  * @param {object} [options] Linting options
  * @param {boolean} [options.failOnWarnings] Treat warnings as errors (non-zero exit code)
+ * @param {string[]} [options.only] Run only the named linters
  * @returns {Promise<boolean>} Whether there were any errors
  */
 const main = async (files = dataFolders, options = {}) => {
-  const { failOnWarnings = false } = options;
+  const { failOnWarnings = false, only = [] } = options;
+  linters = new Linters(
+    only.length
+      ? availableLinters.filter((linter) => only.includes(linterOption(linter)))
+      : availableLinters,
+  );
 
   let hasErrors = false;
 
@@ -282,10 +296,16 @@ if (esMain(import.meta)) {
       description: 'Treat warnings as errors (non-zero exit code)',
       default: false,
     })
+    .option('only', {
+      array: true,
+      choices: availableLinters.map(linterOption),
+      description: 'Run only the selected linters',
+      type: 'string',
+    })
     .parseSync();
 
-  const { files, failOnWarnings } = argv;
-  process.exit((await main(files, { failOnWarnings })) ? 1 : 0);
+  const { files, failOnWarnings, only } = argv;
+  process.exit((await main(files, { failOnWarnings, only })) ? 1 : 0);
 }
 
 export default main;
