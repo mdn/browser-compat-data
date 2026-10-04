@@ -42,13 +42,21 @@
               "web-features:dialog-closedby"
             ],
             "support": {
-              "chrome": {
-                "version_added": "134"
-              },
+              "chrome": [
+                {
+                  "version_added": "154"
+                },
+                {
+                  "version_added": "134",
+                  "version_removed": "154",
+                  "notes": "Before Chrome 154, on touch devices, tapping the backdrop to dismiss the dialog triggers a click on elements behind the backdrop. See [bug 425579196](https://crbug.com/425579196)."
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "141"
+                "version_added": "141",
+                "notes": "On touch devices, tapping the backdrop to dismiss the dialog triggers a click on elements behind the backdrop. See [bug 2022750](https://bugzil.la/2022750)."
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
