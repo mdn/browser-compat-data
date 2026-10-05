@@ -1,5 +1,47 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.1.4](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.4)
+
+October 1, 2026
+
+### Removals
+
+- `api.DocumentType.afterHTML` ([#30701](https://github.com/mdn/browser-compat-data/pull/30701))
+- `api.DocumentType.afterHTMLUnsafe` ([#30701](https://github.com/mdn/browser-compat-data/pull/30701))
+- `api.DocumentType.beforeHTML` ([#30701](https://github.com/mdn/browser-compat-data/pull/30701))
+- `api.DocumentType.beforeHTMLUnsafe` ([#30701](https://github.com/mdn/browser-compat-data/pull/30701))
+- `api.DocumentType.replaceWithHTML` ([#30701](https://github.com/mdn/browser-compat-data/pull/30701))
+- `api.DocumentType.replaceWithHTMLUnsafe` ([#30701](https://github.com/mdn/browser-compat-data/pull/30701))
+- `api.DocumentType.streamAfterHTML` ([#30701](https://github.com/mdn/browser-compat-data/pull/30701))
+- `api.DocumentType.streamAfterHTMLUnsafe` ([#30701](https://github.com/mdn/browser-compat-data/pull/30701))
+- `api.DocumentType.streamBeforeHTML` ([#30701](https://github.com/mdn/browser-compat-data/pull/30701))
+- `api.DocumentType.streamBeforeHTMLUnsafe` ([#30701](https://github.com/mdn/browser-compat-data/pull/30701))
+- `api.DocumentType.streamReplaceWithHTML` ([#30701](https://github.com/mdn/browser-compat-data/pull/30701))
+- `api.DocumentType.streamReplaceWithHTMLUnsafe` ([#30701](https://github.com/mdn/browser-compat-data/pull/30701))
+
+### Additions
+
+- `api.USB.requestDevice.options_exclusionFilters_parameter` ([#30667](https://github.com/mdn/browser-compat-data/pull/30667))
+- `browsers.edge.releases.157` ([#30669](https://github.com/mdn/browser-compat-data/pull/30669))
+- `browsers.firefox_android.releases.160` ([#30696](https://github.com/mdn/browser-compat-data/pull/30696))
+- `browsers.firefox.releases.160` ([#30696](https://github.com/mdn/browser-compat-data/pull/30696))
+- `css.properties.continue.-webkit-legacy` ([#30658](https://github.com/mdn/browser-compat-data/pull/30658))
+- `css.properties.hyphenate-limit-lines` ([#30658](https://github.com/mdn/browser-compat-data/pull/30658))
+- `css.properties.hyphenate-limit-lines.no-limit` ([#30658](https://github.com/mdn/browser-compat-data/pull/30658))
+- `css.properties.size` ([#30658](https://github.com/mdn/browser-compat-data/pull/30658))
+- `css.properties.size.auto` ([#30658](https://github.com/mdn/browser-compat-data/pull/30658))
+- `css.properties.size.fit-content` ([#30658](https://github.com/mdn/browser-compat-data/pull/30658))
+- `css.properties.size.max-content` ([#30658](https://github.com/mdn/browser-compat-data/pull/30658))
+- `css.properties.size.min-content` ([#30658](https://github.com/mdn/browser-compat-data/pull/30658))
+- `css.properties.size.stretch` ([#30658](https://github.com/mdn/browser-compat-data/pull/30658))
+
+### Statistics
+
+- 12 contributors have changed 47 files with 562 additions and 587 deletions in 26 commits ([`v8.1.3...v8.1.4`](https://github.com/mdn/browser-compat-data/compare/v8.1.3...v8.1.4))
+- 20,645 total features
+- 1,274 total contributors
+- 5,760 total stargazers
+
 ## [v8.1.3](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.3)
 
 September 24, 2026

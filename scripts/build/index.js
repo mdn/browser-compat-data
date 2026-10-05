@@ -11,7 +11,7 @@ import stringify from 'fast-json-stable-stringify';
 import { compareVersions } from 'compare-versions';
 import { marked } from 'marked';
 
-import { compilePublicTypes } from '../generate-types.js';
+import { compilePublicTypes, typeCheck } from '../generate-types.js';
 import schema from '../../schemas/public.schema.json' with { type: 'json' };
 import { createAjv } from '../lib/ajv.js';
 import { walk } from '../../utils/index.js';
@@ -327,6 +327,8 @@ export * from "./types.js";`;
 
   await compilePublicTypes('schemas/public.schema.json', destTypes);
   logWrite(destTypes, 'data types');
+
+  typeCheck(targetdir);
 };
 
 /**
