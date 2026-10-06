@@ -11,7 +11,7 @@ Use labels to classify issues and pull requests, indicate the next action, and f
 | `needs research`       | Manual research is needed to identify browser support, usually when BCD collector tests do not apply.                                                              |
 | `needs collector test` | A custom BCD collector test is needed to determine support and keep the compatibility data maintained automatically.                                               |
 | `needs browser bug`    | The behavior needs to be reported in the browser's bug tracker so its evolution can be tracked. Check for an existing bug before filing a new report.              |
-| `needs expert input`   | Input from an expert, such as a browser implementer, is needed.                                                                                                    |
+| `needs expert input`   | Input from an expert, such as a browser implementer or spec author, is needed.                                                                                                    |
 | `meeting agenda`       | An issue or pull request needs discussion in the weekly BCD project meeting.                                                                                       |
 | `early features`       | Support for a feature is exclusively behind a flag or preference.                                                                                                  |
 
