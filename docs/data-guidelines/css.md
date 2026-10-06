@@ -19,16 +19,16 @@ Different contexts or layout modes can mean different support data depending on 
 Use a well-known context subfeature to represent this information.
 Here is the list of well-known contexts:
 
-| Key                         | Description                               |
-|-----------------------------|-------------------------------------------|
-| `context_block`             | Supported in Block Layout                 |
-| `context_flex`              | Supported in Flex Layout                  |
-| `context_grid`              | Supported in Grid Layout                  |
-| `context_multicol`          | Supported in Multi-column Layout          |
-| `context_paged`             | Supported in Paged Media                  |
-| `context_position_absolute` | Supported for absolutely-positioned boxes |
+| Key                         | Description                              |
+| --------------------------- | ---------------------------------------- |
+| `context_block`             | Supported in block layout                |
+| `context_flex`              | Supported in flex layout                 |
+| `context_grid`              | Supported in grid layout                 |
+| `context_multicol`          | Supported in multi-column layout         |
+| `context_paged`             | Supported in paged media                 |
+| `context_position_absolute` | Supported in absolutely-positioned boxes |
 
-For example, the `align-self` CSS property has Grid Layout mode support, recorded like this:
+For example, the `align-self` CSS property has grid layout mode support, recorded like this:
 
 ```json
 {
@@ -38,7 +38,7 @@ For example, the `align-self` CSS property has Grid Layout mode support, recorde
         "__compat": {},
         "context_grid": {
           "__compat": {
-            "description": "Supported in Grid Layout",
+            "description": "Supported in grid layout",
             "support": {}
           }
         }
@@ -63,3 +63,5 @@ For example, the `align-self` property has this data structure:
   - `context_position_absolute`
   - (... other values)
   - `stretch` (the original stretch implementation)
+
+This guideline was originally proposed in [#30613](https://github.com/mdn/browser-compat-data/pull/30613/).
