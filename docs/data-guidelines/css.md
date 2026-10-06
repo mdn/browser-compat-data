@@ -16,7 +16,17 @@ This guideline was proposed in [#30417](https://github.com/mdn/browser-compat-da
 
 Different contexts or layout modes can mean different support data depending on how the CSS features are used.
 
-Use a sub-feature like `context_grid` with description text `Supported in Grid Layout` to record data about a feature's support in Grid Layout mode.
+Use a well-known context subfeature to represent this information.
+Here is the list of well-known contexts:
+
+| Key                         | Description                               |
+|-----------------------------|-------------------------------------------|
+| `context_block`             | Supported in Block Layout                 |
+| `context_flex`              | Supported in Flex Layout                  |
+| `context_grid`              | Supported in Grid Layout                  |
+| `context_multicol`          | Supported in Multi-column Layout          |
+| `context_paged`             | Supported in Paged Media                  |
+| `context_position_absolute` | Supported for absolutely-positioned boxes |
 
 For example, the `align-self` CSS property has Grid Layout mode support, recorded like this:
 
@@ -42,14 +52,14 @@ As it is the case with any CSS property, its values are recorded at the top-leve
 
 If a CSS property value is already supported but a new context adds new meaning to CSS property value, the value is not recorded separately either. The information about the new context support can be obtained from the `context_grid` key.
 
-However, if the contextual value support is different to that context's support, record a sub-feature like `stretch_in_flex` inside the `context_flex` feature.
+However, if the contextual value support is different to that context's support (for example, the `stretch` value's support data is different for flex context than it is the grid context), record a sub-feature like `stretch_in_flex` inside the `context_flex` feature.
 
 For example, the `align-self` property has this data structure:
 
-- css.properties.align-self
-  - context_flex
-    - stretch_in_flex (different to the original stretch as well as different to context_flex)
-  - context_grid
-  - context_position_absolute
+- `css.properties.align-self`
+  - `context_flex`
+    - `stretch_in_flex` (different to the original stretch as well as different to `context_flex`)
+  - `context_grid`
+  - `context_position_absolute`
   - (... other values)
-  - stretch (the original stretch implementation)
+  - `stretch` (the original stretch implementation)
