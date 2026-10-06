@@ -118,7 +118,7 @@ Not everything is enforced or validated by the schema. A few things to pay atten
 
 - Feature identifiers (the data namespaces, like `css.properties.background`) should make sense and are spelled correctly.
 - Nesting of feature identifiers should make sense.
-- Notes use correct grammar and spelling. They should be complete sentences ending with a period.
+- Notes use correct grammar and spelling. They should be complete sentences ending with a period. See also [Writing maintainable notes](./data-guidelines/README.md#writing-maintainable-notes).
 
 ### Optional: Generating data using the mdn-bcd-collector project
 
