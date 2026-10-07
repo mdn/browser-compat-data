@@ -1,12 +1,25 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+const specialOrder = [
+  'secure_context_required',
+  'worker_support',
+  'context_block',
+  'context_flex',
+  'context_grid',
+  'context_multicol',
+  'context_position_absolute',
+];
+
+const specialOrderMap = new Map(
+  specialOrder.map((name, index) => [name, index]),
+);
+
 /**
  * Sort a list of features based upon a specific order:
  * 1. '__compat'
  * 2. Alphanumerical features starting with an uppercase letter (without symbols aside from - or _)
- * 3. 'secure_context_required'
- * 4. 'worker_support'
+ * 3. Special order features (see above)
  * 5. Alphanumerical features starting with a lowercase letter (without symbols aside from - or _)
  * 6. All other features
  * @param {string} a - The name of the first object to perform comparison with
@@ -26,6 +39,9 @@ const compareFeatures = (a, b) => {
   const wordA = /^[a-zA-Z](\w|-)*$/.test(a);
   const wordB = /^[a-zA-Z](\w|-)*$/.test(b);
 
+  const specialA = specialOrderMap.get(a);
+  const specialB = specialOrderMap.get(b);
+
   if (wordA || wordB) {
     if (capsWordA || capsWordB) {
       if (capsWordA && capsWordB) {
@@ -39,18 +55,11 @@ const compareFeatures = (a, b) => {
       }
     }
 
-    if (a == 'secure_context_required') {
-      return -1;
-    }
-    if (b == 'secure_context_required') {
-      return 1;
-    }
-
-    if (a == 'worker_support') {
-      return -1;
-    }
-    if (b == 'worker_support') {
-      return 1;
+    if (specialA !== undefined || specialB !== undefined) {
+      if (specialA !== undefined && specialB !== undefined) {
+        return specialA - specialB;
+      }
+      return specialA !== undefined ? -1 : 1;
     }
 
     if (wordA && wordB) {
