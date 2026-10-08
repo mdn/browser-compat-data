@@ -37,10 +37,16 @@
             "safari": {
               "version_added": "6"
             },
-            "safari_ios": {
-              "version_added": "7",
-              "notes": "Safari on iOS does not support indeterminate progress bars (they are rendered like 0%-completed progress bars)."
-            },
+            "safari_ios": [
+              {
+                "version_added": "8"
+              },
+              {
+                "version_added": "7",
+                "version_removed": "8",
+                "notes": "Indeterminate progress bars are rendered like 0%-completed progress bars."
+              }
+            ],
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
             "webview_ios": "mirror"
