@@ -6,42 +6,64 @@ import assert from 'node:assert/strict';
 
 import query from './query.js';
 
+/** @import {InternalCompatStatement, InternalDataType, InternalIdentifier} from '../types/index.js' */
+
+/**
+ * Create a feature with a minimal compat statement.
+ * @param {Record<string, InternalIdentifier>} [children] Subfeatures by name
+ * @param {Partial<InternalCompatStatement>} [compat] Extra compat properties
+ * @returns {InternalIdentifier} The feature
+ */
+const feature = (children = {}, compat = {}) =>
+  /** @type {InternalIdentifier} */ ({
+    __compat: {
+      support: {},
+      status: { experimental: false, standard_track: true, deprecated: false },
+      ...compat,
+    },
+    ...children,
+  });
+
+/** @type {InternalDataType} */
+const data = {
+  api: {
+    Thing: feature({
+      child: feature({}, { mdn_url: 'https://example.test/docs/Thing/child' }),
+    }),
+  },
+};
+
 describe('query()', () => {
-  describe('should throw on non-existent features', () => {
-    assert.throws(() => query('nonExistentNameSpace'), ReferenceError);
-    assert.throws(() => query('api.NonExistentFeature'), ReferenceError);
+  it('throws on non-existent features', () => {
+    assert.throws(() => query('nonExistentNameSpace', data), ReferenceError);
+    assert.throws(() => query('api.NonExistentFeature', data), ReferenceError);
     assert.throws(
-      () => query('api.NonExistentFeature.subFeature'),
+      () => query('api.NonExistentFeature.child', data),
       ReferenceError,
     );
-    assert.throws(() => query('foo.'), ReferenceError);
+    assert.throws(() => query('api.', data), ReferenceError);
   });
 
-  it('should return the expected point in the tree (namespace)', () => {
-    const obj = query('css');
+  it('returns the expected namespace', () => {
+    const obj = query('api', data);
 
     assert.ok(!('__compat' in obj));
-    assert.ok('properties' in obj);
-    assert.ok('at-rules' in obj);
+    assert.ok('Thing' in obj);
   });
 
-  it('should return the expected point in the tree (feature)', () => {
-    const obj = query('api.HTMLAnchorElement.href');
+  it('returns the expected feature', () => {
+    const obj = query('api.Thing.child', data);
 
     assert.ok('__compat' in obj && obj.__compat);
     assert.ok('support' in obj.__compat);
     assert.ok('status' in obj.__compat);
-    assert.equal(
-      'https://developer.mozilla.org/docs/Web/API/HTMLAnchorElement/href',
-      obj.__compat.mdn_url,
-    );
+    assert.equal('https://example.test/docs/Thing/child', obj.__compat.mdn_url);
   });
 
-  it('should return the expected point in the tree (feature with children)', () => {
-    const obj = query('api.HTMLAnchorElement');
+  it('returns a feature with children', () => {
+    const obj = query('api.Thing', data);
 
     assert.ok('__compat' in obj);
-    assert.ok('charset' in obj);
-    assert.ok('href' in obj);
+    assert.ok('child' in obj);
   });
 });
