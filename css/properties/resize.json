@@ -98,7 +98,8 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": "5",
-                "notes": "`resize` doesn't have any effect on [`<iframe>`](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/iframe). See [bug 680823](https://bugzil.la/680823))"
+                "partial_implementation": true,
+                "notes": "`resize` doesn't have any effect on replaced elements or [`<iframe>`](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/iframe). See [bug 1280920](https://bugzil.la/1280920) and [bug 680823](https://bugzil.la/680823)."
               },
               "firefox_android": {
                 "version_added": "5",
@@ -192,6 +193,46 @@
             }
           }
         },
+        "iframe": {
+          "__compat": {
+            "description": "`resize` applies to [`<iframe>`](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/iframe) elements regardless of the `overflow` value.",
+            "spec_url": "https://drafts.csswg.org/css-ui/#resize",
+            "tags": [
+              "web-features:resize"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "4"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "notes": "See [bug 680823](https://bugzil.la/680823)."
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "4"
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": "37"
+              },
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "inline": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-ui/#resize",
@@ -255,6 +296,46 @@
               },
               "samsunginternet_android": "mirror",
               "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "replaced_elements": {
+          "__compat": {
+            "description": "`resize` applies to replaced elements representing images or videos, such as `<img>`, `<video>`, `<picture>`, `<svg>`, `<object>`, or `<canvas>`, regardless of the `overflow` value.",
+            "spec_url": "https://drafts.csswg.org/css-ui/#resize",
+            "tags": [
+              "web-features:resize"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "4"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false,
+                "notes": "See [bug 1280920](https://bugzil.la/1280920)."
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "4"
+              },
+              "safari_ios": {
+                "version_added": false
+              },
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": "37"
+              },
               "webview_ios": "mirror"
             },
             "status": {
