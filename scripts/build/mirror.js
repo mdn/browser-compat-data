@@ -7,7 +7,7 @@ import bcd from '../../index.js';
 
 /**
  * @import { BrowserName, InternalSimpleSupportStatement, InternalSupportStatement } from '../../types/index.js'
- * @import { InternalSupportBlock } from '../../types/index.js'
+ * @import { InternalBrowsers, InternalSupportBlock } from '../../types/index.js'
  */
 
 /**
@@ -68,11 +68,16 @@ const matchingSafariVersions = new Map([
  * Convert a version number to the matching version of the target browser
  * @param {BrowserName} targetBrowser The browser to mirror to
  * @param {string} sourceVersion The version from the source browser
+ * @param {InternalBrowsers} [browsers] Browser data, all of BCD by default
  * @returns {string | false} The matching browser version, or `false` if no match is found
  * @throws {Error} An error when the downstream browser has no upstream
  */
-export const getMatchingBrowserVersion = (targetBrowser, sourceVersion) => {
-  const browserData = bcd.browsers[targetBrowser];
+export const getMatchingBrowserVersion = (
+  targetBrowser,
+  sourceVersion,
+  browsers = bcd.browsers,
+) => {
+  const browserData = browsers[targetBrowser];
   const range = sourceVersion.includes('≤');
 
   /* c8 ignore start */
@@ -106,7 +111,7 @@ export const getMatchingBrowserVersion = (targetBrowser, sourceVersion) => {
   releaseKeys.sort(compareVersions);
 
   const sourceRelease =
-    bcd.browsers[browserData.upstream].releases[sourceVersion.replace('≤', '')];
+    browsers[browserData.upstream].releases[sourceVersion.replace('≤', '')];
 
   if (!sourceRelease) {
     throw new Error(
@@ -213,9 +218,15 @@ const copyStatement = (data) => {
  * @param {InternalSupportStatement} sourceData The data to mirror from
  * @param {BrowserName} sourceBrowser The source browser
  * @param {BrowserName} destination The destination browser
+ * @param {InternalBrowsers} [browsers] Browser data, all of BCD by default
  * @returns {InternalSupportStatement} The mirrored support statement
  */
-export const bumpSupport = (sourceData, sourceBrowser, destination) => {
+export const bumpSupport = (
+  sourceData,
+  sourceBrowser,
+  destination,
+  browsers = bcd.browsers,
+) => {
   if (sourceData === 'mirror') {
     // Callers must resolve "mirror" before calling bumpSupport.
     throw new Error(
@@ -232,7 +243,7 @@ export const bumpSupport = (sourceData, sourceBrowser, destination) => {
       .map(
         (data) =>
           /** @type {InternalSimpleSupportStatement} */ (
-            bumpSupport(data, sourceBrowser, destination)
+            bumpSupport(data, sourceBrowser, destination, browsers)
           ),
       )
       .filter((item) => item.version_added);
@@ -254,8 +265,8 @@ export const bumpSupport = (sourceData, sourceBrowser, destination) => {
   const newData = copyStatement(sourceData);
 
   if (
-    bcd.browsers[sourceBrowser].type === 'desktop' &&
-    bcd.browsers[destination].type === 'mobile' &&
+    browsers[sourceBrowser].type === 'desktop' &&
+    browsers[destination].type === 'mobile' &&
     sourceData.partial_implementation
   ) {
     const notes = Array.isArray(sourceData.notes)
@@ -277,7 +288,7 @@ export const bumpSupport = (sourceData, sourceBrowser, destination) => {
     }
   }
 
-  if (!bcd.browsers[destination].accepts_flags && newData.flags) {
+  if (!browsers[destination].accepts_flags && newData.flags) {
     // Remove flag data if the target browser doesn't accept flags
     return { version_added: false };
   }
@@ -286,6 +297,7 @@ export const bumpSupport = (sourceData, sourceBrowser, destination) => {
     newData.version_added = getMatchingBrowserVersion(
       destination,
       sourceData.version_added,
+      browsers,
     );
   }
 
@@ -301,6 +313,7 @@ export const bumpSupport = (sourceData, sourceBrowser, destination) => {
     const versionRemoved = getMatchingBrowserVersion(
       destination,
       sourceData.version_removed,
+      browsers,
     );
 
     if (typeof versionRemoved === 'string') {
@@ -321,12 +334,12 @@ export const bumpSupport = (sourceData, sourceBrowser, destination) => {
     const sourceBrowserName =
       sourceBrowser === 'chrome'
         ? '(Google )?Chrome'
-        : `(${bcd.browsers[sourceBrowser].name})`;
+        : `(${browsers[sourceBrowser].name})`;
     const newNotes = updateNotes(
       sourceData.notes,
       new RegExp(`\\b${sourceBrowserName}\\b`, 'g'),
-      bcd.browsers[destination].name,
-      (v) => getMatchingBrowserVersion(destination, v),
+      browsers[destination].name,
+      (v) => getMatchingBrowserVersion(destination, v, browsers),
     );
     if (newNotes) {
       newData.notes = newNotes;
@@ -342,11 +355,12 @@ export const bumpSupport = (sourceData, sourceBrowser, destination) => {
  * Perform mirroring for the target browser
  * @param {BrowserName} destination The browser to mirror to
  * @param {InternalSupportBlock} data The data to mirror with
+ * @param {InternalBrowsers} [browsers] Browser data, all of BCD by default
  * @returns {InternalSupportStatement} The mirrored data
  */
-const mirrorSupport = (destination, data) => {
+const mirrorSupport = (destination, data, browsers = bcd.browsers) => {
   /** @type {BrowserName | undefined} */
-  const upstream = bcd.browsers[destination].upstream;
+  const upstream = browsers[destination].upstream;
   if (!upstream) {
     throw new Error(
       `Upstream is not defined for ${destination}, cannot mirror!`,
@@ -363,10 +377,10 @@ const mirrorSupport = (destination, data) => {
 
   if (upstreamData === 'mirror') {
     // Perform mirroring upstream if needed
-    upstreamData = mirrorSupport(upstream, data);
+    upstreamData = mirrorSupport(upstream, data, browsers);
   }
 
-  return bumpSupport(upstreamData, upstream, destination);
+  return bumpSupport(upstreamData, upstream, destination, browsers);
 };
 
 export default mirrorSupport;

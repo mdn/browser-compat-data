@@ -73,14 +73,15 @@ const mdToHtml = (markdown) =>
 /**
  * Apply mirroring to a feature
  * @param {WalkOutput} feature The BCD to perform mirroring on
+ * @param {typeof mirrorSupport} [mirror] The mirror function to use
  * @returns {void}
  */
-export const applyMirroring = (feature) => {
+export const applyMirroring = (feature, mirror = mirrorSupport) => {
   for (const [browser, supportData] of Object.entries(
     /** @type {InternalSupportStatement} */ (feature.compat.support),
   )) {
     if (supportData === 'mirror') {
-      /** @type {*} */ (feature.data).__compat.support[browser] = mirrorSupport(
+      /** @type {*} */ (feature.data).__compat.support[browser] = mirror(
         /** @type {BrowserName} */ (browser),
         feature.compat.support,
       );
