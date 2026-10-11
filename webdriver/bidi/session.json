@@ -5,9 +5,12 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/session",
           "spec_url": "https://w3c.github.io/webdriver-bidi/#module-session",
+          "tags": [
+            "web-features:webdriver-bidi"
+          ],
           "support": {
             "chrome": {
-              "version_added": "126"
+              "version_added": "120"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -37,9 +40,12 @@
             "description": "`session.end` command",
             "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/session/end",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-session-end",
+            "tags": [
+              "web-features:webdriver-bidi"
+            ],
             "support": {
               "chrome": {
-                "version_added": false
+                "version_added": "120"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -60,7 +66,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -71,6 +77,9 @@
             "description": "`session.new` command",
             "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/session/new",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-session-new",
+            "tags": [
+              "web-features:webdriver-bidi"
+            ],
             "support": {
               "chrome": {
                 "version_added": "126"
@@ -79,11 +88,7 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": "92",
-                "partial_implementation": true,
-                "notes": [
-                  "Before Firefox 116, capability matching was not supported.",
-                  "Multiple session creation is not supported ([bug 1862018](https://bugzil.la/1862018))."
-                ]
+                "notes": "Before Firefox 116, capability matching was not supported."
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -108,6 +113,9 @@
             "__compat": {
               "description": "`capabilities` parameter",
               "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-sessionnewparameters-capabilities",
+              "tags": [
+                "web-features:webdriver-bidi"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "126"
@@ -139,6 +147,9 @@
               "__compat": {
                 "description": "Supports capability matching during session creation, allowing clients to request specific browser features or configurations.",
                 "spec_url": "https://w3c.github.io/webdriver/#dfn-matching-capabilities",
+                "tags": [
+                  "web-features:webdriver-bidi"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "139"
@@ -167,6 +178,37 @@
                 }
               }
             }
+          },
+          "multiple_sessions": {
+            "__compat": {
+              "description": "Run multiple sessions in parallel",
+              "support": {
+                "chrome": {
+                  "version_added": "126"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": false,
+                "deprecated": false
+              }
+            }
           }
         },
         "status": {
@@ -174,6 +216,9 @@
             "description": "`session.status` command",
             "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/session/status",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-session-status",
+            "tags": [
+              "web-features:webdriver-bidi"
+            ],
             "support": {
               "chrome": {
                 "version_added": "126"
@@ -208,6 +253,9 @@
             "description": "`session.subscribe` command",
             "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/session/subscribe",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-session-subscribe",
+            "tags": [
+              "web-features:webdriver-bidi"
+            ],
             "support": {
               "chrome": {
                 "version_added": "126"
@@ -239,7 +287,10 @@
           "contexts_parameter": {
             "__compat": {
               "description": "`contexts` parameter",
-              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-sessionsubscriptionrequest-contexts",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-sessionsubscribeparameters-contexts",
+              "tags": [
+                "web-features:webdriver-bidi"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "126"
@@ -271,7 +322,10 @@
           "events_parameter": {
             "__compat": {
               "description": "`events` parameter",
-              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-sessionsubscriptionrequest-events",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-sessionsubscribeparameters-events",
+              "tags": [
+                "web-features:webdriver-bidi"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "126"
@@ -303,7 +357,10 @@
           "userContexts_parameter": {
             "__compat": {
               "description": "`userContexts` parameter",
-              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-sessionsubscriptionrequest-usercontexts",
+              "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-sessionsubscribeparameters-usercontexts",
+              "tags": [
+                "web-features:webdriver-bidi"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "126"
@@ -338,6 +395,9 @@
             "description": "`session.unsubscribe` command",
             "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/session/unsubscribe",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-session-unsubscribe",
+            "tags": [
+              "web-features:webdriver-bidi"
+            ],
             "support": {
               "chrome": {
                 "version_added": "126"
@@ -369,6 +429,9 @@
           "contexts_parameter": {
             "__compat": {
               "description": "`contexts` parameter",
+              "tags": [
+                "web-features:webdriver-bidi"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "126"
@@ -401,6 +464,9 @@
             "__compat": {
               "description": "`events` parameter",
               "spec_url": "https://w3c.github.io/webdriver-bidi/#cddl-key-sessionunsubscribebyattributesrequest-events",
+              "tags": [
+                "web-features:webdriver-bidi"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "126"
@@ -432,6 +498,9 @@
           "subscriptions_parameter": {
             "__compat": {
               "description": "`subscriptions` parameter",
+              "tags": [
+                "web-features:webdriver-bidi"
+              ],
               "support": {
                 "chrome": {
                   "version_added": "126"

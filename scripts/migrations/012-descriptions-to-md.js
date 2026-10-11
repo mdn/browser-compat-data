@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement} from '../../types/index.js' */
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -17,8 +17,8 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 /**
  * Check to see if the key is __compat and convert descriptions to markdown
  * @param {string} key The key in the object
- * @param {CompatStatement} value The value of the key
- * @returns {CompatStatement} The new value with descriptions converted to markdown
+ * @param {InternalCompatStatement} value The value of the key
+ * @returns {InternalCompatStatement} The new value with descriptions converted to markdown
  */
 export const doDescriptionsToMarkdown = (key, value) => {
   if (key === '__compat') {

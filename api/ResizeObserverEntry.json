@@ -168,9 +168,17 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "93"
-            },
+            "firefox": [
+              {
+                "version_added": "108"
+              },
+              {
+                "version_added": "93",
+                "version_removed": "108",
+                "partial_implementation": true,
+                "notes": "Returned incorrect values due to a subpixel snapping bug. See [bug 1774135](https://bugzil.la/1774135) and [bug 1792285](https://bugzil.la/1792285)."
+              }
+            ],
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",

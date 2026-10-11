@@ -1,7 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatData, BrowserName, Identifier, ReleaseStatement, SimpleSupportStatement} from '../../types/types.js' */
+/** @import {InternalCompatData, BrowserName, InternalIdentifier, InternalSimpleSupportStatement} from '../../types/index.js' */
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -18,7 +18,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 
 /**
  * Fix the experimental status throughout compatibility data
- * @param {CompatData | Identifier} bcd Parsed BCD object to be updated in place.
+ * @param {InternalCompatData | InternalIdentifier} bcd Parsed BCD object to be updated in place.
  * @returns {void}
  */
 export const fixExperimental = (bcd) => {
@@ -33,12 +33,12 @@ export const fixExperimental = (bcd) => {
     const browserSupport = new Set();
 
     for (const [browser, support] of Object.entries(compat.support)) {
-      if (!support) {
+      if (!support || support === 'mirror') {
         continue;
       }
 
       // Consider only the first part of an array statement.
-      /** @type {SimpleSupportStatement} */
+      /** @type {InternalSimpleSupportStatement} */
       const statement = Array.isArray(support) ? support[0] : support;
 
       // Ignore anything behind flag, prefix or alternative name
@@ -56,7 +56,7 @@ export const fixExperimental = (bcd) => {
 
     for (const browser of browserSupport) {
       const currentRelease = Object.values(browsers[browser].releases).find(
-        (/** @type {ReleaseStatement} */ r) => r.status === 'current',
+        (r) => r.status === 'current',
       );
       if (!currentRelease) {
         continue;

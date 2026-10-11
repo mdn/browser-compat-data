@@ -3,16 +3,16 @@
 
 /**
  * @typedef {object} Stats
- * @property {number} commits
- * @property {number} changed
- * @property {number} insertions
- * @property {number} deletions
- * @property {number} releaseContributors
- * @property {number} totalContributors
- * @property {number} features
- * @property {number} stars
- * @property {string} start
- * @property {string} end
+ * @property {number} commits The number of commits in the release
+ * @property {number} changed The number of changed files
+ * @property {number} insertions The number of inserted lines
+ * @property {number} deletions The number of deleted lines
+ * @property {number} releaseContributors The number of contributors to the release
+ * @property {number} totalContributors The total number of contributors
+ * @property {number} features The number of features
+ * @property {number} stars The number of repository stargazers
+ * @property {string} start The start date of the release period
+ * @property {string} end The end date of the release period
  */
 
 /**

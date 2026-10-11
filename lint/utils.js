@@ -4,7 +4,7 @@
 import { platform } from 'node:os';
 import { styleText } from 'node:util';
 
-/** @import {SimpleSupportStatement} from '../types/types.js' */
+/** @import {InternalSimpleSupportStatement} from '../types/index.js' */
 /** @import {Linter, LinterData, LinterMessage, LinterScope} from './types.js' */
 
 /** @type {Readonly<Record<string, string>>} */
@@ -30,6 +30,32 @@ export const IS_CI = process.env.CI?.toLowerCase() === 'true';
 export const IS_WINDOWS = platform() === 'win32';
 
 export const VALID_ELEMENTS = ['code', 'kbd', 'em', 'strong', 'a'];
+
+/**
+ * Replace <code> tags with backtick-quoted Markdown.
+ *
+ * Matches the canonical lowercase, attribute-less `<code>` form only; tags
+ * with attributes or different casing are left untouched (and would already be
+ * caught elsewhere as invalid HTML).
+ * @param {string} str The string to process
+ * @returns {string} The string with <code> tags replaced by backticks
+ */
+export const replaceCodeTagsWithBackticks = (str) =>
+  str.replace(/<code>([^<]*)<\/code>/g, '`$1`');
+
+/**
+ * Replace <a href> tags with Markdown links.
+ *
+ * Matches the canonical lowercase `<a href="…">` form with a single `href`
+ * attribute only; other casing or extra attributes are left untouched (and
+ * would already be caught elsewhere as invalid HTML). Only anchors whose text
+ * contains no further markup are converted, so run
+ * {@link replaceCodeTagsWithBackticks} first to unwrap any nested <code> tags.
+ * @param {string} str The string to process
+ * @returns {string} The string with <a href> tags replaced by Markdown links
+ */
+export const replaceLinkTagsWithMarkdown = (str) =>
+  str.replace(/<a href=(['"])([^'"]*)\1>([^<]*)<\/a>/g, '[$3]($2)');
 
 /**
  * Escapes common invisible characters.
@@ -264,7 +290,7 @@ export class Linters {
 
 /**
  * Returns the key for the group that this statement belongs to.
- * @param {SimpleSupportStatement} support The support statement.
+ * @param {InternalSimpleSupportStatement} support The support statement.
  * @returns {string} The key of the support statement group.
  */
 export const createStatementGroupKey = (support) => {

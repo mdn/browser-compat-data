@@ -88,7 +88,6 @@
         },
         "attributionsrc": {
           "__compat": {
-            "spec_url": "https://wicg.github.io/attribution-reporting-api/#element-attrdef-script-attributionsrc",
             "tags": [
               "web-features:attribution-reporting"
             ],
@@ -115,7 +114,7 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": true,
+              "standard_track": false,
               "deprecated": true
             }
           }
@@ -285,7 +284,7 @@
               "https://w3c.github.io/webappsec-subresource-integrity/#the-integrity-attribute"
             ],
             "tags": [
-              "web-features:script"
+              "web-features:subresource-integrity"
             ],
             "support": {
               "chrome": {
@@ -423,6 +422,7 @@
           },
           "no-referrer-when-downgrade": {
             "__compat": {
+              "spec_url": "https://w3c.github.io/webappsec-referrer-policy/#dom-referrerpolicy-no-referrer-when-downgrade",
               "tags": [
                 "web-features:referrer-policy"
               ],
@@ -457,6 +457,7 @@
           },
           "origin-when-cross-origin": {
             "__compat": {
+              "spec_url": "https://w3c.github.io/webappsec-referrer-policy/#dom-referrerpolicy-origin-when-cross-origin",
               "tags": [
                 "web-features:referrer-policy"
               ],
@@ -491,6 +492,7 @@
           },
           "unsafe-url": {
             "__compat": {
+              "spec_url": "https://w3c.github.io/webappsec-referrer-policy/#dom-referrerpolicy-unsafe-url",
               "tags": [
                 "web-features:referrer-policy"
               ],
@@ -672,6 +674,9 @@
               "__compat": {
                 "description": "Multiple import maps",
                 "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#:~:text=multiple%20import%20maps",
+                "tags": [
+                  "web-features:import-maps-multiple"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "133"
@@ -682,8 +687,8 @@
                     "version_added": "150",
                     "flags": [
                       {
-                        "name": "dom.multiple_import_maps.enabled",
                         "type": "preference",
+                        "name": "dom.multiple_import_maps.enabled",
                         "value_to_set": "true"
                       }
                     ],
@@ -712,6 +717,7 @@
           "module": {
             "__compat": {
               "description": "`type=\"module\"`",
+              "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#javascript-module-script",
               "tags": [
                 "web-features:js-modules"
               ],
@@ -751,6 +757,38 @@
                 "experimental": false,
                 "standard_track": true,
                 "deprecated": false
+              }
+            },
+            "http_errors_not_cached": {
+              "__compat": {
+                "description": "Loading is retriable (HTTP errors are not cached)",
+                "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#fetch-a-single-module-script",
+                "support": {
+                  "chrome": {
+                    "version_added": "156"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": "155"
+                  },
+                  "firefox_android": "mirror",
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": "preview"
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
+                },
+                "status": {
+                  "experimental": false,
+                  "standard_track": true,
+                  "deprecated": false
+                }
               }
             }
           },

@@ -2,15 +2,11 @@
  * See LICENSE file for more information. */
 
 import bcd from '../../index.js';
-const { browsers } = bcd;
 
 /** @import {Linter, LinterData, LinterMessageLevel} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {BrowserName, CompatStatement} from '../../types/types.js' */
+/** @import {BrowserName, InternalCompatStatement} from '../../types/index.js' */
 /** @import {InternalSupportBlock, InternalSupportStatement} from '../../types/index.js' */
-
-// Once a category has been stripped of unsupported features, remove it from this list
-const ignoredCategories = ['css'];
 
 /**
  * Check if feature has never been implemented
@@ -73,7 +69,7 @@ export const implementedAndRemoved = (support) => {
       }
 
       const releaseDateData =
-        browsers[browser].releases[d.version_removed.replace('≤', '')]
+        bcd.browsers[browser].releases[d.version_removed.replace('≤', '')]
           .release_date;
 
       // No browser release date
@@ -99,7 +95,7 @@ export const implementedAndRemoved = (support) => {
 /**
  * Process and test the data
  * @param {Logger} logger The logger to output errors to
- * @param {CompatStatement} data The data to test
+ * @param {InternalCompatStatement} data The data to test
  * @returns {void}
  */
 export const processData = (logger, data) => {
@@ -132,10 +128,11 @@ export default {
    * @param {Logger} logger The logger to output errors to
    * @param {LinterData} root The data to test
    */
-  check: (logger, { data, path: { category } }) => {
-    if (!ignoredCategories.includes(category)) {
-      processData(logger, /** @type {CompatStatement} */ (data));
-    }
+  check: (logger, { data }) => {
+    processData(logger, /** @type {InternalCompatStatement} */ (data));
   },
-  exceptions: ['html.elements.track.kind.descriptions'],
+  exceptions: [
+    'css.properties.display.contents.focusable_elements',
+    'html.elements.track.kind.descriptions',
+  ],
 };

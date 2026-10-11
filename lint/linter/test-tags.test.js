@@ -1,8 +1,9 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement} from '../../types/index.js' */
 
+import { describe, it, beforeEach } from 'node:test';
 import assert from 'node:assert/strict';
 
 import { Logger } from '../utils.js';
@@ -18,7 +19,7 @@ describe('test.check', () => {
   });
 
   it('should not log error when tags are not defined', async () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       tags: undefined,
       support: {},
@@ -33,7 +34,7 @@ describe('test.check', () => {
   });
 
   it('should not log error when tags are valid', async () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       tags: ['web-features:javascript'],
       support: {},
@@ -48,7 +49,7 @@ describe('test.check', () => {
   });
 
   it('should log error when tags do not have a namespace', async () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       tags: ['tag1'],
       support: {},
@@ -64,7 +65,7 @@ describe('test.check', () => {
   });
 
   it('should log error when tags do not use one of the allowed namespaces', async () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       tags: ['namespace3:tag1'],
       support: {},
@@ -80,7 +81,7 @@ describe('test.check', () => {
   });
 
   it('should log an error when an invalid web-feature ID is used', async () => {
-    /** @type {CompatStatement} */
+    /** @type {InternalCompatStatement} */
     const data = {
       tags: ['web-features:foo'],
       support: {},

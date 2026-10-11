@@ -1,21 +1,21 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatData} from '../../types/types.js' */
+/** @import {InternalBrowsers, InternalCompatData} from '../../types/index.js' */
 
 /**
  * @typedef {object} BunVersionsResponse
- * @property {string} $note
- * @property {Record<string, BunReleaseInfo>} releases
+ * @property {string} $note A note about the response
+ * @property {Record<string, BunReleaseInfo>} releases The releases keyed by version
  */
 
 /**
  * @typedef {object} BunReleaseInfo
- * @property {'current' | 'retired'} status
- * @property {string} release_date
- * @property {string} release_notes
- * @property {Record<string, string>} [versions]
- * @property {string} [revision]
+ * @property {'current' | 'retired'} status The status of the release
+ * @property {string} release_date The release date
+ * @property {string} release_notes The URL of the release notes
+ * @property {Record<string, string>} [versions] The bundled dependency versions
+ * @property {string} [revision] The revision of the release
  */
 
 import fs from 'node:fs/promises';
@@ -219,7 +219,7 @@ export const updateBunReleases = async (options) => {
     );
   }
 
-  /** @type {CompatData} */
+  /** @type {InternalCompatData} */
   const data = JSON.parse(fileText);
 
   let result = '';
@@ -287,7 +287,8 @@ export const updateBunReleases = async (options) => {
       rel.release_notes,
     );
 
-    const entry = data.browsers[browser].releases[rel.version];
+    const entry = /** @type {InternalBrowsers} */ (data.browsers)[browser]
+      .releases[rel.version];
 
     if (entry) {
       const { webkitRev } = await getBunInfoFromVersionData(rel);

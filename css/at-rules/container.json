@@ -145,6 +145,9 @@
           "__compat": {
             "description": "`<container-query>` is optional (allows name-only queries)",
             "spec_url": "https://drafts.csswg.org/css-conditional-5/#typedef-container-condition",
+            "tags": [
+              "web-features:container-name-queries"
+            ],
             "support": {
               "chrome": {
                 "version_added": "148",
@@ -361,15 +364,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "preview",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "layout.css.style-queries.enabled",
-                    "value_to_set": "true"
-                  }
-                ],
-                "impl_url": "https://bugzil.la/1795622"
+                "version_added": "151"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -404,7 +399,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "151"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -419,7 +414,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }

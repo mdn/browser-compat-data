@@ -11,39 +11,39 @@ import {
 } from './walkingUtils.js';
 import query from './query.js';
 
-/** @import {CompatData, CompatStatement, Identifier, BrowserStatement, ReleaseStatement} from '../types/types.js' */
-/** @import {DataType} from '../types/index.js' */
+/** @import {InternalCompatStatement, InternalBrowserStatement, InternalReleaseStatement, InternalIdentifier} from '../types/index.js' */
+/** @import {InternalDataType} from '../types/index.js' */
 
 /**
  * @typedef {object} BrowserReleaseWalkOutput
- * @property {string} path
- * @property {DataType} data
- * @property {BrowserStatement} browser
- * @property {ReleaseStatement} browserRelease
+ * @property {string} path The path of the current node
+ * @property {InternalDataType} data The data of the current node
+ * @property {InternalBrowserStatement} browser The browser statement of the current node
+ * @property {InternalReleaseStatement} browserRelease The release statement of the current node
  */
 
 /**
  * @typedef {object} LowLevelWalkOutput
- * @property {string} path
- * @property {DataType} data
- * @property {BrowserStatement} [browser]
- * @property {CompatStatement} [compat]
- * @property {ReleaseStatement} [browserRelease]
+ * @property {string} path The path of the current node
+ * @property {InternalDataType} data The data of the current node
+ * @property {InternalBrowserStatement} [browser] The browser statement of the current node
+ * @property {InternalCompatStatement} [compat] The compat statement of the current node
+ * @property {InternalReleaseStatement} [browserRelease] The release statement of the current node
  */
 
 /**
  * @typedef {object} WalkOutput
- * @property {string} path
- * @property {DataType} data
- * @property {CompatStatement} compat
+ * @property {string} path The path of the current node
+ * @property {InternalDataType} data The data of the current node
+ * @property {InternalCompatStatement} compat The compat statement of the current node
  */
 
 /**
  * Walk through the browser releases
- * @param {BrowserStatement} data The data to iterate
+ * @param {InternalBrowserStatement} data The data to iterate
  * @param {string} [path] The current path
  * @yields {BrowserReleaseWalkOutput} The release info
- * @returns {IterableIterator<BrowserReleaseWalkOutput>}
+ * @returns {IterableIterator<BrowserReleaseWalkOutput>} The browser release walk output
  */
 export function* browserReleaseWalk(data, path) {
   for (const [release, releaseData] of Object.entries(data.releases)) {
@@ -51,18 +51,18 @@ export function* browserReleaseWalk(data, path) {
       path: joinPath(path, 'releases', release),
       data,
       browser: data,
-      browserRelease: /** @type {ReleaseStatement} */ (releaseData),
+      browserRelease: /** @type {InternalReleaseStatement} */ (releaseData),
     };
   }
 }
 
 /**
  * Walk through the compatibility statements
- * @param {DataType} [data] The data to iterate
+ * @param {InternalDataType} [data] The data to iterate
  * @param {string} [path] The current path
  * @param {number} [depth] The maximum depth to iterate
  * @yields {LowLevelWalkOutput} The feature info
- * @returns {IterableIterator<LowLevelWalkOutput>}
+ * @returns {IterableIterator<LowLevelWalkOutput>} The low-level walk output
  */
 export function* lowLevelWalk(data = bcd, path, depth = Infinity) {
   if (path !== undefined && path !== '__meta') {
@@ -78,7 +78,7 @@ export function* lowLevelWalk(data = bcd, path, depth = Infinity) {
       yield* browserReleaseWalk(data, path);
     } else {
       if (isFeature(data)) {
-        next.compat = data.__compat;
+        next.compat = /** @type {InternalCompatStatement} */ (data.__compat);
       }
       yield next;
     }
@@ -94,9 +94,9 @@ export function* lowLevelWalk(data = bcd, path, depth = Infinity) {
 /**
  * Walk the data for compat features
  * @param {string | string[]} [entryPoints] Entry points to iterate
- * @param {CompatData | CompatStatement | Identifier} [data] The data to iterate
+ * @param {InternalDataType} [data] The data to iterate
  * @yields {WalkOutput} The feature info
- * @returns {IterableIterator<WalkOutput>}
+ * @returns {IterableIterator<WalkOutput>} The walk output
  */
 export default function* walk(entryPoints, data = bcd) {
   /** @type {IterableIterator<LowLevelWalkOutput>[]} */

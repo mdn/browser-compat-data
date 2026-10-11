@@ -172,9 +172,127 @@
             "deprecated": false
           }
         },
+        "callback": {
+          "__compat": {
+            "description": "Action handler callback",
+            "spec_url": "https://w3c.github.io/mediasession/#dom-mediasessionactionhandler-details",
+            "tags": [
+              "web-features:media-session"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "73"
+              },
+              "chrome_android": {
+                "version_added": "57"
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "82"
+              },
+              "firefox_android": {
+                "version_added": "82",
+                "partial_implementation": true,
+                "notes": "Firefox exposes the API, but does not provide a corresponding user-facing media control interface."
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "15"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": false
+              },
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "enterPictureInPictureReason": {
+            "__compat": {
+              "description": "`enterPictureInPictureReason` callback option",
+              "spec_url": "https://w3c.github.io/mediasession/#dom-mediasessionactiondetails-enterpictureinpicturereason",
+              "tags": [
+                "web-features:media-session"
+              ],
+              "support": {
+                "chrome": {
+                  "version_added": "142"
+                },
+                "chrome_android": "mirror",
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": {
+                  "version_added": false
+                },
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
+        },
+        "enterpictureinpicture_type": {
+          "__compat": {
+            "description": "`\"enterpictureinpicture\"` type",
+            "spec_url": "https://w3c.github.io/mediasession/#dom-mediasessionaction-enterpictureinpicture",
+            "tags": [
+              "web-features:media-session"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "120"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": {
+                "version_added": false
+              },
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "hangup_type": {
           "__compat": {
             "description": "`\"hangup\"` type",
+            "spec_url": "https://w3c.github.io/mediasession/#dom-mediasessionaction-hangup",
             "tags": [
               "web-features:media-session"
             ],
@@ -211,6 +329,7 @@
         "nextslide_type": {
           "__compat": {
             "description": "`\"nextslide\"` type",
+            "spec_url": "https://w3c.github.io/mediasession/#dom-mediasessionaction-nextslide",
             "tags": [
               "web-features:media-session"
             ],
@@ -247,6 +366,7 @@
         "nexttrack_type": {
           "__compat": {
             "description": "`\"nexttrack\"` type",
+            "spec_url": "https://w3c.github.io/mediasession/#dom-mediasessionaction-nexttrack",
             "tags": [
               "web-features:media-session"
             ],
@@ -285,6 +405,7 @@
         "pause_type": {
           "__compat": {
             "description": "`\"pause\"` type",
+            "spec_url": "https://w3c.github.io/mediasession/#dom-mediasessionaction-pause",
             "tags": [
               "web-features:media-session"
             ],
@@ -323,6 +444,7 @@
         "play_type": {
           "__compat": {
             "description": "`\"play\"` type",
+            "spec_url": "https://w3c.github.io/mediasession/#dom-mediasessionaction-play",
             "tags": [
               "web-features:media-session"
             ],
@@ -361,6 +483,7 @@
         "previousslide_type": {
           "__compat": {
             "description": "`\"previousslide\"` type",
+            "spec_url": "https://w3c.github.io/mediasession/#dom-mediasessionaction-previousslide",
             "tags": [
               "web-features:media-session"
             ],
@@ -397,6 +520,7 @@
         "previoustrack_type": {
           "__compat": {
             "description": "`\"previoustrack\"` type",
+            "spec_url": "https://w3c.github.io/mediasession/#dom-mediasessionaction-previoustrack",
             "tags": [
               "web-features:media-session"
             ],
@@ -435,6 +559,7 @@
         "seekbackward_type": {
           "__compat": {
             "description": "`\"seekbackward\"` type",
+            "spec_url": "https://w3c.github.io/mediasession/#dom-mediasessionaction-seekbackward",
             "tags": [
               "web-features:media-session"
             ],
@@ -473,6 +598,7 @@
         "seekforward_type": {
           "__compat": {
             "description": "`\"seekforward\"` type",
+            "spec_url": "https://w3c.github.io/mediasession/#dom-mediasessionaction-seekforward",
             "tags": [
               "web-features:media-session"
             ],
@@ -511,6 +637,7 @@
         "seekto_type": {
           "__compat": {
             "description": "`\"seekto\"` type",
+            "spec_url": "https://w3c.github.io/mediasession/#dom-mediasessionaction-seekto",
             "tags": [
               "web-features:media-session"
             ],
@@ -547,6 +674,7 @@
         "skipad_type": {
           "__compat": {
             "description": "`\"skipad\"` type",
+            "spec_url": "https://w3c.github.io/mediasession/#dom-mediasessionaction-skipad",
             "tags": [
               "web-features:media-session"
             ],
@@ -583,6 +711,7 @@
         "stop_type": {
           "__compat": {
             "description": "`\"stop\"` type",
+            "spec_url": "https://w3c.github.io/mediasession/#dom-mediasessionaction-stop",
             "tags": [
               "web-features:media-session"
             ],
@@ -619,6 +748,7 @@
         "togglecamera_type": {
           "__compat": {
             "description": "`\"togglecamera\"` type",
+            "spec_url": "https://w3c.github.io/mediasession/#dom-mediasessionaction-togglecamera",
             "tags": [
               "web-features:media-session"
             ],
@@ -655,6 +785,7 @@
         "togglemicrophone_type": {
           "__compat": {
             "description": "`\"togglemicrophone\"` type",
+            "spec_url": "https://w3c.github.io/mediasession/#dom-mediasessionaction-togglemicrophone",
             "tags": [
               "web-features:media-session"
             ],

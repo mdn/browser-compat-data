@@ -1,7 +1,8 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {CompatData, SimpleSupportStatement} from '../types/types.js' */
+/** @import {InternalCompatData} from '../types/index.js' */
+/** @import {SimpleSupportStatement} from '../types/public.js' */
 
 /**
  * @typedef {'html' | 'plain'} Format
@@ -15,22 +16,14 @@ import stripAnsi from 'strip-ansi';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 
+import bcd from '../index.js';
 import { spawn, walk } from '../utils/index.js';
 
 import { addVersionLast, applyMirroring, transformMD } from './build/index.js';
 import { getMergeBase, getFileContent, getGitDiffStatuses } from './lib/git.js';
 import dataFolders from './lib/data-folders.js';
 
-const BROWSER_NAMES = [
-  'chrome',
-  'chrome_android',
-  'edge',
-  'firefox',
-  'firefox_android',
-  'safari',
-  'safari_ios',
-  'webview_android',
-];
+const BROWSER_NAMES = Object.keys(bcd.browsers);
 
 /** @type {Format[]} */
 const FORMATS = ['html', 'plain'];
@@ -123,6 +116,8 @@ const flattenObject = (obj, parentKey = '', result = {}) => {
               .join(',');
           }
 
+          // After addVersionLast() ran, statements have version_last, so the
+          // public SimpleSupportStatement type fits.
           const {
             version_added,
             version_last,
@@ -281,27 +276,25 @@ const printDiffs = (base, head, options) => {
   /** @type {Map<string, Set<string>>} */
   const groups = new Map();
 
-  /** @type {CompatData} */
+  /** @type {InternalCompatData} */
   const baseContents = /** @type {*} */ ({});
-  /** @type {CompatData} */
+  /** @type {InternalCompatData} */
   const headContents = /** @type {*} */ ({});
 
   for (const status of getGitDiffStatuses(base, head)) {
-    if (
-      !(
-        status.headPath.endsWith('.json') &&
-        dataFolders.some((folder) => status.headPath.startsWith(`${folder}/`))
-      )
-    ) {
+    if (!(
+      status.headPath.endsWith('.json') &&
+      dataFolders.some((folder) => status.headPath.startsWith(`${folder}/`))
+    )) {
       continue;
     }
 
-    const baseFileContents = /** @type {CompatData} */ (
+    const baseFileContents = /** @type {InternalCompatData} */ (
       status.value !== 'A'
         ? JSON.parse(getFileContent(base, status.basePath))
         : {}
     );
-    const headFileContents = /** @type {CompatData} */ (
+    const headFileContents = /** @type {InternalCompatData} */ (
       status.value !== 'D'
         ? JSON.parse(getFileContent(head, status.headPath))
         : {}
@@ -624,8 +617,9 @@ if (esMain(import.meta)) {
       default: DEFAULT_FORMAT,
       choices: /** @type {Readonly<Format[]>} */ (FORMATS),
       /**
-       * @param {string} value
-       * @returns {Format}
+       * Coerce the format option value
+       * @param {string} value The raw option value
+       * @returns {Format} The coerced format
        */
       coerce: (value) => FORMATS.find((f) => f === value) ?? DEFAULT_FORMAT,
     })

@@ -52,6 +52,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/appCodeName",
           "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-appcodename-dev",
+          "tags": [
+            "web-features:user-agent-sniffing"
+          ],
           "support": {
             "chrome": {
               "version_added": "4"
@@ -89,6 +92,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/appName",
           "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-appname-dev",
+          "tags": [
+            "web-features:user-agent-sniffing"
+          ],
           "support": {
             "chrome": {
               "version_added": "4"
@@ -132,6 +138,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/appVersion",
           "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-appversion-dev",
+          "tags": [
+            "web-features:user-agent-sniffing"
+          ],
           "support": {
             "chrome": {
               "version_added": "4"
@@ -222,7 +231,7 @@
       "deviceMemory": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/deviceMemory",
-          "spec_url": "https://www.w3.org/TR/device-memory/#sec-device-memory-js-api",
+          "spec_url": "https://www.w3.org/TR/device-memory/#dom-navigatordevicememory-devicememory",
           "tags": [
             "web-features:device-memory"
           ],
@@ -300,7 +309,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -314,14 +323,18 @@
             "web-features:webgpu"
           ],
           "support": {
-            "chrome": {
-              "version_added": "113",
-              "partial_implementation": true,
-              "notes": [
-                "Supported on ChromeOS, macOS, and Windows.",
-                "Supported on Linux (Intel Gen12+ GPUs only) since Chrome 144."
-              ]
-            },
+            "chrome": [
+              {
+                "version_added": "144",
+                "notes": "Supported on ChromeOS, macOS, Windows, and Linux (Intel Gen12+ GPUs only)."
+              },
+              {
+                "version_added": "113",
+                "version_removed": "144",
+                "partial_implementation": true,
+                "notes": "Supported on ChromeOS, macOS, and Windows."
+              }
+            ],
             "chrome_android": {
               "version_added": "121"
             },
@@ -422,7 +435,7 @@
       "hid": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/hid",
-          "spec_url": "https://wicg.github.io/webhid/#hid-attribute-0",
+          "spec_url": "https://hid.spec.whatwg.org/#hid-attribute-0",
           "tags": [
             "web-features:webhid"
           ],
@@ -573,7 +586,7 @@
             },
             "chrome_android": "mirror",
             "deno": {
-              "version_added": false
+              "version_added": "2.9"
             },
             "edge": "mirror",
             "firefox": {
@@ -774,6 +787,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/platform",
           "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-platform-dev",
+          "tags": [
+            "web-features:user-agent-sniffing"
+          ],
           "support": {
             "chrome": {
               "version_added": "4"
@@ -826,6 +842,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/product",
           "spec_url": "https://html.spec.whatwg.org/multipage/system-state.html#dom-navigator-product-dev",
+          "tags": [
+            "web-features:user-agent-sniffing"
+          ],
           "support": {
             "chrome": {
               "version_added": "4"
@@ -862,7 +881,7 @@
       "serial": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/serial",
-          "spec_url": "https://wicg.github.io/serial/#dom-workernavigator-serial",
+          "spec_url": "https://serial.spec.whatwg.org/#dom-workernavigator-serial",
           "tags": [
             "web-features:serial"
           ],
@@ -870,16 +889,24 @@
             "chrome": {
               "version_added": "89"
             },
-            "chrome_android": {
-              "version_added": "138",
-              "partial_implementation": true,
-              "notes": "Serial ports are only available if they're provided by Bluetooth RFCOMM serial port emulation."
-            },
+            "chrome_android": [
+              {
+                "version_added": "148"
+              },
+              {
+                "version_added": "138",
+                "version_removed": "148",
+                "partial_implementation": true,
+                "notes": "Serial ports are only available if they're provided by Bluetooth RFCOMM serial port emulation."
+              }
+            ],
             "edge": "mirror",
             "firefox": {
+              "version_added": "151"
+            },
+            "firefox_android": {
               "version_added": false
             },
-            "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
@@ -895,7 +922,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -1012,7 +1039,7 @@
       "usb": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/WorkerNavigator/usb",
-          "spec_url": "https://wicg.github.io/webusb/#dom-workernavigator-usb",
+          "spec_url": "https://usb.spec.whatwg.org/#dom-workernavigator-usb",
           "tags": [
             "web-features:webusb"
           ],
@@ -1116,6 +1143,9 @@
               "version_added": "90"
             },
             "chrome_android": "mirror",
+            "deno": {
+              "version_added": "2.9"
+            },
             "edge": "mirror",
             "firefox": {
               "version_added": false

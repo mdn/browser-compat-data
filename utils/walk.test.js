@@ -1,6 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
 import dataFolders from '../scripts/lib/data-folders.js';
@@ -38,7 +39,7 @@ describe('walk()', () => {
     const results = Array.from(
       walk(['api.Notification', 'css.properties.color']),
     );
-    assert.equal(results.length, 31);
+    assert.equal(results.length, 32);
     assert.equal(results[0].path, 'api.Notification');
     assert.equal(
       results[results.length - 1].path,

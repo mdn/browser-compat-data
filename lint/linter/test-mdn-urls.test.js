@@ -1,9 +1,10 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { describe, it, afterEach } from 'node:test';
 import assert from 'node:assert/strict';
 
-/** @import {CompatStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement} from '../../types/index.js' */
 
 import {
   inventory,
@@ -12,8 +13,8 @@ import {
 
 import { processData, urlsByPath } from './test-mdn-urls.js';
 
-/** @type {CompatStatement} */
-const noUrl = /** @type {CompatStatement} */ ({});
+/** @type {InternalCompatStatement} */
+const noUrl = /** @type {InternalCompatStatement} */ ({});
 
 // Save originals for restore after mocking.
 const originalSlugs = inventory.slugs;
@@ -22,10 +23,10 @@ const originalRedirects = inventory.redirects;
 
 /**
  * Replace inventory with mock data, restoring originals in afterEach.
- * @param {object} [overrides]
- * @param {Map<string, string>} [overrides.slugs]
- * @param {Map<string, string>} [overrides.slugByPath]
- * @param {Record<string, string>} [overrides.redirects]
+ * @param {object} [overrides] The inventory values to override
+ * @param {Map<string, string>} [overrides.slugs] The mock slugs
+ * @param {Map<string, string>} [overrides.slugByPath] The mock slugs by path
+ * @param {Record<string, string>} [overrides.redirects] The mock redirects
  */
 const mockInventory = (overrides = {}) => {
   inventory.slugs = overrides.slugs ?? new Map();

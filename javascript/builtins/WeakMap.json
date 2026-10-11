@@ -103,6 +103,7 @@
           "iterable_allowed": {
             "__compat": {
               "description": "`new WeakMap(iterable)`",
+              "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakmap-constructor",
               "tags": [
                 "web-features:snapshot:ecmascript-2015",
                 "web-features:weakmap"
@@ -126,7 +127,7 @@
                 },
                 "firefox_android": "mirror",
                 "nodejs": {
-                  "version_added": "0.12.0"
+                  "version_added": "4.0.0"
                 },
                 "oculus": "mirror",
                 "opera": "mirror",
@@ -149,6 +150,7 @@
           "null_allowed": {
             "__compat": {
               "description": "`new WeakMap(null)`",
+              "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakmap-constructor",
               "tags": [
                 "web-features:snapshot:ecmascript-2015",
                 "web-features:weakmap"
@@ -313,11 +315,17 @@
                 "version_added": "145"
               },
               "chrome_android": "mirror",
+              "deno": {
+                "version_added": "2.6.7"
+              },
               "edge": "mirror",
               "firefox": {
                 "version_added": "144"
               },
               "firefox_android": "mirror",
+              "nodejs": {
+                "version_added": "26.0.0"
+              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -351,11 +359,17 @@
                 "version_added": "145"
               },
               "chrome_android": "mirror",
+              "deno": {
+                "version_added": "2.6.7"
+              },
               "edge": "mirror",
               "firefox": {
                 "version_added": "144"
               },
               "firefox_android": "mirror",
+              "nodejs": {
+                "version_added": "26.0.0"
+              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -481,6 +495,7 @@
         "symbol_as_keys": {
           "__compat": {
             "description": "Non-registered symbols as keys",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakmap-objects",
             "tags": [
               "web-features:snapshot:ecmascript-2023",
               "web-features:weakmap"
@@ -501,9 +516,15 @@
                 "version_added": "146"
               },
               "firefox_android": "mirror",
-              "nodejs": {
-                "version_added": "20.1.0"
-              },
+              "nodejs": [
+                {
+                  "version_added": "20.1.0"
+                },
+                {
+                  "version_added": "18.20.0",
+                  "version_removed": "19.0.0"
+                }
+              ],
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",

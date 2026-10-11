@@ -8,14 +8,14 @@ import { inventory } from '../../utils/mdn-content-inventory.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {CompatData, CompatStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement} from '../../types/index.js' */
 
 /**
  * @typedef {object} MDNURLError
- * @property {string} path
- * @property {string} ruleName
- * @property {string} actual
- * @property {string} expected
+ * @property {string} path The feature path where the error was found
+ * @property {string} ruleName The name of the rule that was violated
+ * @property {string} actual The actual MDN URL
+ * @property {string} expected The expected MDN URL
  */
 
 /** @type {Map<string, string>} path → mdn_url, persisted across calls */
@@ -23,7 +23,7 @@ export const urlsByPath = new Map();
 
 /**
  * Process the data for MDN URL issues
- * @param {CompatStatement} data The data to test
+ * @param {InternalCompatStatement} data The data to test
  * @param {string} path The path of the feature
  * @returns {MDNURLError[]} The issues caught in the file
  */
@@ -172,8 +172,11 @@ export default {
    * @param {LinterData} root The data to test
    */
   check: (logger, { data }) => {
-    for (const feature of walk(undefined, /** @type {CompatData} */ (data))) {
-      const issues = processData(feature.compat, feature.path);
+    for (const feature of walk(undefined, data)) {
+      const issues = processData(
+        /** @type {InternalCompatStatement} */ (feature.compat),
+        feature.path,
+      );
       logIssues(issues, logger);
     }
   },

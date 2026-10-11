@@ -1,6 +1,6 @@
 # The browser JSON schema
 
-This document helps you to understand the structure of the browser (and JavaScript runtime) data in BCD, including the browser type, a display-friendly name, release data and more. Each browser is defined by a unique identifier (e.g. `firefox` or `chrome_android`).
+This document helps you to understand the structure of the browser (and JavaScript runtime) data in BCD, including the browser type, a display-friendly name, release data and more. Each browser is defined by a unique identifier (for example `firefox` or `chrome_android`). Each browser JSON file describes exactly one browser.
 
 Note: while NodeJS and Deno are JavaScript runtimes and not browsers, data for them is placed in `browsers`, and are included whenever we use the term "browsers".
 
@@ -44,19 +44,19 @@ The `type` string is a required property which indicates the platform category t
 
 ### `upstream`
 
-The `upstream` string is an optional property which indicates the upstream browser updates are derived from. For example, Firefox Android's upstream browser is Firefox (desktop), and Edge's upstream browser is Chrome. This is used for mirroring data between browsers. Valid options are any browser defined in the data.
+The `upstream` string is an optional property which indicates the upstream browser updates are derived from. For example, Firefox Android's upstream browser is Firefox (desktop), and Edge's upstream browser is Chrome. This is used for mirroring data between browsers. Valid options are `"chrome"`, `"chrome_android"`, `"firefox"`, `"safari"`, and `"safari_ios"`.
 
 ### `accepts_flags`
 
-An optional boolean indicating whether the browser supports flags. If it is set to `false`, flag data will not be allowed for that browser.
+A required boolean indicating whether the browser supports flags. If it is set to `false`, flag data will not be allowed for that browser.
 
 ### `accepts_webextensions`
 
-An optional boolean indicating whether the browser supports web extensions. A `true` value will allow this browser to be defined in web extensions support.
+A required boolean indicating whether the browser supports web extensions. A `true` value will allow this browser to be defined in web extensions support.
 
 ### `pref_url`
 
-An optional string containing the URL of the page where feature flags can be changed (e.g. `"about:config"` for Firefox or `"chrome://flags"` for Chrome).
+An optional string containing the URL of the page where feature flags can be changed (for example `"about:config"` for Firefox or `"chrome://flags"` for Chrome).
 
 ### `preview_name`
 
@@ -74,36 +74,37 @@ The `releases` object contains data regarding the browsers' releases, using the 
   - `esr`: This release is an Extended Support Release or Long Term Support release.
   - `planned`: This release is planned in the future.
 
-- An optional `release_date` property with the `YYYY-MM-DD` release date of the browser's release.
+- An optional `release_date` property with the `YYYY-MM-DD` date of when this version was released or will be released.
 
 - An optional `release_notes` property which points to release notes. It needs to be a valid URL.
 
-- An optional `engine` property which is the name of the browser's engine. This property is placed on the individual release as a browser may switch to a different engine (e.g. Microsoft Edge switched to Chrome as its base engine).
+- An optional `engine` property which is the name of the browser's engine. Valid values are `"Blink"`, `"EdgeHTML"`, `"Gecko"`, `"Presto"`, `"Trident"`, `"WebKit"`, and `"V8"`. This property is placed on the individual release as a browser may switch to a different engine (for example Microsoft Edge switched to Chrome as its base engine). If `engine` is specified, `engine_version` must also be provided.
 
-- An optional `engine_version` property which is the version of the browser's engine. Depending on the browser, this may or may not differ from the browser version.
+- An optional `engine_version` property indicating the engine version used in this release. Required when `engine` is specified.
 
 #### Initial versions
 
 The following table indicates initial versions for browsers in BCD. These are the earliest possible version numbers allowed to be used. When the earliest version is not naturally "1" or "1.0", see the _Notes_ column for an explanation.
 
-| Browser          | Initial version | Notes                                                                                                                                                                    |
-| ---------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Bun              | 1.0.0           |                                                                                                                                                                          |
-| Chrome           | 1               |                                                                                                                                                                          |
-| Chrome Android   | 18              | Stable versioning started at 18. No Chrome Android 17 or earlier was ever released.                                                                                      |
-| Deno             | 1.0             |                                                                                                                                                                          |
-| Edge             | 12              | EdgeHTML versioning started at 12, continuing from Internet Explorer 11. After version 18, Edge jumped to version 79, synchronizing with the Chromium versioning scheme. |
-| Firefox          | 1               |                                                                                                                                                                          |
-| Firefox Android  | 4               | Stable versioning started at 4. Earlier non-Android mobile versions are ignored.                                                                                         |
-| IE               | 1               |                                                                                                                                                                          |
-| Node.js          | 0.10.0          | This project selected 0.10.0 as the first release primarily because the 0.10-series releases was the first to have LTS status applied. See issue #6861.                  |
-| Meta Quest       | 5.0             | The first version documented on the Oculus Developer website.                                                                                                            |
-| Opera            | 2               | Stable versioning started at 2. Opera 1 was demoed at a conference, but never publicly released.                                                                         |
-| Opera Android    | 10.1            | Stable versioning started at 10.1.                                                                                                                                       |
-| Safari           | 1               |                                                                                                                                                                          |
-| iOS Safari       | 1               |                                                                                                                                                                          |
-| Samsung Internet | 1.0             |                                                                                                                                                                          |
-| WebView Android  | 1               |                                                                                                                                                                          |
+| Browser         | Initial version | Notes                                                                                                                                                                    |
+| --------------- | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Bun             | 1.0.0           |                                                                                                                                                                          |
+| Chrome          | 1               |                                                                                                                                                                          |
+| Chrome Android  | 18              | Stable versioning started at 18. No Chrome Android 17 or earlier was ever released.                                                                                      |
+| Deno            | 1.0             |                                                                                                                                                                          |
+| Edge            | 12              | EdgeHTML versioning started at 12, continuing from Internet Explorer 11. After version 18, Edge jumped to version 79, synchronizing with the Chromium versioning scheme. |
+| Firefox         | 1               |                                                                                                                                                                          |
+| Firefox Android | 4               | Stable versioning started at 4. Earlier non-Android mobile versions are ignored.                                                                                         |
+| IE              | 1               |                                                                                                                                                                          |
+| Node.js         | 0.10.0          | This project selected 0.10.0 as the first release primarily because the 0.10-series releases was the first to have LTS status applied. See issue #6861.                  |
+| Meta Quest      | 5.0             | The first version documented on the Oculus Developer website.                                                                                                            |
+| Opera           | 2               | Stable versioning started at 2. Opera 1 was demoed at a conference, but never publicly released.                                                                         |
+| Opera Android   | 10.1            | Stable versioning started at 10.1.                                                                                                                                       |
+| Safari          | 1               |                                                                                                                                                                          |
+| iOS Safari      | 1               |                                                                                                                                                                          |
+| Samsung Browser | 1.0             |                                                                                                                                                                          |
+| WebView Android | 1               |                                                                                                                                                                          |
+| WebView iOS     | 1               |                                                                                                                                                                          |
 
 ## Exports
 

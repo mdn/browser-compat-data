@@ -61,7 +61,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
+              "version_added": "preview",
               "impl_url": "https://bugzil.la/1278697"
             },
             "firefox_android": "mirror",
@@ -86,7 +86,7 @@
       "autofocus": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SVGElement/autofocus",
-          "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-fe-autofocus",
+          "spec_url": "https://html.spec.whatwg.org/multipage/dom.html#dom-fe-autofocus",
           "tags": [
             "web-features:autofocus"
           ],
@@ -257,7 +257,7 @@
         "__compat": {
           "description": "`error` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SVGElement/error_event",
-          "spec_url": "https://w3c.github.io/svgwg/svg2-draft/interact.html#ErrorEvent",
+          "spec_url": "https://w3c.github.io/svgwg/svg2-draft/interact.html#SVGEvents",
           "tags": [
             "web-features:svg"
           ],
@@ -339,6 +339,7 @@
         "options_preventScroll_parameter": {
           "__compat": {
             "description": "`options.preventScroll` parameter",
+            "spec_url": "https://html.spec.whatwg.org/multipage/interaction.html#dom-focusoptions-preventscroll",
             "tags": [
               "web-features:svg"
             ],
@@ -379,7 +380,7 @@
         "__compat": {
           "description": "`load` event",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/SVGElement/load_event",
-          "spec_url": "https://w3c.github.io/svgwg/svg2-draft/interact.html#LoadEvent",
+          "spec_url": "https://w3c.github.io/svgwg/svg2-draft/interact.html#SVGEvents",
           "tags": [
             "web-features:svg"
           ],
@@ -391,11 +392,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "alternative_name": "SVGLoad",
-              "version_added": "4",
-              "notes": "See [bug 620002](https://bugzil.la/620002) for implementation status of the standard `load` event."
-            },
+            "firefox": [
+              {
+                "version_added": "83"
+              },
+              {
+                "alternative_name": "SVGLoad",
+                "version_added": "4",
+                "version_removed": "83",
+                "notes": "See [bug 620002](https://bugzil.la/620002) for implementation status of the standard `load` event."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "9"

@@ -20,29 +20,9 @@
           ],
           "chrome_android": "mirror",
           "edge": "mirror",
-          "firefox": [
-            {
-              "version_added": "142",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ]
-            },
-            {
-              "prefix": "webkit",
-              "version_added": "142",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ]
-            }
-          ],
+          "firefox": {
+            "version_added": "preview"
+          },
           "firefox_android": "mirror",
           "oculus": "mirror",
           "opera": "mirror",
@@ -82,29 +62,9 @@
             ],
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "142",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webspeech.recognition.enable",
-                    "value_to_set": "true"
-                  }
-                ]
-              },
-              {
-                "prefix": "webkit",
-                "version_added": "142",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "media.webspeech.recognition.enable",
-                    "value_to_set": "true"
-                  }
-                ]
-              }
-            ],
+            "firefox": {
+              "version_added": "preview"
+            },
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": {
@@ -146,14 +106,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "143",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -192,14 +145,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "143",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -238,14 +184,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "143",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -280,7 +219,7 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -298,6 +237,142 @@
             "experimental": true,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "options_parameter": {
+          "__compat": {
+            "description": "`options` parameter",
+            "spec_url": "https://webaudio.github.io/web-speech-api/#dictdef-speechrecognitionoptions",
+            "support": {
+              "chrome": {
+                "version_added": "139"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "preview"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "options_langs_parameter": {
+            "__compat": {
+              "description": "`options.langs` parameter",
+              "spec_url": "https://webaudio.github.io/web-speech-api/#dom-speechrecognitionoptions-langs",
+              "support": {
+                "chrome": {
+                  "version_added": "139"
+                },
+                "chrome_android": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "preview"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "options_processLocally_parameter": {
+            "__compat": {
+              "description": "`options.processLocally` parameter",
+              "spec_url": "https://webaudio.github.io/web-speech-api/#dom-speechrecognitionoptions-processlocally",
+              "support": {
+                "chrome": {
+                  "version_added": "139"
+                },
+                "chrome_android": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "preview"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "options_quality_parameter": {
+            "__compat": {
+              "description": "`options.quality` parameter",
+              "spec_url": "https://webaudio.github.io/web-speech-api/#dom-speechrecognitionoptions-quality",
+              "support": {
+                "chrome": {
+                  "version_added": "150"
+                },
+                "chrome_android": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
           }
         }
       },
@@ -319,22 +394,23 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": "143",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "14.1"
-            },
+            "safari": [
+              {
+                "version_added": "17"
+              },
+              {
+                "version_added": "14.1",
+                "version_removed": "17",
+                "partial_implementation": true,
+                "notes": "Returns multiple results when set to `false`."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -365,14 +441,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "143",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -411,14 +480,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "143",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -453,14 +515,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "143",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -495,7 +550,7 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -514,6 +569,142 @@
             "standard_track": true,
             "deprecated": false
           }
+        },
+        "options_parameter": {
+          "__compat": {
+            "description": "`options` parameter",
+            "spec_url": "https://webaudio.github.io/web-speech-api/#dictdef-speechrecognitionoptions",
+            "support": {
+              "chrome": {
+                "version_added": "139"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "preview"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          },
+          "options_langs_parameter": {
+            "__compat": {
+              "description": "`options.langs` parameter",
+              "spec_url": "https://webaudio.github.io/web-speech-api/#dom-speechrecognitionoptions-langs",
+              "support": {
+                "chrome": {
+                  "version_added": "139"
+                },
+                "chrome_android": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "preview"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "options_processLocally_parameter": {
+            "__compat": {
+              "description": "`options.processLocally` parameter",
+              "spec_url": "https://webaudio.github.io/web-speech-api/#dom-speechrecognitionoptions-processlocally",
+              "support": {
+                "chrome": {
+                  "version_added": "139"
+                },
+                "chrome_android": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": "preview"
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          },
+          "options_quality_parameter": {
+            "__compat": {
+              "description": "`options.quality` parameter",
+              "spec_url": "https://webaudio.github.io/web-speech-api/#dom-speechrecognitionoptions-quality",
+              "support": {
+                "chrome": {
+                  "version_added": "150"
+                },
+                "chrome_android": {
+                  "version_added": false
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false
+                },
+                "firefox_android": "mirror",
+                "oculus": "mirror",
+                "opera": "mirror",
+                "opera_android": "mirror",
+                "safari": {
+                  "version_added": false
+                },
+                "safari_ios": "mirror",
+                "samsunginternet_android": "mirror",
+                "webview_android": "mirror",
+                "webview_ios": "mirror"
+              },
+              "status": {
+                "experimental": true,
+                "standard_track": true,
+                "deprecated": false
+              }
+            }
+          }
         }
       },
       "interimResults": {
@@ -530,14 +721,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "143",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -572,14 +756,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "143",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -614,14 +791,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "143",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -660,14 +830,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "143",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -701,7 +864,7 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -735,7 +898,7 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -774,14 +937,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "143",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -820,14 +976,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "143",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -866,14 +1015,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "143",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -912,14 +1054,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "143",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -958,14 +1093,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "143",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -1000,14 +1128,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "143",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -1083,14 +1204,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "143",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -1125,14 +1239,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "143",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "media.webspeech.recognition.enable",
-                  "value_to_set": "true"
-                }
-              ]
+              "version_added": "preview"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -1148,6 +1255,38 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "unspokenPunctuation": {
+        "__compat": {
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/SpeechRecognition/unspokenPunctuation",
+          "spec_url": "https://webaudio.github.io/web-speech-api/#dom-speechrecognition-unspokenpunctuation",
+          "support": {
+            "chrome": {
+              "version_added": "151"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": "preview"
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }

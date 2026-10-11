@@ -118,6 +118,7 @@
         "submitter": {
           "__compat": {
             "description": "`submitter` parameter",
+            "spec_url": "https://xhr.spec.whatwg.org/#dom-formdata",
             "tags": [
               "web-features:xhr"
             ],
@@ -156,6 +157,7 @@
       "worker_support": {
         "__compat": {
           "description": "Available in workers",
+          "spec_url": "https://xhr.spec.whatwg.org/#interface-formdata",
           "tags": [
             "web-features:xhr"
           ],
@@ -258,10 +260,15 @@
         "filename_parameter": {
           "__compat": {
             "description": "`filename` parameter",
+            "spec_url": "https://xhr.spec.whatwg.org/#dom-formdata-append-blob",
             "tags": [
               "web-features:xhr"
             ],
             "support": {
+              "bun": {
+                "version_added": "1.0.0",
+                "notes": "Before 1.4.1, an empty `Blob` lost its filename. A `File` keeps its own name and ignores the filename argument."
+              },
               "chrome": {
                 "version_added": "16"
               },
@@ -278,6 +285,9 @@
               "firefox_android": "mirror",
               "ie": {
                 "version_added": "10"
+              },
+              "nodejs": {
+                "version_added": "18.0.0"
               },
               "oculus": "mirror",
               "opera": {
@@ -351,6 +361,7 @@
       "entries": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FormData/entries",
+          "spec_url": "https://xhr.spec.whatwg.org/#interface-formdata",
           "tags": [
             "web-features:xhr"
           ],
@@ -395,6 +406,7 @@
       },
       "forEach": {
         "__compat": {
+          "spec_url": "https://xhr.spec.whatwg.org/#interface-formdata",
           "tags": [
             "web-features:xhr"
           ],
@@ -417,7 +429,7 @@
             },
             "firefox_android": "mirror",
             "nodejs": {
-              "version_added": "18.0.0"
+              "version_added": "18.4.0"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -578,6 +590,7 @@
       "keys": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FormData/keys",
+          "spec_url": "https://xhr.spec.whatwg.org/#interface-formdata",
           "tags": [
             "web-features:xhr"
           ],
@@ -669,6 +682,7 @@
       "values": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/FormData/values",
+          "spec_url": "https://xhr.spec.whatwg.org/#interface-formdata",
           "tags": [
             "web-features:xhr"
           ],
@@ -714,6 +728,7 @@
       "@@iterator": {
         "__compat": {
           "description": "[Symbol.iterator]",
+          "spec_url": "https://xhr.spec.whatwg.org/#interface-formdata",
           "tags": [
             "web-features:xhr"
           ],

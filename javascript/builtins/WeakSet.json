@@ -97,6 +97,7 @@
           "iterable_allowed": {
             "__compat": {
               "description": "`new WeakSet(iterable)`",
+              "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakset-constructor",
               "tags": [
                 "web-features:snapshot:ecmascript-2015",
                 "web-features:weakset"
@@ -120,7 +121,7 @@
                 },
                 "firefox_android": "mirror",
                 "nodejs": {
-                  "version_added": "0.12.0"
+                  "version_added": "4.0.0"
                 },
                 "oculus": "mirror",
                 "opera": "mirror",
@@ -143,6 +144,7 @@
           "null_allowed": {
             "__compat": {
               "description": "`new WeakSet(null)`",
+              "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakset-constructor",
               "tags": [
                 "web-features:snapshot:ecmascript-2015",
                 "web-features:weakset"
@@ -331,6 +333,7 @@
         "symbol_as_keys": {
           "__compat": {
             "description": "Non-registered symbols as keys",
+            "spec_url": "https://tc39.es/ecma262/multipage/keyed-collections.html#sec-weakset-objects",
             "tags": [
               "web-features:snapshot:ecmascript-2023",
               "web-features:weakset"
@@ -351,9 +354,15 @@
                 "version_added": "146"
               },
               "firefox_android": "mirror",
-              "nodejs": {
-                "version_added": "20.0.0"
-              },
+              "nodejs": [
+                {
+                  "version_added": "20.0.0"
+                },
+                {
+                  "version_added": "18.20.0",
+                  "version_removed": "19.0.0"
+                }
+              ],
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",

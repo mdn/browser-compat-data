@@ -10,7 +10,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "88"
+              "version_added": "85"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -119,9 +119,7 @@
             "spec_url": "https://w3c.github.io/aria/#ARIANotifyMixin",
             "support": {
               "chrome": {
-                "version_added": "141",
-                "partial_implementation": true,
-                "notes": "Not supported on ChromeOS."
+                "version_added": "141"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -150,7 +148,6 @@
         "attribution-reporting": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy/attribution-reporting",
-            "spec_url": "https://wicg.github.io/attribution-reporting-api/#permission-policy-integration",
             "tags": [
               "web-features:attribution-reporting"
             ],
@@ -177,7 +174,7 @@
             },
             "status": {
               "experimental": false,
-              "standard_track": true,
+              "standard_track": false,
               "deprecated": true
             }
           }
@@ -217,7 +214,7 @@
         "bluetooth": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy/bluetooth",
-            "spec_url": "https://webbluetoothcg.github.io/web-bluetooth/#permissions-policy",
+            "spec_url": "https://bluetooth.spec.whatwg.org/#permissions-policy",
             "tags": [
               "web-features:web-bluetooth"
             ],
@@ -382,6 +379,66 @@
             "status": {
               "experimental": true,
               "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "clipboard-read": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "85"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": false,
+              "deprecated": false
+            }
+          }
+        },
+        "clipboard-write": {
+          "__compat": {
+            "support": {
+              "chrome": {
+                "version_added": "85"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": false,
               "deprecated": false
             }
           }
@@ -735,7 +792,7 @@
         "hid": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy/hid",
-            "spec_url": "https://wicg.github.io/webhid/#permissions-policy",
+            "spec_url": "https://hid.spec.whatwg.org/#permissions-policy",
             "tags": [
               "web-features:webhid"
             ],
@@ -842,6 +899,51 @@
             }
           }
         },
+        "language-model": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy/language-model",
+            "spec_url": "https://webmachinelearning.github.io/prompt-api/#permissions-policy",
+            "support": {
+              "chrome": {
+                "version_added": "148"
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": {
+                "version_added": "138",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#edge-llm-prompt-api-for-phi-mini",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": {
+                "version_added": false
+              },
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "local-fonts": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy/local-fonts",
@@ -884,6 +986,7 @@
         },
         "local-network": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy/local-network",
             "spec_url": "https://wicg.github.io/local-network-access/#permissiondef-local-network",
             "tags": [
               "web-features:local-network-access"
@@ -920,6 +1023,7 @@
         },
         "local-network-access": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy/local-network-access",
             "spec_url": "https://wicg.github.io/local-network-access/#permissiondef-local-network-access",
             "tags": [
               "web-features:local-network-access"
@@ -957,6 +1061,7 @@
         },
         "loopback-network": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy/loopback-network",
             "spec_url": "https://wicg.github.io/local-network-access/#permissiondef-loopback-network",
             "tags": [
               "web-features:local-network-access"
@@ -1004,7 +1109,7 @@
                 "flags": [
                   {
                     "type": "preference",
-                    "name": "#enable-generic-sensor-extra-classes",
+                    "name": "#enable-experimental-web-platform-features",
                     "value_to_set": "Enabled"
                   }
                 ]
@@ -1107,7 +1212,7 @@
         "on-device-speech-recognition": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy/on-device-speech-recognition",
-            "spec_url": "https://webaudio.github.io/web-speech-api/#dom-speechrecognition-available#:~:text=on-device-speech-recognition",
+            "spec_url": "https://webaudio.github.io/web-speech-api/#dom-speechrecognition-available:~:text=on-device-speech-recognition",
             "tags": [
               "web-features:speech-recognition"
             ],
@@ -1444,7 +1549,7 @@
         "serial": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy/serial",
-            "spec_url": "https://wicg.github.io/serial/#permissions-policy",
+            "spec_url": "https://serial.spec.whatwg.org/#permissions-policy",
             "tags": [
               "web-features:serial"
             ],
@@ -1525,16 +1630,7 @@
               "chrome_android": {
                 "version_added": false
               },
-              "edge": {
-                "version_added": "138",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#edge-llm-summarization-api-for-phi-mini",
-                    "value_to_set": "Enabled"
-                  }
-                ]
-              },
+              "edge": "mirror",
               "firefox": {
                 "version_added": false
               },
@@ -1557,10 +1653,41 @@
             }
           }
         },
+        "unload": {
+          "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy/unload",
+            "support": {
+              "chrome": {
+                "version_added": "115"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": false,
+              "deprecated": false
+            }
+          }
+        },
         "usb": {
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy/usb",
-            "spec_url": "https://wicg.github.io/webusb/#permissions-policy",
+            "spec_url": "https://usb.spec.whatwg.org/#permissions-policy",
             "tags": [
               "web-features:webusb"
             ],
@@ -1585,6 +1712,44 @@
               "webview_android": {
                 "version_added": false
               },
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "web-app-installation": {
+          "__compat": {
+            "spec_url": "https://wicg.github.io/install-element/#web-app-installation-policy-controlled-feature",
+            "support": {
+              "chrome": {
+                "version_added": "154",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#web-app-installation-api",
+                    "value_to_set": "Enabled"
+                  }
+                ]
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
               "webview_ios": "mirror"
             },
             "status": {
@@ -1635,6 +1800,7 @@
         "wildcards": {
           "__compat": {
             "description": "Wildcards in allowlist origins",
+            "spec_url": "https://w3c.github.io/webappsec-permissions-policy/#allow-list-value",
             "tags": [
               "web-features:permissions-policy"
             ],

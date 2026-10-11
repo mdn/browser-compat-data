@@ -9,7 +9,7 @@ import { isMirrorEquivalent, isMirrorRequired } from '../fixer/mirror.js';
 
 /** @import {Linter, LinterData} from '../types.js' */
 /** @import {Logger} from '../utils.js' */
-/** @import {BrowserName, CompatStatement} from '../../types/types.js' */
+/** @import {BrowserName, InternalCompatStatement} from '../../types/index.js' */
 /** @import {InternalSupportBlock} from '../../types/index.js' */
 
 /**
@@ -53,7 +53,7 @@ export default {
    */
   check: (logger, { data, path: { category } }) => {
     checkMirroring(
-      /** @type {CompatStatement} */ (data).support,
+      /** @type {InternalCompatStatement} */ (data).support,
       category,
       logger,
     );

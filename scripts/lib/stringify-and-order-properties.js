@@ -3,7 +3,7 @@
 
 import { compareVersions } from 'compare-versions';
 
-/** @import {CompatStatement, SimpleSupportStatement, StatusBlock, BrowserStatement, ReleaseStatement} from '../../types/types.js' */
+/** @import {InternalCompatStatement, InternalSimpleSupportStatement, InternalStatusBlock, InternalBrowserStatement, InternalReleaseStatement} from '../../types/index.js' */
 
 const propOrder = {
   browsers: {
@@ -44,6 +44,7 @@ const propOrder = {
       'partial_implementation',
       'notes',
     ],
+    flags: ['type', 'name', 'value_to_set'],
     status: ['experimental', 'standard_track', 'deprecated'],
   },
 };
@@ -74,7 +75,7 @@ const doOrder = (value, order) => {
  * prefix and suffix added, which will be removed after performing JSON
  * stringification. This is important because JavaScript wants to move object
  * entries with a floating point as the key to the very end of the list.
- * @param {Record<string, ReleaseStatement>} releases The release data
+ * @param {Record<string, InternalReleaseStatement>} releases The release data
  * @returns {string} The stringified releases
  */
 export const stringifyReleases = (releases) => {
@@ -115,12 +116,12 @@ export const orderProperties = (key, value) => {
     // Order properties for data
     if ('__compat' in value) {
       value.__compat = doOrder(
-        /** @type {CompatStatement} */ (value.__compat),
+        /** @type {InternalCompatStatement} */ (value.__compat),
         propOrder.data.__compat,
       );
 
       for (const browser of Object.keys(value.__compat.support)) {
-        /** @type {SimpleSupportStatement[]} */
+        /** @type {InternalSimpleSupportStatement[]} */
         const result = [];
         let data = value.__compat.support[browser];
         if (!Array.isArray(data)) {
@@ -128,9 +129,15 @@ export const orderProperties = (key, value) => {
         }
 
         for (const statement of data) {
+          const flags = statement.flags;
+          if (flags) {
+            flags.forEach((flag, index, array) => {
+              array[index] = doOrder(array[index], propOrder.data.flags);
+            });
+          }
           result.push(
             doOrder(
-              /** @type {SimpleSupportStatement} */ (statement),
+              /** @type {InternalSimpleSupportStatement} */ (statement),
               propOrder.data.support,
             ),
           );
@@ -142,7 +149,7 @@ export const orderProperties = (key, value) => {
 
       if ('status' in value.__compat) {
         value.__compat.status = doOrder(
-          /** @type {StatusBlock} */ (value.__compat.status),
+          /** @type {InternalStatusBlock} */ (value.__compat.status),
           propOrder.data.status,
         );
       }
@@ -153,13 +160,15 @@ export const orderProperties = (key, value) => {
       const browser = Object.keys(value.browsers)[0];
 
       value.browsers[browser] = doOrder(
-        /** @type {BrowserStatement} */ (value.browsers[browser]),
+        /** @type {InternalBrowserStatement} */ (value.browsers[browser]),
         propOrder.browsers.browser,
       );
 
       for (const r of Object.keys(value.browsers[browser].releases)) {
         value.browsers[browser].releases[r] = doOrder(
-          /** @type {ReleaseStatement} */ (value.browsers[browser].releases[r]),
+          /** @type {InternalReleaseStatement} */ (
+            value.browsers[browser].releases[r]
+          ),
           propOrder.browsers.release,
         );
       }

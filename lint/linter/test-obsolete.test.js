@@ -1,6 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
 import bcd from '../../index.js';
@@ -11,13 +12,12 @@ import {
   implementedAndRemoved,
   processData,
 } from './test-obsolete.js';
-const { browsers } = bcd;
 
 const errorTime = new Date(),
   infoTime = new Date();
 errorTime.setFullYear(errorTime.getFullYear() - 2.5);
 infoTime.setFullYear(infoTime.getFullYear() - 2);
-const release = Object.entries(browsers.chrome.releases).find((r) => {
+const release = Object.entries(bcd.browsers['chrome'].releases).find((r) => {
   if (r[1].release_date === undefined) {
     return false;
   }
@@ -124,7 +124,7 @@ describe('implementedAndRemoved', () => {
       implementedAndRemoved({
         chrome: {
           version_added: '1',
-          version_removed: Object.keys(browsers.chrome.releases)[-1],
+          version_removed: Object.keys(bcd.browsers['chrome'].releases)[-1],
         },
       }),
       false,
@@ -134,7 +134,7 @@ describe('implementedAndRemoved', () => {
         chrome: [
           {
             version_added: '2',
-            version_removed: Object.keys(browsers.chrome.releases)[-1],
+            version_removed: Object.keys(bcd.browsers['chrome'].releases)[-1],
           },
           {
             version_added: '1',

@@ -18,6 +18,7 @@ import fixFeatureOrder from './fixer/feature-order.js';
 import fixPropertyOrder from './fixer/property-order.js';
 import fixStatementOrder from './fixer/statement-order.js';
 import fixDescriptions from './fixer/descriptions.js';
+import fixNotes from './fixer/notes.js';
 import fixFlags from './fixer/flags.js';
 import fixLinks from './fixer/links.js';
 import fixMDNURLs from './fixer/mdn-urls.js';
@@ -25,6 +26,7 @@ import fixStatus from './fixer/status.js';
 import fixMirror from './fixer/mirror.js';
 import fixOverlap from './fixer/overlap.js';
 import fixStandardTrackExceptions from './fixer/standard-track-exceptions.js';
+import lint from './lint.js';
 import { IS_WINDOWS } from './utils.js';
 
 /** @import {Stats} from 'node:fs' */
@@ -35,6 +37,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 /** @type {Readonly<Record<string, function(string, string): Promise<string> | string>>} */
 const FIXES = Object.freeze({
   descriptions: fixDescriptions,
+  notes: fixNotes,
   common_errors: fixCommonErrors,
   flags: fixFlags,
   links: fixLinks,
@@ -145,6 +148,10 @@ if (esMain(import.meta)) {
   const { files = dataFolders, only } = argv;
 
   await main(files, { only });
+  if (argv.files) {
+    // Fails pre-commit hook for lint failures unknown to the fixer.
+    process.exit((await lint(argv.files)) ? 1 : 0);
+  }
 }
 
 export default load;

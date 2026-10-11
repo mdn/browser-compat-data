@@ -26,8 +26,8 @@
                 "value_to_set": "true"
               },
               {
-                "name": "dom.payments.request.supportedRegions",
                 "type": "preference",
+                "name": "dom.payments.request.supportedRegions",
                 "value_to_set": "A comma-delimited list of one or more 2-character ISO country codes indicating the countries in which to support payments (for example, <code>US,CA</code>)."
               }
             ]
@@ -58,7 +58,7 @@
         "__compat": {
           "description": "`PaymentRequest()` constructor",
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequest/PaymentRequest",
-          "spec_url": "https://w3c.github.io/payment-request/#constructor",
+          "spec_url": "https://w3c.github.io/payment-request/#dom-paymentrequest",
           "tags": [
             "web-features:payment-request"
           ],
@@ -108,6 +108,7 @@
           "__compat": {
             "description": "`secure-payment-confirmation` method",
             "mdn_url": "https://developer.mozilla.org/docs/Web/API/Payment_Request_API/Concepts#secure-payment-confirmation",
+            "spec_url": "https://w3c.github.io/payment-request/#dom-paymentrequest",
             "tags": [
               "web-features:payment-request"
             ],
@@ -253,15 +254,14 @@
       "getSecurePaymentConfirmationCapabilities_static": {
         "__compat": {
           "description": "`getSecurePaymentConfirmationCapabilities()` static method",
+          "mdn_url": "https://developer.mozilla.org/docs/Web/API/PaymentRequest/getSecurePaymentConfirmationCapabilities_static",
           "spec_url": "https://w3c.github.io/secure-payment-confirmation/#dom-paymentrequest-getsecurepaymentconfirmationcapabilities",
           "support": {
             "chrome": {
               "version_added": "148"
             },
             "chrome_android": "mirror",
-            "edge": {
-              "version_added": false
-            },
+            "edge": "mirror",
             "firefox": {
               "version_added": false
             },
@@ -364,7 +364,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": true
           }
         }
