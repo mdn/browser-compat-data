@@ -23,11 +23,11 @@ jobs:
       - run: npm ci
       - run: node ./scripts/enumerate-features.js features.json
       - run: node ./scripts/diff-features.js --no-github --format=json > features.diff.json
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: enumerate-features
           path: features.json
-      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: diff-features
           path: features.diff.json
