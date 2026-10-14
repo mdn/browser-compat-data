@@ -1,6 +1,6 @@
 # WebDriver BiDi compatibility data updates
 
-WebDriver BiDi implementers maintain the [WebDriver BiDi Implementation Status spreadsheet](https://docs.google.com/spreadsheets/d/1bkiPU5eDBCqFkx5p_VSBx_OK8gy9TeHRKQVPHKMATGQ/edit?usp=sharing). It predates the BCD data and already held implementation information, alongside specification status and planning. BCD syncs its implementation status and version information to reduce duplicate maintenance and keep compatibility data up to date.
+WebDriver BiDi implementers maintain the [WebDriver BiDi Implementation Status spreadsheet](https://docs.google.com/spreadsheets/d/1bkiPU5eDBCqFkx5p_VSBx_OK8gy9TeHRKQVPHKMATGQ/view). It predates the BCD data and already held implementation information, alongside specification status and planning. BCD syncs its implementation status and version information to reduce duplicate maintenance and keep compatibility data up to date.
 
 The spreadsheet is not publicly editable. Contact the WebDriver BiDi maintainers if you need editing access. For help making a change, contact [`@caugner`](https://github.com/caugner), who can make the update or ping the implementers.
 
