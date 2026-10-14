@@ -662,11 +662,17 @@
             "web-features:web-animations"
           ],
           "support": {
-            "chrome": {
-              "version_added": "83",
-              "partial_implementation": true,
-              "notes": "The `onanimationcancel` event handler property is not supported. To listen to this event, use `element.addEventListener('animationcancel', function() {});`. See [bug 41404325](https://crbug.com/41404325)."
-            },
+            "chrome": [
+              {
+                "version_added": "145"
+              },
+              {
+                "version_added": "83",
+                "version_removed": "145",
+                "partial_implementation": true,
+                "notes": "The `onanimationcancel` event handler property is not supported. To listen to this event, use `element.addEventListener('animationcancel', function() {});`. See [bug 41404325](https://crbug.com/41404325)."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
