@@ -10,7 +10,7 @@ import { gfmNoteblock, newBrowserEntry, updateBrowserEntry } from './utils.js';
 
 /**
  * getReleaseNotesURL - Guess the URL of the release notes
- * @param {number} version Version number
+ * @param {string} version Version number
  * @param {string} date Date in the format YYYYMMDD
  * @param {string} core The core of the name of the release note
  * @param {string} status The status of the release
@@ -25,9 +25,10 @@ const getReleaseNotesURL = async (version, date, core, status) => {
 
   /** @type {string} */
   let url = '';
+  const versionNumber = Number(version);
 
   // Before release 54, we guess the release note
-  if (version < 54) {
+  if (versionNumber < 54) {
     const dateObj = new Date(date);
     const year = dateObj.getUTCFullYear();
     const month = `0${dateObj.getUTCMonth() + 1}`.slice(-2);
@@ -51,14 +52,12 @@ const getReleaseNotesURL = async (version, date, core, status) => {
     }
   }
 
-  // After release 53, we have new-in-chrome highlight posts
-  if (version > 53) {
-    url = `https://developer.chrome.com/blog/new-in-chrome-${version}`;
-  }
-
-  // After release 123, we have complete release notes
-  if (version > 123) {
+  if (versionNumber >= 155) {
+    url = `https://chromestatus.com/release-notes/${version}`;
+  } else if (versionNumber >= 124) {
     url = `https://developer.chrome.com/release-notes/${version}`;
+  } else if (versionNumber >= 54) {
+    url = `https://developer.chrome.com/blog/new-in-chrome-${version}`;
   }
 
   const releaseNote = await fetch(url);
