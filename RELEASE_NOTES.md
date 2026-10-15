@@ -1,5 +1,93 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.1.6](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.6)
+
+October 15, 2026
+
+### Removals
+
+- `api.ShadowRoot.afterHTML` ([#30874](https://github.com/mdn/browser-compat-data/pull/30874))
+- `api.ShadowRoot.afterHTMLUnsafe` ([#30874](https://github.com/mdn/browser-compat-data/pull/30874))
+- `api.ShadowRoot.beforeHTML` ([#30874](https://github.com/mdn/browser-compat-data/pull/30874))
+- `api.ShadowRoot.beforeHTMLUnsafe` ([#30874](https://github.com/mdn/browser-compat-data/pull/30874))
+- `api.ShadowRoot.replaceWithHTML` ([#30874](https://github.com/mdn/browser-compat-data/pull/30874))
+- `api.ShadowRoot.replaceWithHTMLUnsafe` ([#30874](https://github.com/mdn/browser-compat-data/pull/30874))
+- `api.ShadowRoot.streamAfterHTML` ([#30874](https://github.com/mdn/browser-compat-data/pull/30874))
+- `api.ShadowRoot.streamAfterHTMLUnsafe` ([#30874](https://github.com/mdn/browser-compat-data/pull/30874))
+- `api.ShadowRoot.streamBeforeHTML` ([#30874](https://github.com/mdn/browser-compat-data/pull/30874))
+- `api.ShadowRoot.streamBeforeHTMLUnsafe` ([#30874](https://github.com/mdn/browser-compat-data/pull/30874))
+- `api.ShadowRoot.streamReplaceWithHTML` ([#30874](https://github.com/mdn/browser-compat-data/pull/30874))
+- `api.ShadowRoot.streamReplaceWithHTMLUnsafe` ([#30874](https://github.com/mdn/browser-compat-data/pull/30874))
+- `css.properties.block-ellipsis.auto` ([#30870](https://github.com/mdn/browser-compat-data/pull/30870))
+- `css.properties.content.element_replacement` ([#30870](https://github.com/mdn/browser-compat-data/pull/30870))
+- `css.properties.continue.auto` ([#30870](https://github.com/mdn/browser-compat-data/pull/30870))
+- `css.properties.flow-tolerance` ([#30870](https://github.com/mdn/browser-compat-data/pull/30870))
+- `css.properties.flow-tolerance.infinite` ([#30870](https://github.com/mdn/browser-compat-data/pull/30870))
+- `css.properties.flow-tolerance.normal` ([#30870](https://github.com/mdn/browser-compat-data/pull/30870))
+- `css.properties.line-clamp.auto` ([#30870](https://github.com/mdn/browser-compat-data/pull/30870))
+- `css.properties.max-lines.none` ([#30870](https://github.com/mdn/browser-compat-data/pull/30870))
+- `html.elements.script.type.speculationrules.source_optional` ([#30803](https://github.com/mdn/browser-compat-data/pull/30803))
+
+### Additions
+
+- `api.console.context_static` ([#30814](https://github.com/mdn/browser-compat-data/pull/30814))
+- `api.EXT_polygon_offset_clamp` ([#30843](https://github.com/mdn/browser-compat-data/pull/30843))
+- `api.EXT_polygon_offset_clamp.polygonOffsetClampEXT` ([#30843](https://github.com/mdn/browser-compat-data/pull/30843))
+- `api.PaymentRequest.show.returns_OperationError` ([#30821](https://github.com/mdn/browser-compat-data/pull/30821))
+- `api.PaymentRequestEvent.respondWith.returns_OperationError` ([#30821](https://github.com/mdn/browser-compat-data/pull/30821))
+- `api.Permissions.permission_idle-detection` ([#30714](https://github.com/mdn/browser-compat-data/pull/30714))
+- `api.RTCPeerConnection.cancelDiagnosticLogging_static` ([#30812](https://github.com/mdn/browser-compat-data/pull/30812))
+- `api.RTCPeerConnection.startDiagnosticLogging_static` ([#30812](https://github.com/mdn/browser-compat-data/pull/30812))
+- `api.RTCPeerConnection.stopDiagnosticLogging_static` ([#30812](https://github.com/mdn/browser-compat-data/pull/30812))
+- `api.WGSLLanguageFeatures.extension_immediate_address_space` ([#30860](https://github.com/mdn/browser-compat-data/pull/30860))
+- `browsers.bun.releases.1.4.3` ([#30841](https://github.com/mdn/browser-compat-data/pull/30841))
+- `browsers.edge.releases.158` ([#30808](https://github.com/mdn/browser-compat-data/pull/30808))
+- `browsers.firefox_android.releases.161` ([#30850](https://github.com/mdn/browser-compat-data/pull/30850))
+- `browsers.firefox.releases.161` ([#30850](https://github.com/mdn/browser-compat-data/pull/30850))
+- `css.properties.block-ellipsis.ellipsis` ([#30870](https://github.com/mdn/browser-compat-data/pull/30870))
+- `css.properties.content.content_replacement` ([#30870](https://github.com/mdn/browser-compat-data/pull/30870))
+- `css.properties.continue.normal` ([#30870](https://github.com/mdn/browser-compat-data/pull/30870))
+- `css.properties.fit-tolerance` ([#30870](https://github.com/mdn/browser-compat-data/pull/30870))
+- `css.properties.fit-tolerance.infinite` ([#30870](https://github.com/mdn/browser-compat-data/pull/30870))
+- `css.properties.fit-tolerance.normal` ([#30870](https://github.com/mdn/browser-compat-data/pull/30870))
+- `css.properties.line-clamp.ellipsis` ([#30870](https://github.com/mdn/browser-compat-data/pull/30870))
+- `css.properties.max-lines.auto` ([#30870](https://github.com/mdn/browser-compat-data/pull/30870))
+- `css.properties.max-size` ([#30822](https://github.com/mdn/browser-compat-data/pull/30822))
+- `css.properties.max-size.fit-content` ([#30822](https://github.com/mdn/browser-compat-data/pull/30822))
+- `css.properties.max-size.max-content` ([#30822](https://github.com/mdn/browser-compat-data/pull/30822))
+- `css.properties.max-size.min-content` ([#30822](https://github.com/mdn/browser-compat-data/pull/30822))
+- `css.properties.max-size.none` ([#30822](https://github.com/mdn/browser-compat-data/pull/30822))
+- `css.properties.max-size.stretch` ([#30822](https://github.com/mdn/browser-compat-data/pull/30822))
+- `css.properties.min-size` ([#30822](https://github.com/mdn/browser-compat-data/pull/30822))
+- `css.properties.min-size.auto` ([#30822](https://github.com/mdn/browser-compat-data/pull/30822))
+- `css.properties.min-size.fit-content` ([#30822](https://github.com/mdn/browser-compat-data/pull/30822))
+- `css.properties.min-size.max-content` ([#30822](https://github.com/mdn/browser-compat-data/pull/30822))
+- `css.properties.min-size.min-content` ([#30822](https://github.com/mdn/browser-compat-data/pull/30822))
+- `css.properties.min-size.stretch` ([#30822](https://github.com/mdn/browser-compat-data/pull/30822))
+- `css.selectors.field-content` ([#30809](https://github.com/mdn/browser-compat-data/pull/30809))
+- `css.types.color.hsla` ([#30810](https://github.com/mdn/browser-compat-data/pull/30810))
+- `css.types.random-item` ([#30822](https://github.com/mdn/browser-compat-data/pull/30822))
+- `html.elements.img.controls` ([#30705](https://github.com/mdn/browser-compat-data/pull/30705))
+- `html.elements.script.type.speculationrules.form_submission` ([#30862](https://github.com/mdn/browser-compat-data/pull/30862))
+- `html.elements.script.type.speculationrules.source` ([#30803](https://github.com/mdn/browser-compat-data/pull/30803))
+- `webassembly.type-reflection` ([#30815](https://github.com/mdn/browser-compat-data/pull/30815))
+- `webassembly.wideArithmetic` ([#30813](https://github.com/mdn/browser-compat-data/pull/30813))
+- `webdriver.bidi.emulation.setMediaFeaturesOverride` ([#30706](https://github.com/mdn/browser-compat-data/pull/30706))
+- `webdriver.bidi.emulation.setMediaFeaturesOverride.contexts_parameter` ([#30706](https://github.com/mdn/browser-compat-data/pull/30706))
+- `webdriver.bidi.emulation.setMediaFeaturesOverride.features_parameter` ([#30706](https://github.com/mdn/browser-compat-data/pull/30706))
+- `webdriver.bidi.emulation.setMediaFeaturesOverride.features_parameter.prefers-color-scheme` ([#30706](https://github.com/mdn/browser-compat-data/pull/30706))
+- `webdriver.bidi.emulation.setMediaFeaturesOverride.userContexts_parameter` ([#30706](https://github.com/mdn/browser-compat-data/pull/30706))
+- `webextensions.api.menus.update.icons` ([#30694](https://github.com/mdn/browser-compat-data/pull/30694))
+- `webextensions.api.menus.update.viewTypes` ([#30694](https://github.com/mdn/browser-compat-data/pull/30694))
+- `webextensions.api.menus.update.visible` ([#30694](https://github.com/mdn/browser-compat-data/pull/30694))
+
+### Statistics
+
+- 14 contributors have changed 116 files with 1,816 additions and 959 deletions in 65 commits ([`v8.1.5...v8.1.6`](https://github.com/mdn/browser-compat-data/compare/v8.1.5...v8.1.6))
+- 20,721 total features
+- 1,280 total contributors
+- 5,765 total stargazers
+
 ## [v8.1.5](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.5)
 
 October 8, 2026
