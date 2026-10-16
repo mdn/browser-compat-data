@@ -9,6 +9,26 @@ import stringify from '../lib/stringify-and-order-properties.js';
 import { gfmNoteblock, newBrowserEntry, updateBrowserEntry } from './utils.js';
 
 /**
+ * Returns the release notes URL for Chrome 54 and later.
+ * @param {string} version Version number
+ * @returns {string} The URL of the release notes, or the empty string before Chrome 54
+ */
+export const getReleaseNotesURLForVersion = (version) => {
+  const versionNumber = Number(version);
+
+  if (versionNumber >= 155) {
+    return `https://chromestatus.com/release-notes/${version}`;
+  }
+  if (versionNumber >= 124) {
+    return `https://developer.chrome.com/release-notes/${version}`;
+  }
+  if (versionNumber >= 54) {
+    return `https://developer.chrome.com/blog/new-in-chrome-${version}`;
+  }
+  return '';
+};
+
+/**
  * getReleaseNotesURL - Guess the URL of the release notes
  * @param {string} version Version number
  * @param {string} date Date in the format YYYYMMDD
@@ -23,12 +43,10 @@ const getReleaseNotesURL = async (version, date, core, status) => {
     return '';
   }
 
-  /** @type {string} */
-  let url = '';
-  const versionNumber = Number(version);
+  let url = getReleaseNotesURLForVersion(version);
 
   // Before release 54, we guess the release note
-  if (versionNumber < 54) {
+  if (!url) {
     const dateObj = new Date(date);
     const year = dateObj.getUTCFullYear();
     const month = `0${dateObj.getUTCMonth() + 1}`.slice(-2);
@@ -50,14 +68,8 @@ const getReleaseNotesURL = async (version, date, core, status) => {
     if (releaseNote.status !== 200) {
       throw styleText('red', `\nRelease note not found for ${version}.`);
     }
-  }
 
-  if (versionNumber >= 155) {
-    url = `https://chromestatus.com/release-notes/${version}`;
-  } else if (versionNumber >= 124) {
-    url = `https://developer.chrome.com/release-notes/${version}`;
-  } else if (versionNumber >= 54) {
-    url = `https://developer.chrome.com/blog/new-in-chrome-${version}`;
+    return url;
   }
 
   const releaseNote = await fetch(url);
