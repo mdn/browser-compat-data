@@ -38,8 +38,8 @@ export const getReleaseNotesURLForVersion = (version) => {
  * Throws a string in case of error
  */
 const getReleaseNotesURL = async (version, date, core, status) => {
-  // If the status isn't stable, do not give back any release notes.
-  if (status !== 'stable') {
+  // Chrome Status publishes release notes ahead of the stable release.
+  if (status !== 'stable' && Number(version) < 155) {
     return '';
   }
 
@@ -218,6 +218,19 @@ export const updateChromiumReleases = async (options) => {
     const plannedVersion = (
       Number(data[options.nightlyBranch].version) + 1
     ).toString();
+
+    let plannedReleaseNotesURL;
+    try {
+      plannedReleaseNotesURL = await getReleaseNotesURL(
+        plannedVersion,
+        '',
+        options.releaseNoteCore,
+        'planned',
+      );
+    } catch (str) {
+      result += str;
+    }
+
     if (chromeBCD.browsers[options.bcdBrowserName].releases[plannedVersion]) {
       result += updateBrowserEntry(
         chromeBCD,
@@ -226,7 +239,7 @@ export const updateChromiumReleases = async (options) => {
         chromeBCD.browsers[options.bcdBrowserName].releases[plannedVersion]
           .release_date,
         'planned',
-        '',
+        plannedReleaseNotesURL,
         '',
       );
     } else {
@@ -238,7 +251,7 @@ export const updateChromiumReleases = async (options) => {
         'planned',
         options.browserEngine,
         '',
-        '',
+        plannedReleaseNotesURL,
         plannedVersion,
       );
     }
