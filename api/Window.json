@@ -7577,9 +7577,17 @@
             "https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onunload"
           ],
           "support": {
-            "chrome": {
-              "version_added": "1"
-            },
+            "chrome": [
+              {
+                "version_added": "155",
+                "partial_implementation": true,
+                "notes": "The `unload` event fires only if the [`Permissions-Policy` header's `unload` directive](https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy/unload) is set. See [Deprecating the unload event at Chrome for Developers](https://developer.chrome.com/docs/web-platform/deprecating-unload#control_access_to_unload) for details."
+              },
+              {
+                "version_added": "1",
+                "version_removed": "155"
+              }
+            ],
             "chrome_android": "mirror",
             "deno": {
               "version_added": "1.0"
