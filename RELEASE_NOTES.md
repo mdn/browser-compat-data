@@ -1,5 +1,20 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.1.7](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.7)
+
+October 16, 2026
+
+### Additions
+
+- `api.GPUDevice.createPipelineLayout.descriptor_immediateSize_parameter` ([#30879](https://github.com/mdn/browser-compat-data/pull/30879))
+
+### Statistics
+
+- 6 contributors have changed 31 files with 232 additions and 231 deletions in 8 commits ([`v8.1.6...v8.1.7`](https://github.com/mdn/browser-compat-data/compare/v8.1.6...v8.1.7))
+- 20,722 total features
+- 1,281 total contributors
+- 5,766 total stargazers
+
 ## [v8.1.6](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.6)
 
 October 15, 2026
