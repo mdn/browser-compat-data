@@ -4,55 +4,112 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
-import dataFolders from '../scripts/lib/data-folders.js';
-import bcd from '../index.js';
-
 import walk, { lowLevelWalk } from './walk.js';
 
-describe('lowLevelWalk()', () => {
-  it('visits every top-level tree', () => {
-    const steps = Array.from(lowLevelWalk(undefined, undefined, 1));
-    const paths = steps.map((step) => step.path);
-    assert.equal(steps.length, dataFolders.length);
-    assert.deepEqual(paths, dataFolders);
+/** @import {InternalCompatStatement, InternalDataType, InternalIdentifier} from '../types/index.js' */
+
+/**
+ * Create a feature with a minimal compat statement.
+ * @param {Record<string, InternalIdentifier>} [children] Subfeatures by name
+ * @param {Partial<InternalCompatStatement>} [compat] Extra compat properties
+ * @returns {InternalIdentifier} The feature
+ */
+const feature = (children = {}, compat = {}) =>
+  /** @type {InternalIdentifier} */ ({
+    __compat: {
+      support: {},
+      status: { experimental: false, standard_track: true, deprecated: false },
+      ...compat,
+    },
+    ...children,
   });
-  it('visits every point in the tree', () => {
-    const paths = Array.from(lowLevelWalk()).map((step) => step.path);
-    assert.ok(paths.length > 13000);
+
+const data = /** @type {InternalDataType} */ (
+  /** @type {*} */ ({
+    api: {
+      Thing: feature({ child: feature() }),
+    },
+    browsers: {
+      example: {
+        name: 'Example',
+        releases: {
+          1: {},
+        },
+      },
+    },
+    css: {
+      properties: {
+        color: feature(),
+      },
+    },
+    __meta: {
+      version: '0.0.0',
+    },
+  })
+);
+
+describe('lowLevelWalk()', () => {
+  it('visits each direct child at depth one', () => {
+    const steps = Array.from(lowLevelWalk(data, undefined, 1));
+
+    assert.deepEqual(
+      steps.map((step) => step.path),
+      ['api', 'browsers', 'css'],
+    );
+  });
+
+  it('visits each point in the tree', () => {
+    const paths = Array.from(lowLevelWalk(data)).map((step) => step.path);
+
+    assert.deepEqual(paths, [
+      'api',
+      'api.Thing',
+      'api.Thing.child',
+      'browsers',
+      'browsers.example',
+      'browsers.example.releases.1',
+      'css',
+      'css.properties',
+      'css.properties.color',
+    ]);
   });
 });
 
 describe('walk()', () => {
-  it('should visit deeply nested features', () => {
-    const results = Array.from(walk('html')).map((feature) => feature.path);
-    assert.ok(results.includes('html.elements.a.href.href_top'));
+  it('walks a namespace entry point', () => {
+    const results = Array.from(walk('api', data)).map(
+      (feature) => feature.path,
+    );
+
+    assert.deepEqual(results, ['api.Thing', 'api.Thing.child']);
   });
 
-  it('should walk a single tree', () => {
-    const results = Array.from(walk('api.Notification'));
-    assert.equal(results.length, 29);
-    assert.equal(results[0].path, 'api.Notification');
-    assert.equal(results[1].path, 'api.Notification.Notification');
+  it('walks a single entry point', () => {
+    const results = Array.from(walk('api.Thing', data));
+
+    assert.deepEqual(
+      results.map((feature) => feature.path),
+      ['api.Thing', 'api.Thing.child'],
+    );
   });
 
-  it('should walk multiple trees', () => {
+  it('walks multiple entry points', () => {
     const results = Array.from(
-      walk(['api.Notification', 'css.properties.color']),
+      walk(['api.Thing', 'css.properties.color'], data),
     );
-    assert.equal(results.length, 32);
-    assert.equal(results[0].path, 'api.Notification');
-    assert.equal(
-      results[results.length - 1].path,
-      'css.properties.color.transparent',
+
+    assert.deepEqual(
+      results.map((feature) => feature.path),
+      ['api.Thing', 'api.Thing.child', 'css.properties.color'],
     );
   });
 
-  it('should yield every feature by default', () => {
-    const featureCountFromString = JSON.stringify(bcd, undefined, 2)
-      .split('\n')
-      .filter((line) => line.includes('__compat')).length;
-    const featureCountFromWalk = Array.from(walk()).length;
+  it('yields every feature by default', () => {
+    const results = Array.from(walk(undefined, data));
 
-    assert.equal(featureCountFromString, featureCountFromWalk);
+    assert.deepEqual(
+      results.map((feature) => feature.path),
+      ['api.Thing', 'api.Thing.child', 'css.properties.color'],
+    );
   });
 });
