@@ -24,6 +24,8 @@ const feature = (children = {}, compat = {}) =>
     ...children,
   });
 
+// The string-valued `browsers` and `__meta` entries fail the `InternalIdentifier`
+// index signature, so the fixture cannot be annotated directly.
 const data = /** @type {InternalDataType} */ (
   /** @type {*} */ ({
     api: {
