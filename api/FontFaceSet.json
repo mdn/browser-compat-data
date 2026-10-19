@@ -10,7 +10,7 @@
         "support": {
           "chrome": {
             "version_added": "35",
-            "notes": "Chrome does not expose the `FontFaceSet` interface directly, and is only available through [`Document.fonts`](https://developer.mozilla.org/docs/Web/API/Document/fonts) or [`WorkerGlobalScope.fonts`](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/fonts)."
+            "notes": "Before Chrome 151, the `FontFaceSet` interface was not exposed globally, and was only available through [`Document.fonts`](https://developer.mozilla.org/docs/Web/API/Document/fonts) or [`WorkerGlobalScope.fonts`](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/fonts). See [bug 477568263](https://crbug.com/477568263)."
           },
           "chrome_android": "mirror",
           "edge": "mirror",
