@@ -73,6 +73,12 @@ describe('lowLevelWalk()', () => {
       'css.properties.color',
     ]);
   });
+
+  it('skips `__meta`', () => {
+    const paths = Array.from(lowLevelWalk(data)).map((step) => step.path);
+
+    assert.ok(!paths.some((path) => path.startsWith('__meta')));
+  });
 });
 
 describe('walk()', () => {
