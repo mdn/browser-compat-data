@@ -9,8 +9,28 @@ import stringify from '../lib/stringify-and-order-properties.js';
 import { gfmNoteblock, newBrowserEntry, updateBrowserEntry } from './utils.js';
 
 /**
+ * Returns the release notes URL for Chrome 54 and later.
+ * @param {string} version Version number
+ * @returns {string} The URL of the release notes, or the empty string before Chrome 54
+ */
+export const getReleaseNotesURLForVersion = (version) => {
+  const versionNumber = Number(version);
+
+  if (versionNumber >= 155) {
+    return `https://chromestatus.com/release-notes/${version}`;
+  }
+  if (versionNumber >= 124) {
+    return `https://developer.chrome.com/release-notes/${version}`;
+  }
+  if (versionNumber >= 54) {
+    return `https://developer.chrome.com/blog/new-in-chrome-${version}`;
+  }
+  return '';
+};
+
+/**
  * getReleaseNotesURL - Guess the URL of the release notes
- * @param {number} version Version number
+ * @param {string} version Version number
  * @param {string} date Date in the format YYYYMMDD
  * @param {string} core The core of the name of the release note
  * @param {string} status The status of the release
@@ -18,16 +38,15 @@ import { gfmNoteblock, newBrowserEntry, updateBrowserEntry } from './utils.js';
  * Throws a string in case of error
  */
 const getReleaseNotesURL = async (version, date, core, status) => {
-  // If the status isn't stable, do not give back any release notes.
-  if (status !== 'stable') {
+  // Chrome Status publishes release notes ahead of the stable release.
+  if (status !== 'stable' && Number(version) < 155) {
     return '';
   }
 
-  /** @type {string} */
-  let url = '';
+  let url = getReleaseNotesURLForVersion(version);
 
   // Before release 54, we guess the release note
-  if (version < 54) {
+  if (!url) {
     const dateObj = new Date(date);
     const year = dateObj.getUTCFullYear();
     const month = `0${dateObj.getUTCMonth() + 1}`.slice(-2);
@@ -49,16 +68,8 @@ const getReleaseNotesURL = async (version, date, core, status) => {
     if (releaseNote.status !== 200) {
       throw styleText('red', `\nRelease note not found for ${version}.`);
     }
-  }
 
-  // After release 53, we have new-in-chrome highlight posts
-  if (version > 53) {
-    url = `https://developer.chrome.com/blog/new-in-chrome-${version}`;
-  }
-
-  // After release 123, we have complete release notes
-  if (version > 123) {
-    url = `https://developer.chrome.com/release-notes/${version}`;
+    return url;
   }
 
   const releaseNote = await fetch(url);
@@ -207,6 +218,19 @@ export const updateChromiumReleases = async (options) => {
     const plannedVersion = (
       Number(data[options.nightlyBranch].version) + 1
     ).toString();
+
+    let plannedReleaseNotesURL;
+    try {
+      plannedReleaseNotesURL = await getReleaseNotesURL(
+        plannedVersion,
+        '',
+        options.releaseNoteCore,
+        'planned',
+      );
+    } catch (str) {
+      result += str;
+    }
+
     if (chromeBCD.browsers[options.bcdBrowserName].releases[plannedVersion]) {
       result += updateBrowserEntry(
         chromeBCD,
@@ -215,7 +239,7 @@ export const updateChromiumReleases = async (options) => {
         chromeBCD.browsers[options.bcdBrowserName].releases[plannedVersion]
           .release_date,
         'planned',
-        '',
+        plannedReleaseNotesURL,
         '',
       );
     } else {
@@ -227,7 +251,7 @@ export const updateChromiumReleases = async (options) => {
         'planned',
         options.browserEngine,
         '',
-        '',
+        plannedReleaseNotesURL,
         plannedVersion,
       );
     }

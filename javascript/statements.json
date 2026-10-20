@@ -1558,7 +1558,14 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "preview",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "javascript.options.experimental.defer_import_eval",
+                    "value_to_set": "true"
+                  }
+                ]
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -1583,6 +1590,9 @@
           "__compat": {
             "description": "Loading is retriable (HTTP errors are not cached)",
             "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#fetch-a-single-module-script",
+            "tags": [
+              "web-features:retriable-module-loading"
+            ],
             "support": {
               "chrome": {
                 "version_added": "156"

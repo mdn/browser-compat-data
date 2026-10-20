@@ -763,6 +763,9 @@
               "__compat": {
                 "description": "Loading is retriable (HTTP errors are not cached)",
                 "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#fetch-a-single-module-script",
+                "tags": [
+                  "web-features:retriable-module-loading"
+                ],
                 "support": {
                   "chrome": {
                     "version_added": "156"
@@ -825,7 +828,10 @@
                 ],
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "preview",
+                  "impl_url": "https://bugzil.la/2020702",
+                  "partial_implementation": true,
+                  "notes": "Initial support includes prefetch of URL list only."
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -866,7 +872,9 @@
                   "chrome_android": "mirror",
                   "edge": "mirror",
                   "firefox": {
-                    "version_added": false
+                    "version_added": "preview",
+                    "partial_implementation": true,
+                    "notes": "Supports `immediate` and `moderate` only."
                   },
                   "firefox_android": "mirror",
                   "oculus": "mirror",
@@ -939,6 +947,40 @@
                 }
               }
             },
+            "form_submission": {
+              "__compat": {
+                "description": "`form_submission` key",
+                "tags": [
+                  "web-features:speculation-rules"
+                ],
+                "support": {
+                  "chrome": {
+                    "version_added": "151"
+                  },
+                  "chrome_android": "mirror",
+                  "edge": "mirror",
+                  "firefox": {
+                    "version_added": false
+                  },
+                  "firefox_android": "mirror",
+                  "oculus": "mirror",
+                  "opera": "mirror",
+                  "opera_android": "mirror",
+                  "safari": {
+                    "version_added": false
+                  },
+                  "safari_ios": "mirror",
+                  "samsunginternet_android": "mirror",
+                  "webview_android": "mirror",
+                  "webview_ios": "mirror"
+                },
+                "status": {
+                  "experimental": true,
+                  "standard_track": false,
+                  "deprecated": false
+                }
+              }
+            },
             "prefetch": {
               "__compat": {
                 "description": "`prefetch` key",
@@ -956,8 +998,7 @@
                   },
                   "edge": "mirror",
                   "firefox": {
-                    "version_added": false,
-                    "impl_url": "https://bugzil.la/1969396"
+                    "version_added": "preview"
                   },
                   "firefox_android": "mirror",
                   "oculus": "mirror",
@@ -1196,22 +1237,43 @@
                 }
               }
             },
-            "source_optional": {
+            "source": {
               "__compat": {
-                "description": "`source` key is optional",
+                "description": "`source` key",
                 "mdn_url": "https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/script/type/speculationrules#source",
                 "spec_url": "https://html.spec.whatwg.org/multipage/speculative-loading.html#valid-speculation-rule:~:text=%22source%22%20key",
                 "tags": [
                   "web-features:speculation-rules"
                 ],
                 "support": {
-                  "chrome": {
-                    "version_added": "122"
-                  },
-                  "chrome_android": "mirror",
+                  "chrome": [
+                    {
+                      "version_added": "109",
+                      "notes": "Starting with version 122, the `source` key is optional."
+                    },
+                    {
+                      "version_added": "105",
+                      "version_removed": "109",
+                      "partial_implementation": true,
+                      "notes": "Same-origin pre-rendering only."
+                    }
+                  ],
+                  "chrome_android": [
+                    {
+                      "version_added": "109"
+                    },
+                    {
+                      "version_added": "103",
+                      "version_removed": "109",
+                      "partial_implementation": true,
+                      "notes": "Same-origin pre-rendering only."
+                    }
+                  ],
                   "edge": "mirror",
                   "firefox": {
-                    "version_added": false
+                    "version_added": "preview",
+                    "partial_implementation": true,
+                    "notes": "Supports `list` only."
                   },
                   "firefox_android": "mirror",
                   "oculus": "mirror",
@@ -1335,7 +1397,7 @@
                   },
                   "edge": "mirror",
                   "firefox": {
-                    "version_added": false
+                    "version_added": "preview"
                   },
                   "firefox_android": "mirror",
                   "oculus": "mirror",
