@@ -114,4 +114,72 @@ describe('test-descriptions', () => {
       assert.equal(errors.length, 1);
     });
   });
+
+  describe('HTML in descriptions', () => {
+    /**
+     * Find the description error with the given rule name.
+     * @param {(string | DescriptionError)[]} errors The errors to search.
+     * @param {string} ruleName The rule name to look for.
+     * @returns {DescriptionError | undefined} The matching error, if any.
+     */
+    const findError = (errors, ruleName) =>
+      /** @type {DescriptionError | undefined} */ (
+        errors.find((e) => typeof e !== 'string' && e.ruleName === ruleName)
+      );
+
+    /** @type {{name: string, description: string, ruleName: string, actual?: string, expected: string}[]} */
+    const cases = [
+      {
+        name: 'flags <code> tags as no_code_tag_in_description',
+        description: '<code>transient_attachment</code> usage',
+        ruleName: 'no_code_tag_in_description',
+        actual: '<code>transient_attachment</code> usage',
+        expected: '`transient_attachment` usage',
+      },
+      {
+        name: 'flags <a> tags as no_link_tag_in_description',
+        description: "See <a href='https://example.com'>the docs</a>",
+        ruleName: 'no_link_tag_in_description',
+        actual: "See <a href='https://example.com'>the docs</a>",
+        expected: 'See [the docs](https://example.com)',
+      },
+      {
+        name: 'converts nested <code> before the link in a single expectation',
+        description: "See <a href='https://example.com'><code>foo()</code></a>",
+        ruleName: 'no_link_tag_in_description',
+        expected: 'See [`foo()`](https://example.com)',
+      },
+    ];
+
+    for (const { name, description, ruleName, actual, expected } of cases) {
+      it(name, () => {
+        /** @type {InternalCompatStatement} */
+        const data = { description, support: {} };
+        const errors = processData(data, 'api', 'api.Foo.bar');
+        const err = findError(errors, ruleName);
+        assert.ok(err);
+        if (actual !== undefined) {
+          assert.equal(err.actual, actual);
+        }
+        assert.equal(err.expected, expected);
+      });
+    }
+
+    it('does not flag descriptions without HTML', () => {
+      /** @type {InternalCompatStatement} */
+      const data = {
+        description: '`transient_attachment` usage',
+        support: {},
+      };
+      const errors = processData(data, 'api', 'api.Foo.bar');
+      assert.ok(
+        !errors.some(
+          (e) =>
+            typeof e !== 'string' &&
+            (e.ruleName === 'no_code_tag_in_description' ||
+              e.ruleName === 'no_link_tag_in_description'),
+        ),
+      );
+    });
+  });
 });

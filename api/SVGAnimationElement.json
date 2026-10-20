@@ -303,11 +303,17 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "10",
-              "partial_implementation": true,
-              "notes": "The `onend` event handler property is not supported."
-            },
+            "safari": [
+              {
+                "version_added": "26.5"
+              },
+              {
+                "version_added": "10",
+                "version_removed": "26.5",
+                "partial_implementation": true,
+                "notes": "The `onend` event handler property is not supported."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",

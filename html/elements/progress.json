@@ -18,10 +18,7 @@
             },
             "firefox": {
               "version_added": "6",
-              "notes": [
-                "Before Firefox 14, the `<progress>` element was incorrectly classified as a form element, and therefore had a `form` attribute. This has been fixed.",
-                "Firefox provides the `::-moz-progress-bar` pseudo-element, which lets you style the part of the interior of the progress bar representing the amount of work completed so far."
-              ]
+              "notes": "Before Firefox 14, the `<progress>` element was incorrectly classified as a form element, and therefore had a `form` attribute."
             },
             "firefox_android": "mirror",
             "ie": {
@@ -37,10 +34,17 @@
             "safari": {
               "version_added": "6"
             },
-            "safari_ios": {
-              "version_added": "7",
-              "notes": "Safari on iOS does not support indeterminate progress bars (they are rendered like 0%-completed progress bars)."
-            },
+            "safari_ios": [
+              {
+                "version_added": "8"
+              },
+              {
+                "version_added": "7",
+                "version_removed": "8",
+                "partial_implementation": true,
+                "notes": "Indeterminate progress bars are rendered like 0%-completed progress bars."
+              }
+            ],
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
             "webview_ios": "mirror"

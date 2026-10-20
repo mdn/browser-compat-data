@@ -10,7 +10,7 @@
         "support": {
           "chrome": {
             "version_added": "35",
-            "notes": "Chrome does not expose the `FontFaceSet` interface directly, and is only available through [`Document.fonts`](https://developer.mozilla.org/docs/Web/API/Document/fonts) or [`WorkerGlobalScope.fonts`](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/fonts)."
+            "notes": "Before Chrome 151, the `FontFaceSet` interface was not exposed globally, and was only available through [`Document.fonts`](https://developer.mozilla.org/docs/Web/API/Document/fonts) or [`WorkerGlobalScope.fonts`](https://developer.mozilla.org/docs/Web/API/WorkerGlobalScope/fonts). See [bug 477568263](https://crbug.com/477568263)."
           },
           "chrome_android": "mirror",
           "edge": "mirror",
@@ -265,7 +265,9 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "41"
+              "version_added": "41",
+              "partial_implementation": true,
+              "notes": "The returned iterator object has a `next()` method but does not implement `Symbol.iterator`, so it cannot be used with `for...of` or spread syntax. See [bug 1311198](https://bugzil.la/1311198)."
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -370,7 +372,9 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "41"
+              "version_added": "41",
+              "partial_implementation": true,
+              "notes": "The returned iterator object has a `next()` method but does not implement `Symbol.iterator`, so it cannot be used with `for...of` or spread syntax. See [bug 1311198](https://bugzil.la/1311198)."
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -665,7 +669,9 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "41"
+              "version_added": "41",
+              "partial_implementation": true,
+              "notes": "The returned iterator object has a `next()` method but does not implement `Symbol.iterator`, so it cannot be used with `for...of` or spread syntax. See [bug 1311198](https://bugzil.la/1311198)."
             },
             "firefox_android": "mirror",
             "oculus": "mirror",

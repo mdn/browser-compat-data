@@ -376,6 +376,66 @@
           }
         }
       },
+      "focusGroup": {
+        "__compat": {
+          "support": {
+            "chrome": {
+              "version_added": "150"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
+      "focusGroupStart": {
+        "__compat": {
+          "support": {
+            "chrome": {
+              "version_added": "150"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
       "load_event": {
         "__compat": {
           "description": "`load` event",
@@ -392,11 +452,17 @@
             "edge": {
               "version_added": "12"
             },
-            "firefox": {
-              "alternative_name": "SVGLoad",
-              "version_added": "4",
-              "notes": "See [bug 620002](https://bugzil.la/620002) for implementation status of the standard `load` event."
-            },
+            "firefox": [
+              {
+                "version_added": "83"
+              },
+              {
+                "alternative_name": "SVGLoad",
+                "version_added": "4",
+                "version_removed": "83",
+                "notes": "See [bug 620002](https://bugzil.la/620002) for implementation status of the standard `load` event."
+              }
+            ],
             "firefox_android": "mirror",
             "ie": {
               "version_added": "9"

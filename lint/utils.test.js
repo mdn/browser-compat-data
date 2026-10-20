@@ -10,6 +10,8 @@ import {
   createStatementGroupKey,
   escapeInvisibles,
   jsonDiff,
+  replaceCodeTagsWithBackticks,
+  replaceLinkTagsWithMarkdown,
 } from './utils.js';
 
 describe('utils', () => {
@@ -77,6 +79,62 @@ describe('utils', () => {
         JSON.stringify({ a: 2 }, null, 2),
       ),
       null,
+    );
+  });
+
+  it('`replaceCodeTagsWithBackticks()` works correctly', () => {
+    assert.equal(
+      replaceCodeTagsWithBackticks('<code>transient_attachment</code> usage'),
+      '`transient_attachment` usage',
+    );
+    assert.equal(
+      replaceCodeTagsWithBackticks('<code>foo</code> and <code>bar</code>'),
+      '`foo` and `bar`',
+    );
+    assert.equal(
+      replaceCodeTagsWithBackticks('`already` markdown'),
+      '`already` markdown',
+    );
+    assert.equal(
+      replaceCodeTagsWithBackticks('Use `<code>` element'),
+      'Use `<code>` element',
+    );
+  });
+
+  it('`replaceLinkTagsWithMarkdown()` works correctly', () => {
+    assert.equal(
+      replaceLinkTagsWithMarkdown(
+        "See <a href='https://bugzil.la/1'>bug 1</a>.",
+      ),
+      'See [bug 1](https://bugzil.la/1).',
+    );
+    assert.equal(
+      replaceLinkTagsWithMarkdown(
+        'See <a href="https://bugzil.la/1">bug 1</a>.',
+      ),
+      'See [bug 1](https://bugzil.la/1).',
+    );
+    assert.equal(
+      replaceLinkTagsWithMarkdown(
+        "<a href='https://bugzil.la/1'>bug 1</a> and <a href='https://bugzil.la/2'>bug 2</a>",
+      ),
+      '[bug 1](https://bugzil.la/1) and [bug 2](https://bugzil.la/2)',
+    );
+    assert.equal(
+      replaceLinkTagsWithMarkdown(
+        "<a href='https://example.com'>`code` text</a>",
+      ),
+      '[`code` text](https://example.com)',
+    );
+    assert.equal(
+      replaceLinkTagsWithMarkdown('[already](https://example.com) markdown'),
+      '[already](https://example.com) markdown',
+    );
+    assert.equal(
+      replaceLinkTagsWithMarkdown(
+        "<a href='https://example.com'><code>code</code></a>",
+      ),
+      "<a href='https://example.com'><code>code</code></a>",
     );
   });
 

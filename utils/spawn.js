@@ -1,4 +1,4 @@
-import { spawnSync } from 'node:child_process';
+import spawn from 'cross-spawn';
 
 /** @import {SpawnSyncOptionsWithStringEncoding} from 'node:child_process' */
 
@@ -10,7 +10,7 @@ import { spawnSync } from 'node:child_process';
  * @returns {string} The output from the command
  */
 export default (command, args, opts) => {
-  const result = spawnSync(command, args, {
+  const result = spawn.sync(command, args, {
     ...opts,
     encoding: 'utf8',
     shell: false,

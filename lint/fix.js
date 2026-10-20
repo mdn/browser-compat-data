@@ -18,6 +18,7 @@ import fixFeatureOrder from './fixer/feature-order.js';
 import fixPropertyOrder from './fixer/property-order.js';
 import fixStatementOrder from './fixer/statement-order.js';
 import fixDescriptions from './fixer/descriptions.js';
+import fixNotes from './fixer/notes.js';
 import fixFlags from './fixer/flags.js';
 import fixLinks from './fixer/links.js';
 import fixMDNURLs from './fixer/mdn-urls.js';
@@ -36,6 +37,7 @@ const dirname = fileURLToPath(new URL('.', import.meta.url));
 /** @type {Readonly<Record<string, function(string, string): Promise<string> | string>>} */
 const FIXES = Object.freeze({
   descriptions: fixDescriptions,
+  notes: fixNotes,
   common_errors: fixCommonErrors,
   flags: fixFlags,
   links: fixLinks,
