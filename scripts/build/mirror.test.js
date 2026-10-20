@@ -11,7 +11,12 @@ import assert from 'node:assert/strict';
 
 import bcd from '../../index.js';
 
-import mirrorSupport, { isOSLimitation, updateNotes } from './mirror.js';
+import mirrorSupport, {
+  isOSLimitation,
+  mirrorLegacyStatements,
+  updateNotes,
+  usesLegacyMirror,
+} from './mirror.js';
 
 describe('mirror', () => {
   describe('isOSLimitation', () => {
@@ -476,6 +481,177 @@ describe('mirror', () => {
         const mirrored = mirrorSupport('edge', support);
         assert.deepEqual(mirrored, { version_added: '79' });
       });
+    });
+  });
+
+  describe('mirrorLegacyStatements', () => {
+    /** @type {{ name: string, chrome: *, edge: *, expected: * }[]} */
+    const cases = [
+      {
+        name: 'merges a bare Chromium continuation into the legacy statement',
+        chrome: { version_added: '66' },
+        edge: { version_added: '16', mirror: true },
+        expected: { version_added: '16' },
+      },
+      {
+        name: 'keeps the Chromium-era limitations as a separate statement',
+        chrome: { version_added: '66', notes: 'Limited.' },
+        edge: { version_added: '16', mirror: true },
+        expected: [
+          { version_added: '79', notes: 'Limited.' },
+          { version_added: '16', version_removed: '79' },
+        ],
+      },
+      {
+        name: 'leaves a gap when upstream ships later than the switch',
+        chrome: { version_added: '80' },
+        edge: { version_added: '16', mirror: true },
+        expected: [
+          { version_added: '80' },
+          { version_added: '16', version_removed: '79' },
+        ],
+      },
+      {
+        name: 'keeps the legacy statement alone when upstream lacks the feature',
+        chrome: { version_added: false },
+        edge: { version_added: '17', mirror: true },
+        expected: { version_added: '17', version_removed: '79' },
+      },
+      {
+        name: 'carries a mirrored version_removed onto the merged statement',
+        chrome: { version_added: '66', version_removed: '100' },
+        edge: { version_added: '16', mirror: true },
+        expected: { version_added: '16', version_removed: '100' },
+      },
+      {
+        name: 'caps a legacy statement that spans the switch',
+        chrome: { version_added: '66', version_removed: '127' },
+        edge: { version_added: '12', version_removed: '127', mirror: true },
+        expected: { version_added: '12', version_removed: '127' },
+      },
+      {
+        name: 'splits unmarked legacy statements by default',
+        chrome: { version_added: '66', notes: 'Limited.' },
+        edge: { version_added: '16' },
+        expected: [
+          { version_added: '79', notes: 'Limited.' },
+          { version_added: '16', version_removed: '79' },
+        ],
+      },
+      {
+        name: 'orders the unprefixed legacy statement before the prefixed Chromium-era one',
+        chrome: [
+          { version_added: '66' },
+          { version_added: '60', prefix: 'webkit' },
+        ],
+        edge: { version_added: '16' },
+        expected: [
+          { version_added: '16' },
+          { version_added: '79', prefix: 'webkit' },
+        ],
+      },
+      {
+        name: 'strips the opt-out marker without splitting',
+        chrome: { version_added: '66', notes: 'Limited.' },
+        edge: { version_added: '16', mirror: false },
+        expected: { version_added: '16' },
+      },
+    ];
+
+    for (const { name, chrome, edge, expected } of cases) {
+      it(name, () => {
+        const resolved = mirrorLegacyStatements('edge', { chrome, edge });
+        assert.deepEqual(resolved, expected);
+      });
+    }
+
+    describe('usesLegacyMirror', () => {
+      /** @type {{ name: string, edge: *, expected: boolean }[]} */
+      const cases = [
+        {
+          name: 'legacy-only without marker',
+          edge: { version_added: '16' },
+          expected: true,
+        },
+        {
+          name: 'legacy-only with mirror: true',
+          edge: { version_added: '16', mirror: true },
+          expected: true,
+        },
+        {
+          name: 'legacy-only opted out',
+          edge: { version_added: '16', mirror: false },
+          expected: false,
+        },
+        {
+          name: 'mixed legacy and Edge 79+',
+          edge: [
+            { version_added: '90' },
+            { version_added: '18', version_removed: '79' },
+          ],
+          expected: false,
+        },
+        {
+          name: 'Edge 79+ only',
+          edge: { version_added: '79' },
+          expected: false,
+        },
+        { name: 'mirror string', edge: 'mirror', expected: false },
+        {
+          name: 'preview is not a legacy version',
+          edge: { version_added: 'preview' },
+          expected: false,
+        },
+      ];
+
+      for (const { name, edge, expected } of cases) {
+        it(name, () => {
+          assert.equal(
+            usesLegacyMirror('edge', { chrome: { version_added: '66' }, edge }),
+            expected,
+          );
+        });
+      }
+
+      it('is off for browsers other than Edge, even with mirror: true', () => {
+        for (const browser of /** @type {BrowserName[]} */ ([
+          'opera',
+          'safari',
+        ])) {
+          assert.equal(
+            usesLegacyMirror(browser, {
+              chrome: { version_added: '66' },
+              [browser]: { version_added: '12', mirror: true },
+            }),
+            false,
+          );
+        }
+      });
+    });
+
+    it('throws when a marked statement shares a block with a Chromium-era statement', () => {
+      assert.throws(
+        () =>
+          mirrorLegacyStatements('edge', {
+            chrome: { version_added: '66' },
+            edge: [
+              { version_added: '90' },
+              { version_added: '18', version_removed: '79', mirror: true },
+            ],
+          }),
+        /cannot be combined/,
+      );
+    });
+
+    it('throws when a marked statement starts at or after the switch', () => {
+      assert.throws(
+        () =>
+          mirrorLegacyStatements('edge', {
+            chrome: { version_added: '66' },
+            edge: { version_added: '79', mirror: true },
+          }),
+        /must be added before edge 79/,
+      );
     });
   });
 });
