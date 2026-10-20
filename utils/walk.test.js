@@ -6,7 +6,8 @@ import assert from 'node:assert/strict';
 
 import walk, { lowLevelWalk } from './walk.js';
 
-/** @import {InternalCompatStatement, InternalDataType, InternalIdentifier} from '../types/index.js' */
+/** @import {InternalBrowserStatement, InternalCompatStatement, InternalDataType, InternalIdentifier} from '../types/index.js' */
+/** @import {CompatData} from '../types/public.js' */
 
 /**
  * Create a feature with a minimal compat statement.
@@ -24,31 +25,17 @@ const feature = (children = {}, compat = {}) =>
     ...children,
   });
 
-// The string-valued `browsers` and `__meta` entries fail the `InternalIdentifier`
-// index signature, so the fixture cannot be annotated directly.
-const data = /** @type {InternalDataType} */ (
-  /** @type {*} */ ({
-    api: {
-      Thing: feature({ child: feature() }),
+/** @type {InternalDataType} */
+const data = {
+  api: {
+    Thing: feature({ child: feature() }),
+  },
+  css: {
+    properties: {
+      color: feature(),
     },
-    browsers: {
-      example: {
-        name: 'Example',
-        releases: {
-          1: {},
-        },
-      },
-    },
-    css: {
-      properties: {
-        color: feature(),
-      },
-    },
-    __meta: {
-      version: '0.0.0',
-    },
-  })
-);
+  },
+};
 
 describe('lowLevelWalk()', () => {
   it('visits each direct child at depth one', () => {
@@ -56,7 +43,7 @@ describe('lowLevelWalk()', () => {
 
     assert.deepEqual(
       steps.map((step) => step.path),
-      ['api', 'browsers', 'css'],
+      ['api', 'css'],
     );
   });
 
@@ -67,17 +54,44 @@ describe('lowLevelWalk()', () => {
       'api',
       'api.Thing',
       'api.Thing.child',
-      'browsers',
-      'browsers.example',
-      'browsers.example.releases.1',
       'css',
       'css.properties',
       'css.properties.color',
     ]);
   });
 
+  it('visits a browser and its releases', () => {
+    /** @type {InternalBrowserStatement} */
+    const browser = {
+      name: 'Example',
+      type: 'desktop',
+      accepts_flags: false,
+      accepts_webextensions: false,
+      releases: {
+        1: { status: 'current' },
+      },
+    };
+    const paths = Array.from(lowLevelWalk(browser, 'browsers.example')).map(
+      (step) => step.path,
+    );
+
+    assert.deepEqual(paths, [
+      'browsers.example',
+      'browsers.example.releases.1',
+    ]);
+  });
+
   it('skips `__meta`', () => {
-    const paths = Array.from(lowLevelWalk(data)).map((step) => step.path);
+    /** @type {Pick<CompatData, '__meta'>} */
+    const metadata = {
+      __meta: {
+        version: '0.0.0',
+        timestamp: '2026-01-01T00:00:00.000Z',
+      },
+    };
+    const paths = Array.from(
+      lowLevelWalk(Object.assign({}, data, metadata)),
+    ).map((step) => step.path);
 
     assert.ok(!paths.some((path) => path.startsWith('__meta')));
   });
