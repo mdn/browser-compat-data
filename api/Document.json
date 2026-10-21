@@ -3286,7 +3286,7 @@
           "support": {
             "chrome": {
               "version_added": "1",
-              "notes": "Since Chrome 115, setting `domain` has no effect, unless the website has opted into [origin-keyed agent clusters](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin-Agent-Cluster)."
+              "notes": "Since Chrome 115, setting `domain` has no effect by default in secure contexts. The `Origin-Agent-Cluster: ?0` header opts out of origin-keying for documents that are not cross-origin isolated. See [Origin-Agent-Cluster](https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Origin-Agent-Cluster)."
             },
             "chrome_android": "mirror",
             "edge": {
