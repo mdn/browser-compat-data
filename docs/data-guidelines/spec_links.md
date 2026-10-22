@@ -29,7 +29,7 @@ If BCD's linter complains about the provided URL, you will need to check its sta
 
 - The specification is not yet part of browser-specs. Check whether an issue already exists; if not, open one and ask whether the W3C would consider adding the specification.
 - The specification no longer has a "good" standing. Check if there is a new version of the specification (at a different URL), or if the specification development has been discontinued (and the features in BCD should be considered "non-standard" from this point on).
-- If the specification cannot be added to browser-specs, but there is a reason it should be in BCD, you can add it to BCD's [specification host exception list](https://github.com/mdn/browser-compat-data/blob/main/lint/common/spec-urls-exceptions.txt). Only do this as a last resort. The specifications hosted at https://github.com/WebAssembly and https://registry.khronos.org/webgl/extensions/ are part of the exception list by default.
+- If the specification cannot be added to browser-specs, but there is a reason it should be in BCD, you can add it to BCD's [specification host exception list](https://github.com/mdn/browser-compat-data/blob/main/lint/common/spec-urls-exceptions.txt). Only do this as a last resort. The specifications hosted at https://registry.khronos.org/webgl/extensions/ are part of the exception list by default.
 - The specification URL doesn't contain a fragment identifier. You will have to add one. It looks like this: `https://tc39.es/proposal-promise-allSettled/#sec-promise.allsettled`.
 - The specification URL's fragment identifier does not validate against [webref](https://github.com/w3c/webref) IDs. Try to provide a better fragment identifier. Or, only as a last resort, use text fragments (`#:~:text=`).
 
