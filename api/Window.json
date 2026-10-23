@@ -3060,6 +3060,48 @@
           }
         }
       },
+      "maximize": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/window-management/#api-window-maximize-method",
+          "support": {
+            "chrome": {
+              "version_added": "155",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-desktop-pwas-additional-windowing-controls",
+                  "value_to_set": "Enabled"
+                }
+              ],
+              "partial_implementation": true,
+              "notes": "Enabled by default on ChromeOS. Behind a flag on other platforms."
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "menubar": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/menubar",
@@ -3194,6 +3236,48 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "minimize": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/window-management/#api-window-minimize-method",
+          "support": {
+            "chrome": {
+              "version_added": "155",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-desktop-pwas-additional-windowing-controls",
+                  "value_to_set": "Enabled"
+                }
+              ],
+              "partial_implementation": true,
+              "notes": "Enabled by default on ChromeOS. Behind a flag on other platforms."
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": true,
             "deprecated": false
           }
@@ -4613,6 +4697,9 @@
           "__compat": {
             "description": "`transfer` parameter",
             "spec_url": "https://html.spec.whatwg.org/multipage/web-messaging.html#dom-structuredserializeoptions-transfer",
+            "tags": [
+              "web-features:postmessage"
+            ],
             "support": {
               "chrome": {
                 "version_added": "4"
@@ -5321,6 +5408,48 @@
           "status": {
             "experimental": true,
             "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
+      "restore": {
+        "__compat": {
+          "spec_url": "https://w3c.github.io/window-management/#api-window-restore-method",
+          "support": {
+            "chrome": {
+              "version_added": "155",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-desktop-pwas-additional-windowing-controls",
+                  "value_to_set": "Enabled"
+                }
+              ],
+              "partial_implementation": true,
+              "notes": "Enabled by default on ChromeOS. Behind a flag on other platforms."
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
             "deprecated": false
           }
         }
@@ -6973,9 +7102,19 @@
       "setResizable": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/setResizable",
+          "spec_url": "https://w3c.github.io/window-management/#api-window-setresizable-method",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "155",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-desktop-pwas-additional-windowing-controls",
+                  "value_to_set": "Enabled"
+                }
+              ],
+              "partial_implementation": true,
+              "notes": "Enabled by default on ChromeOS. Behind a flag on other platforms."
             },
             "chrome_android": "mirror",
             "deno": {
@@ -6983,7 +7122,9 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": "1"
+              "version_added": "1",
+              "partial_implementation": true,
+              "notes": "This method does nothing; it is a no-op. It is solely kept for compatibility with Netscape 4.x."
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -6999,8 +7140,8 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": false,
-            "deprecated": true
+            "standard_track": true,
+            "deprecated": false
           }
         }
       },
@@ -7574,9 +7715,17 @@
             "https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onunload"
           ],
           "support": {
-            "chrome": {
-              "version_added": "1"
-            },
+            "chrome": [
+              {
+                "version_added": "155",
+                "partial_implementation": true,
+                "notes": "The `unload` event fires only if the [`Permissions-Policy` header's `unload` directive](https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy/unload) is set. See [Deprecating the unload event at Chrome for Developers](https://developer.chrome.com/docs/web-platform/deprecating-unload#control_access_to_unload) for details."
+              },
+              {
+                "version_added": "1",
+                "version_removed": "155"
+              }
+            ],
             "chrome_android": "mirror",
             "deno": {
               "version_added": "1.0"

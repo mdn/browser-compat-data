@@ -224,19 +224,13 @@
       },
       "afterHTML": {
         "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-nondocumenttypechildnode-afterhtml",
           "tags": [
             "web-features:html-setters"
           ],
           "support": {
             "chrome": {
-              "version_added": "148",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "157"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -257,26 +251,20 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
       "afterHTMLUnsafe": {
         "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-nondocumenttypechildnode-afterhtmlunsafe",
           "tags": [
             "web-features:html-setters"
           ],
           "support": {
             "chrome": {
-              "version_added": "148",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "157"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -297,7 +285,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
@@ -561,7 +549,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "preview"
+                "version_added": "159"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -596,7 +584,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "preview"
+                "version_added": "159"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -631,7 +619,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "preview"
+                "version_added": "159"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -662,11 +650,17 @@
             "web-features:web-animations"
           ],
           "support": {
-            "chrome": {
-              "version_added": "83",
-              "partial_implementation": true,
-              "notes": "The `onanimationcancel` event handler property is not supported. To listen to this event, use `element.addEventListener('animationcancel', function() {});`. See [bug 41404325](https://crbug.com/41404325)."
-            },
+            "chrome": [
+              {
+                "version_added": "145"
+              },
+              {
+                "version_added": "83",
+                "version_removed": "145",
+                "partial_implementation": true,
+                "notes": "The `onanimationcancel` event handler property is not supported. To listen to this event, use `element.addEventListener('animationcancel', function() {});`. See [bug 41404325](https://crbug.com/41404325)."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -967,19 +961,13 @@
       },
       "appendHTML": {
         "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-element-appendhtml",
           "tags": [
             "web-features:html-setters"
           ],
           "support": {
             "chrome": {
-              "version_added": "148",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "157"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -1000,26 +988,20 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
       "appendHTMLUnsafe": {
         "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-element-appendhtmlunsafe",
           "tags": [
             "web-features:html-setters"
           ],
           "support": {
             "chrome": {
-              "version_added": "148",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "157"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -1040,7 +1022,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
@@ -3306,19 +3288,13 @@
       },
       "beforeHTML": {
         "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-nondocumenttypechildnode-beforehtml",
           "tags": [
             "web-features:html-setters"
           ],
           "support": {
             "chrome": {
-              "version_added": "148",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "157"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -3339,26 +3315,20 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
       "beforeHTMLUnsafe": {
         "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-nondocumenttypechildnode-beforehtmlunsafe",
           "tags": [
             "web-features:html-setters"
           ],
           "support": {
             "chrome": {
-              "version_added": "148",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "157"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -3379,7 +3349,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
@@ -4738,7 +4708,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview"
+              "version_added": "159"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -8518,19 +8488,13 @@
       },
       "prependHTML": {
         "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-element-prependhtml",
           "tags": [
             "web-features:html-setters"
           ],
           "support": {
             "chrome": {
-              "version_added": "148",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "157"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -8551,26 +8515,20 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
       "prependHTMLUnsafe": {
         "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-element-prependhtmlunsafe",
           "tags": [
             "web-features:html-setters"
           ],
           "support": {
             "chrome": {
-              "version_added": "148",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "157"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -8591,7 +8549,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
@@ -8646,6 +8604,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Element/pseudo",
           "spec_url": "https://www.w3.org/TR/css-pseudo-4/#window-interface",
+          "tags": [
+            "web-features:css-object-model-csspseudoelement"
+          ],
           "support": {
             "chrome": {
               "version_added": "149"
@@ -9424,19 +9385,13 @@
       },
       "replaceWithHTML": {
         "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-nondocumenttypechildnode-replacewithhtml",
           "tags": [
             "web-features:html-setters"
           ],
           "support": {
             "chrome": {
-              "version_added": "148",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "157"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -9457,26 +9412,20 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
       },
       "replaceWithHTMLUnsafe": {
         "__compat": {
+          "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-nondocumenttypechildnode-replacewithhtmlunsafe",
           "tags": [
             "web-features:html-setters"
           ],
           "support": {
             "chrome": {
-              "version_added": "148",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#enable-experimental-web-platform-features",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "157"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -9497,7 +9446,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }
@@ -11579,14 +11528,18 @@
               "version_added": "146",
               "notes": [
                 "Chrome 105 to Chrome 118 (inclusive) supported this method with a significantly different specification.",
-                "Before version 153, the `<base>` element was not removed from a configuration's allowlist, which could manipulate a document's relative URLs. See [whatwg/html#12664](https://github.com/whatwg/html/pull/12664)."
+                "Before version 153, the `<base>` element was not removed from a configuration's allowlist, which could manipulate a document's relative URLs. See [whatwg/html#12664](https://github.com/whatwg/html/pull/12664).",
+                "Before version 152, HTML is sanitized after parsing instead of during parsing. For example, text on either side of a removed element isn't merged into a single text node. See [whatwg/html#12756](https://github.com/whatwg/html/pull/12756)."
               ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
               "version_added": "148",
-              "notes": "The `<base>` element is not removed from a configuration's allowlist, potentially allowing manipulation of a document's relative URLs. See [whatwg/html#12664](https://github.com/whatwg/html/pull/12664)."
+              "notes": [
+                "The `<base>` element is not removed from a configuration's allowlist, potentially allowing manipulation of a document's relative URLs. See [whatwg/html#12664](https://github.com/whatwg/html/pull/12664).",
+                "Before version 159, HTML is sanitized after parsing instead of during parsing. For example, text on either side of a removed element isn't merged into a single text node. See [whatwg/html#12756](https://github.com/whatwg/html/pull/12756)."
+              ]
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -11694,14 +11647,7 @@
             ],
             "support": {
               "chrome": {
-                "version_added": "148",
-                "flags": [
-                  {
-                    "type": "preference",
-                    "name": "#enable-experimental-web-platform-features",
-                    "value_to_set": "Enabled"
-                  }
-                ]
+                "version_added": "157"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -11733,7 +11679,8 @@
             "spec_url": "https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#dom-sethtmlunsafeoptions-sanitizer",
             "support": {
               "chrome": {
-                "version_added": "146"
+                "version_added": "146",
+                "notes": "Before version 152, HTML is sanitized after parsing instead of during parsing. For example, text on either side of a removed element isn't merged into a single text node. See [whatwg/html#12756](https://github.com/whatwg/html/pull/12756)."
               },
               "chrome_android": "mirror",
               "edge": "mirror",
