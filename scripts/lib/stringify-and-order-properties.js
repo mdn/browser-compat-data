@@ -43,6 +43,7 @@ const propOrder = {
       'impl_url',
       'partial_implementation',
       'notes',
+      'mirror',
     ],
     flags: ['type', 'name', 'value_to_set'],
     status: ['experimental', 'standard_track', 'deprecated'],

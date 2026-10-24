@@ -5,7 +5,9 @@ import stringify from 'fast-json-stable-stringify';
 
 import bcd from '../../index.js';
 import { walk } from '../../utils/index.js';
-import mirrorSupport from '../../scripts/build/mirror.js';
+import mirrorSupport, {
+  isImplicitLegacyMirror,
+} from '../../scripts/build/mirror.js';
 
 /** @import {InternalCompatData, BrowserName} from '../../types/index.js' */
 /** @import {InternalSupportStatement, InternalSupportBlock} from '../../types/index.js' */
@@ -90,7 +92,31 @@ export const mirrorIfEquivalent = (bcd) => {
 };
 
 /**
- * Update compat data to 'mirror' if the statement matches mirroring
+ * Remove `mirror: true` from statements where it is implied by default
+ * @param {InternalCompatData} bcd The compat data to update
+ * @returns {void}
+ */
+export const pruneImplicitMirror = (bcd) => {
+  for (const { compat } of walk(undefined, bcd)) {
+    for (const [browser, support] of Object.entries(compat.support)) {
+      if (
+        support !== 'mirror' &&
+        isImplicitLegacyMirror(
+          /** @type {BrowserName} */ (browser),
+          compat.support,
+        )
+      ) {
+        for (const statement of [support].flat()) {
+          delete statement.mirror;
+        }
+      }
+    }
+  }
+};
+
+/**
+ * Update compat data to 'mirror' if the statement matches mirroring, and
+ * remove `mirror: true` where it is the default
  * @param {string} filename The name of the file to fix
  * @param {string} actual The current content of the file
  * @returns {string} expected content of the file
@@ -102,6 +128,7 @@ const fixMirror = (filename, actual) => {
 
   const bcd = JSON.parse(actual);
   mirrorIfEquivalent(bcd);
+  pruneImplicitMirror(bcd);
 
   return JSON.stringify(bcd, null, 2);
 };
