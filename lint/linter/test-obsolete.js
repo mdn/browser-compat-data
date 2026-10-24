@@ -8,6 +8,8 @@ import bcd from '../../index.js';
 /** @import {BrowserName, InternalCompatStatement} from '../../types/index.js' */
 /** @import {InternalSupportBlock, InternalSupportStatement} from '../../types/index.js' */
 
+/** @typedef {Partial<Record<BrowserName, { releases: Record<string, { release_date?: string | null }> }>>} BrowserReleaseData */
+
 /**
  * Check if feature has never been implemented
  * @param {InternalSupportBlock} support The support statement
@@ -28,17 +30,23 @@ export const neverImplemented = (support) => {
   return true;
 };
 
-const errorTime = new Date(),
-  infoTime = new Date();
-errorTime.setFullYear(errorTime.getFullYear() - 2.5);
-infoTime.setFullYear(infoTime.getFullYear() - 2);
-
 /**
  * Check if a feature has been implemented at some point but removed now
  * @param {InternalSupportBlock} support The support statement
+ * @param {BrowserReleaseData} [browsers] Browser release data, all of BCD by default
+ * @param {Date} [referenceTime] The date used to evaluate release recency, now by default
  * @returns {LinterMessageLevel | false} Whether the feature should be removed from BCD
  */
-export const implementedAndRemoved = (support) => {
+export const implementedAndRemoved = (
+  support,
+  browsers = bcd.browsers,
+  referenceTime = new Date(),
+) => {
+  const errorTime = new Date(referenceTime.getTime()),
+    infoTime = new Date(referenceTime.getTime());
+  errorTime.setFullYear(errorTime.getFullYear() - 2.5);
+  infoTime.setFullYear(infoTime.getFullYear() - 2);
+
   /** @type {LinterMessageLevel} */
   let result = 'error';
   for (const [
@@ -69,7 +77,7 @@ export const implementedAndRemoved = (support) => {
       }
 
       const releaseDateData =
-        bcd.browsers[browser].releases[d.version_removed.replace('≤', '')]
+        browsers[browser]?.releases[d.version_removed.replace('≤', '')]
           .release_date;
 
       // No browser release date
@@ -96,9 +104,16 @@ export const implementedAndRemoved = (support) => {
  * Process and test the data
  * @param {Logger} logger The logger to output errors to
  * @param {InternalCompatStatement} data The data to test
+ * @param {BrowserReleaseData} [browsers] Browser release data, all of BCD by default
+ * @param {Date} [referenceTime] The date used to evaluate release recency, now by default
  * @returns {void}
  */
-export const processData = (logger, data) => {
+export const processData = (
+  logger,
+  data,
+  browsers = bcd.browsers,
+  referenceTime = new Date(),
+) => {
   if (data && data.support) {
     const rule1Fail = neverImplemented(data.support);
     if (rule1Fail) {
@@ -109,7 +124,11 @@ export const processData = (logger, data) => {
     }
 
     // Note: This check is time-based
-    const rule2Fail = implementedAndRemoved(data.support);
+    const rule2Fail = implementedAndRemoved(
+      data.support,
+      browsers,
+      referenceTime,
+    );
     if (rule2Fail) {
       logger[rule2Fail](
         'feature was implemented and has since been removed from all browsers dating back two or more years ago.',
