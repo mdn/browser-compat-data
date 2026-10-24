@@ -4,6 +4,8 @@
 import { platform } from 'node:os';
 import { styleText } from 'node:util';
 
+import mdToHtml from '../scripts/build/md-to-html.js';
+
 /** @import {InternalSimpleSupportStatement} from '../types/index.js' */
 /** @import {Linter, LinterData, LinterMessage, LinterScope} from './types.js' */
 
@@ -56,6 +58,33 @@ export const replaceCodeTagsWithBackticks = (str) =>
  */
 export const replaceLinkTagsWithMarkdown = (str) =>
   str.replace(/<a href=(['"])([^'"]*)\1>([^<]*)<\/a>/g, '[$3]($2)');
+
+/**
+ * Convert code tags before links so links can contain code.
+ * Validate the result with {@link preservesRenderedHtml} before writing it.
+ * @param {string} str The string to process
+ * @returns {string} The string with HTML replaced by Markdown syntax
+ */
+export const convertHtmlToMarkdown = (str) =>
+  replaceLinkTagsWithMarkdown(replaceCodeTagsWithBackticks(str));
+
+/**
+ * Normalize href quotes without re-escaping values that contain double quotes.
+ * @param {string} html The HTML to canonicalize
+ * @returns {string} The HTML with single-quoted href attributes canonicalized
+ */
+const canonicalizeAttributeQuotes = (html) =>
+  html.replace(/ href='([^'"]*)'/g, ' href="$1"');
+
+/**
+ * Reject even cosmetic rendering changes to avoid silently altering data.
+ * @param {string} before The string before conversion
+ * @param {string} after The string after conversion
+ * @returns {boolean} Whether both strings produce the same HTML
+ */
+export const preservesRenderedHtml = (before, after) =>
+  canonicalizeAttributeQuotes(mdToHtml(before)) ===
+  canonicalizeAttributeQuotes(mdToHtml(after));
 
 /**
  * Escapes common invisible characters.
