@@ -4,9 +4,6 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
-import bcd from '../index.js';
-
-import query from './query.js';
 import {
   joinPath,
   isBrowser,
@@ -27,21 +24,21 @@ describe('joinPath()', () => {
 
 describe('isBrowser()', () => {
   it('returns true for browser-like objects', () => {
-    assert.equal(isBrowser(bcd.browsers['firefox']), true);
+    assert.equal(isBrowser({ name: 'Example', releases: {} }), true);
   });
 
   it('returns false for feature-like objects', () => {
-    assert.equal(isBrowser(query('html.elements.a')), false);
+    assert.equal(isBrowser({ __compat: {} }), false);
   });
 });
 
 describe('isFeature()', () => {
   it('returns false for browser-like objects', () => {
-    assert.equal(isFeature(bcd.browsers['chrome']), false);
+    assert.equal(isFeature({ name: 'Example', releases: {} }), false);
   });
 
   it('returns true for feature-like objects', () => {
-    assert.equal(isFeature(query('html.elements.a')), true);
+    assert.equal(isFeature({ __compat: {} }), true);
   });
 });
 
