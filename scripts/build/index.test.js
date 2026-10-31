@@ -48,11 +48,12 @@ describe('Build functions', () => {
 
     const walker = walk(undefined, data);
     for (const feature of walker) {
-      applyMirroring(feature);
+      applyMirroring(feature, (browser) => ({ version_added: browser }));
     }
 
-    assert.equal(data.feature.__compat.support.edge.version_added, '90');
-    assert.equal(data.feature.__compat.support.opera.version_added, '76');
+    assert.equal(data.feature.__compat.support.edge.version_added, 'edge');
+    assert.equal(data.feature.__compat.support.opera.version_added, 'opera');
+    assert.equal(data.feature.__compat.support.firefox.version_added, '40');
   });
 
   it('addVersionLast', () => {
