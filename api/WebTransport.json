@@ -832,9 +832,17 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "155"
-            },
+            "firefox": [
+              {
+                "version_added": "160"
+              },
+              {
+                "version_added": "155",
+                "version_removed": "160",
+                "partial_implementation": true,
+                "notes": "The `context` parameter is optional, and the `outputLength` parameter is not supported. The method always returns 32 bytes of keying material."
+              }
+            ],
             "firefox_android": {
               "version_added": false
             },
@@ -853,6 +861,40 @@
             "experimental": true,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "outputLength_parameter": {
+          "__compat": {
+            "description": "`outputLength` parameter",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransport-exportkeyingmaterial",
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "160"
+              },
+              "firefox_android": {
+                "version_added": false
+              },
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
