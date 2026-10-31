@@ -879,11 +879,17 @@
               ]
             },
             "edge": "mirror",
-            "firefox": {
-              "version_added": "114",
-              "partial_implementation": true,
-              "notes": "Method is defined but throws a not-implemented error."
-            },
+            "firefox": [
+              {
+                "version_added": "158"
+              },
+              {
+                "version_added": "114",
+                "version_removed": "158",
+                "partial_implementation": true,
+                "notes": "Method is defined but throws a not-implemented error."
+              }
+            ],
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
@@ -900,6 +906,776 @@
             "experimental": false,
             "standard_track": true,
             "deprecated": false
+          }
+        },
+        "return_object_property_atSendCapacity": {
+          "__compat": {
+            "description": "`atSendCapacity` property in returned object",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportconnectionstats-atsendcapacity",
+            "tags": [
+              "web-features:webtransport"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "2.2",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-net"
+                  }
+                ],
+                "partial_implementation": true,
+                "notes": "Always `false`."
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "158"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26.4",
+                "partial_implementation": true,
+                "notes": "Always `false`."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "return_object_property_bytesAcknowledged": {
+          "__compat": {
+            "description": "`bytesAcknowledged` property in returned object",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportconnectionstats-bytesacknowledged",
+            "tags": [
+              "web-features:webtransport"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "158"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "return_object_property_bytesLost": {
+          "__compat": {
+            "description": "`bytesLost` property in returned object",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportconnectionstats-byteslost",
+            "tags": [
+              "web-features:webtransport"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "2.2",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-net"
+                  }
+                ],
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "158"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26.4",
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "return_object_property_bytesReceived": {
+          "__compat": {
+            "description": "`bytesReceived` property in returned object",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportconnectionstats-bytesreceived",
+            "tags": [
+              "web-features:webtransport"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "2.2",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-net"
+                  }
+                ],
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "158"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26.4",
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "return_object_property_bytesSent": {
+          "__compat": {
+            "description": "`bytesSent` property in returned object",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportconnectionstats-bytessent",
+            "tags": [
+              "web-features:webtransport"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "2.2",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-net"
+                  }
+                ],
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "158",
+                "partial_implementation": true,
+                "notes": "Includes QUIC framing and retransmitted bytes, rather than only payload bytes."
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26.4",
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "return_object_property_datagrams": {
+          "__compat": {
+            "description": "`datagrams` property in returned object",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportconnectionstats-datagrams",
+            "tags": [
+              "web-features:webtransport"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "158"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26.4"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "return_object_property_datagrams_droppedIncoming": {
+          "__compat": {
+            "description": "`datagrams.droppedIncoming` property in returned object",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportdatagramstats-droppedincoming",
+            "tags": [
+              "web-features:webtransport"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "158",
+                "partial_implementation": true,
+                "notes": "Always `0`. See [bug 2007757](https://bugzil.la/2007757)."
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26.4",
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "return_object_property_datagrams_expiredIncoming": {
+          "__compat": {
+            "description": "`datagrams.expiredIncoming` property in returned object",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportdatagramstats-expiredincoming",
+            "tags": [
+              "web-features:webtransport"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "158",
+                "partial_implementation": true,
+                "notes": "Always `0`. See [bug 2007757](https://bugzil.la/2007757)."
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26.4",
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "return_object_property_datagrams_expiredOutgoing": {
+          "__compat": {
+            "description": "`datagrams.expiredOutgoing` property in returned object",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportdatagramstats-expiredoutgoing",
+            "tags": [
+              "web-features:webtransport"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "158"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26.4",
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "return_object_property_datagrams_lostOutgoing": {
+          "__compat": {
+            "description": "`datagrams.lostOutgoing` property in returned object",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportdatagramstats-lostoutgoing",
+            "tags": [
+              "web-features:webtransport"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "158"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26.4",
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "return_object_property_estimatedSendRate": {
+          "__compat": {
+            "description": "`estimatedSendRate` property in returned object",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportconnectionstats-estimatedsendrate",
+            "tags": [
+              "web-features:webtransport"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "2.2",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-net"
+                  }
+                ],
+                "partial_implementation": true,
+                "notes": "Always `null`."
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "158"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26.4",
+                "partial_implementation": true,
+                "notes": "Always `null`."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "return_object_property_minRtt": {
+          "__compat": {
+            "description": "`minRtt` property in returned object",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportconnectionstats-minrtt",
+            "tags": [
+              "web-features:webtransport"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "2.2",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-net"
+                  }
+                ],
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "158"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26.4",
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "return_object_property_packetsLost": {
+          "__compat": {
+            "description": "`packetsLost` property in returned object",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportconnectionstats-packetslost",
+            "tags": [
+              "web-features:webtransport"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "2.2",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-net"
+                  }
+                ],
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "158"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26.4",
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "return_object_property_packetsReceived": {
+          "__compat": {
+            "description": "`packetsReceived` property in returned object",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportconnectionstats-packetsreceived",
+            "tags": [
+              "web-features:webtransport"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "2.2",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-net"
+                  }
+                ],
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "158"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26.4",
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "return_object_property_packetsSent": {
+          "__compat": {
+            "description": "`packetsSent` property in returned object",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportconnectionstats-packetssent",
+            "tags": [
+              "web-features:webtransport"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "2.2",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-net"
+                  }
+                ],
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "158"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26.4",
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "return_object_property_rttVariation": {
+          "__compat": {
+            "description": "`rttVariation` property in returned object",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportconnectionstats-rttvariation",
+            "tags": [
+              "web-features:webtransport"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "2.2",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-net"
+                  }
+                ],
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "158"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26.4",
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "return_object_property_smoothedRtt": {
+          "__compat": {
+            "description": "`smoothedRtt` property in returned object",
+            "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportconnectionstats-smoothedrtt",
+            "tags": [
+              "web-features:webtransport"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": false
+              },
+              "chrome_android": "mirror",
+              "deno": {
+                "version_added": "2.2",
+                "flags": [
+                  {
+                    "type": "runtime_flag",
+                    "name": "--unstable-net"
+                  }
+                ],
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "158"
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "26.4",
+                "partial_implementation": true,
+                "notes": "Always `0`."
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
           }
         }
       },
