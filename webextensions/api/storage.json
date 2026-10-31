@@ -334,10 +334,17 @@
                 },
                 "firefox_android": "mirror",
                 "opera": "mirror",
-                "safari": {
-                  "version_added": "17.1",
-                  "notes": "Only supported for the session storage area."
-                },
+                "safari": [
+                  {
+                    "version_added": "27.2"
+                  },
+                  {
+                    "version_added": "17.1",
+                    "version_removed": "27.2",
+                    "partial_implementation": true,
+                    "notes": "Only supported for the `session` storage area."
+                  }
+                ],
                 "safari_ios": "mirror"
               }
             }
