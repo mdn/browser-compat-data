@@ -1,5 +1,62 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.1.8](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.8)
+
+November 2, 2026
+
+### Additions
+
+- `api.AudioContext.AudioContext.options_renderSizeHint_parameter` ([#30947](https://github.com/mdn/browser-compat-data/pull/30947))
+- `api.EXT_clip_control` ([#30970](https://github.com/mdn/browser-compat-data/pull/30970))
+- `api.EXT_clip_control.clipControlEXT` ([#30970](https://github.com/mdn/browser-compat-data/pull/30970))
+- `api.EXT_texture_mirror_clamp_to_edge` ([#30970](https://github.com/mdn/browser-compat-data/pull/30970))
+- `api.OfflineAudioContext.close` ([#31021](https://github.com/mdn/browser-compat-data/pull/31021))
+- `api.OfflineAudioContext.OfflineAudioContext.options_renderSizeHint_parameter` ([#30947](https://github.com/mdn/browser-compat-data/pull/30947))
+- `api.PerformanceLongAnimationFrameTiming.layoutDuration` ([#31021](https://github.com/mdn/browser-compat-data/pull/31021))
+- `api.PerformanceLongAnimationFrameTiming.styleDuration` ([#31021](https://github.com/mdn/browser-compat-data/pull/31021))
+- `api.PerformanceScriptTiming.forcedLayoutDuration` ([#31021](https://github.com/mdn/browser-compat-data/pull/31021))
+- `api.PerformanceScriptTiming.forcedStyleDuration` ([#31021](https://github.com/mdn/browser-compat-data/pull/31021))
+- `browsers.bun.releases.1.4.4` ([#30952](https://github.com/mdn/browser-compat-data/pull/30952))
+- `browsers.edge.releases.159` ([#30952](https://github.com/mdn/browser-compat-data/pull/30952))
+- `browsers.firefox_android.releases.162` ([#30978](https://github.com/mdn/browser-compat-data/pull/30978))
+- `browsers.firefox.releases.162` ([#30978](https://github.com/mdn/browser-compat-data/pull/30978))
+- `browsers.opera.releases.141` ([#30978](https://github.com/mdn/browser-compat-data/pull/30978))
+- `browsers.safari_ios.releases.27.1` ([#30978](https://github.com/mdn/browser-compat-data/pull/30978))
+- `browsers.safari.releases.27.1` ([#30978](https://github.com/mdn/browser-compat-data/pull/30978))
+- `browsers.webview_ios.releases.27.1` ([#30978](https://github.com/mdn/browser-compat-data/pull/30978))
+- `css.properties.align-items.flow-end` ([#31021](https://github.com/mdn/browser-compat-data/pull/31021))
+- `css.properties.align-items.flow-start` ([#31021](https://github.com/mdn/browser-compat-data/pull/31021))
+- `css.properties.align-self.flow-end` ([#31021](https://github.com/mdn/browser-compat-data/pull/31021))
+- `css.properties.align-self.flow-start` ([#31021](https://github.com/mdn/browser-compat-data/pull/31021))
+- `css.properties.justify-items.flow-end` ([#31021](https://github.com/mdn/browser-compat-data/pull/31021))
+- `css.properties.justify-items.flow-start` ([#31021](https://github.com/mdn/browser-compat-data/pull/31021))
+- `css.properties.justify-self.flow-end` ([#31021](https://github.com/mdn/browser-compat-data/pull/31021))
+- `css.properties.justify-self.flow-start` ([#31021](https://github.com/mdn/browser-compat-data/pull/31021))
+- `css.properties.place-items.flow-end` ([#31021](https://github.com/mdn/browser-compat-data/pull/31021))
+- `css.properties.place-items.flow-start` ([#31021](https://github.com/mdn/browser-compat-data/pull/31021))
+- `css.properties.place-self.flow-end` ([#31021](https://github.com/mdn/browser-compat-data/pull/31021))
+- `css.properties.place-self.flow-start` ([#31021](https://github.com/mdn/browser-compat-data/pull/31021))
+- `webextensions.api.runtime.PlatformArch.aarch64` ([#29512](https://github.com/mdn/browser-compat-data/pull/29512))
+- `webextensions.api.runtime.PlatformArch.arm` ([#29512](https://github.com/mdn/browser-compat-data/pull/29512))
+- `webextensions.api.runtime.PlatformArch.arm64` ([#29512](https://github.com/mdn/browser-compat-data/pull/29512))
+- `webextensions.api.runtime.PlatformArch.mips` ([#29512](https://github.com/mdn/browser-compat-data/pull/29512))
+- `webextensions.api.runtime.PlatformArch.mips64` ([#29512](https://github.com/mdn/browser-compat-data/pull/29512))
+- `webextensions.api.runtime.PlatformArch.noarch` ([#29512](https://github.com/mdn/browser-compat-data/pull/29512))
+- `webextensions.api.runtime.PlatformArch.ppc64` ([#29512](https://github.com/mdn/browser-compat-data/pull/29512))
+- `webextensions.api.runtime.PlatformArch.riscv64` ([#29512](https://github.com/mdn/browser-compat-data/pull/29512))
+- `webextensions.api.runtime.PlatformArch.s390x` ([#29512](https://github.com/mdn/browser-compat-data/pull/29512))
+- `webextensions.api.runtime.PlatformArch.sparc64` ([#29512](https://github.com/mdn/browser-compat-data/pull/29512))
+- `webextensions.api.runtime.PlatformArch.unknown` ([#29512](https://github.com/mdn/browser-compat-data/pull/29512))
+- `webextensions.api.runtime.PlatformArch.x86-32` ([#29512](https://github.com/mdn/browser-compat-data/pull/29512))
+- `webextensions.api.runtime.PlatformArch.x86-64` ([#29512](https://github.com/mdn/browser-compat-data/pull/29512))
+
+### Statistics
+
+- 10 contributors have changed 96 files with 1,642 additions and 448 deletions in 24 commits ([`v8.1.7...v8.1.8`](https://github.com/mdn/browser-compat-data/compare/v8.1.7...v8.1.8))
+- 20,933 total features
+- 1,287 total contributors
+- 5,786 total stargazers
+
 ## [v8.1.7](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.7)
 
 October 22, 2026
