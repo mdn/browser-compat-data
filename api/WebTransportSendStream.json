@@ -52,7 +52,8 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/568825278"
             },
             "chrome_android": "mirror",
             "deno": {
@@ -66,7 +67,10 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": "114"
+              "version_added": "114",
+              "impl_url": "https://bugzil.la/2021710",
+              "partial_implementation": true,
+              "notes": "Always rejects with a `NotSupportedError`."
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
