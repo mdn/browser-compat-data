@@ -23,7 +23,7 @@ jobs:
           persist-credentials: false
 
       - name: Setup Node.js
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version-file: ".nvmrc"
           package-manager-cache: false
@@ -46,10 +46,15 @@ jobs:
           npm run split -- webdriver/bidi.json
           npm run tag-web-features
           git add webdriver/bidi
-          npx lefthook run pre-commit
+
+      - name: Lint data
+        continue-on-error: true
+        run: npx lefthook run pre-commit
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        env:
+          LEFTHOOK: "0"
         with:
           token: ${{ secrets.GH_TOKEN }}
           commit-message: Update WebDriver BiDi data

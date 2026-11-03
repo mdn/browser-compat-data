@@ -1,23 +1,15 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-/** @import {InternalCompatStatement} from './types/index.js' */
-
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
+import dataFolders from './scripts/lib/data-folders.js';
+
 import bcd from './index.js';
 
-describe('Using BCD', () => {
-  it('subscript notation', () => {
-    /** @type {InternalCompatStatement | undefined} */
-    const data = bcd['api']['AbortController']['__compat'];
-    assert.ok(data);
-  });
-
-  it('dot notation', () => {
-    /** @type {InternalCompatStatement | undefined} */
-    const data = bcd.api.AbortController.__compat;
-    assert.ok(data);
+describe('index', () => {
+  it('exports exactly the data folders', () => {
+    assert.deepEqual(Object.keys(bcd).sort(), [...dataFolders].sort());
   });
 });

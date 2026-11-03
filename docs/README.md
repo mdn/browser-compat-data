@@ -108,4 +108,5 @@ An alphabetical index of keywords linking to relevant sections in the docs.
 ---
 
 - **Web features** – [Data guidelines for tagging BCD features](./data-guidelines/tags.md#the-web-features-namespace)
+- **WebDriver BiDi** – [Updating WebDriver BiDi compatibility data](./webdriver-bidi.md)
 - **Workers** – [Data guidelines for API features](./data-guidelines/api.md#web-workers-worker_support)
