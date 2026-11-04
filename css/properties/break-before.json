@@ -207,9 +207,17 @@
               "web-features:page-breaks"
             ],
             "support": {
-              "chrome": {
-                "version_added": "108"
-              },
+              "chrome": [
+                {
+                  "version_added": "108"
+                },
+                {
+                  "version_added": "50",
+                  "version_removed": "108",
+                  "partial_implementation": true,
+                  "notes": "The value was recognized but had no effect on page-break avoidance when printing."
+                }
+              ],
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
