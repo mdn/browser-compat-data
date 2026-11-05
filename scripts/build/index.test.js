@@ -55,6 +55,51 @@ describe('Build functions', () => {
     assert.equal(data.feature.__compat.support.opera.version_added, '76');
   });
 
+  it('applyMirroring strips the internal `mirror` flag from output', () => {
+    /** @type {*} */
+    const data = {
+      feature: {
+        __compat: {
+          support: {
+            chrome: { version_added: '66' },
+            edge: [
+              { version_added: '16', mirror: true },
+              { version_added: '12', version_removed: '13', mirror: false },
+            ],
+          },
+        },
+      },
+    };
+
+    for (const feature of walk(undefined, data)) {
+      applyMirroring(feature);
+    }
+
+    assert.equal(JSON.stringify(data).includes('"mirror":'), false);
+  });
+
+  it('applyMirroring strips the opt-out flag from blocks that are not split', () => {
+    /** @type {*} */
+    const data = {
+      feature: {
+        __compat: {
+          support: {
+            chrome: { version_added: '66' },
+            edge: { version_added: '16', mirror: false },
+          },
+        },
+      },
+    };
+
+    for (const feature of walk(undefined, data)) {
+      applyMirroring(feature);
+    }
+
+    assert.deepEqual(data.feature.__compat.support.edge, {
+      version_added: '16',
+    });
+  });
+
   it('addVersionLast', () => {
     /** @type {*} */
     const data = {

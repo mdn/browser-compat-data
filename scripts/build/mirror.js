@@ -1,9 +1,11 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+import stringify from 'fast-json-stable-stringify';
 import { compareVersions, compare } from 'compare-versions';
 
 import bcd from '../../index.js';
+import compareStatements from '../lib/compare-statements.js';
 
 /**
  * @import { BrowserName, InternalSimpleSupportStatement, InternalSupportStatement } from '../../types/index.js'
@@ -336,6 +338,221 @@ export const bumpSupport = (sourceData, sourceBrowser, destination) => {
   }
 
   return newData;
+};
+
+/**
+ * Get the first release of a browser that uses the Blink engine
+ * @param {BrowserName} browser The browser to check
+ * @returns {string | undefined} The first Blink release, if any
+ */
+export const getFirstBlinkRelease = (browser) => {
+  const releases = bcd.browsers[browser].releases;
+  return Object.keys(releases)
+    .sort(compareVersions)
+    .find((r) => releases[r].engine === 'Blink');
+};
+
+/**
+ * Remove the version range from a support statement
+ * @param {InternalSimpleSupportStatement} statement The statement to strip
+ * @returns {Partial<InternalSimpleSupportStatement>} The remaining properties
+ */
+const withoutRange = (statement) => {
+  /** @type {Partial<InternalSimpleSupportStatement>} */
+  const rest = { ...statement };
+  delete rest.version_added;
+  delete rest.version_removed;
+  return rest;
+};
+
+/** Browsers that honour the internal `mirror` flag and split legacy statements */
+export const LEGACY_SPLIT_BROWSERS = ['edge'];
+
+/**
+ * Check whether a statement is a numeric version before the first Blink release
+ * @param {InternalSimpleSupportStatement} statement The statement to check
+ * @param {string} switchVersion The first Blink release of the browser
+ * @returns {boolean} Whether the statement only covers the legacy range
+ */
+const isLegacyStatement = (statement, switchVersion) =>
+  typeof statement.version_added === 'string' &&
+  /^≤?\d+(\.\d+)*$/.test(statement.version_added) &&
+  compareVersions(statement.version_added.replace('≤', ''), switchVersion) < 0;
+
+/**
+ * Check whether a support block consists only of statements from before the
+ * first Blink release, and has not opted out with `mirror: false`
+ * @param {BrowserName} destination The browser the block belongs to
+ * @param {InternalSupportBlock} data The support block
+ * @returns {boolean} Whether the legacy range should be split-mirrored by default
+ */
+export const isImplicitLegacyMirror = (destination, data) => {
+  if (!LEGACY_SPLIT_BROWSERS.includes(destination)) {
+    return false;
+  }
+  const switchVersion = getFirstBlinkRelease(destination);
+  if (!switchVersion) {
+    return false;
+  }
+  return [data[destination]]
+    .flat()
+    .every(
+      (statement) =>
+        typeof statement === 'object' &&
+        statement.mirror !== false &&
+        isLegacyStatement(statement, switchVersion),
+    );
+};
+
+/**
+ * Check whether a support block needs legacy split-mirroring, either by
+ * default or through an explicit `mirror: true`
+ * @param {BrowserName} destination The browser the block belongs to
+ * @param {InternalSupportBlock} data The support block
+ * @returns {boolean} Whether the block needs split-mirroring
+ */
+export const usesLegacyMirror = (destination, data) => {
+  if (!LEGACY_SPLIT_BROWSERS.includes(destination)) {
+    return false;
+  }
+  return (
+    [data[destination]]
+      .flat()
+      .some(
+        (statement) =>
+          typeof statement === 'object' && statement.mirror === true,
+      ) || isImplicitLegacyMirror(destination, data)
+  );
+};
+
+/**
+ * Remove the internal `mirror` flag from a support block without splitting it
+ * @param {InternalSupportStatement} supportData The support data to clean
+ * @returns {InternalSupportStatement} The support data without the flag
+ */
+export const withoutMirrorFlag = (supportData) => {
+  const statements = /** @type {InternalSimpleSupportStatement[]} */ (
+    [supportData].flat()
+  ).map((statement) => {
+    const copy = { ...statement };
+    delete copy.mirror;
+    return copy;
+  });
+  return /** @type {InternalSupportStatement} */ (
+    statements.length === 1 ? statements[0] : statements
+  );
+};
+
+/**
+ * Merge statements of the legacy range (marked `mirror: true`) with mirrored
+ * upstream data for later releases. Statements marked `mirror: true` only
+ * cover releases before the first Blink release of the destination browser.
+ * @param {BrowserName} destination The browser to resolve statements for
+ * @param {InternalSupportBlock} data The support block containing the statements
+ * @returns {InternalSupportStatement} The resolved support statement
+ */
+export const mirrorLegacyStatements = (destination, data) => {
+  const statements = /** @type {InternalSimpleSupportStatement[]} */ (
+    [data[destination]].flat()
+  );
+  const switchVersion = getFirstBlinkRelease(destination);
+  if (!switchVersion) {
+    throw new Error(`${destination} has no Blink release to mirror from.`);
+  }
+
+  /** @type {InternalSimpleSupportStatement[]} */
+  const legacy = [];
+  /** @type {InternalSimpleSupportStatement[]} */
+  const others = [];
+
+  const implicit = isImplicitLegacyMirror(destination, data);
+  for (const { mirror, ...statement } of statements) {
+    if (mirror !== true && !implicit) {
+      others.push(statement);
+      continue;
+    }
+    if (!isLegacyStatement(statement, switchVersion)) {
+      throw new Error(
+        `Statement for ${destination} marked as \`mirror: true\` must be added before ${destination} ${switchVersion}`,
+      );
+    }
+    const endsBeforeSwitch =
+      statement.version_removed &&
+      compareVersions(
+        statement.version_removed.replace('≤', ''),
+        switchVersion,
+      ) < 0;
+    legacy.push({
+      ...statement,
+      version_removed: endsBeforeSwitch
+        ? statement.version_removed
+        : switchVersion,
+    });
+  }
+
+  if (legacy.length === 0) {
+    return /** @type {InternalSupportStatement} */ (
+      others.length === 1 ? others[0] : others
+    );
+  }
+
+  for (const statement of others) {
+    if (
+      statement.version_added !== false &&
+      !isLegacyStatement(statement, switchVersion)
+    ) {
+      throw new Error(
+        `${destination} statements marked \`mirror: true\` cannot be combined with statements from ${destination} ${switchVersion} onwards`,
+      );
+    }
+  }
+
+  /** @type {InternalSimpleSupportStatement[]} */
+  const mirrored = [];
+  const upstreamData = /** @type {InternalSimpleSupportStatement[]} */ (
+    [mirrorSupport(destination, data)].flat()
+  );
+  for (const statement of upstreamData) {
+    if (statement.version_added === false) {
+      continue;
+    }
+    if (
+      typeof statement.version_added === 'string' &&
+      compareVersions(statement.version_added.replace('≤', ''), switchVersion) <
+        0
+    ) {
+      throw new Error(
+        `Mirrored data for ${destination} starts before ${destination} ${switchVersion}`,
+      );
+    }
+    mirrored.push(statement);
+  }
+
+  // Join a legacy statement with the mirrored statement that starts exactly where it ends, if nothing else differs
+  const merged = legacy.map((legacyStatement) => {
+    const index = mirrored.findIndex(
+      (m) =>
+        m.version_added === legacyStatement.version_removed &&
+        stringify(withoutRange(m)) === stringify(withoutRange(legacyStatement)),
+    );
+    if (index === -1) {
+      return legacyStatement;
+    }
+    const [continuation] = mirrored.splice(index, 1);
+    // Copy in place so the published key order matches the source
+    const combined = { ...legacyStatement };
+    if (continuation.version_removed) {
+      combined.version_removed = continuation.version_removed;
+    } else {
+      delete combined.version_removed;
+    }
+    return combined;
+  });
+
+  const result = [...mirrored, ...merged, ...others].sort(compareStatements);
+  return /** @type {InternalSupportStatement} */ (
+    result.length === 1 ? result[0] : result
+  );
 };
 
 /**

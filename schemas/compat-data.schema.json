@@ -24,6 +24,10 @@
           "pattern": "^(≤?(\\d+)(\\.\\d+)*|preview)$",
           "tsType": "string"
         },
+        "mirror": {
+          "type": "boolean",
+          "description": "Internal. Legacy-only Edge statements are split-mirrored by default, so `true` is redundant and pruned by the linter. `false` opts out of split-mirroring and marks a reviewed divergence from Chrome."
+        },
         "prefix": {
           "type": "string",
           "description": "Prefix for the subfeature name. Leading and trailing '-' must be included if applicable."

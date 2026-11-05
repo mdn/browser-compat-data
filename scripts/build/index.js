@@ -17,7 +17,11 @@ import { createAjv } from '../lib/ajv.js';
 import { walk } from '../../utils/index.js';
 import bcd from '../../index.js';
 
-import mirrorSupport from './mirror.js';
+import mirrorSupport, {
+  mirrorLegacyStatements,
+  usesLegacyMirror,
+  withoutMirrorFlag,
+} from './mirror.js';
 
 /**
  * @import { BrowserName, InternalCompatData, InternalIdentifier, InternalSupportStatement, VersionValue } from '../../types/index.js'
@@ -84,6 +88,23 @@ export const applyMirroring = (feature) => {
         /** @type {BrowserName} */ (browser),
         feature.compat.support,
       );
+    } else if (
+      usesLegacyMirror(
+        /** @type {BrowserName} */ (browser),
+        feature.compat.support,
+      )
+    ) {
+      /** @type {*} */ (feature.data).__compat.support[browser] =
+        mirrorLegacyStatements(
+          /** @type {BrowserName} */ (browser),
+          feature.compat.support,
+        );
+    } else if (
+      [supportData].flat().some((s) => typeof s === 'object' && 'mirror' in s)
+    ) {
+      // Strips `mirror: false` (and flags on unsupported browsers) without splitting
+      /** @type {*} */ (feature.data).__compat.support[browser] =
+        withoutMirrorFlag(supportData);
     }
   }
 };
