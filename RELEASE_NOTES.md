@@ -1,5 +1,48 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.1.9](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.9)
+
+November 6, 2026
+
+### Additions
+
+- `api.CredentialsContainer.create.mediation_option` ([#31062](https://github.com/mdn/browser-compat-data/pull/31062))
+- `api.FontFace.sizeAdjust` ([#30922](https://github.com/mdn/browser-compat-data/pull/30922))
+- `api.SVGScriptElement.referrerPolicy` ([#31035](https://github.com/mdn/browser-compat-data/pull/31035))
+- `api.WebTransport.WebTransport.options_datagramsReadableType_parameter` ([#31030](https://github.com/mdn/browser-compat-data/pull/31030))
+- `api.WebTransport.WebTransport.options_headers_parameter` ([#31031](https://github.com/mdn/browser-compat-data/pull/31031))
+- `browsers.chrome_android.releases.160` ([#31032](https://github.com/mdn/browser-compat-data/pull/31032))
+- `browsers.chrome.releases.160` ([#31032](https://github.com/mdn/browser-compat-data/pull/31032))
+- `browsers.edge.releases.160` ([#31068](https://github.com/mdn/browser-compat-data/pull/31068))
+- `browsers.safari_ios.releases.27.3` ([#31047](https://github.com/mdn/browser-compat-data/pull/31047))
+- `browsers.safari.releases.27.3` ([#31047](https://github.com/mdn/browser-compat-data/pull/31047))
+- `browsers.webview_android.releases.160` ([#31032](https://github.com/mdn/browser-compat-data/pull/31032))
+- `browsers.webview_ios.releases.27.3` ([#31047](https://github.com/mdn/browser-compat-data/pull/31047))
+- `css.at-rules.view-transition.navigation` ([#30918](https://github.com/mdn/browser-compat-data/pull/30918))
+- `css.at-rules.view-transition.types` ([#30918](https://github.com/mdn/browser-compat-data/pull/30918))
+- `css.properties.outline-offset.inset` ([#30928](https://github.com/mdn/browser-compat-data/pull/30928))
+- `css.properties.resize.iframe_elements` ([#30501](https://github.com/mdn/browser-compat-data/pull/30501))
+- `css.properties.resize.replaced_elements` ([#30501](https://github.com/mdn/browser-compat-data/pull/30501))
+- `webextensions.api.action.setIcon.details_variants_parameter` ([#31029](https://github.com/mdn/browser-compat-data/pull/31029))
+- `webextensions.api.browserAction.setIcon.details_variants_parameter` ([#31029](https://github.com/mdn/browser-compat-data/pull/31029))
+- `webextensions.api.menus.create.iconVariants` ([#31029](https://github.com/mdn/browser-compat-data/pull/31029))
+- `webextensions.api.menus.update.iconVariants` ([#31029](https://github.com/mdn/browser-compat-data/pull/31029))
+- `webextensions.manifest.action.default_icon.any_size` ([#31029](https://github.com/mdn/browser-compat-data/pull/31029))
+- `webextensions.manifest.action.icon_variants` ([#31029](https://github.com/mdn/browser-compat-data/pull/31029))
+- `webextensions.manifest.browser_action.default_icon.any_size` ([#31029](https://github.com/mdn/browser-compat-data/pull/31029))
+- `webextensions.manifest.browser_action.icon_variants` ([#31029](https://github.com/mdn/browser-compat-data/pull/31029))
+- `webextensions.manifest.icon_variants` ([#31029](https://github.com/mdn/browser-compat-data/pull/31029))
+- `webextensions.manifest.icons.any_size` ([#31029](https://github.com/mdn/browser-compat-data/pull/31029))
+- `webextensions.manifest.page_action.default_icon.any_size` ([#31029](https://github.com/mdn/browser-compat-data/pull/31029))
+- `webextensions.manifest.page_action.icon_variants` ([#31029](https://github.com/mdn/browser-compat-data/pull/31029))
+
+### Statistics
+
+- 16 contributors have changed 107 files with 1,462 additions and 276 deletions in 35 commits ([`v8.1.8...v8.1.9`](https://github.com/mdn/browser-compat-data/compare/v8.1.8...v8.1.9))
+- 20,955 total features
+- 1,292 total contributors
+- 5,788 total stargazers
+
 ## [v8.1.8](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.8)
 
 November 2, 2026
