@@ -22,3 +22,4 @@ export { default as testStatusInheritance } from './test-status-inheritance.js';
 export { default as testStyle } from './test-style.js';
 export { default as testTags } from './test-tags.js';
 export { default as testVersions } from './test-versions.js';
+export { default as testWebFeatures } from './test-web-features.js';
