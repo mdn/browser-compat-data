@@ -15,6 +15,33 @@ BCD does not record absolute version numbers, such as Chrome 76.0.3809.46; inste
 
 This decision was made in [#3953, under the expectation that most users are likely to run the latest minor version of their browser](https://github.com/mdn/browser-compat-data/pull/3953#issuecomment-485847399), but not necessarily the latest version overall.
 
+## Writing maintainable notes
+
+Notes are the least structured part of browser compat data and the most likely to become stale and outdated.
+Help make the notes easier to maintain by following these style rules:
+
+- Be specific.
+  Avoid shorthands like _supports_, _unsupported_, or _works_.
+  Instead, describe the browser behavior or how it differs from expectations.
+  For example, write "The method always throws a `TypeError` exception."
+  Do not write "The method is unsupported."
+
+- Set the context first.
+  If a note applies only in certain circumstances, help readers understand if it applies to them by starting with the context.
+  For example, write "Before version 59, the method always throws…" or "In flex layouts, the `auto` value has no effect."
+  Do not write, "The method always throws in versions 59 and earlier" or "The `auto` value has no effect in flex layouts."
+
+- Cite your sources.
+  If a note summarizes a relevant browser bug, release notes text, or other authority, then link to it at the end of the note.
+  For example, write "See [bug 1234](#)."
+
+- Prefer the present tense, even for notes on past behavior.
+  Avoid the past tense or conditional sentences.
+  For example, write "Before version 59, the method parameters are optional."
+  Do not write "were optional" or "would have been optional."
+
+This guideline was added in [#30762](https://github.com/mdn/browser-compat-data/pull/30762).
+
 ### Backported releases
 
 Some browsers have backport releases, where a feature is added or removed in two or more versions at once that do not follow a linear semantic versioning bump (ex. Safari 6.0 was released, then Safari 7.0, and then Safari 6.1). If not otherwise covered by this guideline, use the earliest applicable version (as described in the [Choosing a version number](#choosing-a-version-number) guideline). In some cases, however, you must set the version number to the following major version. For example, if a new feature was added in Safari 7.0 and in Safari 6.1, then the supported version is 7.0 (not 6 or 6.1).
