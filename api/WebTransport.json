@@ -832,17 +832,10 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": [
-              {
-                "version_added": "160"
-              },
-              {
-                "version_added": "155",
-                "version_removed": "160",
-                "partial_implementation": true,
-                "notes": "The `context` parameter is optional, and the `outputLength` parameter is not supported. The method always returns 32 bytes of keying material."
-              }
-            ],
+            "firefox": {
+                "version_added": "155"
+                "notes": "Prior to version 160, the `context` parameter is optional and the `outputLength` parameter is not supported. The method always returns 32 bytes of keying material."
+            },
             "firefox_android": {
               "version_added": false
             },
