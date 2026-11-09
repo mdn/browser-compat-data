@@ -311,7 +311,8 @@
               "spec_url": "https://webaudio.github.io/web-speech-api/#dom-speechrecognitionoptions-langs",
               "support": {
                 "chrome": {
-                  "version_added": "139"
+                  "version_added": "139",
+                  "notes": "Throws a `TypeError` if `langs` is an empty array. The specification says the promise resolves with `\"unavailable\"`."
                 },
                 "chrome_android": {
                   "version_added": false
@@ -671,7 +672,8 @@
               "spec_url": "https://webaudio.github.io/web-speech-api/#dom-speechrecognitionoptions-langs",
               "support": {
                 "chrome": {
-                  "version_added": "139"
+                  "version_added": "139",
+                  "notes": "Throws a `TypeError` if `langs` is an empty array. The specification says the promise resolves with `false`."
                 },
                 "chrome_android": {
                   "version_added": false
