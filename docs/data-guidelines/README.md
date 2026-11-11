@@ -23,21 +23,21 @@ Help make the notes easier to maintain by following these style rules:
 - Be specific.
   Avoid shorthands like _supports_, _unsupported_, or _works_.
   Instead, describe the browser behavior or how it differs from expectations.
-  For example, write "The method always throws a `TypeError` exception."
-  Do not write "The method is unsupported."
+  For example, write "The `example()` method always throws a `TypeError` exception."
+  Do not write "The `example()` method is unsupported."
 
 - Set the context first.
   If a note applies only in certain circumstances, help readers understand if it applies to them by starting with the context.
-  For example, write "Before version 59, the method always throws…" or "In flex layouts, the `auto` value has no effect."
-  Do not write, "The method always throws in versions 59 and earlier" or "The `auto` value has no effect in flex layouts."
+  For example, write "Before Chrome 59, the `example()` method always throws…" or "In flex layouts, the `auto` value has no effect."
+  Do not write, "The `example()` method always throws in Chrome 59 and earlier" or "The `auto` value has no effect in flex layouts."
 
 - Cite your sources.
   If a note summarizes a relevant browser bug, release notes text, or other authority, then link to it at the end of the note.
   For example, write "See [bug 1234](#)."
 
-- Prefer the present tense, even for notes on past behavior.
+- Use the present tense, even for notes on past behavior.
   Avoid the past tense or conditional sentences.
-  For example, write "Before version 59, the method parameters are optional."
+  For example, write "Before Chrome 59, the `example()` method parameters are optional."
   Do not write "were optional" or "would have been optional."
 
 This guideline was added in [#30762](https://github.com/mdn/browser-compat-data/pull/30762).
