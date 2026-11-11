@@ -35,6 +35,8 @@ Help make the notes easier to maintain by following these style rules:
   If a note summarizes a relevant browser bug, release notes text, or other authority, then link to it at the end of the note.
   For example, write "See [bug 1234](#)."
 
+  See also: ["partial_implementation" requires a note](./data-guidelines/README.md#partial_implementation-requires-a-note)
+
 - Use the present tense, even for notes on past behavior.
   Avoid the past tense or conditional sentences.
   For example, write "Before Chrome 59, the `example()` method parameters are optional."
