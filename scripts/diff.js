@@ -1,6 +1,7 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+/** @import {Diff} from 'deep-diff'; */
 /** @import {InternalSupportStatement, InternalIdentifier, BrowserName} from '../types/index.js' */
 
 import { styleText } from 'node:util';
@@ -75,7 +76,7 @@ const doMirror = (diff, contents, path, direction) => {
 
 /**
  * Describe the diff in text form (internal function)
- * @param {import('deep-diff').Diff<string, string>} diffItem - The diff to describe
+ * @param {Diff<string, string>} diffItem - The diff to describe
  * @param {Contents} contents - The contents of the diff
  * @returns {string} A human-readable diff description
  */
@@ -122,7 +123,7 @@ const describeByKind = (diffItem, contents) => {
 
 /**
  * Describe the diff in text form
- * @param {import('deep-diff').Diff<string, string>} diffItem - The diff to describe
+ * @param {Diff<string, string>} diffItem - The diff to describe
  * @param {Contents} contents - The contents of the diff
  * @returns {DiffItem} A human-readable diff description
  */

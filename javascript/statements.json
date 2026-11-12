@@ -124,7 +124,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "preview"
+              "version_added": "27.3"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1558,7 +1558,49 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": false
+                "version_added": "preview",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "javascript.options.experimental.defer_import_eval",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": "27.3"
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "http_errors_not_cached": {
+          "__compat": {
+            "description": "Loading is retriable (HTTP errors are not cached)",
+            "spec_url": "https://html.spec.whatwg.org/multipage/webappapis.html#fetch-a-single-module-script",
+            "tags": [
+              "web-features:retriable-module-loading"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "156"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": "155"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -1573,7 +1615,7 @@
               "webview_ios": "mirror"
             },
             "status": {
-              "experimental": true,
+              "experimental": false,
               "standard_track": true,
               "deprecated": false
             }
@@ -1910,7 +1952,7 @@
                 "opera": "mirror",
                 "opera_android": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "27.3"
                 },
                 "safari_ios": "mirror",
                 "samsunginternet_android": "mirror",
@@ -2533,7 +2575,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "preview"
+              "version_added": "27.3"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",

@@ -2176,7 +2176,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "preview"
+                  "version_added": "159"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -2356,7 +2356,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": "preview"
+                  "version_added": "159"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -2941,7 +2941,7 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview"
+              "version_added": "159"
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -3286,7 +3286,7 @@
           "support": {
             "chrome": {
               "version_added": "1",
-              "notes": "Since Chrome 115, setting `domain` has no effect, unless the website has opted into [origin-keyed agent clusters](https://developer.mozilla.org/docs/Web/HTTP/Headers/Origin-Agent-Cluster)."
+              "notes": "Since Chrome 115, setting `domain` has no effect by default in secure contexts. The `Origin-Agent-Cluster: ?0` header opts out of origin-keying for documents that are not cross-origin isolated. See [Origin-Agent-Cluster](https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Origin-Agent-Cluster)."
             },
             "chrome_android": "mirror",
             "edge": {
@@ -6280,13 +6280,17 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "146"
+              "version_added": "146",
+              "notes": "Before version 152, HTML is sanitized after parsing instead of during parsing. For example, text on either side of a removed element isn't merged into a single text node. See [whatwg/html#12756](https://github.com/whatwg/html/pull/12756)."
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
               "version_added": "148",
-              "notes": "The `<base>` element is not removed from a configuration's allowlist, potentially allowing manipulation of a document's relative URLs. See [whatwg/html#12664](https://github.com/whatwg/html/pull/12664)."
+              "notes": [
+                "The `<base>` element is not removed from a configuration's allowlist, potentially allowing manipulation of a document's relative URLs. See [whatwg/html#12664](https://github.com/whatwg/html/pull/12664).",
+                "Before version 159, HTML is sanitized after parsing instead of during parsing. For example, text on either side of a removed element isn't merged into a single text node. See [whatwg/html#12756](https://github.com/whatwg/html/pull/12756)."
+              ]
             },
             "firefox_android": "mirror",
             "oculus": "mirror",

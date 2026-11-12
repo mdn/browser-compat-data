@@ -43,6 +43,39 @@
           "deprecated": false
         }
       },
+      "captureElementImage": {
+        "__compat": {
+          "tags": [
+            "web-features:canvas-html"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "157"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
       "captureStream": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/captureStream",
@@ -78,6 +111,72 @@
           "status": {
             "experimental": false,
             "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "clearElementGeometry": {
+        "__compat": {
+          "tags": [
+            "web-features:canvas-html"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "157"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
+      "content": {
+        "__compat": {
+          "tags": [
+            "web-features:canvas-html"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "157"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -150,6 +249,40 @@
           "status": {
             "experimental": false,
             "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "elementgeometryupdate_event": {
+        "__compat": {
+          "description": "`elementgeometryupdate` event",
+          "tags": [
+            "web-features:canvas-html"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "157"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -880,7 +1013,16 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "160",
+                  "flags": [
+                    {
+                      "type": "preference",
+                      "name": "gfx.canvas.colorspace.enabled",
+                      "value_to_set": "true"
+                    }
+                  ],
+                  "partial_implementation": true,
+                  "notes": "Colors aren't converted between color spaces when drawing or when reading pixels with `getImageData()`. See [bug 2080824](https://bugzil.la/2080824)."
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -1023,6 +1165,72 @@
           }
         }
       },
+      "getElementImageDefaultSize": {
+        "__compat": {
+          "tags": [
+            "web-features:canvas-html"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "157"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
+      "getElementTransform": {
+        "__compat": {
+          "tags": [
+            "web-features:canvas-html"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "157"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
       "height": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/height",
@@ -1125,6 +1333,73 @@
           },
           "status": {
             "experimental": false,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
+      "paint_event": {
+        "__compat": {
+          "description": "`paint` event",
+          "tags": [
+            "web-features:canvas-html"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "157"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
+            "deprecated": false
+          }
+        }
+      },
+      "requestPaint": {
+        "__compat": {
+          "tags": [
+            "web-features:canvas-html"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "157"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
             "standard_track": false,
             "deprecated": false
           }
@@ -1487,6 +1762,39 @@
           "status": {
             "experimental": false,
             "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "updateElementGeometry": {
+        "__compat": {
+          "tags": [
+            "web-features:canvas-html"
+          ],
+          "support": {
+            "chrome": {
+              "version_added": "157"
+            },
+            "chrome_android": "mirror",
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
