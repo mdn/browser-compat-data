@@ -1,5 +1,70 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.1.10](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.10)
+
+November 13, 2026
+
+### Removals
+
+- `css.at-rules.page.at_bottom-center` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.at_bottom-left` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.at_bottom-left-corner` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.at_bottom-right` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.at_bottom-right-corner` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.at_left-bottom` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.at_left-middle` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.at_left-top` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.at_right-bottom` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.at_right-middle` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.at_right-top` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.at_top-center` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.at_top-left` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.at_top-left-corner` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.at_top-right` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.at_top-right-corner` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.properties.alt` ([#31043](https://github.com/mdn/browser-compat-data/pull/31043))
+
+### Additions
+
+- `api.EXT_conservative_depth` ([#31017](https://github.com/mdn/browser-compat-data/pull/31017))
+- `api.EXT_render_snorm` ([#31015](https://github.com/mdn/browser-compat-data/pull/31015))
+- `api.NV_shader_noperspective_interpolation` ([#30977](https://github.com/mdn/browser-compat-data/pull/30977))
+- `api.OES_sample_variables` ([#31014](https://github.com/mdn/browser-compat-data/pull/31014))
+- `api.OES_shader_multisample_interpolation` ([#31013](https://github.com/mdn/browser-compat-data/pull/31013))
+- `api.WEBGL_polygon_mode` ([#30996](https://github.com/mdn/browser-compat-data/pull/30996))
+- `api.WEBGL_polygon_mode.polygonModeWEBGL` ([#30996](https://github.com/mdn/browser-compat-data/pull/30996))
+- `api.WEBGL_render_shared_exponent` ([#30988](https://github.com/mdn/browser-compat-data/pull/30988))
+- `api.WEBGL_stencil_texturing` ([#30982](https://github.com/mdn/browser-compat-data/pull/30982))
+- `css.at-rules.page.bottom-center` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.bottom-left` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.bottom-left-corner` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.bottom-right` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.bottom-right-corner` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.left-bottom` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.left-middle` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.left-top` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.right-bottom` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.right-middle` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.right-top` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.top-center` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.top-left` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.top-left-corner` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.top-right` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.at-rules.page.top-right-corner` ([#30953](https://github.com/mdn/browser-compat-data/pull/30953))
+- `css.types.calc-mix` ([#31139](https://github.com/mdn/browser-compat-data/pull/31139))
+- `css.types.ident` ([#31132](https://github.com/mdn/browser-compat-data/pull/31132))
+- `css.types.inherit` ([#31132](https://github.com/mdn/browser-compat-data/pull/31132))
+- `webextensions.api.alarms.create.alarmInfo_name_parameter` ([#31100](https://github.com/mdn/browser-compat-data/pull/31100))
+- `webextensions.api.alarms.create.alarmInfo_persistAcrossSessons_parameter` ([#31100](https://github.com/mdn/browser-compat-data/pull/31100))
+- `webextensions.api.runtime.MessageSender.windowId` ([#31108](https://github.com/mdn/browser-compat-data/pull/31108))
+
+### Statistics
+
+- 6 contributors have changed 39 files with 1,136 additions and 399 deletions in 26 commits ([`v8.1.9...v8.1.10`](https://github.com/mdn/browser-compat-data/compare/v8.1.9...v8.1.10))
+- 20,982 total features
+- 1,292 total contributors
+- 5,791 total stargazers
+
 ## [v8.1.9](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.9)
 
 November 12, 2026
