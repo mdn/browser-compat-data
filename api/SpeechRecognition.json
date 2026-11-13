@@ -20,11 +20,18 @@
           ],
           "chrome_android": "mirror",
           "edge": "mirror",
-          "firefox": {
-            "version_added": "160"
-          },
+          "firefox": [
+            {
+              "version_added": "160"
+            },
+            {
+              "prefix": "webkit",
+              "version_added": "160"
+            }
+          ],
           "firefox_android": {
-            "version_added": false
+            "version_added": false,
+            "impl_url": "https://bugzil.la/1244242"
           },
           "oculus": "mirror",
           "opera": "mirror",
@@ -64,11 +71,18 @@
             ],
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "160"
-            },
+            "firefox": [
+              {
+                "version_added": "160"
+              },
+              {
+                "prefix": "webkit",
+                "version_added": "160"
+              }
+            ],
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": {
@@ -113,7 +127,8 @@
               "version_added": "160"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -154,7 +169,8 @@
               "version_added": "160"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -195,7 +211,8 @@
               "version_added": "160"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -232,7 +249,8 @@
               "version_added": "160"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -267,7 +285,8 @@
                 "version_added": "160"
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1244242"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -292,7 +311,8 @@
               "spec_url": "https://webaudio.github.io/web-speech-api/#dom-speechrecognitionoptions-langs",
               "support": {
                 "chrome": {
-                  "version_added": "139"
+                  "version_added": "139",
+                  "notes": "Throws a `TypeError` if `langs` is an empty array. The specification says the promise resolves with `\"unavailable\"`."
                 },
                 "chrome_android": {
                   "version_added": false
@@ -302,7 +322,8 @@
                   "version_added": "160"
                 },
                 "firefox_android": {
-                  "version_added": false
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/1244242"
                 },
                 "oculus": "mirror",
                 "opera": "mirror",
@@ -338,7 +359,8 @@
                   "version_added": "160"
                 },
                 "firefox_android": {
-                  "version_added": false
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/1244242"
                 },
                 "oculus": "mirror",
                 "opera": "mirror",
@@ -371,9 +393,14 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "160",
+                  "partial_implementation": true,
+                  "notes": "The option is accepted but has no effect."
                 },
-                "firefox_android": "mirror",
+                "firefox_android": {
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/1244242"
+                },
                 "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
@@ -386,7 +413,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -415,7 +442,8 @@
               "version_added": "160"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -464,7 +492,8 @@
               "version_added": "160"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -505,7 +534,8 @@
               "version_added": "160"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -542,7 +572,8 @@
               "version_added": "160"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -579,7 +610,8 @@
               "version_added": "160"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -614,7 +646,8 @@
                 "version_added": "160"
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1244242"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -639,7 +672,8 @@
               "spec_url": "https://webaudio.github.io/web-speech-api/#dom-speechrecognitionoptions-langs",
               "support": {
                 "chrome": {
-                  "version_added": "139"
+                  "version_added": "139",
+                  "notes": "Throws a `TypeError` if `langs` is an empty array. The specification says the promise resolves with `false`."
                 },
                 "chrome_android": {
                   "version_added": false
@@ -649,7 +683,8 @@
                   "version_added": "160"
                 },
                 "firefox_android": {
-                  "version_added": false
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/1244242"
                 },
                 "oculus": "mirror",
                 "opera": "mirror",
@@ -675,7 +710,8 @@
               "spec_url": "https://webaudio.github.io/web-speech-api/#dom-speechrecognitionoptions-processlocally",
               "support": {
                 "chrome": {
-                  "version_added": "139"
+                  "version_added": "139",
+                  "notes": "`install()` resolves with `false` unless `processLocally` is `true`. The specification says this option has no effect."
                 },
                 "chrome_android": {
                   "version_added": false
@@ -685,7 +721,8 @@
                   "version_added": "160"
                 },
                 "firefox_android": {
-                  "version_added": false
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/1244242"
                 },
                 "oculus": "mirror",
                 "opera": "mirror",
@@ -718,9 +755,14 @@
                 },
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "160",
+                  "partial_implementation": true,
+                  "notes": "The option is accepted but has no effect."
                 },
-                "firefox_android": "mirror",
+                "firefox_android": {
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/1244242"
+                },
                 "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
@@ -733,7 +775,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -758,7 +800,8 @@
               "version_added": "160"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -795,7 +838,8 @@
               "version_added": "160"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -832,7 +876,8 @@
               "version_added": "160"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -873,7 +918,8 @@
               "version_added": "160"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -906,10 +952,14 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": "160"
+              "version_added": "160",
+              "impl_url": "https://bugzil.la/2072244",
+              "partial_implementation": true,
+              "notes": "Phrases can be set but do not affect recognition."
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -945,7 +995,8 @@
               "version_added": "160"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -986,7 +1037,8 @@
               "version_added": "160"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -1027,7 +1079,8 @@
               "version_added": "160"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -1068,7 +1121,8 @@
               "version_added": "160"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -1106,10 +1160,13 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "160"
+              "version_added": "160",
+              "partial_implementation": true,
+              "notes": "This event is never fired."
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -1147,10 +1204,13 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "160"
+              "version_added": "160",
+              "partial_implementation": true,
+              "notes": "This event is never fired."
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -1187,7 +1247,8 @@
               "version_added": "160"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -1225,7 +1286,8 @@
                 "version_added": "160"
               },
               "firefox_android": {
-                "version_added": false
+                "version_added": false,
+                "impl_url": "https://bugzil.la/1244242"
               },
               "oculus": "mirror",
               "opera": "mirror",
@@ -1267,7 +1329,8 @@
               "version_added": "160"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -1304,7 +1367,8 @@
               "version_added": "160"
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
@@ -1335,10 +1399,14 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "160"
+              "version_added": "160",
+              "impl_url": "https://bugzil.la/2089649",
+              "partial_implementation": true,
+              "notes": "Setting this property to `true` has no effect: transcripts never include inferred punctuation."
             },
             "firefox_android": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1244242"
             },
             "oculus": "mirror",
             "opera": "mirror",
