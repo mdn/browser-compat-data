@@ -22,12 +22,18 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "11.1",
-              "impl_url": "https://webkit.org/b/204163",
-              "partial_implementation": true,
-              "notes": "Safari support is limited to `color` and `font-size`."
-            },
+            "safari": [
+              {
+                "version_added": "27.3"
+              },
+              {
+                "version_added": "11.1",
+                "version_removed": "27.3",
+                "impl_url": "https://webkit.org/b/204163",
+                "partial_implementation": true,
+                "notes": "Safari support is limited to `color` and `font-size`."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
