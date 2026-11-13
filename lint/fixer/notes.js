@@ -1,20 +1,18 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
-import {
-  replaceCodeTagsWithBackticks,
-  replaceLinkTagsWithMarkdown,
-} from '../utils.js';
+import { convertHtmlToMarkdown, preservesRenderedHtml } from '../utils.js';
 import walk from '../../utils/walk.js';
 
 /**
- * Replace HTML in a single note with Markdown syntax. Code tags are unwrapped
- * before links, since a link's text may contain a <code> tag.
+ * The fixer rechecks rendering because it does not consume linter results.
  * @param {string} note The note to fix
- * @returns {string} The note with Markdown syntax
+ * @returns {string} The note with Markdown syntax, if it renders identically
  */
-const fixNote = (note) =>
-  replaceLinkTagsWithMarkdown(replaceCodeTagsWithBackticks(note));
+const fixNote = (note) => {
+  const converted = convertHtmlToMarkdown(note);
+  return preservesRenderedHtml(note, converted) ? converted : note;
+};
 
 /**
  * Replace HTML in one or more notes with Markdown syntax.
