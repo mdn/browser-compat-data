@@ -1619,9 +1619,17 @@
             "web-features:fencedframe"
           ],
           "support": {
-            "chrome": {
-              "version_added": "126"
-            },
+            "chrome": [
+              {
+                "version_added": "156",
+                "partial_implementation": true,
+                "notes": "The `Fence` class exists, but attempts to construct it always throw. See [Intent to Ship: Remove FencedFrame element and window.fence APIs](https://groups.google.com/a/chromium.org/g/blink-dev/c/c9w5uH3eSuo) and [Status entry](https://chromestatus.com/feature/6366274495053824?gate=5364408546099200)."
+              },
+              {
+                "version_added": "126",
+                "version_removed": "156"
+              }
+            ],
             "chrome_android": "mirror",
             "deno": {
               "version_added": false
@@ -4141,7 +4149,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "preview"
+              "version_added": "27.3"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -7833,7 +7841,16 @@
             "safari": {
               "version_added": false
             },
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "version_added": "27.1",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "ViewportSegmentsEnabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
             "webview_ios": "mirror"
