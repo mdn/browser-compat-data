@@ -254,7 +254,11 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "preview"
+              "version_added": "161",
+              "notes": [
+                "When reading, custom formats are only available if the clipboard contains same-origin content. See [bug 2086505](https://bugzil.la/2086505).",
+                "Web extensions with the `clipboardRead` permission in their manifest can read custom formats from any origin. See [bug 2087427](https://bugzil.la/2087427)."
+              ]
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
