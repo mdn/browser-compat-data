@@ -37,19 +37,25 @@
           "spec_url": "https://w3c.github.io/webtransport/#dom-webtransportsendgroup-getstats",
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": false,
+              "impl_url": "https://crbug.com/568825278"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": "155"
+              "version_added": "155",
+              "impl_url": "https://bugzil.la/2021710",
+              "partial_implementation": true,
+              "notes": "Always resolves with an empty object."
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "26.4"
+              "version_added": "26.4",
+              "partial_implementation": true,
+              "notes": "Stream bytes aren't included in count (only datagram bytes)."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
