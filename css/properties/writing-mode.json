@@ -473,6 +473,54 @@
             }
           }
         },
+        "vertical_oriented_table_cells": {
+          "__compat": {
+            "description": "Vertically-oriented table cells",
+            "spec_url": "https://drafts.csswg.org/css-writing-modes/#block-flow:~:text=tb-,Applies,containers,-Inherited",
+            "support": {
+              "chrome": {
+                "version_added": "92"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": [
+                {
+                  "version_added": "139"
+                },
+                {
+                  "version_added": "41",
+                  "version_removed": "139",
+                  "partial_implementation": true,
+                  "notes": "Vertical writing modes are applied to table cells, but the text overflows the cell border. See [bug 1957710](https://bugzil.la/1957710)."
+                }
+              ],
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": [
+                {
+                  "version_added": "26.2"
+                },
+                {
+                  "version_added": "17.4",
+                  "version_removed": "26.2",
+                  "partial_implementation": true,
+                  "notes": "Vertical writing modes are not applied to `th` and `td` elements. See [bug 266928](https://webkit.org/b/266928)"
+                }
+              ],
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": false,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "vertical-lr": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-writing-modes/#valdef-writing-mode-vertical-lr",
