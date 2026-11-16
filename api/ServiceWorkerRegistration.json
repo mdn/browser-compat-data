@@ -507,7 +507,10 @@
             },
             "safari_ios": {
               "version_added": "16.4",
-              "notes": "Notifications are supported in web apps saved to the home screen."
+              "notes": [
+                "Notifications are supported in web apps saved to the home screen.",
+                "In a `push` event for a declarative push message, the returned promise rejects with a `TypeError` unless the `navigate` option is a valid URL. The notification then replaces the proposed one, and is only shown once all of the event's `waitUntil()` promises have settled."
+              ]
             },
             "samsunginternet_android": "mirror",
             "webview_android": {
