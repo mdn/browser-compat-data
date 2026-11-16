@@ -187,10 +187,17 @@
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
-              "safari": {
-                "version_added": "6",
-                "notes": "Before Safari 12.1, `overlay` only had an effect on legacy scrollbars on macOS."
-              },
+              "safari": [
+                {
+                  "version_added": "12.1"
+                },
+                {
+                  "version_added": "6",
+                  "version_removed": "12.1",
+                  "partial_implementation": true,
+                  "notes": "Only had an effect on legacy scrollbars on macOS."
+                }
+              ],
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
               "webview_android": "mirror",
