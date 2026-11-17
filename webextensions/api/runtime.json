@@ -1355,9 +1355,17 @@
             "__compat": {
               "description": "Respond with `Promise`",
               "support": {
-                "chrome": {
-                  "version_added": false
-                },
+                "chrome": [
+                  {
+                    "version_added": "152"
+                  },
+                  {
+                    "version_added": "148",
+                    "version_removed": "152",
+                    "partial_implementation": true,
+                    "notes": "Not supported in extensions that declare a [`devtools_page`](https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/devtools_page)."
+                  }
+                ],
                 "edge": "mirror",
                 "firefox": {
                   "version_added": "≤62"
@@ -1417,9 +1425,17 @@
             "__compat": {
               "description": "Respond with `Promise`",
               "support": {
-                "chrome": {
-                  "version_added": false
-                },
+                "chrome": [
+                  {
+                    "version_added": "152"
+                  },
+                  {
+                    "version_added": "148",
+                    "version_removed": "152",
+                    "partial_implementation": true,
+                    "notes": "Not supported in extensions that declare a [`devtools_page`](https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/manifest.json/devtools_page)."
+                  }
+                ],
                 "edge": "mirror",
                 "firefox": {
                   "version_added": "≤62"
