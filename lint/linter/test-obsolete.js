@@ -44,7 +44,8 @@ export const implementedAndRemoved = (
 ) => {
   const errorTime = new Date(referenceTime.getTime()),
     infoTime = new Date(referenceTime.getTime());
-  errorTime.setFullYear(errorTime.getFullYear() - 2.5);
+  // `setFullYear()` truncates fractional years, so subtract 2.5 years as months.
+  errorTime.setMonth(errorTime.getMonth() - 30);
   infoTime.setFullYear(infoTime.getFullYear() - 2);
 
   /** @type {LinterMessageLevel} */

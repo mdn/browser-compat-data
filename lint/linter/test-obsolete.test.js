@@ -17,7 +17,7 @@ import {
   processData,
 } from './test-obsolete.js';
 
-// Snapshot date: Chrome 145 is recent, 128 is 2-2.5 years old, 80 is older, 160 is undated.
+// Snapshot date: Chrome 145 is recent, 128 is 2-2.5 years old, 121 and 80 are older, 160 is undated.
 const referenceTime = new Date('2026-11-17T00:00:00Z');
 /**
  * Check support against the browser release snapshot.
@@ -215,6 +215,15 @@ describe('implementedAndRemoved', () => {
     assert.equal(
       check({
         chrome: { version_added: '1', version_removed: '80' },
+      }),
+      'error',
+    );
+  });
+
+  it('returns "error" for features removed more than 2.5 years ago', () => {
+    assert.equal(
+      check({
+        chrome: { version_added: '1', version_removed: '121' },
       }),
       'error',
     );
