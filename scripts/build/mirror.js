@@ -33,7 +33,6 @@ const OS_NOTES = [
   'Supported on ChromeOS and macOS only.',
   'Supported on macOS only.',
   'Supported on macOS Catalina 10.15.1+, Windows, and ChromeOS. Not yet supported on Linux.',
-  'Supported on Windows only, in all contexts except for service workers.',
   'Supported only on macOS 10.12 (Sierra) and later.',
   'This cursor is only supported on macOS and Linux.',
 ].map((s) => s.toLowerCase());
