@@ -4,26 +4,28 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
-import bcd from '../../index.js';
+/** @import {InternalSupportBlock} from '../../types/index.js' */
+/** @import {LinterMessageLevel} from '../types.js' */
+
 import { Logger } from '../utils.js';
 
+// Frozen subset of `browsers/*.json`, so data updates don't change results.
+import browsers from './fixtures/browsers.json' with { type: 'json' };
 import {
   neverImplemented,
   implementedAndRemoved,
   processData,
 } from './test-obsolete.js';
 
-const errorTime = new Date(),
-  infoTime = new Date();
-errorTime.setFullYear(errorTime.getFullYear() - 2.5);
-infoTime.setFullYear(infoTime.getFullYear() - 2);
-const release = Object.entries(bcd.browsers['chrome'].releases).find((r) => {
-  if (r[1].release_date === undefined) {
-    return false;
-  }
-  const date = new Date(r[1].release_date);
-  return errorTime < date && date < infoTime;
-});
+// Snapshot date: Chrome 145 is recent, 128 is 2-2.5 years old, 80 is older, 160 is undated.
+const referenceTime = new Date('2026-11-17T00:00:00Z');
+/**
+ * Check support against the browser release snapshot.
+ * @param {InternalSupportBlock} support Support data to inspect.
+ * @returns {LinterMessageLevel | false} The obsolete check result.
+ */
+const check = (support) =>
+  implementedAndRemoved(support, browsers, referenceTime);
 
 describe('neverImplemented', () => {
   it('returns false for features which were implemented', () => {
@@ -62,15 +64,14 @@ describe('neverImplemented', () => {
 
 describe('implementedAndRemoved', () => {
   it('returns false for features which were implemented and never removed', () => {
-    assert.ok(release);
     assert.equal(
-      implementedAndRemoved({
+      check({
         chrome: { version_added: '1' },
       }),
       false,
     );
     assert.equal(
-      implementedAndRemoved({
+      check({
         chrome: [
           {
             version_added: '2',
@@ -90,11 +91,11 @@ describe('implementedAndRemoved', () => {
       false,
     );
     assert.equal(
-      implementedAndRemoved({
+      check({
         chrome: [
           {
             version_added: '2',
-            version_removed: release[0],
+            version_removed: '128',
           },
           {
             version_added: '1',
@@ -121,20 +122,20 @@ describe('implementedAndRemoved', () => {
 
   it('returns false for features which were implemented and removed recently', () => {
     assert.equal(
-      implementedAndRemoved({
+      check({
         chrome: {
           version_added: '1',
-          version_removed: Object.keys(bcd.browsers['chrome'].releases)[-1],
+          version_removed: '145',
         },
       }),
       false,
     );
     assert.equal(
-      implementedAndRemoved({
+      check({
         chrome: [
           {
             version_added: '2',
-            version_removed: Object.keys(bcd.browsers['chrome'].releases)[-1],
+            version_removed: '145',
           },
           {
             version_added: '1',
@@ -153,24 +154,21 @@ describe('implementedAndRemoved', () => {
   });
 
   it('rule 2 info: returns "info" for features which were implemented and removed some time ago', () => {
-    // Make sure there is a suitable release
-    assert.ok(release);
-    const version_removed = release[0];
     assert.equal(
-      implementedAndRemoved({
+      check({
         chrome: {
           version_added: '1',
-          version_removed,
+          version_removed: '128',
         },
       }),
       'info',
     );
     assert.equal(
-      implementedAndRemoved({
+      check({
         chrome: [
           {
             version_added: '2',
-            version_removed,
+            version_removed: '128',
           },
           {
             version_added: '1',
@@ -187,11 +185,11 @@ describe('implementedAndRemoved', () => {
       'info',
     );
     assert.equal(
-      implementedAndRemoved({
+      check({
         chrome: [
           {
             version_added: '2',
-            version_removed,
+            version_removed: '128',
           },
           {
             version_added: '1',
@@ -210,6 +208,24 @@ describe('implementedAndRemoved', () => {
         },
       }),
       'info',
+    );
+  });
+
+  it('returns "error" for features removed from old releases', () => {
+    assert.equal(
+      check({
+        chrome: { version_added: '1', version_removed: '80' },
+      }),
+      'error',
+    );
+  });
+
+  it('returns false when the removed release has no date', () => {
+    assert.equal(
+      check({
+        chrome: { version_added: '1', version_removed: '160' },
+      }),
+      false,
     );
   });
 });
@@ -252,17 +268,19 @@ describe('processData', () => {
 
   it('logs "info" for feature according to rule 2', () => {
     const logger = new Logger('', '');
-    // Make sure there is a suitable release
-    assert.ok(release);
-    const version_removed = release[0];
-    processData(logger, {
-      support: {
-        chrome: {
-          version_added: '1',
-          version_removed,
+    processData(
+      logger,
+      {
+        support: {
+          chrome: {
+            version_added: '1',
+            version_removed: '128',
+          },
         },
       },
-    });
+      browsers,
+      referenceTime,
+    );
     assert.equal(logger.messages.length, 1);
     assert.equal(logger.messages[0].level, 'info');
   });
