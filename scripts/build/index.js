@@ -20,7 +20,7 @@ import bcd from '../../index.js';
 import mirrorSupport from './mirror.js';
 
 /**
- * @import { BrowserName, InternalCompatData, InternalIdentifier, InternalSupportStatement, VersionValue } from '../../types/index.js'
+ * @import { BrowserName, InternalBrowsers, InternalCompatData, InternalIdentifier, InternalSupportStatement, VersionValue } from '../../types/index.js'
  * @import { CompatData, MetaBlock, ReleaseStatement } from '../../types/public.js'
  * @import { WalkOutput } from '../../utils/walk.js'
  */
@@ -73,17 +73,18 @@ const mdToHtml = (markdown) =>
 /**
  * Apply mirroring to a feature
  * @param {WalkOutput} feature The BCD to perform mirroring on
- * @param {typeof mirrorSupport} [mirror] The mirror function to use
+ * @param {InternalBrowsers} [browsers] Browser data, all of BCD by default
  * @returns {void}
  */
-export const applyMirroring = (feature, mirror = mirrorSupport) => {
+export const applyMirroring = (feature, browsers = bcd.browsers) => {
   for (const [browser, supportData] of Object.entries(
     /** @type {InternalSupportStatement} */ (feature.compat.support),
   )) {
     if (supportData === 'mirror') {
-      /** @type {*} */ (feature.data).__compat.support[browser] = mirror(
+      /** @type {*} */ (feature.data).__compat.support[browser] = mirrorSupport(
         /** @type {BrowserName} */ (browser),
         feature.compat.support,
+        browsers,
       );
     }
   }
