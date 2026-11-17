@@ -220,14 +220,19 @@ describe('implementedAndRemoved', () => {
     );
   });
 
-  it('returns false when the removed release has no date', () => {
-    assert.equal(
-      check({
-        chrome: { version_added: '1', version_removed: '160' },
-      }),
-      false,
-    );
-  });
+  for (const { name, version_removed } of [
+    { name: 'has no date', version_removed: '160' },
+    { name: 'is unknown', version_removed: '999' },
+  ]) {
+    it(`returns false when the removed release ${name}`, () => {
+      assert.equal(
+        check({
+          chrome: { version_added: '1', version_removed },
+        }),
+        false,
+      );
+    });
+  }
 });
 
 describe('processData', () => {
