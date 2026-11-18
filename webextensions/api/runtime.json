@@ -257,13 +257,28 @@
                 "version_added": "48"
               },
               "opera": "mirror",
-              "safari": {
-                "version_added": "14",
-                "notes": "Only supports 'install' and 'update'."
-              },
+              "safari": [
+                {
+                  "version_added": "preview",
+                  "notes": "`browser_update` is not supported."
+                },
+                {
+                  "version_added": "14",
+                  "version_removed": "preview",
+                  "partial_implementation": true,
+                  "notes": [
+                    "`browser_update` is not supported.",
+                    "The values are supported, but the enum is not exposed on the `runtime` object."
+                  ]
+                }
+              ],
               "safari_ios": {
                 "version_added": "15",
-                "notes": "Only supports 'install' and 'update'."
+                "partial_implementation": true,
+                "notes": [
+                  "`browser_update` is not supported.",
+                  "The values are supported, but the enum is not exposed on the `runtime` object."
+                ]
               }
             }
           }
@@ -345,11 +360,21 @@
                 "version_added": "48"
               },
               "opera": "mirror",
-              "safari": {
-                "version_added": "14"
-              },
+              "safari": [
+                {
+                  "version_added": "preview"
+                },
+                {
+                  "version_added": "14",
+                  "version_removed": "preview",
+                  "partial_implementation": true,
+                  "notes": "The values are supported, but the enum is not exposed on the `runtime` object."
+                }
+              ],
               "safari_ios": {
-                "version_added": "15"
+                "version_added": "15",
+                "partial_implementation": true,
+                "notes": "The values are supported, but the enum is not exposed on the `runtime` object."
               }
             }
           },
@@ -392,11 +417,21 @@
                   "version_added": "48"
                 },
                 "opera": "mirror",
-                "safari": {
-                  "version_added": "14"
-                },
+                "safari": [
+                  {
+                    "version_added": "preview"
+                  },
+                  {
+                    "version_added": "14",
+                    "version_removed": "preview",
+                    "partial_implementation": true,
+                    "notes": "The value is supported, but not exposed on the `PlatformArch` object."
+                  }
+                ],
                 "safari_ios": {
-                  "version_added": "15"
+                  "version_added": "15",
+                  "partial_implementation": true,
+                  "notes": "The value is supported, but not exposed on the `PlatformArch` object."
                 }
               }
             }
@@ -588,11 +623,21 @@
                 },
                 "firefox_android": "mirror",
                 "opera": "mirror",
-                "safari": {
-                  "version_added": "14"
-                },
+                "safari": [
+                  {
+                    "version_added": "preview"
+                  },
+                  {
+                    "version_added": "14",
+                    "version_removed": "preview",
+                    "partial_implementation": true,
+                    "notes": "The value is supported, but not exposed on the `PlatformArch` object."
+                  }
+                ],
                 "safari_ios": {
-                  "version_added": "15"
+                  "version_added": "15",
+                  "partial_implementation": true,
+                  "notes": "The value is supported, but not exposed on the `PlatformArch` object."
                 }
               }
             }
@@ -632,11 +677,21 @@
                   "version_added": "48"
                 },
                 "opera": "mirror",
-                "safari": {
-                  "version_added": "14"
-                },
+                "safari": [
+                  {
+                    "version_added": "preview"
+                  },
+                  {
+                    "version_added": "14",
+                    "version_removed": "preview",
+                    "partial_implementation": true,
+                    "notes": "The value is supported, but not exposed on the `PlatformArch` object."
+                  }
+                ],
                 "safari_ios": {
-                  "version_added": "15"
+                  "version_added": "15",
+                  "partial_implementation": true,
+                  "notes": "The value is supported, but not exposed on the `PlatformArch` object."
                 }
               }
             }
@@ -722,11 +777,21 @@
                 "version_added": "48"
               },
               "opera": "mirror",
-              "safari": {
-                "version_added": "14"
-              },
+              "safari": [
+                {
+                  "version_added": "preview"
+                },
+                {
+                  "version_added": "14",
+                  "version_removed": "preview",
+                  "partial_implementation": true,
+                  "notes": "The values are supported, but the enum is not exposed on the `runtime` object."
+                }
+              ],
               "safari_ios": {
-                "version_added": "15"
+                "version_added": "15",
+                "partial_implementation": true,
+                "notes": "The values are supported, but the enum is not exposed on the `runtime` object."
               }
             }
           }
