@@ -1523,7 +1523,14 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
+              "version_added": "160",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "media.lazy_loading.enabled",
+                  "value_to_set": "true"
+                }
+              ],
               "impl_url": "https://bugzil.la/2005072"
             },
             "firefox_android": "mirror",

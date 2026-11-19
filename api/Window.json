@@ -1312,11 +1312,17 @@
             "opera_android": {
               "version_added": "11.1"
             },
-            "safari": {
-              "version_added": "3",
-              "partial_implementation": true,
-              "notes": "In Safari, the `devicePixelRatio` does not change when the page is zoomed. See [bug 124862](https://webkit.org/b/124862)."
-            },
+            "safari": [
+              {
+                "version_added": "26.4"
+              },
+              {
+                "version_added": "3",
+                "version_removed": "26.4",
+                "partial_implementation": true,
+                "notes": "In Safari, the `devicePixelRatio` does not change when the page is zoomed. See [bug 124862](https://webkit.org/b/124862)."
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -1619,9 +1625,17 @@
             "web-features:fencedframe"
           ],
           "support": {
-            "chrome": {
-              "version_added": "126"
-            },
+            "chrome": [
+              {
+                "version_added": "156",
+                "partial_implementation": true,
+                "notes": "The `Fence` class exists, but attempts to construct it always throw. See [Intent to Ship: Remove FencedFrame element and window.fence APIs](https://groups.google.com/a/chromium.org/g/blink-dev/c/c9w5uH3eSuo) and [Status entry](https://chromestatus.com/feature/6366274495053824?gate=5364408546099200)."
+              },
+              {
+                "version_added": "126",
+                "version_removed": "156"
+              }
+            ],
             "chrome_android": "mirror",
             "deno": {
               "version_added": false
@@ -3063,6 +3077,9 @@
       "maximize": {
         "__compat": {
           "spec_url": "https://w3c.github.io/window-management/#api-window-maximize-method",
+          "tags": [
+            "web-features:window-management-resizing"
+          ],
           "support": {
             "chrome": {
               "version_added": "155",
@@ -3244,6 +3261,9 @@
       "minimize": {
         "__compat": {
           "spec_url": "https://w3c.github.io/window-management/#api-window-minimize-method",
+          "tags": [
+            "web-features:window-management-resizing"
+          ],
           "support": {
             "chrome": {
               "version_added": "155",
@@ -4135,7 +4155,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "preview"
+              "version_added": "27.3"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -4309,7 +4329,7 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
+              "version_added": "preview",
               "impl_url": "https://bugzil.la/1860854"
             },
             "firefox_android": "mirror",
@@ -4393,7 +4413,7 @@
             },
             "edge": "mirror",
             "firefox": {
-              "version_added": false,
+              "version_added": "preview",
               "impl_url": "https://bugzil.la/1881438"
             },
             "firefox_android": "mirror",
@@ -5415,6 +5435,9 @@
       "restore": {
         "__compat": {
           "spec_url": "https://w3c.github.io/window-management/#api-window-restore-method",
+          "tags": [
+            "web-features:window-management-resizing"
+          ],
           "support": {
             "chrome": {
               "version_added": "155",
@@ -7103,6 +7126,9 @@
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Window/setResizable",
           "spec_url": "https://w3c.github.io/window-management/#api-window-setresizable-method",
+          "tags": [
+            "web-features:window-management-resizing"
+          ],
           "support": {
             "chrome": {
               "version_added": "155",
@@ -7153,7 +7179,8 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "126"
+              "version_added": "126",
+              "version_removed": "152"
             },
             "chrome_android": "mirror",
             "deno": {
@@ -7820,7 +7847,16 @@
             "safari": {
               "version_added": false
             },
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "version_added": "27.1",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "ViewportSegmentsEnabled",
+                  "value_to_set": "true"
+                }
+              ]
+            },
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
             "webview_ios": "mirror"

@@ -1,0 +1,34 @@
+{
+  "webextensions": {
+    "manifest": {
+      "icon_variants": {
+        "__compat": {
+          "support": {
+            "chrome": {
+              "version_added": "127",
+              "flags": [
+                {
+                  "type": "runtime_flag",
+                  "name": "--enable-features=ExtensionIconVariants"
+                }
+              ],
+              "impl_url": "https://crbug.com/41419485",
+              "notes": "Only available in Chrome Canary."
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false,
+              "impl_url": "https://bugzil.la/1955199"
+            },
+            "firefox_android": "mirror",
+            "opera": "mirror",
+            "safari": {
+              "version_added": "18.2"
+            },
+            "safari_ios": "mirror"
+          }
+        }
+      }
+    }
+  }
+}

@@ -172,8 +172,7 @@
                   "chrome_android": "mirror",
                   "edge": "mirror",
                   "firefox": {
-                    "version_added": false,
-                    "impl_url": "https://bugzil.la/1988955"
+                    "version_added": "146"
                   },
                   "firefox_android": "mirror",
                   "oculus": "mirror",
@@ -188,7 +187,7 @@
                   "webview_ios": "mirror"
                 },
                 "status": {
-                  "experimental": true,
+                  "experimental": false,
                   "standard_track": true,
                   "deprecated": false
                 }
@@ -772,11 +771,17 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "110",
-                "partial_implementation": true,
-                "notes": "Basic support (see [bug 1790366](https://bugzil.la/1790366))"
-              },
+              "firefox": [
+                {
+                  "version_added": "129"
+                },
+                {
+                  "version_added": "110",
+                  "version_removed": "129",
+                  "partial_implementation": true,
+                  "notes": "Basic support (see [bug 1790366](https://bugzil.la/1790366))"
+                }
+              ],
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
@@ -1882,9 +1887,7 @@
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
-                "version_added": "123",
-                "partial_implementation": true,
-                "notes": "Basic support (see [bug 1790373](https://bugzil.la/1790373))"
+                "version_added": "123"
               },
               "firefox_android": "mirror",
               "oculus": "mirror",
@@ -2768,7 +2771,7 @@
                 "chrome_android": "mirror",
                 "edge": "mirror",
                 "firefox": {
-                  "version_added": false
+                  "version_added": "143"
                 },
                 "firefox_android": "mirror",
                 "oculus": "mirror",
@@ -2783,7 +2786,7 @@
                 "webview_ios": "mirror"
               },
               "status": {
-                "experimental": true,
+                "experimental": false,
                 "standard_track": true,
                 "deprecated": false
               }
@@ -2867,11 +2870,17 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "110",
-                "partial_implementation": true,
-                "notes": "Basic support (see [bug 1790371](https://bugzil.la/1790371))"
-              },
+              "firefox": [
+                {
+                  "version_added": "129"
+                },
+                {
+                  "version_added": "110",
+                  "version_removed": "129",
+                  "partial_implementation": true,
+                  "notes": "Basic support (see [bug 1790371](https://bugzil.la/1790371))"
+                }
+              ],
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
@@ -3196,11 +3205,17 @@
               },
               "chrome_android": "mirror",
               "edge": "mirror",
-              "firefox": {
-                "version_added": "110",
-                "partial_implementation": true,
-                "notes": "Basic support (see [bug 1790369](https://bugzil.la/1790369))"
-              },
+              "firefox": [
+                {
+                  "version_added": "129"
+                },
+                {
+                  "version_added": "110",
+                  "version_removed": "129",
+                  "partial_implementation": true,
+                  "notes": "Basic support (see [bug 1790369](https://bugzil.la/1790369))"
+                }
+              ],
               "firefox_android": "mirror",
               "oculus": "mirror",
               "opera": "mirror",
@@ -3516,6 +3531,7 @@
         "setCacheBehavior": {
           "__compat": {
             "description": "`network.setCacheBehavior` command",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/network/setCacheBehavior",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-network-setCacheBehavior",
             "support": {
               "chrome": {
@@ -3615,6 +3631,7 @@
         "setExtraHeaders": {
           "__compat": {
             "description": "`network.setExtraHeaders` command",
+            "mdn_url": "https://developer.mozilla.org/docs/Web/WebDriver/Reference/BiDi/Modules/network/setExtraHeaders",
             "spec_url": "https://w3c.github.io/webdriver-bidi/#command-network-setExtraHeaders",
             "support": {
               "chrome": {

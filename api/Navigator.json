@@ -509,7 +509,8 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "128"
+              "version_added": "128",
+              "version_removed": "157"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -769,7 +770,8 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "128"
+              "version_added": "128",
+              "version_removed": "157"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -1033,7 +1035,8 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "128"
+              "version_added": "128",
+              "version_removed": "157"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -1109,9 +1112,17 @@
             "web-features:fencedframe"
           ],
           "support": {
-            "chrome": {
-              "version_added": "128"
-            },
+            "chrome": [
+              {
+                "version_added": "156",
+                "partial_implementation": true,
+                "notes": "The `Fence` class exists, but attempts to construct it always throw. See [Intent to Ship: Remove FencedFrame element and window.fence APIs](https://groups.google.com/a/chromium.org/g/blink-dev/c/c9w5uH3eSuo) and [Status entry](https://chromestatus.com/feature/6366274495053824?gate=5364408546099200)."
+              },
+              {
+                "version_added": "126",
+                "version_removed": "156"
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
@@ -1146,7 +1157,8 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "128"
+              "version_added": "128",
+              "version_removed": "157"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -1177,7 +1189,6 @@
       "deviceMemory": {
         "__compat": {
           "mdn_url": "https://developer.mozilla.org/docs/Web/API/Navigator/deviceMemory",
-          "spec_url": "https://www.w3.org/TR/device-memory/#dom-navigatordevicememory-devicememory",
           "tags": [
             "web-features:device-memory"
           ],
@@ -1217,7 +1228,7 @@
           },
           "status": {
             "experimental": false,
-            "standard_track": true,
+            "standard_track": false,
             "deprecated": false
           }
         }
@@ -1249,7 +1260,7 @@
               "version_added": false
             },
             "safari_ios": {
-              "version_added": "27",
+              "version_added": "27.1",
               "flags": [
                 {
                   "type": "preference",
@@ -1261,7 +1272,9 @@
             "samsunginternet_android": {
               "version_added": "16.2"
             },
-            "webview_android": "mirror",
+            "webview_android": {
+              "version_added": false
+            },
             "webview_ios": "mirror"
           },
           "status": {
@@ -1641,7 +1654,8 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "132"
+              "version_added": "132",
+              "version_removed": "157"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -1835,7 +1849,7 @@
           ],
           "support": {
             "chrome": {
-              "version_added": false
+              "version_added": "159"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -1854,7 +1868,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": false
+              "version_added": "27.3"
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -1862,7 +1876,7 @@
             "webview_ios": "mirror"
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
@@ -2079,14 +2093,7 @@
           "spec_url": "https://wicg.github.io/install-element/#dom-navigator-install",
           "support": {
             "chrome": {
-              "version_added": "154",
-              "flags": [
-                {
-                  "type": "preference",
-                  "name": "#web-app-installation-api",
-                  "value_to_set": "Enabled"
-                }
-              ]
+              "version_added": "159"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -2169,7 +2176,8 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "128"
+              "version_added": "128",
+              "version_removed": "157"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -2354,7 +2362,8 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "128"
+              "version_added": "128",
+              "version_removed": "157"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -3364,7 +3373,8 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "128"
+              "version_added": "128",
+              "version_removed": "157"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -4928,7 +4938,8 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "128"
+              "version_added": "128",
+              "version_removed": "157"
             },
             "chrome_android": "mirror",
             "edge": {
@@ -5548,7 +5559,8 @@
           ],
           "support": {
             "chrome": {
-              "version_added": "128"
+              "version_added": "128",
+              "version_removed": "157"
             },
             "chrome_android": "mirror",
             "edge": {
