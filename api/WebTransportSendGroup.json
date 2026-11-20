@@ -41,12 +41,17 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "155",
-              "impl_url": "https://bugzil.la/2021710",
-              "partial_implementation": true,
-              "notes": "Always resolves with an empty object."
-            },
+            "firefox": [
+              {
+                "version_added": "160"
+              },
+              {
+                "version_added": "155",
+                "version_removed": "160",
+                "partial_implementation": true,
+                "notes": "Always resolves with an empty object."
+              }
+            ],
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
