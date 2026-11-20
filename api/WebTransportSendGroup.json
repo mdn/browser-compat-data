@@ -41,15 +41,25 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "155"
-            },
+            "firefox": [
+              {
+                "version_added": "160"
+              },
+              {
+                "version_added": "155",
+                "version_removed": "160",
+                "partial_implementation": true,
+                "notes": "Always resolves with an empty object."
+              }
+            ],
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "26.4"
+              "version_added": "26.4",
+              "partial_implementation": true,
+              "notes": "Stream bytes aren't included in count (only datagram bytes)."
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
