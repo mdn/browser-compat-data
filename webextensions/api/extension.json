@@ -39,11 +39,21 @@
                 "version_added": "48"
               },
               "opera": "mirror",
-              "safari": {
-                "version_added": "14"
-              },
+              "safari": [
+                {
+                  "version_added": "preview"
+                },
+                {
+                  "version_added": "14",
+                  "version_removed": "preview",
+                  "partial_implementation": true,
+                  "notes": "The values are supported, but the enum is not exposed on the `extension` object."
+                }
+              ],
               "safari_ios": {
-                "version_added": "15"
+                "version_added": "15",
+                "partial_implementation": true,
+                "notes": "The values are supported, but the enum is not exposed on the `extension` object."
               }
             }
           },

@@ -87,10 +87,18 @@
                 "version_added": false
               },
               "opera": "mirror",
-              "safari": {
-                "alternative_name": "contextMenus.ContextType",
-                "version_added": "14"
-              },
+              "safari": [
+                {
+                  "version_added": "preview"
+                },
+                {
+                  "alternative_name": "contextMenus.ContextType",
+                  "version_added": "14",
+                  "version_removed": "preview",
+                  "partial_implementation": true,
+                  "notes": "The values are supported, but the enum is not exposed on the `menus` object."
+                }
+              ],
               "safari_ios": {
                 "version_added": false
               }
@@ -112,10 +120,21 @@
                   "version_added": false
                 },
                 "opera": "mirror",
-                "safari": {
-                  "version_added": "15.4",
-                  "notes": "Available for use in Manifest V3 or later."
-                },
+                "safari": [
+                  {
+                    "version_added": "preview",
+                    "notes": "Available for use in Manifest V3 or later."
+                  },
+                  {
+                    "version_added": "15.4",
+                    "version_removed": "preview",
+                    "partial_implementation": true,
+                    "notes": [
+                      "Available for use in Manifest V3 or later.",
+                      "The value is supported, but not exposed on the `ContextType` object."
+                    ]
+                  }
+                ],
                 "safari_ios": {
                   "version_added": false
                 }
@@ -163,10 +182,21 @@
                   "version_added": false
                 },
                 "opera": "mirror",
-                "safari": {
-                  "version_added": "14",
-                  "notes": "Available for use in Manifest V2 only."
-                },
+                "safari": [
+                  {
+                    "version_added": "preview",
+                    "notes": "Available for use in Manifest V2 only."
+                  },
+                  {
+                    "version_added": "14",
+                    "version_removed": "preview",
+                    "partial_implementation": true,
+                    "notes": [
+                      "Available for use in Manifest V2 only.",
+                      "The value is supported, but not exposed on the `ContextType` object."
+                    ]
+                  }
+                ],
                 "safari_ios": {
                   "version_added": false
                 }
@@ -210,10 +240,21 @@
                   "version_added": false
                 },
                 "opera": "mirror",
-                "safari": {
-                  "version_added": "14",
-                  "notes": "Available for use in Manifest V2 only."
-                },
+                "safari": [
+                  {
+                    "version_added": "preview",
+                    "notes": "Available for use in Manifest V2 only."
+                  },
+                  {
+                    "version_added": "14",
+                    "version_removed": "preview",
+                    "partial_implementation": true,
+                    "notes": [
+                      "Available for use in Manifest V2 only.",
+                      "The value is supported, but not exposed on the `ContextType` object."
+                    ]
+                  }
+                ],
                 "safari_ios": {
                   "version_added": false
                 }
@@ -255,9 +296,17 @@
                   "version_added": false
                 },
                 "opera": "mirror",
-                "safari": {
-                  "version_added": "18"
-                },
+                "safari": [
+                  {
+                    "version_added": "preview"
+                  },
+                  {
+                    "version_added": "18",
+                    "version_removed": "preview",
+                    "partial_implementation": true,
+                    "notes": "The value is supported, but not exposed on the `ContextType` object."
+                  }
+                ],
                 "safari_ios": {
                   "version_added": false
                 }
@@ -312,10 +361,18 @@
                 "version_added": false
               },
               "opera": "mirror",
-              "safari": {
-                "alternative_name": "contextMenus.ItemType",
-                "version_added": "14"
-              },
+              "safari": [
+                {
+                  "version_added": "preview"
+                },
+                {
+                  "alternative_name": "contextMenus.ItemType",
+                  "version_added": "14",
+                  "version_removed": "preview",
+                  "partial_implementation": true,
+                  "notes": "The values are supported, but the enum is not exposed on the `menus` object."
+                }
+              ],
               "safari_ios": {
                 "version_added": false
               }

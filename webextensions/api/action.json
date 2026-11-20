@@ -234,9 +234,17 @@
               },
               "firefox_android": "mirror",
               "opera": "mirror",
-              "safari": {
-                "version_added": "15.4"
-              },
+              "safari": [
+                {
+                  "version_added": "preview"
+                },
+                {
+                  "version_added": "15.4",
+                  "version_removed": "preview",
+                  "partial_implementation": true,
+                  "notes": "Returns the popup path as set instead of a full extension URL."
+                }
+              ],
               "safari_ios": "mirror"
             }
           },
@@ -416,7 +424,7 @@
                 "firefox_android": "mirror",
                 "opera": "mirror",
                 "safari": {
-                  "version_added": false
+                  "version_added": "preview"
                 },
                 "safari_ios": "mirror"
               }
