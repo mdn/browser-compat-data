@@ -82,6 +82,25 @@ const getReleaseNotesURL = async (version, date, core, status) => {
 };
 
 /**
+ * Maps each Chromestatus channel to the BCD status of its version.
+ * @param {*} options The list of options for this type of chromiums.
+ * @param {boolean} stableUnreleased Whether Chromestatus lists a stable version before its stable date
+ * @returns {Array<[string, string]>} Pairs of Chromestatus channel and BCD status
+ */
+export const getChannels = (options, stableUnreleased) =>
+  stableUnreleased
+    ? [
+        [options.releaseBranch, 'beta'],
+        [options.betaBranch, 'nightly'],
+        [options.nightlyBranch, 'planned'],
+      ]
+    : [
+        [options.releaseBranch, 'current'],
+        [options.betaBranch, 'beta'],
+        [options.nightlyBranch, 'nightly'],
+      ];
+
+/**
  * updateChromiumReleases - Update the json file listing the browser releases of a chromium browser
  * @param {*} options The list of options for this type of chromiums.
  * @returns {Promise<string>} The log of what has been generated (empty if nothing)
@@ -112,14 +131,16 @@ export const updateChromiumReleases = async (options) => {
   //
   // Update the three channels
   //
-  const channels = new Map([
-    ['current', options.releaseBranch],
-    ['beta', options.betaBranch],
-    ['nightly', options.nightlyBranch],
-  ]);
+  // Chromestatus switches `stable` to the next version before its stable date,
+  // which shifts every channel down by one.
+  const stableData = versions[options.releaseBranch];
+  const stableUnreleased =
+    stableData &&
+    Date.now() < Date.parse(stableData.stable_date.substring(0, 10));
+  const channels = getChannels(options, stableUnreleased);
   const data = {};
 
-  for (const [key, value] of channels) {
+  for (const [value, key] of channels) {
     // Extract the useful data
     const versionData = versions[value];
 
@@ -131,11 +152,11 @@ export const updateChromiumReleases = async (options) => {
       data[value].version = version;
       data[value].releaseDate = releaseDate; // Remove the time part;
 
-      if (key === 'current' && Date.now() < Date.parse(releaseDate)) {
-        return gfmNoteblock(
+      if (stableUnreleased && value === options.releaseBranch) {
+        result += `\n${gfmNoteblock(
           'NOTE',
-          `**${options.browserName}**: Ignoring current version ${version}, which is not yet released (stable date is ${releaseDate}).`,
-        );
+          `**${options.browserName}**: Current version ${version} is not yet released (stable date is ${releaseDate}), treating it as beta.`,
+        )}\n`;
       }
 
       // Update the JSON in memory
@@ -159,7 +180,7 @@ export const updateChromiumReleases = async (options) => {
           chromeBCD,
           options.bcdBrowserName,
           data[value].version,
-          data[value].releaseDate,
+          key === 'planned' ? '' : data[value].releaseDate,
           key,
           releaseNotesURL,
           '',
@@ -172,7 +193,7 @@ export const updateChromiumReleases = async (options) => {
           data[value].version,
           key,
           options.browserEngine,
-          data[value].releaseDate,
+          key === 'planned' ? '' : data[value].releaseDate,
           releaseNotesURL,
           data[value].version,
         );
@@ -183,21 +204,34 @@ export const updateChromiumReleases = async (options) => {
   //
   // Check that all older releases are 'retired'
   //
-  for (
-    let i = options.firstRelease;
-    i < data[options.releaseBranch].version;
-    i++
-  ) {
+  const currentVersion =
+    Number(data[options.releaseBranch].version) - (stableUnreleased ? 1 : 0);
+  for (let i = options.firstRelease; i < currentVersion; i++) {
     if (!options.skippedReleases.includes(i)) {
-      if (chromeBCD.browsers[options.bcdBrowserName].releases[i.toString()]) {
+      const release =
+        chromeBCD.browsers[options.bcdBrowserName].releases[i.toString()];
+      if (release) {
+        // Fill in release notes that were unavailable while the release was current
+        let releaseNotesURL = '';
+        if (!release.release_notes && i >= 155) {
+          try {
+            releaseNotesURL = await getReleaseNotesURL(
+              i.toString(),
+              release.release_date,
+              options.releaseNoteCore,
+              'retired',
+            );
+          } catch {
+            // Leave the release notes unset
+          }
+        }
         result += updateBrowserEntry(
           chromeBCD,
           options.bcdBrowserName,
           i.toString(),
-          chromeBCD.browsers[options.bcdBrowserName].releases[i.toString()]
-            .release_date,
+          release.release_date,
           'retired',
-          '',
+          releaseNotesURL,
           '',
         );
       } else {
@@ -214,7 +248,7 @@ export const updateChromiumReleases = async (options) => {
   //
   // Add a planned version entry
   //
-  if (data[options.nightlyBranch]) {
+  if (!stableUnreleased && data[options.nightlyBranch]) {
     const plannedVersion = (
       Number(data[options.nightlyBranch].version) + 1
     ).toString();
