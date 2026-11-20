@@ -22,6 +22,7 @@ import fixNotes from './fixer/notes.js';
 import fixFlags from './fixer/flags.js';
 import fixLinks from './fixer/links.js';
 import fixMDNURLs from './fixer/mdn-urls.js';
+import fixWebFeatures from './fixer/web-features.js';
 import fixStatus from './fixer/status.js';
 import fixMirror from './fixer/mirror.js';
 import fixOverlap from './fixer/overlap.js';
@@ -42,6 +43,7 @@ const FIXES = Object.freeze({
   flags: fixFlags,
   links: fixLinks,
   mdn_urls: fixMDNURLs,
+  web_features: fixWebFeatures,
   status: fixStatus,
   mirror: fixMirror,
   overlap: fixOverlap,
