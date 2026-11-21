@@ -42,16 +42,10 @@
               "web-features:dialog-closedby"
             ],
             "support": {
-              "chrome": [
-                {
-                  "version_added": "154"
-                },
-                {
-                  "version_added": "134",
-                  "version_removed": "154",
-                  "notes": "Touch events on the backdrop with `closedby=\"any\"` propagate to elements behind the dialog instead of being cancelled. See [bug 425579196](https://crbug.com/425579196)."
-                }
-              ],
+              "chrome": {
+                "version_added": "134",
+                "notes": "Before Chrome 154, touch events on the backdrop with `closedby=\"any\"` propagate to elements behind the dialog instead of being cancelled. See [bug 425579196](https://crbug.com/425579196)."
+              },
               "chrome_android": "mirror",
               "edge": "mirror",
               "firefox": {
