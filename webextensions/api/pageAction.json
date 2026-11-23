@@ -72,21 +72,13 @@
                 "notes": "The 'tabId' parameter is ignored: the page action popup is the same for all tabs."
               },
               "opera": "mirror",
-              "safari": [
-                {
-                  "version_added": "preview"
-                },
-                {
-                  "version_added": "14",
-                  "version_removed": "preview",
-                  "partial_implementation": true,
-                  "notes": "Returns the popup path as set instead of a full extension URL."
-                }
-              ],
+              "safari": {
+                "version_added": "14",
+                "notes": "Returns the popup path as set instead of a full extension URL. Since Safari Technology Preview 257, it returns the full extension URL."
+              },
               "safari_ios": {
                 "version_added": "15",
-                "partial_implementation": true,
-                "notes": "Returns the popup path as set instead of a full extension URL."
+                "notes": "Returns the popup path as set instead of a full extension URL. Since Safari Technology Preview 257, it returns the full extension URL."
               }
             }
           }
