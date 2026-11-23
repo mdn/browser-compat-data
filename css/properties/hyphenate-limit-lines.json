@@ -4,9 +4,14 @@
       "hyphenate-limit-lines": {
         "__compat": {
           "spec_url": "https://drafts.csswg.org/css-text-4/#propdef-hyphenate-limit-lines",
+          "tags": [
+            "web-features:hyphenate-limit-lines"
+          ],
           "support": {
             "chrome": {
-              "version_added": false
+              "prefix": "-webkit-",
+              "version_added": "16",
+              "version_removed": "30"
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -17,9 +22,15 @@
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
-            "safari": {
-              "version_added": "27.3"
-            },
+            "safari": [
+              {
+                "version_added": "27.3"
+              },
+              {
+                "prefix": "-webkit-",
+                "version_added": "6"
+              }
+            ],
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
             "webview_android": "mirror",
@@ -34,6 +45,9 @@
         "no-limit": {
           "__compat": {
             "spec_url": "https://drafts.csswg.org/css-text-4/#propdef-hyphenate-limit-lines",
+            "tags": [
+              "web-features:hyphenate-limit-lines"
+            ],
             "support": {
               "chrome": {
                 "version_added": false

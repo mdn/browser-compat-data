@@ -1,12 +1,19 @@
 {
   "css": {
-    "properties": {
-      "-webkit-hyphenate-limit-lines": {
+    "at-rules": {
+      "mixin": {
         "__compat": {
+          "spec_url": "https://drafts.csswg.org/css-mixins-1/#mixin-rule",
           "support": {
             "chrome": {
-              "version_added": "16",
-              "version_removed": "30"
+              "version_added": "141",
+              "flags": [
+                {
+                  "type": "preference",
+                  "name": "#enable-experimental-web-platform-features",
+                  "value_to_set": "Enabled"
+                }
+              ]
             },
             "chrome_android": "mirror",
             "edge": "mirror",
@@ -18,7 +25,7 @@
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
-              "version_added": "6"
+              "version_added": false
             },
             "safari_ios": "mirror",
             "samsunginternet_android": "mirror",
@@ -27,7 +34,7 @@
           },
           "status": {
             "experimental": true,
-            "standard_track": false,
+            "standard_track": true,
             "deprecated": false
           }
         }

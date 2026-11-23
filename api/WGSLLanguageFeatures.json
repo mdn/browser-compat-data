@@ -108,6 +108,40 @@
           }
         }
       },
+      "extension_buffer_view": {
+        "__compat": {
+          "description": "`buffer_view` extension",
+          "spec_url": "https://gpuweb.github.io/gpuweb/wgsl/#language_extension-buffer_view",
+          "support": {
+            "chrome": {
+              "version_added": "153"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "extension_immediate_address_space": {
         "__compat": {
           "description": "`immediate_address_space` extension",
@@ -203,7 +237,16 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "141",
+              "partial_implementation": true,
+              "notes": [
+                "Supports all contexts except service workers. See [bug 1942431](https://bugzil.la/1942431).",
+                "Supports Windows since Firefox 141. See [bug 1972486](https://bugzil.la/1972486).",
+                "Supports macOS Tahoe on Apple silicon since Firefox 145. See [bug 1992212](https://bugzil.la/1992212).",
+                "Supports older macOS versions on Apple silicon since Firefox 147. See [bug 1993341](https://bugzil.la/1993341).",
+                "Does not support macOS on Intel CPUs. See [bug 2004105](https://bugzil.la/2004105).",
+                "Does not support Linux. See [bug 2006676](https://bugzil.la/2006676)."
+              ]
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -247,7 +290,16 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "141",
+              "partial_implementation": true,
+              "notes": [
+                "Supports all contexts except service workers. See [bug 1942431](https://bugzil.la/1942431).",
+                "Supports Windows since Firefox 141. See [bug 1972486](https://bugzil.la/1972486).",
+                "Supports macOS Tahoe on Apple silicon since Firefox 145. See [bug 1992212](https://bugzil.la/1992212).",
+                "Supports older macOS versions on Apple silicon since Firefox 147. See [bug 1993341](https://bugzil.la/1993341).",
+                "Does not support macOS on Intel CPUs. See [bug 2004105](https://bugzil.la/2004105).",
+                "Does not support Linux. See [bug 2006676](https://bugzil.la/2006676)."
+              ]
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -291,7 +343,16 @@
             "chrome_android": "mirror",
             "edge": "mirror",
             "firefox": {
-              "version_added": false
+              "version_added": "141",
+              "partial_implementation": true,
+              "notes": [
+                "Supports all contexts except service workers. See [bug 1942431](https://bugzil.la/1942431).",
+                "Supports Windows since Firefox 141. See [bug 1972486](https://bugzil.la/1972486).",
+                "Supports macOS Tahoe on Apple silicon since Firefox 145. See [bug 1992212](https://bugzil.la/1992212).",
+                "Supports older macOS versions on Apple silicon since Firefox 147. See [bug 1993341](https://bugzil.la/1993341).",
+                "Does not support macOS on Intel CPUs. See [bug 2004105](https://bugzil.la/2004105).",
+                "Does not support Linux. See [bug 2006676](https://bugzil.la/2006676)."
+              ]
             },
             "firefox_android": "mirror",
             "oculus": "mirror",
@@ -384,6 +445,40 @@
           }
         }
       },
+      "extension_swizzle_assignment": {
+        "__compat": {
+          "description": "`swizzle_assignment` extension",
+          "spec_url": "https://gpuweb.github.io/gpuweb/wgsl/#language_extension-swizzle_assignment",
+          "support": {
+            "chrome": {
+              "version_added": "154"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": false
+            },
+            "safari_ios": "mirror",
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
       "extension_texture_and_sampler_let": {
         "__compat": {
           "description": "`texture_and_sampler_let` extension",
@@ -415,6 +510,42 @@
           },
           "status": {
             "experimental": true,
+            "standard_track": true,
+            "deprecated": false
+          }
+        }
+      },
+      "extension_texture_formats_tier1": {
+        "__compat": {
+          "description": "`texture_formats_tier1` extension",
+          "spec_url": "https://gpuweb.github.io/gpuweb/wgsl/#language_extension-texture_formats_tier1",
+          "support": {
+            "chrome": {
+              "version_added": "153"
+            },
+            "chrome_android": {
+              "version_added": false
+            },
+            "edge": "mirror",
+            "firefox": {
+              "version_added": false
+            },
+            "firefox_android": "mirror",
+            "oculus": "mirror",
+            "opera": "mirror",
+            "opera_android": "mirror",
+            "safari": {
+              "version_added": "26.4"
+            },
+            "safari_ios": {
+              "version_added": false
+            },
+            "samsunginternet_android": "mirror",
+            "webview_android": "mirror",
+            "webview_ios": "mirror"
+          },
+          "status": {
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
