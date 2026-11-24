@@ -643,28 +643,43 @@
         "__compat": {
           "spec_url": "https://w3c.github.io/webextensions/specification/window.browser.html#dom-window-browser",
           "support": {
-            "chrome": {
-              "version_added": false
-            },
+            "chrome": [
+              {
+                "version_added": "152"
+              },
+              {
+                "version_added": "148",
+                "partial_implementation": true,
+                "notes": "Not available in extensions that declare a `devtools_page`."
+              }
+            ],
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
+              "version_added": "45"
               "version_added": false
             },
-            "firefox_android": "mirror",
+            "firefox_android": {
+              "version_added": "48"
+            },
             "oculus": "mirror",
             "opera": "mirror",
             "opera_android": "mirror",
             "safari": {
               "version_added": "14"
             },
-            "safari_ios": "mirror",
+            "safari_ios": {
+              "version_added": "15"
+            },
             "samsunginternet_android": "mirror",
-            "webview_android": "mirror",
-            "webview_ios": "mirror"
+            "webview_android": {
+              "version_added": false
+            },
+            "webview_ios": {
+              "version_added": false
+            }
           },
           "status": {
-            "experimental": true,
+            "experimental": false,
             "standard_track": true,
             "deprecated": false
           }
