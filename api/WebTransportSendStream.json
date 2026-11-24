@@ -65,9 +65,17 @@
               ]
             },
             "edge": "mirror",
-            "firefox": {
-              "version_added": "114"
-            },
+            "firefox": [
+              {
+                "version_added": "160"
+              },
+              {
+                "version_added": "114",
+                "version_removed": "160",
+                "partial_implementation": true,
+                "notes": "Always rejects with a `NotSupportedError`."
+              }
+            ],
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",

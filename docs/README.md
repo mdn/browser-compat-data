@@ -66,6 +66,7 @@ An alphabetical index of keywords linking to relevant sections in the docs.
 
 - **Namespaces** – [Data guidelines for API features](./data-guidelines/api.md#namespaces)
 - **Node.js** – [Data guidelines for browser data](./data-guidelines/browsers.md#nodejs)
+- **Notes** - [Data guidelines: Writing maintainable notes](./data-guidelines/README.md#writing-maintainable-notes)
 
 ---
 
