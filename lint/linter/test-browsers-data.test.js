@@ -47,6 +47,27 @@ describe('test-browsers-data', () => {
     assert.equal(logger.messages.length, 1);
   });
 
+  it('should log an error if a browser has multiple beta releases', async () => {
+    const browser = 'firefox';
+    /** @type {InternalBrowserStatement} */
+    const data = {
+      name: 'Firefox',
+      type: 'desktop',
+      accepts_flags: true,
+      accepts_webextensions: true,
+      releases: {
+        1: { status: 'beta' },
+        2: { status: 'beta' },
+      },
+    };
+
+    await test.check(logger, {
+      data,
+      path: { full: `${category}.${browser}`, category, browser },
+    });
+    assert.equal(logger.messages.length, 1);
+  });
+
   it('should log an error if a browser has multiple nightly releases', async () => {
     const browser = 'firefox';
     /** @type {InternalBrowserStatement} */
