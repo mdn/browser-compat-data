@@ -46,7 +46,16 @@ Avoid the past tense or conditional sentences.
 For example, write "Before Chrome 59, the `example()` method parameters are optional."
 Do not write "were optional" or "would have been optional."
 
+### Write timeless notes.
+
+Avoid writing notes that must be revised because time passed.
+Prefer absolute version numbers, as in "Before Chrome 59" or "From Chrome 59 to 158."
+Avoid date and time-relative references such as "now," "currently", or "recently."
+For example, write "Before Chrome 158, the `example()` method returns…."
+Do not write "Currently, the `example()` method returns…."
+
 This guideline was added in [#30762](https://github.com/mdn/browser-compat-data/pull/30762).
+Parts of this guideline were proposed in [#6229](https://github.com/mdn/browser-compat-data/issues/6229).
 
 ### Backported releases
 
