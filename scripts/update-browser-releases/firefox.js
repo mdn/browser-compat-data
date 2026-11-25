@@ -24,6 +24,16 @@ const getFirefoxReleaseNotesURL = async (version) => {
 };
 
 /**
+ * Firefox advances the beta channel on release day before stable is cut, so
+ * the previous beta must stay `beta` until stable catches up.
+ * @param {number} betaVersion The version on the beta channel
+ * @param {number} stableVersion The current stable version
+ * @returns {boolean} Whether the beta entry should wait for stable
+ */
+export const shouldWaitForStable = (betaVersion, stableVersion) =>
+  betaVersion > stableVersion + 1;
+
+/**
  * updateFirefoxFile - Update the json file listing the browser version of a firefox entry
  * @param {*} options The list of options for this type of chromiums.
  * @returns {Promise<string>} The log of what has been generated (empty if nothing)
@@ -63,6 +73,13 @@ export const updateFirefoxReleases = async (options) => {
       data[value] = {};
       data[value].version = parseFloat(train.version).toString();
       data[value].releaseDate = train.release.substring(0, 10); // Remove the time part
+
+      if (
+        key === 'beta' &&
+        shouldWaitForStable(Number(data[value].version), stableRelease)
+      ) {
+        continue;
+      }
     } else {
       // Get the JSON with all released versions and their dates
       const firefoxVersions = await fetch(options.firefoxReleaseDateURL);
