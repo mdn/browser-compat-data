@@ -9,7 +9,7 @@ import { compareVersions } from 'compare-versions';
 
 import stringify from '../lib/stringify-and-order-properties.js';
 
-import { newBrowserEntry, updateBrowserEntry } from './utils.js';
+import { gfmNoteblock, newBrowserEntry, updateBrowserEntry } from './utils.js';
 
 /**
  * getFirefoxReleaseNotesURL - Guess the URL of the release notes
@@ -78,6 +78,10 @@ export const updateFirefoxReleases = async (options) => {
         key === 'beta' &&
         shouldWaitForStable(Number(data[value].version), stableRelease)
       ) {
+        result += `\n${gfmNoteblock(
+          'NOTE',
+          `**${options.browserName}**: Keeping the previous beta until version ${stableRelease + 1} is released (beta channel is already at version ${data[value].version}).`,
+        )}\n`;
         continue;
       }
     } else {
