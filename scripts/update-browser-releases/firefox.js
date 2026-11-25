@@ -46,7 +46,7 @@ export const updateFirefoxReleases = async (options) => {
   ]);
   const data = {};
 
-  let stableRelease = 1; // We will need this info afterwards; it will be calculated in the loop.
+  let stableRelease = 1; // Set by the `current` channel, which must be processed before `beta`.
 
   for (const [key, value] of channels) {
     let releaseNotesURL;
