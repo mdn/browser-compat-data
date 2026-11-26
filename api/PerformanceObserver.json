@@ -16,7 +16,7 @@
           },
           "chrome_android": "mirror",
           "deno": {
-            "version_added": "2.7"
+            "version_added": "2.6.6"
           },
           "edge": "mirror",
           "firefox": {
@@ -238,7 +238,7 @@
             },
             "chrome_android": "mirror",
             "deno": {
-              "version_added": "2.7"
+              "version_added": "2.6.6"
             },
             "edge": "mirror",
             "firefox": {
@@ -270,15 +270,24 @@
             "description": "`options` parameter",
             "spec_url": "https://w3c.github.io/performance-timeline/#dom-performanceobserver-observe-options-options",
             "support": {
+              "bun": {
+                "version_added": "1.0.22"
+              },
               "chrome": {
                 "version_added": "52"
               },
               "chrome_android": "mirror",
+              "deno": {
+                "version_added": "2.6.6"
+              },
               "edge": "mirror",
               "firefox": {
                 "version_added": "57"
               },
               "firefox_android": "mirror",
+              "nodejs": {
+                "version_added": "8.5.0"
+              },
               "oculus": "mirror",
               "opera": "mirror",
               "opera_android": "mirror",
@@ -300,15 +309,34 @@
             "__compat": {
               "spec_url": "https://w3c.github.io/performance-timeline/#dom-performanceobserverinit-buffered",
               "support": {
+                "bun": {
+                  "version_added": "1.0.22",
+                  "partial_implementation": true,
+                  "notes": "Only supported when observing a single entry type with `type`. `buffered` is ignored when `entryTypes` is used."
+                },
                 "chrome": {
                   "version_added": "77"
                 },
                 "chrome_android": "mirror",
+                "deno": {
+                  "version_added": "2.8.2",
+                  "partial_implementation": true,
+                  "notes": "Only supported when observing a single entry type with `type`. `buffered` is ignored when `entryTypes` is used."
+                },
                 "edge": "mirror",
                 "firefox": {
                   "version_added": "68"
                 },
                 "firefox_android": "mirror",
+                "nodejs": [
+                  {
+                    "version_added": "16.7.0"
+                  },
+                  {
+                    "version_added": "8.5.0",
+                    "version_removed": "16.0.0"
+                  }
+                ],
                 "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
@@ -331,15 +359,24 @@
             "__compat": {
               "spec_url": "https://w3c.github.io/performance-timeline/#dom-performanceobserverinit-type",
               "support": {
+                "bun": {
+                  "version_added": "1.0.22"
+                },
                 "chrome": {
                   "version_added": "74"
                 },
                 "chrome_android": "mirror",
+                "deno": {
+                  "version_added": "2.6.6"
+                },
                 "edge": "mirror",
                 "firefox": {
                   "version_added": "68"
                 },
                 "firefox_android": "mirror",
+                "nodejs": {
+                  "version_added": "16.0.0"
+                },
                 "oculus": "mirror",
                 "opera": "mirror",
                 "opera_android": "mirror",
