@@ -121,6 +121,7 @@
         },
         "hreflang": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Reference/Attribute/hreflang",
             "spec_url": "https://w3c.github.io/svgwg/svg2-draft/linking.html#AElementHreflangAttribute",
             "tags": [
               "web-features:svg"
@@ -191,6 +192,7 @@
         },
         "ping": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Reference/Attribute/ping",
             "spec_url": "https://w3c.github.io/svgwg/svg2-draft/linking.html#AElementPingAttribute",
             "tags": [
               "web-features:ping"
@@ -227,6 +229,7 @@
         },
         "referrerpolicy": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Reference/Attribute/referrerpolicy",
             "spec_url": "https://w3c.github.io/svgwg/svg2-draft/linking.html#AElementReferrerpolicyAttribute",
             "tags": [
               "web-features:svg"
@@ -273,10 +276,17 @@
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
-                "firefox": {
-                  "version_added": "52",
-                  "version_removed": "92"
-                },
+                "firefox": [
+                  {
+                    "version_added": "100",
+                    "partial_implementation": true,
+                    "notes": "Ignored for cross-site requests, which use the default referrer policy instead. Cross-site top-level navigations still use it, except in private browsing. See [bug 1761826](https://bugzil.la/1761826)."
+                  },
+                  {
+                    "version_added": "52",
+                    "version_removed": "100"
+                  }
+                ],
                 "firefox_android": "mirror",
                 "oculus": "mirror",
                 "opera": "mirror",
@@ -311,10 +321,17 @@
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
-                "firefox": {
-                  "version_added": "52",
-                  "version_removed": "92"
-                },
+                "firefox": [
+                  {
+                    "version_added": "100",
+                    "partial_implementation": true,
+                    "notes": "Ignored for cross-site requests, which use the default referrer policy instead. Cross-site top-level navigations still use it, except in private browsing. See [bug 1761826](https://bugzil.la/1761826)."
+                  },
+                  {
+                    "version_added": "52",
+                    "version_removed": "100"
+                  }
+                ],
                 "firefox_android": "mirror",
                 "oculus": "mirror",
                 "opera": "mirror",
@@ -349,10 +366,17 @@
                 },
                 "chrome_android": "mirror",
                 "edge": "mirror",
-                "firefox": {
-                  "version_added": "52",
-                  "version_removed": "92"
-                },
+                "firefox": [
+                  {
+                    "version_added": "100",
+                    "partial_implementation": true,
+                    "notes": "Ignored for cross-site requests, which use the default referrer policy instead. Cross-site top-level navigations still use it, except in private browsing. See [bug 1761826](https://bugzil.la/1761826)."
+                  },
+                  {
+                    "version_added": "52",
+                    "version_removed": "100"
+                  }
+                ],
                 "firefox_android": "mirror",
                 "oculus": "mirror",
                 "opera": "mirror",
@@ -377,6 +401,7 @@
         },
         "rel": {
           "__compat": {
+            "mdn_url": "https://developer.mozilla.org/docs/Web/SVG/Reference/Attribute/rel",
             "spec_url": "https://w3c.github.io/svgwg/svg2-draft/linking.html#AElementRelAttribute",
             "tags": [
               "web-features:svg"

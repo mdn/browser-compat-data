@@ -77,14 +77,17 @@
             "mdn_url": "https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/API/alarms/clearAll",
             "support": {
               "chrome": {
-                "version_added": "22"
+                "version_added": "22",
+                "notes": "Before Chrome 157, returned `true` rather than `undefined`."
               },
               "edge": "mirror",
               "firefox": {
-                "version_added": "45"
+                "version_added": "45",
+                "notes": "Until Firefox 156, returned a boolean rather than undefined."
               },
               "firefox_android": {
-                "version_added": "48"
+                "version_added": "48",
+                "notes": "Until Firefox 156, returned a boolean rather than undefined."
               },
               "opera": "mirror",
               "safari": {
@@ -120,6 +123,49 @@
               },
               "safari_ios": {
                 "version_added": "15"
+              }
+            }
+          },
+          "alarmInfo_name_parameter": {
+            "__compat": {
+              "description": "`alarmInfo.name` parameter",
+              "support": {
+                "chrome": {
+                  "version_added": "152"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/2055573"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": "27.3"
+                },
+                "safari_ios": "mirror"
+              }
+            }
+          },
+          "alarmInfo_persistAcrossSessons_parameter": {
+            "__compat": {
+              "description": "`alarmInfo.persistAcrossSessons` parameter",
+              "support": {
+                "chrome": {
+                  "version_added": "150"
+                },
+                "edge": "mirror",
+                "firefox": {
+                  "version_added": false,
+                  "impl_url": "https://bugzil.la/1995451"
+                },
+                "firefox_android": "mirror",
+                "opera": "mirror",
+                "safari": {
+                  "version_added": false,
+                  "impl_url": "https://webkit.org/b/327851"
+                },
+                "safari_ios": "mirror"
               }
             }
           }

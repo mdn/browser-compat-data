@@ -117,6 +117,9 @@
           "__compat": {
             "mdn_url": "https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Permissions-Policy/aria-notify",
             "spec_url": "https://w3c.github.io/aria/#ARIANotifyMixin",
+            "tags": [
+              "web-features:arianotify"
+            ],
             "support": {
               "chrome": {
                 "version_added": "141"
@@ -153,7 +156,8 @@
             ],
             "support": {
               "chrome": {
-                "version_added": "117"
+                "version_added": "117",
+                "version_removed": "152"
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -627,6 +631,38 @@
             "support": {
               "chrome": {
                 "version_added": "88"
+              },
+              "chrome_android": "mirror",
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
+        "focus-without-user-activation": {
+          "__compat": {
+            "spec_url": "https://html.spec.whatwg.org/multipage/infrastructure.html#focus-without-user-activation-feature",
+            "support": {
+              "chrome": {
+                "version_added": "158",
+                "notes": "The default allowlist is `*` rather than the specification's `'self'`. See [bug 587978069](https://crbug.com/587978069)."
               },
               "chrome_android": "mirror",
               "edge": "mirror",
@@ -1800,7 +1836,7 @@
         "wildcards": {
           "__compat": {
             "description": "Wildcards in allowlist origins",
-            "spec_url": "https://w3c.github.io/webappsec-permissions-policy/#allow-list-value",
+            "spec_url": "https://w3c.github.io/webappsec-permissions-policy/#structured-header-serialization",
             "tags": [
               "web-features:permissions-policy"
             ],

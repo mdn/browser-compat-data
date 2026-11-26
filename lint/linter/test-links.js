@@ -11,6 +11,7 @@ import { IS_WINDOWS, indexToPos, indexToPosRaw } from '../utils.js';
 /**
  * @typedef {object} LinkError
  * @property {string} issue The description of the issue
+ * @property {number} errorIndex The source index of the actual text to replace
  * @property {[number, number] | [null, null]} pos The line and column of the issue
  * @property {string} posString The formatted position of the issue
  * @property {string} actual The actual link
@@ -35,8 +36,12 @@ const processLink = async (errors, actual, regexp, matchHandler) => {
 
     if (result) {
       const { issue, expected, actualLink = match[0] } = result;
+      const actualLinkOffset = match[0].indexOf(actualLink);
+      const errorIndex =
+        actualLinkOffset === -1 ? match.index : match.index + actualLinkOffset;
       errors.push({
         issue: issue,
+        errorIndex: errorIndex,
         pos: pos,
         posString: posString,
         actual: actualLink,

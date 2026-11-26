@@ -560,7 +560,7 @@
                 "version_added": false
               },
               "safari_ios": {
-                "version_added": "27",
+                "version_added": "27.1",
                 "flags": [
                   {
                     "type": "preference",
@@ -928,6 +928,51 @@
             }
           }
         },
+        "display-state": {
+          "__compat": {
+            "spec_url": "https://w3c.github.io/window-management/#media-descriptor-display-state",
+            "tags": [
+              "web-features:display-state"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "155",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-desktop-pwas-additional-windowing-controls",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "partial_implementation": true,
+                "notes": "Enabled by default on ChromeOS. Behind a flag on other platforms."
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "dynamic-range": {
           "__compat": {
             "description": "`dynamic-range` media feature",
@@ -988,7 +1033,8 @@
               "opera": "mirror",
               "opera_android": "mirror",
               "safari": {
-                "version_added": "16"
+                "version_added": "16",
+                "notes": "`forced-colors: active` is never true, as Apple platforms have no forced colors mode. The feature always matches `forced-colors: none`. See [bug 225281](https://webkit.org/b/225281)."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
@@ -1119,7 +1165,16 @@
               "safari": {
                 "version_added": false
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": "27.1",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "ViewportSegmentsEnabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
               "samsunginternet_android": "mirror",
               "webview_android": "mirror",
               "webview_ios": "mirror"
@@ -1927,6 +1982,51 @@
             }
           }
         },
+        "resizable": {
+          "__compat": {
+            "spec_url": "https://w3c.github.io/window-management/#media-descriptor-resizable",
+            "tags": [
+              "web-features:resizable"
+            ],
+            "support": {
+              "chrome": {
+                "version_added": "155",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "#enable-desktop-pwas-additional-windowing-controls",
+                    "value_to_set": "Enabled"
+                  }
+                ],
+                "partial_implementation": true,
+                "notes": "Enabled by default on ChromeOS. Behind a flag on other platforms."
+              },
+              "chrome_android": {
+                "version_added": false
+              },
+              "edge": "mirror",
+              "firefox": {
+                "version_added": false
+              },
+              "firefox_android": "mirror",
+              "oculus": "mirror",
+              "opera": "mirror",
+              "opera_android": "mirror",
+              "safari": {
+                "version_added": false
+              },
+              "safari_ios": "mirror",
+              "samsunginternet_android": "mirror",
+              "webview_android": "mirror",
+              "webview_ios": "mirror"
+            },
+            "status": {
+              "experimental": true,
+              "standard_track": true,
+              "deprecated": false
+            }
+          }
+        },
         "resolution": {
           "__compat": {
             "description": "`resolution` media feature",
@@ -2123,7 +2223,16 @@
               "safari": {
                 "version_added": false
               },
-              "safari_ios": "mirror",
+              "safari_ios": {
+                "version_added": "27.1",
+                "flags": [
+                  {
+                    "type": "preference",
+                    "name": "ViewportSegmentsEnabled",
+                    "value_to_set": "true"
+                  }
+                ]
+              },
               "samsunginternet_android": "mirror",
               "webview_android": "mirror",
               "webview_ios": "mirror"

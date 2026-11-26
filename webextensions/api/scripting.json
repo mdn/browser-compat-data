@@ -35,9 +35,17 @@
               },
               "firefox_android": "mirror",
               "opera": "mirror",
-              "safari": {
-                "version_added": "15.4"
-              },
+              "safari": [
+                {
+                  "version_added": "27.2"
+                },
+                {
+                  "version_added": "15.4",
+                  "version_removed": "27.2",
+                  "partial_implementation": true,
+                  "notes": "The `ExecutionWorld` values are supported, but not exposed on the `scripting` object."
+                }
+              ],
               "safari_ios": "mirror"
             }
           },
@@ -53,9 +61,17 @@
                 },
                 "firefox_android": "mirror",
                 "opera": "mirror",
-                "safari": {
-                  "version_added": "15.4"
-                },
+                "safari": [
+                  {
+                    "version_added": "27.2"
+                  },
+                  {
+                    "version_added": "15.4",
+                    "version_removed": "27.2",
+                    "partial_implementation": true,
+                    "notes": "The `ISOLATED` value is supported, but not exposed on the `ExecutionWorld` object."
+                  }
+                ],
                 "safari_ios": "mirror"
               }
             }
@@ -72,9 +88,17 @@
                 },
                 "firefox_android": "mirror",
                 "opera": "mirror",
-                "safari": {
-                  "version_added": "15.4"
-                },
+                "safari": [
+                  {
+                    "version_added": "27.2"
+                  },
+                  {
+                    "version_added": "15.4",
+                    "version_removed": "27.2",
+                    "partial_implementation": true,
+                    "notes": "The `MAIN` value is supported, but not exposed on the `ExecutionWorld` object."
+                  }
+                ],
                 "safari_ios": "mirror"
               }
             }
@@ -349,6 +373,7 @@
                 "opera": "mirror",
                 "safari": {
                   "version_added": "15.4",
+                  "impl_url": "https://webkit.org/b/297903",
                   "partial_implementation": true,
                   "notes": "Scripts are always injected immediately."
                 },

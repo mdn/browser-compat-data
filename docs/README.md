@@ -66,6 +66,7 @@ An alphabetical index of keywords linking to relevant sections in the docs.
 
 - **Namespaces** – [Data guidelines for API features](./data-guidelines/api.md#namespaces)
 - **Node.js** – [Data guidelines for browser data](./data-guidelines/browsers.md#nodejs)
+- **Notes** - [Data guidelines: Writing maintainable notes](./data-guidelines/README.md#writing-maintainable-notes)
 
 ---
 
@@ -108,4 +109,5 @@ An alphabetical index of keywords linking to relevant sections in the docs.
 ---
 
 - **Web features** – [Data guidelines for tagging BCD features](./data-guidelines/tags.md#the-web-features-namespace)
+- **WebDriver BiDi** – [Updating WebDriver BiDi compatibility data](./webdriver-bidi.md)
 - **Workers** – [Data guidelines for API features](./data-guidelines/api.md#web-workers-worker_support)
