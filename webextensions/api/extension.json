@@ -237,13 +237,13 @@
                 "version_added": "14",
                 "impl_url": "https://webkit.org/b/315916",
                 "partial_implementation": true,
-                "notes": "Always returns `false` in extension pages. From Safari 18, returns `true` in content scripts in private tabs; previously, always returned `false`."
+                "notes": "Always returns `false` in extension pages. From Safari 18, returns `true` in content scripts in private tabs; before Safari 18, returns `false` there too."
               },
               "safari_ios": {
                 "version_added": "15",
                 "impl_url": "https://webkit.org/b/315916",
                 "partial_implementation": true,
-                "notes": "Always returns `false` in extension pages. From Safari on iOS 18, returns `true` in content scripts in private tabs; previously, always returned `false`."
+                "notes": "Always returns `false` in extension pages. From Safari on iOS 18, returns `true` in content scripts in private tabs; before Safari on iOS 18, returns `false` there too."
               }
             }
           }
@@ -258,7 +258,7 @@
               "edge": "mirror",
               "firefox": {
                 "version_added": "48",
-                "notes": "From Firefox 153, the value returned reflects the \"Access local files on your computer\" option in the extension's permissions settings. Previously, always returned `false`."
+                "notes": "Before Firefox 153, always returns `false`. From Firefox 153, the value returned reflects the \"Access local files on your computer\" option in the extension's permissions settings."
               },
               "firefox_android": "mirror",
               "opera": "mirror",
