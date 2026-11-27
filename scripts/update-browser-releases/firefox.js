@@ -9,7 +9,7 @@ import { compareVersions } from 'compare-versions';
 
 import stringify from '../lib/stringify-and-order-properties.js';
 
-import { newBrowserEntry, updateBrowserEntry } from './utils.js';
+import { gfmNoteblock, newBrowserEntry, updateBrowserEntry } from './utils.js';
 
 /**
  * getFirefoxReleaseNotesURL - Guess the URL of the release notes
@@ -46,7 +46,7 @@ export const updateFirefoxReleases = async (options) => {
   ]);
   const data = {};
 
-  let stableRelease = 1; // We will need this info afterwards; it will be calculated in the loop.
+  let stableRelease = 1; // Set by the `current` channel, which must be processed before `beta`.
 
   for (const [key, value] of channels) {
     let releaseNotesURL;
@@ -63,6 +63,15 @@ export const updateFirefoxReleases = async (options) => {
       data[value] = {};
       data[value].version = parseFloat(train.version).toString();
       data[value].releaseDate = train.release.substring(0, 10); // Remove the time part
+
+      // Firefox advances beta on release day before stable is cut.
+      if (key === 'beta' && Number(data[value].version) > stableRelease + 1) {
+        result += `\n${gfmNoteblock(
+          'NOTE',
+          `**${options.browserName}**: Keeping the previous beta until version ${stableRelease + 1} is released (beta channel is already at version ${data[value].version}).`,
+        )}\n`;
+        continue;
+      }
     } else {
       // Get the JSON with all released versions and their dates
       const firefoxVersions = await fetch(options.firefoxReleaseDateURL);
