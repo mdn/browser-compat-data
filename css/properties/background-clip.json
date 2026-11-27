@@ -272,7 +272,13 @@
             "support": {
               "chrome": [
                 {
-                  "version_added": "120"
+                  "version_added": "150"
+                },
+                {
+                  "version_added": "120",
+                  "version_removed": "150",
+                  "partial_implementation": true,
+                  "notes": "Before Chrome 150, descendants that establish their own paint layer (for example, through `opacity`, `transform`, or positioning) are not included in the `background-clip: text` mask (see [bug 41385122](https://crbug.com/41385122))."
                 },
                 {
                   "version_added": "3",
@@ -284,7 +290,13 @@
               "chrome_android": "mirror",
               "edge": [
                 {
-                  "version_added": "120"
+                  "version_added": "150"
+                },
+                {
+                  "version_added": "120",
+                  "version_removed": "150",
+                  "partial_implementation": true,
+                  "notes": "Before Edge 150, descendants that establish their own paint layer (for example, through `opacity`, `transform`, or positioning) are not included in the `background-clip: text` mask (see [bug 41385122](https://crbug.com/41385122))."
                 },
                 {
                   "version_added": "79",
