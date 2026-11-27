@@ -1,5 +1,32 @@
 # @mdn/browser-compat-data release notes
 
+## [v8.1.12](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.12)
+
+November 27, 2026
+
+### Additions
+
+- `javascript.builtins.BigInt.abs` ([#31274](https://github.com/mdn/browser-compat-data/pull/31274))
+- `javascript.builtins.BigInt.cbrt` ([#31274](https://github.com/mdn/browser-compat-data/pull/31274))
+- `javascript.builtins.BigInt.max` ([#31274](https://github.com/mdn/browser-compat-data/pull/31274))
+- `javascript.builtins.BigInt.min` ([#31274](https://github.com/mdn/browser-compat-data/pull/31274))
+- `javascript.builtins.BigInt.pow` ([#31274](https://github.com/mdn/browser-compat-data/pull/31274))
+- `javascript.builtins.BigInt.sign` ([#31274](https://github.com/mdn/browser-compat-data/pull/31274))
+- `javascript.builtins.BigInt.sqrt` ([#31274](https://github.com/mdn/browser-compat-data/pull/31274))
+- `webextensions.api.extensionTypes.IconVariant` ([#31072](https://github.com/mdn/browser-compat-data/pull/31072))
+- `webextensions.api.extensionTypes.IconVariant.any` ([#31072](https://github.com/mdn/browser-compat-data/pull/31072))
+- `webextensions.api.extensionTypes.IconVariant.colorSchemes` ([#31072](https://github.com/mdn/browser-compat-data/pull/31072))
+- `webextensions.api.pageAction.setIcon.variants` ([#31072](https://github.com/mdn/browser-compat-data/pull/31072))
+- `webextensions.manifest.icon_variants.any` ([#31072](https://github.com/mdn/browser-compat-data/pull/31072))
+- `webextensions.manifest.icon_variants.color_schemes` ([#31072](https://github.com/mdn/browser-compat-data/pull/31072))
+
+### Statistics
+
+- 4 contributors have changed 11 files with 513 additions and 87 deletions in 5 commits ([`v8.1.11...v8.1.12`](https://github.com/mdn/browser-compat-data/compare/v8.1.11...v8.1.12))
+- 21,236 total features
+- 1,298 total contributors
+- 5,789 total stargazers
+
 ## [v8.1.11](https://github.com/mdn/browser-compat-data/releases/tag/v8.1.11)
 
 November 26, 2026
