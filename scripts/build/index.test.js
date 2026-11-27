@@ -1,10 +1,14 @@
 /* This file is a part of @mdn/browser-compat-data
  * See LICENSE file for more information. */
 
+/** @import { InternalBrowsers } from '../../types/index.js' */
+
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
 import { walk } from '../../utils/index.js';
+
+import browserSnapshot from './fixtures/browsers.json' with { type: 'json' };
 
 import {
   generateMeta,
@@ -13,6 +17,11 @@ import {
   addVersionLast,
   createManifest,
 } from './index.js';
+
+/** Frozen subset of `browsers/*.json`, so data updates don't change results. */
+const browsers = /** @type {InternalBrowsers} */ (
+  /** @type {*} */ (browserSnapshot)
+);
 
 describe('Build functions', () => {
   it('generateMeta', () => {
@@ -48,7 +57,7 @@ describe('Build functions', () => {
 
     const walker = walk(undefined, data);
     for (const feature of walker) {
-      applyMirroring(feature);
+      applyMirroring(feature, browsers);
     }
 
     assert.equal(data.feature.__compat.support.edge.version_added, '90');

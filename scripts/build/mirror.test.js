@@ -3,15 +3,31 @@
 
 /**
  * @import { BrowserName } from '../../types/index.js'
- * @import { InternalSupportBlock } from '../../types/index.js'
+ * @import { InternalBrowsers, InternalSupportBlock } from '../../types/index.js'
  */
 
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 
-import bcd from '../../index.js';
+import browserSnapshot from './fixtures/browsers.json' with { type: 'json' };
+import mirrorSupportWithBrowsers, {
+  isOSLimitation,
+  updateNotes,
+} from './mirror.js';
 
-import mirrorSupport, { isOSLimitation, updateNotes } from './mirror.js';
+/** Frozen subset of `browsers/*.json`, so data updates don't change results. */
+const browsers = /** @type {InternalBrowsers} */ (
+  /** @type {*} */ (browserSnapshot)
+);
+
+/**
+ * Mirror support data using the browser data snapshot.
+ * @param {BrowserName} destination The browser to mirror to
+ * @param {InternalSupportBlock} support The data to mirror with
+ * @returns {ReturnType<typeof mirrorSupportWithBrowsers>} The mirrored data
+ */
+const mirrorSupport = (destination, support) =>
+  mirrorSupportWithBrowsers(destination, support, browsers);
 
 describe('mirror', () => {
   describe('isOSLimitation', () => {
@@ -154,7 +170,7 @@ describe('mirror', () => {
 
       for (const [browser, versionMap] of Object.entries(mappings)) {
         describe(browser, () => {
-          const upstream = bcd.browsers[browser].upstream;
+          const upstream = browsers[browser].upstream;
           for (const pair of versionMap) {
             it(`${pair[0]} => ${pair[1]}`, () => {
               const support = {
