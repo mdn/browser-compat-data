@@ -2078,7 +2078,9 @@
                 }
               ],
               "safari": {
-                "version_added": "16"
+                "version_added": "16",
+                "partial_implementation": true,
+                "notes": "Does not take page zoom into account. Since Safari 26.4, this means `resolution` doesn't match `window.devicePixelRatio` when the page is zoomed, so `matchMedia()` queries based on `devicePixelRatio` don't fire `change` events. See [bug 317839](https://webkit.org/b/317839)."
               },
               "safari_ios": "mirror",
               "samsunginternet_android": "mirror",
