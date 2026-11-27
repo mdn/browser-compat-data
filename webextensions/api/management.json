@@ -65,17 +65,10 @@
                   "version_added": "8"
                 },
                 "edge": "mirror",
-                "firefox": [
-                  {
-                    "version_added": "127"
-                  },
-                  {
-                    "version_added": "51",
-                    "version_removed": "127",
-                    "partial_implementation": true,
-                    "notes": "When the add-on is installed using an enterprise policy the value \"other\" is set, rather than the expected value of \"admin\"."
-                  }
-                ],
+                "firefox": {
+                  "version_added": "51",
+                  "notes": "Before Firefox 127, when the add-on is installed using an enterprise policy the value \"other\" is set, rather than the expected value of \"admin\"."
+                },
                 "firefox_android": "mirror",
                 "opera": "mirror",
                 "safari": {
@@ -360,22 +353,14 @@
                 "version_added": "8"
               },
               "edge": "mirror",
-              "firefox": [
-                {
-                  "version_added": "140",
-                  "partial_implementation": true,
-                  "notes": [
-                    "Any extension can enable and disable themes.",
-                    "Extensions installed via policies can enable and disable any extension."
-                  ]
-                },
-                {
-                  "version_added": "55",
-                  "version_removed": "140",
-                  "partial_implementation": true,
-                  "notes": "Extensions can only enable and disable themes."
-                }
-              ],
+              "firefox": {
+                "version_added": "55",
+                "partial_implementation": true,
+                "notes": [
+                  "Any extension can enable and disable themes.",
+                  "From Firefox 140, extensions installed from policies can enable and disable any extension."
+                ]
+              },
               "firefox_android": "mirror",
               "opera": "mirror",
               "safari": {
