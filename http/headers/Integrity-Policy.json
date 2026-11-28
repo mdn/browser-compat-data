@@ -14,11 +14,17 @@
             },
             "chrome_android": "mirror",
             "edge": "mirror",
-            "firefox": {
-              "version_added": "145",
-              "partial_implementation": true,
-              "notes": "Reporting `endpoints` are ignored (violations are logged to console)."
-            },
+            "firefox": [
+              {
+                "version_added": "149"
+              },
+              {
+                "version_added": "145",
+                "version_removed": "149",
+                "partial_implementation": true,
+                "notes": "Reporting `endpoints` are ignored (violations are logged to console)."
+              }
+            ],
             "firefox_android": "mirror",
             "oculus": "mirror",
             "opera": "mirror",
